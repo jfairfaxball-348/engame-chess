@@ -1,0 +1,21 @@
+name: Ledger structural checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check frozen theorem register schema
+        run: python scripts/validate_ledger.py
+      - name: Run ledger unit tests
+        run: python -m unittest discover -s tests -v
+# This workflow does not and must not claim to formally verify chess theorems.

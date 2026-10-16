@@ -1,0 +1,15 @@
+# Lean/Lake generated artefacts
+.lake/
+lake-packages/
+*.olean
+*.ilean
+*.trace
+# Python generated files
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
