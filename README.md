@@ -29,7 +29,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - [Methods and non-goals](docs/METHODS.md)
 - [Incremental research ladder](docs/ROADMAP.md)
 - [Candidate register](research/CANDIDATES.md)
-- [EC-C001 K-vs-K local proof (`LOCAL_VERIFIED`, not Lean-verified)](proofs/EC-C001_KK.md) and its [audit](audits/EC-C001_KK.md)
+- [EC-C001 K-vs-K local proof](proofs/EC-C001_KK.md), its [audit](audits/EC-C001_KK.md), the [Lean formalisation](formal/README.md) and its [fidelity audit](audits/EC-C001_KK_LEAN.md) (`FORMAL_VERIFIED`, not frozen)
 - [Superseded S000 draft](research/KK_DRAFT.md)
 - [Authoritative frozen-theorem ledger](theorems/LEDGER.csv)
 - [Session record](sessions/SESSION_LEDGER.md)
@@ -38,7 +38,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S001.** EC-C001 (K vs K is dead; FIDE 5.2.2 draw) has passed Gate L (`LOCAL_VERIFIED`): a self-contained proof and a hostile audit exist. It has **not** been formalised in Lean and is **not** frozen; the ledger is still empty on purpose. Next: S002, Lean 4 formalisation.
+**After S002.** EC-C001 (K vs K is dead; FIDE 5.2.2 draw) has passed Gate L (S001) and Gate F (S002): the model theorem `EndgameChess.KK.dead_of_admissible` compiles under Lean 4.34.1 with only standard axioms. The FIDE-to-model bridge stays in prose. It is **not** frozen; the ledger is still empty. Next: S003, freeze as EC-T0001.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
