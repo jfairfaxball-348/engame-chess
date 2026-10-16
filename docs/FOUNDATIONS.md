@@ -39,5 +39,13 @@ Distinct predicates, never conflated: *no possible mate* (`Dead`), *no forced ma
 ## K vs K derivation (proved in S001)
 See [proofs/EC-C001_KK.md](../proofs/EC-C001_KK.md) for the full proof (L0–L6) and [audits/EC-C001_KK.md](../audits/EC-C001_KK.md) for the hostile audit. Superseded draft: [research/KK_DRAFT.md](../research/KK_DRAFT.md).
 
+## K+B vs K layer (S004)
+Used by [proofs/EC-C002_KBK.md](../proofs/EC-C002_KBK.md). This section adds to the two-king layer and leaves its meaning unchanged.
+- **Configuration** `(K, X, k, t)`: the strong side `σ` has a king on `K` and a bishop on `X`; the weak side `ω` has a king on `k`; `t` is the side to move. The squares are pairwise distinct.
+- **Bishop attack** (3.1.2, 3.2, 3.5): the squares on a diagonal of `X`, up to and including the first occupied square. The kings are the only possible blockers.
+- **Square colour** `col(x,y) = (x+y) mod 2`. A bishop attacks only squares of its own colour. Orthogonal neighbours have opposite colours.
+- **`LKBK(p)`**: the side not to move is not in check. Arisen ⇒ LKBK, by 3.9.2 applied to the last move.
+- **Material class closed under legal moves**: `LKBK ∪ AdmKK`. The weak king may capture the bishop, giving K vs K, which reduces to EC-T0001.
+
 ## Planned extension points
 For bishops, knights, rooks and queens, define separate attack relations with obstruction for sliding pieces. Add full position typing, material invariants, side-to-move, piece captures, king safety and terminal states. For pawns, add directional movement, promotions, en passant, move-history fields and time-based drawing rules only as required by specific claims. Note for EC-C002/3: with a third piece present, captures change material, so the invariant must be stated over a material *class* that is closed under legal moves, not assumed fixed.

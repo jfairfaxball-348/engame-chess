@@ -6,7 +6,7 @@ All listed statements are *targets*, not certified theorems.
 |---|---|---|---|
 | 0 | Movement/logic primitives | Board, king attacks, legal KK states and steps | Definitions faithfully represent rules |
 | 1 | K vs K | Is every admissible KK position dead? | Simple invariant and FIDE connection — `LOCAL_VERIFIED` in S001; `FORMAL_VERIFIED` in S002 (Lean 4.34.1); **frozen as EC-T0001** (S003) |
-| 2 | K+B vs K | Is every admissible single-bishop ending dead? | Sliding attack geometry, obstruction |
+| 2 | K+B vs K | Is every admissible single-bishop ending dead? | Sliding attack geometry, obstruction — `LOCAL_VERIFIED` in S004; Lean pending (S005) |
 | 3 | K+N vs K | Is every admissible single-knight ending dead? | Knight's discrete attack geometry |
 | 4 | K+R vs K | Does the stronger side possess a forcing strategy? | Strategy `∃` vs `∀`, finite descent |
 | 5 | K+Q vs K | Can a simple metric potential prove forcing? | Boundary/corner control |

@@ -38,7 +38,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S003.** One frozen theorem: **[EC-T0001](theorems/frozen/EC-T0001/v1.md)** (from EC-C001), K vs K is dead, hence a FIDE 5.2.2 draw. It passed Gate L (S001), Gate F (S002; `EndgameChess.KK.dead_of_admissible`, Lean 4.34.1, standard axioms only) and Gate Z (S003). The FIDE-to-model bridge stays in prose (see the manifest's trust boundary). Next: S004, K+B vs K local proof (EC-C002).
+**After S003.** One frozen theorem: **[EC-T0001](theorems/frozen/EC-T0001/v1.md)** (from EC-C001), K vs K is dead, hence a FIDE 5.2.2 draw. It passed Gate L (S001), Gate F (S002; `EndgameChess.KK.dead_of_admissible`, Lean 4.34.1, standard axioms only) and Gate Z (S003). The FIDE-to-model bridge stays in prose (see the manifest's trust boundary). EC-C002 (K+B vs K is dead) passed Gate L in S004 (`LOCAL_VERIFIED`; [proof](proofs/EC-C002_KBK.md)). Next: S005, its Lean formalisation.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
