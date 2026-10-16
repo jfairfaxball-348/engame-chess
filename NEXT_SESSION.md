@@ -1,77 +1,82 @@
-# NEXT SESSION — S009: Rules kernel K3 — reachability, the 5.2.2 rule, and v2 manifests (closes G2, makes G3 explicit)
+# NEXT SESSION — S010: Freeze the kernel-level K vs K and K+B vs K results as EC-T0003 and EC-T0004 (Gate Z)
 
-**Owner instruction:** Execute this S009 session when the owner says "run next session" in the context of this repository or pastes/links this prompt. Follow `AGENTS.md` first: fetch, start from the latest `main`, merge any unmerged session branch, and end by committing, pushing and merging to `main`. EC-C004 is `PROPOSED` (K1 and K2 are done). Do not treat this prompt as evidence that reachability results exist.
+**Owner instruction:** Execute this S010 session when the owner says "run next session" in the context of this repository or pastes/links this prompt. Follow `AGENTS.md` first: fetch, start from the latest `main`, merge any unmerged session branch, and end by committing, pushing and merging to `main`. EC-C005 and EC-C006 are `FORMAL_VERIFIED` (S009). Do not treat this prompt as evidence that a freeze has happened.
 
-## Context
-- **S007 (K1)** built the general kernel `formal/EndgameChess/Rules/` and the bridge `docs/RULES_KERNEL.md`.
-- **S008 (K2)** proved exact agreement (`legal_ofKK_iff`, `legal_ofKBK_iff`) and deadness transfer (`deadK_ofKK_iff`, `deadK_ofKBK_iff`, `kernel_dead_KK`, `kernel_dead_KBK`). This closed **G1**, modulo independent review of the bridge.
+## Context and owner decisions
+S009 (kernel K3) proved, over the general FIDE rules kernel, that every K vs K / K+B vs K position produced by *any* legal move is dead, and that every *arisen* one is too:
+- `Rules.dead_of_legal_into_KK` / `_KBK`
+- `Rules.arisen_KK_dead` / `_KBK_dead`
 
-Remaining:
-- **G2:** positions reached by a *capture from larger material*, and genuine game-reachability.
-- **G3:** the Art. 5.2.2 "immediate draw" step.
+It also proved that under the explicit rule encoding `Rules.Rule5_2_2` these positions are drawn immediately (`kk_drawn_by_rule`, `kbk_drawn_by_rule`).
 
-## Objective
-New modules:
-- `formal/EndgameChess/Rules/Reach.lean` (reachability and invariants);
-- `formal/EndgameChess/Rules/Outcome.lean` (the rule encoding);
-- `formal/EndgameChess/Rules/Endgames.lean` (corollaries).
+Owner decisions:
+- these strengthened results are frozen as **new IDs**, **EC-T0003** (from EC-C005, K vs K) and **EC-T0004** (from EC-C006, K+B vs K);
+- the convention is in `docs/PROOF_PROTOCOL.md`;
+- the EC-T0001/EC-T0002 rows and manifests are **never rewritten**.
 
-**Do not edit** `KK.lean`, `KBK.lean` or the K1/K2 modules (`Board`, `Position`, `Moves`, `Sanity`, `Lemmas`, `AgreeKK`, `AgreeKBK`). Record their hashes at closeout.
+**Proof-source commit to cite:** `573c96a527d20f0f619a431a132a0894503c44f8`.
 
 ## Required work
-1. **`Arisen`.** `Arisen q := ReachK initial q` (Art. 3.10.3: a position is legal iff reachable). Prove these invariants of `Arisen` positions by induction on `ReachK`:
-   - exactly one king of each colour (`countOf … = 1`);
-   - the side *not* to move is not in check (from `not_inCheck_after_legal`);
-   - a castling right implies the king and the corresponding rook are on their original squares;
-   - an en-passant target implies a pawn of the side that just moved stands in front of it, and both the target and its starting square are empty.
+1. **Re-verify only these theorems' obligation.** In a fresh GitHub clone at `573c96a527d20f0f619a431a132a0894503c44f8`, with `leanprover/lean4:v4.34.1`, run:
+   - `cd formal && lake build`
+   - `lake env lean AxiomCheck.lean` (the subset gate on every line)
+   - the forbidden-token grep
 
-   These are the facts needed to identify flag values on low-material positions. Prove only what step 2 needs, and state each invariant precisely.
-2. **G2: the last move into low material.** For any kernel position `p` (any material) and `Legal p q`:
-   - if `q`'s board holds exactly two kings, then `q = ofKK a` for the corresponding `a` up to the flags (castling rights and en-passant target), and `Admissible a`;
-   - if `q` holds exactly K+B vs K, then `q = ofKBK p'` up to the flags, and `LKBK p'`.
+   Also check these SHA-256 hashes:
 
-   Also prove that flags are irrelevant:
-   - with no rooks, castling rights do not affect `Legal`;
-   - with no pawns, the en-passant target does not affect `Legal` or `inCheck`;
-   - hence `DeadK` is invariant under these flags on such boards.
+   | Module | SHA-256 |
+   |---|---|
+   | `Rules/Flags.lean` | `4fcac7795bc078efb91e6bbb28bedbbad83300d57b1c5b8983937a813daa514b` |
+   | `Rules/Reach.lean` | `b23a7a915bfbe8340140b1e3cc1ff3fd46f9927ffeaa920e239c6d45e4d63a94` |
+   | `Rules/Outcome.lean` | `f34c14310f3e112d747622af66c47d66e48f188084dfeb7d2950797a8facedd8` |
+   | `Rules/AgreeKBK.lean` | `eccaa38fa7f76095c62727f8703d9833577d4edd9357373e0dd284db2f053717` |
+   | `Rules/AgreeKK.lean` | `46a441ff91c927addc2694f995d660085e11eccb822cffa8ef0aed0efe39d729` |
+   | `Rules/Lemmas.lean` | `7459ec198088bd3e69ebff5f4ae767b2fccdafe49e33acac0ed5db5d0bce9152` |
+   | `Rules/Moves.lean` | `6a10be0387add5e891c1e53acd567f5a9f32701082ff83c20f02c3ca3ee65958` |
+   | `Rules/Position.lean` | `8544dbf23cb83798f83196366127a4afcd899da7d86689a10c23da3112447e7f` |
+   | `Rules/Board.lean` | `c21144f5274cd4a4e023a7d868856a787c984cd5882e8e4e5d8ba2d015f2fdd1` |
+   | `Rules/Sanity.lean` | `8d161127e5143ed06aca030fb69466f40abfa1530e935a896c68caa38254538f` |
+   | `KK.lean` | `4843459ca26af93e15e5894a9f32183d46f8c554132e81051c1c21140509b1a0` |
+   | `KBK.lean` | `c668e0c044cf17caa74ad8a75cfdeb0b758e3ccd5b0956ffde88cec2c895c6d7` |
 
-   Combine with K2 into:
-   - **`arisen_KK_dead`**: every `Arisen` position whose material is two kings is `DeadK`;
-   - **`arisen_KBK_dead`**: the same for K+B vs K, in either orientation.
+   On any mismatch: stop, do not freeze, and install a remedial prompt.
+2. **Drift check.** `git diff 573c96a HEAD -- formal/EndgameChess/` must be empty.
+3. **CI evidence.** Use the GitHub tools to record the `Lean build (EC formal proofs)` run on `573c96a…`: its ID, URL and conclusion, or "not observed".
+4. **Manifests.**
+   - Write `theorems/frozen/EC-T0003/v1.md` and `theorems/frozen/EC-T0004/v1.md`, using `theorems/frozen/EC-T0001/v1.md` as the template. Save the build and axiom logs beside each.
+   - Each manifest records:
+     - the exact statement in prose and in Lean (verbatim `#check` of `dead_of_legal_into_KK`/`arisen_KK_dead` resp. `_KBK`, and `#print Rule5_2_2` plus the `*_drawn_by_rule` corollary);
+     - the scope: FIDE 2023, the kernel modules, and the bridge `docs/RULES_KERNEL.md`, by its SHA-256 *at freeze time* (its 3.10.3 and 5.2.2 rows were added in the S009 closeout commit, after the proof commit; it is documentation, not Lean source);
+     - the evidence (audits K1–K3, perft cross-checks, the S007 sanity theorems);
+     - the dependency chain (EC-T0001/EC-T0002 → K2 agreement → K3).
+   - **"Strengthens EC-T0001 / EC-T0002":** state how this record supersedes their trust boundary. G1 is closed by K2 agreement, G2 by K3 last-move reachability, and G3 is now the explicit named rule `Rule5_2_2`.
+   - **Remaining trust boundary:**
+     - A1;
+     - the kernel encoding through `docs/RULES_KERNEL.md`, whose **independent human review is still open**;
+     - the reading of 5.2.2 in `Rule5_2_2`;
+     - the "one king per colour" `Arisen` invariant, which is not proved but not needed;
+     - same-session audits;
+     - the Lean kernel, toolchain and standard axioms.
+   - Classical result; no novelty claim.
+5. **Ledger.** Append the EC-T0003 and EC-T0004 rows using Python `csv` with `lineterminator="\n"` (LF only):
+   - `proof_commit_sha=573c96a527d20f0f619a431a132a0894503c44f8`
+   - `lean_declaration`: `EndgameChess.Rules.arisen_KK_dead` resp. `EndgameChess.Rules.arisen_KBK_dead`
+   - `lean_file=formal/EndgameChess/Rules/Reach.lean`
+   - `local_proof_path`: `audits/EC-C004_K3.md`
+   - `notes`: "strengthens EC-T0001" resp. "strengthens EC-T0002"
 
-   This closes **G2**.
-3. **G3: the rule as a definition.** In `Outcome.lean`, define `GameResult := whiteWins | blackWins | draw | ongoing` and `Rules.result5_2_2`, a **named rule encoding** of Article 5.2.2 (quoted verbatim in a comment): an `Arisen` position that is `DeadK` has result `draw` immediately. Label it explicitly as a *normative encoding, not a theorem*, and add a row for it in `docs/RULES_KERNEL.md`. Derive the corollaries `kk_drawn` and `kbk_drawn`. This makes **G3** explicit.
-4. **Checks.**
-   - `lake build`;
-   - `#print axioms` for every new main declaration (add them to `AxiomCheck.lean`);
-   - the forbidden-token grep;
-   - frozen and K1/K2 hashes unchanged;
-   - a clean-checkout build of the proof commit;
-   - CI evidence.
-5. **Audit** `audits/EC-C004_K3.md`.
-   - Check that the invariants are not vacuous: `initial` is `Arisen`, and give a concrete `Arisen` K vs K example if feasible (a short capture sequence would be a strong non-vacuity witness, proved by `decide` if fast).
-   - Check that flag irrelevance is genuinely proved, not assumed.
-6. **Status.** If steps 1–5 pass: EC-C004 → `LOCAL_VERIFIED` and `FORMAL_VERIFIED` (kernel claims are Lean-native; the prose bridge is the RULES_KERNEL table). Then issue **v2 manifests** `theorems/frozen/EC-T0001/v2.md` and `theorems/frozen/EC-T0002/v2.md`:
-   - each cites the S009 proof commit;
-   - each moves G1 and G2 to "closed (kernel)", and G3 to "explicit rule definition `Rules.result5_2_2`";
-   - each keeps A1 and the RULES_KERNEL human-review item.
-
-   Add superseding ledger rows, as the protocol requires, with v1 kept. **The ledger schema allows each `theorem_id` only once**, so decide and document the versioning convention first. Either extend `scripts/validate_ledger.py` with a `version` / `supersedes` column (update its tests), or use new IDs (`EC-T0001` → `EC-T0003`?). Do not silently change the schema: record the decision and the reason in `docs/PROOF_PROTOCOL.md`.
+   `python3 scripts/validate_ledger.py` must report **4** frozen theorems, and the unit tests must pass. Existing rows must stay byte-identical: check with `git diff`.
+6. **Status.**
+   - `research/CANDIDATES.md`: EC-C005 → frozen as EC-T0003, EC-C006 → frozen as EC-T0004.
+   - `theorems/README.md`: count 4.
+   - Also update `README.md`, `docs/ROADMAP.md` and `formal/README.md`.
 
 ## Closeout
-Write `sessions/S009_KERNEL_K3.md` and a `sessions/SESSION_LEDGER.md` row, covering:
-- checks run, with verbatim outputs;
-- the base SHA and proof SHA;
-- hashes;
-- CI evidence;
-- candidate status;
-- the ledger effect.
-
-Install the next prompt in full: **S010 = EC-C003 (K+N vs K is dead), Gate L, stated over the kernel**:
-- model knight moves via `knightGeom`;
-- use the class K+N vs K ∪ K vs K;
-- the capture branch goes to EC-T0001 via K2;
-- prove a knight-specific key escape lemma (do not reuse B2's argument). A knight attacks only squares of the opposite colour to its own square, so no two squares it attacks are *orthogonally* adjacent, but two can be diagonally adjacent (from a1 it attacks b3 and c2). Check every such claim against the diagnostic before relying on it;
-- hostile audit, independent diagnostic, mutation test.
-
-If K3 is incomplete, install a targeted remedial S009 instead. Then commit, push and merge to `main`.
+- Write `sessions/S010_FREEZE_EC-T0003_T0004.md` and a `sessions/SESSION_LEDGER.md` row. Record the checks, base SHA, proof SHA, CI evidence and ledger effect (+2, giving 4).
+- Install the next prompt in full, **S011 = EC-C003 (K+N vs K is dead), Gate L, stated over the kernel**:
+  - Model the knight via the kernel's `knightGeom`. The class is K+N vs K ∪ K vs K, and the capture branch goes to EC-T0003.
+  - Prove a knight-specific key escape lemma. Do not reuse B2's argument.
+  - Correct fact to use: a knight attacks only squares of the opposite colour to its own square. So two attacked squares are never *orthogonally* adjacent, but they can be diagonally adjacent (from a1 a knight attacks b3 and c2).
+  - Check every geometric claim against an independent diagnostic before relying on it.
+  - Include a hostile audit and a mutation test; no tablebases.
+- Then commit, push and merge to `main`.

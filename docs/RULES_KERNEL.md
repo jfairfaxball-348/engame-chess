@@ -46,7 +46,8 @@
 | 3.9.1 | "The king is said to be 'in check' if it is attacked by one or more of the opponent's pieces, even if such pieces are constrained from moving to the square occupied by the king because they would then leave or place their own king in check." | `inCheck` (via `attacked`, no self-check filter) | |
 | 3.9.2 | "No piece can be moved that will either expose the king of the same colour to check or leave that king in check." | `isLegal := isPseudo ∧ ¬ inCheck (play p m) p.turn` | Sanity: `pinned_piece_cannot_move`, `not_inCheck_after_legal`. |
 | 3.10.1 | "A move is legal when all the relevant requirements of Articles 3.1 – 3.9 have been fulfilled." | `isLegal`, `Legal`; generator `legalMoves` / `legalPositions` (`mem_legalMoves`, `mem_legalPositions`) | |
-| 3.10.3 | "A position is illegal when it cannot have been reached by any series of legal moves." | *(S009: `Arisen` as reachability)* | Not yet encoded. |
+| 3.10.3 | "A position is illegal when it cannot have been reached by any series of legal moves." | `Arisen q := ReachK initial q` (`Rules/Reach.lean`) | A position is legal iff it is reachable from `initial` by kernel-legal moves. |
+| 5.2.2 | "The game is drawn when a position has arisen in which neither player can checkmate the opponent's king with any series of legal moves. The game is said to end in a 'dead position'. This immediately ends the game, provided that the move producing the position was in accordance with Article 3 and Articles 4.2 – 4.7." | `Rule5_2_2 q r := Arisen q ∧ DeadK q ∧ r = .draw` (`Rules/Outcome.lean`); `DeadK` (`Rules/Lemmas.lean`) | **A normative encoding, not a theorem.** "Neither player can checkmate … with any series of legal moves" is read as: no kernel-reachable position is a checkmate (`MatedK`: the side to move is in check and has no legal move). The Articles 4.2–4.7 proviso (the physical act) is outside the model. |
 
 ## Evidence that the encoding behaves as the Laws do
 - **Kernel-checked** (`Rules/Sanity.lean`, `decide`): `initial_legal_count` (20 legal first moves), en passant (legal, expired, exposing the king), promotion (Q/N legal, no-choice illegal, the new piece placed), castling (legal, through check, out of check, without the right, queen side with b1 attacked), pin, no king capture.
@@ -56,4 +57,4 @@
 1. The 2.3 diagram is encoded as the standard set-up.
 2. 3.7.2 "first move" is read as "on its starting rank".
 3. A position carries castling rights and an en-passant target, the history that Article 3 needs. Clocks and repetition are omitted, because they do not affect legality.
-4. A position with no king of the side to move is representable. `inCheck` is then false. Such positions never arise from `initial` (S009 will prove this).
+4. A position with no king of the side to move is representable. `inCheck` is then false. The K3 endgame theorems do not need an invariant excluding such positions: they use only the material of the position itself plus the legality of the last move. A general "one king per colour" invariant of `Arisen` has **not** been proved yet (open; not needed so far).

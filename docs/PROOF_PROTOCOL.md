@@ -42,6 +42,8 @@ Create an immutable theorem statement/proof manifest under `theorems/frozen/<ID>
 
 A frozen theorem's Lean module is **never edited**. A correction is a new module or declaration plus a superseding manifest version. Shared modules a frozen theorem imports may change only if CI shows the frozen module still builds, with the same statement and the same axioms. Frozen proofs are not quietly edited or reclassified. If a defect is discovered, append a conspicuous correction/superseding record and update ledger history via an additional auditable commit. Git history is the permanent record; an optional immutable Git tag can additionally anchor each release.
 
+**Versioning convention (owner decision, S009).** A strengthened or re-anchored form of a frozen result is frozen as a **new theorem ID** (e.g. the kernel-level K vs K result becomes EC-T0003). Its manifest states which earlier ID it strengthens, and how it supersedes that ID's trust boundary. Earlier ledger rows and manifests are never rewritten, and the ledger schema is unchanged (one row per ID). A genuine *defect* in a frozen theorem still requires a conspicuous correction record, as described above.
+
 ## Permitted status transitions
 `PROPOSED → LOCAL_VERIFIED → FORMAL_VERIFIED → FROZEN`. A falsified candidate becomes `REJECTED` *in the candidate register only*, with a concrete counterexample. A blocked claim remains in its current stage. No 'all clear' or theorem count until the actual checks have run.
 
