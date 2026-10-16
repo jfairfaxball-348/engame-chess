@@ -10,4 +10,4 @@ The freeze commit must be **later than** its referenced verified proof commit so
 
 Corrections require a new versioned entry and clearly visible supersession note; Git history must preserve the original record. No ledger row or proof file may be rewritten without that provenance. The checker `scripts/validate_ledger.py` checks *format/integrity only*; it is not a mathematical proof checker.
 
-Current frozen count: **0**.
+Current frozen count: **1** — [EC-T0001](frozen/EC-T0001/v1.md) (K vs K dead position, frozen S003).
