@@ -44,4 +44,6 @@ Research can grow in *conceptual* complexity as well as piece count: board bound
 
 ## Contributing or running sessions
 
+Session workflow rule (see [CLAUDE.md](CLAUDE.md)): every session commits, pushes and merges its work into `main`.
+
 Read the charter and proof protocol first. Follow the active full prompt in `NEXT_SESSION.md`. Never mark a result as frozen because it is well known, because a chess engine agrees, or because a finite sample supports it. Frozen records have exact statements, independently checked derivations, compiling formal proof sources, reproducible build information and immutable Git identifiers.
