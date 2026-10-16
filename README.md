@@ -38,7 +38,11 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S006.** Two frozen theorems: **[EC-T0002](theorems/frozen/EC-T0002/v1.md)** (K+B vs K is dead; frozen S006) and **[EC-T0001](theorems/frozen/EC-T0001/v1.md)** (from EC-C001), K vs K is dead, hence a FIDE 5.2.2 draw. It passed Gate L (S001), Gate F (S002; `EndgameChess.KK.dead_of_admissible`, Lean 4.34.1, standard axioms only) and Gate Z (S003). The FIDE-to-model bridge stays in prose (see the manifest's trust boundary). Both manifests list three prose-only trust gaps (move-set fidelity, capture-arisen positions, the 5.2.2 rule step). The rules-kernel track (S007–S009, candidate EC-C004) will close or make them explicit. S007 built kernel K1 (`formal/EndgameChess/Rules/`, bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md)). S008 proved that the kernel agrees exactly with both frozen models on their positions, so both theorems now hold in the kernel (`kernel_dead_KK`, `kernel_dead_KBK`; gap G1 closed modulo human review of the bridge). S009 closed G2: every K vs K or K+B vs K position produced by *any* legal move (including a capture from larger material) is dead in the kernel. It also wrote Art. 5.2.2 as an explicit named rule (`Rule5_2_2`). These strengthened results are candidates EC-C005/EC-C006 (`FORMAL_VERIFIED`). Next: S010, freeze them as EC-T0003/EC-T0004.
+**After S010.** Four frozen theorems.
+- [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
+- [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
+- What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md), whose independent human review is still open.
+- Next: S011, K+N vs K (EC-C003), stated over the kernel.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
