@@ -17,3 +17,24 @@ import EndgameChess
 
 #check @EndgameChess.KK.dead_of_admissible
 #check @EndgameChess.KK.dead_of_last_move_legal
+
+/-! EC-C002 (K+B vs K) -/
+#print axioms EndgameChess.KBK.dead_of_LKBK
+#print axioms EndgameChess.KBK.dead_of_step
+#print axioms EndgameChess.KBK.dead_of_closed
+#print axioms EndgameChess.KBK.LKBK_of_step
+#print axioms EndgameChess.KBK.weak_has_move_of_inCheck
+#print axioms EndgameChess.KBK.colour_of_bishopAttacks
+#print axioms EndgameChess.KBK.colour_orth_neighbour
+#print axioms EndgameChess.KBK.kings_apart_of_LKBK
+#print axioms EndgameChess.KBK.strong_not_inCheck_of_LKBK
+#print axioms EndgameChess.KBK.closed_of_step
+#print axioms EndgameChess.KBK.closed_of_reach
+#print axioms EndgameChess.KBK.not_mated_of_closed
+#print axioms EndgameChess.KBK.admissible_of_capture
+#print axioms EndgameChess.KBK.bishop_check_exists
+#print axioms EndgameChess.KBK.stalemate_exists
+#print axioms EndgameChess.KBK.mated_satisfiable
+
+#check @EndgameChess.KBK.dead_of_LKBK
+#check @EndgameChess.KBK.dead_of_step

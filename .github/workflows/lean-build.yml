@@ -58,7 +58,8 @@ jobs:
       - name: Axiom report
         run: |
           lake env lean AxiomCheck.lean | tee axioms.txt
-          if grep 'depends on axioms' axioms.txt | grep -vE 'depends on axioms: \[propext, Classical.choice, Quot.sound\]$'; then
+          # Allowed: any subset of Lean's standard axioms (or none at all).
+          if grep 'depends on axioms' axioms.txt | grep -vE 'depends on axioms: \[(propext|Classical\.choice|Quot\.sound)(, (propext|Classical\.choice|Quot\.sound))*\]$'; then
             echo "unexpected axiom set"; exit 1
           fi
 # A green run of this job is build evidence only; fidelity to the prose proof is audited per theorem under audits/.
