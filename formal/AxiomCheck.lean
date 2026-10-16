@@ -38,3 +38,23 @@ import EndgameChess
 
 #check @EndgameChess.KBK.dead_of_LKBK
 #check @EndgameChess.KBK.dead_of_step
+
+/-! EC-C004 rules kernel K1 (S007) -/
+#print axioms EndgameChess.Rules.mem_allSquares
+#print axioms EndgameChess.Rules.initial_wellFormed
+#print axioms EndgameChess.Rules.mem_legalMoves
+#print axioms EndgameChess.Rules.mem_legalPositions
+#print axioms EndgameChess.Rules.not_inCheck_after_legal
+#print axioms EndgameChess.Rules.legal_mover_safe
+#print axioms EndgameChess.Rules.initial_legal_count
+#print axioms EndgameChess.Rules.enPassant_legal
+#print axioms EndgameChess.Rules.enPassant_expired
+#print axioms EndgameChess.Rules.enPassant_exposing_king_illegal
+#print axioms EndgameChess.Rules.promotion_rules
+#print axioms EndgameChess.Rules.castling_legal
+#print axioms EndgameChess.Rules.castling_through_check_illegal
+#print axioms EndgameChess.Rules.castling_without_right_illegal
+#print axioms EndgameChess.Rules.pinned_piece_cannot_move
+#print axioms EndgameChess.Rules.king_never_captured
+#print axioms EndgameChess.Rules.castling_queenside_b1_attacked_legal
+#print axioms EndgameChess.Rules.castling_out_of_check_illegal
