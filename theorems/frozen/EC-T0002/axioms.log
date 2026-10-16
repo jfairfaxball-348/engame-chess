@@ -1,0 +1,37 @@
+'EndgameChess.KK.dead_of_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.dead_of_last_move_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.admissible_of_last_move_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.attack_iff_dInf_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.not_inCheck_of_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.admissible_of_legal_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.admissible_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.not_checkmate_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.legalKK_iff_prose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.exists_legal_move_of_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.checkmate_satisfiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.reach_nontrivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.KK.dead_of_admissible : ∀ {p : EndgameChess.KK.KKState},
+  EndgameChess.KK.Admissible p → EndgameChess.KK.Dead p
+EndgameChess.KK.dead_of_last_move_legal : ∀ (q : EndgameChess.KK.KKState),
+  (∃ p, EndgameChess.KK.LegalKK p q) → EndgameChess.KK.Dead q
+'EndgameChess.KBK.dead_of_LKBK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.dead_of_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.dead_of_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.LKBK_of_step' does not depend on any axioms
+'EndgameChess.KBK.weak_has_move_of_inCheck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.colour_of_bishopAttacks' depends on axioms: [propext, Quot.sound]
+'EndgameChess.KBK.colour_orth_neighbour' depends on axioms: [propext, Quot.sound]
+'EndgameChess.KBK.kings_apart_of_LKBK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.strong_not_inCheck_of_LKBK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.closed_of_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.closed_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.not_mated_of_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.admissible_of_capture' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.bishop_check_exists' depends on axioms: [propext, Quot.sound]
+'EndgameChess.KBK.stalemate_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.mated_satisfiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.KBK.dead_of_LKBK : ∀ {p : EndgameChess.KBK.KBKState},
+  EndgameChess.KBK.LKBK p → EndgameChess.KBK.Dead (EndgameChess.KBK.Pos.kbk p)
+@EndgameChess.KBK.dead_of_step : ∀ {p q : EndgameChess.KBK.KBKState},
+  EndgameChess.KBK.Step (EndgameChess.KBK.Pos.kbk p) (EndgameChess.KBK.Pos.kbk q) →
+    q.sk ≠ q.bs ∧ q.sk ≠ q.wk ∧ q.bs ≠ q.wk → EndgameChess.KBK.Dead (EndgameChess.KBK.Pos.kbk q)

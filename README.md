@@ -38,7 +38,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S003.** One frozen theorem: **[EC-T0001](theorems/frozen/EC-T0001/v1.md)** (from EC-C001), K vs K is dead, hence a FIDE 5.2.2 draw. It passed Gate L (S001), Gate F (S002; `EndgameChess.KK.dead_of_admissible`, Lean 4.34.1, standard axioms only) and Gate Z (S003). The FIDE-to-model bridge stays in prose (see the manifest's trust boundary). EC-C002 (K+B vs K is dead) passed Gate L in S004 and Gate F in S005 (`FORMAL_VERIFIED`; [proof](proofs/EC-C002_KBK.md), [Lean audit](audits/EC-C002_KBK_LEAN.md)). Next: S006, freeze it as EC-T0002.
+**After S006.** Two frozen theorems: **[EC-T0002](theorems/frozen/EC-T0002/v1.md)** (K+B vs K is dead; frozen S006) and **[EC-T0001](theorems/frozen/EC-T0001/v1.md)** (from EC-C001), K vs K is dead, hence a FIDE 5.2.2 draw. It passed Gate L (S001), Gate F (S002; `EndgameChess.KK.dead_of_admissible`, Lean 4.34.1, standard axioms only) and Gate Z (S003). The FIDE-to-model bridge stays in prose (see the manifest's trust boundary). Both manifests list three prose-only trust gaps (move-set fidelity, capture-arisen positions, the 5.2.2 rule step). The rules-kernel track (S007–S009, candidate EC-C004) will close or make them explicit. Next: S007, kernel K1.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

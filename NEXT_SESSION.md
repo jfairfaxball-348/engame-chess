@@ -1,90 +1,98 @@
-# NEXT SESSION — S006: Freeze EC-C002 as EC-T0002 (Gate Z), then open the rules-kernel track
+# NEXT SESSION — S007: Rules kernel K1 — general position and FIDE Article 3 move model
 
-**Owner instruction:** Execute this S006 session when the owner says "run next session" in the context of this repository or pastes/links this prompt. Follow `AGENTS.md` first: fetch, start from the latest `main`, merge any unmerged session branch, and end by committing, pushing and merging to `main`. EC-C002 is `FORMAL_VERIFIED` (S005). Do not treat this prompt as evidence that a freeze has happened.
+**Owner instruction:** Execute this S007 session when the owner says "run next session" in the context of this repository or pastes/links this prompt. Follow `AGENTS.md` first: fetch, start from the latest `main`, merge any unmerged session branch, and end by committing, pushing and merging to `main`. Do not treat this prompt as evidence that the kernel exists.
 
-## Owner decision (recorded 2026-10-16)
-The trust boundary of EC-T0001/EC-T0002 has three prose-only items. The owner wants them addressed:
-- **(G1)** each theorem's bespoke move relation (`LegalKK`, `KBK.Step`) is trusted to equal the FIDE-legal moves;
-- **(G2)** "arisen" positions reached by a capture from larger material are covered only in prose;
-- **(G3)** the Article 5.2.2 "immediate draw" step is prose.
+## Why (owner decision, 2026-10-16)
+EC-T0001 and EC-T0002 each trust a bespoke move relation (`KK.LegalKK`, `KBK.Step`). Their manifests list three prose-only gaps:
+- **G1:** move-set fidelity — does the bespoke relation match FIDE's legal moves?
+- **G2:** positions reached by a capture from larger material.
+- **G3:** the Article 5.2.2 rule step.
 
-**Agreed order:**
-1. S006 freezes EC-C002 now, with its boundary stated honestly.
-2. S007–S009 build a single general **rules kernel** in Lean that closes G1 and G2 and makes G3 an explicit named rule.
-3. v2 manifests then re-anchor EC-T0001 and EC-T0002 on the kernel.
-4. EC-C003 (K+N vs K) waits until the kernel exists, so that it is built on the kernel from the start.
+The rules-kernel track replaces many bespoke relations with **one** general, auditable encoding of FIDE Article 3:
+- **K1 (this session):** the model.
+- **K2 (S008):** agreement with `LegalKK` / `KBK.Step`; closes G1.
+- **K3 (S009):** reachability, an explicit 5.2.2 rule definition, and v2 manifests; closes G2 and makes G3 explicit.
 
-## Part A — Freeze EC-T0002 (Gate Z)
-Freeze EC-C002 as **EC-T0002** per `docs/PROOF_PROTOCOL.md` Gate Z, citing the S005 proof-source commit **`15610256c9588e2bb5e0c19b035bbfd4437b2e31`**. Use `theorems/frozen/EC-T0001/v1.md` as the template. Do not change any mathematics or Lean source.
+Candidate: **EC-C004** (`PROPOSED`).
 
-1. **Re-verify only this theorem's obligation.** In a fresh clone at `15610256c9588e2bb5e0c19b035bbfd4437b2e31`, using `leanprover/lean4:v4.34.1`, run:
-   - `cd formal && lake build`;
-   - `lake env lean AxiomCheck.lean` — every `EndgameChess.KBK.*` line must be a subset of `[propext, Classical.choice, Quot.sound]` or say "does not depend on any axioms";
-   - the forbidden-token grep.
+## Objective
+Build a faithful Lean 4 encoding of FIDE 2023 Articles 2–3 (initial position; legal moves) as new library modules. Back it with a clause-by-clause prose bridge and independent sanity evidence. **No agreement theorems yet; no ledger change; EC-C004 stays `PROPOSED`.**
 
-   Check the SHA-256 hashes: `KBK.lean` must be `c668e0c044cf17caa74ad8a75cfdeb0b758e3ccd5b0956ffde88cec2c895c6d7` and `KK.lean` must be `4843459ca26af93e15e5894a9f32183d46f8c554132e81051c1c21140509b1a0`. On any mismatch, stop: do not freeze, and install a remedial prompt.
-2. **Drift check.** `git diff 15610256 HEAD -- formal/EndgameChess/` must be empty.
-3. **CI evidence.** Record `Lean build (EC formal proofs)` run **38907468354** on the proof commit (conclusion success, observed in S005). Re-confirm it with the GitHub tools.
-4. **Manifest** `theorems/frozen/EC-T0002/v1.md`. Use the same sections as EC-T0001, and save the build and axiom logs beside it. It must contain:
-   - the statement and scope: both orientations; FIDE 2023 Arts 1.2, 1.4.1, 3.1–3.2, 3.5, 3.8–3.10, 5.2.2;
-   - the verbatim `#check` output for `dead_of_LKBK` and `dead_of_step`;
-   - its dependency on EC-T0001 (`admissible_of_legal_step`, `not_inCheck_of_admissible`);
-   - the trust boundary, listing:
-     - A1;
-     - the reading of 3.1.2 + 3.2 + 3.5 as the bishop attack;
-     - **G1, G2 and G3**, explicitly marked *"scheduled for closure by the rules-kernel track (S007–S009); a v2 manifest will supersede this boundary"*;
-     - that the audits were done in the same session;
-   - the line "classical, no novelty".
-5. **Ledger.** Append the `EC-T0002` row with Python `csv` and `lineterminator="\n"` (LF only):
-   - `proof_commit_sha=15610256c9588e2bb5e0c19b035bbfd4437b2e31`
-   - `lean_file=formal/EndgameChess/KBK.lean`
-   - `lean_declaration=EndgameChess.KBK.dead_of_LKBK`
-   - `local_proof_path=proofs/EC-C002_KBK.md`
+## Non-negotiable constraints
+- **Do not edit** `formal/EndgameChess/KK.lean` (SHA-256 `4843459c…09b1a0`) or `formal/EndgameChess/KBK.lean` (SHA-256 `c668e0c0…95c6d7`). Both are frozen. Verify the hashes at closeout.
+- Use the same toolchain, `leanprover/lean4:v4.34.1`, core only. No `sorry`, `admit`, custom `axiom`, `unsafe` or `native_decide` in library modules.
+  - Kernel `decide` is allowed only for small closed facts.
+  - If a fact such as a move count is too slow for the kernel, prove it another way, or state it in a separately labelled non-library `Checks/` file that is excluded from axiom-gated declarations, and say so.
+- Rule text: FIDE Laws of Chess effective 1 January 2023, https://handbook.fide.com/chapter/E012023. Retrieve the page, and quote the text verbatim in comments and in the bridge document. Record the retrieval date.
+- No tablebases or engine oracles. Public perft counts from the initial position (20, 400, 8,902) are elementary combinatorial facts and may be cited as cross-check targets. They are not evidence about endgames.
+- Verify only the obligation (`AGENTS.md`): the new modules. CI builds incrementally.
 
-   Then `python3 scripts/validate_ledger.py` must print `2 frozen theorem(s)`, and the unit tests must pass.
-6. **Status files.**
-   - `research/CANDIDATES.md`: note that EC-C002 is frozen as EC-T0002.
-   - `theorems/README.md`: frozen count → 2.
-   - Also update `README.md`, `formal/README.md` and `docs/ROADMAP.md`.
+## Required work
+1. **Modules.** Place them under `formal/EndgameChess/Rules/` and import them from `formal/EndgameChess.lean`.
+   - **`Board.lean`** — squares, `Colour`, `PieceType` (K, Q, R, B, N, P), `Piece`.
+     - Either reuse `EndgameChess.KK.Square`/`Colour` directly, or define your own and prove a bijection. Reuse is preferred, so that K2 is simpler.
+     - Include square colour (Art. 2.1), ranks/files, and the relative rank per colour.
+   - **`Position.lean`** — the position state:
+     - board as `Square → Option Piece`;
+     - side to move;
+     - castling-rights flags (for 3.8.2.1);
+     - en-passant target `Option Square` (for 3.7.3.1).
 
-## Part B — Record the kernel track (documentation only, no Lean in S006)
-Edit `docs/ROADMAP.md`: add a **Rung K (rules kernel)** above rung 3, describing S007–S009 as below and marking EC-C003 as deferred until K2. Add a `research/CANDIDATES.md` entry **EC-C004**: *"General FIDE 2023 Article 3 legal-move kernel agrees with `LegalKK` and `KBK.Step` on their material classes"*, status `PROPOSED`.
+     Also define the initial position (Art. 2.3).
+   - **`Moves.lean`** — the move model. Every clause carries an Article-number comment with the verbatim text.
+     - Attack, per 3.1.2 and 3.1.3.
+     - Pseudo-moves for each piece: 3.2 bishop, 3.3 rook, 3.4 queen, with 3.5 obstruction; 3.6 knight; 3.7 pawn (single and double advance, diagonal capture, en passant 3.7.3, promotion 3.7.5 to Q/R/B/N of the same colour); 3.8.1 king; 3.8.2 castling with every condition in 3.8.2.1 and 3.8.2.2.
+     - Captures (3.1.1), and the no-own-piece rule (3.1).
+     - No king capture (1.4.1).
+     - The self-check filter (3.9.2), using `inCheck` (3.9.1).
+     - Update of castling rights and en-passant target after each move.
+     - The relation `Legal : Position → Position → Prop`, or a move type with `apply`. Note that 3.10.1 defines "legal".
+
+     Prefer a decidable, computable move generator `legalMoves : Position → List Position`, with a theorem relating it to the `Prop` relation. A computable generator makes later checks possible.
+2. **Prose bridge `docs/RULES_KERNEL.md`.** A table with one row per Article sub-clause of 1.4.1, 2.x, 3.1–3.10, giving:
+   - the verbatim FIDE text;
+   - the Lean declaration or clause that encodes it;
+   - any interpretation choice. A1 ("adjoining") is one example; the en-passant timing in 3.7.3.2 and promotion as "part of the same move" are others.
+
+   State clearly that **this table is the single trusted FIDE→Lean bridge** for every theorem stated over the kernel, and that it needs an independent human review. Leave a sign-off line for the reviewer.
+3. **Sanity theorems** (in `Rules/` or `Checks/`):
+   - the initial position is well formed: 32 pieces, one king per colour, White to move, all castling rights, no en-passant target;
+   - after any legal move, the mover is not in check;
+   - the initial position has exactly 20 legal moves, preferably via the computable generator plus its correctness theorem;
+   - one example each, proved, of en passant, promotion, castling, and illegal castling through check.
+4. **Independent cross-check.** Write `scripts/perft.py`, a move generator written independently of the Lean code from the same FIDE text. Count perft(1..3) = 20, 400, 8,902 from the initial position. If feasible, run the Lean generator to the same depth (via `#eval` in a `Checks/` file, labelled as evaluation, not proof) and compare. Add a unit test for depth ≤ 2, kept fast.
+5. **Audit `audits/EC-C004_K1.md`** — a hostile review of the encoding:
+   - castling edge cases: rights, attacked squares, and pieces between;
+   - en passant: only immediately after the double step, and never when it exposes the king;
+   - promotion choices;
+   - pins and discovered check;
+   - the king never captured;
+   - the non-vacuity of `Legal`.
+
+   Record attempted falsifications and their outcomes.
 
 ## Closeout
-Write `sessions/S006_FREEZE_EC-T0002.md` and add a `sessions/SESSION_LEDGER.md` row. Record:
-- the checks that were actually run;
-- the base SHA and the proof SHA;
-- the CI evidence;
-- the ledger effect (+1, giving 2 frozen theorems).
+Write `sessions/S007_KERNEL_K1.md` and add a `sessions/SESSION_LEDGER.md` row, recording:
+- the changes;
+- the checks that were actually run, with verbatim outputs;
+- the base SHA and result SHA;
+- the frozen-module hashes, unchanged;
+- CI evidence, if observed;
+- the status of EC-C004 (still `PROPOSED`);
+- the ledger effect (none).
 
-Install **S007** in `NEXT_SESSION.md` and include it **in full** in the closeout. Then commit, push and merge to `main`.
+Install **S008** in full in `NEXT_SESSION.md` and in the closeout:
 
-### S007 specification (expand into the full prompt)
-**S007 — Rules kernel K1: general position and Article 3 move model (Gate L + Lean definitions).**
-- **New modules** (KK.lean and KBK.lean are frozen and must not be edited):
-  - `formal/EndgameChess/Rules/Board.lean`: squares, colours, piece types. It may re-export `EndgameChess.KK.Square`/`Colour`, or define its own and prove the two equivalent.
-  - `formal/EndgameChess/Rules/Position.lean`: a piece placement as a partial map from square to (colour, type), plus side to move, castling rights and an en-passant target.
-  - `formal/EndgameChess/Rules/Moves.lean`: a legal-move relation written clause by clause from FIDE 2023 Articles 3.1–3.10:
-    - pseudo-moves for each piece (3.2–3.8), with obstruction for sliding pieces (3.5);
-    - pawn single and double advance, diagonal capture, en passant (3.7.3) and promotion (3.7.5);
-    - castling with all of the 3.8.2 conditions;
-    - the self-check filter (3.9.2);
-    - attack defined via 3.1.2 and 3.1.3.
+> **S008 — K2, agreement:** define embeddings `KKState → Position` and `KBKState → Position`, plus the inverse on positions with that material. Prove that on K vs K positions the kernel `Legal` corresponds exactly to `KK.LegalKK`, in both directions. Prove that on K+B vs K / K vs K positions it corresponds exactly to `KBK.Step`, including the capture branch. Derive `KK.Dead` ⇔ kernel-dead and `KBK.Dead` ⇔ kernel-dead on those classes. This closes **G1**.
 
-  Comment each clause with its Article number, quoting the rule text verbatim (retrieved from https://handbook.fide.com/chapter/E012023).
-- **Prose spec** `docs/RULES_KERNEL.md`: a table mapping each Article sub-clause to the Lean clause that encodes it. This table is the single trusted bridge from FIDE to Lean, and is the place for a human second reader to review.
-- **Sanity theorems** (no chess claims yet):
-  - the initial position (Art. 2) is well formed;
-  - White has exactly 20 legal moves from it, proved by kernel `decide` only if it is fast; otherwise by explicit enumeration with a proof;
-  - both kings are never in check after a legal move.
-- **Independent cross-check:** a Python perft-style count from the initial position to depth 3, written independently of the Lean code. The known perft values (20, 400, 8902) are public mathematics, not tablebase data; cite them and compare.
-- **Do not prove the agreement theorems yet** (that is S008). Candidate EC-C004 stays `PROPOSED`.
+Also outline S009 as below. If K1 is incomplete, install a targeted remedial S007 instead.
 
-**Later sessions (described in the S007 prompt's closeout, not executed):**
-- **S008 — K2, agreement.** Prove that on K-vs-K positions the kernel relation is exactly `KK.LegalKK` (via embeddings both ways), and that on K+B vs K / K vs K positions it is exactly `KBK.Step`. **This closes G1** for both theorems.
-- **S009 — K3, reachability and rules.**
-  - Define `Arisen` as reachable from the initial position by kernel-legal moves.
-  - Prove that every kernel-legal move producing K vs K or K+B vs K material yields `Admissible` / `LKBK`, whatever the predecessor. **This closes G2.**
-  - Define `DeadPosition` over the kernel. Encode Art. 5.2.2 as an explicit named definition `Rules.Outcome` (*dead ⇒ drawn immediately*), clearly labelled as a *rule encoding, not a theorem*, and derive the draw corollaries. **This makes G3 explicit.**
-  - Then issue `v2.md` manifests for EC-T0001 and EC-T0002, with superseding ledger rows per the protocol, citing the kernel commits. The v1 records stay unchanged.
-- **After S009:** EC-C003 (K+N vs K), Gate L then Lean, stated directly over the kernel.
+> **S009 — K3, reachability and rules:**
+> - Define `Arisen` as reachability from the initial position under `Legal`.
+> - Prove that every `Legal` move producing K vs K or K+B vs K material yields `Admissible` / `LKBK`, whatever the predecessor. This closes **G2**.
+> - Define `Rules.Outcome` encoding Art. 5.2.2 (dead ⇒ drawn immediately) as a *named rule definition, not a theorem*, and derive the draw corollaries. This makes **G3** explicit.
+> - Issue `v2.md` manifests for EC-T0001 and EC-T0002 with superseding ledger rows, keeping v1.
+>
+> After that: EC-C003 (K+N vs K), built over the kernel.
+
+Then commit, push and merge to `main`.
