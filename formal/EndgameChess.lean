@@ -7,3 +7,6 @@ import EndgameChess.Rules.Sanity
 import EndgameChess.Rules.Lemmas
 import EndgameChess.Rules.AgreeKK
 import EndgameChess.Rules.AgreeKBK
+import EndgameChess.Rules.Flags
+import EndgameChess.Rules.Reach
+import EndgameChess.Rules.Outcome

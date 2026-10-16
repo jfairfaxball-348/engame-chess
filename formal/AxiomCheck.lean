@@ -83,3 +83,27 @@ import EndgameChess
 #check @EndgameChess.Rules.kernel_dead_KBK
 #print axioms EndgameChess.Rules.kernel_kk_has_move
 #print axioms EndgameChess.Rules.kernel_kbk_check_has_move
+
+/-! EC-C004 rules kernel K3 (S009): flags, reachability, Art. 5.2.2 rule -/
+#print axioms EndgameChess.Rules.deadK_normFlags_iff
+#print axioms EndgameChess.Rules.legal_normFlags_iff
+#print axioms EndgameChess.Rules.isPseudo_normFlags
+#print axioms EndgameChess.Rules.play_nrp
+#print axioms EndgameChess.Rules.nrp_of_legal
+#print axioms EndgameChess.Rules.dead_of_legal_into_KK
+#print axioms EndgameChess.Rules.dead_of_legal_into_KBK
+#print axioms EndgameChess.Rules.arisen_KK_dead
+#print axioms EndgameChess.Rules.arisen_KBK_dead
+#print axioms EndgameChess.Rules.initial_not_KK
+#print axioms EndgameChess.Rules.initial_not_KBK
+#print axioms EndgameChess.Rules.capture_into_KK_example
+#print axioms EndgameChess.Rules.kk_drawn_by_rule
+#print axioms EndgameChess.Rules.kbk_drawn_by_rule
+
+#check @EndgameChess.Rules.dead_of_legal_into_KK
+#check @EndgameChess.Rules.dead_of_legal_into_KBK
+#check @EndgameChess.Rules.arisen_KK_dead
+#check @EndgameChess.Rules.arisen_KBK_dead
+#print EndgameChess.Rules.Rule5_2_2
+#check @EndgameChess.Rules.kk_drawn_by_rule
+#check @EndgameChess.Rules.kbk_drawn_by_rule
