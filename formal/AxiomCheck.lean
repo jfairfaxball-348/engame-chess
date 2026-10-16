@@ -58,3 +58,28 @@ import EndgameChess
 #print axioms EndgameChess.Rules.king_never_captured
 #print axioms EndgameChess.Rules.castling_queenside_b1_attacked_legal
 #print axioms EndgameChess.Rules.castling_out_of_check_illegal
+
+/-! EC-C004 rules kernel K2 (S008): agreement with the frozen models -/
+#print axioms EndgameChess.Rules.dead_transfer
+#print axioms EndgameChess.Rules.legal_ofKK_iff
+#print axioms EndgameChess.Rules.legalKK_iff_kernel
+#print axioms EndgameChess.Rules.deadK_ofKK_iff
+#print axioms EndgameChess.Rules.kernel_dead_KK
+#print axioms EndgameChess.Rules.isBetween_iff_between
+#print axioms EndgameChess.Rules.bishop_kbk
+#print axioms EndgameChess.Rules.attacked_kbk
+#print axioms EndgameChess.Rules.inCheck_weak
+#print axioms EndgameChess.Rules.inCheck_strong
+#print axioms EndgameChess.Rules.legal_ofKBK_iff
+#print axioms EndgameChess.Rules.deadK_embPos_iff
+#print axioms EndgameChess.Rules.deadK_ofKBK_iff
+#print axioms EndgameChess.Rules.kernel_dead_KBK
+
+#check @EndgameChess.Rules.legal_ofKK_iff
+#check @EndgameChess.Rules.legal_ofKBK_iff
+#check @EndgameChess.Rules.deadK_ofKK_iff
+#check @EndgameChess.Rules.deadK_ofKBK_iff
+#check @EndgameChess.Rules.kernel_dead_KK
+#check @EndgameChess.Rules.kernel_dead_KBK
+#print axioms EndgameChess.Rules.kernel_kk_has_move
+#print axioms EndgameChess.Rules.kernel_kbk_check_has_move

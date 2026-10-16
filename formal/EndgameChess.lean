@@ -4,3 +4,6 @@ import EndgameChess.Rules.Board
 import EndgameChess.Rules.Position
 import EndgameChess.Rules.Moves
 import EndgameChess.Rules.Sanity
+import EndgameChess.Rules.Lemmas
+import EndgameChess.Rules.AgreeKK
+import EndgameChess.Rules.AgreeKBK
