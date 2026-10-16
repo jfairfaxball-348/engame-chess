@@ -1,0 +1,7 @@
+name = "endgame_chess"
+version = "0.1.0"
+defaultTargets = ["EndgameChess"]
+
+# Core Lean only: no mathlib or other dependencies (smaller trusted base).
+[[lean_lib]]
+name = "EndgameChess"
