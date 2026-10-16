@@ -26,10 +26,21 @@ Required checks at the referenced commit:
 
 Set `FORMAL_VERIFIED` only once evidence exists.
 
+### Re-checking obligations (incremental verification)
+The library will hold many small proofs. They are **not** all re-verified on every commit.
+- **One module per theorem** (`formal/EndgameChess/<Topic>.lean`). Definitions shared by several theorems live in their own modules and are imported.
+- **Lean CI** (`.github/workflows/lean-build.yml`) runs only when `formal/**` changes. It restores the cached `formal/.lake`, so `lake build` rebuilds only the changed modules and the modules that import them.
+- **What must be re-checked:**
+  1. a new or edited proof module;
+  2. every module downstream of a changed shared definition, frozen ones included, because the statement's meaning may have changed;
+  3. everything, after a toolchain or dependency bump (the cache key changes).
+  Nothing else is an obligation.
+- **The full clean-checkout verification above** is a one-off at Gate F and again at Gate Z, for the theorem being certified only. It is not a per-commit duty for the rest of the library.
+
 ## Gate Z: freeze
 Create an immutable theorem statement/proof manifest under `theorems/frozen/<ID>/` which records: ID, theorem statement and scope, rule edition, local proof audit, Lean source path/declaration, toolchain/dependency revisions, full verified **proof-source commit SHA**, axiom-check findings, clean build evidence, date and version. Then add a single `FROZEN` row to `theorems/LEDGER.csv`. Reference the already-created verified proof-source commit, avoiding a circular reference to the commit containing its own ledger row.
 
-Frozen proofs are not quietly edited or reclassified. If a defect is discovered, append a conspicuous correction/superseding record and update ledger history via an additional auditable commit. Git history is the permanent record; an optional immutable Git tag can additionally anchor each release.
+A frozen theorem's Lean module is **never edited**. A correction is a new module or declaration plus a superseding manifest version. Shared modules a frozen theorem imports may change only if CI shows the frozen module still builds, with the same statement and the same axioms. Frozen proofs are not quietly edited or reclassified. If a defect is discovered, append a conspicuous correction/superseding record and update ledger history via an additional auditable commit. Git history is the permanent record; an optional immutable Git tag can additionally anchor each release.
 
 ## Permitted status transitions
 `PROPOSED → LOCAL_VERIFIED → FORMAL_VERIFIED → FROZEN`. A falsified candidate becomes `REJECTED` *in the candidate register only*, with a concrete counterexample. A blocked claim remains in its current stage. No 'all clear' or theorem count until the actual checks have run.

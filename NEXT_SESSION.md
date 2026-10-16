@@ -1,30 +1,50 @@
-# NEXT SESSION — S003: Freeze EC-C001 as EC-T0001 (Gate Z)
+# NEXT SESSION — S004: K+B vs K is a dead position (EC-C002, Gate L only)
 
-**Owner instruction:** Execute this S003 session when the owner says "run next session" in the context of this repository or pastes/links this prompt. Follow `AGENTS.md` first: fetch, start from the latest `main`, and merge any unmerged session branch. EC-C001 is `FORMAL_VERIFIED` (S002). Do not treat this prompt as evidence that a freeze has happened.
+**Owner instruction:** Execute this S004 session when the owner says "run next session" in the context of this repository or pastes/links this prompt. Follow `AGENTS.md` first: fetch, start from the latest `main`, merge any unmerged session branch, and end by committing, pushing and merging to `main`. EC-C002 is `PROPOSED`. Do not treat this prompt as evidence it is solved.
 
 ## Objective
-Freeze EC-C001 as the first ledger theorem **EC-T0001**, exactly per `docs/PROOF_PROTOCOL.md` Gate Z. Cite the S002 verified proof-source commit **`342be5aefe16a9c5c882aab4f118a21472235fc3`**. Do not create a self-referential SHA. Do not change the mathematics or the Lean source.
+Produce a complete, locally verified proof that every game-arisen position with White K+B versus Black K (and, by colour symmetry, Black K+B versus White K) is dead under FIDE 2023 Article 5.2.2. Stop at Gate L: no Lean in this session, no ledger change.
+
+## Non-negotiable scope
+- 8×8 orthodox chess; material exactly {K, B} versus {K}; FIDE 2023, https://handbook.fide.com/chapter/E012023 (Arts. 1.2, 1.4.1, 3.1–3.10, 3.5 bishop, 5.2.2).
+- No tablebases, no engine oracles, no tablebase-derived evidence.
+- **Checks are possible here.** The bishop can check the lone king. Do *not* reuse EC-T0001's "no check" argument. Mate must be excluded by the geometry of the lone king's escape squares and of what a bishop and king can cover, not by the absence of check.
+- Distinguish no-possible-mate (`Dead`) from no-forced-mate. Distinguish `Arisen` from local admissibility. Note that the bishop can also be the *mated* side's opponent only; the lone king can never mate.
 
 ## Required work
-1. **Re-verify, don't trust.** In a fresh clone checked out at `342be5aefe16a9c5c882aab4f118a21472235fc3`, with toolchain `leanprover/lean4:v4.34.1` (via `elan`): run `cd formal && lake build`, `lake env lean AxiomCheck.lean`, and the word-bounded grep for `sorry|admit|axiom|unsafe|native_decide|implemented_by|extern` over `formal/**/*.lean` excluding `.lake`. Expect a successful build, `[propext, Classical.choice, Quot.sound]` for every declaration, and no grep matches. Record outputs verbatim. If anything differs, **stop**: no freeze, keep `FORMAL_VERIFIED`, install a remedial prompt.
-2. **Drift check.** `git diff 342be5aefe16a9c5c882aab4f118a21472235fc3 HEAD -- formal/` must be empty, or contain only documentation changes, each of which you justify. If the Lean source changed, re-run Gate F on the new commit instead of freezing.
-3. **CI evidence.** Look up the GitHub Actions results for `Lean build (EC formal proofs)` and `Ledger structural checks` on the proof commit or on `main`, using the GitHub tools. Record each run's ID, URL and conclusion if observed. Otherwise write "not observed". Never infer a pass from the workflow file.
-4. **Manifest** `theorems/frozen/EC-T0001/v1.md`, containing:
-   - ID `EC-T0001`, source candidate EC-C001, title;
-   - exact prose statement and scope (8×8, two kings only, side to move, FIDE 2023 https://handbook.fide.com/chapter/E012023, Arts. 1.2, 1.4.1, 3.1–3.10, 5.2.2);
-   - the Lean statement copied verbatim from `#check @EndgameChess.KK.dead_of_admissible`, plus the arisen form `dead_of_last_move_legal`;
-   - local proof and audit paths;
-   - Lean file and declaration, toolchain and Lake versions, `lake-manifest.json` (no packages);
-   - the full proof-source SHA;
-   - axiom output and clean-build evidence, with the build log saved under `theorems/frozen/EC-T0001/`;
-   - verification UTC timestamp and date;
-   - **explicit trust boundary**: A1, prose L3a, general L0 (capture predecessors) and the 5.2.2 rule consequence are prose, not Lean;
-   - same-session audits noted;
-   - statement that this is a classical result with no novelty claim.
-5. **Ledger row.** Append exactly one row to `theorems/LEDGER.csv` with `status=FROZEN`, `theorem_id=EC-T0001`, `proof_commit_sha=342be5aefe16a9c5c882aab4f118a21472235fc3`, `lean_toolchain=leanprover/lean4:v4.34.1`, `lean_declaration=EndgameChess.KK.dead_of_admissible`, `rule_edition` naming FIDE 2023, and `manifest_path`. Quote CSV fields correctly. Then run `python3 scripts/validate_ledger.py` (expect `1 frozen theorem(s)`) and `python3 -m unittest discover -s tests -v`.
-6. **Status updates.** In `research/CANDIDATES.md`, record that EC-C001 is frozen as EC-T0001 (candidate statuses stay within the documented set; add a note and link). Update `theorems/README.md` frozen count to 1 and the README status. Optionally add an annotated git tag `EC-T0001-v1` on the freeze commit; push it only if allowed.
+1. **Model** (extend `docs/FOUNDATIONS.md` without editing the frozen K-vs-K layer's meaning):
+   - bishop attack with obstruction: diagonal rays stopped by the first occupied square, where the kings are the only possible blockers;
+   - KBK states: squares of WK, WB, BK, plus the side to move;
+   - legal moves for each side;
+   - captures: the lone king may capture an unprotected bishop.
+2. **Material class closed under legal moves:** KBK ∪ KK. After a bishop capture the position is K vs K, so use **EC-T0001** (`theorems/frozen/EC-T0001/v1.md`) as a cited lemma for that branch rather than re-proving it.
+3. **Core lemma:** no KBK position (legal: side not to move is not in check) is checkmate of the lone king.
+   - In any check by the bishop, the lone king has a flight square, or can capture the bishop, or the position is illegal.
+   - Analyse corners and edges explicitly: the lone king in a corner, a bishop check along the long diagonal, and the White king covering squares.
+   - Use colour-complex arguments: a bishop controls only squares of one colour, and adjacent squares along a rank or file alternate colour.
+4. **Invariance** under every legal step, including the capture branch, then path induction over finite series, giving `Dead`.
+5. **Hostile audit** `audits/EC-C002_KBK.md`:
+   - board edges and corners;
+   - king obstruction of bishop rays;
+   - discovered-check impossibility;
+   - illegal positions where both kings are in check;
+   - the capture branch;
+   - zero-length paths;
+   - both sides to move.
+6. **Diagnostic** `scripts/kbk_diagnostic.py`, written independently from the movement rules (supplementary only), with a unit test. Enumerate all legal KBK placements with both sides to move and confirm 0 checkmates, plus closure into KBK ∪ KK.
+7. Write `proofs/EC-C002_KBK.md`, self-contained. Set EC-C002 to `LOCAL_VERIFIED` only if no gap survives; otherwise keep `PROPOSED` and state the gap precisely.
+8. `theorems/LEDGER.csv` unchanged.
+
+## Lean forward note (for S005, not now)
+One module per theorem. A KBK formalisation goes in a new module (e.g. `formal/EndgameChess/KBK.lean`). It may import `EndgameChess.KK`, but **must not edit it** (EC-T0001 is frozen). Shared board definitions, if needed, go in a new module.
 
 ## Closeout
-- Write `sessions/S003_FREEZE_EC-T0001.md` and a `sessions/SESSION_LEDGER.md` row. Include: checks actually run, base SHA, proof SHA, freeze commit (described, not self-cited), CI evidence or "not observed", and the ledger effect (+1 frozen).
-- Install the next prompt in `NEXT_SESSION.md` and include it **in full** in the closeout. Recommended next prompt: **S004 = EC-C002 (K+B vs K dead position), Gate L only**. Model bishop sliding attacks with obstruction by the kings. Define a material class closed under legal moves (the lone king may capture the bishop, leaving K vs K, which connects to EC-T0001). Prove that no reachable checkmate exists for either colour. Do *not* assume checks are impossible: a bishop can give check. Mate is excluded by the geometry of escape squares, not by the absence of check. Hostile audit, diagnostic script, no tablebases.
-- Then commit, push, and merge to `main` per `AGENTS.md`.
+Write `sessions/S004_KBK_PROOF.md` and add a `sessions/SESSION_LEDGER.md` row. Record:
+- changes;
+- what was proved, tested and conjectured, as separate lists;
+- checks actually run;
+- base and result SHAs;
+- candidate status;
+- ledger effect (none).
+
+Install the next prompt in full: S005 = Lean formalisation of EC-C002 if Gate L passes, otherwise a targeted remedial S004. Then commit, push and merge to `main`.
