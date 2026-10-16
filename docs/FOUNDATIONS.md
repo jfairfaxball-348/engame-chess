@@ -1,38 +1,43 @@
-# Mathematical foundations (model specification, not yet formal proof)
+# Mathematical foundations (model specification)
 
-The **chess laws** and our **mathematical abstraction** are different layers. First specify legal game states and transitions, then deduce consequences. Working normative reference: FIDE Laws of Chess effective 1 January 2023, https://handbook.fide.com/chapter/E012023, especially Articles 1.4–1.5, 2.1, 3.8–3.10 and 5.2.2. Record any later version change explicitly.
+The **chess laws** and our **mathematical abstraction** are different layers. First specify legal game states and transitions, then deduce consequences. Working normative reference: FIDE Laws of Chess, approved 07/08/2022, applied from 1 January 2023, https://handbook.fide.com/chapter/E012023. Articles used for the two-king layer: 1.2, 1.4, 1.4.1, 1.5, 3.1–3.1.3, 3.8–3.8.2, 3.9.1–3.9.2, 3.10.1–3.10.3, 5.1.1, 5.2.1, 5.2.2 (verbatim quotations in [proofs/EC-C001_KK.md](../proofs/EC-C001_KK.md)). Record any later version change explicitly.
+
+*Revision S001:* repaired the two-king layer (side-to-move in the step relation, derivation of the move set from Articles 3.1–3.9 instead of stipulation, explicit `Arisen` vs `Admissible`, explicit checkmate/stalemate predicates, counterfactual move graph).
 
 ## Board and metric
-Define `F = {0,1,2,3,4,5,6,7}`; squares `S = F × F`. For `p=(x,y)` and `q=(u,v)`, let
+`F = {0,…,7}`; squares `S = F × F` (file, rank; `(0,0)` = a1). For `p=(x,y)`, `q=(u,v)`:
 
-`d∞(p,q) = max(|x-u|, |y-v|)`  (Chebyshev distance).
+`d∞(p,q) = max(|x-u|, |y-v|)` (Chebyshev distance; a metric on `S`).
 
-A king attacks a distinct square `q` precisely when `d∞(p,q)=1`. This includes horizontal, vertical and diagonal neighbours, truncated automatically by the board boundary. It is not a legal *move* merely because it is attacked.
+`N(p) = { q ∈ S : d∞(p,q) = 1 }` — the on-board *adjoining squares* of `p` (3 at a corner, 5 on a non-corner edge, 8 inside). Modelling assumption **A1**: FIDE 3.8.1 "adjoining square" means exactly `N(p)` (orthogonal and diagonal neighbours), as the Article 3.8 diagrams show.
 
 ## Two-king core state
-A core configuration is `(w,b,t)` with White king at `w∈S`, Black king at `b∈S` and side to move `t∈{W,B}`. Define **KK-admissible** by `d∞(w,b) ≥ 2`. Thus the kings occupy distinct non-adjacent squares; no other pieces exist. This is a local legality condition, **not** a claim that every such triple is reachable from the standard 32-piece starting position.
+A *KK configuration* is `p = (w,b,t)` with White king on `w ∈ S`, Black king on `b ∈ S`, side to move `t ∈ {W,B}`, and no other pieces. Castling rights and en-passant rights are irrelevant (no rooks, no pawns).
 
-A *core legal king move* changes exactly the moving king's square by distance one, stays on board, does not land on the other king, and leaves both kings at distance at least two. Then the turn swaps. Define `StepKK(p,q)` by these conditions. A rule-complete chess game additionally stops at dead positions; for a counterfactual reachability theorem we first study finite paths of the core transition relation **without** applying the dead-position stopping rule.
+- **`Admissible(p)`** :⇔ `d∞(w,b) ≥ 2`. A purely local condition.
+- **`Arisen(p)`** :⇔ `p` (as a position with only two kings) is reached from the standard initial position by a finite series of FIDE-legal moves. `Arisen ⇒ Admissible` is a lemma (L0 of the proof), not a definition; `Admissible ⇏ Arisen` is not claimed either way and is not needed.
 
-## Attack, check, mate, death and draw
-- `Attacks(c,s,p)`: a piece of colour `c` attacks square `s` in state `p`, defined by its piece-type movement and occupancy rules.
-- `InCheck(c,p)`: king of colour `c` is attacked by an opposing piece.
-- `Checkmate(c,p)`: `InCheck(c,p)` and colour `c` has no legal move (with correct side-to-move conditions for an actual terminal checkmate).
-- `Reachable*(p,q)`: zero or more core legal transitions. No unquantified 'eventually' or assumed opponent cooperation.
-- `Dead(p)`: for neither colour does any finite series of legal core moves from `p` reach a position checkmating that colour. The future quantifier is **existential over any legal move choices**; proving dead requires ruling out *every* possible sequence. This is stronger than 'neither side can force checkmate'.
-- `RuleDraw(p)`: a state that has arisen in a legal game is immediately drawn under FIDE Article 5.2.2 once `Dead(p)` holds.
+Write `K_c(p)` for the square of the colour-`c` king and `c̄` for the opposite colour.
 
-A state can be no-force-mate yet not dead (e.g. some larger-material endings). Clock, resignation, agreements and other administrative outcomes are separate rule layers.
+## Attack, check, legal move (derived from FIDE 3.1–3.9)
+- **Attack.** By 3.1.2–3.1.3 a king on `s` attacks square `q` iff it could capture on `q` by Article 3.8, ignoring self-check. Castling (3.8.2) never captures, so a king on `s` attacks `q` iff `q ∈ N(s)`, i.e. iff `d∞(s,q) = 1`.
+- **`InCheck(c,p)`** :⇔ the colour-`c` king is attacked by an opposing piece (3.9.1). In a KK configuration the only opposing piece is the other king, so `InCheck(c,p) ⇔ d∞(w,b) = 1`.
+- **`LegalKK(p,q)`**, for `p=(w,b,t)`: the side-to-move `t` (1.2) moves its king to `s ∈ N(K_t(p))` (3.8.1; castling 3.8.2 is impossible without a rook) with `s ≠ K_t̄(p)` (capturing the king is forbidden, 1.4.1) and such that afterwards the colour-`t` king is not attacked (3.9.2), i.e. `d∞(s, K_t̄(p)) ≥ 2`; `q` is `p` with `K_t` replaced by `s` and the turn set to `t̄`. By 3.10.1 these are *all* legal moves in a KK configuration.
+- **`Checkmate(c,p)`** :⇔ `t = c`, `InCheck(c,p)`, and there is no `q` with `LegalKK(p,q)` (1.4, 5.1.1). A player *checkmates the opponent* by reaching such a `p` with `c` the opponent.
+- **`Stalemate(p)`** :⇔ `¬InCheck(t,p)` and no legal move (5.2.1). Not a checkmate.
+- **`Reach(p,q)`**: the reflexive–transitive closure of `LegalKK` — a finite sequence `p = p₀, p₁, …, pₙ = q` (`n ≥ 0`) with `LegalKK(pᵢ, pᵢ₊₁)`. Both players' moves are chosen arbitrarily (cooperation allowed); no 'eventually', no strategy.
 
-## Candidate derivation for K vs K
-1. A KK-admissible position has `d∞(w,b)≥2`.
-2. Hence neither king attacks the other; neither is in check.
-3. Every core legal move preserves the non-adjacent-king condition and the two-king material invariant.
-4. By induction over finite paths, every reachable position is again KK-admissible and neither king is in check.
-5. Since check is necessary for checkmate, no reachable checkmate exists; `Dead(p)`.
-6. If such a configuration arises under the relevant FIDE rules, Article 5.2.2 makes the game an immediate draw.
+## Counterfactual move graph
+FIDE 5.2.2 ends the game the moment a dead position arises, so the series of moves it quantifies over is never actually played. Article 3.10.1 defines legality purely by Articles 3.1–3.9 (position-local conditions), so the move relation is well defined at a position whether or not the game has terminated. `Reach` is built from `LegalKK` **without** any stopping rule (no termination at checkmate, stalemate, dead position, repetition or move counts). This is the graph over which 5.2.2's "any series of legal moves" is read.
 
-**Proof obligation:** justify *every* link from the definitions; establish that the path relation and checkmate predicate model the same notion of legal continuation. Only after hostile local verification may these be labelled proved. See [research/KK_DRAFT.md](../research/KK_DRAFT.md).
+## Dead position and draw
+- **`Dead(p)`** :⇔ there is **no** `q` with `Reach(p,q)` and `Checkmate(W,q) ∨ Checkmate(B,q)`. The quantifier is ∀ over every finite path (equivalently ¬∃ path to mate). This is strictly stronger than "neither side can *force* mate".
+- **`RuleDraw(p)`**: if `Arisen(p)` and `Dead(p)`, the game ends drawn immediately by Article 5.2.2 (see also 1.5).
+
+Distinct predicates, never conflated: *no possible mate* (`Dead`), *no forced mate*, *drawn by rule*. Repetition, the 50/75-move rules, agreement, resignation (5.1.2) and flag-fall (6.9) are separate rule layers not used in the KK theorem.
+
+## K vs K derivation (proved in S001)
+See [proofs/EC-C001_KK.md](../proofs/EC-C001_KK.md) for the full proof (L0–L6) and [audits/EC-C001_KK.md](../audits/EC-C001_KK.md) for the hostile audit. Superseded draft: [research/KK_DRAFT.md](../research/KK_DRAFT.md).
 
 ## Planned extension points
-For bishops, knights, rooks and queens, define separate attack relations with obstruction for sliding pieces. Add full position typing, material invariants, side-to-move, piece captures, king safety and terminal states. For pawns, add directional movement, promotions, en passant, move-history fields and time-based drawing rules only as required by specific claims.
+For bishops, knights, rooks and queens, define separate attack relations with obstruction for sliding pieces. Add full position typing, material invariants, side-to-move, piece captures, king safety and terminal states. For pawns, add directional movement, promotions, en passant, move-history fields and time-based drawing rules only as required by specific claims. Note for EC-C002/3: with a third piece present, captures change material, so the invariant must be stated over a material *class* that is closed under legal moves, not assumed fixed.

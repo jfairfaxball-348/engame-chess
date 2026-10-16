@@ -29,7 +29,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - [Methods and non-goals](docs/METHODS.md)
 - [Incremental research ladder](docs/ROADMAP.md)
 - [Candidate register](research/CANDIDATES.md)
-- [First mathematical proof draft, **unverified**](research/KK_DRAFT.md)
+- [EC-C001 K-vs-K local proof (`LOCAL_VERIFIED`, not Lean-verified)](proofs/EC-C001_KK.md) and its [audit](audits/EC-C001_KK.md)
+- [Superseded S000 draft](research/KK_DRAFT.md)
 - [Authoritative frozen-theorem ledger](theorems/LEDGER.csv)
 - [Session record](sessions/SESSION_LEDGER.md)
 - [Installed next-session prompt](NEXT_SESSION.md)
@@ -37,7 +38,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**Bootstrap only.** No theorem has yet passed the complete local-proof, Lean and freeze gates. The K-vs-K argument is a draft awaiting an explicit hostile audit; the ledger is empty on purpose.
+**After S001.** EC-C001 (K vs K is dead; FIDE 5.2.2 draw) has passed Gate L (`LOCAL_VERIFIED`): a self-contained proof and a hostile audit exist. It has **not** been formalised in Lean and is **not** frozen; the ledger is still empty on purpose. Next: S002, Lean 4 formalisation.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

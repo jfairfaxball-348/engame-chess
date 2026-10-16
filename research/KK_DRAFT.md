@@ -1,6 +1,8 @@
 # EC-C001 — King versus king is a dead position
 
-**Status:** PROPOSED / draft argument, *not yet audited or Lean-verified*.  
+> **Superseded (S001, 2026-10-16):** the audited proof is [proofs/EC-C001_KK.md](../proofs/EC-C001_KK.md) with audit [audits/EC-C001_KK.md](../audits/EC-C001_KK.md). This draft is kept unchanged below as the historical S000 record; note it reads the 2023 Art. 3.8 as forbidding moves to attacked squares, which the 2023 text does not say (the prohibition comes from 3.9.2).
+
+**Status (historical, S000):** PROPOSED / draft argument, *not yet audited or Lean-verified*.  
 **Rules:** FIDE 2023, Articles 1.4–1.5, 3.8–3.10, 5.2.2. https://handbook.fide.com/chapter/E012023  
 **Scope:** Ordinary 8×8 chess, exactly one white king and one black king, no other pieces, and a position that has arisen legally in a game.
 
