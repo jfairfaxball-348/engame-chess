@@ -38,13 +38,12 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S010.** Four frozen theorems.
+**After S013.** Five frozen theorems.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md), whose independent human review is still open.
-- S011: K+N vs K (EC-C003) proved on paper over the kernel (Gate L, `LOCAL_VERIFIED`).
-- S012: EC-C003 formalised in Lean over the kernel (`Rules/KNK.lean`, `FORMAL_VERIFIED`).
-- Next: S013, freeze EC-C003 as EC-T0005 (Gate Z).
+- [EC-T0005](theorems/frozen/EC-T0005/v1.md) (K+N vs K) was stated over the kernel from the start: paper proof S011, Lean S012 (`Rules/KNK.lean`), frozen S013.
+- Next: S014, rung 4 (K+R vs K) begins with *possible* mate: which K+R vs K positions are dead? (Gate P + L.)
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
