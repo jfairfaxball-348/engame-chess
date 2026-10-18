@@ -1,7 +1,10 @@
 # Roadmap
 
-## North star: proof-based tablebase equivalence
-The overarching objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know, **by proof and without lookup**, what an endgame tablebase knows, one material class at a time. For a class this means four layers, in increasing strength:
+## Distant horizon: ultra-weakly solve chess
+**Ultimate ambition (owner, 2026-10-18; unproved):** establish by a rigorous mathematical argument, ideally formalised in Lean, that standard chess from its initial position is a theoretical **draw**: \(V(S_0)=0\), under a complete, explicitly fixed rules model. This is an *ultra-weak* target: prove the position's value, not a playable perfect-move strategy or a "cheat code". The result is not known and must not be inferred from endgame progress. Whether the methods below can generalise as far as the initial position is an open research question.
+
+## Major operational milestone (unchanged): proof-based seven-piece tablebase parity
+The existing objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know, **by proof and without lookup**, what the complete up-to-seven-piece Syzygy tablebases know, one material class at a time. For a class this means four layers, in increasing strength. This is still the active roadmap; the numbered next-session prompt and near-term priorities are unchanged:
 
 | Layer | Question for every legal position of the class | Tablebase analogue |
 |---|---|---|

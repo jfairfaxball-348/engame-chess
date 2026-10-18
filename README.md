@@ -2,7 +2,9 @@
 
 A deliberately incremental research programme in **mathematical chess endgames**.
 
-**Overarching objective: proof-based tablebase equivalence.** For each endgame material class, the programme aims to prove mathematically, and formalise in Lean, everything an endgame tablebase such as Syzygy knows: the exact outcome of every legal position, and eventually its distance information. It does this through general theorems (invariants, strategies, characterisations, bounds), **never through lookup** of stored per-position results. See [docs/CHARTER.md](docs/CHARTER.md) and the coverage table in [docs/ROADMAP.md](docs/ROADMAP.md).
+**Ultimate ambition (not a proved claim): ultra-weakly solve chess as a draw.** The hoped-for discovery is a rigorous mathematical proof, ideally formalised in Lean, that the standard initial position of chess has game-theoretic value **draw** under a precisely specified, complete rules model. An *ultra-weak* solution would establish that neither side can force a win against optimal defence, **without needing to supply perfect moves or an executable playing strategy**. The purpose is to discover a mathematical truth, not to give players a move-by-move "cheat code". Chess is not currently proved to be drawn, and the project's endgame results do not establish this claim.
+
+**Major operational milestone (unchanged): proof-based parity with complete seven-piece Syzygy tablebases.** For each covered endgame material class, the programme aims to prove mathematically, and formalise in Lean, what the tables know: the exact outcome of every legal position, and eventually their distance information. It does this through general theorems (invariants, strategies, characterisations, bounds), **never through lookup** of stored per-position results. The incremental proof-and-freeze programme and the installed next session remain unchanged. See [docs/CHARTER.md](docs/CHARTER.md) and [docs/ROADMAP.md](docs/ROADMAP.md).
 
 The route is a growing corpus of narrowly stated, independently checked, **Lean 4-formalised theorems**, one small step at a time, beginning with **king versus king**.
 
