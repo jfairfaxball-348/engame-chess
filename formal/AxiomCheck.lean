@@ -146,3 +146,46 @@ import EndgameChess
 #check @EndgameChess.Rules.dead_of_succ_KK
 #check @EndgameChess.Rules.krk_dead_of_forced_capture
 #check @EndgameChess.Rules.krk_forced_capture_drawn_by_rule
+
+/-! EC-C008 Lean, part 1 (S021): infrastructure (Rules/KRKLive/Basic) -/
+#print axioms EndgameChess.Rules.lineGeom_iff
+#print axioms EndgameChess.Rules.isBetween_iff_onSeg
+#print axioms EndgameChess.Rules.pathClear_iff
+#print axioms EndgameChess.Rules.rook_attacks_krk
+#print axioms EndgameChess.Rules.attacked_krk
+#print axioms EndgameChess.Rules.inCheck_weak_krk
+#print axioms EndgameChess.Rules.inCheck_strong_krk
+#print axioms EndgameChess.Rules.play_board_simple
+#print axioms EndgameChess.Rules.legal_of_pseudo
+#print axioms EndgameChess.Rules.winM_of_step
+#print axioms EndgameChess.Rules.step_sound
+#print axioms EndgameChess.Rules.mate_sound
+#print axioms EndgameChess.Rules.chain_sound
+#print axioms EndgameChess.Rules.not_deadK_of_winM
+#print axioms EndgameChess.Rules.step_map
+#print axioms EndgameChess.Rules.mate_map
+#print axioms EndgameChess.Rules.winM_map
+#print axioms EndgameChess.Rules.winM_of_sym
+#print axioms EndgameChess.Rules.exists_sym_normal
+
+/-! EC-C008 Lean, part 1 (S021): end-game half (Rules/KRKLive/Endgame) -/
+#print axioms EndgameChess.Rules.tempo_step
+#print axioms EndgameChess.Rules.lone_step_region
+#print axioms EndgameChess.Rules.krk_lemmaM
+#print axioms EndgameChess.Rules.krk_lemmaE_lone
+#print axioms EndgameChess.Rules.krk_lemmaE
+#print axioms EndgameChess.Rules.Conn.symm
+#print axioms EndgameChess.Rules.Conn.trans
+#print axioms EndgameChess.Rules.rect_minus_box_conn
+#print axioms EndgameChess.Rules.krk_conn_region
+#print axioms EndgameChess.Rules.krk_lemmaW
+#print axioms EndgameChess.Rules.krk_lemmaS
+#print axioms EndgameChess.Rules.krk_settled_live
+#print axioms EndgameChess.Rules.krkM_mate_example
+#print axioms EndgameChess.Rules.krkM_example
+#print axioms EndgameChess.Rules.krkS_rank8_example
+#print axioms EndgameChess.Rules.krkS_g7_example
+
+#check @EndgameChess.Rules.not_deadK_of_winM
+#check @EndgameChess.Rules.krk_lemmaS
+#check @EndgameChess.Rules.krk_settled_live

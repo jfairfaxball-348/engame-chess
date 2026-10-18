@@ -12,3 +12,5 @@ import EndgameChess.Rules.Reach
 import EndgameChess.Rules.Outcome
 import EndgameChess.Rules.KNK
 import EndgameChess.Rules.KRK
+import EndgameChess.Rules.KRKLive.Basic
+import EndgameChess.Rules.KRKLive.Endgame
