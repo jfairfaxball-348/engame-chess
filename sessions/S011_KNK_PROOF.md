@@ -27,7 +27,7 @@ The prompt claimed a checking knight never attacks the king's diagonal neighbour
 - `python -m unittest discover -s tests`: 23 tests, OK, 55.8 s.
 - `python scripts/validate_ledger.py`: `LEDGER VALID: 4 frozen theorem(s) (structure only)`.
 - `lake build` (local, v4.34.1, from `formal/`): `Build completed successfully (15 jobs)`. Not an obligation (`formal/` unchanged); run to confirm the local toolchain.
-- CI: not observed. **Push blocked:** `git push` was refused (403) because the local GitHub login `jball348-svg` has no write access to `jfairfaxball-348/engame-chess`; the work is merged into local `main` only until the owner pushes.
+- CI: not observed. **Push:** the first attempt was refused (403) under the `gh` login `jball348-svg`. The repository's local git config now routes github.com credentials to Git Credential Manager (account `jfairfaxball-348`), and the S011 commit `3a44bdc` was pushed and fast-forwarded on `origin/main`.
 
 ## Status and ledger effect
 EC-C003: `PROPOSED → LOCAL_VERIFIED`. `theorems/LEDGER.csv` unchanged. Frozen theorems: **4**.
