@@ -27,7 +27,19 @@ A class counts as **tablebase-equivalent** in this programme only when L2 is pro
 1. **Rule model for L2/L4.** Syzygy's WDL distinguishes wins from "cursed wins" (wins that the 50-move rule turns into draws), and its DTZ counts moves to a zeroing move. The kernel omits the half-move clock and repetition (`RULES_KERNEL.md`, modelling choice 3). It needs a **clock layer** (Art. 9.3/9.6) before any L2-with-50-move or L4 claim.
 2. **Per-class theorems, at every layer, for every legal position.** Syzygy covers all material classes with up to 7 pieces: 5 three-piece classes and, by the usual counts, about 30 four-piece and about 110 five-piece classes, with hundreds more at 6–7. The K vs K base case is not a table.
 3. **A method that scales.** One bespoke paper proof plus one bespoke Lean proof per class will not reach 5–7 pieces. Needed: reusable theorems, such as dead-position criteria (colour complexes, blocked positions), forcing-strategy templates with potential functions for termination, reduction lemmas (a capture or promotion leads to an already-settled class), and symmetry.
-4. **An open question about "no lookup" at 6–7 pieces.** Some long wins may have no human-scale strategy description. Whether a Lean-checked, structurally organised computation would count as "lookup" is an owner decision, needed before that frontier.
+4. **Owner decision (2026-10-18): every result needs a mathematical form, even where no human-sized strategy exists.** For every ending with fewer than 8 pieces, the guaranteed outcome must be proved via a closed mathematical characterisation: a formula or predicate over the position that decides win/draw/loss (and later distance), proved in Lean to agree with the game. That is the point of the repo: work backwards from simple endings, remove the human and the lookup element, and leave a formula plus a machine-checked proof.
+   - Per-position enumeration does **not** count, *even if kernel-checked*: a `decide` over every position of a class, or a stored certificate per position, is lookup in another form.
+   - Finite `decide` checks remain acceptable for **bounded local lemmas inside a general proof**, e.g. a fixed small configuration, and for non-vacuity witnesses.
+   - Whether compact characterisations exist for the hardest 6–7 piece endings is itself an open research question. Finding them is the programme's long-run content.
+
+**Palomar registry compatibility (checked 2026-10-18).** Palomar (palomar-registry.org, Lean FRO / ICARM) registers Lean-verified results. Its current requirements conflict with this repo as it stands:
+- **toolchain ≥ `v4.35.0-rc2`** (`PalomarSubmission/toolchains.json`); the repo pins `v4.34.1`;
+- **every** `.lean` file in the repository must use the Lean `module` system; none of ours do yet;
+- `Challenge.lean`, `Solution.lean`, `comparator.json` and `formalization.yaml` are needed;
+- a licence file is needed at the repository root; there is none yet;
+- only the standard axioms are allowed, and no `native_decide`. **We already comply with this.**
+
+Porting means a toolchain bump and edits to every module, frozen ones included. Under `docs/PROOF_PROTOCOL.md` that is a new versioned record (re-verification of all theorems, superseding manifest versions), not an in-place edit. It is scheduled as a dedicated migration session.
 
 **Where we are:**
 - **Three-piece classes** (KQK, KRK, KBK, KNK, KPK):

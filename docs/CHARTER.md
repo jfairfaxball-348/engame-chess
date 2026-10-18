@@ -3,6 +3,7 @@
 ## Mission
 **Overarching objective (owner, 2026-10-18): proof-based tablebase equivalence.** For each endgame material class, establish by mathematical proof, formalised in Lean, the same knowledge an endgame tablebase such as Syzygy provides: the exact outcome (win / draw / loss, and whether any mate is possible at all) of *every* legal position, and eventually the distance information (moves to mate or to a zeroing move under the 50-move rule).
 - **No lookup.** The knowledge must come from general theorems: explicit invariants, strategies, characterisations and bounds that a person can read and Lean can check. It must never come from a stored table of per-position results, or from a proof that merely replays one.
+- **A formula, not a strategy.** Where no human-sized strategy exists, the obligation still stands. The outcome must be captured by a closed mathematical characterisation proved in Lean, never by enumeration (owner, 2026-10-18; see ROADMAP).
 - **Small steps.** The route there is incremental: *small, exact, checked, formally verified* theorems, one defensible result at a time. Each frozen theorem settles a precisely stated slice of a material class. The roadmap tracks how much of each class is settled.
 - **No dates.** There is no promised timetable; tractability decides the next step.
 
