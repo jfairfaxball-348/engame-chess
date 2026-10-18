@@ -2,7 +2,7 @@
 
 Pinned, core-only Lean 4 project (no mathlib, no dependencies).
 
-- Toolchain: `lean-toolchain` = `leanprover/lean4:v4.34.1`
+- Toolchain: `lean-toolchain` = `leanprover/lean4:v4.35.0` (S020 migration; v4.34.1 before; Palomar minimum v4.35.0-rc2)
 - Build: `cd formal && lake build`
 - Axiom report: `cd formal && lake env lean AxiomCheck.lean`
 - Layout: one module per theorem; shared definitions in their own modules. Frozen theorem modules are never edited.
