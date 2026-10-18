@@ -1,11 +1,22 @@
 # Research charter — Endgame Chess
 
 ## Mission
-**Overarching objective (owner, 2026-10-18): proof-based tablebase equivalence.** For each endgame material class, establish by mathematical proof, formalised in Lean, the same knowledge an endgame tablebase such as Syzygy provides: the exact outcome (win / draw / loss, and whether any mate is possible at all) of *every* legal position, and eventually the distance information (moves to mate or to a zeroing move under the 50-move rule).
+**Ultimate ambition (owner, 2026-10-18; explicitly aspirational): ultra-weakly solve chess as a draw.** Seek a rigorous mathematical proof, ideally formalised in Lean, that the *standard initial position* of chess has game-theoretic value **draw** under an explicitly specified, complete rules model. This would prove that White and Black can each avoid a forced loss against optimal opposition. It does **not** require identifying which moves guarantee the result, publishing a playable perfect strategy or building a chess-playing oracle. The owner's preference is for a mathematical discovery rather than a move-by-move "cheat code". **No such proof is claimed to exist; chess being drawn is a research hypothesis, not an established fact.**
+
+**Major operational milestone (unchanged, owner, 2026-10-18): proof-based tablebase equivalence through seven pieces.** For each covered endgame material class, establish by mathematical proof, formalised in Lean, the same knowledge an endgame tablebase such as Syzygy provides: the exact outcome (win / draw / loss, and whether any mate is possible at all) of *every* legal position, and eventually the distance information (moves to mate or to a zeroing move under the 50-move rule).
 - **No lookup.** The knowledge must come from general theorems: explicit invariants, strategies, characterisations and bounds that a person can read and Lean can check. It must never come from a stored table of per-position results, or from a proof that merely replays one.
 - **A formula, not a strategy.** Where no human-sized strategy exists, the obligation still stands. The outcome must be captured by a closed mathematical characterisation proved in Lean, never by enumeration (owner, 2026-10-18; see ROADMAP).
 - **Small steps.** The route there is incremental: *small, exact, checked, formally verified* theorems, one defensible result at a time. Each frozen theorem settles a precisely stated slice of a material class. The roadmap tracks how much of each class is settled.
 - **No dates.** There is no promised timetable; tractability decides the next step.
+
+## Hierarchy of ambitions (not a change of session priorities)
+- **Distant ambition:** prove the single initial-position value of standard chess is a draw (*ultra-weak* solving). A value proof is enough even if it is non-constructive; no practical move recommendation is required.
+- **Major intermediate milestone:** the existing up-to-seven-piece Syzygy-parity programme, through general characterisations and Lean proofs, with no tablebase lookup.
+- **Near-term execution:** the existing per-theorem proof → audit → Lean → freeze progression. Do not substitute a speculative starting-position attack for the installed next session, change its deliverables, or relax its verification gates.
+
+Terminology matters: an *ultra-weak* solution establishes the theoretical value of the initial position; a *weak* solution additionally provides a way to achieve that value from the initial position against every opponent response; a *strong* solution determines correct play or values for all legal positions. Proving a draw value logically implies that non-losing strategies exist, but an ultra-weak proof need not construct them. Local constructive forcing-strategy lemmas remain valid and often necessary intermediate mathematics; the ultimate ambition simply does not demand an end-user chess-playing algorithm.
+
+A full-game claim will require a precisely pinned rules and terminal-outcome model, including relevant history-dependent draw conditions. The present endgame rules kernel deliberately omits some such information; it must not be mistaken for an already complete model of initial-position game value. Progress through endgames **does not imply** the ultimate conjecture or guarantee that endgame techniques generalise.
 
 ## Hard boundaries
 - **No tablebases**: do not consult Syzygy, Nalimov, Lomonosov or equivalents, including transcriptions, derived evaluations or databases of resolved positions. Theorems come from explicit definitions, mathematical argument and independently checked formal proof.
