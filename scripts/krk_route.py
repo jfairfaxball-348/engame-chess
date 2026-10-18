@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Strategy simulator for EC-C008 (K+R vs K, strong side to move, is never dead).
+"""Strategy simulator for EC-C008 (K+R vs K, strong side to move, is never dead). Route v2 (S018).
 
 SUPPLEMENTARY ONLY. It plays one explicit cooperative route, the one described in
 proofs/EC-C008_KRK_LIVE.md, from every legal strong-to-move K+R vs K state. Every move
@@ -96,167 +96,127 @@ class Game:
 
 # ---------------------------------------------------------------- route phases
 
-ZONE = [(7, 7), (6, 7), (5, 7)]          # rook home squares on the top rank
-REGION = {(x, y) for x in range(5) for y in range(7)}   # lone king's working region R0
-
-
-def rook_attacks(R, S, L):
-    occ = {S, L, R}
-    return kd.attacked_squares("R", R, occ)
-
-
-def lone_step_towards(g, target, region):
-    """Lone king: BFS one step towards target inside region (avoiding S's neighbourhood);
-    falls back to any non-capturing legal move."""
-    opts = g.lone_options()
-    if not opts:
-        raise RouteError(f"lone king has no non-capturing move: {g.pos}")
-    S = g.S
-    allowed = safe_region(g) if g.R in PARTNER else {q for q in region if dinf(q, S) >= 2 and q != g.R}
-    # BFS from target backwards over allowed squares
-    dist = {target: 0} if target in allowed else {}
-    dq = deque(dist)
-    while dq:
-        q = dq.popleft()
-        for dx in (-1, 0, 1):
-            for dy in (-1, 0, 1):
-                n = (q[0] + dx, q[1] + dy)
-                if n != q and n in allowed and n not in dist:
-                    dist[n] = dist[q] + 1
-                    dq.append(n)
-    best = sorted(opts, key=lambda q: (dist.get(q, 99), q))
-    return best[0]
-
-
 def phase1_candidates(R):
-    """Explicit rook routes to the zone, in the fixed order the route tries them."""
+    """Explicit rook routes to h8, in the fixed order the route tries them."""
     rx, ry = R
     out = []
-    if ry == 7:
-        out += [[(x, 7)] for x in (7, 6, 5)]                       # P1b: along rank 8
-    elif rx >= 5:
-        out += [[(rx, 7)]]                                          # P1c: up the file
-    else:
-        out += [[(x, ry), (x, 7)] for x in (7, 6, 5)]               # P1d: across, then up
-        out += [[(rx, 7), (x, 7)] for x in (7, 6, 5)]               #      up, then across
-    ydet = 1 if ry == 0 else 0
-    out += [[(rx, ydet), (7, ydet), (7, 7)]]                        # P1e: detour
-    return out
+    if ry == 7 or rx == 7:
+        out.append([(7, 7)])                                   # P1-direct
+    out.append([(7, ry), (7, 7)])                              # P1-HV: across, then up
+    out.append([(rx, 7), (7, 7)])                              # P1-VH: up, then across
+    y0 = 1 if ry == 0 else 0
+    out.append([(rx, y0), (7, y0), (7, 7)])                    # P1-detour
+    return [[c for c in seq if c != R] for seq in out]
 
 
 STATS = {}
+NAMES = ["P1-direct", "P1-HV", "P1-VH", "P1-detour"]
+
+
+def p1_lone_reply(g):
+    """Lone reply during P1: prefer squares of G (files a-f, ranks 1-7) not adjacent to S."""
+    opts = g.lone_options()
+    if not opts:
+        raise RouteError("no reply")
+    G = region(g, "G")
+    return sorted(opts, key=lambda q: (q not in G, q))[0]
 
 
 def phase1_rook_home(g):
-    """Rook to the top-rank zone (files f-h) by the first explicit route that works:
-    every rook move legal, and after each one the lone king has a non-capturing move
-    (or is mated). Lone replies: one BFS step towards T inside R0."""
-    if g.R in ZONE:
-        STATS["P1a"] = STATS.get("P1a", 0) + 1
+    """Rook to h8 by the first explicit route that works (every rook move legal; after each,
+    the lone king has a non-capturing move, or is mated)."""
+    if g.R == (7, 7):
+        STATS["P1-home"] = STATS.get("P1-home", 0) + 1
         return
-    for k, seq in enumerate(phase1_candidates(g.R)):
+    cands = phase1_candidates(g.R)
+    if g.R[1] != 7 and g.R[0] != 7:
+        names = NAMES[1:]
+    else:
+        names = NAMES
+    for name, seq in zip(names, cands):
         h = clone(g)
         try:
             for c in seq:
                 h.play((W, "R"), c, "P1-rook")
-                if not h.lone_options():
-                    raise RouteError("no reply")
-                h.play((B, "K"), lone_step_towards(h, (h.S[0], h.S[1] - 2), REGION), "P1-lone")
+                h.play((B, "K"), p1_lone_reply(h), "P1-lone")
         except Mated:
             pass
         except RouteError:
             continue
-        name = "P1e" if k == len(phase1_candidates(g.R)) - 1 else f"P1-{len(seq)}"
         STATS[name] = STATS.get(name, 0) + 1
-        for c in seq:  # replay on the real game (raises Mated on mate)
+        for c in seq:
             g.play((W, "R"), c, "P1-rook")
-            g.play((B, "K"), lone_step_towards(g, (g.S[0], g.S[1] - 2), REGION), "P1-lone")
+            g.play((B, "K"), p1_lone_reply(g), "P1-lone")
         return
     raise RouteError(f"P1: no rook route {g.pos}")
 
 
-PARTNER = {(7, 7): (6, 7), (6, 7): (7, 7), (5, 7): (6, 7)}
+def region(g, kind):
+    """G: files a-f, ranks 1-7 (tempo h8<->g8).  H: files a-g, ranks 1-6 (tempo h8<->h7).
+    Both minus the strong king's neighbourhood."""
+    if kind == "G":
+        sq = {(x, y) for x in range(6) for y in range(7)}
+    else:
+        sq = {(x, y) for x in range(7) for y in range(6)}
+    return {q for q in sq if dinf(q, g.S) >= 2}
 
 
-def safe_region(g):
-    """F: squares on ranks 1-7 attacked by the rook neither on its square nor on its tempo
-    partner (both on rank 8), and not adjacent to S."""
-    R = g.R
-    bad = set()
-    for r in (R, PARTNER.get(R, R)):
-        bad |= {(r[0], y) for y in range(8)} | {(x, 7) for x in range(8)}
-    return {(x, y) for x in range(8) for y in range(7)
-            if (x, y) not in bad and dinf((x, y), g.S) >= 2}
+TEMPO = {"G": {(7, 7): (6, 7), (6, 7): (7, 7)}, "H": {(7, 7): (7, 6), (7, 6): (7, 7)}}
 
 
-def lone_connected_to_target(g):
-    """Is L connected to T = S-(0,2) through R0 minus N1(S) (L itself may lie outside)?"""
-    S, L = g.S, g.L
-    T = (S[0], S[1] - 2)
-    allowed = safe_region(g)
-    if T not in allowed:
-        return False
-    seen = {L}
-    dq = deque([L])
-    while dq:
-        q = dq.popleft()
-        if q == T:
-            return True
-        for dx in (-1, 0, 1):
-            for dy in (-1, 0, 1):
-                n = (q[0] + dx, q[1] + dy)
-                if n in allowed and n not in seen:
-                    seen.add(n)
-                    dq.append(n)
-    return False
+def tempo(g, kind, phase):
+    g.play((W, "R"), TEMPO[kind][g.R], phase)
 
 
-def rook_tempo(g, phase):
-    """Rook moves along the top rank inside the zone, never onto a king."""
-    rx, _ = g.R
-    for c in [PARTNER[g.R]] if g.R in PARTNER else [(x, 7) for x in (7, 6, 5) if x != rx]:
-        try_g = clone(g)
-        try:
-            try_g.play((W, "R"), c, phase)
-            if not try_g.lone_options():
-                continue
-        except Mated:
-            pass
-        except RouteError:
-            continue
-        g.play((W, "R"), c, phase)
-        return
-    raise RouteError(f"{phase}: no rook tempo {g.pos}")
-
-
-def phase2_lone_walk(g):
-    """Lone king walks to T = S - (0,2) inside R0 while the rook makes tempo moves."""
-    target = (g.S[0], g.S[1] - 2)
+def walk(g, kind, target):
+    """Lemma W: strong tempo inside the pair, lone king one BFS step inside the region."""
     for _ in range(40):
         if g.L == target:
             return
-        rook_tempo(g, "P2-tempo")
-        g.play((B, "K"), lone_step_towards(g, target, REGION), "P2-lone")
-    raise RouteError(f"P2: lone king did not reach {target}: {g.pos}")
+        F = region(g, kind)
+        if target not in F:
+            raise RouteError(f"W: target outside region {g.pos}")
+        dist = {target: 0}
+        dq = deque([target])
+        while dq:
+            q = dq.popleft()
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    n = (q[0] + dx, q[1] + dy)
+                    if n in F and n not in dist:
+                        dist[n] = dist[q] + 1
+                        dq.append(n)
+        tempo(g, kind, "P2-tempo")
+        nxt = sorted((q for q in g.lone_options() if q in dist), key=lambda q: (dist[q], q))
+        if not nxt:
+            raise RouteError(f"W: lone king not connected to T {g.pos}")
+        g.play((B, "K"), nxt[0], "P2-lone")
+    raise RouteError(f"W: walk too long {g.pos}")
 
 
-def phase3_escort(g):
-    """Escort down column a = sx. Entry: strong to move, L = S - (0,2)."""
-    a = g.S[0]
-    if g.L[1] > 0:
-        rook_tempo(g, "P3-tempo")            # now lone to move, S - L = (0,2)
-        while g.L[1] > 0:
-            g.play((B, "K"), (a, g.L[1] - 1), "P3-lone")
-            g.play((W, "K"), (a, g.S[1] - 1), "P3-strong")
-        # lone to move, L = (a,0), S = (a,2): shuttle out, tempo, back
-        side = (a + 1, 0) if a + 1 <= 4 else (a - 1, 0)
-        g.play((B, "K"), side, "P4-shuttle")
-        rook_tempo(g, "P4-tempo")
-        g.play((B, "K"), (a, 0), "P4-back")
-    # strong to move, L = (a,0), S = (a,2): the rook mates down its file
-    rx, _ = g.R
-    g.play((W, "R"), (rx, 0), "P5-mate")
-    raise RouteError(f"P5: not mate {g.pos}")
+def phase2(g):
+    """Settle (four cases) and walk to T = S - (0,2). Returns the tempo pair used."""
+    T = (g.S[0], g.S[1] - 2)
+    L = g.L
+    if L in region(g, "G"):
+        kind = "G"; STATS["P2-G"] = STATS.get("P2-G", 0) + 1
+    elif L[0] == 6 and L[1] <= 5:
+        kind = "H"; STATS["P2-H"] = STATS.get("P2-H", 0) + 1
+    elif L == (6, 6):
+        STATS["P2-g7"] = STATS.get("P2-g7", 0) + 1
+        g.play((W, "R"), (6, 7), "P2-g7-check")
+        g.play((B, "K"), (5, 5), "P2-g7-Kf6")
+        kind = "G"
+    elif L[1] == 7:
+        STATS["P2-rank8"] = STATS.get("P2-rank8", 0) + 1
+        g.play((W, "R"), (6, 7), "P2-rank8-tempo")
+        g.play((B, "K"), (L[0], 6), "P2-rank8-down")
+        kind = "G"
+    else:
+        raise RouteError(f"P2: unclassified lone king {g.pos}")
+    if g.L != T:
+        walk(g, kind, T)
+    return kind
 
 
 def clone(g):
@@ -276,11 +236,24 @@ def route(S, R, L):
     g = Game(S, R, L)
     ROUTE_GAME[0] = g
     phase1_rook_home(g)
-    if not lone_connected_to_target(g):
-        STATS["INV-not-connected"] = STATS.get("INV-not-connected", 0) + 1
-    phase2_lone_walk(g)
-    phase3_escort(g)
+    kind = phase2(g)
+    escort(g, kind)
     return g
+
+
+def escort(g, kind):
+    """Lemma E: from strong to move, L = S - (0,2); march down, shuttle, mate."""
+    a = g.S[0]
+    if g.L[1] > 0:
+        tempo(g, kind, "P3-tempo")
+        while g.L[1] > 0:
+            g.play((B, "K"), (a, g.L[1] - 1), "P3-lone")
+            g.play((W, "K"), (a, g.S[1] - 1), "P3-strong")
+        g.play((B, "K"), (a + 1, 0), "P4-shuttle")
+        tempo(g, kind, "P4-tempo")
+        g.play((B, "K"), (a, 0), "P4-back")
+    g.play((W, "R"), (g.R[0], 0), "P5-mate")
+    raise RouteError(f"P5: not mate {g.pos}")
 
 
 def strong_to_move_states():
