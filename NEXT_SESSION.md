@@ -1,33 +1,33 @@
-# NEXT SESSION — S014: K+R vs K, possible mate — which K+R vs K positions are dead? (Gate P + Gate L, over the rules kernel)
+# NEXT SESSION — S015: Lean formalisation of EC-C007 (dead K+R vs K: forced capture / stalemate) over the rules kernel, Gate F
 
-**Owner instruction:** Execute this S014 session when the owner says "run next session" in the context of this repository or pastes/links this prompt. Follow `AGENTS.md` first: fetch, start from the latest `main`, merge any unmerged session branch, and end by committing, pushing and merging to `main`. Nothing in this prompt is a proved result.
+**Owner instruction:** Execute this S015 session when the owner says "run next session" in the context of this repository or pastes/links this prompt. Follow `AGENTS.md` first: fetch, start from the latest `main`, merge any unmerged session branch, and end by committing, pushing and merging to `main`. EC-C007 is `LOCAL_VERIFIED` only (S014). EC-C008 is `PROPOSED`. Do not treat this prompt as evidence that any Lean proof exists.
 
 ## Context
-- Frozen: EC-T0001–EC-T0005 (K vs K, K+B vs K, K+N vs K; the last three over the general rules kernel `formal/EndgameChess/Rules/`).
-- Roadmap rung 4 is K+R vs K. Its eventual question is **forcing** (does the strong side force mate?). The charter insists that "no possible mate", "no forced mate" and "draw under the rules" are different predicates. So rung 4 opens with **possible mate** (cooperative reachability, `¬DeadK`), which is a prerequisite and is *not* trivially "always live".
-- **Observation to check first (not yet verified):** not every legal K+R vs K position is live. Example: Black Ka1, White Rb2 (unprotected), White Kh8, Black to move. Black is not in check; a2 and b1 are covered by the rook; the only legal move is Kxb2, giving K vs K, which is dead (EC-T0003). So this position should be `DeadK`.
-- **Local Lean is primary** (elan default `leanprover/lean4:v4.34.1`); push as `jfairfaxball-348` (repo-local credential config). No Lean is required this session.
+- Frozen: EC-T0001–EC-T0005. EC-T0003 (`Rules.dead_of_legal_into_KK`) is the dependency.
+- Proof: [proofs/EC-C007_KRK_DEAD.md](proofs/EC-C007_KRK_DEAD.md) (§7 is the planned Lean statement); audit [audits/EC-C007_KRK_DEAD.md](audits/EC-C007_KRK_DEAD.md).
+- **Local Lean is primary:** elan default `leanprover/lean4:v4.34.1` (commit `5045d00…`). Build and axiom-check locally from `formal/`, plus a fresh-clone build of the proof commit. Push as `jfairfaxball-348`: the repo-local git config routes github.com credentials to Git Credential Manager; use `GCM_INTERACTIVE=never`.
 
 ## Objective
-Register and prove on paper (Gate L) a **characterisation of dead K+R vs K positions** over the kernel, for positions produced by a legal move (any predecessor material, any flags, either orientation). Plan its Lean statement for S015. Ledger unchanged.
+Formalise EC-C007 in a **new module** `formal/EndgameChess/Rules/KRK.lean` (namespace `EndgameChess.Rules`, importing `Rules.KNK` or `Rules.Outcome`), and reach Gate F only if every Gate F check passes. **Do not freeze.** Ledger unchanged.
 
-## Proposed candidate (Gate P — refine before proving; record in `research/CANDIDATES.md` as **EC-C007**)
-Let `IsKRK q σ sk rs wk` be the K+R vs K analogue of `IsKNK` (rook of colour σ on `rs`). For `q` produced by a legal move:
-- **(a) Strong side to move ⇒ not dead:** some finite series of legal moves from `q` reaches a checkmate.
-- **(b) Weak side to move:** `DeadK q` iff `q` is not checkmate and **every** legal move of the weak king captures the rook (this includes stalemate, where there are no legal moves at all).
-Check this conjecture against the diagnostic **before** trying to prove it, and correct it if it fails (record any correction, as S011 did). Pay attention to: castling flags (a rook on its home square with a castling right and the strong king on e1/e8 — can castling ever be legal here? the kernel requires both king and rook on original squares and the right), the strong side being stalemated (impossible? the rook always has a move?), positions where the rook is attacked and every rook move or king move abandons it, and mates already on the board.
+## Constraints
+- Never edit frozen modules (`KK.lean`, `KBK.lean`, `Rules/*.lean` as frozen with EC-T0003/4/5, including `Rules/KNK.lean`). Core Lean only. No `sorry`, `admit`, custom `axiom`, `unsafe`, `native_decide`. No bespoke move model.
 
 ## Required work
-1. **Diagnostic** `scripts/krk_diagnostic.py` + unit test, written independently of the proof (rook rays walked square by square, as in `kbk_diagnostic.py`; Art. 3.3 + 3.5):
-   - all placements, both orientations, both sides to move; legal states (side not to move not in check);
-   - counts: checks, checkmates, stalemates, forced rook captures;
-   - **cooperative reachability**: the set of legal states (K+R vs K ∪ K vs K) from which some checkmate is reachable, computed as a fixpoint over the diagnostic's own move graph (a cooperative-reachability computation over the script's own generator — supplementary evidence only, not a tablebase, never cited as proof); compare its complement with the conjectured characterisation, position by position;
-   - **mutation test:** e.g. forbid captures of the rook, or replace the rook by a bishop; the characterisation must then visibly fail or change.
-2. **Proof** `proofs/EC-C007_KRK_LIVE.md`, self-contained:
-   - (b) "⇐" is easy (every successor is K vs K, dead by EC-T0003; and `q` itself is not mate).
-   - (b) "⇒" and (a) need explicit **cooperative mating routes**: from any strong-to-move legal K+R vs K position, a concrete sequence of legal moves (both sides cooperating) ending in mate. Find a uniform construction (e.g. walk the rook to safety, march the kings to a fixed mating pattern near a corner or edge, then mate), with a complete case analysis of obstacles (the rook blocking its own king, the weak king being stalemated en route, the weak king forced to capture). Prefer a construction whose Lean formalisation is feasible: a bounded number of explicit move schemas, each with a legality lemma.
-3. **Audit** `audits/EC-C007_KRK_LIVE.md` (hostile): corners/edges, both orientations, both sides to move, castling flags, stalemate en route, zero-length path (`q` already mate), rook capture branches, every symmetry used.
-4. **Status:** EC-C007 → `LOCAL_VERIFIED` only if no gap remains; otherwise `PROPOSED` with the gap stated. Record the planned Lean statements for S015 (`Rules/KRK.lean`): e.g. `krk_strong_to_move_live`, `krk_dead_iff`.
+1. `krkBoard`, `IsKRK` (as `knkBoard`/`IsKNK`, with a rook).
+2. `reachK_head` (head decomposition of `ReachK`, by induction); `dead_of_succ_dead` (D1); `dead_of_succ_KK` (D2, via `dead_of_legal_into_KK`).
+3. `krk_dead_of_forced_capture` (statement with `IsKRK`, `q.turn = σ.opp`, `¬MatedK q`, `∀ r, Legal q r → ∃ w b, IsKK r w b`) and `krk_forced_capture_drawn_by_rule` (with `Arisen q`).
+4. **Non-vacuity by `decide`:**
+   - (i) Black Ka1, White Rb2, White Kh8, Black to move: not in check; `legalMoves` is exactly `[Kxb2]`; its result is `IsKK`; the position is produced by a legal move (White Rb3–b2 from Ka1/Rb3/Kh8, White to move). Conclude `DeadK` from the main theorem.
+   - (ii) Black Ka1, White Rb2, White Kc3, Black to move: stalemate (no check, `legalMoves = []`), hence `DeadK`.
+   - (iii) A live contrast: a K+R vs K position with a reachable mate, e.g. a mate in one, to show the class is not uniformly dead.
+   Turning "`legalMoves` is exactly this list" into `∀ r, Legal q r → …` goes through `mem_legalPositions`.
+5. **Checks (local, recorded verbatim):** `lake build`; `lake env lean AxiomCheck.lean` with the new declarations added; forbidden-token grep; fresh-clone build at the proof commit; `python -m unittest discover -s tests`; `python scripts/validate_ledger.py`.
+6. **Audit** `audits/EC-C007_KRK_DEAD_LEAN.md`: statement correspondence, non-vacuity, axioms, trust boundary.
+
+## Status and next prompt
+- EC-C007 → `FORMAL_VERIFIED` only if all checks pass, recording the proof commit SHA. Otherwise stay `LOCAL_VERIFIED` and state the blocker.
+- If Gate F passes, install S016 = Gate Z freeze of EC-C007 as **EC-T0006**, following S013 (`sessions/S013_FREEZE_EC-T0005.md`). In S016's closeout, install S017 = **EC-C008 paper proof** (the cooperative mating route, Gate L; see the proof plan in EC-C007 §6).
 
 ## Closeout
-`sessions/S014_KRK_LIVE.md` and a `sessions/SESSION_LEDGER.md` row: changes; proved / tested / conjectured separately; checks actually run; base and result SHAs; candidate status; ledger effect (none). Install the next prompt in full: if Gate L passes, S015 = Lean formalisation of EC-C007 over the kernel (Gate F); otherwise a remedial S014. Commit, push, merge to `main`.
+`sessions/S015_KRK_DEAD_LEAN.md` and a `sessions/SESSION_LEDGER.md` row: changes; proved / tested / conjectured; checks actually run; base and result SHAs; status; ledger effect (none). Install the next prompt in full. Commit, push, merge to `main`.

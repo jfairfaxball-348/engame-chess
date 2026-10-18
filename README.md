@@ -43,7 +43,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md), whose independent human review is still open.
 - [EC-T0005](theorems/frozen/EC-T0005/v1.md) (K+N vs K) was stated over the kernel from the start: paper proof S011, Lean S012 (`Rules/KNK.lean`), frozen S013.
-- Next: S014, rung 4 (K+R vs K) begins with *possible* mate: which K+R vs K positions are dead? (Gate P + L.)
+- S014: rung 4 (K+R vs K) opened with *possible* mate. EC-C007 (`LOCAL_VERIFIED`): a K+R vs K position where the lone king must take the rook (or is stalemated) is dead, so Art. 5.2.2 can end a game with a rook on the board. The converse EC-C008 is `PROPOSED`, with exhaustive diagnostic support.
+- Next: S015, Lean formalisation of EC-C007 (Gate F).
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
