@@ -23,6 +23,19 @@ The overarching objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know,
 
 A class counts as **tablebase-equivalent** in this programme only when L2 is proved for *every* legal position of the class, by a general argument, and formalised in Lean. Exhaustive scripts may confirm a statement but never prove it.
 
+### What full Syzygy equivalence obliges (assessment, 2026-10-18)
+1. **Rule model for L2/L4.** Syzygy's WDL distinguishes wins from "cursed wins" (wins that the 50-move rule turns into draws), and its DTZ counts moves to a zeroing move. The kernel omits the half-move clock and repetition (`RULES_KERNEL.md`, modelling choice 3). It needs a **clock layer** (Art. 9.3/9.6) before any L2-with-50-move or L4 claim.
+2. **Per-class theorems, at every layer, for every legal position.** Syzygy covers all material classes with up to 7 pieces: 5 three-piece classes and, by the usual counts, about 30 four-piece and about 110 five-piece classes, with hundreds more at 6–7. The K vs K base case is not a table.
+3. **A method that scales.** One bespoke paper proof plus one bespoke Lean proof per class will not reach 5–7 pieces. Needed: reusable theorems, such as dead-position criteria (colour complexes, blocked positions), forcing-strategy templates with potential functions for termination, reduction lemmas (a capture or promotion leads to an already-settled class), and symmetry.
+4. **An open question about "no lookup" at 6–7 pieces.** Some long wins may have no human-scale strategy description. Whether a Lean-checked, structurally organised computation would count as "lookup" is an owner decision, needed before that frontier.
+
+**Where we are:**
+- **Three-piece classes** (KQK, KRK, KBK, KNK, KPK):
+  - KBK and KNK are settled at L1 (dead), which implies L2 (draw), with no L4 content; frozen.
+  - KRK has L1 complete on paper (EC-T0006 frozen; EC-C008 `LOCAL_VERIFIED`, Lean pending). L2 (strong side wins whenever not dead) and L4 are open.
+  - KQK and KPK are open. KPK is the first genuinely hard L2 class, because of promotion, opposition and stalemate.
+- **Roughly 2¼ of 5 three-piece classes** at WDL level, and **0 of the 4-piece and larger classes**. As a share of all of Syzygy, this is still well under 1%. The infrastructure (one audited rules kernel, now owner-reviewed, plus reusable deadness and reachability lemmas) is the main asset so far.
+
 ## Incremental ladder (revisable)
 
 All listed statements are *targets*, not certified theorems.

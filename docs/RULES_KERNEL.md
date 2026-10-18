@@ -10,7 +10,7 @@
 
 | Reviewer | Date | Scope reviewed | Verdict / notes |
 |---|---|---|---|
-| *(open: needs an independent human reviewer)* | | | |
+| John Fairfax-Ball (project owner) | 2026-10-18 | The kernel rules: this clause table against `Rules/*.lean` | "All fine" (recorded from the owner's message in session after S019). No changes requested. |
 
 ## Clause table
 
