@@ -1,0 +1,16 @@
+initial perft(1) = 20 OK
+initial perft(2) = 400 OK
+initial perft(3) = 8902 OK
+kiwipete perft(1) = 48 OK
+kiwipete perft(2) = 2039 OK
+position3 perft(1) = 14 OK
+position3 perft(2) = 191 OK
+position3 perft(3) = 2812 OK
+position4 perft(1) = 6 OK
+position4 perft(2) = 264 OK
+position5 perft(1) = 44 OK
+position5 perft(2) = 1486 OK
+
+real	0m24.467s
+user	0m0.000s
+sys	0m0.015s

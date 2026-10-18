@@ -10,6 +10,8 @@ The freeze commit must be **later than** its referenced verified proof commit so
 
 Corrections require a new versioned entry and clearly visible supersession note; Git history must preserve the original record. No ledger row or proof file may be rewritten without that provenance. The checker `scripts/validate_ledger.py` checks *format/integrity only*; it is not a mathematical proof checker.
 
+**Current toolchain anchor:** every frozen theorem also has a `v2.md` that re-anchors it on Lean **v4.35.0** (S020 migration, commit `b114ccd`, no source change; see [MIGRATION-S020](frozen/MIGRATION-S020/README.md)). The `v1.md` records remain valid at their own commits on v4.34.1.
+
 Current frozen count: **6**:
 - [EC-T0001](frozen/EC-T0001/v1.md): K vs K dead position (frozen S003).
 - [EC-T0002](frozen/EC-T0002/v1.md): K+B vs K dead position (frozen S006).

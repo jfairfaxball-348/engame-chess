@@ -44,6 +44,15 @@ A frozen theorem's Lean module is **never edited**. A correction is a new module
 
 **Versioning convention (owner decision, S009).** A strengthened or re-anchored form of a frozen result is frozen as a **new theorem ID** (e.g. the kernel-level K vs K result becomes EC-T0003). Its manifest states which earlier ID it strengthens, and how it supersedes that ID's trust boundary. Earlier ledger rows and manifests are never rewritten, and the ledger schema is unchanged (one row per ID). A genuine *defect* in a frozen theorem still requires a conspicuous correction record, as described above.
 
+### Toolchain migration (owner decision, S020)
+A toolchain bump is a **migration**, not a correction:
+- Rebuild every frozen theorem from a clean clone on the new toolchain.
+- Confirm that each statement's `#check` output is identical and that each main declaration's axioms stay within the standard three.
+- Write a `vN+1.md` manifest per theorem, citing the migration commit, with shared logs under `theorems/frozen/MIGRATION-<session>/`.
+- Earlier manifests and ledger rows are not rewritten.
+
+If the migration needs Lean source edits to frozen modules (e.g. the module-system port Palomar requires), the same rule applies, plus per-module hashes in the new manifests.
+
 ## Permitted status transitions
 `PROPOSED → LOCAL_VERIFIED → FORMAL_VERIFIED → FROZEN`. A falsified candidate becomes `REJECTED` *in the candidate register only*, with a concrete counterexample. A blocked claim remains in its current stage. No 'all clear' or theorem count until the actual checks have run.
 

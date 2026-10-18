@@ -33,13 +33,13 @@ A class counts as **tablebase-equivalent** in this programme only when L2 is pro
    - Whether compact characterisations exist for the hardest 6–7 piece endings is itself an open research question. Finding them is the programme's long-run content.
 
 **Palomar registry compatibility (checked 2026-10-18).** Palomar (palomar-registry.org, Lean FRO / ICARM) registers Lean-verified results. Its current requirements conflict with this repo as it stands:
-- **toolchain ≥ `v4.35.0-rc2`** (`PalomarSubmission/toolchains.json`); the repo pins `v4.34.1`;
+- **toolchain ≥ `v4.35.0-rc2`** (`PalomarSubmission/toolchains.json`). **Done in S020:** the repo now pins `v4.35.0`, and all frozen theorems were re-verified;
 - **every** `.lean` file in the repository must use the Lean `module` system; none of ours do yet;
 - `Challenge.lean`, `Solution.lean`, `comparator.json` and `formalization.yaml` are needed;
 - a licence file is needed at the repository root; there is none yet;
 - only the standard axioms are allowed, and no `native_decide`. **We already comply with this.**
 
-Porting means a toolchain bump and edits to every module, frozen ones included. Under `docs/PROOF_PROTOCOL.md` that is a new versioned record (re-verification of all theorems, superseding manifest versions), not an in-place edit. It is scheduled as a dedicated migration session.
+The remaining port is the module system: it edits every module, frozen ones included. Under `docs/PROOF_PROTOCOL.md` that is a new versioned record (re-verification of all theorems, superseding manifest versions), not an in-place edit. It is scheduled as a dedicated migration session.
 
 **Where we are:**
 - **Three-piece classes** (KQK, KRK, KBK, KNK, KPK):

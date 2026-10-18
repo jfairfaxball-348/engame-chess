@@ -1,0 +1,82 @@
+40,56c40,56
+< 'EndgameChess.Rules.mem_legalMoves' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.mem_legalPositions' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.not_inCheck_after_legal' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.legal_mover_safe' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.initial_legal_count' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.enPassant_legal' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.enPassant_expired' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.enPassant_exposing_king_illegal' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.promotion_rules' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.castling_legal' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.castling_through_check_illegal' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.castling_without_right_illegal' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.pinned_piece_cannot_move' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.king_never_captured' depends on axioms: [propext]
+< 'EndgameChess.Rules.castling_queenside_b1_attacked_legal' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.castling_out_of_check_illegal' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.dead_transfer' depends on axioms: [propext, Quot.sound]
+---
+> 'EndgameChess.Rules.mem_legalMoves' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.mem_legalPositions' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.not_inCheck_after_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.legal_mover_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.initial_legal_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.enPassant_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.enPassant_expired' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.enPassant_exposing_king_illegal' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.promotion_rules' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.castling_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.castling_through_check_illegal' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.castling_without_right_illegal' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.pinned_piece_cannot_move' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.king_never_captured' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.castling_queenside_b1_attacked_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.castling_out_of_check_illegal' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.dead_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+91,95c91,95
+< 'EndgameChess.Rules.deadK_normFlags_iff' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.legal_normFlags_iff' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.isPseudo_normFlags' depends on axioms: [propext]
+< 'EndgameChess.Rules.play_nrp' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.nrp_of_legal' depends on axioms: [propext, Quot.sound]
+---
+> 'EndgameChess.Rules.deadK_normFlags_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.legal_normFlags_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.isPseudo_normFlags' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.play_nrp' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.nrp_of_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+133,135c133,135
+< 'EndgameChess.Rules.strong_not_inCheck' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.step_closed' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.reach_cases' depends on axioms: [propext, Quot.sound]
+---
+> 'EndgameChess.Rules.strong_not_inCheck' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.step_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.reach_cases' depends on axioms: [propext, Classical.choice, Quot.sound]
+137,138c137,138
+< 'EndgameChess.Rules.inCheck_weak_knk' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.inCheck_strong_knk' depends on axioms: [propext, Quot.sound]
+---
+> 'EndgameChess.Rules.inCheck_weak_knk' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.inCheck_strong_knk' depends on axioms: [propext, Classical.choice, Quot.sound]
+140,141c140,141
+< 'EndgameChess.Rules.knk_stalemate_example' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.knight_capture_example' depends on axioms: [propext, Quot.sound]
+---
+> 'EndgameChess.Rules.knk_stalemate_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.knight_capture_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+152,153c152,153
+< 'EndgameChess.Rules.reachK_head' depends on axioms: [propext, Quot.sound]
+< 'EndgameChess.Rules.dead_of_succ_dead' depends on axioms: [propext, Quot.sound]
+---
+> 'EndgameChess.Rules.reachK_head' depends on axioms: [propext, Classical.choice, Quot.sound]
+> 'EndgameChess.Rules.dead_of_succ_dead' depends on axioms: [propext, Classical.choice, Quot.sound]
+157c157
+< 'EndgameChess.Rules.legal_of_legalMoves_eq' depends on axioms: [propext, Quot.sound]
+---
+> 'EndgameChess.Rules.legal_of_legalMoves_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+160c160
+< 'EndgameChess.Rules.krk_live_example' depends on axioms: [propext, Quot.sound]
+---
+> 'EndgameChess.Rules.krk_live_example' depends on axioms: [propext, Classical.choice, Quot.sound]
