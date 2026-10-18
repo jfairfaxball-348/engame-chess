@@ -1,41 +1,51 @@
-# NEXT SESSION — S017: EC-C008 paper proof — K+R vs K with the strong side to move is never dead (Gate L, over the rules kernel)
+# NEXT SESSION — S018 (remedial S017): close the EC-C008 gaps — K+R vs K with the strong side to move is never dead (Gate L)
 
-**Owner instruction:** Execute this S017 session when the owner says "run next session" in the context of this repository or pastes/links this prompt. Follow `AGENTS.md` first: fetch, start from the latest `main`, merge any unmerged session branch, and end by committing, pushing and merging to `main`. EC-C008 is `PROPOSED`. Nothing in this prompt is a proved result.
+**Owner instruction:** Execute this S018 session when the owner says "run next session" in the context of this repository or pastes/links this prompt. Follow `AGENTS.md` first: fetch, start from the latest `main`, merge any unmerged session branch, and end by committing, pushing and merging to `main`. EC-C008 is `PROPOSED`. Nothing here is a proved result.
+
+## Overarching objective (owner, 2026-10-18)
+**Proof-based tablebase equivalence:** know, by general theorems formalised in Lean and never by lookup, what an endgame tablebase knows. See `docs/CHARTER.md` and the coverage table in `docs/ROADMAP.md`. EC-C008 completes layer L1 (dead/live) for K+R vs K.
 
 ## Context
-- Frozen: EC-T0001–EC-T0006. **EC-T0006** (S016) proves one direction: a K+R vs K position with the lone king to move, not mate, in which every legal move captures the rook (or which is stalemate), is dead.
-- **EC-C008** (the converse; see [proofs/EC-C007_KRK_DEAD.md](proofs/EC-C007_KRK_DEAD.md) §6 and `research/CANDIDATES.md`): let `q` be produced by a legal move, with `IsKRK q σ sk rs wk`.
-  - (a) If `q.turn = σ`, then `¬DeadK q`.
-  - (b) Hence, if `q.turn = σ̄`: `DeadK q` iff `q` is not mate and every legal move captures the rook.
-  - (b) follows from (a) plus EC-T0006: a non-capturing lone-king move leads to a strong-to-move K+R vs K position produced by a legal move.
-- **Evidence:** `scripts/krk_diagnostic.py` finds 0 dead strong-to-move states and 0 mismatches with the characterisation, in both orientations. This is supplementary only.
-- Local Lean (elan default `leanprover/lean4:v4.34.1`) is primary when Lean is run; no Lean is required this session. Push as `jfairfaxball-348` (repo-local Git Credential Manager config, `GCM_INTERACTIVE=never`).
+- Frozen: EC-T0001–EC-T0006. EC-T0006 says that a forced rook capture or a stalemate makes the position dead.
+- S017 partial proof: [proofs/EC-C008_KRK_LIVE.md](proofs/EC-C008_KRK_LIVE.md), audit [audits/EC-C008_KRK_LIVE.md](audits/EC-C008_KRK_LIVE.md). Already proved there:
+  - the reduction (a) ⇒ (b);
+  - normalisation by reflections;
+  - **Lemma M** (mate pattern);
+  - **Lemma E** (escort, parity, mate);
+  - **Lemma W** (walk to `T = S − (0,2)` inside `F`).
+- Simulator `scripts/krk_route.py` (about 7 minutes; `tests/test_krk_route.py` samples it). The route reaches mate from all 175,168 strong-to-move states, but the Lemma W hypothesis fails after P1 in 10,752 states.
+- Local Lean (elan default `leanprover/lean4:v4.34.1`) when needed.
+- Push as `jfairfaxball-348`: the repo-local Git Credential Manager config, with `GCM_INTERACTIVE=never`.
+- The working copy is CRLF (`core.autocrlf=true`): hash committed blobs, not working files.
 
 ## Objective
-A complete, hostilely audited paper proof of EC-C008(a), and hence (b). Plan the Lean statement for S018. Ledger unchanged.
-
-## Facts to use (check each one)
-In a legal strong-to-move K+R vs K position:
-- the kings are not adjacent;
-- nobody is in check;
-- the strong side is never stalemated (the rook always has a legal move, and there are no pins);
-- castling, if the flags allow it, only adds strong-side moves, so a route that never castles is a valid series of legal moves.
-
-The lone king may currently be **shielded**: it stands on the rook's line, with the strong king between them.
+Close **G-P1** (rook relocation) and **G-P2** (the lone king ends P1 in `T`'s component of `F`), so that EC-C008 passes Gate L.
 
 ## Required work
-1. **Cooperative mating route** (both sides cooperate; every move legal). Starting plan (EC-C007 §6); refine it as needed:
-   - (i) by a symmetry of the board (justify each one), put the lone king in the a1 quadrant;
-   - (ii) the rook goes to h8 in ≤ 2 moves. It never gives check, because its new lines avoid that quadrant, and it never stands next to the lone king. If the strong king blocks the path, move it first;
-   - (iii) the lone king walks to {a1, b1} while the strong side passes. Strong passes by rook tempo h8↔g8 (the lone king stays on files ≤ f), or by strong-king moves away from the lone king's path;
-   - (iv) the strong king walks to a3 through ranks ≥ 3. Those squares are never adjacent to a1 or b1, so the lone king can shuffle a1↔b1 meanwhile;
-   - (v) fix the parity with a rook tempo;
-   - (vi) the rook mates along the first rank: Rh1# (or Rg1#).
-   At every lone-king turn, show that a **non-capturing** legal move exists (no stalemate, no forced capture en route), and that it is the one the route uses.
-2. **Strategy simulator** `scripts/krk_route.py` + unit test. It plays the route deterministically from **every** strong-to-move legal state, in both orientations, checks every move against an independent legality generator, and confirms the route ends in checkmate. Use it to find failing cases while designing the route; report the maximum route length. It is supplementary, never the proof.
-3. **Proof** `proofs/EC-C008_KRK_LIVE.md`, self-contained: definitions, one legality lemma per phase, complete case analysis of the obstacles (shielding, the strong king on the rook's path, the lone king near the rook, edge and corner squares, parity), and the derivation of (b) from (a) and EC-T0006.
-4. **Audit** `audits/EC-C008_KRK_LIVE.md` (hostile): every phase, symmetries, flags, both orientations, the zero-length path, and the shielded cases.
-5. **Status:** EC-C008 → `LOCAL_VERIFIED` only if no gap remains; otherwise stay `PROPOSED` and state the gap precisely. Record the planned Lean statement for S018: the route as a small number of move schemas, each with a `decide`-free legality lemma, and the main theorem `krk_strong_to_move_live` plus the characterisation `krk_dead_iff`.
+1. **Repair the route** so that the Lemma W hypothesis always holds after P1. Options:
+   - choose the rook's home side (rank 8, files a–c or f–h) by the lone king's file;
+   - walk the lone king across before the rook closes the file;
+   - add a short pre-phase.
+
+   Make the invariant a hard check in the simulator. Reach 0 failures, with every move verified.
+2. **Hand proof of the relocation lemma.** Classify the rook's position relative to the zone and the kings:
+   - already home;
+   - on rank 8;
+   - on files f–h;
+   - low-left;
+   - behind its own king.
+
+   For each class, show that the chosen route is legal, and that after each rook move the lone king has a non-capturing legal move (or is mated). Treat the lone king's edge and corner cases explicitly: count its neighbours, and those covered by at most two rook lines and by the strong king. The simulator is only for finding counterexamples while designing; per-class counts are supplementary evidence.
+3. **Hostile audit** update. EC-C008 → `LOCAL_VERIFIED` only if no gap remains; otherwise state the residual gap precisely.
+4. If Gate L passes, record the planned Lean decomposition: each phase as a move schema with a kernel legality lemma, and no per-position certificates (charter: no lookup).
 
 ## Closeout
-`sessions/S017_KRK_LIVE_PROOF.md` and a `sessions/SESSION_LEDGER.md` row: changes; proved / tested / conjectured; checks actually run; base and result SHAs; status; ledger effect (none). Install the next prompt in full: if Gate L passes, S018 = the Lean formalisation of EC-C008; otherwise a remedial S017 with the gap as its objective. Commit, push, merge to `main`.
+- `sessions/S018_KRK_LIVE_GAPS.md` and a `sessions/SESSION_LEDGER.md` row, recording:
+  - changes;
+  - proved / tested / conjectured;
+  - checks actually run;
+  - base and result SHAs;
+  - status;
+  - ledger effect (none).
+- Install the next prompt in full. If Gate L passes, S019 = Lean formalisation of EC-C008 over the kernel. Otherwise, a further remedial session.
+- Commit, push, merge to `main`.

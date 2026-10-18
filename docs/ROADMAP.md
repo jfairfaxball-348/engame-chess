@@ -1,4 +1,29 @@
-# Incremental roadmap (revisable, not an overarching conjecture)
+# Roadmap
+
+## North star: proof-based tablebase equivalence
+The overarching objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know, **by proof and without lookup**, what an endgame tablebase knows, one material class at a time. For a class this means four layers, in increasing strength:
+
+| Layer | Question for every legal position of the class | Tablebase analogue |
+|---|---|---|
+| L1 Dead / live | Can any checkmate still occur (`DeadK`)? | (FIDE 5.2.2; not stored by Syzygy) |
+| L2 Outcome | Win, draw or loss with best play, under an explicit rule model (with or without the 50-move rule) | WDL |
+| L3 Strategy | An explicit winning or holding strategy, with a proof that it works against every defence | (implicit in DTZ/DTM) |
+| L4 Distance | Exact or bounded moves to mate or to a zeroing move | DTM / DTZ |
+
+**Coverage of the 3-piece classes (Syzygy's smallest tables):**
+
+| Class | L1 | L2 | L3 | L4 |
+|---|---|---|---|---|
+| K vs K | **done** (EC-T0001/0003: every position dead) | done (draw) | n/a | n/a |
+| K+B vs K | **done** (EC-T0002/0004) | done (draw) | n/a | n/a |
+| K+N vs K | **done** (EC-T0005) | done (draw) | n/a | n/a |
+| K+R vs K | partial: dead ⇐ forced capture or stalemate (**EC-T0006**); converse EC-C008 `PROPOSED` | open | open | open |
+| K+Q vs K | open | open | open | open |
+| K+P vs K | open | open | open | open |
+
+A class counts as **tablebase-equivalent** in this programme only when L2 is proved for *every* legal position of the class, by a general argument, and formalised in Lean. Exhaustive scripts may confirm a statement but never prove it.
+
+## Incremental ladder (revisable)
 
 All listed statements are *targets*, not certified theorems.
 

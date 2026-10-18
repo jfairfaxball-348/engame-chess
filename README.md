@@ -1,6 +1,10 @@
 # Endgame Chess — proof-first mathematical research
 
-A deliberately incremental research programme in **mathematical chess endgames**. The aim is not to solve chess or announce a grand conjecture. It is to build a growing corpus of narrowly stated, independently checked and eventually **Lean 4-formalised theorems**, beginning with **king versus king**.
+A deliberately incremental research programme in **mathematical chess endgames**.
+
+**Overarching objective: proof-based tablebase equivalence.** For each endgame material class, the programme aims to prove mathematically, and formalise in Lean, everything an endgame tablebase such as Syzygy knows: the exact outcome of every legal position, and eventually its distance information. It does this through general theorems (invariants, strategies, characterisations, bounds), **never through lookup** of stored per-position results. See [docs/CHARTER.md](docs/CHARTER.md) and the coverage table in [docs/ROADMAP.md](docs/ROADMAP.md).
+
+The route is a growing corpus of narrowly stated, independently checked, **Lean 4-formalised theorems**, one small step at a time, beginning with **king versus king**.
 
 ## Intellectual approach
 
@@ -46,7 +50,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S014: rung 4 (K+R vs K) opened with *possible* mate. EC-C007 (`LOCAL_VERIFIED`): a K+R vs K position where the lone king must take the rook (or is stalemated) is dead, so Art. 5.2.2 can end a game with a rook on the board. The converse EC-C008 is `PROPOSED`, with exhaustive diagnostic support.
 - S015: EC-C007 formalised in Lean (`Rules/KRK.lean`, `FORMAL_VERIFIED`).
 - S016: EC-C007 frozen as [EC-T0006](theorems/frozen/EC-T0006/v1.md).
-- Next: S017, EC-C008 paper proof (strong side to move ⇒ a mate is reachable), which would complete the characterisation of dead K+R vs K positions.
+- S017: EC-C008 partially proved. An explicit cooperative mating route works from every strong-to-move K+R vs K state (simulator); its last three phases are proved; two gaps remain.
+- Next: S018, remedial EC-C008: repair the route and close gaps G-P1/G-P2.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
