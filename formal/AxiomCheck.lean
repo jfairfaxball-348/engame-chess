@@ -189,3 +189,39 @@ import EndgameChess
 #check @EndgameChess.Rules.not_deadK_of_winM
 #check @EndgameChess.Rules.krk_lemmaS
 #check @EndgameChess.Rules.krk_settled_live
+
+
+/-! EC-C008 Lean, part 2 (S022): replies RL-h, RL-f (Rules/KRKLive/Reply) -/
+#print axioms EndgameChess.Rules.krk_RLh
+#print axioms EndgameChess.Rules.krk_RLf
+
+/-! EC-C008 Lean, part 2 (S022): P1 (Rules/KRKLive/Relocation) -/
+#print axioms EndgameChess.Rules.rookInv_of_free
+#print axioms EndgameChess.Rules.onSeg_trans
+#print axioms EndgameChess.Rules.shield_of_line
+#print axioms EndgameChess.Rules.rook_move_ok
+#print axioms EndgameChess.Rules.after_rook
+#print axioms EndgameChess.Rules.krk_home
+#print axioms EndgameChess.Rules.krk_hfile
+#print axioms EndgameChess.Rules.krk_rankToH
+#print axioms EndgameChess.Rules.krk_fs
+#print axioms EndgameChess.Rules.krk_P1
+
+/-! EC-C008 Lean, part 2 (S022): main theorems (Rules/KRKLive/Main) -/
+#print axioms EndgameChess.Rules.krk_live_of_not_check
+#print axioms EndgameChess.Rules.krk_strong_to_move_live
+#print axioms EndgameChess.Rules.reachK_cons
+#print axioms EndgameChess.Rules.lone_move_cases
+#print axioms EndgameChess.Rules.krk_dead_iff
+#print axioms EndgameChess.Rules.initial_not_KRK
+#print axioms EndgameChess.Rules.arisen_krk_strong_live
+#print axioms EndgameChess.Rules.krk_drawn_by_rule_iff
+#print axioms EndgameChess.Rules.rlh_exception_example
+#print axioms EndgameChess.Rules.fsF2_example
+#print axioms EndgameChess.Rules.krk_strong_live_example
+
+#check @EndgameChess.Rules.krk_strong_to_move_live
+#check @EndgameChess.Rules.krk_dead_iff
+#check @EndgameChess.Rules.arisen_krk_strong_live
+#check @EndgameChess.Rules.krk_drawn_by_rule_iff
+#check @EndgameChess.Rules.krk_live_of_not_check

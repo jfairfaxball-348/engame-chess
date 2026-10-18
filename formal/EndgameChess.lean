@@ -14,3 +14,6 @@ import EndgameChess.Rules.KNK
 import EndgameChess.Rules.KRK
 import EndgameChess.Rules.KRKLive.Basic
 import EndgameChess.Rules.KRKLive.Endgame
+import EndgameChess.Rules.KRKLive.Reply
+import EndgameChess.Rules.KRKLive.Relocation
+import EndgameChess.Rules.KRKLive.Main
