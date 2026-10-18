@@ -131,3 +131,18 @@ import EndgameChess
 #check @EndgameChess.Rules.dead_of_legal_into_KNK
 #check @EndgameChess.Rules.arisen_KNK_dead
 #check @EndgameChess.Rules.knk_drawn_by_rule
+
+/-! EC-C007 (dead K+R vs K: forced capture / stalemate, over the rules kernel, S015) -/
+#print axioms EndgameChess.Rules.reachK_head
+#print axioms EndgameChess.Rules.dead_of_succ_dead
+#print axioms EndgameChess.Rules.dead_of_succ_KK
+#print axioms EndgameChess.Rules.krk_dead_of_forced_capture
+#print axioms EndgameChess.Rules.krk_forced_capture_drawn_by_rule
+#print axioms EndgameChess.Rules.legal_of_legalMoves_eq
+#print axioms EndgameChess.Rules.krk_forced_capture_example
+#print axioms EndgameChess.Rules.krk_stalemate_dead_example
+#print axioms EndgameChess.Rules.krk_live_example
+
+#check @EndgameChess.Rules.dead_of_succ_KK
+#check @EndgameChess.Rules.krk_dead_of_forced_capture
+#check @EndgameChess.Rules.krk_forced_capture_drawn_by_rule

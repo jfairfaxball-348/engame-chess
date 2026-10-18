@@ -11,3 +11,4 @@ import EndgameChess.Rules.Flags
 import EndgameChess.Rules.Reach
 import EndgameChess.Rules.Outcome
 import EndgameChess.Rules.KNK
+import EndgameChess.Rules.KRK
