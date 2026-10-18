@@ -44,7 +44,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md), whose independent human review is still open.
 - [EC-T0005](theorems/frozen/EC-T0005/v1.md) (K+N vs K) was stated over the kernel from the start: paper proof S011, Lean S012 (`Rules/KNK.lean`), frozen S013.
 - S014: rung 4 (K+R vs K) opened with *possible* mate. EC-C007 (`LOCAL_VERIFIED`): a K+R vs K position where the lone king must take the rook (or is stalemated) is dead, so Art. 5.2.2 can end a game with a rook on the board. The converse EC-C008 is `PROPOSED`, with exhaustive diagnostic support.
-- Next: S015, Lean formalisation of EC-C007 (Gate F).
+- S015: EC-C007 formalised in Lean (`Rules/KRK.lean`, `FORMAL_VERIFIED`).
+- Next: S016, freeze EC-C007 as EC-T0006 (Gate Z); then S017, EC-C008 paper proof.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
