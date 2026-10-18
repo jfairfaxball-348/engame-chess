@@ -8,7 +8,7 @@ All listed statements are *targets*, not certified theorems.
 | 1 | K vs K | Is every admissible KK position dead? | Simple invariant and FIDE connection — `LOCAL_VERIFIED` in S001; `FORMAL_VERIFIED` in S002 (Lean 4.34.1); **frozen as EC-T0001** (S003) |
 | 2 | K+B vs K | Is every admissible single-bishop ending dead? | Sliding attack geometry, obstruction — `LOCAL_VERIFIED` in S004; `FORMAL_VERIFIED` in S005; **frozen as EC-T0002** (S006) |
 | K | Rules kernel (owner decision 2026-10-16) | One general Lean encoding of FIDE Art. 3 (all pieces, castling, en passant, promotion, check) that agrees with `KK.LegalKK` / `KBK.Step`; `Arisen` as reachability; Art. 5.2.2 as a named rule definition | Closes trust gaps G1/G2 and makes G3 explicit for EC-T0001/2. S007 (model — **done**), S008 (agreement — **done**), S009 (reachability + 5.2.2 rule — **done**; candidates EC-C005/006), S010 (frozen as **EC-T0003/EC-T0004**) |
-| 3 | K+N vs K | Is every admissible single-knight ending dead? | Knight's discrete attack geometry — Gate L passed (S011, `LOCAL_VERIFIED`); Lean over the kernel next (S012) |
+| 3 | K+N vs K | Is every admissible single-knight ending dead? | Knight's discrete attack geometry — Gate L (S011) and Gate F over the kernel (S012, `FORMAL_VERIFIED`); freeze as EC-T0005 next (S013) |
 | 4 | K+R vs K | Does the stronger side possess a forcing strategy? | Strategy `∃` vs `∀`, finite descent |
 | 5 | K+Q vs K | Can a simple metric potential prove forcing? | Boundary/corner control |
 | 6 | Four-piece cases | Contrast possibility, force and dead position | Same material, different geometric types |
