@@ -107,3 +107,27 @@ import EndgameChess
 #print EndgameChess.Rules.Rule5_2_2
 #check @EndgameChess.Rules.kk_drawn_by_rule
 #check @EndgameChess.Rules.kbk_drawn_by_rule
+
+/-! EC-C003 (K+N vs K over the rules kernel, S012) -/
+#print axioms EndgameChess.Rules.dead_of_legal_into_KNK
+#print axioms EndgameChess.Rules.arisen_KNK_dead
+#print axioms EndgameChess.Rules.knk_drawn_by_rule
+#print axioms EndgameChess.Rules.initial_not_KNK
+#print axioms EndgameChess.Rules.weak_has_move
+#print axioms EndgameChess.Rules.escape_square
+#print axioms EndgameChess.Rules.knight_not_orth
+#print axioms EndgameChess.Rules.ne_of_knight_adj
+#print axioms EndgameChess.Rules.kings_apart_of_legal
+#print axioms EndgameChess.Rules.strong_not_inCheck
+#print axioms EndgameChess.Rules.step_closed
+#print axioms EndgameChess.Rules.reach_cases
+#print axioms EndgameChess.Rules.not_mated_KNK
+#print axioms EndgameChess.Rules.inCheck_weak_knk
+#print axioms EndgameChess.Rules.inCheck_strong_knk
+#print axioms EndgameChess.Rules.knight_check_example
+#print axioms EndgameChess.Rules.knk_stalemate_example
+#print axioms EndgameChess.Rules.knight_capture_example
+
+#check @EndgameChess.Rules.dead_of_legal_into_KNK
+#check @EndgameChess.Rules.arisen_KNK_dead
+#check @EndgameChess.Rules.knk_drawn_by_rule

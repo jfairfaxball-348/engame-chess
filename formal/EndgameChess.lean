@@ -10,3 +10,4 @@ import EndgameChess.Rules.AgreeKBK
 import EndgameChess.Rules.Flags
 import EndgameChess.Rules.Reach
 import EndgameChess.Rules.Outcome
+import EndgameChess.Rules.KNK
