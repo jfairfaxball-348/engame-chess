@@ -15,7 +15,7 @@ Pinned, core-only Lean 4 project (no mathlib, no dependencies).
 | EC-C004 K1 (rules kernel) | `EndgameChess/Rules/{Board,Position,Moves,Sanity}.lean` | `EndgameChess.Rules.Legal`, `mem_legalPositions`, `initial_legal_count` | [audits/EC-C004_K1.md](../audits/EC-C004_K1.md); bridge [docs/RULES_KERNEL.md](../docs/RULES_KERNEL.md) |
 | EC-C004 K3 / EC-C005, EC-C006 = **EC-T0003, EC-T0004 (frozen)** | `EndgameChess/Rules/{Flags,Reach,Outcome}.lean` | `dead_of_legal_into_KK`, `dead_of_legal_into_KBK`, `arisen_KK_dead`, `arisen_KBK_dead`, `Rule5_2_2` | [audits/EC-C004_K3.md](../audits/EC-C004_K3.md) |
 | EC-C003 / **EC-T0005 (frozen)** (K+N vs K dead, over the kernel) | `EndgameChess/Rules/KNK.lean` (imports `Rules.Outcome`) | `dead_of_legal_into_KNK`, `arisen_KNK_dead`, `knk_drawn_by_rule` | [audits/EC-C003_KNK_LEAN.md](../audits/EC-C003_KNK_LEAN.md) |
-| EC-C007 (dead K+R vs K: forced capture / stalemate) | `EndgameChess/Rules/KRK.lean` (imports `Rules.KNK`) | `krk_dead_of_forced_capture`, `dead_of_succ_KK`, `krk_forced_capture_drawn_by_rule` | [audits/EC-C007_KRK_DEAD_LEAN.md](../audits/EC-C007_KRK_DEAD_LEAN.md) |
+| EC-C007 / **EC-T0006 (frozen)** (dead K+R vs K: forced capture / stalemate) | `EndgameChess/Rules/KRK.lean` (imports `Rules.KNK`) | `krk_dead_of_forced_capture`, `dead_of_succ_KK`, `krk_forced_capture_drawn_by_rule` | [audits/EC-C007_KRK_DEAD_LEAN.md](../audits/EC-C007_KRK_DEAD_LEAN.md) |
 | EC-C004 K2 (agreement) | `EndgameChess/Rules/{Lemmas,AgreeKK,AgreeKBK}.lean` | `legal_ofKK_iff`, `legal_ofKBK_iff`, `kernel_dead_KK`, `kernel_dead_KBK` | [audits/EC-C004_K2.md](../audits/EC-C004_K2.md) |
 
 `Checks/` holds evaluation-only files (e.g. `Checks/Perft.lean`, run with `lake env lean Checks/Perft.lean`). They contain no theorems.
