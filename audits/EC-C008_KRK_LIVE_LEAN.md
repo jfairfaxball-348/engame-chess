@@ -1,8 +1,17 @@
-# Audit — EC-C008 Lean formalisation, part 1 (S021, partial)
+# Audit — EC-C008 Lean formalisation over the rules kernel (S021–S022, Gate F)
 
-**Subject:** `formal/EndgameChess/Rules/KRKLive/Basic.lean` and `formal/EndgameChess/Rules/KRKLive/Endgame.lean`, proof-source commit `a927566af9c6dc69e7661286e3eb5da1069c23ec`. **Prose:** [proofs/EC-C008_KRK_LIVE.md](../proofs/EC-C008_KRK_LIVE.md) (route v3).
-**Auditor:** same session (S021). **Toolchain:** `leanprover/lean4:v4.35.0`, core only, run locally (Linux cloud container, elan).
-**Status:** partial. EC-C008 stays `LOCAL_VERIFIED`. The main theorem `krk_strong_to_move_live` and the lemmas RL-h, RL-f and P1 are **not** formalised yet (S022).
+**Subject:** `formal/EndgameChess/Rules/KRKLive/{Basic,Endgame,Reply,Relocation,Main}.lean`. **Prose:** [proofs/EC-C008_KRK_LIVE.md](../proofs/EC-C008_KRK_LIVE.md) (route v3).
+- **Part 1 (S021):** `Basic.lean` and `Endgame.lean`, proof-source commit `a927566af9c6dc69e7661286e3eb5da1069c23ec`.
+- **Part 2 (S022):** `Reply.lean`, `Relocation.lean` and `Main.lean`, proof-source commit `a8bc161d2a51b92c340697af16a10e874cd9a098`. This commit contains the whole formalisation.
+
+**Auditor:** same agent, S021 and S022. **Toolchain:** `leanprover/lean4:v4.35.0`, core only, run in a Linux cloud container with elan.
+**Main declarations:**
+- EC-C008(a): `EndgameChess.Rules.krk_strong_to_move_live`;
+- EC-C008(b): `EndgameChess.Rules.krk_dead_iff`.
+
+**Status:** Gate F evidence is recorded in §9–§10. EC-C008 becomes `FORMAL_VERIFIED` in S022. It is not frozen (Gate Z is S023).
+
+# Part 1 (S021): infrastructure and end-game half
 
 ## 1. Design: a geometric move model, transported to the kernel
 The route chooses every move, for both sides, because `¬DeadK` asks only for *some* series of legal moves reaching mate. So Part 1 needs:
@@ -102,12 +111,110 @@ All statements quantify over arbitrary squares, with hypotheses on coordinates. 
 'EndgameChess.Rules.krkS_g7_example' depends on axioms: [propext, Classical.choice, Quot.sound]
 ```
 
-## 6. What remains (S022) and notes for it
-- **RL-h, RL-f, P1, the main theorem** `krk_strong_to_move_live` (EC-C008(a)) and **`krk_dead_iff`** (with EC-T0006).
-- The model has everything P1 needs: rook moves along clear lines (`StepM.rook`), and the lone king's reply. Because the route lets the lone king play *any* non-capturing legal reply, P1 must be proved for every reply that satisfies the `StepM.lone` conditions. RL-h and RL-f give existence; the next leg needs only the invariants (ii)/(iii) of the prose, which `StepM.lone` provides (`¬RookSees` after the move).
-- The "or it is checkmated" branches of RL-h and RL-f should be discharged into `MateM`, so that `winM_of_mate` closes them.
-- The main theorem: from `Legal p q` derive the kings apart (F1) and the lone king not in check. Take a symmetry from `exists_sym_normal`, run P1 in the normal frame, finish with `krk_lemmaS`, and transfer with `winM_of_sym` and `not_deadK_of_winM`.
-- P1's exception `(S, R, L) = (c8, h7, a8)` and the file-shift branch must be stated as schemas, not cases.
+# Part 2 (S022): replies, relocation and main theorems
 
-## 7. Residual assumptions
+## 6. Statement correspondence (`Reply.lean`)
+| Prose | Lean | Check |
+|---|---|---|
+| A legal non-capturing reply of the lone king | `Free sk r wk t` | Exactly `StepM.lone`'s conditions: `t` is adjacent to `L`, is not the rook's square, is not adjacent to `S`, and is not seen by the rook once `L` stands on `t`. |
+| "has a non-capturing legal move, or is checkmated" | `LoneOK sk r wk` | `(∃ t, Free …) ∨ MateM …`. `MateM` is a kernel `MatedK` by `mate_sound`. |
+| RL-h's exception `(S, R, L) = (c8, h7, a8)` | `HExc` (with the rook on the h-file) | Coordinates: rook rank 7, `S` = (2,7), `L` = (0,7). |
+| **RL-h** | `krk_RLh` | Hypotheses: `Normal sk`, `r.1 = 7`, `r ≠ wk`, `2 ≤ dInf sk wk`, `¬HExc`. Conclusion: `LoneOK`. Each case names an explicit reply square, checked by `omega`. The case split differs from the prose's in form (details below), not in content. Every case ends in an explicit reply or in a proof of `MateM`. |
+| **RL-f** | `krk_RLf` | Hypotheses: rook file `< sx`, `sx ≤ 3`, `L` off the rook's file, rank distance ≥ 2, `2 ≤ dInf sk wk`. Conclusion: a free step. `sx ≤ 3` is implicit in the prose ("`S` normalised"). It is needed: without it the reply `(x−1, y)` for `L` on the h-file could land on the rook's file. |
+
+**RL-h case split as formalised.** Notation: `L = (x, y)`, rook `(7, ρ)`.
+1. **`x = 7`:** reply `(6, y)`.
+2. **`x ∈ {5, 6}`:** reply `(x, y+1)` or `(x, y−1)`, whichever is on the board and off rank `ρ`; otherwise `(11−x, y)`.
+3. **`x ≤ 4`:**
+   - **`|y−ρ| ≥ 2`:** reply `(x+1, y)` if `S` is ≥ 2 ranks away, otherwise `(x, y±1)`.
+   - **`|y−ρ| = 1`:**
+     - `(x+1, y)` if `S` is ≥ 2 ranks away;
+     - otherwise the vertical square away from rank `ρ`, if it is on the board;
+     - otherwise `(x±1, y)` on the side away from `S`;
+     - otherwise the a8 corner: b8 if `sx ≥ 3`, a7 if `S` = c7 (shielded), and `S` = c8 is `HExc`.
+   - **`y = ρ`:**
+     - a vertical reply when `S` is ≥ 2 files away;
+     - otherwise the vertical reply that `S` does not cover;
+     - otherwise (`L` on rank 1 or 8) the inner diagonal on the side away from `S`;
+     - otherwise `MateM`.
+
+This is the prose's argument (the opposite-neighbour fact, applied case by case), with every reply made explicit.
+
+## 7. Statement correspondence (`Relocation.lean`)
+| Prose | Lean | Check |
+|---|---|---|
+| Facts (i)–(iii) of Lemma P1 | `RookInv sk rs wk` | The state invariant: `S` normalised, `sk ≠ rs`, kings apart, `rs ≠ wk`, the rook does not see `L`. Fact (i) is part of `step_sound` (S021). |
+| (iii): after any free reply, (ii) holds again | `rookInv_of_free` | Every `Free` reply gives `RookInv`. So the route is proved from **every** state the reply can produce, as the prose requires ("any non-capturing legal move"), even though `WinM` lets us pick one. |
+| (ii): `L` is not on an unshielded rook line | `shield_of_line`, `onSeg_trans`, `rook_move_ok` | A rook move whose segment and target avoid `S` also avoids `L`. |
+| A rook move plus a reply | `after_rook` | `StepM.rook`, then `LoneOK`: a free reply continues from `RookInv`; a mate ends the route. |
+| home | `krk_home` | Lemma S (`krk_lemmaS`, S021). |
+| direct, from the h-file | `krk_hfile` | `R → h8`, a reply by RL-h (h8 ≠ h7, so the exception cannot arise), then home. |
+| HV; direct, from rank 8 | `krk_rankToH` | The condition "`S` is not on the rook's rank between it and the h-file", and not the exception. `R → (h, ry)`, then RL-h, then `krk_hfile`. If the rook is on rank 8, this is the prose's "direct from rank 8" route followed by home. |
+| FS (F1, F2, F3) | `krk_fs` | `R → (rx, y′)` with `y′ ≠ ry`, `y′ ≠` rank 7, `y′ ≠ sy`, and `|L_y − y′| ≥ 2`. The reply is by RL-f in F1/F3 (L is off the rook's file: `S`, to the rook's right, cannot shield it on that file), or `Ka8–a7` in F2. Then `krk_rankToH`. |
+| **Lemma P1** with §3's rule | `krk_P1` | `RookInv ⇒ WinM`. The classification is exactly the prose's: FS if `S` blocks the rank or the position is `HExc`, with `y′` = rank 1 if `L` is on rank 3 or higher, else rank 8 (rank 5 if the rook is on rank 8); otherwise HV/direct/h-file/home. |
+
+The FS legs are the prose's. One simplification: after leg 1, legs 2 and 3 are `krk_rankToH` again, because `S` is now off the rook's rank. When `y′` is rank 8, leg 2 goes straight to h8 along rank 8, as in the prose.
+
+## 8. Statement correspondence (`Main.lean`)
+| Prose | Lean | Check |
+|---|---|---|
+| F1 + F4 + P1 + S + W + E + M | `krk_live_of_not_check` | `IsKRK q σ sk rs wk`, `q.turn = σ`, `inCheck q σ.opp = false` ⇒ `¬DeadK q`, for any flags. A `BoardSym` from `exists_sym_normal` maps the state to `RookInv`. `krk_P1` gives `WinM` there, and `winM_of_sym` and `not_deadK_of_winM` bring it back to `q`. |
+| **EC-C008(a)** | `krk_strong_to_move_live` | `Legal p q`, `IsKRK q σ sk rs wk`, `q.turn = σ` ⇒ `¬DeadK q`. F1: the mover of the last move (`σ.opp`) is not in check (`legal_mover_safe`). Both orientations (`σ` arbitrary); any flags. |
+| §1 "(a) ⇒ (b)", the move of the lone king | `lone_move_cases`, `reachK_cons` | A legal lone-king move gives K+R vs K with `σ` to move, or captures the rook and gives `IsKK` (both colour cases are built explicitly). Castling is excluded (no rook of the lone side). |
+| **EC-C008(b)** | `krk_dead_iff` | `IsKRK q σ sk rs wk`, `q.turn = σ.opp` ⇒ (`DeadK q ↔ ¬MatedK q ∧ ∀ r, Legal q r → ∃ w b, IsKK r w b`). "⇐" is EC-T0006's `krk_dead_of_forced_capture`. "⇒" uses (a) on the successor. **Stronger than the prose:** no hypothesis that `q` was produced by a legal move. The proof uses only the legality of the move *from* `q`. |
+| Arisen form; Art. 5.2.2 | `initial_not_KRK`, `arisen_krk_strong_live`, `krk_drawn_by_rule_iff` | For an arisen K+R vs K position: `Rule5_2_2 q .draw ↔ q.turn = σ.opp ∧ ¬MatedK q ∧ every legal move captures the rook`. This is the full L1 characterisation for K+R vs K under the rule encoding. |
+
+## 9. Non-vacuity (`decide`) and negative controls
+- `rlh_exception_example`: White Kc8, Rh7, Black Ka8, Black to move. `HExc` holds; `decide` gives not in check and `legalMoves = []`; `DeadK` follows via `krk_dead_iff`. RL-h's exception is a real stalemate, so `¬HExc` cannot be dropped.
+- `fsF2_example`: White Kc8, Rd7, Black Ka8, White to move (FS case F2). `decide` gives Black not in check; `¬DeadK` via `krk_live_of_not_check`.
+- `krk_strong_live_example`: from White Kd4, Ra1, Black Kf6 (Black to move), Kf6–g7 is legal (`decide`) and yields `IsKRK` with White to move. `krk_strong_to_move_live` applies, so its hypotheses are jointly satisfiable by a position produced by a legal move.
+- **Negative controls** (scratch file, not committed), each rejected:
+  - `legalMoves rlhExcPos ≠ []` (`decide` refutes it);
+  - `inCheck fsF2Pos .black = true` (`decide` refutes it);
+  - `krk_RLh` applied to `(c8, h7, a8)`: the `¬HExc` obligation cannot be discharged (unsolved goal).
+
+## 10. Checks actually run (S022)
+- `lake env lean` on each new module: no errors, no warnings. `Reply.lean` takes about 2 minutes. It sets `maxHeartbeats 4000000`, an elaboration budget only, which does not change what the kernel checks.
+- `lake build` (working tree): `Build completed successfully (22 jobs)`.
+- `lake env lean AxiomCheck.lean`: exit 0; 161 reports (138 + 23 new). Every report is ⊆ `[propext, Classical.choice, Quot.sound]`; no `sorryAx` or `ofReduceBool`. Both main declarations: `[propext, Classical.choice, Quot.sound]`.
+- Forbidden-token grep (`sorry|admit|axiom|unsafe|native_decide|implemented_by|extern`) on `Rules/KRKLive/*.lean`: 0 matches.
+- No frozen module was edited. Changed under `formal/`: three new modules, `EndgameChess.lean` (+3 imports), `AxiomCheck.lean` (appended).
+- **Fresh GitHub clone** of `ccr-65bb49c1-g989hw` at `a8bc161d2a51b92c340697af16a10e874cd9a098` (HEAD verified), empty `.lake`:
+  - `lake build`: exit 0, `Build completed successfully (22 jobs)`, 3 min 47 s. The new modules took Basic 33 s, Endgame 7.4 s, Reply 127 s, Relocation 10 s and Main 1.3 s.
+  - `lake env lean AxiomCheck.lean`: exit 0, with output byte-identical to the working-tree run (161 reports: 143 × the standard three, 5 × `[propext, Quot.sound]`, 8 × `[propext]`, the rest axiom-free).
+  - Forbidden-token grep on the clone: 0 matches.
+- CI: not observed.
+
+### Axiom report (S022 declarations)
+```
+'EndgameChess.Rules.krk_RLh' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_RLf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rookInv_of_free' does not depend on any axioms
+'EndgameChess.Rules.onSeg_trans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.shield_of_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rook_move_ok' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.after_rook' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_home' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_hfile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_rankToH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_fs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_P1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_live_of_not_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_strong_to_move_live' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.reachK_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.lone_move_cases' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_dead_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.initial_not_KRK' depends on axioms: [propext]
+'EndgameChess.Rules.arisen_krk_strong_live' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_drawn_by_rule_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rlh_exception_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.fsF2_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_strong_live_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+## 11. Correspondence summary and coercion check
+- The two main statements quantify over **all** kernel positions with K+R vs K material (`IsKRK`: exactly three pieces), both colours, and any castling rights and en-passant target. They use the kernel's own `Legal`, `ReachK`, `MatedK` and `DeadK`. No surrogate move relation appears in a main statement: the KRK model is internal, and its link to the kernel is proved (`step_sound`, `mate_sound`).
+- No finite test is passed off as the theorem. `decide` appears only in the concrete examples and in `Fin` bounds; all route lemmas are proved by `omega` over symbolic coordinates.
+
+## 12. Residual assumptions
 A1; the kernel encoding (human review of `docs/RULES_KERNEL.md` still open); the audit is by the same agent.

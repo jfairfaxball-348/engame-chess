@@ -54,7 +54,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S018–S019: route repaired and the relocation lemma proved. **EC-C008 is `LOCAL_VERIFIED`**: together with EC-T0006, a legal K+R vs K position is dead iff the lone king is to move, it is not checkmate, and every legal move captures the rook. That settles layer L1 for K+R vs K on paper.
 - S020: Lean toolchain migrated to v4.35.0, which meets Palomar's minimum. All six frozen theorems were re-verified with identical statements, and v2 manifests were written.
 - S021: EC-C008 Lean, part 1. KRK infrastructure over the kernel (attack and check on `krkBoard`, a geometric move model with kernel soundness, reflections F4) and the end-game half (Lemmas M, E, C, W, S) are formalised. EC-C008 stays `LOCAL_VERIFIED`.
-- Next: S022, the rest of EC-C008 in Lean (RL-h, RL-f, P1, main theorem), then Gate F.
+- S022: EC-C008 fully formalised (RL-h, RL-f, P1, main theorems). **EC-C008 is `FORMAL_VERIFIED`**: in the kernel, a K+R vs K position with the strong side to move (produced by a legal move) is never dead, and with the lone king to move it is dead iff not checkmate and every legal move captures the rook.
+- Next: S023, Gate Z freeze of EC-C008 as EC-T0007.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

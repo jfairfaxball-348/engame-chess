@@ -1,6 +1,6 @@
 # EC-C008 — K+R vs K with the strong side to move is never dead (local proof, S017–S019)
 
-**Status:** `LOCAL_VERIFIED` (Gate L, S019). Not formally verified; not frozen. G-P2 was closed in S018 (Lemmas C and S); G-P1 was closed in S019 (Lemmas RL-h, RL-f and P1, §4b). Audit: [audits/EC-C008_KRK_LIVE.md](../audits/EC-C008_KRK_LIVE.md). **Lean (partial, S021):** infrastructure and Lemmas M, E, C, W, S in `formal/EndgameChess/Rules/KRKLive/`; [Lean audit](../audits/EC-C008_KRK_LIVE_LEAN.md). RL-h, RL-f, P1 and the main theorem are not yet formalised.
+**Status:** `LOCAL_VERIFIED` (Gate L, S019). Not formally verified; not frozen. G-P2 was closed in S018 (Lemmas C and S); G-P1 was closed in S019 (Lemmas RL-h, RL-f and P1, §4b). Audit: [audits/EC-C008_KRK_LIVE.md](../audits/EC-C008_KRK_LIVE.md). **Lean (S021–S022, `FORMAL_VERIFIED`):** all lemmas and both parts of the theorem in `formal/EndgameChess/Rules/KRKLive/` (`krk_strong_to_move_live`, `krk_dead_iff`); [Lean audit](../audits/EC-C008_KRK_LIVE_LEAN.md).
 **Rules:** the kernel encoding of FIDE 2023 (`docs/RULES_KERNEL.md`). **Companion:** [EC-T0006](../theorems/frozen/EC-T0006/v1.md).
 **Attribution:** that K+R vs K is a win for the strong side is classical. The *cooperative* (possible-mate) statement proved here is weaker and also classical in spirit. Nothing is claimed as novel.
 

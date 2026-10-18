@@ -17,7 +17,7 @@ The overarching objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know,
 | K vs K | **done** (EC-T0001/0003: every position dead) | done (draw) | n/a | n/a |
 | K+B vs K | **done** (EC-T0002/0004) | done (draw) | n/a | n/a |
 | K+N vs K | **done** (EC-T0005) | done (draw) | n/a | n/a |
-| K+R vs K | paper-complete: dead ⇔ forced capture or stalemate (EC-T0006 frozen + EC-C008 `LOCAL_VERIFIED`); Lean for EC-C008: part 1 done S021 (infrastructure, Lemmas M/E/C/W/S), P1 and main theorem pending (S022) | open | open | open |
+| K+R vs K | Lean-complete: dead ⇔ forced capture or stalemate (EC-T0006 frozen + EC-C008 `FORMAL_VERIFIED`); EC-C008 `FORMAL_VERIFIED` S022 (Lean S021–S022), freeze S023 | open | open | open |
 | K+Q vs K | open | open | open | open |
 | K+P vs K | open | open | open | open |
 
@@ -44,7 +44,7 @@ The remaining port is the module system: it edits every module, frozen ones incl
 **Where we are:**
 - **Three-piece classes** (KQK, KRK, KBK, KNK, KPK):
   - KBK and KNK are settled at L1 (dead), which implies L2 (draw), with no L4 content; frozen.
-  - KRK has L1 complete on paper (EC-T0006 frozen; EC-C008 `LOCAL_VERIFIED`, Lean part 1 done S021, rest S022). L2 (strong side wins whenever not dead) and L4 are open.
+  - KRK has L1 complete on paper (EC-T0006 frozen; EC-C008 `FORMAL_VERIFIED` S022, freeze S023). L2 (strong side wins whenever not dead) and L4 are open.
   - KQK and KPK are open. KPK is the first genuinely hard L2 class, because of promotion, opposition and stalemate.
 - **Roughly 2¼ of 5 three-piece classes** at WDL level, and **0 of the 4-piece and larger classes**. As a share of all of Syzygy, this is still well under 1%. The infrastructure (one audited rules kernel, now owner-reviewed, plus reusable deadness and reachability lemmas) is the main asset so far.
 
