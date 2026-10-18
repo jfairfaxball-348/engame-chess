@@ -1,29 +1,34 @@
-# Audit — EC-C008 partial proof (S017, updated S018)
+# Audit — EC-C008 local proof (S017–S019)
 
-**Subject:** [proofs/EC-C008_KRK_LIVE.md](../proofs/EC-C008_KRK_LIVE.md). **Auditor:** same sessions (S017, S018); no independent reader.
-**Verdict: Gate L NOT passed.** EC-C008 stays `PROPOSED`. One gap remains: G-P1. G-P2 is closed (S018).
+**Subject:** [proofs/EC-C008_KRK_LIVE.md](../proofs/EC-C008_KRK_LIVE.md). **Auditor:** same sessions (S017–S019); no independent reader.
+**Verdict: Gate L passes (S019), subject to the same-agent caveat.** G-P2 was closed in S018 and G-P1 in S019. EC-C008 → `LOCAL_VERIFIED`.
 
 | # | Attack | Outcome |
 |---|---|---|
-| 1 | Does (a) ⇒ (b) hold? A non-capturing lone-king move produces the next position by a legal move, so (a) applies to it. | Sound. |
-| 2 | Do the reflections alone reach `sx ≤ 3, sy ≥ 2`? Yes: one reflection per axis, and both preserve rook and king geometry. | Sound. |
-| 3 | Lemma M with `a = 0`: the `(a−1, ·)` squares do not exist, which only removes escapes. Lemma E has `a ≤ 3` and `r ≥ 6`. | Sound. |
-| 4 | Lemma M x-ray: the escape to `(a−1, 0)` behind `L`. The kernel evaluates check after the move, so `(a,0)` is then empty and the rook sees through it. | Sound. |
-| 5 | Lemma E with pair `H` (rook on h7, attacking rank 7): could the lone king's escort squares lie on rank 7? No: the escort keeps `L` on ranks 1–6 (`j ≤ 5`). | Sound. |
-| 6 | Lemma E shuttle square `(a+1, 0)`: it is on file e at most, so it is attacked from neither pair square. | Sound. |
-| 7 | Lemma C: do clipped boxes at the rectangle's edge break the free-row / free-column argument? No: `N1[S]` is at most 3 wide and 3 high, and the regions are 6 × 7 or 7 × 6. | Sound. |
-| 8 | Lemma W: can king blocking ever open a square to the rook? No: blocking only removes attacked squares, and the regions are defined without blocking. | Sound. |
-| 9 | Lemma S exhaustiveness: is `L` really never on the h-file below the rook? Only a king could block the h-file. `S` is on files a–d, and `L` itself would then be attacked. | Sound. |
-| 10 | Lemma S case 4: is g8 really impossible for `L`? The rook on h8 attacks g8, so `L` would be in check, which is illegal for the side not to move. | Sound. |
-| 11 | Lemma S case 3: is `Rg8+` with `Kf6` legal? Kf6 must not be attacked by the rook on g8, which covers rank 8 and the g-file only, and must not be adjacent to `S` (file f vs files a–d). | Sound. |
-| 12 | P1: after each relocation move, does the lone king have a non-capturing reply? | Verified exhaustively only. **Gap G-P1.** |
-| 13 | Flags: the route never castles, and flags only add moves. | Sound. |
+| 1 | (a) ⇒ (b): a non-capturing lone-king move produces a position by a legal move. | Sound. |
+| 2 | Reflections alone reach `sx ≤ 3, sy ≥ 2`, and they preserve rook and king geometry. | Sound. |
+| 3 | Lemma M at `a = 0`: the missing `(a−1, ·)` squares only remove escapes. In Lemma E, `a ≤ 3` and `r ≥ 6`. | Sound. |
+| 4 | Lemma M x-ray: check is evaluated after the move, when `(a,0)` is empty. | Sound. |
+| 5 | Lemma E with the pair `H`: the escort keeps `L` on ranks 1–6, so the rook on h7 (attacking rank 7) never hits it. | Sound. |
+| 6 | Lemma C on clipped boxes: the box is at most 3 × 3, inside a 6 × 7 or 7 × 6 rectangle. | Sound. |
+| 7 | Lemma W: blocking only removes attacked squares. | Sound. |
+| 8 | Lemma S exhaustiveness: `L` is never on the h-file below h8, and never on g8. | Sound. |
+| 9 | Lemma S case 3, `Rg8+` then Kf6: f6 is attacked by neither g8 nor `S`. | Sound. |
+| 10 | **RL-h**, `L` on rank 1 or 8 with `L_y = ρ` and shielded: then `(L_x, L_y ∓ 1)` is free, since `|sx − L_x| ≥ 2`. Unshielded and fully covered means `S = (L_x, L_y ∓ 2)`, which is not on rank `ρ`, so `L` is in check and it is checkmate, not stalemate. | Sound. |
+| 11 | **RL-h**, corner a8 with `ρ` = rank 7: `S` = c7 blocks the rook's ray, freeing a7 and b7; `S` = c8 gives the stated exception. Brute force over all `S`, `ρ` and `L` finds exactly this one exception. | Sound. |
+| 12 | **RL-h**, corner a1: normalisation (`sy ≥ 2`, i.e. rank 3 or higher) stops `S` covering b1. Without normalisation the claim would fail: c1/c2 versions exist. | Sound; normalisation is essential and is stated. |
+| 13 | **RL-f** needs `rx < sx`. All three FS classes provide it: in F1/F3, `S` is between the rook and the h-file. F2 is handled separately. Brute force: 9,279 instances, 0 exceptions. | Sound. |
+| 14 | **Lemma P1**, FS leg 1: is `(rx, y′)` ever the rook's own square (`y′ = ry`)? No. F1 uses rank 1 or rank 8 with the rook off rank 8; F3 uses rank 1 or rank 5 with the rook on rank 8; F2 uses rank 1 with the rook on rank 7. | Sound. |
+| 15 | **Lemma P1**: does a lone reply ever step onto the rook's next path? No. By (iii) it is never on an unshielded rook line, and only `S` can shield; the branch facts show that `S` is not on the next path. | Sound. |
+| 16 | Is the reply "any non-capturing move", or one chosen move? The proof covers **any** non-capturing reply. The simulator exercised one particular reply; the proof does not depend on that choice. | Sound. |
+| 17 | Flags and castling: never used, and they only add moves. | Sound. |
+| 18 | Are the RL-h and RL-f brute-force checks the proof? No. They are supplementary; the case analyses in §4b are the proof. | Correct status. |
 
-## Simulator output (verbatim, `python scripts/krk_route.py`, route v2, S018)
+## Simulator output (verbatim, `python scripts/krk_route.py`, route v3, S019)
 ```
 strong_to_move_states: 175168
 route_reaches_mate: 175168
 longest_route_plies: 31
-phase1_rule_counts: {'P1-HV': 130856, 'P1-VH': 3438, 'P1-detour': 1222, 'P1-direct': 36900, 'P1-home': 2752, 'P2-G': 171554, 'P2-H': 3240, 'P2-g7': 64, 'P2-rank8': 12}
+phase1_rule_counts: {'FS-F1': 3432, 'FS-F2': 24, 'FS-F3': 1204, 'HV': 130856, 'P2-G': 171560, 'P2-H': 3240, 'P2-g7': 64, 'P2-rank8': 12, 'direct-hfile': 18996, 'direct-rank8': 17904, 'home': 2752}
 ```
-(S017, route v1: mate in 175,168 states, but the Lemma W invariant failed in 10,752 of them. Route v2 enforces it as a hard check.)
+Reply-lemma brute force (S019): RL-h has a single exception, `(c8, h7, a8)`; RL-f has 9,279 instances and 0 exceptions.

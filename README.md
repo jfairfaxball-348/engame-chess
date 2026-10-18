@@ -51,8 +51,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S015: EC-C007 formalised in Lean (`Rules/KRK.lean`, `FORMAL_VERIFIED`).
 - S016: EC-C007 frozen as [EC-T0006](theorems/frozen/EC-T0006/v1.md).
 - S017: EC-C008 partially proved. An explicit cooperative mating route works from every strong-to-move K+R vs K state (simulator); its last three phases are proved; two gaps remain.
-- S018: route repaired (v2); EC-C008 now reduces to a single rook-relocation lemma (G-P1).
-- Next: S019, prove G-P1.
+- S018–S019: route repaired and the relocation lemma proved. **EC-C008 is `LOCAL_VERIFIED`**: together with EC-T0006, a legal K+R vs K position is dead iff the lone king is to move, it is not checkmate, and every legal move captures the rook. That settles layer L1 for K+R vs K on paper.
+- Next: S020, Lean formalisation of EC-C008 (multi-session).
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

@@ -96,59 +96,51 @@ class Game:
 
 # ---------------------------------------------------------------- route phases
 
-def phase1_candidates(R):
-    """Explicit rook routes to h8, in the fixed order the route tries them."""
-    rx, ry = R
-    out = []
-    if ry == 7 or rx == 7:
-        out.append([(7, 7)])                                   # P1-direct
-    out.append([(7, ry), (7, 7)])                              # P1-HV: across, then up
-    out.append([(rx, 7), (7, 7)])                              # P1-VH: up, then across
-    y0 = 1 if ry == 0 else 0
-    out.append([(rx, y0), (7, y0), (7, 7)])                    # P1-detour
-    return [[c for c in seq if c != R] for seq in out]
-
-
 STATS = {}
-NAMES = ["P1-direct", "P1-HV", "P1-VH", "P1-detour"]
 
 
 def p1_lone_reply(g):
-    """Lone reply during P1: prefer squares of G (files a-f, ranks 1-7) not adjacent to S."""
+    """Lone reply during P1: any non-capturing legal move (the proof allows any); this one
+    prefers squares of region G."""
     opts = g.lone_options()
     if not opts:
-        raise RouteError("no reply")
+        raise RouteError(f"P1: lone king has no non-capturing reply {g.pos}")
     G = region(g, "G")
     return sorted(opts, key=lambda q: (q not in G, q))[0]
 
 
-def phase1_rook_home(g):
-    """Rook to h8 by the first explicit route that works (every rook move legal; after each,
-    the lone king has a non-capturing move, or is mated)."""
-    if g.R == (7, 7):
-        STATS["P1-home"] = STATS.get("P1-home", 0) + 1
-        return
-    cands = phase1_candidates(g.R)
-    if g.R[1] != 7 and g.R[0] != 7:
-        names = NAMES[1:]
+def p1_route(S, R, L):
+    """The explicit P1 rule of proofs/EC-C008_KRK_LIVE.md (v3, S019). Returns (branch, squares)."""
+    rx, ry = R
+    if R == (7, 7):
+        return "home", []
+    if rx == 7:
+        return "direct-hfile", [(7, 7)]
+    if ry == 7 and not (S[1] == 7 and S[0] > rx):
+        return "direct-rank8", [(7, 7)]
+    if ry != 7:
+        blocked = any(q in (S, L) for q in [(x, ry) for x in range(rx + 1, 8)])
+        exception = (S == (2, 7) and L == (0, 7) and ry == 6)
+        if not blocked and not exception:
+            return "HV", [(7, ry), (7, 7)]
+    # file shift: F1 (S between on the rook's rank), F2 (c8/a8 exception), F3 (rank 8 behind S)
+    yp = 0 if L[1] >= 2 else (7 if ry != 7 else 4)
+    seq = [(rx, yp)] + ([] if yp == 7 else [(7, yp)]) + [(7, 7)]
+    if S[1] == ry and S[0] > rx:
+        name = "FS-F3" if ry == 7 else "FS-F1"
+    elif S == (2, 7) and L == (0, 7) and ry == 6:
+        name = "FS-F2"
     else:
-        names = NAMES
-    for name, seq in zip(names, cands):
-        h = clone(g)
-        try:
-            for c in seq:
-                h.play((W, "R"), c, "P1-rook")
-                h.play((B, "K"), p1_lone_reply(h), "P1-lone")
-        except Mated:
-            pass
-        except RouteError:
-            continue
-        STATS[name] = STATS.get(name, 0) + 1
-        for c in seq:
-            g.play((W, "R"), c, "P1-rook")
-            g.play((B, "K"), p1_lone_reply(g), "P1-lone")
-        return
-    raise RouteError(f"P1: no rook route {g.pos}")
+        raise RouteError(f"P1: unclassified {S, R, L}")
+    return name, seq
+
+
+def phase1_rook_home(g):
+    name, seq = p1_route(g.S, g.R, g.L)
+    STATS[name] = STATS.get(name, 0) + 1
+    for c in seq:
+        g.play((W, "R"), c, "P1-rook")      # raises RouteError if illegal, Mated on mate
+        g.play((B, "K"), p1_lone_reply(g), "P1-lone")
 
 
 def region(g, kind):

@@ -1,6 +1,6 @@
-# EC-C008 — K+R vs K with the strong side to move is never dead (partial proof, S017–S018)
+# EC-C008 — K+R vs K with the strong side to move is never dead (local proof, S017–S019)
 
-**Status:** `PROPOSED`. **Gate L not passed.** One gap remains (G-P1, §6). G-P2 was closed in S018 by route v2 (§3, Lemmas C and S). Audit: [audits/EC-C008_KRK_LIVE.md](../audits/EC-C008_KRK_LIVE.md).
+**Status:** `LOCAL_VERIFIED` (Gate L, S019). Not formally verified; not frozen. G-P2 was closed in S018 (Lemmas C and S); G-P1 was closed in S019 (Lemmas RL-h, RL-f and P1, §4b). Audit: [audits/EC-C008_KRK_LIVE.md](../audits/EC-C008_KRK_LIVE.md).
 **Rules:** the kernel encoding of FIDE 2023 (`docs/RULES_KERNEL.md`). **Companion:** [EC-T0006](../theorems/frozen/EC-T0006/v1.md).
 **Attribution:** that K+R vs K is a win for the strong side is classical. The *cooperative* (possible-mate) statement proved here is weaker and also classical in spirit. Nothing is claimed as novel.
 
@@ -21,20 +21,20 @@ Let `q` be produced by a legal move, with `IsKRK q σ sk rs wk`.
 - F3. Castling flags can only *add* strong-side moves. The route below never castles, so it is a legal series whatever the flags. En passant and promotion need pawns.
 - F4. The reflections `x ↦ 7−x` and `y ↦ 7−y` preserve rook and king geometry, legality, check and mate. Apply them so that the strong king `S = (sx, sy)` has **`sx ≤ 3` and `sy ≥ 2`**: reflect in x if `sx ≥ 4`, and in y if `sy ≤ 1`. Colour symmetry gives both orientations.
 
-## 3. The route (v2, S018)
+## 3. The route (v3: P1 rule from S019; P2–P5 from S018)
 Notation: rook `R`, lone king `L`, target `T = (sx, sy − 2)`, `N1[S]` = the squares at `d∞ ≤ 1` from `S`. There are two **tempo pairs**, each with a **region**:
 - `G` (h8 ↔ g8): region files a–f × ranks 1–7, minus `N1[S]`.
 - `H` (h8 ↔ h7): region files a–g × ranks 1–6, minus `N1[S]`.
 
 Since `sx ≤ 3`, `N1[S]` lies within files a–e. **No square on files f–h is adjacent to `S`.**
 
-1. **P1, rook to h8.** Use the first of these explicit routes for which every rook move is legal and leaves the lone king a non-capturing reply (or mates):
-   - (direct) one move, if the rook is on rank 8 or on the h-file;
-   - (HV) `(rx, ry) → (h, ry) → h8`;
-   - (VH) `(rx, ry) → (rx, 8) → h8`;
-   - (detour) `(rx, y₀) → (h, y₀) → h8`, with `y₀` = rank 1, or rank 2 if the rook is on rank 1.
+1. **P1, rook to h8** (v3, S019). Apply the first rule that fits:
+   - **home:** the rook is already on h8;
+   - **direct:** the rook is on the h-file; or it is on rank 8 with `S` not on rank 8 between it and h8. The rook moves to h8;
+   - **HV:** the rook is off rank 8 and the h-file, the squares `(rx+1 … h, ry)` are empty, and the position is not the exception `(S, L, ry) = (c8, a8, rank 7)`. The route is `(rx, ry) → (h, ry) → h8`;
+   - **file-shift FS:** otherwise. Let `y′` be rank 1 if `L` is on rank 3 or higher; otherwise rank 8, unless the rook is on rank 8, in which case rank 5. The route is `(rx, ry) → (rx, y′) → (h, y′) → h8`, where the middle move is omitted if `y′` is rank 8.
 
-   The lone king replies with a non-capturing move, preferring the region `G`.
+   After each rook move the lone king plays **any** non-capturing legal move (one exists, by §4b), unless it is mated.
 2. **P2, settle and walk.** Lemma S, then Lemma W with the pair that Lemma S chooses.
 3. **P3–P5, escort, parity, mate.** Lemma E with the same pair, then Lemma M.
 
@@ -125,21 +125,109 @@ Then a position satisfying Lemma E's hypotheses (with the pair `P`) is reachable
 
 **Corollary.** From every normalised strong-to-move state in which P1 succeeds, mate is reachable. Success means the rook reaches h8 (or mates), with every move legal and only non-capturing lone-king replies. So **EC-C008 reduces to the relocation lemma (G-P1).**
 
-## 5. Computational evidence (supplementary; `scripts/krk_route.py`, route v2)
+## 4b. Rook relocation (closes G-P1, S019)
+
+**Lemma RL-h (reply to a rook on the h-file).** Let `S` be normalised, let the rook stand on `(h, ρ)`, and let `L` be on any other square not adjacent to `S`, with the lone king to move. Then the lone king has a non-capturing legal move, or it is checkmated. The single exception is `(S, R, L) = (c8, h7, a8)`, which is a stalemate.
+
+*Proof.* Recall that squares on files f–h are never adjacent to `S`. Split on `L`'s file.
+1. **`L` on the h-file.** The square `(g, L_y)` is:
+   - empty, since `S` is on files a–d;
+   - not adjacent to `S`;
+   - not on the h-file;
+   - not on rank `ρ`, because `L_y ≠ ρ`.
+
+   So it is not attacked, and the move to it is legal and non-capturing.
+2. **`L` on files f–g.**
+   - If one of `(L_x, L_y ± 1)` is on the board and not on rank `ρ`, it is a legal non-capturing destination: it is on files f–g, off the h-file and off rank `ρ`.
+   - Otherwise `L` is on rank 1 or 8 and its single vertical neighbour is on rank `ρ`. Then `L_y ≠ ρ`, and `(x′, L_y)` with `{L_x, x′} = {f, g}` is a legal destination.
+3. **`L` on files a–e.** The rook is at file distance ≥ 3, so no move captures. Among `L`'s neighbours, the rook can attack only those on rank `ρ`. **Opposite-neighbour fact:** a king at `d∞ ≥ 2` from `L` cannot be adjacent to two neighbours `q` and `2L − q` of `L` on opposite sides, since that would force `d∞(S, L) ≤ 1`. In particular `S` covers at most one of each opposite pair.
+   - **`|L_y − ρ| ≥ 2`.** Only `S` covers neighbours. Some opposite pair is on the board unless `L` is in a corner. In the corners a1 and a8, `S` cannot cover all three neighbours: covering both orthogonal neighbours would force adjacency to `L`. So a move exists.
+   - **`|L_y − ρ| = 1`.**
+     - If `L` is not on the a-file, the pair `(L_x ± 1, L_y)` is on the board and off rank `ρ`, so one of them is free.
+     - On the a-file, but not in a corner: covering `(b, L_y)` and both far-row squares forces adjacency, so some neighbour is free.
+     - In the corner a1 with `ρ` = rank 2: the remaining neighbour is b1, and `S` (rank ≥ 3) cannot cover it.
+     - In the corner a8 with `ρ` = rank 7: the remaining neighbour b8 is covered only by `S` ∈ {c7, c8}.
+       - `S` = c7 stands on rank 7 between the rook and a7/b7, so it blocks the rook's ray and they are free.
+       - `S` = c8 gives the stalemate `(c8, h7, a8)`: **the exception**.
+   - **`L_y = ρ`.** The vertical pair `(L_x, L_y ± 1)` is off rank `ρ`, so if both are on the board one is free. If `L` is on rank 1 or 8, no move exists only if `S` covers all three squares of the adjacent row. Then `S = (L_x, L_y ∓ 2)` is not on rank `ρ`, so `L` is in check, and this is checkmate. ∎
+
+**Lemma RL-f (reply after a file-shift move).** Let `S` be normalised, and let the rook stand on `(rx, y′)` with `rx < sx`. Suppose `L` is not on file `rx`, `|L_y − y′| ≥ 2`, `L` is not adjacent to `S`, and the lone king is to move. Then the lone king has a non-capturing legal move.
+
+*Proof.*
+- **Setting.** The rook is not adjacent to `L`, because the ranks differ by ≥ 2. So no move captures. `L` is not in check: it is off file `rx`, off rank `y′`, and not adjacent to `S`. The rook's rank does not meet `L`'s neighbours. It attacks at most the neighbours on file `rx`, and only if `|L_x − rx| = 1`.
+- **`|L_x − rx| ≥ 2`.** Only `S` covers neighbours. Use the opposite-neighbour fact. The corners a1 and a8 have `L_x = a`, which would force `rx < a`: impossible. In the corners h1 and h8, no neighbour is adjacent to `S`.
+- **`L_x = rx + 1`.**
+  - If `L` is not on rank 1 or 8, the vertical pair `(L_x, L_y ± 1)` is free of the rook, and one member is free of `S`.
+  - On rank 1, `S` (rank ≥ 3) can cover only rank-2 squares, so `(L_x + 1, 1)` is free. It is on the board, because `L_x = rx + 1 ≤ c`.
+  - On rank 8, covering `(L_x, 7)`, `(L_x + 1, 8)` and `(L_x + 1, 7)` together forces `S` adjacent to `L`.
+- **`L_x = rx − 1`.** Then `sx > rx = L_x + 1`, so `S` is at file distance ≥ 2 from `L`'s column. So `S` is adjacent to none of `(L_x, L_y ± 1)`. Those squares are off file `rx` and off rank `y′`, and one of them is on the board. ∎
+
+**Lemma P1 (relocation).** Take every normalised legal strong-to-move K+R vs K position. Rule P1 (§3) consists of legal rook moves. After each of them, the lone king has a non-capturing legal move or is mated. P1 ends with the rook on h8 and the strong side to move, or in checkmate.
+
+*Proof.* Facts used throughout:
+- (i) The strong king is never in check and no strong piece is pinned (F2), so every geometrically valid rook move is legal.
+- (ii) When the strong side is to move, `L` is not attacked. So `L` is never on an unshielded rook line, and only `S` can shield.
+- (iii) After any legal lone-king reply, (ii) holds again.
+
+The branches:
+- **direct, from the h-file.** The h-file is clear, because `L` is not on it (ii) and `S` is on files a–d. h8 is empty. The reply exists by RL-h; the exception needs the rook on h7, not h8.
+- **direct, from rank 8.** The rank-8 squares between the rook and h8 are empty:
+  - `S` is not there, by the branch condition;
+  - an `L` there would be unshielded, contradicting (ii).
+
+  The reply exists by RL-h.
+- **HV.**
+  - **Leg 1** is legal by the branch condition. The reply exists by RL-h, since the exception is excluded.
+  - **Leg 2**, `(h, ry) → h8`. After the reply, `L` is not on the h-file by (iii), and `S` is not there either, so the path and h8 are empty. The reply exists by RL-h.
+- **FS.** Classify why HV and direct do not apply.
+  - F1, F3: a king is on the rook's rank between it and the h-file. By (ii), `S` stands there (between the rook and `L` if `L` is there too), so `sx > rx` and the rook is on rank `sy`.
+  - F2: the exception, `S` = c8, `L` = a8, rook on rank 7.
+- **Leg 1**, `(rx, ry) → (rx, y′)`.
+  - `y′ ≠ ry`:
+    - in F1, `ry = sy ≥ 3` (rank 3 or higher) and `y′` ∈ {rank 1, rank 8}, with rank 8 used only when `ry` is not rank 8;
+    - in F3, `ry` is rank 8 and `y′` ∈ {rank 1, rank 5};
+    - in F2, `y′` is rank 1.
+  - The file `rx` is clear between `ry` and `y′`:
+    - `S` is not on it: in F1/F3 `sx > rx`; in F2 `S` = c8 is above the rook's rank;
+    - `L` is not on it, by (ii), since no shield is available.
+  - `(rx, y′)` is empty:
+    - `L` is off rank `y′`, because `|L_y − y′| ≥ 2` by the choice of `y′`;
+    - `S` is off rank `y′`, because `y′ ≠ sy` in F1/F3, and `S` is on rank 8 in F2 while `y′` is rank 1.
+  - **Reply:**
+    - in F1 and F3, by RL-f, since `rx < sx`, `L` is off file `rx` and `|L_y − y′| ≥ 2`;
+    - in F2 (`L` = a8, rook on `(rx, 1)` with `rx ≠ a`, since an a-file rook would have attacked a8), a7 is free: it is not on the rook's file, and at `d∞ = 2` from c8.
+- **Leg 2**, `(rx, y′) → (h, y′)`, when `y′` is not rank 8.
+  - The rank is clear: `S` is not on it, and `L` is not on it unshielded by (iii).
+  - `(h, y′)` is empty.
+  - The reply exists by RL-h. The exception needs `y′` = rank 7, but `y′` ∈ {rank 1, rank 5}.
+  - When `y′` is rank 8, leg 2 is `(rx, 8) → h8` along rank 8. It is clear, because `S` is not on rank 8 in F1 and `L` is not there by (iii). The reply exists by RL-h.
+- **Leg 3**, `(h, y′) → h8`, along the h-file. It is clear by (iii). The reply exists by RL-h.
+
+If the lone king is mated at any point, the route has succeeded. ∎
+
+**Theorem (EC-C008(a)).** Take every legal strong-to-move K+R vs K position. Normalise it (F4); P1 then succeeds (Lemma P1), and Lemmas S, W, E and M finish the mate. Hence `¬DeadK`. Part (b) follows (§1). ∎
+
+## 5. Computational evidence (supplementary; `scripts/krk_route.py`, route v3)
 The route was played from **every one of the 175,168** legal strong-to-move states (White strong; colour symmetry covers Black). Every move was checked against the independent generator of `krk_diagnostic.py`. Lemma S's case split and the connectivity of Lemma W are enforced as **hard checks**.
 - **The route ends in checkmate in all 175,168 states.** The longest route is 31 plies.
-- P1 routes used:
-  - rook already on h8: 2,752;
-  - direct: 36,900;
+- P1 branches (v3, every state classified; none unclassified):
+  - home: 2,752;
+  - direct (h-file): 18,996;
+  - direct (rank 8): 17,904;
   - HV: 130,856;
-  - VH: 3,438;
-  - detour: 1,222.
-  - P1 itself mates in 298 states.
-- Lemma S cases: `G` 171,554; g-file 3,240; g7 64; rank 8 12.
+  - FS-F1: 3,432;
+  - FS-F2: 24;
+  - FS-F3: 1,204.
+- **Lemma statements checked exhaustively:**
+  - RL-h: 1 exception, the stated stalemate;
+  - RL-f: 9,279 instances, 0 exceptions.
+- Lemma S cases: `G` 171,560; g-file 3,240; g7 64; rank 8 12. The remaining states mate during P1.
 
-## 6. Gap (why EC-C008 stays `PROPOSED`)
-- **G-P1 (rook relocation to h8).** No hand proof yet that, for every normalised strong-to-move state, one of the P1 routes is legal and leaves the lone king a non-capturing reply after each rook move (or mates). It is verified exhaustively only. Everything after P1 is proved (Lemmas S, C, W, E, M).
-- **G-P2: closed in S018** by route v2 and Lemmas C and S.
+## 6. Gaps
+- **G-P1: closed in S019** (Lemmas RL-h, RL-f and P1).
+- **G-P2: closed in S018** (Lemmas C and S).
+
+**No gap remains.** Residual assumptions: A1; the kernel encoding (human review of `docs/RULES_KERNEL.md` still open); same-agent audits.
 
 ## 7. Planned Lean shape (after Gate L)
 Lemmas M, E, W, C and S are schema-level: each is a move schema with a legality lemma over the kernel, and they generalise directly. P1 is the hard part to formalise. It needs a uniform argument, not a per-position certificate (charter: no lookup).

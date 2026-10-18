@@ -17,7 +17,7 @@ The overarching objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know,
 | K vs K | **done** (EC-T0001/0003: every position dead) | done (draw) | n/a | n/a |
 | K+B vs K | **done** (EC-T0002/0004) | done (draw) | n/a | n/a |
 | K+N vs K | **done** (EC-T0005) | done (draw) | n/a | n/a |
-| K+R vs K | partial: dead ⇐ forced capture or stalemate (**EC-T0006**); converse EC-C008 `PROPOSED` | open | open | open |
+| K+R vs K | paper-complete: dead ⇔ forced capture or stalemate (EC-T0006 frozen + EC-C008 `LOCAL_VERIFIED`); Lean for EC-C008 pending | open | open | open |
 | K+Q vs K | open | open | open | open |
 | K+P vs K | open | open | open | open |
 
