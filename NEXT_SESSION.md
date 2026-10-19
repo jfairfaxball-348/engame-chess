@@ -1,132 +1,129 @@
-# NEXT SESSION — S035: Concrete raw move traces and complete append lifting
+# NEXT SESSION — S036: A raw halfmove-clock fold over stored legal traces
 
 **Owner instruction:** Execute when the owner says “run next session” or pastes/links
-this prompt. Follow `AGENTS.md`: fetch ALL remote branches, merge any earlier
-unmerged session work, advance to latest main and use its active prompt. Work
-in the existing checkout; finish committed, pushed and merged to main without
+this prompt. Follow `AGENTS.md`: fetch ALL remote branches, merge earlier
+unmerged session work, advance to latest main and execute its active prompt.
+Use the existing checkout; end committed, pushed and merged to main without
 force. Publication is authorised.
 
-**Closing report:** update `docs/SESSION_PROGRESS.md`; copy the complete stable
-table into the written closeout and final reply, full Syzygy parity last and
-the session delta directly below. Frozen bundle counts are not solved classes.
+**Closing report:** update `docs/SESSION_PROGRESS.md`; copy its complete stable
+table into the written closeout and final reply, with full Syzygy parity last
+and the session delta immediately below. Bundles are not material classes.
 
 ## Starting point and reading
 
-S034 froze EC-C022 as EC-T0020, bringing the register to twenty bundles. Verify
-that actual outcome from `sessions/S034_FREEZE_RULE_LAYER_PROJECTION.md` and
-`theorems/frozen/EC-T0020/v1.md`; do not infer a successful freeze just from this
-prompt. The exact abstract proof source is
-`55affd0a7a3f2e77335f4964ae4fbc1edbe19e05`.
+Twenty frozen bundles remain. EC-T0020 is the abstract rule-layer same-budget
+projection; EC-T0019 is the clock-free KRK forcing classification. Neither
+implements the FIDE history/clock layer. S035 proves EC-C023 concrete RAW trace
+append soundness/completeness and endpoint origin; check its actual Gate F
+results in `sessions/S035_RAW_TRACE_APPEND.md` and `sessions/evidence/S035/`.
+EC-C023 is not frozen; Gate Z remains separate.
 
-Read the charter, proof protocol, current roadmap, S032 specification
-`research/KRK_RULE_DISTANCE_SPEC.md` (especially history/transition sections),
-S033 paper/audits, S034 closeout/manifest, frozen kernel Legal/play/ReachK
-semantics and the frozen HistoryLayer interface. The authoritative FIDE 2023
-rules retrieval is recorded in `sessions/evidence/S032/fide-source.json`.
-No new rules claim is needed for the raw-trace lemma; additional clause reading
-is required only if it is used to make a new normative assertion.
+Read the charter, proof protocol, current roadmap/candidates,
+`research/KRK_RULE_DISTANCE_SPEC.md` §§1–4 and lifting plan,
+S035 paper/audits/closeout/evidence, and kernel Move/isLegal/play definitions.
+For the new clock interpretation, read the relevant actual FIDE Laws effective
+2023-01-01 (Articles 9.3/9.6.2) from the authoritative source if available,
+recording retrieval and any unavailable text. The earlier source/hash metadata
+is in `sessions/evidence/S032/fide-source.json`. No tablebase or engine source.
 
-EC-T0020 is conditional: ongoing BoardStep soundness, coverage of EVERY raw
-Legal reply and ongoing nondeadness imply same-budget rule forcing projection.
-It does NOT instantiate actual FIDE histories, claims, clocks or repetition.
-EC-T0019 still supplies only the clock-free KRK forcing classification.
+S035 exact published proof-source:
+`526a298b80ef04541e518a3dcc62f861c8f51c5c`.
+Five RawTrace modules (Definitions, Append, Soundness, Completeness, Origin)
+and all frozen modules MUST be imported unchanged. Extensions use NEW files.
+Do not silently alter the verified trace representation while extending it.
 
-## Principal task: one raw kernel-history component
+## Principal task: one clock component, not outcome adjudication
 
-Design and prove a small concrete move-trace append interface. Register EC-C023
-only after fixing the exact statement in a standalone paper and adversarial
-audit, BEFORE Lean. No ledger row is expected in this mathematics session.
+Design and prove a raw reversible-halfmove counter as a fold over actual stored
+moves. Register EC-C024 only after fixing a well-posed exact statement in a
+standalone paper and same-agent adversarial audit BEFORE Lean. No ledger row
+is expected in this mathematics session; EC-C023 Gate Z also stays pending.
 
-Use NEW modules/namespace, without editing any frozen definition or proof.
-Choose a data representation that retains actual ordered MOVES and their
-successive kernel positions, with an explicit endpoint. A proof of frozen
-`Arisen q`/`ReachK initial q` alone is insufficient: it is a Prop, not a stored
-trace for computing later clock updates and repetition counts.
+Use `Rules.RawTrace.Trace q`, rooted at the standard initial position. The data
+retain source positions, full Moves, played endpoints and ordered prefixes;
+legality proofs are proof-only. Do not replace the stored trace by Arisen or
+initialise a KRK snapshot with an arbitrary clock and call it its legal history.
 
-One possible design is an indexed Type of traces rooted at `initial`, with an
-empty constructor and a snoc constructor carrying a Move and a proof that it
-isLegal at the current endpoint. Bundle the endpoint and its trace into a state.
-Alternatively use a move list plus replay validity and endpoint proofs. If a
-general starting position is parameterised, keep it explicit and state the
-`initial` specialisation separately; never silently replace global history by
-an arbitrary starting board. Empty and nonempty traces must be unambiguous.
+Define a clock-zeroing move event on legal moves: a pawn move OR an actual
+capture. A suitable small implementation may detect a pawn at m.src, or an
+occupied m.dst. Justify its intended domain carefully: on legal moves a
+non-pawn capture is an ordinary destination capture; en passant has an empty
+destination but the mover is a pawn and must still zero the counter. Promotion
+also moves a pawn. Castling and a noncapturing king/rook move do NOT zero it,
+even when castling rights or an ep flag change. If a chosen detector's
+correspondence with actual move events is not proved, say exactly which claim
+remains conditional instead of calling an arbitrary Boolean the FIDE event.
+Do not add oracle data or a material-class lookup to settle event correctness.
 
-Define erase(s) as the concrete endpoint. Define an append operation for every
-m with `isLegal (erase s) m = true`, retaining the prefix and exactly that m.
-The appended endpoint must equal `play (erase s) m`. Define RawBoardStep by
-such an actual one-move append, not by merely relating any two erased boards.
+Define the raw counter recursively:
 
-Precise principal obligations:
+- empty initial trace: 0;
+- snoc prior m hm at source q: 0 if the move zeroes, otherwise counter(prior)+1.
 
-1. Append preserves the chosen trace validity and returns the exact played
-   endpoint (with ordered prefix/move retention, not just an existential path).
-2. **Soundness:** RawBoardStep s t implies kernel Legal (erase s) (erase t).
-3. **Complete raw-reply lifting:** for EVERY state s and EVERY r,
-   `Legal (erase s) r → ∃t, RawBoardStep s t ∧ erase t=r`.
-   Extract the actual Move witness from Legal; do not assume a chosen strategy
-   or remove successors based on their result.
+The stored history is never truncated by this fold, including after a zero.
+No Ongoing/terminal filter is added to Trace or RawBoardStep. The function
+computes the prescribed update along a RAW kernel trace; it does not certify
+that a real FIDE game could legally continue after a prior draw.
 
-A short endpoint reachability/turn or trace-length lemma may support these
-statements if needed; avoid expanding into unrelated history machinery. The
-root/append definitions should make the prefix retained and one additional
-board ply clear. State exactly what counts as a stored move, position endpoint
-and proof-only field. General proof, not class-wide replay/enumeration.
+Precise first obligations:
 
-## Critical semantic boundary
+1. State/prove the event/reset case facts needed for the chosen legal-move
+   detector, explicitly covering pawn moves (including promotion/ep), ordinary
+   captures, and nonpawn empty-destination moves (including castling).
+2. Exact append law for EVERY raw state s, Move m and legality proof hm:
+   counter((append s m hm).trace) equals 0 on zeroing, else counter(s.trace)+1.
+3. Global bound for EVERY stored Trace: counter(t) ≤ t.moves.length, and/or
+   the directly useful one-step bound counter(append) ≤ counter(prior)+1.
+   Keep units as BOARD PLIES; do not confuse 50 full moves with 50 plies.
 
-Call the object a **RAW kernel move trace**. It proves that each recorded board
-move satisfies the existing Legal relation. It does NOT prove that actual FIDE
-play had not previously ended. In particular, these objects may record moves
-past an earlier automatic draw or a dead-position draw whenever raw Legal
-allows them. No clock, repetition test or Ongoing classifier is yet included.
+Use structural induction on the stored trace, not enumeration of positions or
+per-game certificates. One-module-per-theorem, shared definitions separately;
+add main statements/axiom reports to AxiomCheck. A small bounded event case
+split is ordinary mathematics, not a class-wide enumeration proof. Avoid a
+large new diagnostic or trivial tests that merely mirror the implementation.
 
-The unrestricted lifting theorem must retain an endpoint that would immediately
-draw under a future history-aware classifier. Later FIDE admissibility must
-restrict which PARENT prefixes may continue, while allowing a terminal child;
-it must not prune adverse legal replies to manufacture forcing. A raw trace
-append theorem is only a concrete step toward interface fields A/B, not a full
-HistoryLayer instance or a proof of field C/claim correctness.
+## Audit and semantic boundaries
 
-Do not initialise KRK with an arbitrary flags/clock/count snapshot and call it
-an initial-position history. An arbitrary-flags clock-free KRK theorem does not
-supply a compatible-prefix witness for every such snapshot.
+Retain controls/argument for: empty root, quiet move, ordinary capture, pawn
+single/double move, promotion, en passant's empty destination, castling-right
+loss without reset, prefix and move-count retention, and raw continuation past
+a future automatic draw. Fixed local controls may supplement the proof; label
+unexecuted controls and any missing compatible full prefix explicitly.
 
-Retain audit controls: empty trace/root, all turn orientations, genuine Move
-witness and target equality orientation, full prefix retention, terminal-child
-coverage, no “all replies already win” hypothesis, no confusion of a data
-trace with proof-irrelevant ReachK. Fixed local controls are optional and
-supplementary; do not add a large test expansion or artificial passing tests.
+The new function is a RAW trace counter only. A complete FIDE layer still
+needs no-earlier-terminal admissibility, repetition-key correctness, current
+AND intended-move claims, automatic fivefold/75-move and mate precedence,
+concrete Layer A/B/C instantiation, sufficient-clock/repetition lifting and
+holding/outcome proofs. This session does not implement those. A counter bound
+by total trace length does NOT produce a uniform KRK mate bound, establish a
+remaining budget below 100, or settle DTM/DTZ/WDL/Syzygy conventions. Do not
+switch material classes or claim an initial-position result.
 
-Explicitly OUT OF SCOPE: full no-earlier-terminal FIDE histories, halfmove
-zeroing semantics, effective-ep repetition-key equivalence, current/intended
-claim rules, terminal precedence proofs, holding/determinacy, sufficient-budget
-lifting, a numeric KRK bound, DTM/DTZ/Syzygy convention parity, another material
-class or the initial-position value conjecture. Preserve these obligations in
-status and the following prompt. No engine/tablebase/oracle evaluations.
+## Verification and closeout
 
-## Verification and publication
+Follow Gates L/F, preserve all prior source/manifest/ledger/evidence bytes.
+Run incremental new-module/importer checks; inspect exact types and axiom
+subsets (propext, Classical.choice, Quot.sound only). For Gate F, commit and
+PUSH the exact proof-source SHA, make ONE NEW fresh GitHub clone with no
+formal/.lake before `lake build`, and retain complete build/axioms/statements,
+hashes, forbidden-token scan, toolchain, actual exits and source identity.
+Do not reuse earlier Gate F/Z clones or imply hosted CI passed from a push.
+Run only relevant existing checks; no new ledger row in this session.
 
-Follow Gate L/F. Add main declarations to AxiomCheck, inspect exact types and
-allowed axiom subsets (propext, Classical.choice, Quot.sound only). Run only
-new modules/importers incrementally. For Gate F, commit and PUSH the exact
-proof-source SHA, then use ONE NEW fresh GitHub clone with no formal/.lake
-before `lake build`; retain complete build, axiom/statements, source hashes,
-toolchain and forbidden scan. Do not reuse prior Gate F/Z clone evidence.
-Keep all existing frozen sources, manifests, earlier ledger rows and prior
-evidence byte-identical. Run relevant existing structural checks. No hosted
-CI claim without observing its result. No new ledger entry at Gate F.
-
-Write `sessions/S035_RAW_TRACE_APPEND.md`, update candidate/roadmap/status and
-session ledger according to the actual result, and include the full progress
-table and FULL installed S036 prompt. Choose S036 from the actual next narrow
-obligation (separate freeze or one clock/history component), retaining the
-remaining concrete FIDE layer and distance gaps. Commit/push branch, merge main,
-push main and verify remote SHA. If the representation exposes a genuine gap,
-preserve the exact failed implication and avoid upgrading the candidate.
+Write `sessions/S036_RAW_HALFMOVE_FOLD.md`, update actual candidate/roadmap/
+status and session ledger, and include the complete progress table and FULL
+installed S037 prompt. Choose the next narrow obligation or separate freeze
+from actual results; preserve pending EC-C023/024 freezes and the complete
+rule/distance gap. If a detector or representation fails, retain the exact
+counterexample and correct status rather than weakening the target silently.
+Commit/push branch, merge main, push main and verify remote SHA.
 
 ## Cloud activation
 
-Use the runtime skill, existing checkout and pinned official Lean 4.35.0.
-`export ELAN_HOME=/workspace/.tools/elan; export PATH="$ELAN_HOME/bin:$PATH"`.
-Lake commands in `formal/`, Python at root. Core only, no dependencies or host
-shim. Keep TLS/checksum verification enabled; one required fresh build at a time.
+Use a cloud runtime skill if available; otherwise inspect the provided
+environment/network policy and reuse configured access. Existing checkout;
+official core Lean 4.35.0,
+no dependencies or host shim. `export ELAN_HOME=/workspace/.tools/elan;
+export PATH="$ELAN_HOME/bin:$PATH"`. Lake commands in formal/, Python at root.
+Keep TLS/checksum checks enabled; one required fresh build at a time.

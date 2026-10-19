@@ -1,0 +1,11 @@
+PASS: published exact source 526a298b80ef04541e518a3dcc62f861c8f51c5c; ONE NEW GitHub clone without formal/.lake before build.
+PASS: full 59-job build, exit 0, 360.247s.
+PASS: exact data/definition/main statement and axiom runner exit 0; 265 allowed reports.
+PASS: all four new public declarations checked, standard three only.
+PASS: working/clean reports byte-identical; all Lean source bytes match exact clone.
+PASS: five-module forbidden-token scan zero; 336 protected prior files unchanged.
+PASS: ledger structure valid, 20 unchanged bundles.
+No historical Python diagnostics rerun; no new example/test used as a proof.
+Hosted CI unobserved.
+PASS: canonical full progress table and S036 prompt reproduced; local links valid.
+PASS: exact published Lean bytes and frozen ledger/manifests unchanged.

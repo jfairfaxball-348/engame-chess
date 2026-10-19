@@ -27,3 +27,15 @@ Layer instance: C, Ongoing, claim and adjudication correctness remain unproved.
 All frozen sources/records must stay byte-identical. Gate F remains pending
 until the published exact source passes a new fresh-checkout build and full
 axiom/source checks. This audit does not freeze any new ledger record.
+
+## Completed Gate F
+
+Published exact source `526a298b80ef04541e518a3dcc62f861c8f51c5c`; ONE NEW fresh GitHub clone without .lake before
+build. **59 jobs, exit 0, 360.247s**. Full data/statement/axiom runner exit 0
+at `2026-10-19T14:09:53Z`. All 265 reports allowed (234 standard-three, 18 propext/Quot.sound,
+8 propext, 5 axiom-free); each new declaration uses only the standard three.
+Full working/clean reports and all Lean source bytes match; five-module
+forbidden scan zero; 336 protected prior files unchanged. Ledger unchanged,
+20 bundles. No unrelated Python diagnostics rerun. EC-C023 FORMAL_VERIFIED,
+not frozen; raw-kernel scope only, full FIDE layer remains open. Evidence:
+`sessions/evidence/S035/`. Hosted CI unobserved.

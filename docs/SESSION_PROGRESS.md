@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S034. Twenty theorem bundles are frozen, including the clock-free KRK forcing classification; these are not twenty solved material classes.
+Current mathematical evidence: through S035. Twenty theorem bundles are frozen, including the clock-free KRK forcing classification; these are not twenty solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live, clock-free forcing and generic projection frozen | Concrete FIDE history layer and distance |
+| K+R vs K | Dead/live, clock-free forcing and generic projection frozen; raw traces verified | FIDE history/clock rules and distance; freeze traces |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S034. Twenty theorem bundles are frozen, 
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S034 froze EC-C022 as EC-T0020 (20 bundles); mathematical coverage is unchanged and concrete FIDE rule/distance work remains open.
+Session change: S035 formally verified raw trace append retention and complete reply lifting; FIDE rule/distance coverage remains open and the frozen count stays twenty.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 

@@ -52,4 +52,6 @@
 
 | S034 | 2026-10-19 | Freeze EC-C022 abstract rule-layer projection (Gate Z) | ONE NEW exact-source GitHub build at `55affd0`: 54 jobs, 261 allowed axiom reports, both main declarations and interface fields inspected. Three complete modules and transitive hashes frozen as EC-T0020; prior source/records unchanged. S035 concrete raw-trace append prompt installed. [Closeout](S034_FREEZE_RULE_LAYER_PROJECTION.md) | **+1 → EC-T0020 FROZEN** (20 bundles; abstract interface only) |
 
+| S035 | 2026-10-19 | EC-C023 concrete raw trace append (Gate L/F) | Indexed Type retains initial-rooted actual moves and full prefixes; append endpoint/ordered-history retention, raw step soundness/complete lifting and endpoint Arisen proved. Four declarations in five new modules; source `526a298`; fresh 59-job build, 265 allowed reports. Full FIDE history rules remain open. S036 raw clock-fold prompt installed. [Closeout](S035_RAW_TRACE_APPEND.md) | None — 20 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
