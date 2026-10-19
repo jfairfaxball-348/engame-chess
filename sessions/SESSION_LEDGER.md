@@ -46,4 +46,6 @@
 
 | S031 | 2026-10-19 | Freeze verified KRK forcing (Gate Z) | Three NEW fresh exact-source GitHub builds: 34/41/51 jobs, 212/235/259 allowed axiom reports; all 62 public declarations, full module/helper hashes and fixed controls retained. Earlier sources/records unchanged; 6 ledger tests pass. S032 rule/distance design installed. [Closeout](S031_FREEZE_KRK_FORCING.md) | **+8 → EC-T0012–EC-T0019 FROZEN** (19 bundles; clock-free only) |
 
+| S032 | 2026-10-19 | KRK rule/history and distance-layer design | Authoritative FIDE 2023 clauses retrieved; admissible histories, repetition key, current/intended claims and mate/draw precedence specified. First distance target is a ply mate bound; EC-C022 PROPOSED for generic same-budget erasure with explicit reply coverage. Same-agent design audit; no formalisation or numerical distance claim. S033 narrow projection prompt installed. [Closeout](S032_KRK_RULE_DISTANCE_DESIGN.md) | None — 19 frozen bundles; mathematical coverage unchanged |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

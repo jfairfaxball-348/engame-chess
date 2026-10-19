@@ -1,33 +1,131 @@
-# NEXT SESSION — S032: Specify the KRK rule and distance layer
+# NEXT SESSION — S033: Prove the finite-budget rule-layer projection
 
-**Owner instruction:** Execute when the owner says “run next session” or pastes/links this prompt. Follow `AGENTS.md`: fetch all remote branches and latest main, merge earlier unmerged session work first, use the existing checkout, and finish committed, pushed and merged to main without force. Publication is authorised.
+**Owner instruction:** Execute when the owner says “run next session” or pastes/links
+this prompt. Follow `AGENTS.md`: fetch ALL remote branches, advance to latest
+main, merge any earlier unmerged session work, and read the active prompt there.
+Use the existing checkout; end committed, pushed and merged to main without
+force. Publication is authorised.
 
-**Closing report:** update `docs/SESSION_PROGRESS.md` from actual evidence and reproduce its complete stable table in the closeout and final reply, with full Syzygy parity last and the session delta immediately below.
+**Closing report:** update `docs/SESSION_PROGRESS.md` and reproduce its complete
+stable table in the written closeout AND final reply, full Syzygy parity last,
+followed immediately by the session delta. Counts are bundles, not material
+classes or completion percentages.
 
-## Starting point and reading
+## Starting point
 
-S031 froze eight additional bundles, EC-T0012–EC-T0019, bringing the ledger to nineteen bundles, not nineteen solved material classes. Read `docs/CHARTER.md`, `docs/PROOF_PROTOCOL.md`, `docs/ROADMAP.md`, `docs/RULES_KERNEL.md`, the S031 closeout and Gate Z evidence, EC-T0008's forcing definitions and EC-T0019's exact classification before designing new semantics.
+Nineteen frozen bundles, unchanged by S032. EC-T0019 already proves arbitrary
+strong-turn legal-arrival KRK clock-free forcing and the weak terminal/capture
+classification. S032 is a DESIGN session, not a new FIDE/DTM/DTZ theorem.
 
-The clock-free strong theorem covers exact KRK, strong turn and an incoming Legal move; its geometric strengthening assumes no weak check. The weak theorem is actual mate OR nonempty legal replies without any KK capture, equivalently actual mate OR a safe rook and a legal reply. Both colours and arbitrary flags, all setup and defending quantifiers, are covered. Finite rank supplies existence of a finite bound; it does not supply an optimal number or establish that a rule clock cannot expire.
+Read the charter, proof protocol, current roadmap, S032 closeout,
+`research/KRK_RULE_DISTANCE_SPEC.md`, `audits/EC-C022_RULE_LAYER_DESIGN.md`,
+`formal/EndgameChess/Rules/ForcingDefinitions.lean`, `ForceMate.lean`, and
+EC-T0008/EC-T0019 manifests first. S032 retrieved the authoritative FIDE 2023
+source at https://handbook.fide.com/chapter/E012023; metadata and SHA are in
+`sessions/evidence/S032/fide-source.json`. Reuse that rules reading; the generic
+projection itself does not require implementing the entire FIDE layer.
 
-## Principal task: a small mathematical specification, not a large formalisation
+## Principal task: EC-C022 only
 
-Write `research/KRK_RULE_DISTANCE_SPEC.md` with explicit definitions and one tractable next proof obligation. Use the FIDE Laws of Chess effective 2023-01-01 as the named rules source. Read the actual relevant clauses from an authoritative source if available, record the source and retrieval, and identify any unavailable text rather than inventing it. Do not consult any tablebase, engine oracle, derived position evaluations or per-position certificates.
+Prove the generic SAME-BUDGET erasure theorem below. It is deliberately a small
+parametric theorem, not a concrete history/clock implementation or a numerical
+KRK bound. EC-C022 is currently PROPOSED. Write an exact standalone paper proof
+and an adversarial local/fidelity audit before Lean; advance statuses only when
+those gates pass.
 
-1. Define an extended state over the existing Position containing the reversible halfmove counter and enough history for repetition. Specify legal initial histories and compatibility with board, turn, castling rights and effective en-passant availability; explain when two positions count as the same for repetition. Distinguish arbitrary kernel flags from histories admissible under the new rules.
-2. Define transition updates: captures and pawn moves reset the halfmove counter; other moves increment it. KRK has no pawn moves before a material change, and a rook capture transitions to KK. State how history updates and what is retained after a zeroing move. Do not equate zeroing with mate.
-3. Give a precise terminal and action precedence: actual checkmate, stalemate, dead position, optional threefold/50-move claims, automatic fivefold/75-move termination, and checkmate on the threshold move. Claims based on an intended legal move must be represented as actions or explicitly scoped out of a named preliminary model. Separate board-rule outcomes from resignation, agreement and time forfeiture. Explain which player's options are quantified in a force/holding definition.
-4. Specify clock-free and rule-aware named-winner predicates and their projection relationship. State the hypotheses needed for each proposed implication. Audit whether erasing history alone suffices for the reverse direction, and why a clock-free win need not be a rule-aware win. Give a proof plan for lifting a bounded clock-free strategy with a sufficient remaining clock/history budget; any repetition premise must be explicit. Do not assume a finite rank is already a numerical budget theorem.
-5. Choose a first distance target: an exact DTM, an upper bound, or a carefully defined DTZ-style target. Fix plies versus full moves, zero/one counting at mate and capture, min/max quantifiers, terminal and non-winning conventions, rule-clock dependence and the precise target event. Separate custom semantics from any unverified claim of exact Syzygy conventions, including five-valued WDL and cursed/blessed outcomes. List what additional proofs would establish parity.
-6. Retain a concise obligation graph and adversarial examples: mate on a draw threshold, stalemate with a protected rook, optional legal rook capture to KK, a reversible chase/repetition, an impending claim by intended move, and identical board positions with different clocks/history. Fixed locally constructed controls may check definitions; enumeration cannot prove a general outcome or distance theorem.
+Define an additive abstract layer over a type X with:
 
-Prefer one narrow proposed bridge lemma with exact hypotheses and a paper derivation. Register EC-C022 only if the specification yields a well-posed claim; otherwise report the unresolved design choice explicitly. Use PROPOSED unless the relevant gates actually pass. No new ledger entry is expected in a design session. Do not modify frozen Position, Legal, MateWithin, ForceMate, theorem modules or manifests; the new layer must live in new files. If a small new formal definition or lemma is warranted, obey one-module-per-theorem and add main declarations to AxiomCheck, with appropriate new verification evidence. Do not begin a large KRK formalisation or switch material classes in this session.
+- `erase : X → Position`;
+- `BoardStep : X → X → Prop` (actual board moves, never successful draw claims);
+- `Ongoing : X → Prop`;
+- `CanClaim : X → Prop` (current OR intended-move correct claim availability).
 
-## Deliverables and closeout
+Require interface proofs, at every ongoing state s:
 
-Update the roadmap and candidate register only to reflect actual results. Write `sessions/S032_KRK_RULE_DISTANCE_DESIGN.md` with the chosen semantics, unresolved points, exact proposed bridge/distance obligation, proof versus design versus diagnostic status, checks actually run, ledger effect and full progress table. Install a full S033 prompt targeting the smallest concrete proof arising from the design. Preserve the outstanding clock/repetition and distance work; do not mark KRK full FIDE WDL/DTZ or seven-piece parity solved. Commit/push the session branch, merge main, push main and verify the remote SHA. Distinguish observed local results from unobserved hosted CI.
+(A) BoardStep s t implies `Legal (erase s) (erase t)`.
+(B) EVERY r with `Legal (erase s) r` lifts to some t with BoardStep s t
+    AND erase t=r. Draw-ending successors MUST be retained, not pruned.
+(C) Ongoing s implies `¬ DeadK (erase s)`.
+
+These are ordinary quantified hypotheses or proof fields of an interface,
+NOT new Lean axioms and NOT claims that a concrete FIDE layer already meets
+them. X, erasure and steps do not depend on winning colour or budget. Define
+`Goal σ s := MateGoal σ (erase s)` and the additive recurrence:
+
+```
+RuleMateWithin σ 0 s := Goal σ s
+RuleMateWithin σ (n+1) s := Goal σ s OR
+  (Ongoing s AND
+    (((erase s).turn=σ AND ∃t, BoardStep s t AND RuleMateWithin σ n t) OR
+     ((erase s).turn=σ.opp AND NOT CanClaim s AND
+      (∃t, BoardStep s t) AND
+      ∀t, BoardStep s t → RuleMateWithin σ n t)))
+RuleForceMate σ s := ∃n, RuleMateWithin σ n s
+```
+
+Winning colour can decline a draw claim. Every defender claim prevents forced
+mate; every defending board move is universal and the reply set is nonempty.
+A claim ends in draw at zero BOARD plies, not a hidden extra move. Automatic
+terminal draws are represented by failure of Ongoing and absence of Goal in
+a future concrete implementation; no false FIDE instantiation is permitted.
+
+Exact targets, for all X, layer parameters/proofs A–C, σ, n and s:
+
+1. `RuleMateWithin σ n s → MateWithin σ n (erase s)`.
+2. `RuleForceMate σ s → ForceMate σ (erase s)`.
+
+Induct on n. The strong case projects its chosen successor by A. The weak case
+projects nonemptiness by A, and uses B for an ARBITRARY raw Legal reply before
+induction. C supplies the frozen nondeadness guard. The terminal branches have
+exactly the frozen MateGoal. Do not replace the same-budget conclusion by mere
+cooperative reachability or assume the desired projected strategy as a premise.
+
+## Boundaries and review controls
+
+- Never edit frozen Position, Legal, MateWithin, ForceMate, modules, manifests
+  or prior ledger rows. Use NEW definition and theorem modules (e.g.
+  `Rules/HistoryLayer/Definitions.lean` and `Projection.lean`), separate namespace
+  if helpful, then additive aggregate imports/AxiomCheck entries.
+- All raw legal defending replies must lift, including immediate draw children.
+  Omitting them can manufacture a false forced win. Include this failure in
+  the audit. Do not add an “all projected replies already win” interface field.
+- No converse: a weak player at h=99 can claim by an intended nonzeroing move;
+  history may already allow threefold. Finite clock-free rank supplies neither
+  a numeric clock budget nor a repetition certificate. The S032 sufficient
+  lifting plan is FUTURE work, not an assumption smuggled into this theorem.
+- No holding/determinacy theorem, repetition-key correctness, history compression,
+  procedural adjudication, full FIDE WDL, numerical DTM, DTZ or Syzygy convention
+  result is in this session's scope. No engine, tablebase or enumeration oracle.
+- The abstraction is nonvacuous only as an interface theorem; if a small
+  identity/no-claim sanity instance is useful, state its artificial scope.
+  It does not instantiate FIDE's draw rules. Avoid a large example/test expansion.
+
+## Verification and publication
+
+Run incremental builds only for the new modules/importers, add BOTH main
+statements and axiom reports to AxiomCheck, and inspect their exact quantifiers.
+Only propext, Classical.choice, Quot.sound subsets are allowed. No proof escapes.
+For Gate F, commit and PUSH the exact proof source, make ONE NEW fresh GitHub
+clone detached at that full SHA with no formal/.lake before `lake build`, and
+retain full build, statements, axiom counts, hashes, toolchain and forbidden scan.
+Do not reuse prior Gate F/Z clones. Run only relevant existing checks; preserve
+frozen source and ledger bytes. Hosted CI counts only if actually observed.
+S031 experienced an 8 GiB memory limit during concurrent clean builds; keep this
+single required build bounded, and diagnose any actual resource failure.
+
+No new ledger row is expected (Gate Z is separate). Write
+`sessions/S033_RULE_LAYER_PROJECTION.md` with exact source SHA, statuses,
+observed checks, limits, ledger effect and complete progress table. Install a
+FULL S034 prompt around the next concrete history-layer obligation or a separate
+freeze, chosen from the actual outcome; do not quietly jump to complete KRK
+rule-aware outcomes. Include that full prompt in the closeout. Update candidate
+register/roadmap/current status, commit/push branch, merge main, push main and
+verify remote SHA. If a gap appears, preserve the exact failed implication and
+keep the candidate in the appropriate earlier stage.
 
 ## Cloud activation
 
 `export ELAN_HOME=/workspace/.tools/elan; export PATH="$ELAN_HOME/bin:$PATH"`.
-Lake commands run from `formal/`, Python from the repository root. Official unmodified Lean 4.35.0, core only, no dependencies or host shim. Keep TLS/signature/checksum verification enabled. Recheck only actual verification obligations; do not repeat historical fresh-clone certifications for a documentation-only design session.
+Lake commands run from `formal/`; Python from repository root. Official unmodified
+Lean 4.35.0, core only, no dependencies or host shim. Keep TLS/checksum checks.
+Use the runtime skill for the current environment; no new worktree is needed.

@@ -1,0 +1,33 @@
+{
+  "title": "FIDE Laws of Chess taking effect from 1 January 2023",
+  "url": "https://handbook.fide.com/chapter/E012023",
+  "retrieved_utc": "2026-10-19T13:14:54.507468+00:00",
+  "retrieved_client_time": "2026-10-19T14:14:54.507468+01:00",
+  "html_sha256": "c5b1692a0614d4bd93fe9238287b9ab7d1f47320934d5df3be113523906c476f",
+  "read_articles": [
+    "5.1.1",
+    "5.1.2",
+    "5.2.1",
+    "5.2.2",
+    "5.2.3",
+    "9.1",
+    "9.2",
+    "9.2.1",
+    "9.2.2",
+    "9.2.3",
+    "9.2.3.1",
+    "9.2.3.2",
+    "9.3",
+    "9.3.1",
+    "9.3.2",
+    "9.4",
+    "9.5.1",
+    "9.5.2",
+    "9.5.3",
+    "9.6.1",
+    "9.6.2"
+  ],
+  "available": true,
+  "verification": "HTTPS with inherited proxy and certificate verification; no tablebase or engine source",
+  "retention": "Full fetched HTML and parsed text kept in temporary workspace; tracked specification paraphrases relevant clauses and cites this hash. No change to prior frozen rules bridge."
+}

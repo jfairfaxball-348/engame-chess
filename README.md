@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S031.** Nineteen frozen theorem bundles (not nineteen solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S032.** Nineteen frozen theorem bundles (not nineteen solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -66,7 +66,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S029: EC-C016–018 close the lower-band pursuit and continuation gap. `krk_rank_wall_force` proves clock-free forced mate for every exact strong-turn KRK with strong king below a separating rook rank and lone king above it, including every S028 phase image. A direct vertical-entry subfamily also wins. The bounded waiting/pursuit and nested rank/gap induction cover all defences; these results are FORMAL_VERIFIED, not frozen.
 - S030: **EC-C011 and EC-C019–021 FORMAL_VERIFIED**. Proved alternating strategy transport, all-axis walls, finite safe setup from every strong-turn legal KRK arrival, and the weak-turn terminal/capture classification. Both colours and arbitrary flags; every legal defence covered. [Proof](proofs/EC-C019_C021_KRK_SAFE_SETUP.md), [evidence](sessions/evidence/S030/README.md).
 - S031: **EC-T0012–EC-T0019 FROZEN** after three new fresh exact-source Gate Z builds, covering phase image, upper-band rescue, two-file check, conditional pursuit, unconditional walls, capture/move interface, restricted transport and full clock-free setup/classification. All 62 public declarations checked; source modules unchanged. [Evidence](theorems/frozen/VERIFICATION-S031/README.md), [closeout](sessions/S031_FREEZE_KRK_FORCING.md). Nineteen bundles, not nineteen solved classes.
-- Next: S032, specify the KRK clock/repetition and distance layer. No full FIDE WDL, numeric distance, seven-piece or initial-position claim follows.
+- S032: [Rule/history and distance specification](research/KRK_RULE_DISTANCE_SPEC.md) completed as design only; EC-C022 remains PROPOSED. Intended-move claims and mate/draw precedence are explicit; no additional theorem or frozen bundle.
+- Next: S033, prove the small generic same-budget rule-layer projection, with explicit legal-reply coverage. Concrete FIDE history semantics and numerical KRK distances remain open.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
