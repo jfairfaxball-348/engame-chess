@@ -17,3 +17,7 @@ import EndgameChess.Rules.KRKLive.Endgame
 import EndgameChess.Rules.KRKLive.Reply
 import EndgameChess.Rules.KRKLive.Relocation
 import EndgameChess.Rules.KRKLive.Main
+import EndgameChess.Rules.ForcingDefinitions
+import EndgameChess.Rules.ForceMate
+import EndgameChess.Rules.KRKConfinement
+import EndgameChess.Rules.KRKForcingExamples

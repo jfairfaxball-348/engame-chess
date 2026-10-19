@@ -225,3 +225,28 @@ import EndgameChess
 #check @EndgameChess.Rules.arisen_krk_strong_live
 #check @EndgameChess.Rules.krk_drawn_by_rule_iff
 #check @EndgameChess.Rules.krk_live_of_not_check
+
+/-! S024: forcing semantics (EC-C009), all-replies confinement (EC-C010), witnesses. -/
+#print axioms EndgameChess.Rules.mateWithin_mono_step
+#print axioms EndgameChess.Rules.mateWithin_mono
+#print axioms EndgameChess.Rules.mateWithin_sound
+#print axioms EndgameChess.Rules.forceMate_not_dead
+#print axioms EndgameChess.Rules.forceMate_of_goal
+#print axioms EndgameChess.Rules.forceMate_no_moves_iff
+#print axioms EndgameChess.Rules.dead_reply_not_forceMate
+#print axioms EndgameChess.Rules.stalemate_not_forceMate
+#print axioms EndgameChess.Rules.forceMate_choose
+#print axioms EndgameChess.Rules.forceMate_defend
+#print axioms EndgameChess.Rules.krk_protected_reply
+#print axioms EndgameChess.Rules.rook_rank_barrier
+#print axioms EndgameChess.Rules.protected_rank_raise_unprotected
+#print axioms EndgameChess.Rules.krk_protected_rank_reply
+#print axioms EndgameChess.Rules.krk_optional_capture_counterexample
+#print axioms EndgameChess.Rules.optional_capture_holds
+#print axioms EndgameChess.Rules.krk_force_mate_in_one_example
+#print axioms EndgameChess.Rules.protected_rank_stalemate_example
+#print axioms EndgameChess.Rules.blocked_rank_counterexample
+#check @EndgameChess.Rules.mateWithin_sound
+#check @EndgameChess.Rules.forceMate_defend
+#check @EndgameChess.Rules.dead_reply_not_forceMate
+#check @EndgameChess.Rules.krk_protected_rank_reply
