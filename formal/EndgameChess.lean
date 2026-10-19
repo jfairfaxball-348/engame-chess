@@ -21,3 +21,6 @@ import EndgameChess.Rules.ForcingDefinitions
 import EndgameChess.Rules.ForceMate
 import EndgameChess.Rules.KRKConfinement
 import EndgameChess.Rules.KRKForcingExamples
+import EndgameChess.Rules.KRKForcing.Safety
+import EndgameChess.Rules.KRKForcing.CheckProgress
+import EndgameChess.Rules.KRKForcing.Examples

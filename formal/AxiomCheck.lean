@@ -250,3 +250,28 @@ import EndgameChess
 #check @EndgameChess.Rules.forceMate_defend
 #check @EndgameChess.Rules.dead_reply_not_forceMate
 #check @EndgameChess.Rules.krk_protected_rank_reply
+
+/-! S026: distant safety and all-defences checking progress. -/
+#print axioms EndgameChess.Rules.krk_safe_reply
+#print axioms EndgameChess.Rules.krk_safe_rank_reply
+#print axioms EndgameChess.Rules.krk_safe_weak_live
+#print axioms EndgameChess.Rules.rank_sees_of_below
+#print axioms EndgameChess.Rules.opposition_check_step
+#print axioms EndgameChess.Rules.opposition_edge_mate
+#print axioms EndgameChess.Rules.opposition_reply_up
+#print axioms EndgameChess.Rules.opposition_up_reply_exists
+#print axioms EndgameChess.Rules.krk_opposition_check
+#print axioms EndgameChess.Rules.krk_opposition_edge_force
+#print axioms EndgameChess.Rules.follow_horizontal_reply
+#print axioms EndgameChess.Rules.krk_follow_check
+#print axioms EndgameChess.Rules.krk_opposition_four_ply
+#print axioms EndgameChess.Rules.opposition_edge_force_example
+#print axioms EndgameChess.Rules.two_file_margin_capture
+#print axioms EndgameChess.Rules.three_file_margin_hanging
+#print axioms EndgameChess.Rules.phase_need_not_restore_opposition
+
+#check @EndgameChess.Rules.krk_safe_reply
+#check @EndgameChess.Rules.krk_safe_weak_live
+#check @EndgameChess.Rules.krk_opposition_check
+#check @EndgameChess.Rules.krk_opposition_four_ply
+#check @EndgameChess.Rules.krk_opposition_edge_force
