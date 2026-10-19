@@ -1,0 +1,2 @@
+PASS: 93 earlier theorem records and Lean proof modules byte-identical to base main, including all S028 sources.
+Only aggregate imports and AxiomCheck changed among earlier Lean files. Frozen ledger remains 11 bundles.

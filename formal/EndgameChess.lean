@@ -29,3 +29,10 @@ import EndgameChess.Rules.KRKForcing.RankAdvance
 import EndgameChess.Rules.KRKForcing.RookRescue
 import EndgameChess.Rules.KRKForcing.RankAdvanceRescue
 import EndgameChess.Rules.KRKForcing.ReentryExamples
+import EndgameChess.Rules.KRKForcing.WallActions
+import EndgameChess.Rules.KRKForcing.TwoFileCheck
+import EndgameChess.Rules.KRKForcing.PursuitGeometry
+import EndgameChess.Rules.KRKForcing.LowerPursuit
+import EndgameChess.Rules.KRKForcing.WallForce
+import EndgameChess.Rules.KRKForcing.WallEntry
+import EndgameChess.Rules.KRKForcing.WallExamples

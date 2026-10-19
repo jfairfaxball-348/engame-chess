@@ -1,0 +1,2 @@
+PASS: zero word-bounded forbidden tokens in seven new S029 Lean modules.
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b

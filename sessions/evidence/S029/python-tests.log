@@ -1,0 +1,44 @@
+test_bishop_ray_blocked_by_king (test_kbk_diagnostic.KBKDiagnosticTest.test_bishop_ray_blocked_by_king) ... ok
+test_corner_check_has_orthogonal_escape (test_kbk_diagnostic.KBKDiagnosticTest.test_corner_check_has_orthogonal_escape) ... ok
+test_exhaustive_one_orientation (test_kbk_diagnostic.KBKDiagnosticTest.test_exhaustive_one_orientation) ... ok
+test_known_stalemate (test_kbk_diagnostic.KBKDiagnosticTest.test_known_stalemate) ... ok
+test_unprotected_bishop_capture_gives_kk (test_kbk_diagnostic.KBKDiagnosticTest.test_unprotected_bishop_capture_gives_kk) ... ok
+test_corner_cases (test_kk_diagnostic.KKDiagnosticTest.test_corner_cases) ... ok
+test_expected_counts (test_kk_diagnostic.KKDiagnosticTest.test_expected_counts) ... ok
+test_no_stalemate_and_every_state_has_a_move (test_kk_diagnostic.KKDiagnosticTest.test_no_stalemate_and_every_state_has_a_move) ... ok
+test_checking_knight_can_cover_a_diagonal_neighbour (test_knk_diagnostic.KNKDiagnosticTest.test_checking_knight_can_cover_a_diagonal_neighbour) ... ok
+test_corner_check_has_orthogonal_escapes (test_knk_diagnostic.KNKDiagnosticTest.test_corner_check_has_orthogonal_escapes) ... ok
+test_exhaustive_one_orientation (test_knk_diagnostic.KNKDiagnosticTest.test_exhaustive_one_orientation) ... ok
+test_geometry_claims (test_knk_diagnostic.KNKDiagnosticTest.test_geometry_claims) ... ok
+test_knight_offsets_are_art_3_6 (test_knk_diagnostic.KNKDiagnosticTest.test_knight_offsets_are_art_3_6) ... ok
+test_known_stalemate (test_knk_diagnostic.KNKDiagnosticTest.test_known_stalemate) ... ok
+test_mutant_mate_detected (test_knk_diagnostic.KNKDiagnosticTest.test_mutant_mate_detected) ... ok
+test_unprotected_knight_capture_gives_kk (test_knk_diagnostic.KNKDiagnosticTest.test_unprotected_knight_capture_gives_kk) ... ok
+test_back_rank_mate (test_krk_diagnostic.KRKDiagnosticTest.test_back_rank_mate) ... ok
+test_exhaustive_one_orientation (test_krk_diagnostic.KRKDiagnosticTest.test_exhaustive_one_orientation) ... ok
+test_forced_rook_capture (test_krk_diagnostic.KRKDiagnosticTest.test_forced_rook_capture) ... ok
+test_protected_rook_is_not_capturable (test_krk_diagnostic.KRKDiagnosticTest.test_protected_rook_is_not_capturable) ... ok
+test_rook_ray_blocked_by_king (test_krk_diagnostic.KRKDiagnosticTest.test_rook_ray_blocked_by_king) ... ok
+test_xray_after_king_step (test_krk_diagnostic.KRKDiagnosticTest.test_xray_after_king_step) ... ok
+test_failed_policy_controls (test_krk_reentry_diagnostic.ReentryDiagnosticTest.test_failed_policy_controls) ... ok
+test_hanging_rook_is_repaired_before_another_weak_turn (test_krk_reentry_diagnostic.ReentryDiagnosticTest.test_hanging_rook_is_repaired_before_another_weak_turn) ... ok
+test_phase_images_and_safe_rank_raises (test_krk_reentry_diagnostic.ReentryDiagnosticTest.test_phase_images_and_safe_rank_raises) ... ok
+test_detour_case (test_krk_route.KRKRouteTest.test_detour_case) ... ok
+test_escort_from_centre (test_krk_route.KRKRouteTest.test_escort_from_centre) ... ok
+test_lemma_m_pattern (test_krk_route.KRKRouteTest.test_lemma_m_pattern) ... ok
+test_sample_of_states (test_krk_route.KRKRouteTest.test_sample_of_states) ... ok
+test_direct_geometric_setup_can_lose_the_rook (test_krk_wall_policy.WallPolicyTest.test_direct_geometric_setup_can_lose_the_rook) ... ok
+test_old_chase_cycle_mates_with_tempo_in_both_colours (test_krk_wall_policy.WallPolicyTest.test_old_chase_cycle_mates_with_tempo_in_both_colours) ... ok
+test_selected_policy_trajectories_end_in_actual_mate (test_krk_wall_policy.WallPolicyTest.test_selected_policy_trajectories_end_in_actual_mate) ... ok
+test_depth_1_and_2 (test_perft.PerftTest.test_depth_1_and_2) ... ok
+test_complete_synthetic_entry_is_structurally_valid (test_validate_ledger.FrozenLedgerTests.test_complete_synthetic_entry_is_structurally_valid) ... ok
+test_duplicate_ids_rejected (test_validate_ledger.FrozenLedgerTests.test_duplicate_ids_rejected) ... ok
+test_empty_ledger_is_valid (test_validate_ledger.FrozenLedgerTests.test_empty_ledger_is_valid) ... ok
+test_missing_evidence_rejected (test_validate_ledger.FrozenLedgerTests.test_missing_evidence_rejected) ... ok
+test_unpinned_commit_rejected (test_validate_ledger.FrozenLedgerTests.test_unpinned_commit_rejected) ... ok
+test_unverified_entries_rejected (test_validate_ledger.FrozenLedgerTests.test_unverified_entries_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 97.768s
+
+OK

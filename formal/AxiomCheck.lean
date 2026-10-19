@@ -307,3 +307,51 @@ import EndgameChess
 #check @EndgameChess.Rules.protected_corner_reentry_stalemate
 #check @EndgameChess.Rules.lower_band_raise_crossing
 #check @EndgameChess.Rules.two_file_rank_raise_needs_rescue
+
+-- S029: two-file check, bounded pursuit, closed rank-wall forcing and setup controls.
+#print axioms EndgameChess.Rules.pursuitFile_bound
+#print axioms EndgameChess.Rules.pursuit_absDiff
+#print axioms EndgameChess.Rules.wall_far_margin
+#print axioms EndgameChess.Rules.wall_wait_choice
+#print axioms EndgameChess.Rules.krk_wall_rook_move
+#print axioms EndgameChess.Rules.lower_band_reply_shape
+#print axioms EndgameChess.Rules.pursuit_king_step
+#print axioms EndgameChess.Rules.krk_pursuit_king_move
+#print axioms EndgameChess.Rules.opposition_check_step_two
+#print axioms EndgameChess.Rules.krk_opposition_check_two
+#print axioms EndgameChess.Rules.krk_two_file_edge_force
+#print axioms EndgameChess.Rules.pursuit_tempo_return_margin
+#print axioms EndgameChess.Rules.pursuit_file_eq
+#print axioms EndgameChess.Rules.pursuit_margin_step
+#print axioms EndgameChess.Rules.krk_oriented_lower_pursuit
+#print axioms EndgameChess.Rules.krk_lower_band_force_of_exits
+#print axioms EndgameChess.Rules.krk_rank_wall_force
+#print axioms EndgameChess.Rules.krk_phase_image_force
+#print axioms EndgameChess.Rules.krk_vertical_wall_entry_force
+#print axioms EndgameChess.Rules.two_file_edge_forcing_control
+#print axioms EndgameChess.Rules.former_chase_cycle_is_forcing
+#print axioms EndgameChess.Rules.threatened_wall_rook_is_forcing
+#print axioms EndgameChess.Rules.direct_setup_capture_controls
+#check @EndgameChess.Rules.pursuitFile_bound
+#check @EndgameChess.Rules.pursuit_absDiff
+#check @EndgameChess.Rules.wall_far_margin
+#check @EndgameChess.Rules.wall_wait_choice
+#check @EndgameChess.Rules.krk_wall_rook_move
+#check @EndgameChess.Rules.lower_band_reply_shape
+#check @EndgameChess.Rules.pursuit_king_step
+#check @EndgameChess.Rules.krk_pursuit_king_move
+#check @EndgameChess.Rules.opposition_check_step_two
+#check @EndgameChess.Rules.krk_opposition_check_two
+#check @EndgameChess.Rules.krk_two_file_edge_force
+#check @EndgameChess.Rules.pursuit_tempo_return_margin
+#check @EndgameChess.Rules.pursuit_file_eq
+#check @EndgameChess.Rules.pursuit_margin_step
+#check @EndgameChess.Rules.krk_oriented_lower_pursuit
+#check @EndgameChess.Rules.krk_lower_band_force_of_exits
+#check @EndgameChess.Rules.krk_rank_wall_force
+#check @EndgameChess.Rules.krk_phase_image_force
+#check @EndgameChess.Rules.krk_vertical_wall_entry_force
+#check @EndgameChess.Rules.two_file_edge_forcing_control
+#check @EndgameChess.Rules.former_chase_cycle_is_forcing
+#check @EndgameChess.Rules.threatened_wall_rook_is_forcing
+#check @EndgameChess.Rules.direct_setup_capture_controls

@@ -1,0 +1,14 @@
+{
+  "supplementary_only": true,
+  "selected_trajectories": 64,
+  "max_observed_plies": 51,
+  "events": {
+    "wait": 108,
+    "normalize": 100,
+    "chase": 138,
+    "raise": 48,
+    "catch_up": 208,
+    "check": 184
+  },
+  "direct_setup_capture_controls": true
+}
