@@ -355,3 +355,53 @@ import EndgameChess
 #check @EndgameChess.Rules.former_chase_cycle_is_forcing
 #check @EndgameChess.Rules.threatened_wall_rook_is_forcing
 #check @EndgameChess.Rules.direct_setup_capture_controls
+
+-- S030: safe setup, forcing transport and weak-turn classification.
+#print axioms EndgameChess.Rules.krk_unprotected_capture
+#print axioms EndgameChess.Rules.krk_force_weak_safe
+#print axioms EndgameChess.Rules.noRights_after_legal
+#print axioms EndgameChess.Rules.canCastle_noRights
+#print axioms EndgameChess.Rules.krk_strong_reply
+#print axioms EndgameChess.Rules.krk_force_transport
+#print axioms EndgameChess.Rules.krk_axis_wall_force
+#print axioms EndgameChess.Rules.krk_axis_entry_force
+#print axioms EndgameChess.Rules.krk_setup_axis
+#print axioms EndgameChess.Rules.krk_strong_arrival_geometry
+#print axioms EndgameChess.Rules.krk_clear_vertical_entry_force
+#print axioms EndgameChess.Rules.krk_clear_axis_entry_force
+#print axioms EndgameChess.Rules.krk_horizontal_entry_force
+#print axioms EndgameChess.Rules.krk_offrank_setup_force
+#print axioms EndgameChess.Rules.krk_same_rank_retreat_force
+#print axioms EndgameChess.Rules.krk_backrank_protected_force
+#print axioms EndgameChess.Rules.krk_backrank_setup_force
+#print axioms EndgameChess.Rules.krk_strong_force_of_not_check
+#print axioms EndgameChess.Rules.krk_strong_arrival_force
+#print axioms EndgameChess.Rules.krk_weak_force_iff
+#print axioms EndgameChess.Rules.krk_weak_force_safe_iff
+#print axioms EndgameChess.Rules.backrank_preparation_forces
+#print axioms EndgameChess.Rules.black_flagged_file_setup_forces
+#print axioms EndgameChess.Rules.safe_setup_capture_controls
+#check @EndgameChess.Rules.krk_unprotected_capture
+#check @EndgameChess.Rules.krk_force_weak_safe
+#check @EndgameChess.Rules.noRights_after_legal
+#check @EndgameChess.Rules.canCastle_noRights
+#check @EndgameChess.Rules.krk_strong_reply
+#check @EndgameChess.Rules.krk_force_transport
+#check @EndgameChess.Rules.krk_axis_wall_force
+#check @EndgameChess.Rules.krk_axis_entry_force
+#check @EndgameChess.Rules.krk_setup_axis
+#check @EndgameChess.Rules.krk_strong_arrival_geometry
+#check @EndgameChess.Rules.krk_clear_vertical_entry_force
+#check @EndgameChess.Rules.krk_clear_axis_entry_force
+#check @EndgameChess.Rules.krk_horizontal_entry_force
+#check @EndgameChess.Rules.krk_offrank_setup_force
+#check @EndgameChess.Rules.krk_same_rank_retreat_force
+#check @EndgameChess.Rules.krk_backrank_protected_force
+#check @EndgameChess.Rules.krk_backrank_setup_force
+#check @EndgameChess.Rules.krk_strong_force_of_not_check
+#check @EndgameChess.Rules.krk_strong_arrival_force
+#check @EndgameChess.Rules.krk_weak_force_iff
+#check @EndgameChess.Rules.krk_weak_force_safe_iff
+#check @EndgameChess.Rules.backrank_preparation_forces
+#check @EndgameChess.Rules.black_flagged_file_setup_forces
+#check @EndgameChess.Rules.safe_setup_capture_controls

@@ -36,3 +36,13 @@ import EndgameChess.Rules.KRKForcing.LowerPursuit
 import EndgameChess.Rules.KRKForcing.WallForce
 import EndgameChess.Rules.KRKForcing.WallEntry
 import EndgameChess.Rules.KRKForcing.WallExamples
+import EndgameChess.Rules.KRKForcing.CaptureSafety
+import EndgameChess.Rules.KRKForcing.OrdinaryMoves
+import EndgameChess.Rules.KRKForcing.StrategyTransport
+import EndgameChess.Rules.KRKForcing.AxisWalls
+import EndgameChess.Rules.KRKForcing.ClearEntry
+import EndgameChess.Rules.KRKForcing.OffRankSetup
+import EndgameChess.Rules.KRKForcing.SameRankSetup
+import EndgameChess.Rules.KRKForcing.SafeSetup
+import EndgameChess.Rules.KRKForcing.OutcomeClassification
+import EndgameChess.Rules.KRKForcing.SetupExamples
