@@ -1,0 +1,13 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+New modules scanned:
+formal/EndgameChess/Rules/KRKForcing/AxisWalls.lean
+formal/EndgameChess/Rules/KRKForcing/CaptureSafety.lean
+formal/EndgameChess/Rules/KRKForcing/ClearEntry.lean
+formal/EndgameChess/Rules/KRKForcing/OffRankSetup.lean
+formal/EndgameChess/Rules/KRKForcing/OrdinaryMoves.lean
+formal/EndgameChess/Rules/KRKForcing/OutcomeClassification.lean
+formal/EndgameChess/Rules/KRKForcing/SafeSetup.lean
+formal/EndgameChess/Rules/KRKForcing/SameRankSetup.lean
+formal/EndgameChess/Rules/KRKForcing/SetupExamples.lean
+formal/EndgameChess/Rules/KRKForcing/StrategyTransport.lean
+Matches: 0

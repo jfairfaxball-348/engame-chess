@@ -44,4 +44,6 @@
 
 | S030 | 2026-10-19 | Arbitrary KRK safe setup and clock-free forcing classification (Gate L/F) | EC-C011 and C019–021 FORMAL_VERIFIED at `4acc3e8`: restricted alternating transport, all axes, finite safe setup including back rank, every strong-turn legal arrival forces mate; weak turn classified by mate/nonempty noncapture replies. 24 new public declarations; fresh 51-job build, 259 allowed axiom reports, 39 tests. S031 Gate Z review/freeze installed. [Closeout](S030_KRK_SAFE_SETUP.md) | None — 11 frozen bundles |
 
+| S031 | 2026-10-19 | Freeze verified KRK forcing (Gate Z) | Three NEW fresh exact-source GitHub builds: 34/41/51 jobs, 212/235/259 allowed axiom reports; all 62 public declarations, full module/helper hashes and fixed controls retained. Earlier sources/records unchanged; 6 ledger tests pass. S032 rule/distance design installed. [Closeout](S031_FREEZE_KRK_FORCING.md) | **+8 → EC-T0012–EC-T0019 FROZEN** (19 bundles; clock-free only) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

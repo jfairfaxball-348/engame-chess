@@ -1,0 +1,112 @@
+[
+  {
+    "id": "EC-T0012",
+    "candidate": "EC-C014",
+    "session": "S028",
+    "title": "Exact all-replies image of the opposed-kings checking phase",
+    "modules": [
+      "PhaseImage"
+    ],
+    "rep": "krk_opposition_phase_image",
+    "paper": "EC-C014_KRK_PHASE_IMAGE.md",
+    "scope": "Exact IsKRK, strong turn, Opposed kings (same file, weak rank = strong rank + 2), four-file rook/weak margin and rook off the weak rank. The chosen legal check either mates or has nonempty replies; EVERY first reply permits a chosen legal king-up with nonempty replies; EVERY second reply has exact Matches and PhaseImage, with strict decrease of 7\u2212weakRank. PhaseImage means rookRank=strongRank+1, weakRank=rookRank+1 or +2, weak/strong file offset\u22642, rook/strong file margin\u22654 and rook/weak distance\u22652. This is an output family, not by itself a closed strategy."
+  },
+  {
+    "id": "EC-T0013",
+    "candidate": "EC-C015",
+    "session": "S028",
+    "title": "Bounded upper-band rook-rank advance with immediate rescue",
+    "modules": [
+      "RankAdvance",
+      "RookRescue",
+      "RankAdvanceRescue",
+      "ReentryExamples"
+    ],
+    "rep": "krk_rank_advance_rescue",
+    "paper": "EC-C015_KRK_RANK_ADVANCE.md",
+    "scope": "Exact IsKRK, strong turn, strongRank<rookRank, rookRank+2\u2264weakRank, and rook/weak file margin\u22652. Choose the legal same-file rook raise by one rank; replies exist and EVERY reply is a strong-turn Matches state, either already DistantBarrier or followed by a chosen same-rank far-file rook rescue, with nonempty replies and EVERY reply a DistantBarrier. Thus at most four plies; 7\u2212rookRank strictly decreases. A three-file initial margin gives the narrower two-ply result. The complete PhaseImage upper band is covered by its derived two-file margin. Rescue happens on the strong turn before another weak move. No ForceMate conclusion is asserted by this local contraction alone. Fixed chase-cycle, protected stalemate, lower-band crossing and hanging-rook controls are retained as supplementary witnesses."
+  },
+  {
+    "id": "EC-T0014",
+    "candidate": "EC-C016",
+    "session": "S029",
+    "title": "Two-file opposed-kings checking action and upper-edge forced mate",
+    "modules": [
+      "TwoFileCheck"
+    ],
+    "rep": "krk_opposition_check_two",
+    "paper": "EC-C016_C018_KRK_WALL_FORCING.md",
+    "scope": "Exact IsKRK, strong turn, Opposed kings, rook/weak file margin\u22652 and rook off the weak rank. The chosen check is legal. It either achieves actual named-colour MateGoal or has a nonempty reply set with EVERY reply an exact strong-turn Matches state, weak rank raised exactly one and file displacement\u22641. At weak rank 7 it proves ForceMate. Only this first check/reply action is covered at two-file margin; no four-ply king-up guarantee is inherited from EC-T0011."
+  },
+  {
+    "id": "EC-T0015",
+    "candidate": "EC-C017",
+    "session": "S029",
+    "title": "Finite lower-band pursuit conditional on explicit winning exits",
+    "modules": [
+      "WallActions",
+      "PursuitGeometry",
+      "LowerPursuit"
+    ],
+    "rep": "krk_lower_band_force_of_exits",
+    "paper": "EC-C016_C018_KRK_WALL_FORCING.md",
+    "scope": "The hypothesis LowerExitWins \u03c3 y is REQUIRED: every exact strong-turn Matches state at strongRank+1=y=rookRank with file margin\u22652 and either weakRank\u2265y+2 or weakRank=y+1 with aligned king files has ForceMate. Under that interface, exact strong-turn lower-band Matches, strongRank+1=y=rookRank, weakRank=y+1, and rook/weak file margin\u22652 imply ForceMate. The oriented version also requires pursuitFile d strong < pursuitFile d weak, for either Boolean direction. Actual distinct rook tempos, bounded two-margin normalization and strong-file advances cover EVERY defence with nonempty replies. Only the king-file-advance recursive call decreases 7\u2212pursuitFile d strong. This bundle is conditional; EC-T0016 separately discharges its exit interface."
+  },
+  {
+    "id": "EC-T0016",
+    "candidate": "EC-C018",
+    "session": "S029",
+    "title": "Unconditional clock-free forcing from every separated rank wall",
+    "modules": [
+      "WallForce",
+      "WallEntry",
+      "WallExamples"
+    ],
+    "rep": "krk_rank_wall_force",
+    "paper": "EC-C016_C018_KRK_WALL_FORCING.md",
+    "scope": "The flagship assumes ONLY exact strong-turn Matches and strongRank<rookRank<weakRank. It concludes ForceMate \u03c3 q with no LowerExitWins, arrival, initial safety or file-margin hypothesis. A threatened rook is repaired before any weak turn. Nested induction on 7\u2212rookRank and rookRank\u2212strongRank discharges the pursuit exits. Every PhaseImage is included. The direct vertical-entry corollary additionally assumes weakRank\u2265strongRank+2, rook file\u2260strong file and rook/weak file margin\u22652. Nonempty replies and ALL defences are proved. Fixed two-file-edge, former chase-cycle, threatened-rook forcing and naive setup/capture controls are supplementary, not a proof by examples."
+  },
+  {
+    "id": "EC-T0017",
+    "candidate": "EC-C019",
+    "session": "S030",
+    "title": "Exact ordinary KRK move interface and weak-turn capture safety",
+    "modules": [
+      "CaptureSafety",
+      "OrdinaryMoves"
+    ],
+    "rep": "krk_strong_reply",
+    "paper": "EC-C019_C021_KRK_SAFE_SETUP.md",
+    "scope": "For exact weak-turn KRK, weak/rook distance=1 and strong/rook distance\u22652 yield a legal capture to exact KK; hence weak-turn ForceMate requires SafeRook (rook distant\u22652 OR protected at distance1). For exact strong-turn KRK, a legal successor projects to exact Matches and StepM PROVIDED the source castling rights equal noRights. noRights persists after every legal move and excludes castling. En-passant flags are unrestricted. This interface does not assert unrestricted strong-move completeness under arbitrary castling flags or define a new game."
+  },
+  {
+    "id": "EC-T0018",
+    "candidate": "EC-C020",
+    "session": "S030",
+    "title": "Restricted alternating forcing transport and all-axis wall applications",
+    "modules": [
+      "StrategyTransport",
+      "AxisWalls"
+    ],
+    "rep": "krk_force_transport",
+    "paper": "EC-C019_C021_KRK_SAFE_SETUP.md",
+    "scope": "For any BoardSym g (an involution preserving king distance and rook line/segment geometry), source Matches q \u03c3 a, source q.castling=noRights, target Matches t \u03c3 (a.map g), and source ForceMate \u03c3 q imply target ForceMate \u03c3 t. Target flags are arbitrary. Actual terminal mate, nonempty reply witnesses and EVERY weak reply are transported by induction on the source finite budget. This is one-way strategy transport, not unrestricted Legal symmetry or equality of distance. Oriented wall/entry corollaries apply the corresponding strict geometric hypotheses in mapped coordinates. symSwap and symAnti, axis choice from king distance\u22652, and geometry from a strong-turn legal arrival are included."
+  },
+  {
+    "id": "EC-T0019",
+    "candidate": "EC-C021 and EC-C011",
+    "session": "S030",
+    "title": "Arbitrary safe KRK setup and complete clock-free forcing classification",
+    "modules": [
+      "ClearEntry",
+      "OffRankSetup",
+      "SameRankSetup",
+      "SafeSetup",
+      "OutcomeClassification",
+      "SetupExamples"
+    ],
+    "rep": "krk_strong_arrival_force",
+    "paper": "EC-C019_C021_KRK_SAFE_SETUP.md",
+    "scope": "For either strong colour \u03c3 and arbitrary flags, exact IsKRK q \u03c3 S R W, q.turn=\u03c3, and existence of an incoming Legal move imply ForceMate \u03c3 q. The stronger geometric theorem replaces incoming Legal by inCheck q \u03c3.opp=false and needs no predecessor. Finite setup covers off-rank retreat with axis switch, same-rank king retreat, protected back-rank entry and preparation. No assumed winning continuation remains. For exact weak-turn KRK, ForceMate \u03c3 q iff MatedK q OR (a nonempty legal reply set AND EVERY legal reply avoids KK). Equivalently it is MatedK q OR (SafeRook S R W AND a legal reply exists). Zero-ply mate is included; stalemate and ANY legal KK capture are excluded. Every setup/reply quantifier is covered. Fixed back-rank, black flagged file-axis, and unsafe-capture controls remain supplementary. This completes the intended EC-C011 clock-free target; it does not give FIDE WDL with clocks/repetition or numerical DTM/DTZ."
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "proof_source": "3ead1d587f4ff5e129f73666bd466f5eac764223",
+  "verified_utc": "2026-10-19T13:03:01Z",
+  "build_seconds": 454.966,
+  "build_exit": 0,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 235,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 204,
+    "propext, Quot.sound": 18,
+    "propext": 8
+  },
+  "axiom_free": 5,
+  "bundle_declarations": 23,
+  "fresh_clone": "/workspace/work/s031/S029-gate-z-retry",
+  "lake_absent_before_build": true,
+  "source_files_hashed": 44,
+  "new_modules_scanned": 7,
+  "forbidden_matches": 0,
+  "hosted_ci": "unobserved"
+}

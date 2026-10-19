@@ -1,0 +1,16 @@
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
+leanprover/lean4:v4.35.0
+name = "endgame_chess"
+version = "0.1.0"
+defaultTargets = ["EndgameChess"]
+
+# Core Lean only: no mathlib or other dependencies (smaller trusted base).
+[[lean_lib]]
+name = "EndgameChess"
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages": [],
+ "name": "endgame_chess",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}

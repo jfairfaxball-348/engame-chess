@@ -1,0 +1,15 @@
+EndgameChess.Rules.phase_image_of_replies
+EndgameChess.Rules.krk_follow_check_image
+EndgameChess.Rules.krk_opposition_phase_image
+EndgameChess.Rules.rank_advance_step
+EndgameChess.Rules.rank_advance_reply_exists
+EndgameChess.Rules.krk_rank_advance
+EndgameChess.Rules.barrier_horizontal_reply_exists
+EndgameChess.Rules.krk_barrier_rook_rescue
+EndgameChess.Rules.krk_rank_advance_rescue
+EndgameChess.Rules.phase_image_file_margin
+EndgameChess.Rules.krk_phase_image_upper_advance
+EndgameChess.Rules.phase_image_chase_cycle
+EndgameChess.Rules.protected_corner_reentry_stalemate
+EndgameChess.Rules.lower_band_raise_crossing
+EndgameChess.Rules.two_file_rank_raise_needs_rescue

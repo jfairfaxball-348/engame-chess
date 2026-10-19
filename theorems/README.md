@@ -12,9 +12,9 @@ Corrections require a new versioned entry and clearly visible supersession note;
 
 **Current toolchain anchor:** EC-T0001–EC-T0006 also have a `v2.md` that re-anchors the theorem on Lean **v4.35.0** (S020 migration, commit `b114ccd`, no source change; see [MIGRATION-S020](frozen/MIGRATION-S020/README.md)). The `v1.md` records remain valid at their own commits on v4.34.1.
 
-EC-T0007–EC-T0011 were first frozen on v4.35.0 and need no migration manifest.
+EC-T0007–EC-T0019 were first frozen on v4.35.0 and need no migration manifest.
 
-Current frozen count: **11**:
+Current frozen count: **19 bundles**, not nineteen solved material classes:
 - [EC-T0001](frozen/EC-T0001/v1.md): K vs K dead position (frozen S003).
 - [EC-T0002](frozen/EC-T0002/v1.md): K+B vs K dead position (frozen S006).
 - [EC-T0003](frozen/EC-T0003/v1.md): K vs K dead in the general FIDE rules kernel, for any legal arrival and arisen positions. Strengthens EC-T0001. Frozen S010.
@@ -26,4 +26,15 @@ Current frozen count: **11**:
 - [EC-T0009](frozen/EC-T0009/v1.md): protected rook rank confinement through every legal lone-king reply, plus reply completeness and the obstruction to a fixed-king protected rank advance. Frozen S025. No full forcing strategy.
 
 - [EC-T0010](frozen/EC-T0010/v1.md): distant-or-protected rook safety, all-reply rank confinement and the nonempty-reply liveness bridge. Frozen S027.
-- [EC-T0011](frozen/EC-T0011/v1.md): four-ply checking contraction with four-file margin and opposed kings, plus edge forced mate. Frozen S027. Setup/re-entry and general KRK forcing remain open; eleven bundles are not eleven solved material classes.
+- [EC-T0011](frozen/EC-T0011/v1.md): four-ply checking contraction with four-file margin and opposed kings, plus edge forced mate. Frozen S027. Subsequent S031 bundles close setup/re-entry and classify clock-free KRK forcing; clocks/repetition and distance remain open.
+
+- [EC-T0012](frozen/EC-T0012/v1.md): Exact all-replies image of the opposed-kings checking phase. Frozen S031 from EC-C014.
+- [EC-T0013](frozen/EC-T0013/v1.md): Bounded upper-band rook-rank advance with immediate rescue. Frozen S031 from EC-C015.
+- [EC-T0014](frozen/EC-T0014/v1.md): Two-file opposed-kings checking action and upper-edge forced mate. Frozen S031 from EC-C016.
+- [EC-T0015](frozen/EC-T0015/v1.md): Finite lower-band pursuit conditional on explicit winning exits. Frozen S031 from EC-C017.
+- [EC-T0016](frozen/EC-T0016/v1.md): Unconditional clock-free forcing from every separated rank wall. Frozen S031 from EC-C018.
+- [EC-T0017](frozen/EC-T0017/v1.md): Exact ordinary KRK move interface and weak-turn capture safety. Frozen S031 from EC-C019.
+- [EC-T0018](frozen/EC-T0018/v1.md): Restricted alternating forcing transport and all-axis wall applications. Frozen S031 from EC-C020.
+- [EC-T0019](frozen/EC-T0019/v1.md): Arbitrary safe KRK setup and complete clock-free forcing classification. Frozen S031 from EC-C021 and EC-C011.
+
+[S031 evidence](frozen/VERIFICATION-S031/README.md) records three new fresh exact-source Gate Z builds. The conditional pursuit bundle keeps LowerExitWins; wall/setup flagships have no assumed winning continuation. No clock/repetition or numerical distance claim follows.

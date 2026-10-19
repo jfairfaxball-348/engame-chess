@@ -1,0 +1,8 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+New modules scanned:
+formal/EndgameChess/Rules/KRKForcing/PhaseImage.lean
+formal/EndgameChess/Rules/KRKForcing/RankAdvance.lean
+formal/EndgameChess/Rules/KRKForcing/RookRescue.lean
+formal/EndgameChess/Rules/KRKForcing/RankAdvanceRescue.lean
+formal/EndgameChess/Rules/KRKForcing/ReentryExamples.lean
+Matches: 0

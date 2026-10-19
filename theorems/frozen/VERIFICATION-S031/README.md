@@ -1,0 +1,23 @@
+# S031 — new fresh exact-source Gate Z evidence
+
+These are three NEW GitHub clones made for Gate Z, not the earlier Gate F directories. Each clone was detached at the full published proof-source SHA; absence of formal/.lake was asserted before lake build. The initial three builds ran concurrently. The S029 legal-reply compilation was killed with exit 137 when the 8 GiB environment reached its memory limit (cgroup oom_kill=1). That failed attempt is preserved under failed-attempts/S029-memory-limit and does not certify anything. S028 was then deliberately stopped (Lean exit 143) to release memory as the remaining pair approached the limit; that attempt is retained under failed-attempts/S028-memory-pressure-stop. S030 was allowed to finish alone. S028 and S029 were each retried sequentially in NEW GitHub clones with no .lake; only successful runs are tabulated below. Subsequent checks were incremental. They serve only the S031 bundles anchored at the corresponding source, rather than new certifications of unrelated historical results.
+
+| Source | Exact proof-source commit | Fresh build | Axiom/statement runner | New public declarations | Gate Z verified UTC |
+|---|---|---|---|---|---|
+| S028 | `cb5d3bb713257d7cac8e3c1f9d82d8e77b746d6c` | 34 jobs, exit 0 | 212 reports, exit 0 | 15 | `2026-10-19T12:55:24Z` |
+| S029 | `3ead1d587f4ff5e129f73666bd466f5eac764223` | 41 jobs, exit 0 | 235 reports, exit 0 | 23 | `2026-10-19T13:03:01Z` |
+| S030 | `4acc3e8638a916f329788d4c2b5f0db6f2c9bf67` | 51 jobs, exit 0 | 259 reports, exit 0 | 24 | `2026-10-19T12:47:55Z` |
+
+Each source directory retains clone/checkout/pre-build logs, official toolchain identity, complete lake-build log, complete AxiomCheck statements/axioms, declaration list, full source SHA-256 inventory, forbidden-token scan and machine-readable summary. Successful build wall timings are recorded in each summary.json; per-module timings remain in the full logs.
+
+All 62 new public declarations were inspected with exact #check and #print axioms outputs and assigned to exactly one bundle. Every axiom report is a subset of propext, Classical.choice, Quot.sound. Counts match the previously retained Gate F reports, but the successful Gate Z executions are new. No sorryAx or Lean.ofReduceBool. The exact axiom/statement logs match the corresponding earlier reports byte for byte. Five/seven/ten new modules respectively have zero word-bounded forbidden tokens.
+
+Full-anchor inventories include every Lean source and toolchain/build configuration; every nonaggregate Lean source matches the working checkout. S028/S029 aggregate imports and AxiomCheck are intentionally older than S030. The inventory checker permits those additive aggregate differences while retaining complete exact-anchor hashes; every nonaggregate Lean file is identical. Reproducible verification and record-validation scripts are retained under `reproduction/`.
+
+Frozen source boundary: every complete newly frozen module, including definitions, private helpers and fixed controls, is assigned to one of EC-T0012–EC-T0019. Each manifest contains full transitive project Lean dependency hashes pinned at its exact source SHA. `bundle-map.json` records the partition. Fixed capture, stalemate, chase and flagged-axis controls remain in their original unedited source modules and compiled in the new runs. They are supplementary, never general mathematical evidence.
+
+Toolchain: official unmodified core Lean 4.35.0, release commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc; Lake 5.0.0-src+eb6cafb; no packages or host shim. TLS/checksum verification unchanged. Trusted: Lean kernel/standard axioms, A1 and the FIDE rules encoding in docs/RULES_KERNEL.md, owner-reviewed 2026-10-18. Paper/fidelity/freeze reviews are same-agent, not independent external review.
+
+`ledger-validation.log`: structural validation of 19 frozen rows only. `ledger-tests.log`: six existing ledger-validator tests passed. `preservation.log`: all prior Lean sources, prior frozen artifacts, papers, audits and Gate F evidence byte-identical; original ledger is an unchanged byte prefix. No existing Python or Lean source changed, so the full historical diagnostic suite was not rerun. No external oracle, tablebase or class-wide enumeration was consulted. `validation.log` checks manifests, declaration coverage, hashes and links; structural checks are not mathematical proofs. Hosted CI is unobserved, not inferred from publication.
+
+Scope: nineteen frozen bundles, not nineteen solved material classes. Strong setup and all weak replies are covered only in the stated clock-free model. Finite rank is not optimal numerical distance. Clock/repetition, full FIDE WDL/DTZ, seven-piece parity and the initial-position ambition remain open.

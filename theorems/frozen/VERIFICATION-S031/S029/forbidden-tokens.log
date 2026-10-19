@@ -1,0 +1,10 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+New modules scanned:
+formal/EndgameChess/Rules/KRKForcing/WallActions.lean
+formal/EndgameChess/Rules/KRKForcing/TwoFileCheck.lean
+formal/EndgameChess/Rules/KRKForcing/PursuitGeometry.lean
+formal/EndgameChess/Rules/KRKForcing/LowerPursuit.lean
+formal/EndgameChess/Rules/KRKForcing/WallForce.lean
+formal/EndgameChess/Rules/KRKForcing/WallEntry.lean
+formal/EndgameChess/Rules/KRKForcing/WallExamples.lean
+Matches: 0

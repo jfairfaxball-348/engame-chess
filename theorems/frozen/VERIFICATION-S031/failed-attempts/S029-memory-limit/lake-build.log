@@ -1,0 +1,24 @@
+✔ [2/41] Built EndgameChess.KK (12s)
+✔ [3/41] Built EndgameChess.Rules.Board (2.7s)
+✔ [4/41] Built EndgameChess.Rules.Position (5.7s)
+✔ [5/41] Built EndgameChess.Rules.Moves (5.1s)
+✔ [6/41] Built EndgameChess.Rules.Lemmas (4.7s)
+✔ [7/41] Built EndgameChess.Rules.AgreeKK (9.7s)
+✔ [8/41] Built EndgameChess.KBK (64s)
+✔ [9/41] Built EndgameChess.Rules.AgreeKBK (79s)
+✔ [10/41] Built EndgameChess.Rules.Flags (4.2s)
+✔ [11/41] Built EndgameChess.Rules.Reach (5.1s)
+✔ [12/41] Built EndgameChess.Rules.Sanity (142s)
+✔ [13/41] Built EndgameChess.Rules.Outcome (2.8s)
+✔ [14/41] Built EndgameChess.Rules.ForcingDefinitions (1.7s)
+✔ [15/41] Built EndgameChess.Rules.ForceMate (2.1s)
+✔ [16/41] Built EndgameChess.Rules.KNK (42s)
+✔ [17/41] Built EndgameChess.Rules.KRK (8.2s)
+✔ [18/41] Built EndgameChess.Rules.KRKLive.Basic (77s)
+✔ [19/41] Built EndgameChess.Rules.KRKLive.Endgame (18s)
+✖ [20/41] Building EndgameChess.Rules.KRKLive.Reply (297s)
+trace: .> LEAN_PATH=/workspace/work/s031/S029-gate-z/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/work/s031/S029-gate-z/formal/EndgameChess/Rules/KRKLive/Reply.lean -o /workspace/work/s031/S029-gate-z/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKLive/Reply.olean -i /workspace/work/s031/S029-gate-z/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKLive/Reply.ilean -c /workspace/work/s031/S029-gate-z/formal/.lake/build/ir/EndgameChess/Rules/KRKLive/Reply.c --setup /workspace/work/s031/S029-gate-z/formal/.lake/build/ir/EndgameChess/Rules/KRKLive/Reply.setup.json --json
+error: Lean exited with code 137
+Some required targets logged failures:
+- EndgameChess.Rules.KRKLive.Reply
+error: build failed

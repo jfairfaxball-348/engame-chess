@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S030. Eleven theorem bundles remain frozen; the new clock-free KRK classification has passed Gate F and awaits Gate Z.
+Current mathematical evidence: through S031. Nineteen theorem bundles are frozen, including the clock-free KRK forcing classification; these are not nineteen solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live frozen; clock-free forcing classified and formally verified | Freeze new results; FIDE rule/distance parity |
+| K+R vs K | Dead/live and clock-free forcing classification frozen | FIDE rule/distance parity |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,10 +18,10 @@ Current mathematical evidence: through S030. Eleven theorem bundles remain froze
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S030 proved arbitrary strong-turn KRK safe setup and the weak-turn terminal/capture classification, completing EC-C011 in the clock-free kernel; the frozen count stays eleven.
+Session change: S031 froze eight verified KRK forcing bundles (19 total); mathematical coverage is unchanged, and FIDE rule/distance parity remains open.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 
 “Formally verified” means Gate F passed; it does not mean frozen. A proved forcing family does not establish the outcome of every position in that class. Full Syzygy parity means proof-based coverage without consulting tablebases, with the relevant 50-move outcome (WDL) and distance-to-zeroing (DTZ) semantics. The present kernel lacks clocks/repetition history, and distance results remain open. Do not infer percentages from the number of frozen theorem bundles.
 
-Sources: [roadmap](ROADMAP.md), [candidate register](../research/CANDIDATES.md), [frozen ledger](../theorems/LEDGER.csv), and [S030 evidence](../sessions/evidence/S030/README.md). This table summarises those records; it does not replace them.
+Sources: [roadmap](ROADMAP.md), [candidate register](../research/CANDIDATES.md), [frozen ledger](../theorems/LEDGER.csv), and [S031 Gate Z evidence](../theorems/frozen/VERIFICATION-S031/README.md). This table summarises those records; it does not replace them.

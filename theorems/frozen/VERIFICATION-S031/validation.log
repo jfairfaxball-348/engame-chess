@@ -1,0 +1,15 @@
+EC-T0012: source/module hashes, exact statement+axiom coverage and ledger identity pass
+EC-T0013: source/module hashes, exact statement+axiom coverage and ledger identity pass
+EC-T0014: source/module hashes, exact statement+axiom coverage and ledger identity pass
+EC-T0015: source/module hashes, exact statement+axiom coverage and ledger identity pass
+EC-T0016: source/module hashes, exact statement+axiom coverage and ledger identity pass
+EC-T0017: source/module hashes, exact statement+axiom coverage and ledger identity pass
+EC-T0018: source/module hashes, exact statement+axiom coverage and ledger identity pass
+EC-T0019: source/module hashes, exact statement+axiom coverage and ledger identity pass
+S028: fresh statement/axiom output byte-identical to exact-source Gate F report (new run, not reused)
+S029: fresh statement/axiom output byte-identical to exact-source Gate F report (new run, not reused)
+S030: fresh statement/axiom output byte-identical to exact-source Gate F report (new run, not reused)
+62 public declarations partitioned once; all 22 new complete modules assigned once.
+Complete stable progress table and full installed S032 prompt copied exactly.
+All inspected local Markdown links resolve.
+All 19 ledger records have manifests; prior records unchanged.
