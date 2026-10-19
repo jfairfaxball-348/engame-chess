@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S035.** Twenty frozen theorem bundles (not twenty solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S036.** Twenty frozen theorem bundles (not twenty solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -70,7 +70,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S033: **EC-C022 FORMAL_VERIFIED**: an abstract rule-layer mate certificate projects to frozen clock-free forcing with the identical ply budget, provided every raw legal reply lifts and ongoing moves are sound/nondead. [Paper](proofs/EC-C022_RULE_LAYER_PROJECTION.md), [evidence](sessions/evidence/S033/README.md). This does not instantiate the concrete FIDE history layer.
 - S034: EC-C022 frozen as [EC-T0020](theorems/frozen/EC-T0020/v1.md) after a new exact-source Gate Z build. All three interface/proof modules and both declarations are frozen; scope remains abstract.
 - S035: **EC-C023 FORMAL_VERIFIED**: stored initial-rooted raw moves, exact append/prefix retention, raw step soundness and complete reply lifting, with kernel endpoint origin. [Paper](proofs/EC-C023_RAW_TRACE_APPEND.md), [evidence](sessions/evidence/S035/README.md). This is raw trace data, not no-earlier-terminal FIDE admissibility.
-- Next: S036, a raw halfmove-clock fold in new files. EC-C023 freeze, complete FIDE histories/claims/repetition, sufficient-budget lifting and numerical KRK distances remain open.
+- S036: **EC-C024 FORMAL_VERIFIED**: a raw halfmove fold, legal pawn/capture reset-event equivalence, castling empty-destination fact, exact append update and global/one-step ply bounds. [Paper](proofs/EC-C024_RAW_HALFMOVE_FOLD.md), [evidence](sessions/evidence/S036/README.md). No complete FIDE admissibility/adjudication or numerical KRK bound.
+- Next: S037, separate Gate Z verification for EC-C023/024. Complete FIDE histories/claims/repetition, sufficient-budget lifting and numerical KRK distances remain open.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

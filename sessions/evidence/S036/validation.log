@@ -1,0 +1,6 @@
+Fresh build exit 0; AxiomCheck exit 0.
+Working and clean statement/data/axiom outputs byte-identical.
+Every Lean source file matches exact fresh source checkout.
+359 prior protected files unchanged; two aggregate files additive only.
+All five RawTrace modules equal original S035 published anchor.
+271 allowed axiom reports, six new main declarations; 20 ledger rows unchanged.

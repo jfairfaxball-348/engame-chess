@@ -1,0 +1,4 @@
+Canonical full progress table and delta reproduced exactly.
+Full installed S037 prompt reproduced exactly.
+129 authored/current local links resolve.
+git diff --check passed.

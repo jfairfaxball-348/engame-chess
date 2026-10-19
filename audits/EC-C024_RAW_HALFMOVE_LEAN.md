@@ -30,3 +30,14 @@ retains move/position prefix on reset; no prior modules, manifests, ledger rows
 or evidence change. Full no-earlier-terminal rules, repetition and claims,
 automatic outcomes/mate priority, Layer instantiation and clock/repetition
 lifting remain open. No numerical KRK bound or DTM/DTZ/WDL/Syzygy result.
+
+## Completed Gate F
+
+Published exact source `2d2b40ddaaff2a962bb9f573e8de799b1427d5f8`; new fresh GitHub clone,
+no .lake before build. 66 jobs, exit 0, 365.225s; runner exit 0 at 2026-10-19T14:23:42Z.
+271 allowed reports (239 standard-three, 18 propext/Quot.sound, 9 propext,
+5 axiom-free); event_cases propext, other five mains standard-three.
+Full working/clean outputs identical, every Lean source matched, seven-module
+forbidden scan zero; 359 protected files and 20 ledger rows unchanged.
+EC-C024 FORMAL_VERIFIED, not frozen. Evidence: sessions/evidence/S036/.
+Hosted CI unobserved. No extra FIDE/outcome/distance claim.

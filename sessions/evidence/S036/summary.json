@@ -1,0 +1,22 @@
+{
+  "proof_source": "2d2b40ddaaff2a962bb9f573e8de799b1427d5f8",
+  "base_main": "7c357b33ce75f6cfeb5561190f463cd70cc6ecbb",
+  "verified_utc": "2026-10-19T14:23:42Z",
+  "build_jobs": 66,
+  "build_seconds": "365.225",
+  "build_exit": 0,
+  "axiom_statement_exit": 0,
+  "new_modules": 7,
+  "new_public_declarations": 6,
+  "total_axiom_reports": 271,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 239,
+    "propext, Quot.sound": 18,
+    "propext": 9
+  },
+  "axiom_free": 5,
+  "protected_files": 359,
+  "frozen_bundles": 20,
+  "hosted_ci": "unobserved",
+  "python_suite": "not rerun; no Python implementation or ledger changes"
+}
