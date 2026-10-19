@@ -1,0 +1,9 @@
+{
+  "supplementary_only": true,
+  "configurations": 24,
+  "mate": 8,
+  "first_replies": 44,
+  "second_replies": 194,
+  "gap_two_capture_control": true,
+  "gap_three_hanging_rook_control": true
+}

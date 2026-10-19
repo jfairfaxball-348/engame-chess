@@ -36,3 +36,15 @@ Proof-source: `fca2ca88c8391b1d2bd49c3db9f2fa04258a4a87`; [audit](../audits/EC-C
 The new game predicate uses a uniform finite ply bound and omits clocks/repetition. The protected barrier is a reply invariant; it does not supply a complete advancing strategy. EC-C011 has no completed forcing proof or Lean flagship.
 
 Freeze manifests: [EC-T0008](../theorems/frozen/EC-T0008/v1.md) and [EC-T0009](../theorems/frozen/EC-T0009/v1.md). Primary proof/definition modules are now immutable; new safety/progress lemmas must use new modules. S025 changed no Lean source.
+
+## S026 safety and checking progress (FORMAL_VERIFIED, not frozen)
+
+Proof-source `e8daef6daee088c3adaf1c21b51c0a8f1e31103d`; [audit](../audits/EC-C012_C013_LEAN.md), [fresh verification](../sessions/evidence/S026/README.md).
+
+| Candidate | New source | Main result |
+|---|---|---|
+| EC-C012 | `Rules/KRKForcing/Safety.lean` | `krk_safe_reply`, `krk_safe_rank_reply`, `krk_safe_weak_live`: capture safety from distance or protection, every kernel reply covered |
+| EC-C013 | `Rules/KRKForcing/CheckProgress.lean` | `krk_opposition_four_ply`: chosen check, every reply, king-up, every reply; strict rank progress and distant barrier, or edge mate; `krk_opposition_edge_force` |
+| Fixed controls | `Rules/KRKForcing/Examples.lean` | edge forcing, failed two-/three-file margins, a successful phase not restoring opposition |
+
+No frozen module was edited. The general KRK forcing proof remains incomplete; these statements cover an exact geometric entry family, both colours and arbitrary flags.

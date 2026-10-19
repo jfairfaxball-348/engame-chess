@@ -60,7 +60,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S023: EC-C008 frozen as [EC-T0007](theorems/frozen/EC-T0007/v1.md) after fresh-clone verification of `a8bc161`. Together with EC-T0006 this completes K+R vs K L1.
 - S024: **EC-C009 and EC-C010 FORMAL_VERIFIED**: finite-rank clock-free forcing semantics, the optional-capture obstruction, and a protected rook rank barrier preserved by every legal lone-king reply. Kernel examples distinguish stalemate, wrong-colour mate and blocked rook rays. Full K+R vs K forcing (EC-C011) remains open: safe setup, tempo and strict progress still need proof.
 - S025: EC-C009 frozen as [EC-T0008](theorems/frozen/EC-T0008/v1.md), EC-C010 as [EC-T0009](theorems/frozen/EC-T0009/v1.md), after fresh exact-source Gate Z verification.
-- Next: S026, attack the general clock-free KRK forcing proof on paper: broader rook safety, safe setup, tempo and a well-founded progress phase. EC-C011 remains `PROPOSED`.
+- S026: **EC-C012/013 FORMAL_VERIFIED**: distant-or-protected rook safety and a four-ply opposed-kings checking phase. Against every defence it either mates at the edge or advances the lone king and returns a safe distant-rook barrier. A four-file margin is proved sufficient; smaller-margin and re-entry failures are kernel-checked.
+- Next: S027, freeze these prerequisites; then attack setup/re-entry into opposition or another contraction. The general KRK forcing theorem EC-C011 remains `PROPOSED`.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

@@ -32,4 +32,6 @@
 
 | S025 | 2026-10-19 | Freeze EC-C009/010 (Gate Z) | Fresh GitHub clone at `fca2ca8`: 26-job build, 180 standard-axiom-subset reports, 19 exact statement checks, source hashes and forbidden-token scan passed; 33 Python tests; immutable EC-T0008 forcing-framework and EC-T0009 all-replies confinement manifests with shared new Gate Z evidence. General KRK forcing EC-C011 stays PROPOSED. S026 paper progress/setup proof installed. [Closeout](S025_FREEZE_EC-T0008_T0009.md) | **+2 → EC-T0008/0009 FROZEN** (9 frozen theorems) |
 
+| S026 | 2026-10-19 | Distant safety and opposed-kings checking progress (Gate L/F) | EC-C012/013 FORMAL_VERIFIED: all-reply safety, live weak-state bridge, explicit four-ply check/king-up contraction against every reply, edge ForceMate family; failed distance margins and non-restored opposition kernel-checked. Proof source `e8daef6`, clean build 29 jobs, 197 allowed axiom reports, 33 tests; local 24-case diagnostic supplementary. EC-C011 remains PROPOSED; setup/re-entry gap explicit. S027 freeze installed. [Closeout](S026_KRK_FORCING_PROGRESS.md) | None — 9 frozen theorems |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

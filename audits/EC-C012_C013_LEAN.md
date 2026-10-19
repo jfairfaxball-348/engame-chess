@@ -20,3 +20,11 @@ Local diagnostic `scripts/krk_check_phase_diagnostic.py` uses the existing indep
 ## Verification boundary at the proof-source commit
 
 All three new modules compiled locally, including the combined four-ply theorem. Exact-source clean Gate F build and axiom report are required before FORMAL_VERIFIED promotion; the S026 closeout and evidence directory will record the observed result and proof-source SHA. No general rook winning strategy or EC-C011 solution is claimed. Setup/re-entry into opposition remains unproved, as shown by the returned-state witness.
+
+## Completed Gate F verification
+
+Exact proof-source `e8daef6daee088c3adaf1c21b51c0a8f1e31103d`; fresh GitHub clone detached at that commit, no `.lake` before build. `lake build` exit 0, 29 jobs, 296.85 seconds. `lake env lean AxiomCheck.lean` exit 0 at `2026-10-19T08:00:05Z`; all 197 reports within the standard three (174 standard-three, 10 propext/Quot.sound, 8 propext-only, 5 axiom-free). All 17 new declarations checked. Clean and working report content matches exactly. Source hashes match the closeout tree; no frozen module changed; forbidden tokens 0.
+
+Three false claims rejected by Lean: the gap-two capture is illegal, the gap-three return is safe, and the wide-rook return restores opposition. All 33 Python tests and the 24-configuration local diagnostic passed. The documented executable-path host shim is the same as S023–S025; no proof or kernel routine is replaced. Full evidence is in `sessions/evidence/S026/`. Hosted CI is not claimed as observed.
+
+**EC-C012 and EC-C013 are FORMAL_VERIFIED, not frozen. EC-C011 remains PROPOSED.** A four-ply contraction for this exact family plus the edge mate corollary is proved; arbitrary-position setup and all-defences re-entry are not.
