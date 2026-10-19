@@ -50,3 +50,15 @@ Proof-source `e8daef6daee088c3adaf1c21b51c0a8f1e31103d`; [audit](../audits/EC-C0
 No frozen module was edited. The general KRK forcing proof remains incomplete; these statements cover an exact geometric entry family, both colours and arbitrary flags.
 
 S027 Gate Z froze the three-declaration safety bundle as [EC-T0010](../theorems/frozen/EC-T0010/v1.md) and the ten-declaration checking-phase bundle as [EC-T0011](../theorems/frozen/EC-T0011/v1.md). Exact-source clean build, 197 standard-axiom-subset reports, and all 17 S026 declaration checks passed; [new evidence](../theorems/frozen/VERIFICATION-S027/README.md). `Safety.lean` and `CheckProgress.lean` are now immutable. The phase needs strong turn, same-file kings two ranks apart, a four-file rook margin and rook off the lone king's rank, for either colour and arbitrary flags. No general KRK forcing, clock/repetition or initial-position result is claimed; setup/re-entry remains open.
+
+## S028 image bounds and bounded upper-band contraction (FORMAL_VERIFIED, not frozen)
+
+Proof source: `cb5d3bb713257d7cac8e3c1f9d82d8e77b746d6c`; [paper image proof](../proofs/EC-C014_KRK_PHASE_IMAGE.md), [rank/rescue proof](../proofs/EC-C015_KRK_RANK_ADVANCE.md), [fidelity audit](../audits/EC-C014_C015_LEAN.md), [new exact-source evidence](../sessions/evidence/S028/README.md).
+
+| Candidate | New modules | Main declarations |
+|---|---|---|
+| EC-C014 | `KRKForcing/PhaseImage.lean` | `krk_follow_check_image`, `krk_opposition_phase_image`: actual two-reply image with legal ancestry and all-defences quantifiers |
+| EC-C015 | `KRKForcing/RankAdvance.lean`, `RookRescue.lean`, `RankAdvanceRescue.lean` | `krk_rank_advance`, `krk_barrier_rook_rescue`, `krk_rank_advance_rescue`, `krk_phase_image_upper_advance`: two-or-four-ply rank contraction covering the entire upper band |
+| Fixed controls | `KRKForcing/ReentryExamples.lean` | actual chase cycle, protected-rook stalemate, lower-band wall crossing, hanging raised rook with legal rescue |
+
+All fifteen new theorem declarations are included in `AxiomCheck.lean`. Frozen modules remain unchanged. The rank phase has explicit nonempty replies and a decreasing barrier-rank potential; it does not preserve PhaseImage or establish a full repeated strategy. Non-aligned lower-band pursuit/tempo, post-contraction normalization and arbitrary-arrival setup remain open. EC-C011 remains PROPOSED. No clock/repetition or initial-position result is asserted.

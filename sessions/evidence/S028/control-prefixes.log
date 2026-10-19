@@ -1,0 +1,3 @@
+PASS: corner, lower-band and upper-band controls each reached by four legal phase plies from an EC-T0011 entry.
+The chase control includes its legal prefix in the compiled Lean witness.
+These are selected local error-finding checks, not general proofs.

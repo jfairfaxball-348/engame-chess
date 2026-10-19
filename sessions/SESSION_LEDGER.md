@@ -36,4 +36,6 @@
 
 | S027 | 2026-10-19 | Freeze EC-C012/013 (Gate Z) | Fresh GitHub clone at `e8daef6`: 29-job build, 197 allowed-axiom reports, 17 exact declarations, source hashes and forbidden scan passed; 33 Python tests; earlier ledger/manifests and Lean source unchanged. EC-T0010 safety and EC-T0011 four-ply checking-phase manifests; no shim needed on this host. EC-C011 remains PROPOSED; S028 image-bounds and terminating re-entry policy installed. [Closeout](S027_FREEZE_EC-T0010_T0011.md) | **+2 → EC-T0010/0011 FROZEN** (11 frozen bundles) |
 
+| S028 | 2026-10-19 | Exact phase image and bounded upper-band advance/rescue (Gate L/F; full re-entry open) | EC-C014/015 FORMAL_VERIFIED at `cb5d3bb`: actual image/all-reply bounds, two-or-four-ply upper-band rank contraction with far-file rescue; fifteen new declarations, fresh 34-job build, 212 allowed-axiom reports, 36 tests. Legal chase cycle/stalemate/lower-band crossing controls. EC-C011 remains PROPOSED; lower-band tempo and closed continuation invariant unresolved. S029 remedial proof prompt installed. [Closeout](S028_KRK_REENTRY.md) | None — 11 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

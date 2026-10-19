@@ -18,3 +18,7 @@ Same-agent fidelity review, no independent external review. Core Lean 4.35.0, ei
 Liveness of weak nodes is available via the frozen safe/nonempty bridge, and strong-turn KRK legal successors via EC-T0007; neither is silently upgraded to forcing. The new policy proves a bounded local contraction, not `ForceMate`. The kernel lacks clock/repetition history and the FIDE-to-code bridge remains the existing trust boundary. No full kernel rotation/reflection, tablebase, value fixpoint or class enumeration enters the general statements.
 
 The exact-source Gate F result, declaration counts, source SHA and evidence are recorded in the S028 closeout/evidence after the actual checks. Until those pass, candidates remain LOCAL_VERIFIED. EC-C011 remains PROPOSED because the non-aligned lower-band tempo/pursuit and a recursively closed post-contraction strategy are incomplete.
+
+## Completed Gate F evidence
+
+Proof-source `cb5d3bb713257d7cac8e3c1f9d82d8e77b746d6c`, fresh GitHub checkout detached at that commit, no .lake before build: 34-job clean build exit 0, 265.586 seconds; full axiom/statement runner exit 0 at `2026-10-19T09:06:21Z`. All 212 reports allowed (189 [propext, Classical.choice, Quot.sound]; 10 [propext, Quot.sound]; 8 [propext]; 5 axiom-free); fifteen new declarations. Clean/working reports and all Lean source bytes match. Five-module forbidden scan zero. All 36 Python tests pass; 11-row frozen ledger unchanged. New evidence: `sessions/evidence/S028/`. EC-C014/015 are FORMAL_VERIFIED, not frozen; EC-C011 remains PROPOSED.

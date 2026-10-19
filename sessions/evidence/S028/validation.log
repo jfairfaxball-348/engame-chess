@@ -1,0 +1,6 @@
+PASS: clean build 34 jobs; elapsed 265.586 seconds.
+PASS: 212 allowed axiom reports; 189 [propext, Classical.choice, Quot.sound]; 10 [propext, Quot.sound]; 8 [propext]; 5 axiom-free.
+PASS: clean and working report byte-identical.
+PASS: all working Lean sources byte-identical to fresh exact-source GitHub checkout.
+PASS: new Python run 36 tests, no failures.
+Gate F completed UTC: 2026-10-19T09:06:21Z
