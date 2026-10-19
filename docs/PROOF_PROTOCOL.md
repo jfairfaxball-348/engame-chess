@@ -58,3 +58,5 @@ If the migration needs Lean source edits to frozen modules (e.g. the module-syst
 
 ## Session closeout
 Each session must record: changes and links; proven, conjectured, computationally tested and blocked findings separately; checks actually run (or 'not run'); exact commit/tree state; ledger effect; and full text of the installed next session prompt. Never imply that a remote CI job passed just because a workflow file was committed.
+
+**Required progress table (owner instruction, 2026-10-19):** update [SESSION_PROGRESS.md](SESSION_PROGRESS.md) and reproduce its table in the written closeout and the final reply to the owner, including sessions with no mathematical change. Keep its columns and baseline rows in order, from K vs K through every material-size stage, with full Syzygy parity last. Preserve the distinction between frozen results, formal verification, partial coverage and open work. Follow the table with one sentence describing this session's change, or stating that mathematical progress is unchanged. The table is a reporting summary, not a theorem certificate or a substitute for Gates F/Z.

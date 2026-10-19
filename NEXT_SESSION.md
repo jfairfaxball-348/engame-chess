@@ -1,5 +1,7 @@
 # NEXT SESSION — S030: Safe setup from arbitrary legal KRK arrivals
 
+**Required closing report:** follow the new progress-table rule in `AGENTS.md`. Update `docs/SESSION_PROGRESS.md`, copy its table into the written closeout and final reply, keep full Syzygy parity as the last row, and state this session's change below it.
+
 **Owner instruction:** Execute when the owner says "run next session" or pastes/links this prompt. Follow `AGENTS.md`: fetch all remote branches and latest main, merge any earlier unmerged session work, finish committed, pushed and merged to main without force. Publication is authorised. Read the charter/proof protocol, EC-T0010/0011 manifests, S028/S029 proofs/audits, S029 closeout/evidence and `research/S029_STRATEGY_ATTEMPT.md` first.
 
 ## What is now proved

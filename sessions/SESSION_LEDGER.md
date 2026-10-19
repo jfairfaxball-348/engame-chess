@@ -40,4 +40,6 @@
 
 | S029 | 2026-10-19 | Bounded lower-band pursuit and closed wall forcing (Gate L/F) | EC-C016–018 FORMAL_VERIFIED at `3ead1d5`: two-file check, bounded oriented rook tempos/pursuit, nested rank/gap ForceMate proof for every strong-turn separated rank wall, all PhaseImages and a direct vertical setup subfamily. Exact-source 41-job build, 235 allowed axiom reports, 23 new declarations, 39 tests. Arbitrary setup/axes and remaining weak-turn classification keep EC-C011 PROPOSED. S030 safe setup installed. [Closeout](S029_KRK_LOWER_BAND.md) | None — 11 frozen bundles |
 
+| S029 follow-up | 2026-10-19 | Owner progress-reporting rule (administrative) | Required stable progress table in every written closeout and final reply, from K vs K through all material sizes to full Syzygy parity last; canonical current table and S030 reminder installed. Mathematical status unchanged; S030 remains next. [Record](S029_PROGRESS_PROTOCOL.md) | None — 11 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

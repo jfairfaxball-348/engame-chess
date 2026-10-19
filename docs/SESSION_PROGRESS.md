@@ -1,0 +1,27 @@
+# Session progress table
+
+Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
+
+Current mathematical evidence: through S029. This reporting-rule update changes no mathematical status.
+
+| Endgames / target | Progress | Remaining |
+|---|---|---|
+| K vs K | Draw proved and frozen | — |
+| K+B vs K | Draw proved and frozen | — |
+| K+N vs K | Draw proved and frozen | — |
+| K+R vs K | Dead/live frozen; rank-wall forced mate formally verified | Arbitrary setup, remaining outcome cases, rule/distance parity; freeze new results |
+| K+Q vs K | Open in this project | General proof and formal verification |
+| K+P vs K | Open in this project | General proof and formal verification |
+| All four-piece endgames | Open in this project | Every material class and legal position |
+| All five-piece endgames | Open in this project | Every material class and legal position |
+| All six-piece endgames | Open in this project | Every material class and legal position |
+| All seven-piece endgames | Open in this project | Every material class and legal position |
+| **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
+
+Session change: installed the repeatable closing-report rule; mathematical progress is unchanged.
+
+Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
+
+“Formally verified” means Gate F passed; it does not mean frozen. A proved forcing family does not establish the outcome of every position in that class. Full Syzygy parity means proof-based coverage without consulting tablebases, with the relevant 50-move outcome (WDL) and distance-to-zeroing (DTZ) semantics. The present kernel lacks clocks/repetition history, and distance results remain open. Do not infer percentages from the number of frozen theorem bundles.
+
+Sources: [roadmap](ROADMAP.md), [candidate register](../research/CANDIDATES.md), [frozen ledger](../theorems/LEDGER.csv), and [S029 evidence](../sessions/evidence/S029/README.md). This table summarises those records; it does not replace them.
