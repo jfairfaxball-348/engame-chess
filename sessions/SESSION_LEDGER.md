@@ -30,4 +30,6 @@
 
 | S024 | 2026-10-19 | Clock-free forcing semantics and KRK all-defences confinement (Gate P/L/F) | EC-C009/010 FORMAL_VERIFIED: named-winner finite-rank attractor, terminal/dead-reply rules, finite branching, protected-rank reply completeness and confinement; optional-capture and stalemate controls; proof source `fca2ca8`, fresh build 26 jobs, 180 standard-axiom-subset reports; 33 tests; no frozen source or ledger change. General KRK forcing EC-C011 PROPOSED; protected advance with fixed king loses protection. S025 freeze prerequisites installed. [Closeout](S024_KRK_FORCING.md) | None — 7 frozen theorems |
 
+| S025 | 2026-10-19 | Freeze EC-C009/010 (Gate Z) | Fresh GitHub clone at `fca2ca8`: 26-job build, 180 standard-axiom-subset reports, 19 exact statement checks, source hashes and forbidden-token scan passed; 33 Python tests; immutable EC-T0008 forcing-framework and EC-T0009 all-replies confinement manifests with shared new Gate Z evidence. General KRK forcing EC-C011 stays PROPOSED. S026 paper progress/setup proof installed. [Closeout](S025_FREEZE_EC-T0008_T0009.md) | **+2 → EC-T0008/0009 FROZEN** (9 frozen theorems) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

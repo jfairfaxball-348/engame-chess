@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S023.** Seven frozen theorems. K+R vs K layer L1 (dead/live) is frozen; L2 (optimal-play outcome) remains open.
+**After S025.** Nine frozen theorems. K+R vs K layer L1 (dead/live) is frozen; L2 (optimal-play outcome) remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -59,7 +59,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S022: EC-C008 fully formalised (RL-h, RL-f, P1, main theorems). **EC-C008 is `FORMAL_VERIFIED`**: in the kernel, a K+R vs K position with the strong side to move (produced by a legal move) is never dead, and with the lone king to move it is dead iff not checkmate and every legal move captures the rook.
 - S023: EC-C008 frozen as [EC-T0007](theorems/frozen/EC-T0007/v1.md) after fresh-clone verification of `a8bc161`. Together with EC-T0006 this completes K+R vs K L1.
 - S024: **EC-C009 and EC-C010 FORMAL_VERIFIED**: finite-rank clock-free forcing semantics, the optional-capture obstruction, and a protected rook rank barrier preserved by every legal lone-king reply. Kernel examples distinguish stalemate, wrong-colour mate and blocked rook rays. Full K+R vs K forcing (EC-C011) remains open: safe setup, tempo and strict progress still need proof.
-- Next: S025, freeze these two prerequisites as EC-T0008/0009; then resume the general forcing proof with a broader rook-safety invariant.
+- S025: EC-C009 frozen as [EC-T0008](theorems/frozen/EC-T0008/v1.md), EC-C010 as [EC-T0009](theorems/frozen/EC-T0009/v1.md), after fresh exact-source Gate Z verification.
+- Next: S026, attack the general clock-free KRK forcing proof on paper: broader rook safety, safe setup, tempo and a well-founded progress phase. EC-C011 remains `PROPOSED`.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

@@ -12,9 +12,9 @@ Corrections require a new versioned entry and clearly visible supersession note;
 
 **Current toolchain anchor:** EC-T0001–EC-T0006 also have a `v2.md` that re-anchors the theorem on Lean **v4.35.0** (S020 migration, commit `b114ccd`, no source change; see [MIGRATION-S020](frozen/MIGRATION-S020/README.md)). The `v1.md` records remain valid at their own commits on v4.34.1.
 
-EC-T0007 was first frozen on v4.35.0 and needs no migration manifest.
+EC-T0007–EC-T0009 were first frozen on v4.35.0 and need no migration manifest.
 
-Current frozen count: **7**:
+Current frozen count: **9**:
 - [EC-T0001](frozen/EC-T0001/v1.md): K vs K dead position (frozen S003).
 - [EC-T0002](frozen/EC-T0002/v1.md): K+B vs K dead position (frozen S006).
 - [EC-T0003](frozen/EC-T0003/v1.md): K vs K dead in the general FIDE rules kernel, for any legal arrival and arisen positions. Strengthens EC-T0001. Frozen S010.
@@ -22,3 +22,5 @@ Current frozen count: **7**:
 - [EC-T0005](frozen/EC-T0005/v1.md): K+N vs K dead in the general FIDE rules kernel (either orientation, any legal arrival, arisen positions). Stated over the kernel from the start. Frozen S013.
 - [EC-T0006](frozen/EC-T0006/v1.md): a K+R vs K position in which the lone king must take the rook (or is stalemated) is dead; via the material-agnostic lemma "not mate + every successor K vs K ⇒ dead". Frozen S016.
 - [EC-T0007](frozen/EC-T0007/v1.md): K+R vs K with the strong side to move after a legal move is live; with the lone king to move, dead iff not mate and every legal move captures the rook. Completes the converse of EC-T0006 and the arisen Art. 5.2.2 characterisation. Frozen S023. L1 only.
+- [EC-T0008](frozen/EC-T0008/v1.md): clock-free finite-rank forced-mate reasoning: soundness, terminal/dead-reply rules and finite-branching choosing/defending closure. Frozen S025. Framework prerequisite, not a solved material class.
+- [EC-T0009](frozen/EC-T0009/v1.md): protected rook rank confinement through every legal lone-king reply, plus reply completeness and the obstruction to a fixed-king protected rank advance. Frozen S025. No full forcing strategy.

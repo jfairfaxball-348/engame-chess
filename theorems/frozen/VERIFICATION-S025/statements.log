@@ -1,0 +1,79 @@
+@EndgameChess.Rules.mateWithin_mono_step : ∀ {σ : EndgameChess.KK.Colour} {n : Nat} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.MateWithin σ n q → EndgameChess.Rules.MateWithin σ (n + 1) q
+@EndgameChess.Rules.mateWithin_mono : ∀ {σ : EndgameChess.KK.Colour} {n m : Nat} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.MateWithin σ n q → n ≤ m → EndgameChess.Rules.MateWithin σ m q
+@EndgameChess.Rules.mateWithin_sound : ∀ {σ : EndgameChess.KK.Colour} {n : Nat} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.MateWithin σ n q → ∃ t, EndgameChess.Rules.ReachK q t ∧ EndgameChess.Rules.MateGoal σ t
+@EndgameChess.Rules.forceMate_not_dead : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.ForceMate σ q → ¬EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.forceMate_of_goal : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.MateGoal σ q → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.forceMate_no_moves_iff : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  (¬∃ r, EndgameChess.Rules.Legal q r) → (EndgameChess.Rules.ForceMate σ q ↔ EndgameChess.Rules.MateGoal σ q)
+@EndgameChess.Rules.dead_reply_not_forceMate : ∀ {σ : EndgameChess.KK.Colour} {q r : EndgameChess.Rules.Position},
+  q.turn = σ.opp → EndgameChess.Rules.Legal q r → EndgameChess.Rules.DeadK r → ¬EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.stalemate_not_forceMate : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.inCheck q q.turn = false → (¬∃ r, EndgameChess.Rules.Legal q r) → ¬EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.forceMate_choose : ∀ {σ : EndgameChess.KK.Colour} {q r : EndgameChess.Rules.Position},
+  q.turn = σ → EndgameChess.Rules.Legal q r → EndgameChess.Rules.ForceMate σ r → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.forceMate_defend : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  q.turn = σ.opp →
+    (∃ r, EndgameChess.Rules.Legal q r) →
+      (∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → EndgameChess.Rules.ForceMate σ r) →
+        EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_protected_reply : ∀ {q r : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp →
+      EndgameChess.KK.dInf sk rs = 1 →
+        EndgameChess.Rules.Legal q r →
+          ∃ t,
+            EndgameChess.Rules.Matches r σ { sk := sk, rs := rs, wk := t, strong := true } ∧
+              EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := false }
+                { sk := sk, rs := rs, wk := t, strong := true }
+@EndgameChess.Rules.rook_rank_barrier : ∀ {sk rs wk t : EndgameChess.KK.Square},
+  ↑sk.snd < ↑rs.snd →
+    ↑rs.snd < ↑wk.snd →
+      EndgameChess.KK.dInf wk t = 1 → t ≠ rs → ¬EndgameChess.Rules.RookSees rs t sk t → ↑rs.snd < ↑t.snd
+@EndgameChess.Rules.krk_protected_rank_reply : ∀ {q r : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp →
+      EndgameChess.Rules.ProtectedRank sk rs wk →
+        EndgameChess.Rules.Legal q r →
+          ∃ t,
+            EndgameChess.Rules.Matches r σ { sk := sk, rs := rs, wk := t, strong := true } ∧
+              EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := false }
+                  { sk := sk, rs := rs, wk := t, strong := true } ∧
+                EndgameChess.Rules.ProtectedRank sk rs t
+@EndgameChess.Rules.protected_rank_raise_unprotected : ∀ {sk rs wk t : EndgameChess.KK.Square},
+  EndgameChess.Rules.ProtectedRank sk rs wk → ↑rs.snd < ↑t.snd → 2 ≤ EndgameChess.KK.dInf sk t
+EndgameChess.Rules.krk_optional_capture_counterexample : EndgameChess.Rules.Legal EndgameChess.Rules.optionalCapturePos
+    (EndgameChess.Rules.play EndgameChess.Rules.optionalCapturePos EndgameChess.Rules.optionalCapture) ∧
+  EndgameChess.Rules.DeadK
+      (EndgameChess.Rules.play EndgameChess.Rules.optionalCapturePos EndgameChess.Rules.optionalCapture) ∧
+    EndgameChess.Rules.Legal EndgameChess.Rules.optionalCapturePos
+        (EndgameChess.Rules.play EndgameChess.Rules.optionalCapturePos EndgameChess.Rules.optionalDecline) ∧
+      ¬EndgameChess.Rules.DeadK
+            (EndgameChess.Rules.play EndgameChess.Rules.optionalCapturePos EndgameChess.Rules.optionalDecline) ∧
+        ¬EndgameChess.Rules.DeadK EndgameChess.Rules.optionalCapturePos ∧
+          ¬EndgameChess.Rules.ForceMate EndgameChess.KK.Colour.white EndgameChess.Rules.optionalCapturePos
+EndgameChess.Rules.optional_capture_holds : ∀ (σ : EndgameChess.KK.Colour),
+  ¬EndgameChess.Rules.ForceMate σ
+      (EndgameChess.Rules.play EndgameChess.Rules.optionalCapturePos EndgameChess.Rules.optionalCapture)
+EndgameChess.Rules.krk_force_mate_in_one_example : EndgameChess.Rules.MateWithin EndgameChess.KK.Colour.white 1
+    EndgameChess.Rules.krkLive ∧
+  EndgameChess.Rules.MateWithin EndgameChess.KK.Colour.white 0
+      (EndgameChess.Rules.play EndgameChess.Rules.krkLive EndgameChess.Rules.ra8) ∧
+    ¬EndgameChess.Rules.ForceMate EndgameChess.KK.Colour.black
+        (EndgameChess.Rules.play EndgameChess.Rules.krkLive EndgameChess.Rules.ra8)
+EndgameChess.Rules.protected_rank_stalemate_example : EndgameChess.Rules.ProtectedRank (EndgameChess.Rules.sq✝ 2 5)
+    (EndgameChess.Rules.sq✝ 1 6) (EndgameChess.Rules.sq✝ 0 7) ∧
+  EndgameChess.Rules.inCheck EndgameChess.Rules.protectedRankStale EndgameChess.KK.Colour.black = false ∧
+    EndgameChess.Rules.legalMoves EndgameChess.Rules.protectedRankStale = [] ∧
+      ∀ (σ : EndgameChess.KK.Colour), ¬EndgameChess.Rules.ForceMate σ EndgameChess.Rules.protectedRankStale
+EndgameChess.Rules.blocked_rank_counterexample : EndgameChess.KK.dInf (EndgameChess.Rules.sq✝ 4 3)
+      (EndgameChess.Rules.sq✝ 3 3) =
+    1 ∧
+  EndgameChess.Rules.Legal EndgameChess.Rules.blockedBarrierPos
+    (EndgameChess.Rules.play EndgameChess.Rules.blockedBarrierPos EndgameChess.Rules.blockedBarrierMove)
