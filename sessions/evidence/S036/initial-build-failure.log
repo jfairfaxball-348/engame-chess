@@ -1,0 +1,55 @@
+✔ [58/66] Built EndgameChess.Rules.RawClock.Definitions (352ms)
+✖ [59/66] Building EndgameChess.Rules.RawClock.EventCases (458ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/RawClock/EventCases.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawClock/EventCases.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawClock/EventCases.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawClock/EventCases.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawClock/EventCases.setup.json --json
+error: EndgameChess/Rules/RawClock/EventCases.lean:10:2: unsolved goals
+case left
+q : Position
+m : Move
+h : q.board m.src = some { colour := q.turn, kind := PieceType.pawn }
+⊢ q.board m.src = some { colour := q.turn, kind := PieceType.pawn } ∨ (q.board m.dst).isSome = true
+error: EndgameChess/Rules/RawClock/EventCases.lean:15:2: unsolved goals
+case right.right
+q : Position
+m : Move
+hp : ¬q.board m.src = some { colour := q.turn, kind := PieceType.pawn }
+hd : True
+⊢ ¬q.board m.src = some { colour := q.turn, kind := PieceType.pawn }
+✖ [60/66] Building EndgameChess.Rules.RawClock.LegalEvent (451ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/RawClock/LegalEvent.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawClock/LegalEvent.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawClock/LegalEvent.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawClock/LegalEvent.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawClock/LegalEvent.setup.json --json
+error: EndgameChess/Rules/RawClock/LegalEvent.lean:7:36: Unknown constant `Bool.and_eq_true.mp`
+error: EndgameChess/Rules/RawClock/LegalEvent.lean:11:4: Type mismatch
+  Or.inl hw
+has type
+  q.board m.src = some { colour := q.turn, kind := PieceType.pawn } ∨ ?m.26
+but is expected to have type
+  q.board m.src = some { colour := q.turn, kind := PieceType.pawn } ∨ (q.board m.dst).isSome = true ↔
+    q.board m.src = some { colour := q.turn, kind := PieceType.pawn } ∨ CaptureEvent q m
+error: EndgameChess/Rules/RawClock/LegalEvent.lean:13:9: unsolved goals
+case neg.none
+q : Position
+m : Move
+hm : isLegal q m = true
+hp : isPseudo q m = true
+ht : targetOK q m.dst = true
+hw : ¬q.board m.src = some { colour := q.turn, kind := PieceType.pawn }
+hd : True
+⊢ q.board m.src = some { colour := q.turn, kind := PieceType.pawn } →
+    q.ep = some m.dst →
+      ¬m.src.fst = m.dst.fst →
+        q.board (m.dst.fst, m.src.snd) = some { colour := q.turn.opp, kind := PieceType.pawn } →
+          q.board m.src = some { colour := q.turn, kind := PieceType.pawn }
+warning: EndgameChess/Rules/RawClock/LegalEvent.lean:13:51: This simp argument is unused:
+  hw
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [zeroing, Pawn, CaptureEvent, hd, Pawn] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [61/66] Built EndgameChess.Rules.RawClock.Append (513ms)
+✔ [62/66] Built EndgameChess.Rules.RawClock.LengthBound (489ms)
+✔ [63/66] Built EndgameChess.Rules.RawClock.CastleEmpty (544ms)
+✔ [64/66] Built EndgameChess.Rules.RawClock.StepBound (259ms)
+Some required targets logged failures:
+- EndgameChess.Rules.RawClock.EventCases
+- EndgameChess.Rules.RawClock.LegalEvent
+error: build failed

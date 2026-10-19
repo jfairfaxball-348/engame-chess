@@ -433,3 +433,21 @@ import EndgameChess
 #check @EndgameChess.Rules.RawTrace.raw_step_sound
 #check @EndgameChess.Rules.RawTrace.raw_step_complete
 #check @EndgameChess.Rules.RawTrace.trace_arisen
+
+-- S036 / EC-C024: raw halfmove fold, event semantics and ply bounds.
+#print EndgameChess.Rules.RawClock.Pawn
+#print EndgameChess.Rules.RawClock.zeroing
+#print EndgameChess.Rules.RawClock.CaptureEvent
+#print EndgameChess.Rules.RawClock.clock
+#check @EndgameChess.Rules.RawClock.event_cases
+#print axioms EndgameChess.Rules.RawClock.event_cases
+#check @EndgameChess.Rules.RawClock.legal_zero_iff
+#print axioms EndgameChess.Rules.RawClock.legal_zero_iff
+#check @EndgameChess.Rules.RawClock.castle_empty
+#print axioms EndgameChess.Rules.RawClock.castle_empty
+#check @EndgameChess.Rules.RawClock.append_clock
+#print axioms EndgameChess.Rules.RawClock.append_clock
+#check @EndgameChess.Rules.RawClock.clock_le_length
+#print axioms EndgameChess.Rules.RawClock.clock_le_length
+#check @EndgameChess.Rules.RawClock.append_clock_le
+#print axioms EndgameChess.Rules.RawClock.append_clock_le

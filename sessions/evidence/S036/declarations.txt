@@ -1,0 +1,42 @@
+def EndgameChess.Rules.RawClock.Pawn : EndgameChess.Rules.Position → EndgameChess.Rules.Move → Prop :=
+fun q m => q.board m.src = some { colour := q.turn, kind := EndgameChess.Rules.PieceType.pawn }
+def EndgameChess.Rules.RawClock.zeroing : EndgameChess.Rules.Position → EndgameChess.Rules.Move → Bool :=
+fun q m =>
+  q.board m.src == some { colour := q.turn, kind := EndgameChess.Rules.PieceType.pawn } || (q.board m.dst).isSome
+def EndgameChess.Rules.RawClock.CaptureEvent : EndgameChess.Rules.Position → EndgameChess.Rules.Move → Prop :=
+fun q m =>
+  (∃ pc, q.board m.dst = some pc ∧ pc.colour ≠ q.turn) ∨
+    EndgameChess.Rules.RawClock.Pawn q m ∧
+      q.ep = some m.dst ∧
+        m.src.fst ≠ m.dst.fst ∧
+          q.board m.dst = none ∧
+            q.board (m.dst.fst, m.src.snd) = some { colour := q.turn.opp, kind := EndgameChess.Rules.PieceType.pawn }
+def EndgameChess.Rules.RawClock.clock : {q : EndgameChess.Rules.Position} → EndgameChess.Rules.RawTrace.Trace q → Nat :=
+fun {q} t => EndgameChess.Rules.RawTrace.Trace.brecOn t @EndgameChess.Rules.RawClock.clock._f
+EndgameChess.Rules.RawClock.event_cases : ∀ (q : EndgameChess.Rules.Position) (m : EndgameChess.Rules.Move),
+  (EndgameChess.Rules.RawClock.Pawn q m → EndgameChess.Rules.RawClock.zeroing q m = true) ∧
+    ((∃ pc, q.board m.dst = some pc) → EndgameChess.Rules.RawClock.zeroing q m = true) ∧
+      (¬EndgameChess.Rules.RawClock.Pawn q m → q.board m.dst = none → EndgameChess.Rules.RawClock.zeroing q m = false)
+'EndgameChess.Rules.RawClock.event_cases' depends on axioms: [propext]
+EndgameChess.Rules.RawClock.legal_zero_iff : ∀ (q : EndgameChess.Rules.Position) (m : EndgameChess.Rules.Move),
+  EndgameChess.Rules.isLegal q m = true →
+    (EndgameChess.Rules.RawClock.zeroing q m = true ↔
+      EndgameChess.Rules.RawClock.Pawn q m ∨ EndgameChess.Rules.RawClock.CaptureEvent q m)
+'EndgameChess.Rules.RawClock.legal_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawClock.castle_empty : ∀ (q : EndgameChess.Rules.Position) (m : EndgameChess.Rules.Move),
+  EndgameChess.Rules.canCastle q m = true → q.board m.dst = none
+'EndgameChess.Rules.RawClock.castle_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawClock.append_clock : ∀ (s : EndgameChess.Rules.RawTrace.State) (m : EndgameChess.Rules.Move)
+  (hm : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true),
+  EndgameChess.Rules.RawClock.clock (EndgameChess.Rules.RawTrace.append s m hm).trace =
+    if EndgameChess.Rules.RawClock.zeroing (EndgameChess.Rules.RawTrace.erase s) m = true then 0
+    else EndgameChess.Rules.RawClock.clock s.trace + 1
+'EndgameChess.Rules.RawClock.append_clock' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.RawClock.clock_le_length : ∀ {q : EndgameChess.Rules.Position}
+  (t : EndgameChess.Rules.RawTrace.Trace q), EndgameChess.Rules.RawClock.clock t ≤ t.moves.length
+'EndgameChess.Rules.RawClock.clock_le_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawClock.append_clock_le : ∀ (s : EndgameChess.Rules.RawTrace.State) (m : EndgameChess.Rules.Move)
+  (hm : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true),
+  EndgameChess.Rules.RawClock.clock (EndgameChess.Rules.RawTrace.append s m hm).trace ≤
+    EndgameChess.Rules.RawClock.clock s.trace + 1
+'EndgameChess.Rules.RawClock.append_clock_le' depends on axioms: [propext, Classical.choice, Quot.sound]

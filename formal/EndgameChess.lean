@@ -54,3 +54,11 @@ import EndgameChess.Rules.RawTrace.Append
 import EndgameChess.Rules.RawTrace.Soundness
 import EndgameChess.Rules.RawTrace.Completeness
 import EndgameChess.Rules.RawTrace.Origin
+
+import EndgameChess.Rules.RawClock.Definitions
+import EndgameChess.Rules.RawClock.EventCases
+import EndgameChess.Rules.RawClock.LegalEvent
+import EndgameChess.Rules.RawClock.CastleEmpty
+import EndgameChess.Rules.RawClock.Append
+import EndgameChess.Rules.RawClock.LengthBound
+import EndgameChess.Rules.RawClock.StepBound
