@@ -275,3 +275,35 @@ import EndgameChess
 #check @EndgameChess.Rules.krk_opposition_check
 #check @EndgameChess.Rules.krk_opposition_four_ply
 #check @EndgameChess.Rules.krk_opposition_edge_force
+
+-- S028: proved image bounds, bounded rank contraction/rescue and fixed controls.
+#print axioms EndgameChess.Rules.phase_image_of_replies
+#print axioms EndgameChess.Rules.krk_follow_check_image
+#print axioms EndgameChess.Rules.krk_opposition_phase_image
+#print axioms EndgameChess.Rules.rank_advance_step
+#print axioms EndgameChess.Rules.rank_advance_reply_exists
+#print axioms EndgameChess.Rules.krk_rank_advance
+#print axioms EndgameChess.Rules.barrier_horizontal_reply_exists
+#print axioms EndgameChess.Rules.krk_barrier_rook_rescue
+#print axioms EndgameChess.Rules.krk_rank_advance_rescue
+#print axioms EndgameChess.Rules.phase_image_file_margin
+#print axioms EndgameChess.Rules.krk_phase_image_upper_advance
+#print axioms EndgameChess.Rules.phase_image_chase_cycle
+#print axioms EndgameChess.Rules.protected_corner_reentry_stalemate
+#print axioms EndgameChess.Rules.lower_band_raise_crossing
+#print axioms EndgameChess.Rules.two_file_rank_raise_needs_rescue
+#check @EndgameChess.Rules.phase_image_of_replies
+#check @EndgameChess.Rules.krk_follow_check_image
+#check @EndgameChess.Rules.krk_opposition_phase_image
+#check @EndgameChess.Rules.rank_advance_step
+#check @EndgameChess.Rules.rank_advance_reply_exists
+#check @EndgameChess.Rules.krk_rank_advance
+#check @EndgameChess.Rules.barrier_horizontal_reply_exists
+#check @EndgameChess.Rules.krk_barrier_rook_rescue
+#check @EndgameChess.Rules.krk_rank_advance_rescue
+#check @EndgameChess.Rules.phase_image_file_margin
+#check @EndgameChess.Rules.krk_phase_image_upper_advance
+#check @EndgameChess.Rules.phase_image_chase_cycle
+#check @EndgameChess.Rules.protected_corner_reentry_stalemate
+#check @EndgameChess.Rules.lower_band_raise_crossing
+#check @EndgameChess.Rules.two_file_rank_raise_needs_rescue

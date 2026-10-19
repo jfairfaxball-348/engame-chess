@@ -1,0 +1,15 @@
+{
+  "rescue_inputs": 2,
+  "rescue_first_replies": 10,
+  "hanging_reply_branches": 2,
+  "rescue_second_replies": 10,
+  "supplementary_only": true,
+  "phase_inputs": 24,
+  "image_returns": 194,
+  "rank_raise_inputs": 12,
+  "rank_raise_replies": 44,
+  "legal_chase_cycle": true,
+  "protected_corner_stalemate": true,
+  "lower_band_crossing": true,
+  "two_file_raise_hanging": true
+}

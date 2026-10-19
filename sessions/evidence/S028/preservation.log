@@ -1,0 +1,3 @@
+PASS: 88 existing theorem records/evidence and Lean proof modules unchanged.
+Only aggregate imports and AxiomCheck.lean changed among existing Lean files.
+Ledger unchanged: 11 frozen bundles.

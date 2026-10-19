@@ -24,3 +24,8 @@ import EndgameChess.Rules.KRKForcingExamples
 import EndgameChess.Rules.KRKForcing.Safety
 import EndgameChess.Rules.KRKForcing.CheckProgress
 import EndgameChess.Rules.KRKForcing.Examples
+import EndgameChess.Rules.KRKForcing.PhaseImage
+import EndgameChess.Rules.KRKForcing.RankAdvance
+import EndgameChess.Rules.KRKForcing.RookRescue
+import EndgameChess.Rules.KRKForcing.RankAdvanceRescue
+import EndgameChess.Rules.KRKForcing.ReentryExamples
