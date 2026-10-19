@@ -61,4 +61,17 @@ Proof source: `cb5d3bb713257d7cac8e3c1f9d82d8e77b746d6c`; [paper image proof](..
 | EC-C015 | `KRKForcing/RankAdvance.lean`, `RookRescue.lean`, `RankAdvanceRescue.lean` | `krk_rank_advance`, `krk_barrier_rook_rescue`, `krk_rank_advance_rescue`, `krk_phase_image_upper_advance`: two-or-four-ply rank contraction covering the entire upper band |
 | Fixed controls | `KRKForcing/ReentryExamples.lean` | actual chase cycle, protected-rook stalemate, lower-band wall crossing, hanging raised rook with legal rescue |
 
-All fifteen new theorem declarations are included in `AxiomCheck.lean`. Frozen modules remain unchanged. The rank phase has explicit nonempty replies and a decreasing barrier-rank potential; it does not preserve PhaseImage or establish a full repeated strategy. Non-aligned lower-band pursuit/tempo, post-contraction normalization and arbitrary-arrival setup remain open. EC-C011 remains PROPOSED. No clock/repetition or initial-position result is asserted.
+All fifteen new theorem declarations are included in `AxiomCheck.lean`. Frozen modules remain unchanged. The rank phase has explicit nonempty replies and a decreasing barrier-rank potential; it does not preserve PhaseImage or establish a full repeated strategy. At S028 close, lower-band pursuit and post-contraction continuation were still open; S029 closes them for the separated rank-wall family below. Arbitrary-arrival setup and EC-C011 remain open. No clock/repetition or initial-position result is asserted.
+
+## S029 bounded pursuit and closed rank-wall forcing (FORMAL_VERIFIED, not frozen)
+
+Proof source: `3ead1d587f4ff5e129f73666bd466f5eac764223`; [paper proof](../proofs/EC-C016_C018_KRK_WALL_FORCING.md), [fidelity audit](../audits/EC-C016_C018_LEAN.md), [exact-source evidence](../sessions/evidence/S029/README.md).
+
+| Candidate | New modules | Main declaration and scope |
+|---|---|---|
+| EC-C016 | `KRKForcing/TwoFileCheck.lean` | `krk_opposition_check_two`, `krk_two_file_edge_force`: two-file check/reply family; frozen four-ply theorem unchanged |
+| EC-C017 | `WallActions.lean`, `PursuitGeometry.lean`, `LowerPursuit.lean` | `krk_lower_band_force_of_exits`: bounded oriented waiting/normalization and king-file induction, conditional exit interface |
+| EC-C018 | `WallForce.lean`, `WallEntry.lean` | `krk_rank_wall_force`: exact strong turn and S.rank<R.rank<W.rank imply ForceMate; includes `krk_phase_image_force` and direct vertical-entry subfamily |
+| Controls | `WallExamples.lean` | old chase position and threatened wall actually force mate; two-file edge; direct geometric setup can permit captures to KK |
+
+The flagship discharges the pursuit exit interface through outer rook-rank and inner king-gap induction; no same-family winning-continuation hypothesis remains. Initial rook safety is not required on the strong turn because the first normalization repairs it before another weak move. Both colours and arbitrary flags. Twenty-three new theorem declarations are axiom/statement checked. Previous modules remain unchanged. Arbitrary safe setup and full axis transport remain open; EC-C011 stays PROPOSED. No full WDL, clock/repetition, exact-distance or initial-position claim.

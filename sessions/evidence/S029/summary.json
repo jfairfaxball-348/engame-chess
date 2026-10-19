@@ -1,0 +1,11 @@
+{
+  "proof_source": "3ead1d587f4ff5e129f73666bd466f5eac764223",
+  "verified_utc": "2026-10-19T10:06:07Z",
+  "build_seconds": "273.042",
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 204,
+    "propext, Quot.sound": 18,
+    "propext": 8
+  },
+  "axiom_free": 5
+}

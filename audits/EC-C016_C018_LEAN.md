@@ -20,3 +20,7 @@ The main theorem's only hypotheses are exact strong-turn `Matches` and strict ra
 The existing FIDE-to-code trust boundary, Lean kernel, pinned toolchain and standard axioms remain. Clocks/repetition are absent. No oracle, tablebase, retrograde value, per-position proof table or class-wide enumeration supplies any general theorem. The local Python policy follows coordinate rules and selects immediate replies without value search; its 64 selected mate trajectories are supplementary, not proof of the family.
 
 Exact-source Gate F evidence and the final status are recorded in the S029 closeout/evidence only after the checks run. Until then candidates are LOCAL_VERIFIED. General arbitrary-arrival setup and EC-C011 remain open; the frozen ledger is unchanged.
+
+## Completed Gate F
+
+Fresh GitHub checkout at `3ead1d587f4ff5e129f73666bd466f5eac764223`, no .lake before build: 41 jobs, exit 0, 273.042 seconds. Full axiom/statement runner exit 0, verified UTC `2026-10-19T10:06:07Z`; 235 reports (204 [propext, Classical.choice, Quot.sound]; 18 [propext, Quot.sound]; 8 [propext]; 5 axiom-free), including all 23 new declarations. Working/clean report content and all Lean source bytes match. Seven-module forbidden scan zero; earlier theorem records and proof sources unchanged. All 39 Python tests passed; local 64-trajectory policy diagnostic supplementary. EC-C016–018 are FORMAL_VERIFIED, not frozen; EC-C011 remains PROPOSED for arbitrary setup/axes and weak-turn completion. Full evidence: `sessions/evidence/S029/`.
