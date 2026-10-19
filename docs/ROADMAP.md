@@ -20,7 +20,7 @@ The existing objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know, **
 | K vs K | **done** (EC-T0001/0003: every position dead) | done (draw) | n/a | n/a |
 | K+B vs K | **done** (EC-T0002/0004) | done (draw) | n/a | n/a |
 | K+N vs K | **done** (EC-T0005) | done (draw) | n/a | n/a |
-| K+R vs K | Lean-complete: dead ⇔ forced capture or stalemate (EC-T0006 frozen + EC-C008 `FORMAL_VERIFIED`); EC-C008 `FORMAL_VERIFIED` S022 (Lean S021–S022), freeze S023 | open | open | open |
+| K+R vs K | **done, frozen**: dead ⇔ lone king to move, not mate, every legal move captures the rook (EC-T0006 + EC-T0007, S023) | open | open | open |
 | K+Q vs K | open | open | open | open |
 | K+P vs K | open | open | open | open |
 
@@ -47,7 +47,7 @@ The remaining port is the module system: it edits every module, frozen ones incl
 **Where we are:**
 - **Three-piece classes** (KQK, KRK, KBK, KNK, KPK):
   - KBK and KNK are settled at L1 (dead), which implies L2 (draw), with no L4 content; frozen.
-  - KRK has L1 complete on paper (EC-T0006 frozen; EC-C008 `FORMAL_VERIFIED` S022, freeze S023). L2 (strong side wins whenever not dead) and L4 are open.
+  - KRK has L1 complete and frozen (EC-T0006 + EC-T0007, S023). L2 and L4 are open. A live position need not be a forced win: the lone king may have an optional rook capture. S024 pins forcing semantics and begins a general forcing proof with correct capture and terminal cases.
   - KQK and KPK are open. KPK is the first genuinely hard L2 class, because of promotion, opposition and stalemate.
 - **Roughly 2¼ of 5 three-piece classes** at WDL level, and **0 of the 4-piece and larger classes**. As a share of all of Syzygy, this is still well under 1%. The infrastructure (one audited rules kernel, now owner-reviewed, plus reusable deadness and reachability lemmas) is the main asset so far.
 
@@ -62,7 +62,7 @@ All listed statements are *targets*, not certified theorems.
 | 2 | K+B vs K | Is every admissible single-bishop ending dead? | Sliding attack geometry, obstruction — `LOCAL_VERIFIED` in S004; `FORMAL_VERIFIED` in S005; **frozen as EC-T0002** (S006) |
 | K | Rules kernel (owner decision 2026-10-16) | One general Lean encoding of FIDE Art. 3 (all pieces, castling, en passant, promotion, check) that agrees with `KK.LegalKK` / `KBK.Step`; `Arisen` as reachability; Art. 5.2.2 as a named rule definition | Closes trust gaps G1/G2 and makes G3 explicit for EC-T0001/2. S007 (model — **done**), S008 (agreement — **done**), S009 (reachability + 5.2.2 rule — **done**; candidates EC-C005/006), S010 (frozen as **EC-T0003/EC-T0004**) |
 | 3 | K+N vs K | Is every admissible single-knight ending dead? | Knight's discrete attack geometry — Gate L (S011), Gate F over the kernel (S012); **frozen as EC-T0005** (S013) |
-| 4 | K+R vs K | First: which K+R vs K positions are dead (possible mate)? EC-C007 (forced capture / stalemate ⇒ dead) `LOCAL_VERIFIED` S014, `FORMAL_VERIFIED` S015, **frozen as EC-T0006** S016; converse EC-C008 `PROPOSED`. Then: does the stronger side possess a forcing strategy? | Not every K+R vs K position is live (e.g. a forced rook capture); then strategy `∃` vs `∀`, finite descent |
+| 4 | K+R vs K | First: which K+R vs K positions are dead (possible mate)? EC-C007 (forced capture / stalemate ⇒ dead) `LOCAL_VERIFIED` S014, `FORMAL_VERIFIED` S015, **frozen as EC-T0006** S016; converse EC-C008 **frozen as EC-T0007** S023 (L1 complete). Then: which positions give the stronger side a forcing strategy, accounting for optional captures and stalemate? | Not every K+R vs K position is live (e.g. a forced rook capture); then strategy `∃` vs `∀`, finite descent |
 | 5 | K+Q vs K | Can a simple metric potential prove forcing? | Boundary/corner control |
 | 6 | Four-piece cases | Contrast possibility, force and dead position | Same material, different geometric types |
 | 7 | Pawn endings | Promotion, opposition, tempo and zugzwang | State/history and richer transitions |

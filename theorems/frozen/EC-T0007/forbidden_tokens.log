@@ -1,0 +1,4 @@
+Proof-source: a8bc161d2a51b92c340697af16a10e874cd9a098
+Scan: Rules/KRKLive/*.lean
+Word-bounded: sorry|admit|axiom|unsafe|native_decide|implemented_by|extern
+Matches: 0

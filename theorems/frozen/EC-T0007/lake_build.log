@@ -1,0 +1,30 @@
+a8bc161d2a51b92c340697af16a10e874cd9a098
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
+Fresh GitHub clone; formal/.lake absent before build.
+Host workaround: LD_PRELOAD redirects only /proc/<own-pid>/exe to /proc/self/exe; see verification-environment.md.
+✔ [2/22] Built EndgameChess.KK (2.4s)
+✔ [3/22] Built EndgameChess.Rules.Board (672ms)
+✔ [4/22] Built EndgameChess.Rules.Position (574ms)
+✔ [5/22] Built EndgameChess.Rules.Moves (683ms)
+✔ [6/22] Built EndgameChess.Rules.Lemmas (1.0s)
+✔ [7/22] Built EndgameChess.Rules.AgreeKK (1.2s)
+✔ [8/22] Built EndgameChess.KBK (10s)
+✔ [9/22] Built EndgameChess.Rules.AgreeKBK (9.8s)
+✔ [10/22] Built EndgameChess.Rules.Flags (660ms)
+✔ [11/22] Built EndgameChess.Rules.Reach (897ms)
+✔ [12/22] Built EndgameChess.Rules.Outcome (524ms)
+✔ [13/22] Built EndgameChess.Rules.Sanity (28s)
+✔ [14/22] Built EndgameChess.Rules.KNK (10s)
+✔ [15/22] Built EndgameChess.Rules.KRK (2.7s)
+✔ [16/22] Built EndgameChess.Rules.KRKLive.Basic (26s)
+✔ [17/22] Built EndgameChess.Rules.KRKLive.Endgame (7.9s)
+✔ [18/22] Built EndgameChess.Rules.KRKLive.Reply (123s)
+✔ [19/22] Built EndgameChess.Rules.KRKLive.Relocation (10s)
+✔ [20/22] Built EndgameChess.Rules.KRKLive.Main (1.5s)
+✔ [21/22] Built EndgameChess (243ms)
+Build completed successfully (22 jobs).
+
+Exit code: 0
+Elapsed seconds: 208.00
+Finished UTC: 2026-10-19T06:34:06Z

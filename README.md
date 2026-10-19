@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S016.** Six frozen theorems.
+**After S023.** Seven frozen theorems. K+R vs K layer L1 (dead/live) is frozen; L2 (optimal-play outcome) remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -57,7 +57,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S020: Lean toolchain migrated to v4.35.0, which meets Palomar's minimum. All six frozen theorems were re-verified with identical statements, and v2 manifests were written.
 - S021: EC-C008 Lean, part 1. KRK infrastructure over the kernel (attack and check on `krkBoard`, a geometric move model with kernel soundness, reflections F4) and the end-game half (Lemmas M, E, C, W, S) are formalised. EC-C008 stays `LOCAL_VERIFIED`.
 - S022: EC-C008 fully formalised (RL-h, RL-f, P1, main theorems). **EC-C008 is `FORMAL_VERIFIED`**: in the kernel, a K+R vs K position with the strong side to move (produced by a legal move) is never dead, and with the lone king to move it is dead iff not checkmate and every legal move captures the rook.
-- Next: S023, Gate Z freeze of EC-C008 as EC-T0007.
+- S023: EC-C008 frozen as [EC-T0007](theorems/frozen/EC-T0007/v1.md) after fresh-clone verification of `a8bc161`. Together with EC-T0006 this completes K+R vs K L1.
+- Next: S024, precise forcing semantics and the first K+R vs K L2 paper-proof prerequisite. Liveness alone does not imply a forced win: an optional rook capture may draw.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
