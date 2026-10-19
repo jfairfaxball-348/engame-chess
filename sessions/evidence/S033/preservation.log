@@ -1,0 +1,2 @@
+PASS: 294 protected prior source/theorem/proof/audit/test/evidence files byte-identical to ed820c0bf79519fed18ed1e409a0a9c0175e36ac.
+Only aggregate imports and AxiomCheck are extended among prior Lean files; ledger/manifests unchanged.

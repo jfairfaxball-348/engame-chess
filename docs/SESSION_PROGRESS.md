@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S032. Nineteen theorem bundles are frozen, including the clock-free KRK forcing classification; these are not nineteen solved material classes.
+Current mathematical evidence: through S033. Nineteen theorem bundles are frozen, including the clock-free KRK forcing classification; these are not nineteen solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live and clock-free forcing classification frozen | FIDE rule/distance parity |
+| K+R vs K | Dead/live and clock-free forcing frozen; generic rule projection verified | Concrete FIDE history layer and distance; freeze bridge |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S032. Nineteen theorem bundles are frozen
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S032 specified the rule/history and distance layer and proposed the next projection lemma; mathematical coverage and the nineteen frozen bundles are unchanged.
+Session change: S033 formally verified the abstract same-budget rule-layer projection; concrete KRK rule/distance coverage remains open and the frozen count stays nineteen.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 

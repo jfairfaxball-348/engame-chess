@@ -30,3 +30,15 @@ is not a passing verification result. Final module and aggregate builds passed.
 Working main declarations have standard-three axiom reports only. Gate F is
 pending until a new fresh GitHub clone of the published exact source builds
 and its reports/source bytes are checked. No ledger row changes in S033.
+
+## Completed Gate F
+
+Exact published source `55affd0a7a3f2e77335f4964ae4fbc1edbe19e05`; ONE new fresh GitHub checkout, no .lake before
+build. **54 jobs, exit 0, 369.671s**. Exact statement/axiom runner exit 0 at
+`2026-10-19T13:35:50Z`. **261 reports** allowed: 230 standard-three, 18 propext/Quot.sound,
+8 propext, 5 axiom-free; both new declarations use the standard three. Source
+bytes and full working/clean reports match. Three-module forbidden scan zero;
+294 protected prior files unchanged. Ledger structure valid, 19 bundles.
+Historical Python diagnostics not rerun because no implementation/ledger changes.
+EC-C022 is FORMAL_VERIFIED, not frozen; concrete FIDE instantiation stays open.
+Full evidence: `sessions/evidence/S033/`. Hosted CI unobserved.

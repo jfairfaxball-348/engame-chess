@@ -1,0 +1,24 @@
+{
+  "proof_source": "55affd0a7a3f2e77335f4964ae4fbc1edbe19e05",
+  "base_main": "ed820c0bf79519fed18ed1e409a0a9c0175e36ac",
+  "verified_utc": "2026-10-19T13:35:50Z",
+  "build_jobs": 54,
+  "build_seconds": "369.671",
+  "new_public_declarations": 2,
+  "new_modules": 3,
+  "total_axiom_reports": 261,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 230,
+    "propext, Quot.sound": 18,
+    "propext": 8
+  },
+  "axiom_free": 5,
+  "new_main_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "frozen_bundles": 19,
+  "python_suite": "not rerun; Python sources and frozen ledger unchanged",
+  "hosted_ci": "unobserved"
+}

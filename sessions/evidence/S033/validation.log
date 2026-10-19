@@ -1,0 +1,11 @@
+PASS: published exact proof source 55affd0a7a3f2e77335f4964ae4fbc1edbe19e05; new GitHub clone without .lake before build.
+PASS: full 54-job build in 369.671s, exit 0.
+PASS: exact statement/interface/definition runner exit 0; 261 allowed axiom reports.
+PASS: both new main declarations use only the standard three axioms.
+PASS: working/clean reports byte-identical and all Lean source bytes match exact checkout.
+PASS: three-module forbidden-token scan; 294-file preservation check.
+PASS: 19-row structural ledger validation; ledger/manifests unchanged.
+Python historical diagnostic suite not rerun; no Python source or ledger change.
+Hosted CI unobserved.
+PASS: canonical progress table and full S034 prompt reproduced; authored links valid.
+PASS: proof-source Lean bytes and frozen ledger/manifests unchanged.

@@ -48,4 +48,6 @@
 
 | S032 | 2026-10-19 | KRK rule/history and distance-layer design | Authoritative FIDE 2023 clauses retrieved; admissible histories, repetition key, current/intended claims and mate/draw precedence specified. First distance target is a ply mate bound; EC-C022 PROPOSED for generic same-budget erasure with explicit reply coverage. Same-agent design audit; no formalisation or numerical distance claim. S033 narrow projection prompt installed. [Closeout](S032_KRK_RULE_DISTANCE_DESIGN.md) | None — 19 frozen bundles; mathematical coverage unchanged |
 
+| S033 | 2026-10-19 | EC-C022 abstract rule-layer projection (Gate L/F) | Same-budget projection and uniform forcing corollary proved for layers with explicit ongoing move soundness, full raw-reply coverage and nondeadness; three new modules. Published source `55affd0`; fresh 54-job build, 261 allowed axiom reports, all prior frozen bytes preserved. No concrete FIDE history/distance claim. S034 separate freeze installed. [Closeout](S033_RULE_LAYER_PROJECTION.md) | None — 19 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
