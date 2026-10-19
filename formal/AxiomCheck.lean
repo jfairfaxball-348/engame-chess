@@ -415,3 +415,21 @@ import EndgameChess
 #print axioms EndgameChess.Rules.HistoryLayer.ruleForceMate_project
 #check @EndgameChess.Rules.HistoryLayer.ruleMateWithin_project
 #check @EndgameChess.Rules.HistoryLayer.ruleForceMate_project
+
+-- S035 / EC-C023: concrete raw trace data and full append lifting.
+#print EndgameChess.Rules.RawTrace.Trace
+#print EndgameChess.Rules.RawTrace.Trace.moves
+#print EndgameChess.Rules.RawTrace.Trace.positions
+#print EndgameChess.Rules.RawTrace.State
+#print EndgameChess.Rules.RawTrace.erase
+#print EndgameChess.Rules.RawTrace.initialState
+#print EndgameChess.Rules.RawTrace.append
+#print EndgameChess.Rules.RawTrace.RawBoardStep
+#print axioms EndgameChess.Rules.RawTrace.append_spec
+#print axioms EndgameChess.Rules.RawTrace.raw_step_sound
+#print axioms EndgameChess.Rules.RawTrace.raw_step_complete
+#print axioms EndgameChess.Rules.RawTrace.trace_arisen
+#check @EndgameChess.Rules.RawTrace.append_spec
+#check @EndgameChess.Rules.RawTrace.raw_step_sound
+#check @EndgameChess.Rules.RawTrace.raw_step_complete
+#check @EndgameChess.Rules.RawTrace.trace_arisen

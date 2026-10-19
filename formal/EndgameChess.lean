@@ -49,3 +49,8 @@ import EndgameChess.Rules.KRKForcing.SetupExamples
 import EndgameChess.Rules.HistoryLayer.Definitions
 import EndgameChess.Rules.HistoryLayer.Projection
 import EndgameChess.Rules.HistoryLayer.ForcingProjection
+import EndgameChess.Rules.RawTrace.Definitions
+import EndgameChess.Rules.RawTrace.Append
+import EndgameChess.Rules.RawTrace.Soundness
+import EndgameChess.Rules.RawTrace.Completeness
+import EndgameChess.Rules.RawTrace.Origin
