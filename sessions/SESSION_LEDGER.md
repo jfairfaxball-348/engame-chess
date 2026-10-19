@@ -50,4 +50,6 @@
 
 | S033 | 2026-10-19 | EC-C022 abstract rule-layer projection (Gate L/F) | Same-budget projection and uniform forcing corollary proved for layers with explicit ongoing move soundness, full raw-reply coverage and nondeadness; three new modules. Published source `55affd0`; fresh 54-job build, 261 allowed axiom reports, all prior frozen bytes preserved. No concrete FIDE history/distance claim. S034 separate freeze installed. [Closeout](S033_RULE_LAYER_PROJECTION.md) | None — 19 frozen bundles |
 
+| S034 | 2026-10-19 | Freeze EC-C022 abstract rule-layer projection (Gate Z) | ONE NEW exact-source GitHub build at `55affd0`: 54 jobs, 261 allowed axiom reports, both main declarations and interface fields inspected. Three complete modules and transitive hashes frozen as EC-T0020; prior source/records unchanged. S035 concrete raw-trace append prompt installed. [Closeout](S034_FREEZE_RULE_LAYER_PROJECTION.md) | **+1 → EC-T0020 FROZEN** (20 bundles; abstract interface only) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

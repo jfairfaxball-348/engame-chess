@@ -1,122 +1,132 @@
-# NEXT SESSION — S034: Freeze the abstract rule-layer projection
+# NEXT SESSION — S035: Concrete raw move traces and complete append lifting
 
 **Owner instruction:** Execute when the owner says “run next session” or pastes/links
-this prompt. Follow `AGENTS.md`: fetch ALL remote branches, merge earlier
-unmerged session work, advance to latest main and use its active prompt. Use
-the existing checkout; finish committed, pushed and merged to main without
+this prompt. Follow `AGENTS.md`: fetch ALL remote branches, merge any earlier
+unmerged session work, advance to latest main and use its active prompt. Work
+in the existing checkout; finish committed, pushed and merged to main without
 force. Publication is authorised.
 
-**Closing report:** update `docs/SESSION_PROGRESS.md` and copy its complete stable
-progress table into both the written closeout and final reply. Full Syzygy parity
-is the last row; the session delta follows the table. Bundles are not classes.
+**Closing report:** update `docs/SESSION_PROGRESS.md`; copy the complete stable
+table into the written closeout and final reply, full Syzygy parity last and
+the session delta directly below. Frozen bundle counts are not solved classes.
 
-## Starting point and required reading
+## Starting point and reading
 
-Nineteen bundles remain frozen. S033 proves EC-C022 in the precise abstract
-interface from S032. Read the charter, proof protocol, current roadmap and
-candidate register, S032 specification §5, S033 paper/audits/closeout/evidence,
-and EC-T0008's frozen semantics first.
-
-Published S033 proof-source anchor:
+S034 froze EC-C022 as EC-T0020, bringing the register to twenty bundles. Verify
+that actual outcome from `sessions/S034_FREEZE_RULE_LAYER_PROJECTION.md` and
+`theorems/frozen/EC-T0020/v1.md`; do not infer a successful freeze just from this
+prompt. The exact abstract proof source is
 `55affd0a7a3f2e77335f4964ae4fbc1edbe19e05`.
 
-- `formal/EndgameChess/Rules/HistoryLayer/Definitions.lean`:
-  Layer, Goal, RuleMateWithin, RuleForceMate.
-- `formal/EndgameChess/Rules/HistoryLayer/Projection.lean`:
-  `EndgameChess.Rules.HistoryLayer.ruleMateWithin_project`.
-- `formal/EndgameChess/Rules/HistoryLayer/ForcingProjection.lean`:
-  `EndgameChess.Rules.HistoryLayer.ruleForceMate_project`.
+Read the charter, proof protocol, current roadmap, S032 specification
+`research/KRK_RULE_DISTANCE_SPEC.md` (especially history/transition sections),
+S033 paper/audits, S034 closeout/manifest, frozen kernel Legal/play/ReachK
+semantics and the frozen HistoryLayer interface. The authoritative FIDE 2023
+rules retrieval is recorded in `sessions/evidence/S032/fide-source.json`.
+No new rules claim is needed for the raw-trace lemma; additional clause reading
+is required only if it is used to make a new normative assertion.
 
-Paper: `proofs/EC-C022_RULE_LAYER_PROJECTION.md`. Audits:
-`audits/EC-C022_RULE_LAYER_PAPER.md` and `EC-C022_RULE_LAYER_LEAN.md`.
-Exact-source Gate F is recorded in `sessions/evidence/S033/`; inspect actual
-results rather than infer success from this prompt.
+EC-T0020 is conditional: ongoing BoardStep soundness, coverage of EVERY raw
+Legal reply and ongoing nondeadness imply same-budget rule forcing projection.
+It does NOT instantiate actual FIDE histories, claims, clocks or repetition.
+EC-T0019 still supplies only the clock-free KRK forcing classification.
 
-## Exact claim and limits
+## Principal task: one raw kernel-history component
 
-For every universe-polymorphic state type, a Layer has erase, BoardStep,
-Ongoing, CanClaim, and ordinary PROOF FIELDS at every ongoing state:
+Design and prove a small concrete move-trace append interface. Register EC-C023
+only after fixing the exact statement in a standalone paper and adversarial
+audit, BEFORE Lean. No ledger row is expected in this mathematics session.
 
-(A) every BoardStep projects to kernel Legal;
-(B) EVERY raw Legal successor lifts to a BoardStep with the same erased target;
-(C) Ongoing implies not DeadK at the erasure.
+Use NEW modules/namespace, without editing any frozen definition or proof.
+Choose a data representation that retains actual ordered MOVES and their
+successive kernel positions, with an explicit endpoint. A proof of frozen
+`Arisen q`/`ReachK initial q` alone is insufficient: it is a Prop, not a stored
+trace for computing later clock updates and repetition counts.
 
-The recurrence has exact named board MateGoal at zero/terminal branches,
-existential winner moves, and nonempty universal defender replies with no
-available defender claim. Claims are draw outcomes, not board-ply steps.
-Draw-ending successors may not be pruned. Layer data are independent of colour
-and budget; no field assumes a winning continuation.
+One possible design is an indexed Type of traces rooted at `initial`, with an
+empty constructor and a snoc constructor carrying a Move and a proof that it
+isLegal at the current endpoint. Bundle the endpoint and its trace into a state.
+Alternatively use a move list plus replay validity and endpoint proofs. If a
+general starting position is parameterised, keep it explicit and state the
+`initial` specialisation separately; never silently replace global history by
+an arbitrary starting board. Empty and nonempty traces must be unambiguous.
 
-The first theorem projects RuleMateWithin σ n s to frozen MateWithin σ n
-(erase s), retaining the IDENTICAL n. The second extracts/reuses a uniform
-witness to project RuleForceMate to frozen ForceMate. Both colours and all
-states are quantified. This is a generic conditional interface theorem: it is
-NOT an implementation/verification of FIDE histories or a converse, numerical
-KRK bound, holding theorem, full WDL/DTZ or Syzygy convention result. Freeze the
-abstract boundary exactly as written, without upgrading its concrete meaning.
+Define erase(s) as the concrete endpoint. Define an append operation for every
+m with `isLegal (erase s) m = true`, retaining the prefix and exactly that m.
+The appended endpoint must equal `play (erase s) m`. Define RawBoardStep by
+such an actual one-move append, not by merely relating any two erased boards.
 
-## Principal task: separate Gate Z for EC-C022
+Precise principal obligations:
 
-1. Review the paper/audits against all interface fields, the recurrence and
-   exact two source statements. If correction is needed, use NEW source/version
-   and obtain corresponding Gate F evidence; never inherit a previous SHA's
-   verification for changed proof bytes. Otherwise keep all proof sources fixed.
-2. Make ONE NEW fresh GitHub clone at the full S033 SHA; assert no formal/.lake
-   before `lake build`. Do not reuse the S033 Gate F clone or relabel its logs.
-   One full run serves this one bundle; do not repeat older certifications.
-   Retain commands/preconditions, full build, exact AxiomCheck outputs,
-   toolchain identity, source hashes, forbidden-token scan and actual exit codes.
-3. Inspect both main declarations and interface/definition signatures. Allowed
-   axiom subsets: propext, Classical.choice, Quot.sound. No proof escapes,
-   sorryAx, native reduction or extra assumptions. Preserve the field B scope
-   over ALL raw legal replies, nonempty weak branch and exact same ply budget.
-4. If eligible, freeze one coherent new bundle at the next free ID (expected
-   EC-T0020, verify ledger first). The immutable manifest must record the full
-   proof-source SHA, all THREE COMPLETE modules (including shared definitions),
-   transitive source hashes, both exact statements, rules/semantic boundary,
-   attribution, same-agent review provenance and observed NEW Gate Z evidence.
-   No claim of independent external review or concrete FIDE instantiation.
-5. Only then append the new FROZEN ledger row with the existing schema. Keep all
-   earlier rows/manifests/source/evidence byte-identical. Update EC-C022, status,
-   roadmap, session ledger and progress table. Run relevant ledger-validator
-   checks and preservation/coverage checks. Do not run unrelated diagnostic
-   suites or add a large example expansion. Hosted CI is unobserved unless
-   actually checked; a push alone proves nothing about CI.
+1. Append preserves the chosen trace validity and returns the exact played
+   endpoint (with ordered prefix/move retention, not just an existential path).
+2. **Soundness:** RawBoardStep s t implies kernel Legal (erase s) (erase t).
+3. **Complete raw-reply lifting:** for EVERY state s and EVERY r,
+   `Legal (erase s) r → ∃t, RawBoardStep s t ∧ erase t=r`.
+   Extract the actual Move witness from Legal; do not assume a chosen strategy
+   or remove successors based on their result.
 
-This is the separate freeze of a now-fixed interface before concrete layers
-are built on it. No new mathematics or change of material class is required.
-No engine, tablebase, derived evaluations or class-wide enumeration is allowed
-to supply a proof. Any fixed controls remain supplementary.
+A short endpoint reachability/turn or trace-length lemma may support these
+statements if needed; avoid expanding into unrelated history machinery. The
+root/append definitions should make the prefix retained and one additional
+board ply clear. State exactly what counts as a stored move, position endpoint
+and proof-only field. General proof, not class-wide replay/enumeration.
 
-## Following concrete history-layer obligation
+## Critical semantic boundary
 
-Install S035 around ONE small additive concrete component from S032, rather
-than claiming that the entire FIDE layer now follows. Prefer a legal move-trace
-append interface: define a finite kernel trace with an explicit endpoint and
-prove that an arbitrary raw Legal endpoint move appends to a trace and projects
-back soundly. Keep that raw kernel-trace notion separate from histories that
-have not already ended under FIDE draw rules. Establish the exact definition
-and paper audit before formalisation; do not prune immediate-draw endpoints.
-Use the actual freeze outcome to choose the smallest sound obligation.
+Call the object a **RAW kernel move trace**. It proves that each recorded board
+move satisfies the existing Legal relation. It does NOT prove that actual FIDE
+play had not previously ended. In particular, these objects may record moves
+past an earlier automatic draw or a dead-position draw whenever raw Legal
+allows them. No clock, repetition test or Ongoing classifier is yet included.
 
-The remaining full-history admissibility, effective-ep repetition equivalence,
-clock zeroing updates, terminal/claim correctness, concrete Layer instantiation,
-sufficient-budget lifting, numerical distances and FIDE/Syzygy parity must stay
-explicitly open. A raw trace append theorem does not by itself settle those.
-Frozen game definitions and the abstract interface must remain unchanged;
-concrete extensions go in NEW modules.
+The unrestricted lifting theorem must retain an endpoint that would immediately
+draw under a future history-aware classifier. Later FIDE admissibility must
+restrict which PARENT prefixes may continue, while allowing a terminal child;
+it must not prune adverse legal replies to manufacture forcing. A raw trace
+append theorem is only a concrete step toward interface fields A/B, not a full
+HistoryLayer instance or a proof of field C/claim correctness.
 
-Write `sessions/S034_FREEZE_RULE_LAYER_PROJECTION.md` with exact verification,
-source/ledger effect, complete progress table and the FULL installed S035
-prompt. Commit/push branch, merge main, push main and verify remote SHA.
-If certification fails, preserve the concrete reason and correct status; do not
-create a FROZEN row before the actual checks pass.
+Do not initialise KRK with an arbitrary flags/clock/count snapshot and call it
+an initial-position history. An arbitrary-flags clock-free KRK theorem does not
+supply a compatible-prefix witness for every such snapshot.
+
+Retain audit controls: empty trace/root, all turn orientations, genuine Move
+witness and target equality orientation, full prefix retention, terminal-child
+coverage, no “all replies already win” hypothesis, no confusion of a data
+trace with proof-irrelevant ReachK. Fixed local controls are optional and
+supplementary; do not add a large test expansion or artificial passing tests.
+
+Explicitly OUT OF SCOPE: full no-earlier-terminal FIDE histories, halfmove
+zeroing semantics, effective-ep repetition-key equivalence, current/intended
+claim rules, terminal precedence proofs, holding/determinacy, sufficient-budget
+lifting, a numeric KRK bound, DTM/DTZ/Syzygy convention parity, another material
+class or the initial-position value conjecture. Preserve these obligations in
+status and the following prompt. No engine/tablebase/oracle evaluations.
+
+## Verification and publication
+
+Follow Gate L/F. Add main declarations to AxiomCheck, inspect exact types and
+allowed axiom subsets (propext, Classical.choice, Quot.sound only). Run only
+new modules/importers incrementally. For Gate F, commit and PUSH the exact
+proof-source SHA, then use ONE NEW fresh GitHub clone with no formal/.lake
+before `lake build`; retain complete build, axiom/statements, source hashes,
+toolchain and forbidden scan. Do not reuse prior Gate F/Z clone evidence.
+Keep all existing frozen sources, manifests, earlier ledger rows and prior
+evidence byte-identical. Run relevant existing structural checks. No hosted
+CI claim without observing its result. No new ledger entry at Gate F.
+
+Write `sessions/S035_RAW_TRACE_APPEND.md`, update candidate/roadmap/status and
+session ledger according to the actual result, and include the full progress
+table and FULL installed S036 prompt. Choose S036 from the actual next narrow
+obligation (separate freeze or one clock/history component), retaining the
+remaining concrete FIDE layer and distance gaps. Commit/push branch, merge main,
+push main and verify remote SHA. If the representation exposes a genuine gap,
+preserve the exact failed implication and avoid upgrading the candidate.
 
 ## Cloud activation
 
-Use the runtime skill for the current environment. Existing checkout, no new
-worktree. `export ELAN_HOME=/workspace/.tools/elan; export PATH="$ELAN_HOME/bin:$PATH"`.
-Lake commands in `formal/`, Python at repository root. Official Lean 4.35.0,
-core only, no dependencies or host shim; keep TLS/checksum verification enabled.
-One required fresh build at a time; prior S031 concurrent builds hit that host's
-memory limit, so inspect current resources if any actual failure occurs.
+Use the runtime skill, existing checkout and pinned official Lean 4.35.0.
+`export ELAN_HOME=/workspace/.tools/elan; export PATH="$ELAN_HOME/bin:$PATH"`.
+Lake commands in `formal/`, Python at root. Core only, no dependencies or host
+shim. Keep TLS/checksum verification enabled; one required fresh build at a time.

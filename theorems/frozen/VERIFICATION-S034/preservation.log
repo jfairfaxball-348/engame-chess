@@ -1,0 +1,3 @@
+PASS: 366 prior tracked files byte-identical to 7d36b8f8a94576e906ec5f50e9fc025e6df2c238.
+All earlier formal/proof/audit/frozen/evidence files preserved.
+Prior 19-row ledger bytes remain an exact prefix; exactly one row appended.

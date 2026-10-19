@@ -1,0 +1,8 @@
+PASS: exact source/commands/new clone and 54-job Gate Z evidence.
+PASS: all 261 axiom reports allowed; both exact statements covered once.
+PASS: all three complete modules and transitive source hashes pinned.
+PASS: Gate F/Gate Z reports byte-identical; forbidden tokens zero.
+PASS: 366 protected prior tracked files unchanged; prior ledger byte prefix retained.
+PASS: exactly EC-T0020 appended; 20 rows; fields/paths valid.
+PASS: complete canonical table and S035 prompt reproduced, local links valid.
+Hosted CI: unobserved.

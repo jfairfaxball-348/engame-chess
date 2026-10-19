@@ -1,0 +1,11 @@
+test_complete_synthetic_entry_is_structurally_valid (test_validate_ledger.FrozenLedgerTests.test_complete_synthetic_entry_is_structurally_valid) ... ok
+test_duplicate_ids_rejected (test_validate_ledger.FrozenLedgerTests.test_duplicate_ids_rejected) ... ok
+test_empty_ledger_is_valid (test_validate_ledger.FrozenLedgerTests.test_empty_ledger_is_valid) ... ok
+test_missing_evidence_rejected (test_validate_ledger.FrozenLedgerTests.test_missing_evidence_rejected) ... ok
+test_unpinned_commit_rejected (test_validate_ledger.FrozenLedgerTests.test_unpinned_commit_rejected) ... ok
+test_unverified_entries_rejected (test_validate_ledger.FrozenLedgerTests.test_unverified_entries_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK

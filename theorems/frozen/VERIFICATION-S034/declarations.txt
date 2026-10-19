@@ -1,0 +1,2 @@
+EndgameChess.Rules.HistoryLayer.ruleMateWithin_project
+EndgameChess.Rules.HistoryLayer.ruleForceMate_project

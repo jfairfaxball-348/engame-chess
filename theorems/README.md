@@ -38,3 +38,7 @@ Current frozen count: **19 bundles**, not nineteen solved material classes:
 - [EC-T0019](frozen/EC-T0019/v1.md): Arbitrary safe KRK setup and complete clock-free forcing classification. Frozen S031 from EC-C021 and EC-C011.
 
 [S031 evidence](frozen/VERIFICATION-S031/README.md) records three new fresh exact-source Gate Z builds. The conditional pursuit bundle keeps LowerExitWins; wall/setup flagships have no assumed winning continuation. No clock/repetition or numerical distance claim follows.
+
+- [EC-T0020](frozen/EC-T0020/v1.md): same-budget abstract rule-layer mate/forcing projection; all raw defending replies must lift. Three complete interface/proof modules and two declarations frozen in S034 from EC-C022. No concrete FIDE history or numerical distance result.
+
+[S034 evidence](frozen/VERIFICATION-S034/README.md) retains the new exact-source Gate Z build for EC-T0020. Twenty frozen bundles are not twenty solved material classes.
