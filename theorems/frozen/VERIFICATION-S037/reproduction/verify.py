@@ -1,0 +1,92 @@
+"""Reproduce this one Gate Z run in a NEW clone/output directory.
+Usage: python verify.py REPO_ROOT OUTPUT_DIRECTORY NEW_CLONE_DIRECTORY EC-C023|EC-C024
+"""
+import collections
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import sys
+import time
+
+root, out, clone = map(lambda s: Path(s).resolve(), sys.argv[1:4])
+candidate = sys.argv[4]
+trace = candidate == 'EC-C023'
+assert candidate in ['EC-C023', 'EC-C024']
+sha = '526a298b80ef04541e518a3dcc62f861c8f51c5c' if trace else '2d2b40ddaaff2a962bb9f573e8de799b1427d5f8'
+prior = 'S035' if trace else 'S036'
+assert not clone.exists(), 'Gate Z clone must be new'
+assert not (out / 'summary.json').exists(), 'Do not overwrite completed evidence'
+out.mkdir(parents=True, exist_ok=True)
+env = os.environ.copy()
+env['ELAN_HOME'] = '/workspace/.tools/elan'
+env['PATH'] = env['ELAN_HOME'] + '/bin:' + env['PATH']
+commands = []
+
+def run(args, cwd, logfile):
+    start = time.monotonic()
+    with (out / logfile).open('w') as stream:
+        result = subprocess.run(args, cwd=cwd, env=env, stdout=stream, stderr=subprocess.STDOUT)
+    seconds = round(time.monotonic() - start, 3)
+    commands.append(dict(args=args, cwd=str(cwd), logfile=logfile, exit=result.returncode, seconds=seconds))
+    (out / 'commands.json').write_text(json.dumps(commands, indent=2) + '\n')
+    assert result.returncode == 0, (args, result.returncode, logfile)
+    return seconds
+
+run(['git', 'clone', '--no-checkout', 'https://github.com/jfairfaxball-348/engame-chess.git', str(clone)], root, 'clone.log')
+run(['git', 'checkout', '--detach', sha], clone, 'checkout.log')
+assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=clone, text=True).strip() == sha
+assert not (clone / 'formal/.lake').exists()
+(out / 'pre-build.log').write_text(f'NEW GitHub clone: {clone}\nExact HEAD: {sha}\nformal/.lake absent before build: true\n')
+formal = clone / 'formal'
+run(['lake', 'env', 'lean', '--version'], formal, 'toolchain.log')
+run(['lake', '--version'], formal, 'lake-version.log')
+seconds = run(['lake', 'build'], formal, 'lake-build.log')
+run(['lake', 'env', 'lean', 'AxiomCheck.lean'], formal, 'axioms-statements.log')
+log = (out / 'axioms-statements.log').read_text()
+assert not re.search(r'sorryAx|Lean.ofReduceBool|error:|warning:', log)
+reports = dict(re.findall(r"'([^']+)' depends on axioms: \[([^\]]*)\]", log))
+free = re.findall(r"'([^']+)' does not depend on any axioms", log)
+assert len(reports) + len(free) == (265 if trace else 271)
+allowed = {'propext', 'Classical.choice', 'Quot.sound'}
+assert all(set(a.split(', ')) <= allowed for a in reports.values())
+namespace = 'EndgameChess.Rules.' + ('RawTrace' if trace else 'RawClock')
+names = [namespace + '.' + s for s in (['append_spec', 'raw_step_sound', 'raw_step_complete', 'trace_arisen'] if trace else ['event_cases', 'legal_zero_iff', 'castle_empty', 'append_clock', 'clock_le_length', 'append_clock_le'])]
+for name in names:
+    assert name in reports and re.search(r'^@?' + re.escape(name) + r' :', log, re.M)
+assert log == (root / f'sessions/evidence/{prior}/clean-axioms.log').read_text()
+(out / 'declarations.txt').write_text('\n'.join(names) + '\n')
+module_names = ['Definitions', 'Append', 'Soundness', 'Completeness', 'Origin'] if trace else ['Definitions', 'EventCases', 'LegalEvent', 'CastleEmpty', 'Append', 'LengthBound', 'StepBound']
+new_modules = [f'formal/EndgameChess/Rules/{"RawTrace" if trace else "RawClock"}/{s}.lean' for s in module_names]
+pattern = r'\b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b'
+for relative in new_modules:
+    assert not re.search(pattern, (clone / relative).read_text()), relative
+(out / 'forbidden-tokens.log').write_text(f'Pattern: {pattern}\nModules:\n' + '\n'.join(new_modules) + '\nMatches: 0\n')
+files = sorted(p for p in formal.rglob('*.lean') if '.lake' not in p.parts)
+files += [formal / p for p in ['lean-toolchain', 'lakefile.toml', 'lake-manifest.json']]
+for p in files:
+    relative = str(p.relative_to(clone))
+    if trace and relative in ['formal/AxiomCheck.lean', 'formal/EndgameChess.lean']:
+        # Later main adds the separately verified counter imports/runner entries.
+        # Exact historical aggregate bytes are still hashed at this own anchor.
+        continue
+    assert p.read_bytes() == (root / p.relative_to(clone)).read_bytes(), p
+(out / 'source-sha256.txt').write_text(''.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.relative_to(clone)}\n' for p in sorted(files)))
+closure = set()
+def visit(relative):
+    if relative in closure:
+        return
+    closure.add(relative)
+    for name in re.findall(r'^import\s+(EndgameChess[.\w]*)', (clone / relative).read_text(), re.M):
+        visit('formal/' + name.replace('.', '/') + '.lean')
+for relative in new_modules:
+    visit(relative)
+(out / 'dependency-sha256.txt').write_text(''.join(f'{hashlib.sha256((clone / p).read_bytes()).hexdigest()}  {p}\n' for p in sorted(closure)))
+counts = collections.Counter(reports.values())
+jobs = int(re.search(r'Build completed successfully \((\d+) jobs\)', (out / 'lake-build.log').read_text())[1])
+summary = dict(proof_source=sha, verified_utc=datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), fresh_clone=str(clone), lake_absent_before_build=True, build_exit=0, build_seconds=seconds, build_jobs=jobs, axiom_statement_exit=0, total_axiom_reports=len(reports)+len(free), axiom_counts=dict(counts), axiom_free=len(free), bundle_declarations=names, bundle_axioms={name: reports[name] for name in names}, complete_modules=new_modules, dependency_modules=len(closure), source_files_hashed=len(files), gate_f_report_byte_identical=True, hosted_ci='unobserved')
+(out / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
+print(json.dumps(summary, indent=2))

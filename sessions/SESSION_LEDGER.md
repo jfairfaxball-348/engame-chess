@@ -56,4 +56,6 @@
 
 | S036 | 2026-10-19 | EC-C024 raw halfmove fold (Gate L/F) | Legal pawn/capture reset-event equivalence, castle empty destination, exact append law and global/one-step clock bounds; six declarations in seven modules. Source `2d2b40d`; fresh 66-job build, 271 allowed reports. Prior traces/frozen files unchanged. S037 separate raw-component freeze installed. [Closeout](S036_RAW_HALFMOVE_FOLD.md) | None — 20 frozen bundles |
 
+| S037 | 2026-10-19 | Freeze raw trace and halfmove components (Gate Z) | TWO NEW sequential exact-source GitHub clones at own published anchors: 59/66-job builds, 265/271 allowed reports; all ten mains and complete source/import hashes match Gate F. Prior sources/records preserved. S038 raw extension clock-growth prompt installed. [Closeout](S037_FREEZE_RAW_TRACE_CLOCK.md) | **+2 → EC-T0021/0022 FROZEN** (22 bundles; raw history only) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

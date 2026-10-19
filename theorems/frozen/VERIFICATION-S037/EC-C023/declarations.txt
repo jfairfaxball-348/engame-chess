@@ -1,0 +1,4 @@
+EndgameChess.Rules.RawTrace.append_spec
+EndgameChess.Rules.RawTrace.raw_step_sound
+EndgameChess.Rules.RawTrace.raw_step_complete
+EndgameChess.Rules.RawTrace.trace_arisen

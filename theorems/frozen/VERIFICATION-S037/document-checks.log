@@ -1,0 +1,4 @@
+PASS: both clean source identities equal exact published commit/tree; no tracked or untracked changes.
+PASS: all local links in 11 edited/new Markdown documents resolve.
+PASS: git diff --check.
+PASS: six existing ledger unit tests; structural ledger check reports 22 frozen rows.

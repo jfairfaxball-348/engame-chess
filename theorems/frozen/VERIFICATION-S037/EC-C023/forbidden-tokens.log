@@ -1,0 +1,8 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/RawTrace/Definitions.lean
+formal/EndgameChess/Rules/RawTrace/Append.lean
+formal/EndgameChess/Rules/RawTrace/Soundness.lean
+formal/EndgameChess/Rules/RawTrace/Completeness.lean
+formal/EndgameChess/Rules/RawTrace/Origin.lean
+Matches: 0

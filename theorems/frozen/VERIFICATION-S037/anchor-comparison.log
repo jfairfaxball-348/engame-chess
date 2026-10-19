@@ -1,0 +1,2 @@
+PASS: five trace modules equal BOTH anchors/current main; seven counter modules equal own anchor/current main.
+PASS: two aggregate files preserve earlier ordered lines with additive S036 entries.

@@ -1,0 +1,40 @@
+{
+  "proof_source": "526a298b80ef04541e518a3dcc62f861c8f51c5c",
+  "verified_utc": "2026-10-19T17:25:45Z",
+  "fresh_clone": "/tmp/engame-s037-c023-gate-z",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 2270.05,
+  "build_jobs": 59,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 265,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 234,
+    "propext, Quot.sound": 18,
+    "propext": 8
+  },
+  "axiom_free": 5,
+  "bundle_declarations": [
+    "EndgameChess.Rules.RawTrace.append_spec",
+    "EndgameChess.Rules.RawTrace.raw_step_sound",
+    "EndgameChess.Rules.RawTrace.raw_step_complete",
+    "EndgameChess.Rules.RawTrace.trace_arisen"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.RawTrace.append_spec": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawTrace.raw_step_sound": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawTrace.raw_step_complete": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawTrace.trace_arisen": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/RawTrace/Definitions.lean",
+    "formal/EndgameChess/Rules/RawTrace/Append.lean",
+    "formal/EndgameChess/Rules/RawTrace/Soundness.lean",
+    "formal/EndgameChess/Rules/RawTrace/Completeness.lean",
+    "formal/EndgameChess/Rules/RawTrace/Origin.lean"
+  ],
+  "dependency_modules": 15,
+  "source_files_hashed": 62,
+  "gate_f_report_byte_identical": true,
+  "hosted_ci": "unobserved"
+}

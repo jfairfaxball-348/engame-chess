@@ -1,0 +1,7 @@
+PASS: two distinct sequential exact-source fresh clones; 59/66 jobs, exits 0.
+PASS: 265/271 allowed axiom reports; all ten exact statements match Gate F.
+PASS: source/import hashes equal current main and own anchors; five trace imports equal both anchors.
+PASS: 444 prior protected files unchanged; prior ledger exact byte prefix.
+PASS: 22 ledger rows, own proof SHAs and verification UTCs, valid paths.
+PASS: full canonical progress table and S038 prompt reproduced; local links valid.
+Hosted CI: unobserved.

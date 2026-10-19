@@ -12,9 +12,9 @@ Corrections require a new versioned entry and clearly visible supersession note;
 
 **Current toolchain anchor:** EC-T0001–EC-T0006 also have a `v2.md` that re-anchors the theorem on Lean **v4.35.0** (S020 migration, commit `b114ccd`, no source change; see [MIGRATION-S020](frozen/MIGRATION-S020/README.md)). The `v1.md` records remain valid at their own commits on v4.34.1.
 
-EC-T0007–EC-T0019 were first frozen on v4.35.0 and need no migration manifest.
+EC-T0007–EC-T0022 were first frozen on v4.35.0 and need no migration manifest.
 
-Current frozen count: **19 bundles**, not nineteen solved material classes:
+Current frozen count: **22 bundles**, not twenty-two solved material classes:
 - [EC-T0001](frozen/EC-T0001/v1.md): K vs K dead position (frozen S003).
 - [EC-T0002](frozen/EC-T0002/v1.md): K+B vs K dead position (frozen S006).
 - [EC-T0003](frozen/EC-T0003/v1.md): K vs K dead in the general FIDE rules kernel, for any legal arrival and arisen positions. Strengthens EC-T0001. Frozen S010.
@@ -42,3 +42,8 @@ Current frozen count: **19 bundles**, not nineteen solved material classes:
 - [EC-T0020](frozen/EC-T0020/v1.md): same-budget abstract rule-layer mate/forcing projection; all raw defending replies must lift. Three complete interface/proof modules and two declarations frozen in S034 from EC-C022. No concrete FIDE history or numerical distance result.
 
 [S034 evidence](frozen/VERIFICATION-S034/README.md) retains the new exact-source Gate Z build for EC-T0020. Twenty frozen bundles are not twenty solved material classes.
+
+- [EC-T0021](frozen/EC-T0021/v1.md): concrete initial-rooted raw traces, exact append retention, complete legal-reply lifting and endpoint origin. Four declarations in five modules frozen S037 from EC-C023 at its own S035 proof anchor.
+- [EC-T0022](frozen/EC-T0022/v1.md): raw halfmove reset events, castling empty destination, exact append update and global/one-step ply bounds. Six declarations in seven modules frozen S037 from EC-C024; all five trace imports retained unchanged.
+
+[S037 evidence](frozen/VERIFICATION-S037/README.md) records two NEW sequential fresh GitHub builds at the separate published anchors, 59/66 jobs and 265/271 allowed reports. Twenty-two bundles are not twenty-two solved material classes; full FIDE adjudication and numerical distance remain open.

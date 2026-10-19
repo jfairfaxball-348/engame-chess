@@ -1,0 +1,10 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/RawClock/Definitions.lean
+formal/EndgameChess/Rules/RawClock/EventCases.lean
+formal/EndgameChess/Rules/RawClock/LegalEvent.lean
+formal/EndgameChess/Rules/RawClock/CastleEmpty.lean
+formal/EndgameChess/Rules/RawClock/Append.lean
+formal/EndgameChess/Rules/RawClock/LengthBound.lean
+formal/EndgameChess/Rules/RawClock/StepBound.lean
+Matches: 0

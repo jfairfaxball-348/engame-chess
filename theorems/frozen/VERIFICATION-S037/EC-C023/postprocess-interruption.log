@@ -1,0 +1,11 @@
+Original verifier process exited 1 after build and runner both exited 0.
+Its loaded code required current main's two aggregate files to equal the earlier
+trace-only anchor; this was too strict because main adds S036 counter entries.
+Observed final exception:
+AssertionError: /tmp/engame-s037-c023-gate-z/formal/AxiomCheck.lean
+
+No Lean build or axiom run failed. Evidence inspection was corrected to retain
+historical aggregate hashes at their exact anchor and compare actual candidate
+and transitive import bytes to current main. The separate anchor-comparison.log
+confirms ordered additive aggregate entries. finalize.py inspects successful
+retained command logs only; it never reruns the build, clone or AxiomCheck.

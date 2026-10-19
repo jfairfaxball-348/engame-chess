@@ -1,0 +1,46 @@
+{
+  "proof_source": "2d2b40ddaaff2a962bb9f573e8de799b1427d5f8",
+  "verified_utc": "2026-10-19T17:55:50Z",
+  "fresh_clone": "/tmp/engame-s037-c024-gate-z",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 1793.59,
+  "build_jobs": 66,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 271,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 239,
+    "propext, Quot.sound": 18,
+    "propext": 9
+  },
+  "axiom_free": 5,
+  "bundle_declarations": [
+    "EndgameChess.Rules.RawClock.event_cases",
+    "EndgameChess.Rules.RawClock.legal_zero_iff",
+    "EndgameChess.Rules.RawClock.castle_empty",
+    "EndgameChess.Rules.RawClock.append_clock",
+    "EndgameChess.Rules.RawClock.clock_le_length",
+    "EndgameChess.Rules.RawClock.append_clock_le"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.RawClock.event_cases": "propext",
+    "EndgameChess.Rules.RawClock.legal_zero_iff": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawClock.castle_empty": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawClock.append_clock": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawClock.clock_le_length": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawClock.append_clock_le": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/RawClock/Definitions.lean",
+    "formal/EndgameChess/Rules/RawClock/EventCases.lean",
+    "formal/EndgameChess/Rules/RawClock/LegalEvent.lean",
+    "formal/EndgameChess/Rules/RawClock/CastleEmpty.lean",
+    "formal/EndgameChess/Rules/RawClock/Append.lean",
+    "formal/EndgameChess/Rules/RawClock/LengthBound.lean",
+    "formal/EndgameChess/Rules/RawClock/StepBound.lean"
+  ],
+  "dependency_modules": 24,
+  "source_files_hashed": 69,
+  "gate_f_report_byte_identical": true,
+  "hosted_ci": "unobserved"
+}
