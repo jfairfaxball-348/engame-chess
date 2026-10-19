@@ -1,48 +1,103 @@
-# NEXT SESSION — S030: Safe setup from arbitrary legal KRK arrivals
+# NEXT SESSION — S031: Freeze the verified KRK forcing development
 
-**Required closing report:** follow the new progress-table rule in `AGENTS.md`. Update `docs/SESSION_PROGRESS.md`, copy its table into the written closeout and final reply, keep full Syzygy parity as the last row, and state this session's change below it.
+**Owner instruction:** Execute when the owner says “run next session” or pastes/links
+this prompt. Follow `AGENTS.md`: fetch all remote branches and latest main, merge
+any earlier unmerged session work first, work in this existing checkout, and end
+committed, pushed and merged to main without force. Publication is authorised.
 
-**Owner instruction:** Execute when the owner says "run next session" or pastes/links this prompt. Follow `AGENTS.md`: fetch all remote branches and latest main, merge any earlier unmerged session work, finish committed, pushed and merged to main without force. Publication is authorised. Read the charter/proof protocol, EC-T0010/0011 manifests, S028/S029 proofs/audits, S029 closeout/evidence and `research/S029_STRATEGY_ATTEMPT.md` first.
+**Closing report:** update `docs/SESSION_PROGRESS.md`; copy the complete stable
+table into the written closeout and final reply, with full Syzygy parity last
+and the session delta immediately below. Preserve the baseline material rows.
 
-## What is now proved
+## Starting evidence and scope
 
-Eleven frozen theorem bundles remain; these are not eleven solved material classes. EC-C011 is still PROPOSED. S029 proof-source `3ead1d587f4ff5e129f73666bd466f5eac764223`, core Lean 4.35.0, proves:
+Eleven frozen bundles remain, not eleven solved material classes. Read the
+charter and `docs/PROOF_PROTOCOL.md`, current README/roadmap/candidates, S027
+freeze manifests, S028/S029/S030 papers/audits/closeouts/evidence first.
 
-- EC-C016: two-file opposed checking, every reply one rank up or actual edge mate. This is not the frozen four-file four-ply king-up theorem.
-- EC-C017: bounded lower-band pursuit with explicit `LowerExitWins` interface. Offset one waits with a distinct far/second-far rook move, offset≥2 chases, and margin-two normalization has a bounded return branch. The only recursive pursuit call follows an actual king-file advance.
-- EC-C018: **`krk_rank_wall_force` proves ForceMate from exact strong-turn KRK and S.rank<R.rank<W.rank**, with no initial safe-rook margin or legal-arrival hypothesis. Its nested rank/gap induction closes the continuation invariant; `LowerExitWins` is discharged rather than assumed in this flagship. Both colours and arbitrary flags. `krk_phase_image_force` therefore wins from every S028 PhaseImage.
-- `krk_vertical_wall_entry_force` proves a setup subfamily: W.rank≥S.rank+2, rook file different from S.file, and rook/lone file margin≥2. It enters the wall directly, or uses the existing wall if already placed.
+Three published proof-source anchors hold the new forcing development:
 
-S028 sources and all seven S029 modules must be imported unchanged to preserve their verified anchors, even while Gate Z is pending. Frozen modules/manifests are immutable. Do not redo lower-band pursuit or weaken the new wall result to a local contraction. No theorem-ledger change in this mathematics session; EC-C014–018 need later separate Gate Z work.
+- S028: `cb5d3bb713257d7cac8e3c1f9d82d8e77b746d6c` — EC-C014 actual phase
+  image and EC-C015 bounded upper-band rank advance/rescue. Fifteen public
+  declarations, core Lean 4.35.0; Gate F in `sessions/evidence/S028/`.
+- S029: `3ead1d587f4ff5e129f73666bd466f5eac764223` — EC-C016 two-file
+  checking, EC-C017 bounded conditional pursuit, EC-C018 closed separated-wall
+  ForceMate. Twenty-three public declarations; Gate F in `sessions/evidence/S029/`.
+- S030: `4acc3e8638a916f329788d4c2b5f0db6f2c9bf67` — EC-C019 exact ordinary
+  KRK interface/capture safety; EC-C020 restricted alternating strategy transport
+  and all axes; EC-C021 finite arbitrary safe setup; EC-C011 weak-turn forcing
+  classification. Twenty-four public declarations in ten new modules; exact
+  Gate F evidence in `sessions/evidence/S030/`. Check its recorded results rather
+  than inferring success from this prompt. Final paper:
+  `proofs/EC-C019_C021_KRK_SAFE_SETUP.md`.
 
-## Principal mathematical obligation
+The strong flagship `krk_strong_arrival_force` has only exact `IsKRK`, strong
+turn and existence of a legal incoming move, either colour and arbitrary flags.
+The stronger geometric theorem assumes the weak king is not in check.
+`krk_weak_force_iff` is actual mate OR a nonempty reply set with NO legal KK
+capture. The safety-form corollary is also proved. This completes the intended
+clock-free EC-C011 target; it does not supply clocks/repetition, optimal
+numeric distance, DTZ, general FIDE WDL or an initial-position theorem.
 
-Close safe setup from an **arbitrary strong-to-move legal arrival** in exact KRK, or isolate a genuinely new precise obstruction. The intended target is the strong-turn part of EC-C011:
+## Principal task: Gate Z, not more setup research
 
-For either colour σ and any flags, from `IsKRK q σ S R W`, `q.turn=σ` and `∃ p, Legal p q`, prove `ForceMate σ q`.
+Review exact paper-to-Lean fidelity and the existing same-agent audits. All new
+proofs must remain unchanged; corrections, if necessary, go in new modules or
+versions and cannot inherit the old Gate F claim without new evidence.
 
-1. Extract actual king separation and any needed no-incoming-check facts from the kernel arrival, rather than assuming global reachability or a hand-picked geometry. Use the general kernel, not only `StepM`'s cooperative route.
-2. Extend the winning wall to the needed axes/directions by a **proved** transport or a direct parameterized construction. Equal-rank kings require another axis; a lone king below the strong king needs reflected rank orientation. Pure `StepM` symmetry does not automatically transport an alternating ForceMate strategy. Account for every weak legal reply and arbitrary castling/en-passant flags.
-3. A possible transport route is to establish a non-castling KRK/KK board relation, prove chosen ordinary king/rook moves lift to arbitrary flags and every weak reply projects back, then carry the finite-rank forcing induction through it. If using this route, prove its actual hypotheses and terminal preservation; do not silently assume an arbitrary flags-dependent winning strategy transports. Another route is a fresh generic coordinate-wall proof importing the existing geometry. Choose a supported route based on actual code, not an unsupported full-kernel symmetry claim.
-4. Construct a finite all-defences safe rook retreat/setup into a winning oriented wall, or into the direct vertical-entry subfamily. A geometric placement between king coordinates is insufficient if it gives the defender a rook capture. A first rook retreat can let the lone king change which axis has a two-square gap; handle that response rather than assuming the original gap survives. Handle blocked rays, rook/king on the same rank/file, edges, threatened rook, corners and stalemate. Every chosen move must be legal, each required defending reply set nonempty or actual mate, and every reply covered.
-5. Supply a terminating setup argument: an explicit bounded phase or well-founded measure with proved progress under all replies. The existing wall proof already handles the subsequent mating strategy; do not replace setup by a cooperative path, a simulation or an assumed winning continuation.
+Freeze the eligible development as coherent bundles, using the next free IDs
+EC-T0012 onward. A reasonable mapping is C014; C015; C016; C017; C018; C019;
+C020; C021 together with the completed C011 classification. Verify this mapping
+against the actual declarations and avoid duplicate or overstated ledger rows.
+A conditional pursuit theorem must keep its continuation hypothesis explicit;
+the wall and full setup flagships must not acquire such a hypothesis. Do not
+rename clock-free forcing classification as full FIDE WDL.
 
-## Required controls and boundaries
+1. For each of the three exact proof-source SHAs, make a NEW fresh GitHub clone
+   with no `formal/.lake` before `lake build`, as Gate Z requires. A single run
+   per SHA may serve every bundle anchored there. Retain the complete build,
+   axiom/statement checks, toolchain identity, hashes and forbidden-token scan.
+   Do not reuse the Gate F checkout as fresh Gate Z evidence or rerun unrelated
+   historical certifications. Subsequent checks are incremental.
+2. Inspect the exact `#check` and `#print axioms` results for every declaration
+   listed in each manifest. Allowed subsets: propext, Classical.choice,
+   Quot.sound only. No sorryAx, native reduction, extra axioms or proof escapes.
+3. Create immutable `theorems/frozen/EC-T00xx/v1.md` manifests with full exact
+   source SHA, theorem/module list, exact hypotheses/quantifiers, rule/semantic
+   boundary, source/audit attribution, toolchain and observed fresh Gate Z data.
+   Record all constituent modules/hashes; helpers and shared new definitions
+   must not silently fall outside the frozen source boundary. Previous sources,
+   manifests and ledger rows stay byte-identical.
+4. Only then append the new FROZEN rows to `theorems/LEDGER.csv`, preserving its
+   schema; update candidate records and current status. Run ledger structural
+   validation and relevant existing checks. Any diagnostics are supplementary,
+   never a substitute for a general proof. No engine/tablebase or class-wide
+   enumeration supplies a theorem.
+5. Retain fixed capture/stalemate/chase controls. State that all setup/reply
+   quantifiers are covered, while finite rank is not an optimal numeric distance.
+   Distinguish observed local verification from any unobserved hosted CI.
 
-Retain the S028 chase cycle and stalemate controls, which the S029 policy now avoids. New S029 control: White Ka1/Rd4, Black Kc3, White to move. Both **Rd2 Kxd2** and **Rb4 Kxb4** are kernel-legal and leave KK. A rank/file wall on a *weak* turn is not enough when the rook can be captured. Do not drop the direct-entry safety margin based solely on visual confinement.
+## Follow-on research prompt
 
-The S029 main theorem admits a threatened rook only on a *strong* turn, before the prescribed repair. Never give the defender an extra move before that repair. Keep the named winning colour and game quantifiers exact. No clock/repetition, exact-distance, full FIDE WDL, seven-piece parity or initial-position claim follows from a clock-free strong-turn result.
+After freezing, install S032 around a concrete next obligation. Prefer a short
+mathematical design session for the remaining KRK rule/distance layer: define
+clock and repetition semantics, terminal precedence and the exact relationship
+to the existing clock-free ForceMate; specify the outcome/distance target and
+what needs proof. Do not label clock-free mate bounds as 50-move WDL/DTZ parity,
+and do not change frozen game definitions. If moving to another material class
+instead, justify the choice against `docs/ROADMAP.md` and preserve outstanding
+KRK rule/distance work explicitly. Avoid starting a large unplanned theorem
+while the Gate Z publication is still unfinished.
 
-If arbitrary strong-turn setup closes, next derive the correct weak-turn terminal/capture classification: zero-ply opponent mate, stalemate non-win, any legal capture to KK obstructing forcing, and nonempty all-noncapturing replies reduced to the strong-turn theorem via finite branching. Keep EC-C011 PROPOSED until every intended branch is established. Do not mark all KRK L2/FIDE WDL solved merely because the strong-turn theorem passes.
+Write `sessions/S031_FREEZE_KRK_FORCING.md`, including all actual check results,
+exact anchors, ledger effect, full progress table and the FULL installed S032
+prompt. Update the session ledger/current status, commit/push the branch, merge
+main, push main and verify remote SHA. Frozen counts are bundles, not solved
+material classes; report any blocker precisely rather than upgrading a claim.
 
-No tablebases, engine oracles, class-wide enumeration, retrograde values or per-position proof certificates may supply any general proof. Locally generated fixed controls or a small declared diagnostic set are supplementary only. S029's 64 selected trajectories and observed maximum length are not a DTM theorem.
+## Cloud activation
 
-## Deliverables and verification
-
-Write a standalone paper proof and same-agent adversarial audit before formalisation. Register candidates EC-C019 onward only for exact new statements. Use new modules; add aggregate imports and main declarations to `AxiomCheck.lean`. Preserve all previous proof/definition sources and theorem records. Reuse incremental outputs for changed modules/importers. Gate F requires a published exact proof-source SHA and a new fresh GitHub clone at that SHA with no .lake before build; retain full successful build, exact statements, axiom reports and forbidden-token scan. Allowed axiom subsets: propext, Classical.choice, Quot.sound. Run relevant Python checks and unchanged-ledger validation. State unobserved CI explicitly.
-
-Sustain the strategy attempt. If setup remains incomplete, preserve useful new proved transport/setup lemmas, failed policies with precise local counterexamples, and the exact all-defences/termination gap. Do not silently weaken the target, repeat existing forcing infrastructure, or report EC-C011 solved. Write `sessions/S030_KRK_SAFE_SETUP.md`, update current status and session ledger, install a full actionable S031 prompt around the actual remaining obligation and include it in the closeout. Commit, push session branch, merge main, push main and verify remote SHA.
-
-## Cloud tool activation
-
-Use the existing isolated checkout; no worktree unless requested. `export ELAN_HOME=/workspace/.tools/elan; export PATH="$ELAN_HOME/bin:$PATH"`. Lake commands run in `formal/`; Python checks at root. S029 used the official unmodified Lean 4.35.0 release without a path shim. Use the documented older shim only if its actual host failure occurs.
+`export ELAN_HOME=/workspace/.tools/elan; export PATH="$ELAN_HOME/bin:$PATH"`.
+Lake commands run from `formal/`, Python from root. Official unmodified Lean
+4.35.0, core only, no external dependencies; no host shim was required in S030.
+Keep TLS/signature/checksum verification enabled. No new worktree is needed.

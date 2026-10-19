@@ -1,0 +1,8 @@
+PASS: published exact proof source 4acc3e8638a916f329788d4c2b5f0db6f2c9bf67; fresh clone no .lake before build.
+PASS: 51-job clean build, 336.763 seconds; 259 allowed axiom reports.
+PASS: working and clean axiom/statement reports byte-identical.
+PASS: all Lean source bytes match exact clean checkout.
+PASS: 24 new public declarations / 10 new modules.
+PASS: 39 Python tests, 104.760 seconds; 11 frozen bundles, structural ledger check.
+PASS: forbidden-token and 100-file preservation checks.
+Hosted CI: unobserved.

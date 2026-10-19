@@ -29,3 +29,15 @@ extra axiom is permitted. Full public axiom/statement checks and fresh exact-
 source build evidence will be attached after the published-source run. Gate Z
 and human kernel-encoding review remain separate. Hosted CI is unobserved unless
 explicitly recorded.
+
+## Completed Gate F
+
+Published exact source `4acc3e8638a916f329788d4c2b5f0db6f2c9bf67`; new fresh GitHub clone, no .lake before build:
+51 jobs, exit 0, 336.763s; full axiom/statement runner exit 0, `2026-10-19T12:16:49Z`. All 259
+reports allowed (228 standard-three, 18 propext/Quot.sound, 8 propext, 5 axiom-
+free), including 24 new public declarations. Clean/working reports and all Lean
+source bytes match. Ten-module forbidden scan zero; all 100 protected prior
+files unchanged. All 39 Python tests passed in 104.760s. EC-C011 and C019–021
+are FORMAL_VERIFIED; all setup/axis/weak-classification obligations above close.
+Gate Z and clocks/repetition/distance remain. Full logs: `sessions/evidence/S030/`.
+Hosted CI unobserved. No theorem ledger change.

@@ -42,4 +42,6 @@
 
 | S029 follow-up | 2026-10-19 | Owner progress-reporting rule (administrative) | Required stable progress table in every written closeout and final reply, from K vs K through all material sizes to full Syzygy parity last; canonical current table and S030 reminder installed. Mathematical status unchanged; S030 remains next. [Record](S029_PROGRESS_PROTOCOL.md) | None — 11 frozen bundles |
 
+| S030 | 2026-10-19 | Arbitrary KRK safe setup and clock-free forcing classification (Gate L/F) | EC-C011 and C019–021 FORMAL_VERIFIED at `4acc3e8`: restricted alternating transport, all axes, finite safe setup including back rank, every strong-turn legal arrival forces mate; weak turn classified by mate/nonempty noncapture replies. 24 new public declarations; fresh 51-job build, 259 allowed axiom reports, 39 tests. S031 Gate Z review/freeze installed. [Closeout](S030_KRK_SAFE_SETUP.md) | None — 11 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

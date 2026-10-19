@@ -1,0 +1,18 @@
+{
+  "proof_source": "4acc3e8638a916f329788d4c2b5f0db6f2c9bf67",
+  "verified_utc": "2026-10-19T12:16:49Z",
+  "build_seconds": "336.763",
+  "build_jobs": 51,
+  "new_public_declarations": 24,
+  "total_axiom_reports": 259,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 228,
+    "propext, Quot.sound": 18,
+    "propext": 8
+  },
+  "axiom_free": 5,
+  "python_tests": 39,
+  "python_seconds": "104.760",
+  "frozen_bundles": 11,
+  "hosted_ci": "unobserved"
+}
