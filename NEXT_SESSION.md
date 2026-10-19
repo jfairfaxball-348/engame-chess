@@ -1,24 +1,35 @@
-# NEXT SESSION — S024: K+R vs K forcing semantics and the first L2 proof
+# NEXT SESSION — S025: Freeze the forcing and confinement prerequisites
 
-**Owner instruction:** Execute S024 when the owner says "run next session" in this repository or pastes/links this prompt. Follow `AGENTS.md`: fetch, start from latest `main`, merge any unmerged session branch first, and finish with the session committed, pushed and merged to `main`.
+**Owner instruction:** Execute S025 when the owner says "run next session" in this repository or pastes/links this prompt. Follow `AGENTS.md`: fetch latest `main`, merge unmerged session work first, and finish committed, pushed and merged to `main`. Publishing is part of the authorised session workflow.
 
-## Objectives and starting point
-- Ultimate ambition (unproved): ultra-weakly establish that standard chess has initial-position value draw, under a complete explicit rules model. See `docs/CHARTER.md`.
-- Active milestone: proof-based outcome characterisations for every ending with fewer than 8 pieces, without tablebase lookup or per-position enumeration.
-- EC-T0006 and EC-T0007 settle K+R vs K **L1** (dead/live). This is cooperative reachability, not optimal play. The frozen KRKLive modules must not be edited.
-- S024 advances to **L2**, starting with precise forcing semantics and one tractable geometric prerequisite. Proof first, then formalisation, then freeze.
+## Ambitions and current mathematical boundary
+- Ultimate ambition (unproved): an ultra-weak proof that standard chess has initial-position value draw, under a complete explicit rules model.
+- Active milestone: proof-based outcome characterisations through seven pieces, without tablebases, whole-class enumeration or per-position certificates.
+- K+R vs K L1 is frozen (EC-T0006/0007). The full clock-free forcing target EC-C011 remains **PROPOSED**. L1 liveness does not imply a forced win.
+- S024 completed two prerequisites, **FORMAL_VERIFIED**, at proof-source commit `fca2ca88c8391b1d2bd49c3db9f2fa04258a4a87` on Lean `leanprover/lean4:v4.35.0`:
+  - **EC-C009:** finite-rank forced-mate semantics, soundness, monotonicity, terminal inversion, choosing/defending rules and the dead-reply obstruction. New modules `Rules/ForcingDefinitions.lean`, `Rules/ForceMate.lean`.
+  - **EC-C010:** every kernel-legal lone-king reply preserves a protected rook rank barrier when the strong king is strictly below the rook and the lone king above. New module `Rules/KRKConfinement.lean`. Includes arbitrary-reply completeness and the obstruction to a protected rook advance with a fixed king.
+  - Fixed configurations in `Rules/KRKForcingExamples.lean` distinguish optional capture, stalemate, blocked rook rays and zero-/one-ply mate.
+- Read `proofs/EC-C009_FORCING.md`, `proofs/EC-C010_KRK_CONFINEMENT.md`, `audits/EC-C009_C010_PAPER.md`, `audits/EC-C009_C010_LEAN.md`, `sessions/S024_KRK_FORCING.md` and `sessions/evidence/S024/README.md`, plus the charter, proof protocol and roadmap.
 
-## Read first
-`docs/CHARTER.md`, `docs/PROOF_PROTOCOL.md`, `docs/ROADMAP.md`, `docs/RULES_KERNEL.md`; `theorems/frozen/EC-T0007/v1.md`; `proofs/EC-C008_KRK_LIVE.md`; `formal/EndgameChess/Rules/{Reach,Outcome,KRK}.lean`; `formal/EndgameChess/Rules/KRKLive/{Basic,Endgame,Reply,Relocation,Main}.lean`.
+## Required Gate Z work
+1. Re-verify the exact proof-source commit in a fresh GitHub checkout without `.lake`: `lake build`, `lake env lean AxiomCheck.lean`, and forbidden-token scan over the four new S024 modules. Save new Gate Z logs rather than relabelling S024's Gate F evidence. Ordinary hosts need no executable-path shim; this host's documented compatibility shim is in `theorems/frozen/EC-T0007/verification-environment.md` with retained source.
+2. Inspect the exact statements and axioms for `mateWithin_sound`, `forceMate_not_dead`, `forceMate_no_moves_iff`, `dead_reply_not_forceMate`, `forceMate_choose`, `forceMate_defend`, `krk_protected_reply`, `rook_rank_barrier`, `krk_protected_rank_reply`, and `protected_rank_raise_unprotected`. Check the fixed examples too. The new declarations use subsets of the standard three axioms only. No frozen Lean source may be edited.
+3. If and only if verification passes, freeze:
+   - EC-C009 as **EC-T0008**, with `forceMate_defend` as the ledger's representative declaration and the full forcing-semantics theorem bundle explicitly listed in its immutable manifest;
+   - EC-C010 as **EC-T0009**, with `krk_protected_rank_reply` as the representative declaration, plus the protected-reply completeness lemma, pure barrier lemma and advance obstruction in its manifest.
+4. Record the proof-source SHA, exact `#check` outputs, rule scope, core-only toolchain, build/axiom evidence, source hashes and trust boundary. The host shim is an environment dependency, not a change to any Lean proof or kernel routine. The clock-free finite-rank game is a definition; do not present it as an already complete FIDE WDL model or claim an unproved equivalence with a separate strategy representation.
+5. Append exactly two ledger rows, leaving earlier rows/manifests unchanged; update candidate status, theorem index, formal README, README and roadmap. Run ledger validation and the relevant Python suite. A failed Gate Z blocks the affected freeze and requires an exact remedial obligation.
 
-## Required work
-1. **Fix the game and quantifiers before proposing a theorem.** Define a turn-based, forced-mate predicate over kernel `Legal`, with a named winning colour. The winning side chooses a legal successor; the defending side must have a legal move and every legal successor must satisfy the continuation obligation. Checkmate of the defender is the winning base case. Stalemate and dead positions cannot become wins through an empty universal quantifier; zero-length mate must be treated correctly. Explain whether a well-founded inductive attractor or a strategy plus natural-valued rank is used, and prove their correspondence if both are needed.
-2. **Pin the scope.** The first forcing result is in an explicitly clock-free and repetition-free game, stopped at mate/stalemate/deadness. The existing kernel has no half-move clock or repetition history. Do not claim FIDE WDL, Syzygy WDL/DTZ, or a full-game result until their rule layers and proofs exist.
-3. **Audit the tempting false statement:** "every live K+R vs K position is a forced win for the rook side." A legal *optional* rook capture can lead to a drawn K vs K successor even if a different move preserves a route to mate. Test White Kh8, Rb3, Black Ka2, Black to move: compare Kxb3 with Ka1 using the local kernel. Record the exact move-legality and liveness evidence, and avoid claiming global reachability unless proved. The future WDL criterion must distinguish any available capture from an unavoidable capture, stalemate and checkmate.
-4. **Register the corrected L2 candidate(s)** with exact hypotheses, turn, quantifiers, terminal cases, flags and capture behaviour. In particular, investigate the strong-to-move winning statement and the weak-to-move branches separately; do not promote either on chess folklore alone.
-5. **Attempt the first general paper proof** toward a forcing KRK strategy: for example a safe-rook confinement invariant and a well-founded decrease of the lone king's available rectangle, including waiting moves, checking moves, rook safety and stalemate avoidance. Reuse frozen geometry through imports. A cooperative reply lemma cannot discharge an all-defences obligation. Aim to close one precise prerequisite completely; if the whole strategy is tractable, continue through its proof and adversarial audit.
-6. Write a standalone proof and hostile audit for any claim marked `LOCAL_VERIFIED`. Explicitly test board edges, both colours, side to move, hanging rook, capture, zero-length mate and stalemate. Local diagnostic scripts are supplementary only; no tablebases, engine oracles, whole-class enumeration proof or per-position certificate proof.
-7. Formalise only statements whose mathematics is locked. New modules only; add main declarations to `AxiomCheck.lean`, compile changed modules/importers, and inspect axioms. If a paper gap remains, leave the candidate `PROPOSED` and identify the exact missing lemma. Do not write a tautological conditional theorem as a substitute for the target.
+## Remaining forcing problem (install S026 after successful freeze)
+The next mathematical session must attack **EC-C011 on paper**, not repeat semantic setup or use the cooperative route as a forcing proof. Its first concrete obligations are:
+- broaden rook safety beyond immediate king protection, for instance a rook too far for immediate capture or protected;
+- prove the arbitrary-defender-reply version of the chosen invariant, accounting for optional rook capture;
+- give explicit strong-side actions and a well-founded phase/region measure, with nonempty replies or actual mate checked in every branch;
+- resolve the obstruction proved in S024: raising the rook with its king fixed below the old rank loses protection. A protected barrier alone is not a closed advancing strategy;
+- attempt the general strong-to-move forcing theorem after a legal arrival, with all board-edge and stalemate exceptions handled. Derive weak-turn cases only after that result is proved, using the finite-branching defending rule. If incomplete, identify the precise missing progress/tempo lemma rather than claiming L2 or freezing a conditional restatement.
+
+Keep the proof → audit → Lean → freeze order. No clock/repetition or full WDL claim until those layers exist.
 
 ## Closeout
-Run relevant Python checks and `python3 scripts/validate_ledger.py`. Do not change the frozen ledger without a separate completed Gate Z. Write `sessions/S024_KRK_FORCING.md` and the session-ledger row; distinguish proved, formalised, tested and open findings. Install the next session around the actual remaining proof obligation, include its full prompt in the closeout, and commit/push/merge to `main`. No speculative initial-position solving detour and no packaging-only migration in place of the active mathematical rung.
+Write `sessions/S025_FREEZE_EC-T0008_T0009.md` and a session-ledger row. Distinguish actually passed verification from unobserved CI, state the exact ledger effect, install S026 around the remaining forcing proof obligation with a full executable prompt, and include that prompt in the closeout. Commit, push and merge to `main`.

@@ -28,4 +28,6 @@
 
 | S023 | 2026-10-19 | Freeze EC-C008 (Gate Z) | Fresh GitHub clone at `a8bc161`: build 22 jobs, axiom report 161 declarations within the standard three, forbidden tokens 0; Linux executable-path shim retained and documented; immutable EC-T0007 manifest and logs; K+R vs K L1 frozen; 33 tests passed; ledger valid (7). S024 forcing semantics and first L2 prerequisite installed. [Closeout](S023_FREEZE_EC-T0007.md) | **+1 → EC-T0007 FROZEN** (7 frozen theorems) |
 
+| S024 | 2026-10-19 | Clock-free forcing semantics and KRK all-defences confinement (Gate P/L/F) | EC-C009/010 FORMAL_VERIFIED: named-winner finite-rank attractor, terminal/dead-reply rules, finite branching, protected-rank reply completeness and confinement; optional-capture and stalemate controls; proof source `fca2ca8`, fresh build 26 jobs, 180 standard-axiom-subset reports; 33 tests; no frozen source or ledger change. General KRK forcing EC-C011 PROPOSED; protected advance with fixed king loses protection. S025 freeze prerequisites installed. [Closeout](S024_KRK_FORCING.md) | None — 7 frozen theorems |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

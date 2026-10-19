@@ -29,3 +29,9 @@ New modules only: `ForcingDefinitions`, `ForceMate`, `KRKConfinement`, `KRKForci
 The working modules and aggregate compiled successfully. Three deliberately false fixed-configuration claims were rejected (blocked rook ray is illegal; optional declining move is illegal; protected-rank stalemate is check). Source-commit clean-checkout verification, full axiom report and exact proof-source SHA will be recorded in the S024 session evidence and closeout before any `FORMAL_VERIFIED` promotion.
 
 The FIDE-to-model boundary remains A1 and the owner's reviewed general rules encoding. No clock, repetition, full WDL, global strategy equivalence, distance, novelty or independent external-review claim is added.
+
+## Completed Gate F verification
+
+Proof-source: `fca2ca88c8391b1d2bd49c3db9f2fa04258a4a87`. Fresh GitHub checkout, detached at that commit, no `.lake` before `lake build`. Exit 0, 26 jobs, 236.09 seconds. Full `AxiomCheck.lean` run exit 0 at `2026-10-19T06:56:09Z`; all 180 reports are subsets of the standard three (160 standard-three, 7 propext/Quot.sound, 8 propext-only, 5 axiom-free). The 19 new reports use standard-three except the two pure geometric lemmas, which use propext/Quot.sound. Clean and working report content is byte-identical. No forbidden proof escapes in the four new modules. All frozen sources and the theorem ledger are unchanged.
+
+Evidence: `sessions/evidence/S024/`. The documented S023 executable-path shim is used on this host; official Lean binaries and proof sources are unmodified. Three false-claim negative controls were rejected. All 33 Python tests passed. Hosted CI is not claimed as observed. **EC-C009 and EC-C010 are FORMAL_VERIFIED, not frozen.** No full KRK forcing theorem is promoted.

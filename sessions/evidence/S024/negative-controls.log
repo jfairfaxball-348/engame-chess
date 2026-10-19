@@ -1,0 +1,16 @@
+blocked-ray: rejected as expected
+/tmp/S024-blocked-ray.lean:3:69: error: Tactic `decide` proved that the proposition
+  isLegal blockedBarrierPos blockedBarrierMove = false
+is false
+
+
+optional-decline: rejected as expected
+/tmp/S024-optional-decline.lean:3:67: error: Tactic `decide` proved that the proposition
+  isLegal optionalCapturePos optionalDecline = false
+is false
+
+
+stalemate-is-mate: rejected as expected
+/tmp/S024-stalemate-is-mate.lean:3:57: error: Tactic `decide` proved that the proposition
+  inCheck protectedRankStale EndgameChess.KK.Colour.black = true
+is false

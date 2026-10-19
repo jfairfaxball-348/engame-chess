@@ -58,7 +58,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S021: EC-C008 Lean, part 1. KRK infrastructure over the kernel (attack and check on `krkBoard`, a geometric move model with kernel soundness, reflections F4) and the end-game half (Lemmas M, E, C, W, S) are formalised. EC-C008 stays `LOCAL_VERIFIED`.
 - S022: EC-C008 fully formalised (RL-h, RL-f, P1, main theorems). **EC-C008 is `FORMAL_VERIFIED`**: in the kernel, a K+R vs K position with the strong side to move (produced by a legal move) is never dead, and with the lone king to move it is dead iff not checkmate and every legal move captures the rook.
 - S023: EC-C008 frozen as [EC-T0007](theorems/frozen/EC-T0007/v1.md) after fresh-clone verification of `a8bc161`. Together with EC-T0006 this completes K+R vs K L1.
-- Next: S024, precise forcing semantics and the first K+R vs K L2 paper-proof prerequisite. Liveness alone does not imply a forced win: an optional rook capture may draw.
+- S024: **EC-C009 and EC-C010 FORMAL_VERIFIED**: finite-rank clock-free forcing semantics, the optional-capture obstruction, and a protected rook rank barrier preserved by every legal lone-king reply. Kernel examples distinguish stalemate, wrong-colour mate and blocked rook rays. Full K+R vs K forcing (EC-C011) remains open: safe setup, tempo and strict progress still need proof.
+- Next: S025, freeze these two prerequisites as EC-T0008/0009; then resume the general forcing proof with a broader rook-safety invariant.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

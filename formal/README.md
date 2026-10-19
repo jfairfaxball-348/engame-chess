@@ -22,3 +22,15 @@ Pinned, core-only Lean 4 project (no mathlib, no dependencies).
 `Checks/` holds evaluation-only files (e.g. `Checks/Perft.lean`, run with `lake env lean Checks/Perft.lean`). They contain no theorems.
 
 Lean checks the mathematical model only. The correspondence between the model and the FIDE 2023 Laws (assumption A1, lemma L3a, Article 5.2.2) is the prose bridge in `proofs/EC-C001_KK.md`. A successful build is not a ledger freeze: see `docs/PROOF_PROTOCOL.md`, Gate Z.
+
+## S024 forcing prerequisites (FORMAL_VERIFIED, not frozen)
+
+Proof-source: `fca2ca88c8391b1d2bd49c3db9f2fa04258a4a87`; [audit](../audits/EC-C009_C010_LEAN.md), [fresh verification](../sessions/evidence/S024/README.md).
+
+| Candidate | New modules | Main declarations |
+|---|---|---|
+| EC-C009 | `Rules/ForcingDefinitions.lean`, `Rules/ForceMate.lean` | `mateWithin_sound`, `forceMate_not_dead`, `forceMate_no_moves_iff`, `dead_reply_not_forceMate`, `forceMate_choose`, `forceMate_defend` |
+| EC-C010 | `Rules/KRKConfinement.lean` | `krk_protected_reply`, `rook_rank_barrier`, `krk_protected_rank_reply`, `protected_rank_raise_unprotected` |
+| Fixed witnesses | `Rules/KRKForcingExamples.lean` | optional-capture live-but-not-forcing, one-/zero-ply mate, protected-rank stalemate, blocked-ray crossing |
+
+The new game predicate uses a uniform finite ply bound and omits clocks/repetition. The protected barrier is a reply invariant; it does not supply a complete advancing strategy. EC-C011 has no completed forcing proof or Lean flagship.
