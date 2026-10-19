@@ -34,4 +34,6 @@
 
 | S026 | 2026-10-19 | Distant safety and opposed-kings checking progress (Gate L/F) | EC-C012/013 FORMAL_VERIFIED: all-reply safety, live weak-state bridge, explicit four-ply check/king-up contraction against every reply, edge ForceMate family; failed distance margins and non-restored opposition kernel-checked. Proof source `e8daef6`, clean build 29 jobs, 197 allowed axiom reports, 33 tests; local 24-case diagnostic supplementary. EC-C011 remains PROPOSED; setup/re-entry gap explicit. S027 freeze installed. [Closeout](S026_KRK_FORCING_PROGRESS.md) | None — 9 frozen theorems |
 
+| S027 | 2026-10-19 | Freeze EC-C012/013 (Gate Z) | Fresh GitHub clone at `e8daef6`: 29-job build, 197 allowed-axiom reports, 17 exact declarations, source hashes and forbidden scan passed; 33 Python tests; earlier ledger/manifests and Lean source unchanged. EC-T0010 safety and EC-T0011 four-ply checking-phase manifests; no shim needed on this host. EC-C011 remains PROPOSED; S028 image-bounds and terminating re-entry policy installed. [Closeout](S027_FREEZE_EC-T0010_T0011.md) | **+2 → EC-T0010/0011 FROZEN** (11 frozen bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

@@ -1,0 +1,10 @@
+{
+  "verified_utc": "2026-10-19T08:42:13Z",
+  "build_seconds": "202.297",
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 174,
+    "propext, Quot.sound": 10,
+    "propext": 8
+  },
+  "axiom_free": 5
+}

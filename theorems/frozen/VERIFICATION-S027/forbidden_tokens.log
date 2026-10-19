@@ -1,0 +1,2 @@
+PASS: zero forbidden tokens in Safety.lean, CheckProgress.lean, Examples.lean
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b

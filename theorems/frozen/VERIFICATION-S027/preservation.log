@@ -1,0 +1,2 @@
+PASS: all 75 earlier frozen evidence/manifests and Lean source files unchanged.
+PASS: earlier nine ledger rows byte-identical; exactly two rows appended.

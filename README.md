@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S025.** Nine frozen theorems. K+R vs K layer L1 (dead/live) is frozen; L2 (optimal-play outcome) remains open.
+**After S027.** Eleven frozen theorem bundles (not eleven solved material classes). K+R vs K layer L1 (dead/live) is frozen; L2 (optimal-play outcome) remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -61,7 +61,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S024: **EC-C009 and EC-C010 FORMAL_VERIFIED**: finite-rank clock-free forcing semantics, the optional-capture obstruction, and a protected rook rank barrier preserved by every legal lone-king reply. Kernel examples distinguish stalemate, wrong-colour mate and blocked rook rays. Full K+R vs K forcing (EC-C011) remains open: safe setup, tempo and strict progress still need proof.
 - S025: EC-C009 frozen as [EC-T0008](theorems/frozen/EC-T0008/v1.md), EC-C010 as [EC-T0009](theorems/frozen/EC-T0009/v1.md), after fresh exact-source Gate Z verification.
 - S026: **EC-C012/013 FORMAL_VERIFIED**: distant-or-protected rook safety and a four-ply opposed-kings checking phase. Against every defence it either mates at the edge or advances the lone king and returns a safe distant-rook barrier. A four-file margin is proved sufficient; smaller-margin and re-entry failures are kernel-checked.
-- Next: S027, freeze these prerequisites; then attack setup/re-entry into opposition or another contraction. The general KRK forcing theorem EC-C011 remains `PROPOSED`.
+- S027: EC-C012 frozen as [EC-T0010](theorems/frozen/EC-T0010/v1.md), EC-C013 as [EC-T0011](theorems/frozen/EC-T0011/v1.md), after new fresh exact-source Gate Z verification. The phase requires a four-file rook margin, same-file kings two ranks apart, strong turn and the rook off the lone king's rank; both colours and arbitrary flags. It is a contraction for that family, not general KRK WDL or a repeatable full strategy.
+- Next: S028, prove phase-image bounds and force setup/re-entry into opposition or another strict contraction. EC-C011 remains `PROPOSED`; no clocks/repetition or initial-position claim.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

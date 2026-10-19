@@ -37,7 +37,7 @@ The new game predicate uses a uniform finite ply bound and omits clocks/repetiti
 
 Freeze manifests: [EC-T0008](../theorems/frozen/EC-T0008/v1.md) and [EC-T0009](../theorems/frozen/EC-T0009/v1.md). Primary proof/definition modules are now immutable; new safety/progress lemmas must use new modules. S025 changed no Lean source.
 
-## S026 safety and checking progress (FORMAL_VERIFIED, not frozen)
+## S026 safety and checking progress (frozen S027 as EC-T0010/0011)
 
 Proof-source `e8daef6daee088c3adaf1c21b51c0a8f1e31103d`; [audit](../audits/EC-C012_C013_LEAN.md), [fresh verification](../sessions/evidence/S026/README.md).
 
@@ -48,3 +48,5 @@ Proof-source `e8daef6daee088c3adaf1c21b51c0a8f1e31103d`; [audit](../audits/EC-C0
 | Fixed controls | `Rules/KRKForcing/Examples.lean` | edge forcing, failed two-/three-file margins, a successful phase not restoring opposition |
 
 No frozen module was edited. The general KRK forcing proof remains incomplete; these statements cover an exact geometric entry family, both colours and arbitrary flags.
+
+S027 Gate Z froze the three-declaration safety bundle as [EC-T0010](../theorems/frozen/EC-T0010/v1.md) and the ten-declaration checking-phase bundle as [EC-T0011](../theorems/frozen/EC-T0011/v1.md). Exact-source clean build, 197 standard-axiom-subset reports, and all 17 S026 declaration checks passed; [new evidence](../theorems/frozen/VERIFICATION-S027/README.md). `Safety.lean` and `CheckProgress.lean` are now immutable. The phase needs strong turn, same-file kings two ranks apart, a four-file rook margin and rook off the lone king's rank, for either colour and arbitrary flags. No general KRK forcing, clock/repetition or initial-position result is claimed; setup/re-entry remains open.
