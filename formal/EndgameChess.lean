@@ -46,3 +46,6 @@ import EndgameChess.Rules.KRKForcing.SameRankSetup
 import EndgameChess.Rules.KRKForcing.SafeSetup
 import EndgameChess.Rules.KRKForcing.OutcomeClassification
 import EndgameChess.Rules.KRKForcing.SetupExamples
+import EndgameChess.Rules.HistoryLayer.Definitions
+import EndgameChess.Rules.HistoryLayer.Projection
+import EndgameChess.Rules.HistoryLayer.ForcingProjection

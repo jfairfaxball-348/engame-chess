@@ -405,3 +405,13 @@ import EndgameChess
 #check @EndgameChess.Rules.backrank_preparation_forces
 #check @EndgameChess.Rules.black_flagged_file_setup_forces
 #check @EndgameChess.Rules.safe_setup_capture_controls
+
+-- S033 / EC-C022: exact abstract interface, recurrence and two projection results.
+#print EndgameChess.Rules.HistoryLayer.Layer
+#print EndgameChess.Rules.HistoryLayer.Goal
+#print EndgameChess.Rules.HistoryLayer.RuleMateWithin
+#print EndgameChess.Rules.HistoryLayer.RuleForceMate
+#print axioms EndgameChess.Rules.HistoryLayer.ruleMateWithin_project
+#print axioms EndgameChess.Rules.HistoryLayer.ruleForceMate_project
+#check @EndgameChess.Rules.HistoryLayer.ruleMateWithin_project
+#check @EndgameChess.Rules.HistoryLayer.ruleForceMate_project
