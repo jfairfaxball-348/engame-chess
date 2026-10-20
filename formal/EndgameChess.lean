@@ -79,3 +79,4 @@ import EndgameChess.Rules.RawClaims.ExclusionCharacterization
 import EndgameChess.Rules.RawAdjudication.Ongoing
 import EndgameChess.Rules.StoppedHistory.AppendLifting
 import EndgameChess.Rules.RawHistoryLayer.Projection
+import EndgameChess.Rules.RawHistoryLayer.BudgetLifting

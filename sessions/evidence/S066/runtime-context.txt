@@ -1,0 +1,5 @@
+Observed current managed cloud running/connected, observations_current true.
+Desired HTTP policy unrestricted, current observation state enforced.
+Selected executor network policy version 1 unrestricted, vpn_configured false.
+No configured secret/runtime/outbound identity bindings. Inherited proxy/CA
+retained; ELAN_HOME=/workspace/.tools/elan; official core Lean4.35.0, no dependencies/shim.

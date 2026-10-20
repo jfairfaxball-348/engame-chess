@@ -1,0 +1,13 @@
+✖ [89/92] Building EndgameChess.Rules.RawTrace.Prepend (388ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/RawTrace/Prepend.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawTrace/Prepend.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawTrace/Prepend.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawTrace/Prepend.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawTrace/Prepend.setup.json --json
+error: EndgameChess/Rules/RawTrace/Prepend.lean:10:45: Application type mismatch: The argument
+  ih
+has type
+  RawBoardStep s s✝ → Extends (n✝ + 1) s u✝
+but is expected to have type
+  Extends (n✝ + 1) s ?m.34
+in the application
+  Extends.snoc ih
+Some required targets logged failures:
+- EndgameChess.Rules.RawTrace.Prepend
+error: build failed

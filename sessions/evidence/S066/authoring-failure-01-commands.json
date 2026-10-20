@@ -1,0 +1,13 @@
+[
+  {
+    "args": [
+      "lake",
+      "build"
+    ],
+    "cwd": "formal",
+    "logfile": "working-build.log",
+    "exit": 1,
+    "seconds": 0.592,
+    "started_utc": "2026-10-20T14:55:45.425535+00:00"
+  }
+]

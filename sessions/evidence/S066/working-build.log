@@ -1,0 +1,4 @@
+✔ [89/92] Built EndgameChess.Rules.RawTrace.Prepend (386ms)
+✔ [90/92] Built EndgameChess.Rules.RawHistoryLayer.BudgetLifting (521ms)
+✔ [91/92] Built EndgameChess (379ms)
+Build completed successfully (92 jobs).

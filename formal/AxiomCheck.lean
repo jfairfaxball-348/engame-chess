@@ -493,3 +493,7 @@ import EndgameChess
 #check @EndgameChess.Rules.StoppedHistory.append_and_reply_lifting
 #print axioms EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_project
 #check @EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_project
+#print axioms EndgameChess.Rules.RawTrace.extends_prepend
+#check @EndgameChess.Rules.RawTrace.extends_prepend
+#print axioms EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_budget
+#check @EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_budget
