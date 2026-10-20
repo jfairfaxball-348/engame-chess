@@ -1,0 +1,8 @@
+{
+  "lean_executable": "/workspace/.tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+  "lean_executable_sha256": "bf8d54e4714cc4b03d3f6bb34c83b7202b87e49c8bfcbff6895c085bb90ceb38",
+  "toolchain_pin": "leanprover/lean4:v4.35.0",
+  "lakefile_sha256": "6943e781d5e8d693ac485a5ac646c0828d7e07621eb9b9c826638915cd4a5dbd",
+  "manifest_sha256": "f15638f649dfda43e23e1198ce9fbcabfe158ea0f6c92d9dc40e3322193cd0c1",
+  "dependencies": []
+}

@@ -28,3 +28,15 @@ Symbolic pin/no-pawn/flag/wrong-kind/occupied/flank/multiple-source controls onl
 no concrete pinned board or compatible full promotion/ep/castling/threshold game
 constructed/run. No full repetition key, FIDE claims/adjudication or KRK distance.
 Gate F pending until published exact-source fresh verification.
+
+## Completed Gate F
+
+Own published source `28bdacfa34995ed3d778bfb2dab1654e46999f0c`; ONE NEW GitHub clone with no .lake
+before build. Full 73-job lake build exit 0, 417.929s; COMPLETE AxiomCheck
+exit 0 at 2026-10-20T08:44:40Z, 275 allowed reports, main standard-three only.
+Definitions/combined statement inspected; working/clean outputs identical.
+Every formal source matches own exact anchor, all source/transitive hashes and
+clean HEAD/tree/status retained. Two new modules forbidden scan zero. Official
+core Lean4.35.0 release eb6cafb7290e8bd5f2937522d8d804f58f02bafc; no dependency/
+shim. Initial local failed log retained; fresh build passed without warning or
+failure. Gate F complete, Gate Z pending. Hosted CI unobserved.

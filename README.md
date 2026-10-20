@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S043.** Twenty-five frozen theorem bundles (not twenty-five solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S044.** Twenty-five frozen theorem bundles (not twenty-five solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -78,7 +78,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S041: EC-C026 frozen as [EC-T0024](theorems/frozen/EC-T0024/v1.md) after new exact-source Gate Z, 69 jobs and 273 allowed reports. Prior sources/records unchanged.
 - S042: **EC-C027 FORMAL_VERIFIED**: occurrence counting for a fixed arbitrary key map with decidable equality and exact append law; root/full history retained even on reset. [Paper](proofs/EC-C027_RAW_KEY_OCCURRENCES.md), [evidence](sessions/evidence/S042/README.md). Gate Z pending; this is not a FIDE repetition-key theorem.
 - S043: EC-C027 frozen as [EC-T0025](theorems/frozen/EC-T0025/v1.md) after new exact-source Gate Z, 71 jobs and 274 allowed reports. Full prior source/records preserved.
-- Next: S044, legality-filtered en-passant availability/effective target specification. Complete FIDE histories/claims/repetition, sufficient-budget lifting and numerical KRK distances remain open.
+- S044: **EC-C028 FORMAL_VERIFIED**: actual legal ep event and noncomputable effective target, none iff no legal witness and some dst iff a witness targets dst. [Paper](proofs/EC-C028_EFFECTIVE_EP_TARGET.md), [evidence](sessions/evidence/S044/README.md). Gate Z pending; no complete FIDE repetition-key result.
+- Next: S045, separate exact-source Gate Z review of EC-C028. Complete FIDE histories/claims/repetition, sufficient-budget lifting and numerical KRK distances remain open.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

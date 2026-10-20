@@ -1,96 +1,100 @@
-# NEXT SESSION — S044: Legality-filtered en-passant availability and effective target
+# NEXT SESSION — S045: Freeze legality-filtered effective en-passant target
 
 Execute as next authorised session. Follow AGENTS.md: explicitly fetch ALL remote
-heads, merge earlier unmerged sessions, read latest main prompt, existing checkout,
-no worktree. Publication authorised. Commit/push branch, merge/push main, compare
+heads, merge earlier unmerged work, read latest main prompt, existing checkout/no
+worktree. Publication authorised. Commit/push branch, merge/push main, compare
 remote SHAs; never force main. Update/reproduce FULL stable progress table in
-closeout and owner report, Syzygy parity LAST, one-sentence delta below. Continue
+closeout/owner report, Syzygy parity LAST, one sentence delta below. Continue
 installed sessions until owner stops. Bundles are not solved material classes.
 
-## Starting point and reading
+## Starting point and required reading
 
-S043 froze EC-C027 as EC-T0025 at own source
-`04bd8d03bf09056eff74c5fae1c399a841b170cb` after NEW exact-source Gate Z.
-Read actual EC-T0025 manifest/VERIFICATION-S043 evidence, generic occurrence
-paper/audits, EC-T0021–0024 manifests and actual RawTrace/RawClock definitions,
-research/KRK_RULE_DISTANCE_SPEC.md §§2–5, frozen Moves.pawnMoveOK/isLegal/play,
-charter/protocol/roadmap/candidates and S042/S043 closeouts. Twenty-five bundles
-frozen, full FIDE repetition/key/adjudication and numerical KRK remain open.
+S044 establishes EC-C028 at Gate F only. OWN FULL published proof-source:
+`28bdacfa34995ed3d778bfb2dab1654e46999f0c`.
+Read charter/protocol/roadmap/candidates, research/KRK_RULE_DISTANCE_SPEC.md
+(repetition/claims), EC-T0021–0025 manifests, actual frozen RawClock Pawn and
+CaptureEvent EP branch, Moves pawnMoveOK/isPseudo/isLegal/play, EC-C028 paper/
+audits, sessions/S044_EFFECTIVE_EP_TARGET.md and actual sessions/evidence/S044/
+full logs/summary/source/transitive hashes/clean-source identity. Twenty-five
+bundles frozen; target bookkeeping is not full FIDE repetition/claims.
 
-## Principal task: one narrow effective-ep specification
+## Principal task: one OWN exact-source Gate Z obligation
 
-Write standalone exact paper and adversarial audit BEFORE Lean; then register
-EC-C028 only after the statement is well posed. Add NEW modules only: shared
-definitions separate, one combined main specification theorem in its own module.
-Keep every frozen source unchanged; add aggregate imports/runner additively.
+Review paper-to-Lean fidelity before freeze. Complete new bundle boundary:
+- formal/EndgameChess/Rules/RawRepetition/Definitions.lean
+- formal/EndgameChess/Rules/RawRepetition/EffectiveEP.lean
 
-At raw kernel Position q and actual Move m define LegalEP(q,m) explicitly by:
-- isLegal q m = true;
-- q.board m.src = some (q.turn,pawn), before any promotion;
-- q.ep = some m.dst;
-- m.src.file ≠ m.dst.file;
-- q.board m.dst = none;
-- q.board (m.dst.file,m.src.rank) = some (q.turn.opp,pawn).
+One main: EndgameChess.Rules.RawRepetition.effectiveEP_spec.
+LegalEP q m explicitly requires actual isLegal, frozen Pawn, q.ep=some m.dst,
+distinct source/destination files, empty destination and opposing flank pawn.
+It reuses the existing raw EP capture-event specification with legality, not
+an exported epCapture name (that test is a local let in play). effectiveEP is
+NONCOMPUTABLE classical existence-filtered q.ep; no search/enumeration claim.
+Main for EVERY raw q proves:
 
-This is the legal en-passant event matching the existing RawClock CaptureEvent
-EP branch and kernel play's source/flag/diagonal/empty-destination removal test.
-Do not pretend epCapture is exported: it is a LOCAL let inside play. Require
-actual isLegal, not merely isPseudo/pawnMoveOK: pinned/self-check cases must not
-activate an effective target. Reuse frozen Pawn definition if useful. No global
-material-count equivalence or full FIDE Article 9.2.3 theorem is asserted.
+ (effectiveEP q=none ↔ ¬∃m,LegalEP q m) AND
+ (∀dst,effectiveEP q=some dst ↔ ∃m,LegalEP q m ∧ m.dst=dst).
 
-Define effectiveEP(q) as q.ep if some m satisfies LegalEP(q,m), and none otherwise.
-An explicitly noncomputable classical existence decision is acceptable; do not
-add enumeration, dependencies, stored certificates, fabricated game prefixes or
-an executable-search claim. Fix the exact construction in the paper first.
+Witness flag consistency proves the available branch is some at exactly its
+actual target. No separate target/clock/count seed, pseudo-legal substitute,
+terminal/material/side/strategy filter or lawfulness-of-raw-flags assumption.
+All colours and arbitrary raw flags; no FIDE admissibility/key theorem.
 
-Prove one combined main specification, for EVERY raw q:
+Use ONE NEW GitHub Gate Z clone at OWN FULL exact SHA above, no formal/.lake
+before build. Full lake build THEN COMPLETE AxiomCheck must actually pass.
+Inspect exact LegalEP/effectiveEP definitions/main and standard-three subset
+axioms. Retain full logs/commands/exits/timings/UTC, official toolchain identity,
+all source/transitive hashes, clean HEAD/tree/status. Compare ENTIRE report
+with actual S044 Gate F. No reuse of clone/cache or re-anchor of unchanged source.
+No Lean source change/incremental build expected.
 
- (effectiveEP(q)=none ↔ ¬∃m, LegalEP(q,m)) AND
- (∀ dst, effectiveEP(q)=some dst ↔ ∃m, LegalEP(q,m) ∧ m.dst=dst).
+Only on actual success freeze EC-C028 as next unused ID, expected EC-T0026
+(inspect ledger first). Add immutable manifest with complete definitions/proof
+modules, exact definition/main/source/axioms, own SHA, paper/audit/trust links
+and NEW Gate Z evidence. Append exactly one ledger row preserving prior bytes.
+If fidelity/build fails, record blocker; do not freeze, alter frozen source or
+manufacture success. Preserve prior S044 initial compile failure evidence.
 
-The event's q.ep=some m.dst implies no witness when q.ep=none and forces all
-witnesses to the same target. Thus returning q.ep when a witness exists cannot
-return none or a different target. This target-consistency argument is required,
-not an unproved assumption. Quantification covers both colours/flags/material;
-no terminal/strategy filter or independent history/count/clock seed.
+## Audit and scope limits
 
-## Audit and limits
+Recheck no flag, flag/no eligible pawn, only pseudo-legal/self-check moves,
+multiple sources/same target, occupied dst, wrong source kind/colour/flank and
+ordinary pawn/capture moves. Symbolic controls only; no pinned-board/full
+promotion/ep/castling/threshold history was constructed or required.
+No complete repetition key/Article9.2.3/rights-history correspondence, low-count
+certificate, claims/admissibility/adjudication/mate precedence, full Layer/
+strategy extraction/lifting, numerical KRK bounds, holding/outcome,
+DTM/DTZ/WDL/Syzygy or initial-position result. No tablebase/engine/enumeration,
+arbitrary-clock KRK witness or novelty claim. No adverse reply pruned.
 
-Audit absent raw ep flag, ep flag without any eligible pawn, only pseudo-legal
-but no legal ep due to self-check, multiple legal sources for one target,
-occupied destination, wrong source kind/colour, wrong flank pawn, and ordinary
-pawn/capture moves. Use symbolic implications of the exact predicate; do not
-claim actual initial-rooted promotion/ep/castling/threshold games were run.
-Pin-sensitive eligibility follows from requiring isLegal; do not fabricate a
-specific pinned-board witness unless actually constructed/checked. No extra
-trivial theorem modules for every clause are needed.
+## Verification, next obligation and closeout
 
-This is ONLY legality-filtered effective-target bookkeeping. It does not choose
-or certify a full repetition key, prove Article 9.2.3/rights-history equivalence,
-low-repetition certificate, claim classifier, no-earlier-terminal admissibility,
-automatic draw/mate precedence, full Layer/strategy extraction/lifting, numerical
-KRK bound, holding/outcome, WDL/DTZ/Syzygy or initial-position value. Generic key
-counting is already frozen, but no new FIDE claim conclusion follows from it.
-No tablebase, engine, enumeration, arbitrary-clock KRK witness or novelty claim.
+Preserve all prior formal/candidate/frozen source, papers/audits/evidence and
+manifests. Prior ledger bytes prefix plus exactly one new row; aggregate Lean
+files unchanged unless needed additively. Run relevant ledger structure/tests,
+preservation/evidence/document checks; no unrelated diagnostics or trivial tests.
+Update candidates, roadmap/README/theorem index, session ledger/progress table.
+Write sessions/S045_FREEZE_EFFECTIVE_EP_TARGET.md with complete actual evidence
+and FULL installed S046 prompt. Commit/push/merge/push; compare remote SHAs,
+hosted CI unobserved unless actually inspected. Continue installed next prompt.
 
-## Verification and closeout
+A useful next narrow obligation is a kernel-fidelity characterization of this
+EP event BEFORE full key composition. Consider proving, for ALL raw q,m:
 
-Run changed modules/importers incrementally. Publish proof-source BEFORE ONE NEW
-GitHub Gate F clone at FULL exact SHA, no formal/.lake before build. Full lake
-build THEN COMPLETE AxiomCheck must actually pass. Inspect exact definition/main
-statement and allowed propext/Classical.choice/Quot.sound subsets. Retain full
-logs/exits/timings/UTC, official toolchain, source/transitive hashes and clean
-HEAD/tree/status; compare full working/clean outputs. Gate Z separate: no new
-frozen row/manifest. Preserve all prior source/papers/audits/evidence/ledger bytes;
-aggregate Lean files only gain additive entries. No unrelated diagnostics/tests.
+ LegalEP q m ↔ isLegal q m=true ∧ RawClock.Pawn q m ∧
+   m.src.file≠m.dst.file ∧ q.board m.dst=none.
 
-Update candidates, roadmap/README, session ledger and progress table. Write
-sessions/S044_EFFECTIVE_EP_TARGET.md with actual evidence and FULL installed S045
-prompt. Consider separate exact-source freeze before further key composition.
-Run relevant ledger/evidence/preservation/document checks, commit/push/merge/push
-and verify remote SHAs. Hosted CI unobserved unless actually inspected. Continue
-only the installed next prompt under standing authorisation.
+Forward direction projects existing clauses. Backward direction should extract
+isPseudo from isLegal, specialize source pawn and pawnMoveOK, eliminate straight
+single/double branches by distinct files and ordinary capture by empty dst,
+and recover q.ep flag/opposing flank pawn from the remaining EP branch.
+Inspect actual source and audit exact integer/file geometry before registering
+EC-C029; do not assume the characterization or count malformed flags as lawful
+histories. Use a standalone paper/adversarial audit BEFORE Lean. This would
+validate the event boundary used for later ep normalization without asserting
+a FIDE repetition key or numerical KRK bound. Select a well-posed statement
+from actual results; if a gap/counterexample exists record it, do not weaken
+legality or fabricate compatible full games.
 
 ## Cloud activation
 
