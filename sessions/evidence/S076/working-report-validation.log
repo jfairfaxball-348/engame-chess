@@ -1,0 +1,3 @@
+354 complete axiom reports; only standard three; no runner warnings/errors.
+Counter({'propext, Classical.choice, Quot.sound': 321, 'propext, Quot.sound': 19, 'propext': 9})
+An initial quick validation split on comma-space only, rejected five existing multiline axiom lists. Corrected to comma-whitespace normalization, as the inherited Gate F driver already uses. The quick validation failure did not indicate a Lean failure; source remains Gate F pending.

@@ -1,8 +1,8 @@
 # Short-term roadmap: direct attack on KRK closure
 
 Owner direction, 2026-10-20: KRK closure is the research priority across as many
-sessions as needed. Owner subsequently resumed research and explicitly requested consecutive
-sessions until asked to stop. Stop before KQK.
+sessions as needed. Latest owner instruction: finish S076, then STOP. Further
+sessions require explicit resumption; do not start S077 automatically. Stop before KQK.
 
 ## Evidence and completion standard
 
@@ -107,3 +107,5 @@ S073: EC-C043 FORMAL_VERIFIED, [file/rank-edge credited walls and conditional73-
 S074: EC-C044 FORMAL_VERIFIED, [actual parametric setup and global442/443 ceilings](../proofs/EC-C044_KRK_PARAMETRIC_SETUP.md). WallBudget(B)→B+4/B+5 instantiated from proved438; all weak replies/flags retained. No general RAW/FIDE win because bounds exceed100. S075 separate own-source freeze for EC-C043/044, then direct outcome/holding termination attack.
 
 S075: [EC-T0040](../theorems/frozen/EC-T0040/v1.md) and [EC-T0041](../theorems/frozen/EC-T0041/v1.md) separately freeze sharper73 walls/conditional RAW family and global442/443 actual setup. Direct next obligation is all-flag KRK material/quiet-step and admitted clock-bounded termination toward outcomes/holding. No full FIDE/class/distance closure.
+
+S076: EC-C045 FORMAL_VERIFIED. Universal admitted RAW KRK termination formally verified: every ongoing root of clock h has at most150−h board plies, terminal roots0; both turns/colours/all flags/every legal move including castling and terminal rook capture. [Evidence](../sessions/evidence/S076/README.md). 41 frozen bundles; Gate Z pending. Complete RAW holding/outcomes, full FIDE correspondence and exact WDL/DTZ remain open. Owner requested STOP after S076; S077 is saved and paused, requiring explicit resumption.

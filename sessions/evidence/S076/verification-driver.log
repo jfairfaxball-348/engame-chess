@@ -1,0 +1,58 @@
+{
+  "proof_source": "e7508e103b3515dc138ed21e2ea5d3adda255add",
+  "verified_utc": "2026-10-20T19:46:24Z",
+  "fresh_clone": "/tmp/engame-s076-gate-f",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 440.64,
+  "build_jobs": 168,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 354,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 321,
+    "propext, Quot.sound": 19,
+    "propext": 9
+  },
+  "axiom_free": 5,
+  "bundle_declarations": [
+    "EndgameChess.Rules.krk_material_targets",
+    "EndgameChess.Rules.krk_castle_material",
+    "EndgameChess.Rules.krk_strong_material",
+    "EndgameChess.Rules.krk_legal_material_clock",
+    "EndgameChess.Rules.KRKTermination.step_parent_ongoing",
+    "EndgameChess.Rules.KRKTermination.step_decreases",
+    "EndgameChess.Rules.KRKTermination.path_bound",
+    "EndgameChess.Rules.KRKTermination.krk_clock_cap",
+    "EndgameChess.Rules.KRKTermination.maximal_iff_terminal",
+    "EndgameChess.Rules.KRKTermination.terminal_continuation"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.krk_material_targets": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.krk_castle_material": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.krk_strong_material": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.krk_legal_material_clock": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKTermination.step_parent_ongoing": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKTermination.step_decreases": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKTermination.path_bound": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKTermination.krk_clock_cap": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKTermination.maximal_iff_terminal": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKTermination.terminal_continuation": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/KRKTermination/Castle.lean",
+    "formal/EndgameChess/Rules/KRKTermination/ClockCap.lean",
+    "formal/EndgameChess/Rules/KRKTermination/Closure.lean",
+    "formal/EndgameChess/Rules/KRKTermination/Definitions.lean",
+    "formal/EndgameChess/Rules/KRKTermination/Guard.lean",
+    "formal/EndgameChess/Rules/KRKTermination/Maximal.lean",
+    "formal/EndgameChess/Rules/KRKTermination/PathBound.lean",
+    "formal/EndgameChess/Rules/KRKTermination/Step.lean",
+    "formal/EndgameChess/Rules/KRKTermination/Strong.lean",
+    "formal/EndgameChess/Rules/KRKTermination/Targets.lean",
+    "formal/EndgameChess/Rules/KRKTermination/TerminalExists.lean"
+  ],
+  "dependency_modules": 118,
+  "source_files_hashed": 171,
+  "working_report_byte_identical": true,
+  "hosted_ci": "unobserved"
+}

@@ -136,4 +136,6 @@ S066 planning addendum (2026-10-20): [direct KRK closure roadmap installed](S066
 
 | S075 | 2026-10-20 | Freeze sharper KRK walls/global setup (Gate Z) | TWO new own-source 140/157-job builds, 328/344 permitted reports, all 21 public types/23 complete modules, full OWN Gate F inventory/report equality. EC-T0040/0041; S076 all-flag clock termination toward outcomes installed. [Closeout](S075_FREEZE_KRK_SHARPER_SETUP.md) | **+2 → EC-T0040/0041 FROZEN** (41 bundles) |
 
+| S076 | 2026-10-20 | Universal admitted RAW KRK termination (Gate F) | EC-C045 FORMAL_VERIFIED: all moves/turns/flags, potential150−h, terminal roots0, maximal terminal and continuation. Own source `e7508e103b3515dc138ed21e2ea5d3adda255add`; 168-job fresh build/354 permitted reports, 10 declarations/11 modules. [Closeout](S076_KRK_CLOCK_TERMINATION.md). Owner requested STOP; S077 saved/paused | None — 41 frozen bundles; full FIDE/outcomes/holding/exact distance open |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

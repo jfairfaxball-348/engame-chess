@@ -1,0 +1,90 @@
+[
+  {
+    "args": [
+      "git",
+      "clone",
+      "--no-checkout",
+      "https://github.com/jfairfaxball-348/engame-chess.git",
+      "/tmp/engame-s076-gate-f"
+    ],
+    "cwd": "/workspace/engame-chess",
+    "logfile": "clone.log",
+    "exit": 0,
+    "seconds": 4.271,
+    "started_utc": "2026-10-20T19:38:58.613840+00:00"
+  },
+  {
+    "args": [
+      "git",
+      "checkout",
+      "--detach",
+      "e7508e103b3515dc138ed21e2ea5d3adda255add"
+    ],
+    "cwd": "/tmp/engame-s076-gate-f",
+    "logfile": "checkout.log",
+    "exit": 0,
+    "seconds": 0.051,
+    "started_utc": "2026-10-20T19:39:02.885312+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "lean",
+      "--version"
+    ],
+    "cwd": "/tmp/engame-s076-gate-f/formal",
+    "logfile": "toolchain.log",
+    "exit": 0,
+    "seconds": 0.084,
+    "started_utc": "2026-10-20T19:39:02.938032+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "--version"
+    ],
+    "cwd": "/tmp/engame-s076-gate-f/formal",
+    "logfile": "lake-version.log",
+    "exit": 0,
+    "seconds": 0.045,
+    "started_utc": "2026-10-20T19:39:03.022523+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "which",
+      "lean"
+    ],
+    "cwd": "/tmp/engame-s076-gate-f/formal",
+    "logfile": "lean-executable.txt",
+    "exit": 0,
+    "seconds": 0.049,
+    "started_utc": "2026-10-20T19:39:03.067973+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "build"
+    ],
+    "cwd": "/tmp/engame-s076-gate-f/formal",
+    "logfile": "lake-build.log",
+    "exit": 0,
+    "seconds": 440.64,
+    "started_utc": "2026-10-20T19:39:03.117476+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "lean",
+      "AxiomCheck.lean"
+    ],
+    "cwd": "/tmp/engame-s076-gate-f/formal",
+    "logfile": "axioms-statements.log",
+    "exit": 0,
+    "seconds": 0.742,
+    "started_utc": "2026-10-20T19:46:23.757700+00:00"
+  }
+]

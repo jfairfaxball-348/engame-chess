@@ -8,8 +8,8 @@ FIDE integration, complete rule-aware outcome coverage and correct distances.
 These are continuing proof obligations, not one-session deadlines. Generic
 prerequisites must discharge an identified blocked step of the active KRK proof.
 S067 derived the 508-ply KRK strategy ceiling (EC-C040), formally verified
-in S068 and frozen as EC-T0037 in S069. Owner resumed consecutive sessions until
-asked to stop. EC-C039 freeze remains backlog. Stop before KQK.
+in S068 and frozen as EC-T0037 in S069. Latest owner instruction: finish S076,
+then STOP; no automatic S077. EC-C039 freeze remains backlog. Stop before KQK.
 The bound exceeds 100; complete rule-aware coverage remains open.
 
 ## Distant horizon: ultra-weakly solve chess
@@ -96,7 +96,7 @@ Do not skip a simpler prerequisite solely because another result is famous. New 
 - What minimal extension to the attack relation is required for bishops/knights?
 - Which very small endings exhibit 'mate possible but not forceable', making the distinction explicit?
 
-Latest owner instruction 2026-10-20: finish/close S066, then STOP. Further sessions are paused pending explicit resumption; do not start S067 or KQK automatically. Track remaining obligations in [KRK completion](KRK_COMPLETION.md).
+Latest owner instruction 2026-10-20: finish/close S076, then STOP. Further sessions are paused pending explicit resumption; do not start S077 or KQK automatically. Track remaining obligations in [KRK completion](KRK_COMPLETION.md).
 
 S070: EC-C041 formally verifies a minimal-budget KRK strategy with pairwise distinct normalized raw keys on every whole play line, preserving every legal defensive reply. [Paper](../proofs/EC-C041_KRK_STRATEGY_REPETITION.md). Gate Z pending; S071 targets actual stored-trace incoming counts and a partial raw rule-aware wall family. Incoming history and full FIDE correctness remain separate.
 
@@ -109,3 +109,5 @@ S073: EC-C043 formally verifies73*(7−rookRank) clock-free walls and conditiona
 S074: EC-C044 formally composes arbitrary actual setup through the new wall budget, yielding442 for legal strong-turn arrivals and443 for weak-turn forcing inputs. [Paper](../proofs/EC-C044_KRK_PARAMETRIC_SETUP.md). Freeze pending; conditional73-ply RAW family unchanged, full FIDE/outcome/holding/distance work open.
 
 S075: EC-C043/044 frozen as EC-T0040/0041 at separate OWN sources, all modules/helpers/explicit domains retained. Sharper73 conditional RAW family and global442/443 upper bounds certified;41 bundles, not solved classes. S076 attacks universal actual KRK clock termination as a direct outcome/holding step; full FIDE correspondence/exact distances stay open.
+
+S076: EC-C045 FORMAL_VERIFIED. Universal admitted RAW KRK termination formally verified: every ongoing root of clock h has at most150−h board plies, terminal roots0; both turns/colours/all flags/every legal move including castling and terminal rook capture. [Evidence](../sessions/evidence/S076/README.md). 41 frozen bundles; Gate Z pending. Complete RAW holding/outcomes, full FIDE correspondence and exact WDL/DTZ remain open. Owner requested STOP after S076; S077 is saved and paused, requiring explicit resumption.

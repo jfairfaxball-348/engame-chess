@@ -19,3 +19,9 @@ working-commands.jsonl; all full logs remain alongside this file.
 A command containing an unnecessary `rm -f` temporary marker cleanup was rejected
 by automatic approval review before execution. Continued without cleanup; no
 proof step or publication depended on deletion.
+
+The quick post-build axiom validation initially failed on existing multiline
+axiom formatting because it split on comma-space only. Whitespace normalization
+(as already used by verify.py) validates all354 reports; retained explanation
+and successful check are in working-report-validation.log. No Lean change or
+Gate F promotion depended on that quick-check failure.

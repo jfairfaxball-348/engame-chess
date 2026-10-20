@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S075.** Forty-one frozen theorem bundles (not thirty-six solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S076.** Forty-one frozen theorem bundles (not forty-one solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -82,7 +82,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S045: EC-C028 frozen as [EC-T0026](theorems/frozen/EC-T0026/v1.md) after new exact-source Gate Z (73 jobs, 275 allowed reports), with all prior source/records preserved.
 - S046: **EC-C029 FORMAL_VERIFIED**: an actual legal source pawn changing file into an empty destination is exactly the defined LegalEP event; raw marker/flank recovered from kernel legality. [Paper](proofs/EC-C029_LEGAL_EP_CHARACTERIZATION.md), [evidence](sessions/evidence/S046/README.md). Gate Z pending; no ep-normalization or full FIDE key theorem.
 - S047: EC-C029 frozen as [EC-T0027](theorems/frozen/EC-T0027/v1.md) after new exact-source Gate Z (74 jobs, 276 allowed reports), all prior source/records preserved. Owner requested stopping at this closeout.
-- Next (paused; not started): S067, direct quantitative KRK strategy attack under the [short-term closure roadmap](docs/KRK_COMPLETION.md). EC-C039 freeze remains backlog. Concrete FIDE correspondence, strategy-specific repetition certificates and numerical KRK/outcome/distance coverage remain open.
+- Sessions paused after S076 by owner request. S077 is a saved future prompt requiring explicit resumption; no automatic continuation. EC-C039 freeze remains backlog. Concrete FIDE correspondence, complete all-history KRK outcomes/holding and exact distances remain open.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
@@ -150,3 +150,5 @@ S073: EC-C043 sharper73-per-rank walls and conditional73-ply RAW framed-wall fam
 S074: EC-C044 global442/443-ply KRK upper bounds FORMAL_VERIFIED via actual parametric setup; [evidence](sessions/evidence/S074/README.md). Both colours/all flags/every weak reply, weak result keeps forcing premise. Bounds exceed100; no general FIDE outcome/exact distance claim.39 bundles frozen.
 
 S075: [EC-T0040](theorems/frozen/EC-T0040/v1.md) and [EC-T0041](theorems/frozen/EC-T0041/v1.md) freeze sharper73 framed walls/conditional RAW clock family and global442/443 ceilings.41 bundles; full FIDE outcomes/holding/exact distances open. S076 returns to all-branch actual-history clock termination.
+
+S076: EC-C045 FORMAL_VERIFIED. Universal admitted RAW KRK termination formally verified: every ongoing root of clock h has at most150−h board plies, terminal roots0; both turns/colours/all flags/every legal move including castling and terminal rook capture. [Evidence](sessions/evidence/S076/README.md). 41 frozen bundles; Gate Z pending. Complete RAW holding/outcomes, full FIDE correspondence and exact WDL/DTZ remain open. Owner requested STOP after S076; S077 is saved and paused, requiring explicit resumption.

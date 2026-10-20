@@ -32,6 +32,6 @@ why current results are insufficient, the smallest missing statement/coverage
 payoff, and an exit criterion returning to the main attack. A blocked direct
 proof is recorded honestly; do not replace it with easier unrelated library work.
 Freeze checks remain mandatory but do not set the research agenda by default.
-Owner resumed research on 2026-10-20 and explicitly requested consecutive
-sessions until asked to stop. S067 completed the paper quantitative bound;
-continue the installed next prompt. Do not start KQK under the current direction.
+Owner's latest instruction (2026-10-20): finish S076, then STOP. Do not start
+S077 or any later session automatically. NEXT_SESSION.md is a saved future
+prompt requiring explicit resumption. Do not start KQK under the current direction.

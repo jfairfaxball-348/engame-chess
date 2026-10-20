@@ -171,9 +171,12 @@ ensures all choices also respect the same cap.
 
 ## Status and remaining work
 
-LOCAL_VERIFIED after separate same-agent audit; Lean/Gate F and separate Gate Z
-pending.41 frozen bundles unchanged. Actual chosen RAW model only; all flags,
+FORMAL_VERIFIED after separate same-agent audits and observed exact-source
+Gate F; separate Gate Z pending.41 frozen bundles unchanged. Actual chosen RAW model only; all flags,
 both turns/colours and all legal moves covered, including castling and terminal
 reset. Complete all-history holding/outcome classification still needs genuine
 claim/terminal strategies and full FIDE correspondence; exact WDL/DTZ semantics
 and distances remain separate. No class-completion percentage or novelty claim.
+
+Observed Gate F: OWN published source `e7508e103b3515dc138ed21e2ea5d3adda255add`; ONE NEW GitHub clone, .lake absent before full build. 168-job build exit0 in440.64s; COMPLETE AxiomCheck exit0 at2026-10-20T19:46:24Z,354 permitted reports.
+[Evidence](../sessions/evidence/S076/README.md).

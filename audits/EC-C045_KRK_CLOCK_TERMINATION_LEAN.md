@@ -38,3 +38,5 @@ standard three only. Ten theorem modules plus shared definitions; all ten main
 statements audited, no sorry/admit/axiom/unsafe/native_decide/custom primitives.
 Fresh exact published-source Gate F is required before FORMAL_VERIFIED; separate
 Gate Z still pending. See session evidence for actual results and retained failures.
+
+Observed fresh Gate F: OWN published source `e7508e103b3515dc138ed21e2ea5d3adda255add`; ONE NEW GitHub clone, .lake absent before full build. 168-job build exit0 in440.64s; COMPLETE AxiomCheck exit0 at2026-10-20T19:46:24Z,354 permitted reports. Whole working/clean report byte-identical; complete source/dependency/executable hashes and clean identity retained. Hosted CI unobserved; Gate Z separate.

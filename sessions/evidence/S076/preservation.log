@@ -1,0 +1,3 @@
+Baseline 2c1359d4bde4a5facafad9cbc6427ecbd821bb0a: 831 earlier formal/config/frozen-record files byte-identical.
+Only aggregate imports/AxiomCheck extended among prior formal files; 11 additive new modules, 10 public mains.
+All 41 frozen ledger rows and every prior frozen record unchanged. No prior proof module edited.
