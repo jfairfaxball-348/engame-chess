@@ -1,6 +1,6 @@
 # KRK completion obligations — working research plan
 
-Owner 2026-10-20: continue until KRK entirely finished and frozen; stop before KQK.
+Latest owner instruction 2026-10-20: finish and close S066, then STOP. Prior continuation until KRK completion is paused; do not start S067 or KQK automatically.
 This is an obligation list, not evidence of completion or a substitute for gates.
 
 Already frozen: KRK dead/live characterisation, clock-free strong-turn forcing and
@@ -10,7 +10,7 @@ stopped-history append/full-reply lifting.
 
 Next exact prerequisites:
 1. Concrete RAW Layer on admitted stopped histories: FROZEN S065 as EC-T0036 (EC-C038).
-2. Same-budget lifting under explicit claim-safe prefix conditions. Use actual
+2. Conditional all-raw-prefix budget lifting FORMAL_VERIFIED S066 (EC-C039), S067 freeze pending. Strong sufficient clock/count hypotheses only, no general KRK witness. Strategy-specific repetition certificates remain needed. Use actual
    trace extensions, preserve every defending reply, permit terminal mate at
    zero remaining budget. Safety is sufficient and is not a KRK-specific witness.
 3. History semantic bridges (including no repeated mate key at an earlier ongoing

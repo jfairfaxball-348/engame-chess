@@ -1,0 +1,5 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/RawTrace/Prepend.lean
+formal/EndgameChess/Rules/RawHistoryLayer/BudgetLifting.lean
+Matches: 0

@@ -1,13 +1,15 @@
 # NEXT SESSION — S067: Freeze clock/full-prefix repetition sufficient-budget lifting
 
-Owner instruction (2026-10-20): keep running sessions until KRK is entirely
-finished and frozen; stop BEFORE KQK. Finish remaining concrete rule-aware outcome/
-strategy/distance obligations; theorem counts do not measure class completion.
+OWNER STOP (2026-10-20, latest instruction): finish and close out S066, then
+DO NOT start S067 or any later session automatically. This prompt is retained
+for a future explicit resumption only. The prior request to continue until KRK
+is complete is PAUSED; do not move to KQK.
 Follow AGENTS.md/charter/protocol. Fetch ALL heads, merge prior unmerged work,
 latest main in existing checkout. Commit/push branch, merge/push main, compare
 remotes; never force main. Full stable progress table, Syzygy last, immediate
-delta. Consecutive sessions/publication authorised.
+delta. S066 publication is authorised; later sessions require a new owner request.
 
+OWN S066 full proof-source SHA: 7155c3424a5e315ea758f916d939b6696e0da261.
 Read actual S066 evidence/closeout for FULL OWN proof-source SHA and success.
 36 bundles frozen before this session, not solved classes. Read EC-C039 paper,
 separate same-agent audits, complete NEW RawTrace.Prepend and
@@ -42,7 +44,7 @@ tests/structure/evidence/preservation/full-table/full-prompt/local-link/diff che
 no unrelated diagnostics/trivial tests. Update candidate/roadmap/README/session
 ledger/theorems index/progress/completion tracker, write
 sessions/S067_FREEZE_RAW_SUFFICIENT_BUDGET_LIFTING.md with actual evidence and FULL
-S068 prompt. Commit/push/merge/push and compare remotes; continue KRK, stop before KQK.
+S068 prompt. Commit/push/merge/push and compare remotes. STOP after the currently authorised session; no automatic next session.
 
 S068 should select the next substantive history/rule/quantitative prerequisite
 with standalone paper and separate adversarial audit BEFORE Lean. One concrete

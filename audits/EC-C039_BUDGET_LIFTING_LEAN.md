@@ -20,7 +20,22 @@ One retained initial authoring failure in Prepend: Lean's induction hypothesis
 was generalised over the leading step proof, so it required `ih step` rather than
 `ih`. Supplied that argument; statement/model unchanged. Logs/commands/exits/UTC
 retained as authoring-failure-01. Working build/complete runner then passed.
-No fresh build attempted yet; Gate F pending.
+Gate F passed after the retained authoring fix.
+
+Own proof source `7155c3424a5e315ea758f916d939b6696e0da261`; NEW GitHub clone `/workspace/engame-chess/work/s066-gate-f`, .lake absent before build. Full 92-job build exit 0 (780.499s); complete AxiomCheck exit 0 at 2026-10-20T15:10:49Z, 287 allowed reports. Exact main AND helper inspected, standard-three only; entire working/clean runner and all formal bytes identical.
+
+Standalone precise paper/separate adversarial audit BEFORE Lean, then LOCAL_VERIFIED.
+Initial Prepend authoring failure retained: induction generalised the leading
+step proof, so use ih step rather than ih. Statement/model unchanged. Failure
+log/commands/exits/times/UTC retained; working incremental build/full runner then
+passed. One new fresh Gate F build, no fresh-build failure/interruption/retry.
+Full logs/commands/exits/times/UTC, executable/toolchain, clean HEAD/tree/status,
+all source/transitive SHA256 retained. Official core Lean4.35.0 release
+eb6cafb7290e8bd5f2937522d8d804f58f02bafc; no dependency/shim/TLS/checksum changes.
+Inherited proxy/CA, current unrestricted/enforced policy. Hosted CI unobserved.
+Relevant ledger tests/structure/evidence/preservation/full-table/full-prompt/
+local-link/diff checks passed, prior protected files/36 ledger rows unchanged,
+aggregates/runner additive. No unrelated diagnostics/trivial tests. Gate Z separate.
 
 Strong sufficient all-raw-prefix certificate, not necessity, certificate existence
 on any particular KRK history, numerical bound, rule-aware outcome/distance or

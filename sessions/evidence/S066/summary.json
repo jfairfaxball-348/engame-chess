@@ -1,0 +1,33 @@
+{
+  "proof_source": "7155c3424a5e315ea758f916d939b6696e0da261",
+  "verified_utc": "2026-10-20T15:10:49Z",
+  "fresh_clone": "/workspace/engame-chess/work/s066-gate-f",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 780.499,
+  "build_jobs": 92,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 287,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 255,
+    "propext, Quot.sound": 18,
+    "propext": 9
+  },
+  "axiom_free": 5,
+  "bundle_declarations": [
+    "EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_budget",
+    "EndgameChess.Rules.RawTrace.extends_prepend"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_budget": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawTrace.extends_prepend": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/RawTrace/Prepend.lean",
+    "formal/EndgameChess/Rules/RawHistoryLayer/BudgetLifting.lean"
+  ],
+  "dependency_modules": 36,
+  "source_files_hashed": 95,
+  "working_report_byte_identical": true,
+  "hosted_ci": "unobserved"
+}
