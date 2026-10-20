@@ -13,3 +13,11 @@ only on wrong-colour Boolean simplification; full failure log retained. Explicit
 Bool.eq_false_iff/beq_iff_eq resolved that step without statement changes.
 Final incremental 75-job build and COMPLETE working AxiomCheck exit 0, no warnings;
 277 allowed axiom reports, main standard-three. Clean Gate F pending.
+
+## Observed Gate F
+
+Own source `c4c900036dcffd209d6c08f27e2323637852c940`; new exact GitHub clone, no .lake before build; 75-job build exit 0 in 502.587s; complete AxiomCheck exit 0 at 2026-10-20T12:05:15Z, 277 allowed reports. Main standard-three; entire working/clean output byte-identical.
+All formal source bytes match own anchor, source/transitive hashes and clean
+HEAD/tree/status retained. Official core Lean4.35.0; no dependencies/shim.
+Root-cwd elan identity lookup failed before clean verification; repeated in
+formal/ successfully. No Lean failure in fresh clone. Hosted CI unobserved.

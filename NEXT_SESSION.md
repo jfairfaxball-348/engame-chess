@@ -1,106 +1,60 @@
-# NEXT SESSION — S048: Raw ep-marker irrelevance outside en-passant shape
+# NEXT SESSION — S049: Freeze ordinary ep-marker irrelevance
 
-**Owner instruction:** Prepared handover ONLY. The owner asked to finish S047
-and stop. Do NOT start this session automatically. Execute only on a new owner
-instruction to resume. Follow AGENTS.md: explicitly fetch ALL remote heads,
-merge earlier unmerged work, read latest main prompt, existing checkout/no
-worktree. Publication authorised when resumed. Commit/push branch, merge/push
-main, compare remote SHAs, never force main. Update/reproduce FULL stable progress
-table in closeout/owner report, Syzygy parity LAST, one sentence delta below.
-Bundles are not solved material classes.
+Owner resumed consecutive sessions on 2026-10-20: continue through session
+closeouts until told to stop. Follow AGENTS.md and docs/PROOF_PROTOCOL.md.
+Explicitly fetch ALL remote heads, merge prior unmerged work, start latest main
+in existing checkout. Publication authorised: commit/push branch, merge/push
+main, compare remote SHAs, never force main. Reproduce FULL stable progress
+table, Syzygy last, followed immediately by one-sentence session delta.
 
-## Starting point and reading
+## Starting point and task
 
-S047 froze EC-C029 as EC-T0027 at own proof-source
-`421608f5b20fee055bc3cb9d0c5904b0d192527b` after NEW exact-source Gate Z.
-Read actual EC-T0027 manifest/VERIFICATION-S047 evidence, EC-T0026 event/target
-manifest and RawRepetition definitions, EC-C029 paper/audits, Rules.Board dx,
-Moves pawnCaptureGeom/pawnMoveOK/isPseudo/canCastle/play/isLegal and updateCastling,
-charter/protocol/roadmap/candidates, S046/S047 closeouts and S032 specification.
-Twenty-seven bundles frozen; full ep normalization/key/FIDE adjudication open.
+S048 formally verified EC-C030, ordinary_ep_irrelevance, at OWN proof-source
+c4c900036dcffd209d6c08f27e2323637852c940. Read actual S048 summary/logs,
+proofs/EC-C030_ORDINARY_EP_IRRELEVANCE.md and both audits; complete OrdinaryEP
+module and its unchanged frozen imports; charter/protocol/roadmap/candidates,
+S048 closeout, S032 specification. Twenty-seven bundles frozen before this freeze.
 
-## Principal task: smallest ordinary-move prerequisite for normalization
+Principal task: separate exact-source Gate Z for EC-C030. Audit exact paper/Lean
+fidelity and all raw ep uses: guard excludes source-Pawn/distinct-files/empty-dst
+shape; no actual legality premise. Marker replacement preserves Boolean isPseudo
+and FULL play, including output ep recomputation, castling, promotions and board
+function. Review absent/wrong-colour/nonpawn/king/castling, same-file/occupied
+pawn cases, both colours, source=destination, arbitrary markers. ¬LegalEP alone
+is insufficient for total raw play equality. Same-agent review must not be
+called independent external audit. No new source edits, enumeration or oracle.
 
-Before attempting the broader effective-ep normalization theorem, prove the
-ordinary-move ep-marker irrelevance it needs. Write standalone exact paper and
-adversarial audit BEFORE Lean, then register EC-C030 only after fixing a complete
-local argument. Add one NEW theorem module, no extra definitions needed; frozen
-source unchanged, aggregate imports/runner additive only.
+Run ONE NEW GitHub clone at OWN FULL proof-source SHA above, ensure formal/.lake
+absent before full lake build and COMPLETE AxiomCheck. Official core Lean4.35.0,
+standard-three axiom subsets only; inspect exact main, compare entire S048 report,
+all formal bytes, full source/transitive SHA256, clean HEAD/tree/status, retain
+commands/exits/times/UTC/toolchain identity. ONE fresh build at a time. Hosted CI
+unobserved unless actually inspected. Only observed success permits immutable
+EC-T0028/v1.md and exactly one appended ledger row. Preserve all prior source,
+papers/audits/evidence/manifests and 27 rows byte-for-byte; no source/incremental
+build needed when source unchanged. Run relevant ledger tests/structure and
+preservation/evidence/document checks; no unrelated diagnostics/trivial tests.
 
-For EVERY raw Position q, actual Move m, and arbitrary e:Option Square, let
-r={q with ep:=e}. Under the explicit hypothesis
+## Closeout and continuation
 
- ¬(RawClock.Pawn q m ∧ m.src.file≠m.dst.file ∧ q.board m.dst=none),
+Update candidate/roadmap/README/session ledger/progress; write
+sessions/S049_FREEZE_ORDINARY_EP_IRRELEVANCE.md with actual complete evidence and
+FULL installed S050 prompt. Commit/push/merge/push and verify remote identities.
+Continue S050 under standing owner authorisation unless stopped.
 
-prove the combined exact statement:
+Prepare S050 for effectiveEP normalization preservation, only after a complete
+standalone paper/audit: define normalizeEP q={q with ep:=effectiveEP q} in a NEW
+shared definitions module and one NEW main theorem module. Intended statement
+for all raw q,m: isLegal(normalizeEP q)m=isLegal q m AND
+(isLegal q m=true → play(normalizeEP q)m=play q m).
+Available EP means normalized q=q. Without legal EP, ordinary moves use EC-C030
+plus inCheck unchanged; EP-shaped moves cannot be legal in original q by frozen
+legalEP_iff_shape. Normalized marker none makes pawnMoveOK false on that shape:
+dx≠0 removes straight moves, empty dst ordinary capture, none marker EP. Prove
+both illegality directions without assuming compatible histories or raw play
+equality for illegal EP shapes. No full FIDE repetition key/rights correspondence,
+claims/adjudication, strategy lifting, numerical KRK, WDL/DTZ or solved class claim.
 
- isPseudo r m = isPseudo q m AND play r m = play q m.
-
-These are Boolean equality and FULL played Position equality, not just board
-equality. No actual legality premise is required for these raw non-EP-shaped
-moves. Same board/turn/castling, all Move/promotion fields, both colours, arbitrary
-raw markers. Do not claim r has a compatible initial-rooted trace or lawful
-FIDE history. No clock/count seed or terminal/material/strategy filter.
-
-Audit ALL raw ep uses. play's local epCapture uses exactly source pawn, raw
-marker, distinct files and empty dst. Under the hypothesis its capture branch
-is false for BOTH markers. Its output ep flag is freshly derived from source
-pawn/dy and does not retain the old marker; prove equality of this field too.
-All other output fields/arriving promotion/castling effects must be checked.
-isPseudo reads ep only through the pawnMoveOK EP branch; if the source is not
-q.turn pawn, handle absent/nonpawn/wrong-colour sources and the outer colour
-guard precisely. If it IS that pawn, either files coincide (dx=0, capture
-geometry false), or destination occupied (EP empty-dst test false). canCastle
-and attack tests do not read ep; demonstrate this from actual definitions.
-Do not assume pseudo-legality equality from unchanged boards alone.
-
-This selects one missing prerequisite, not an assertion that full normalization
-is already proved or falsified. Later normalizeEP(q)={q with ep:=effectiveEP q}
-could use this lemma outside the EP shape and frozen legalEP_iff_shape inside
-it, but that combined preservation theorem remains a separate obligation.
-
-## Adversarial controls and semantic limits
-
-Audit source absent, wrong-colour pawn, ordinary nonpawn/king/rook/castling,
-same-file single/double pawn moves, occupied captures, promotion choices,
-source=destination raw moves, both colours and arbitrary malformed ep markers.
-Crucially, ¬LegalEP ALONE is NOT this hypothesis: an illegal/pinned EP-shaped
-move can still activate total raw play's off-destination removal. Do not weaken
-the guard or assume raw play is legality filtered. Use symbolic branch arguments,
-not a claim that a concrete pinned or compatible full promotion/ep/castling/
-threshold game was run. No coordinate/class enumeration or lookup proof.
-
-The conditional lemma is not reply pruning; every EP-shaped move must remain
-covered separately in any later legal-game theorem. No full effective-ep
-normalization preservation, repetition key/Article9.2.3/rights-history theorem,
-low-count certificate, claims/admissibility/adjudication/mate precedence, full
-Layer/strategy extraction/lifting, numerical KRK bound, holding/outcome,
-DTM/DTZ/WDL/Syzygy or initial-position result. Classical kernel reasoning,
-no novelty/tablebase/engine/stored certificates/arbitrary-clock KRK witness.
-
-## Verification and closeout
-
-Run changed module/importers incrementally. Publish proof source BEFORE ONE NEW
-GitHub Gate F clone at FULL exact SHA; no .lake before full build, then COMPLETE
-AxiomCheck must actually pass. Inspect exact main/axioms (standard-three subsets
-only), retain full logs/commands/exits/timings/UTC, official toolchain, all source/
-transitive hashes, clean HEAD/tree/status; compare whole working/clean output.
-Gate Z separate: no frozen row/manifest this session. Preserve every prior
-source/paper/audit/evidence/ledger byte; aggregates additive only. No unrelated
-diagnostics or trivial tests. If a gap/counterexample appears, record it honestly,
-not a weakened or fabricated successful statement.
-
-Update candidate/roadmap/README/session ledger/progress table. Write
-sessions/S048_ORDINARY_EP_IRRELEVANCE.md with complete actual evidence and FULL
-installed S049 prompt. Consider separate exact-source freeze before broader
-normalization. Run relevant ledger/evidence/preservation/document checks,
-commit/push/merge/push and compare remote SHAs; hosted CI unobserved unless
-actually inspected. Stop at closeout unless the owner explicitly authorises
-further consecutive sessions again.
-
-## Cloud activation
-
-Use available runtime guidance, inspect network policy, reuse inherited Git proxy.
-Official core Lean4.35.0, no dependency. ELAN_HOME=/workspace/.tools/elan; prepend
-bin to PATH. Lake in formal/, Python at root. ONE fresh build at a time, TLS/
-checksums unchanged. Existing environment suffices absent actual blocker.
+Use cloud runtime guidance/status/network policy, inherited proxy/CA and existing
+ELAN_HOME=/workspace/.tools/elan. Lake in formal/, Python at root. No toolchain,
+dependency, TLS/checksum changes absent an actual blocker.

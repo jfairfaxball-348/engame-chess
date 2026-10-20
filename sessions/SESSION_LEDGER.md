@@ -78,4 +78,6 @@
 
 | S047 | 2026-10-20 | Freeze kernel LegalEP characterization (Gate Z); owner stop | New own exact-source 74-job build, 276 allowed reports; Gate F output identical, prior sources/records preserved. S048 handover prepared ONLY; owner requested stop at this closeout. [Closeout](S047_FREEZE_LEGAL_EP_CHARACTERIZATION.md) | **+1 → EC-T0027 FROZEN** (27 bundles) |
 
+| S048 | 2026-10-20 | EC-C030 ordinary ep irrelevance (Gate L/F) | Full pseudo/play preservation outside EP shape; 75-job clean build, 277 allowed reports. [Closeout](S048_ORDINARY_EP_IRRELEVANCE.md) | None — 27 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
