@@ -1,0 +1,39 @@
+✖ [73/75] Building EndgameChess.Rules.RawRepetition.OrdinaryEP (1.2s)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/RawRepetition/OrdinaryEP.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawRepetition/OrdinaryEP.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawRepetition/OrdinaryEP.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawRepetition/OrdinaryEP.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawRepetition/OrdinaryEP.setup.json --json
+error: EndgameChess/Rules/RawRepetition/OrdinaryEP.lean:44:6: unsolved goals
+case neg
+q : Position
+m : Move
+e : Option Square
+ordinary : ¬(RawClock.Pawn q m ∧ m.src.fst ≠ m.dst.fst ∧ q.board m.dst = none)
+noCapture :
+  ∀ (a : Option Square),
+    (q.board m.src == some { colour := q.turn, kind := PieceType.pawn } && a == some m.dst && m.src.fst != m.dst.fst &&
+        (q.board m.dst).isNone) =
+      false
+pc : Piece
+source : q.board m.src = some pc
+colour : ¬pc.colour = q.turn
+⊢ (pc.colour == q.turn && targetOK { board := q.board, turn := q.turn, castling := q.castling, ep := e } m.dst &&
+      match pc.kind with
+      | PieceType.king =>
+        m.promo.isNone &&
+          (kingGeom m.src m.dst || canCastle { board := q.board, turn := q.turn, castling := q.castling, ep := e } m)
+      | PieceType.pawn =>
+        pawnMoveOK { board := q.board, turn := q.turn, castling := q.castling, ep := e } m && promoOK pc.colour m
+      | x => m.promo.isNone && attacksFrom q.board pc m.src m.dst) =
+    (pc.colour == q.turn && targetOK q m.dst &&
+      match pc.kind with
+      | PieceType.king => m.promo.isNone && (kingGeom m.src m.dst || canCastle q m)
+      | PieceType.pawn => pawnMoveOK q m && promoOK pc.colour m
+      | x => m.promo.isNone && attacksFrom q.board pc m.src m.dst)
+warning: EndgameChess/Rules/RawRepetition/OrdinaryEP.lean:44:32: This simp argument is unused:
+  colour
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [isPseudo, source]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- EndgameChess.Rules.RawRepetition.OrdinaryEP
+error: build failed

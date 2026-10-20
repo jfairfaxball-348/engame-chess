@@ -475,3 +475,5 @@ import EndgameChess
 -- S046 / EC-C029: recover the full ep event from actual legal empty-dst pawn shape.
 #check @EndgameChess.Rules.RawRepetition.legalEP_iff_shape
 #print axioms EndgameChess.Rules.RawRepetition.legalEP_iff_shape
+#print axioms EndgameChess.Rules.RawRepetition.ordinary_ep_irrelevance
+#check @EndgameChess.Rules.RawRepetition.ordinary_ep_irrelevance
