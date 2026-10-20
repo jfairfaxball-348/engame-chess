@@ -68,4 +68,6 @@
 
 | S042 | 2026-10-20 | EC-C027 generic raw key occurrences (Gate L/F) | Fixed map/DecidableEq, root/full-history counting and exact append law; new-current queries NEW key in old history. Source `04bd8d03bf09056eff74c5fae1c399a841b170cb`; fresh 71-job build, 274 allowed reports. S043 freeze installed. [Closeout](S042_RAW_KEY_OCCURRENCES.md) | None — 24 frozen bundles |
 
+| S043 | 2026-10-20 | Freeze generic raw key occurrence counting (Gate Z) | New own exact-source 71-job build, 274 allowed reports; Gate F output identical, prior sources/records preserved. S044 effective legal-ep target installed. [Closeout](S043_FREEZE_RAW_KEY_OCCURRENCES.md) | **+1 → EC-T0025 FROZEN** (25 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

@@ -1,101 +1,100 @@
-# NEXT SESSION — S043: Freeze generic full-history key occurrence counting
+# NEXT SESSION — S044: Legality-filtered en-passant availability and effective target
 
 Execute as next authorised session. Follow AGENTS.md: explicitly fetch ALL remote
-heads, merge earlier unmerged work, read latest main prompt, existing checkout,
+heads, merge earlier unmerged sessions, read latest main prompt, existing checkout,
 no worktree. Publication authorised. Commit/push branch, merge/push main, compare
 remote SHAs; never force main. Update/reproduce FULL stable progress table in
-closeout/owner report, Syzygy parity LAST, one sentence delta below. Continue
+closeout and owner report, Syzygy parity LAST, one-sentence delta below. Continue
 installed sessions until owner stops. Bundles are not solved material classes.
 
 ## Starting point and reading
 
-S042 established EC-C027 at Gate F only, OWN full published proof-source:
-`04bd8d03bf09056eff74c5fae1c399a841b170cb`.
-Read charter/protocol/roadmap/candidates, research/KRK_RULE_DISTANCE_SPEC.md
-(repetition/claims), EC-T0021–0024 manifests, frozen RawTrace definitions and
-append_spec, proofs/EC-C027_RAW_KEY_OCCURRENCES.md and both EC-C027 audits,
-sessions/S042_RAW_KEY_OCCURRENCES.md and actual sessions/evidence/S042/ full
-logs, summary, source/transitive hashes and clean-source identity. Twenty-four
-bundles frozen; generic counting is not a FIDE repetition instance.
+S043 froze EC-C027 as EC-T0025 at own source
+`04bd8d03bf09056eff74c5fae1c399a841b170cb` after NEW exact-source Gate Z.
+Read actual EC-T0025 manifest/VERIFICATION-S043 evidence, generic occurrence
+paper/audits, EC-T0021–0024 manifests and actual RawTrace/RawClock definitions,
+research/KRK_RULE_DISTANCE_SPEC.md §§2–5, frozen Moves.pawnMoveOK/isLegal/play,
+charter/protocol/roadmap/candidates and S042/S043 closeouts. Twenty-five bundles
+frozen, full FIDE repetition/key/adjudication and numerical KRK remain open.
 
-## Principal task: one OWN exact-source Gate Z obligation
+## Principal task: one narrow effective-ep specification
 
-Review paper-to-Lean fidelity before freeze. Complete new bundle boundary:
-- formal/EndgameChess/Rules/RawOccurrences/Definitions.lean
-- formal/EndgameChess/Rules/RawOccurrences/Append.lean
+Write standalone exact paper and adversarial audit BEFORE Lean; then register
+EC-C028 only after the statement is well posed. Add NEW modules only: shared
+definitions separate, one combined main specification theorem in its own module.
+Keep every frozen source unchanged; add aggregate imports/runner additively.
 
-One main: EndgameChess.Rules.RawOccurrences.append_occurrences.
-For arbitrary K:Type u with explicit DecidableEq K and FIXED key:Position→K,
-occurrences counts ALL positions in frozen t.positions, including root/current,
-using correct equality decision. For EVERY raw s, actual legal m and queried a:
+At raw kernel Position q and actual Move m define LegalEP(q,m) explicitly by:
+- isLegal q m = true;
+- q.board m.src = some (q.turn,pawn), before any promotion;
+- q.ep = some m.dst;
+- m.src.file ≠ m.dst.file;
+- q.board m.dst = none;
+- q.board (m.dst.file,m.src.rank) = some (q.turn.opp,pawn).
 
- occ(key,append(s,m,hm).trace,a)
-   = occ(key,s.trace,a)+(if key(play(erase s)m)=a then 1 else 0).
+This is the legal en-passant event matching the existing RawClock CaptureEvent
+EP branch and kernel play's source/flag/diagonal/empty-destination removal test.
+Do not pretend epCapture is exported: it is a LOCAL let inside play. Require
+actual isLegal, not merely isPseudo/pawnMoveOK: pinned/self-check cases must not
+activate an effective target. Reuse frozen Pawn definition if useful. No global
+material-count equivalence or full FIDE Article 9.2.3 theorem is asserted.
 
-Proof rewrites frozen append_spec's position-list equality and ordinary
-filter/length append laws; equality split handles the singleton. No clock reset
-truncation, independent count vector, arbitrary Boolean equality, erased-board
-history substitution, terminal/material/colour/strategy filter or fabricated
-compatible KRK history. Querying the child's current key means querying that
-NEW key in the OLD history, not incrementing the prior current-key count.
+Define effectiveEP(q) as q.ep if some m satisfies LegalEP(q,m), and none otherwise.
+An explicitly noncomputable classical existence decision is acceptable; do not
+add enumeration, dependencies, stored certificates, fabricated game prefixes or
+an executable-search claim. Fix the exact construction in the paper first.
 
-Use ONE NEW GitHub Gate Z clone at OWN full exact SHA above, no formal/.lake
-before build. Full lake build THEN COMPLETE AxiomCheck must pass. Inspect exact
-printed definition/main statement and only propext/Classical.choice/Quot.sound
-subset axioms. Retain full logs, commands/exits/timings, UTC, official Lean
-identity, all source/transitive hashes, clean HEAD/tree/status. Compare entire
-report with actual S042 Gate F. No reuse of old clone/cache, no re-anchor of
-unchanged source. No Lean edits/incremental build expected.
+Prove one combined main specification, for EVERY raw q:
 
-Only upon actual success freeze EC-C027 as next unused ID, expected EC-T0025
-(inspect actual ledger). Add immutable manifest with COMPLETE module boundary,
-exact definition/statement/source, axioms, own SHA, paper/audit/trust links and
-new Gate Z evidence. Append exactly one ledger row preserving prior bytes.
-If fidelity/build fails, record blocker; do not freeze, edit frozen source or
-manufacture success. All earlier papers/audits/evidence stay immutable.
+ (effectiveEP(q)=none ↔ ¬∃m, LegalEP(q,m)) AND
+ (∀ dst, effectiveEP(q)=some dst ↔ ∃m, LegalEP(q,m) ∧ m.dst=dst).
 
-## Audit and semantic limits
+The event's q.ep=some m.dst implies no witness when q.ep=none and forces all
+witnesses to the same target. Thus returning q.ep when a witness exists cannot
+return none or a different target. This target-consistency argument is required,
+not an unproved assumption. Quantification covers both colours/flags/material;
+no terminal/strategy filter or independent history/count/clock seed.
 
-Recheck empty-move root (one position), absent/equal/new keys, nonconsecutive
-repeats, constant key, equal erasures with different histories, resets and an
-earlier raw draw. Symbolic key-list [A,B,A] followed by B makes the new-current
-B count 2, while prior-current A count+1 would wrongly yield 3. Do not claim
-such a list is a compatible full chess game. No fixed initial-rooted promotion/
-ep/castling/threshold prefix is required or asserted.
-Generic key may be constant; it is NOT automatically a FIDE repetition key.
-No effective legal en-passant, Article 9.2.3/rights-history correctness, repetition
-threshold certificate, current/intended claims, admissibility/adjudication/mate
-precedence, full Layer/strategy extraction/lifting, numerical KRK bounds,
-holding/outcome, WDL/DTZ/Syzygy or initial-position result follows. No claim
-that all KRK histories have low repetition or clock+n<100. No adverse legal
-reply pruned. Classical list counting, no novelty/tablebase/engine/enumeration.
+## Audit and limits
 
-## Verification, next obligation and closeout
+Audit absent raw ep flag, ep flag without any eligible pawn, only pseudo-legal
+but no legal ep due to self-check, multiple legal sources for one target,
+occupied destination, wrong source kind/colour, wrong flank pawn, and ordinary
+pawn/capture moves. Use symbolic implications of the exact predicate; do not
+claim actual initial-rooted promotion/ep/castling/threshold games were run.
+Pin-sensitive eligibility follows from requiring isLegal; do not fabricate a
+specific pinned-board witness unless actually constructed/checked. No extra
+trivial theorem modules for every clause are needed.
 
-Preserve all prior formal/candidate/frozen source, papers/audits/evidence and
-manifests. Prior ledger bytes are a prefix plus exactly one new row. Aggregate
-Lean files unchanged unless actually needed additively. Run relevant ledger
-structure/tests, preservation/evidence/document checks; no unrelated diagnostic
-suite or trivial tests. Update candidates, roadmap/README/theorem index,
-session ledger and progress table. Write sessions/S043_FREEZE_RAW_KEY_OCCURRENCES.md
-with complete observed evidence and FULL installed S044 prompt.
+This is ONLY legality-filtered effective-target bookkeeping. It does not choose
+or certify a full repetition key, prove Article 9.2.3/rights-history equivalence,
+low-repetition certificate, claim classifier, no-earlier-terminal admissibility,
+automatic draw/mate precedence, full Layer/strategy extraction/lifting, numerical
+KRK bound, holding/outcome, WDL/DTZ/Syzygy or initial-position value. Generic key
+counting is already frozen, but no new FIDE claim conclusion follows from it.
+No tablebase, engine, enumeration, arbitrary-clock KRK witness or novelty claim.
 
-Choose the next small obligation from actual results. A useful next prerequisite
-is legality-filtered en-passant availability/effective target before selecting
-a repetition key. Inspect actual frozen Moves.play: its epCapture test is a
-LOCAL let, not an exported predicate. Define the source pawn/flag/diagonal/
-empty-destination capture event explicitly, require isLegal=true, and state
-precisely what an effective ep target means. Existence of a pseudo-legal ep
-move is insufficient (pins). Avoid claiming full FIDE key correspondence or
-fabricating a compatible prefix. Fix an exact paper/audit before Lean and keep
-the next session narrow. Effective rights/history/claims remain separate.
+## Verification and closeout
 
-Commit/push/merge/push and compare remote SHAs; distinguish hosted CI if
-unobserved. Continue only the installed next prompt under standing authorisation.
+Run changed modules/importers incrementally. Publish proof-source BEFORE ONE NEW
+GitHub Gate F clone at FULL exact SHA, no formal/.lake before build. Full lake
+build THEN COMPLETE AxiomCheck must actually pass. Inspect exact definition/main
+statement and allowed propext/Classical.choice/Quot.sound subsets. Retain full
+logs/exits/timings/UTC, official toolchain, source/transitive hashes and clean
+HEAD/tree/status; compare full working/clean outputs. Gate Z separate: no new
+frozen row/manifest. Preserve all prior source/papers/audits/evidence/ledger bytes;
+aggregate Lean files only gain additive entries. No unrelated diagnostics/tests.
+
+Update candidates, roadmap/README, session ledger and progress table. Write
+sessions/S044_EFFECTIVE_EP_TARGET.md with actual evidence and FULL installed S045
+prompt. Consider separate exact-source freeze before further key composition.
+Run relevant ledger/evidence/preservation/document checks, commit/push/merge/push
+and verify remote SHAs. Hosted CI unobserved unless actually inspected. Continue
+only the installed next prompt under standing authorisation.
 
 ## Cloud activation
 
-Use available runtime guidance, inspect network policy, reuse inherited Git
-proxy. Official core Lean4.35.0, no dependency. ELAN_HOME=/workspace/.tools/elan;
-prepend bin to PATH. Lake in formal/, Python at root. ONE fresh build at a time;
-TLS/checksums unchanged. Existing environment suffices absent an actual blocker.
+Use available runtime guidance, inspect network policy, reuse inherited Git proxy.
+Official core Lean4.35.0, no dependency. ELAN_HOME=/workspace/.tools/elan; prepend
+bin to PATH. Lake in formal/, Python at root. ONE fresh build at a time, TLS/
+checksums unchanged. Existing environment suffices absent actual blocker.

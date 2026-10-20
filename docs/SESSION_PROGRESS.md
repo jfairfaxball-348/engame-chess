@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S042. Twenty-four theorem bundles are frozen, including the clock-free KRK forcing classification; these are not twenty-four solved material classes.
+Current mathematical evidence: through S043. Twenty-five theorem bundles are frozen, including the clock-free KRK forcing classification; these are not twenty-five solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live, clock-free forcing, generic projection, raw traces, counter, multi-step bound and conditional clock certificate frozen; generic key-count append law formally verified | FIDE history/adjudication and distance |
+| K+R vs K | Dead/live and clock-free forcing frozen; projection, raw trace/clock and generic key counting frozen | FIDE history/adjudication and distance |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S042. Twenty-four theorem bundles are fro
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S042 formally verified generic full-history key occurrence counting and its exact append law; 24 bundles remain frozen and material-class coverage is unchanged.
+Session change: S043 froze generic raw key occurrence counting as EC-T0025 after a new exact-source Gate Z check; 25 bundles are frozen and material-class coverage is unchanged.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 
