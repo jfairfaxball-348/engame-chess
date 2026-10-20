@@ -116,4 +116,6 @@
 
 | S066 | 2026-10-20 | EC-C039 conditional raw sufficient-budget lifting (Gate L/F) | Same n under strict clock/full-prefix count hypotheses; exact prepend helper. [Closeout](S066_RAW_SUFFICIENT_BUDGET_LIFTING.md) | None — 36 frozen bundles |
 
+S066 planning addendum (2026-10-20): [direct KRK closure roadmap installed](S066_KRK_ROADMAP_ADDENDUM.md); documentation only, mathematical evidence unchanged. S067 has not started.
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

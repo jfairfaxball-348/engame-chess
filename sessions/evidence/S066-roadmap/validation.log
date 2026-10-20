@@ -1,0 +1,4 @@
+PASS: authorised documentation changes only; all prior formal/proof/audit/frozen/ledger/candidate/session evidence unchanged.
+PASS: mathematical progress table byte-identical; full table and paused S067 prompt reproduced in planning addendum.
+PASS: direct KRK milestones, prerequisite admission, paused execution, and local links.
+NOT RUN: Lean builds, axiom audit, Gate Z or any S067 research; documentation-only update.

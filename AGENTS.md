@@ -22,3 +22,16 @@ At the end of every session, update `docs/SESSION_PROGRESS.md` from the actual p
 
 ## Research rules
 Follow `docs/PROOF_PROTOCOL.md` and the active prompt in `NEXT_SESSION.md`. No tablebases or engine oracles. `theorems/LEDGER.csv` changes only at Gate Z.
+
+## Current research priority: direct KRK closure
+Owner direction (2026-10-20): follow [the short-term KRK roadmap](docs/KRK_COMPLETION.md).
+Quantitative KRK strategy, strategy-specific repetition/history control, complete
+rule-aware outcomes and distance correctness are the priorities across sessions.
+Generic prerequisites require an exact blocked KRK proof step, an explanation of
+why current results are insufficient, the smallest missing statement/coverage
+payoff, and an exit criterion returning to the main attack. A blocked direct
+proof is recorded honestly; do not replace it with easier unrelated library work.
+Freeze checks remain mandatory but do not set the research agenda by default.
+Research is PAUSED after S066: this planning update does not start S067. Await an
+explicit owner request; do not infer automatic consecutive-session authority, and
+do not start KQK under the current direction.

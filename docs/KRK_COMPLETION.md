@@ -1,30 +1,84 @@
-# KRK completion obligations — working research plan
+# Short-term roadmap: direct attack on KRK closure
 
-Latest owner instruction 2026-10-20: finish and close S066, then STOP. Prior continuation until KRK completion is paused; do not start S067 or KQK automatically.
-This is an obligation list, not evidence of completion or a substitute for gates.
+Owner direction, 2026-10-20: KRK closure is the research priority across as many
+sessions as needed. This update installs the plan only. Research remains PAUSED;
+do not start S067 or any later session without a new owner request. Stop before KQK.
 
-Already frozen: KRK dead/live characterisation, clock-free strong-turn forcing and
-weak-turn mate/no-KK-capture classification; abstract rule projection; raw traces,
-clock/count/key/ep prerequisites, endpoint classifier and EC-T0035
-stopped-history append/full-reply lifting.
+## Evidence and completion standard
 
-Next exact prerequisites:
-1. Concrete RAW Layer on admitted stopped histories: FROZEN S065 as EC-T0036 (EC-C038).
-2. Conditional all-raw-prefix budget lifting FORMAL_VERIFIED S066 (EC-C039), S067 freeze pending. Strong sufficient clock/count hypotheses only, no general KRK witness. Strategy-specific repetition certificates remain needed. Use actual
-   trace extensions, preserve every defending reply, permit terminal mate at
-   zero remaining budget. Safety is sufficient and is not a KRK-specific witness.
-3. History semantic bridges (including no repeated mate key at an earlier ongoing
-   prefix), rights/key correspondence, explicit ideal-claim versus real-procedure
-   scope. Do not treat a raw Layer instance as certified FIDE adjudication.
-4. A numerically bounded KRK forcing tree and repetition/clock-safe conditions
-   proved for its full quantified input family, not arbitrary snapshots.
-5. Complete rule-aware win/draw coverage and holding/determinacy arguments,
-   including history-dependent fifty-move/intended repetition claims and captures.
-6. Distance correctness/optimality and independently sourced exact WDL/DTZ semantic
-   comparison where required by project parity target. A first mate upper bound
-   is not exact DTM/DTZ, and a failed certificate is not a draw proof.
-7. Separate exact-source freezes for each verified claim, then verify that all
-   L1/L2/L3/L4 KRK obligations actually close before declaring KRK complete.
+KRK dead/live and clock-free forcing classification are frozen. The concrete RAW
+history Layer is frozen as EC-T0036. EC-C039's conditional lifting is formally
+verified at proof source `7155c3424a5e315ea758f916d939b6696e0da261`, awaiting
+Gate Z. There are 36 frozen bundles; material-class coverage is unchanged.
 
-No tablebase lookup, exhaustive class proof, stored position certificates or
-invented percentages. KQK remains untouched throughout this instruction.
+Closure means complete rule-aware KRK outcomes/strategies and the project's
+specified distance correctness, with all necessary results verified and frozen.
+An existential clock-free mate proof, a conditional winning family, a raw Layer,
+a mate upper bound, or a bundle count alone does not establish closure. The
+[S032 specification](../research/KRK_RULE_DISTANCE_SPEC.md) and
+[project roadmap](ROADMAP.md) retain the L1–L4 and WDL/DTZ obligations.
+
+## Ordered attack
+
+Milestones are proof obligations, not one-session promises. Carry an unfinished
+main obligation across sessions rather than replacing it with easier library work.
+
+| Priority | Direct KRK obligation | Evidence needed to advance |
+|---|---|---|
+| A — Quantitative winning strategy | Turn the frozen safe-setup/wall/pursuit strategy into an explicit geometric ply bound for every legal strong-turn KRK arrival, both colours and arbitrary kernel flags; preserve EVERY defensive reply. | Standalone paper, adversarial audit, and then Lean proof of a stated bound `B(q)` and a proved numerical ceiling. Derive the numbers from the argument; an existential `ForceMate` witness is insufficient. Expose setup, tempo, pursuit and rank-advance costs. |
+| B — Strategy and history safety | Control repetitions on the chosen winning strategy and ALL defensive branches, and connect the usable bound to actual clock/history inputs and FIDE semantics. | Proved progress/no-cycle invariant or another exact strategy certificate; account separately for earlier history counts, current and intended claims, resets and mate/draw precedence. Prove each rights/key/adjudication bridge actually needed. State the precise input family for each rule-aware winning corollary. |
+| C — Complete outcome coverage | Cover both turns and EVERY admissible KRK history, including those outside sufficient winning conditions. | Necessary-and-sufficient win/draw classification with holding/termination arguments where needed; include immediate mate, dead/stalemate, legal rook captures to KK, high clocks, repetitions and claims. Failure of a sufficient certificate is not a draw proof. No raw-to-FIDE correspondence gap may be hidden. |
+| D — Correct distances | Prove the project's rule-aware distance target and optimality/convention correspondence on the complete covered domain. | Exact minimax/optimality arguments and the relevant 50-move WDL/DTZ semantics. Source convention definitions without consulting tablebase outcomes. A nonoptimal mate upper bound is an intermediate result, not exact DTM/DTZ parity. |
+| E — Freeze and closure audit | Complete the existing proof/audit/Lean/freeze gates and check every remaining KRK obligation against actual evidence. | Immutable exact-source manifests, observed builds/axioms, full input coverage and an explicit closure checklist. Only then mark KRK complete. Do not begin KQK under the current direction. |
+
+A and B may need refinement together. A large proved bound is genuine partial
+progress, but if it cannot support the relevant clock cases, improve it or state
+that limitation. Neither an invented sub-100 bound nor a clock-only criterion
+settles history-dependent outcomes. A strategy that creates no new repetition
+may still encounter keys already present in the incoming history.
+
+## Next resumed session: S067
+
+Principal target: the quantitative KRK strategy in A, beginning with a paper proof
+and separate adversarial audit. Read the existing KRK safe-setup, wall, lower-band
+pursuit and rank-advance arguments; make their costs and quantified continuations
+explicit. Choose one well-posed quantitative claim and carry it through the
+normal gates when its argument closes. Do not assume a classical numerical
+maximum without proving it in this kernel.
+
+If the full claim does not close in one session, retain the attempted bound,
+precise failed inequality/lemma, exact uncovered positions or input family, and
+next KRK-specific proof obligation. An incomplete attempt is a valid closeout;
+replacing it with an unrelated easy theorem is not. A partial family must remain
+labelled partial, with its path to full coverage stated.
+
+## Prerequisite admission and session discipline
+
+Before diverting to a generic/history lemma, record all of:
+
+1. The exact KRK theorem and proof step currently blocked.
+2. Why the existing frozen/formal results cannot discharge that step.
+3. The smallest missing statement, and the precise coverage or distance obligation it unlocks.
+4. An exit criterion for returning to the main attack. Reassess at the next closeout;
+   do not automatically extend the detour into another prerequisite sequence.
+
+Dependencies may be necessary, but they are subordinate to an active KRK proof.
+The generic mated-key uniqueness idea and stronger generic lifting machinery are
+not default next tasks. EC-C039's all-raw-continuation repetition hypothesis can
+exclude useful winning strategies; it is not a substitute for B.
+
+Each research closeout reports the current milestone, exact KRK claim, new input
+coverage or quantitative bound, remaining gap, and any justified prerequisite.
+Say explicitly when coverage is unchanged. Update the stable progress table;
+never report percentages based on theorem counts.
+
+[Proof protocol](PROOF_PROTOCOL.md) remains unchanged. Freeze verified results at
+appropriate milestones, with every required exact-source Gate Z check. EC-C039's
+freeze remains a recorded backlog item, not the default next research priority.
+A freeze-only follow-up must identify the main KRK result/dependency it serves;
+completing it returns to the direct attack rather than installing a generic detour.
+No theorem is frozen by scheduling it here. No new research, build, freeze or
+candidate promotion is authorised by this planning update.
+
+No tablebases, engine oracles, exhaustive class proofs or per-position certificates.
+Existing frozen sources/records remain immutable; new proofs use new modules.

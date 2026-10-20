@@ -18,7 +18,7 @@ Current mathematical evidence: through S066. Thirty-six theorem bundles are froz
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S066 formally verified same-budget raw lifting under explicit clock/full-prefix repetition hypotheses; 36 bundles remain frozen and material-class coverage is unchanged.
+Session change: S066 roadmap addendum prioritises the direct KRK closure attack; mathematical progress is unchanged, EC-C039 remains formally verified awaiting freeze, and 36 bundles remain frozen.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 

@@ -82,7 +82,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S045: EC-C028 frozen as [EC-T0026](theorems/frozen/EC-T0026/v1.md) after new exact-source Gate Z (73 jobs, 275 allowed reports), with all prior source/records preserved.
 - S046: **EC-C029 FORMAL_VERIFIED**: an actual legal source pawn changing file into an empty destination is exactly the defined LegalEP event; raw marker/flank recovered from kernel legality. [Paper](proofs/EC-C029_LEGAL_EP_CHARACTERIZATION.md), [evidence](sessions/evidence/S046/README.md). Gate Z pending; no ep-normalization or full FIDE key theorem.
 - S047: EC-C029 frozen as [EC-T0027](theorems/frozen/EC-T0027/v1.md) after new exact-source Gate Z (74 jobs, 276 allowed reports), all prior source/records preserved. Owner requested stopping at this closeout.
-- Next (paused by owner after S066): S067, separate own-source freeze of conditional raw sufficient-budget lifting. Concrete FIDE correspondence, strategy-specific repetition certificates and numerical KRK/outcome/distance coverage remain open.
+- Next (paused; not started): S067, direct quantitative KRK strategy attack under the [short-term closure roadmap](docs/KRK_COMPLETION.md). EC-C039 freeze remains backlog. Concrete FIDE correspondence, strategy-specific repetition certificates and numerical KRK/outcome/distance coverage remain open.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 

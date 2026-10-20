@@ -1,63 +1,79 @@
-# NEXT SESSION — S067: Freeze clock/full-prefix repetition sufficient-budget lifting
+# NEXT SESSION — S067: Direct quantitative attack on KRK closure
 
-OWNER STOP (2026-10-20, latest instruction): finish and close out S066, then
-DO NOT start S067 or any later session automatically. This prompt is retained
-for a future explicit resumption only. The prior request to continue until KRK
-is complete is PAUSED; do not move to KQK.
-Follow AGENTS.md/charter/protocol. Fetch ALL heads, merge prior unmerged work,
-latest main in existing checkout. Commit/push branch, merge/push main, compare
-remotes; never force main. Full stable progress table, Syzygy last, immediate
-delta. S066 publication is authorised; later sessions require a new owner request.
+PAUSED — owner authorised installing this roadmap only. DO NOT execute S067,
+run a build/freeze, or start any later session without a new owner request.
+KRK closure is the priority when resumed; stop before KQK. This prompt replaces
+the earlier freeze-only S067 plan. S067 has NOT started.
 
-OWN S066 full proof-source SHA: 7155c3424a5e315ea758f916d939b6696e0da261.
-Read actual S066 evidence/closeout for FULL OWN proof-source SHA and success.
-36 bundles frozen before this session, not solved classes. Read EC-C039 paper,
-separate same-agent audits, complete NEW RawTrace.Prepend and
-RawHistoryLayer.BudgetLifting and frozen dependencies, concrete raw Layer/interface,
-Extends/clock/count/claims, S032 §2/4/5/6, roadmap/candidates/KRK completion tracker.
+Follow AGENTS.md, docs/CHARTER.md and docs/PROOF_PROTOCOL.md. Read
+`docs/KRK_COMPLETION.md` first. Fetch ALL remote heads,
+merge prior unmerged work, and use the resulting latest main in the existing
+checkout. Commit/push branch, merge/push main and compare remote identities;
+never force main. Full stable progress table, Syzygy last, immediate session delta.
+A request to run one session does not authorise consecutive sessions automatically.
 
-Principal: separate exact-source Gate Z, NO Lean edits. For EVERY admitted raw s,
-colour σ, Nat n: clock(s.val.trace)+n<100 AND EVERY raw Extends k s.val t with
-k≤n has count(t)<3 AND clock-free MateWithin σ n (erase s), imply raw-layer
-RuleMateWithin layer σ n s at SAME n. Helper prepends actual step to actual path.
-Inspect exact states/traces/m/hm and depth arithmetic, current AND every intended
-legal child's clock/count bounds, nondead/legal-move ongoing guard, descended
-certificates, strong chosen move and ALL weak replies, nonempty, terminal Goal.
-No child-ongoing filter, no substituted root key query or erased path. Universal
-certificate is deliberately strong SUFFICIENT ONLY, includes raw paths past
-terminals, no assertion it holds for any general KRK input. Failure gives no draw.
-No new finite-tree extraction assumed, recursive witness proof direct. Review
-retained first Prepend authoring failure (`ih` required leading step argument)
-and unchanged-statement `ih step` fix. Same-agent audit, not external independent
-review; no full-game run/enumeration/oracle/per-position certificates/novelty.
-No full FIDE correspondence or complete KRK outcome/numeric distance/WDL/DTZ result.
+## Starting evidence
 
-ONE NEW GitHub clone at FULL S066 OWN proof SHA, .lake absent before full build,
-then COMPLETE AxiomCheck. Official core Lean4.35.0, exact main AND helper/standard-
-three subsets (allow axiom-free reports). Full S066 runner/formal-byte equality,
-source/transitive SHA256, clean HEAD/tree/status, full logs/commands/exits/times/
-UTC/executable/toolchain identity. One fresh build; interruptions/retries retained.
-Hosted CI unobserved unless inspected. Only observed success permits EC-T0037/v1.md
-freezing complete Prepend/BudgetLifting and exactly one ledger row. Prior protected
-files/36 rows preserved. No incremental build without source edit. Relevant ledger
-tests/structure/evidence/preservation/full-table/full-prompt/local-link/diff checks,
-no unrelated diagnostics/trivial tests. Update candidate/roadmap/README/session
-ledger/theorems index/progress/completion tracker, write
-sessions/S067_FREEZE_RAW_SUFFICIENT_BUDGET_LIFTING.md with actual evidence and FULL
-S068 prompt. Commit/push/merge/push and compare remotes. STOP after the currently authorised session; no automatic next session.
+36 frozen bundles, not solved classes. KRK dead/live and clock-free forcing are
+frozen (EC-T0006/7 and EC-T0019, with supporting bundles). Raw history Layer is
+frozen as EC-T0036. S066 EC-C039 is FORMAL_VERIFIED, Gate Z pending, own source
+7155c3424a5e315ea758f916d939b6696e0da261. Read its actual closeout/evidence and
+strong all-raw-prefix hypothesis; do not infer a numerical KRK/history witness.
+The earlier Gate Z checklist remains recorded in the S066 closeout; freezing
+EC-C039 is backlog, not this session's principal task or a precondition for paper
+research. Do not append a theorem-ledger row without a separate successful Gate Z.
 
-S068 should select the next substantive history/rule/quantitative prerequisite
-with standalone paper and separate adversarial audit BEFORE Lean. One concrete
-history gap: under stopped admissibility, a CURRENT MatedK endpoint's normalized
-key cannot occur at a STRICT ongoing prefix, so currentOccurrences=1. First
-prove key equality preserves MatedK (board/turn equality and legal congruence),
-then exact count invariant over admitted ongoing prefixes and current uniqueness,
-using actual full initial-rooted trace and append law. No arbitrary seeds or
-unproved initial ongoing assumption; start/current terminal must be handled.
-This would exclude feasible fivefold/mate overlap relative to chosen RAW model,
-not certify complete FIDE correspondence. Alternatively select a genuinely
-tractable explicit KRK mate bound with full proof; never invent a numeral or
-reinterpret conditional lifting as full outcome coverage. All remaining numeric,
-rights/key/claim correctness, holding/outcome/distance parity stay explicit.
-Use runtime status/network policy, inherited proxy/CA, ELAN_HOME=/workspace/.tools/elan.
-Lake in formal/, Python root; official core Lean4.35.0, TLS/checksums unchanged.
+Read actual KRK proof sources/papers: SafeSetup, OffRankSetup, SameRankSetup,
+WallForce, LowerPursuit, rank-advance/rescue, all-axis/strategy transport and weak-
+turn classification; inspect the frozen manifests. Read S032 specification §5/6,
+current candidates and progress. Preserve every frozen source and prior record.
+
+## Principal task — milestone A
+
+Directly attack an explicit quantitative bound for the KRK winning strategy.
+Write standalone paper and a separate adversarial audit BEFORE Lean. State the
+exact domain: every legal strong-turn KRK arrival, both colours, arbitrary kernel
+flags, with every legal defensive reply retained. Target a proved explicit
+coordinate/phase bound B(q) yielding MateWithin at that ply budget, plus a proved
+numerical ceiling. Derive constants from actual setup/pursuit/rank costs; do not
+invent a numeral, cite an unproved classical maximum, or rename existential
+ForceMate as a quantitative result. A sub-100 ceiling is not assumed.
+
+Expose a bound for each strategy phase, tempo/waiting costs, progress measure,
+composition and all-reply branching. Audit threatened rook, back/same-rank setup,
+axis transport, stalemate, captures to KK, terminal mate, flags/castling and ply
+conventions. Identify how the strategy's progress can support repetition control
+on chosen moves and ALL defending branches (milestone B); account for incoming
+history separately. Safety over every arbitrary winning-side move is not required
+of a strategy certificate, and EC-C039's stronger hypothesis is not assumed true.
+
+If the proof closes, formalise the exact audited statement in NEW modules,
+add declarations to AxiomCheck, and follow all applicable Gate F checks, including
+own published full proof-source SHA, a new clean GitHub build/full runner,
+standard-three axiom audit and full retained evidence. Gate Z remains separate;
+no claimed result before observed success. Same-agent audits are labelled honestly.
+No tablebase/engine oracle, exhaustive class proof, stored position certificates
+or unearned novelty/complete FIDE WDL/DTZ claim.
+
+If it does not close, retain the attempted bound and exact blocked lemma, arithmetic
+failure or uncovered family. Install the next direct KRK proof step. A partial
+family is partial. Do not substitute another generic theorem to make a session
+appear successful. A generic prerequisite requires the four-part justification
+in docs/KRK_COMPLETION.md, tied to this actual blocked KRK proof; return to the
+main attack after its exit criterion. No automatic mated-key bookkeeping detour.
+
+## Closeout
+
+Report milestone/claim, numerical bound and newly covered inputs (or explicitly
+unchanged coverage), exact remaining gap and justified dependencies. Update
+candidates only if a claim is actually selected; roadmap/README/session ledger/
+progress as appropriate. Record actual tests/builds/audits or "not run" and preserve
+failures. Write sessions/S067_KRK_QUANTITATIVE_ATTACK.md with the full installed
+next prompt and full stable progress table, following protocol. Commit/push/merge/
+push and compare remotes. Stop after the authorised session unless the owner
+explicitly requests continuation. KRK rule-aware coverage, holding and exact
+WDL/DTZ distances remain open until separately proved and frozen.
+
+Use available runtime guidance/status/network policy, inherited proxy/CA,
+ELAN_HOME=/workspace/.tools/elan. Lake in formal/, Python at root; official core
+Lean4.35.0, no dependency/shim/TLS/checksum changes.
