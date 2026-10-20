@@ -1,11 +1,15 @@
 # NEXT SESSION — S063: Freeze stopped-history append and full reply lifting
 
+Owner instruction (2026-10-20): keep running sessions until KRK is entirely
+finished and frozen; stop BEFORE KQK. Complete KRK means the remaining concrete
+rule-aware outcome/strategy and distance obligations, not merely bundle counts.
 Owner authorises consecutive sessions until told to stop. Follow AGENTS.md,
 charter/protocol. Fetch ALL remote heads, merge prior unmerged work, latest main,
 existing checkout. Commit/push branch, merge/push main, compare remote identities;
 never force main. FULL stable progress table, Syzygy last, immediate session delta.
 
-S062 develops EC-C037, exact stopped-history append/full legal-reply interface.
+S062 FORMAL_VERIFIED EC-C037, exact stopped-history append/full legal-reply interface.
+OWN full proof-source SHA: 67850895bf6130a1f193c299597cd7d4ac209485.
 Read actual S062 evidence/closeout and its FULL own proof-source SHA before any
 freeze; 34 bundles frozen before this session, not solved classes. Read paper,
 separate same-agent audits, complete StoppedHistory Definitions/AppendLifting,

@@ -106,4 +106,6 @@
 
 | S061 | 2026-10-20 | Freeze EC-C036 raw endpoint classifier (Gate Z) | New own-source 86-job build, 283 allowed reports; both complete modules frozen. [Closeout](S061_FREEZE_RAW_ENDPOINT_CLASSIFIER.md) | **+1 → EC-T0034 FROZEN** (34 bundles) |
 
+| S062 | 2026-10-20 | EC-C037 stopped-history append/full replies (Gate L/F) | Exact admissible ongoing-parent append iff; every legal reply lifted, terminal children retained. [Closeout](S062_STOPPED_HISTORY_LIFTING.md) | None — 34 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

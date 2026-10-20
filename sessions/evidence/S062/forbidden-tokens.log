@@ -1,0 +1,5 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/StoppedHistory/Definitions.lean
+formal/EndgameChess/Rules/StoppedHistory/AppendLifting.lean
+Matches: 0

@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S061. Thirty-four theorem bundles are frozen, including the clock-free KRK forcing classification; these are not thirty-four solved material classes.
+Current mathematical evidence: through S062. Thirty-four theorem bundles are frozen, including the clock-free KRK forcing classification; these are not thirty-four solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live and clock-free forcing frozen; projection, raw history/clock/key-count and legal-ep and normalization/key/count and raw threshold/exclusion and endpoint classifier prerequisites frozen | Concrete rule integration and distance |
+| K+R vs K | Dead/live and clock-free forcing frozen; projection, raw history/clock/key-count and legal-ep and normalization/key/count and raw threshold/exclusion and endpoint classifier prerequisites frozen; stopped-history append/reply lifting formally verified | Concrete rule integration and distance |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S061. Thirty-four theorem bundles are fro
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S061 froze the raw mate-first ongoing characterization as EC-T0034 after a new exact-source Gate Z check; 34 bundles are frozen and material-class coverage is unchanged.
+Session change: S062 formally verified stopped-history append and full legal-reply lifting relative to the raw classifier; 34 bundles remain frozen and material-class coverage is unchanged.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 
