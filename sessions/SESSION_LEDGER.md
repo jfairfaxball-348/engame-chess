@@ -58,4 +58,6 @@
 
 | S037 | 2026-10-19 | Freeze raw trace and halfmove components (Gate Z) | TWO NEW sequential exact-source GitHub clones at own published anchors: 59/66-job builds, 265/271 allowed reports; all ten mains and complete source/import hashes match Gate F. Prior sources/records preserved. S038 raw extension clock-growth prompt installed. [Closeout](S037_FREEZE_RAW_TRACE_CLOCK.md) | **+2 → EC-T0021/0022 FROZEN** (22 bundles; raw history only) |
 
+| S038 | 2026-10-20 | EC-C025 raw multi-step clock bound (Gate L/F) | Exact-state zero and actual RawBoardStep successor; induction includes all resets. Source `22243b9ca5769e1478c75a333befa3c8465c90f2`; ONE NEW 68-job fresh build, 272 allowed reports, main standard-three. Prior sources/records unchanged; S039 exact-source freeze installed. [Closeout](S038_RAW_CLOCK_EXTENSION_BOUND.md) | None — 22 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

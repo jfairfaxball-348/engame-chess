@@ -52,7 +52,7 @@ assert all(set(a.split(', ')) <= allowed for a in reports.values())
 names = ['EndgameChess.Rules.RawClock.clock_le_extension']
 for name in names:
     assert name in reports and re.search(r'^@?' + re.escape(name) + r' :', log, re.M)
-assert log == (out / 'working-axioms.log').read_text()
+assert log == (root / 'sessions/evidence/S038/working-axioms.log').read_text()
 (out / 'declarations.txt').write_text('\n'.join(names) + '\n')
 new_modules = ['formal/EndgameChess/Rules/RawTrace/ExtensionDefinitions.lean', 'formal/EndgameChess/Rules/RawClock/ExtensionBound.lean']
 pattern = r'\b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b'

@@ -23,3 +23,16 @@ syntax without changing the statement or argument. Full failure log retained.
 Gate F remains pending until the published exact commit passes a fresh clone.
 No symbolic control is represented as a run of a full example game. No sufficient
 budget lifting, numerical KRK bound, repetition or full FIDE result is claimed.
+
+## Completed Gate F
+
+Published proof-source `22243b9ca5769e1478c75a333befa3c8465c90f2` before ONE NEW GitHub clone,
+detached at that exact SHA, formal/.lake absent before full build. Full lake
+build: 68 jobs, exit 0, 472.858s; COMPLETE AxiomCheck exit 0 at 2026-10-20T07:44:55Z.
+272 allowed reports, including 5 axiom-free; new main standard-three only.
+Exact statement/constructors printed; full working/clean runner outputs
+byte-identical. All Lean source/import bytes match; complete source/transitive
+hashes and clean-source identities retained. Two new modules forbidden scan
+zero. Official core Lean4.35.0 release eb6cafb7290e8bd5f2937522d8d804f58f02bafc;
+executable hash matches preceding freeze evidence. No dependencies or shim.
+Gate F passed, Gate Z pending. Hosted CI unobserved. Evidence: sessions/evidence/S038/.

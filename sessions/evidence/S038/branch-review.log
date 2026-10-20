@@ -1,0 +1,5 @@
+Initial git fetch --all --prune used inherited origin fetch refspec limited to main.
+Explicit subsequent git fetch origin +refs/heads/*:refs/remotes/origin/* --prune fetched all remote heads.
+All earlier session branches are ancestors of current origin/main.
+Only unmerged remote branch is this active S038 session:
+  origin/session/s038-clock-extension
