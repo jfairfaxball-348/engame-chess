@@ -1,0 +1,10 @@
+✖ [113/115] Building EndgameChess.Rules.KRKTermination.Definitions (267ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKTermination/Definitions.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKTermination/Definitions.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKTermination/Definitions.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKTermination/Definitions.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKTermination/Definitions.setup.json --json
+error: EndgameChess/Rules/KRKTermination/Definitions.lean:9:15: Unknown identifier `IsKRK`
+error: EndgameChess/Rules/KRKTermination/Definitions.lean:13:2: failed to synthesize instance of type class
+  Decidable (Ongoing s)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Some required targets logged failures:
+- EndgameChess.Rules.KRKTermination.Definitions
+error: build failed

@@ -1,0 +1,40 @@
+⚠ [97/99] Replayed EndgameChess.Rules.KRKTermination.Castle
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:57:66: This simp argument is unused:
+  Ne.symm oldKingWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldKingWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:59:68: This simp argument is unused:
+  Ne.symm oldRookWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldRookWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:87:66: This simp argument is unused:
+  Ne.symm oldKingWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldKingWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:89:68: This simp argument is unused:
+  Ne.symm oldRookWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldRookWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✖ [99/99] Building EndgameChess.Rules.KRKTermination.Closure (448ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKTermination/Closure.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKTermination/Closure.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKTermination/Closure.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKTermination/Closure.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKTermination/Closure.setup.json --json
+error: EndgameChess/Rules/KRKTermination/Closure.lean:16:4: Type mismatch: After simplification, term
+  noPawn
+ has type
+  q.board m.src ≠ some { colour := q.turn, kind := PieceType.pawn }
+but is expected to have type
+  (q.board m.src == some { colour := q.turn, kind := PieceType.pawn }) ≠ true
+Some required targets logged failures:
+- EndgameChess.Rules.KRKTermination.Closure
+error: build failed

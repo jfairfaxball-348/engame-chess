@@ -1,0 +1,24 @@
+✔ [96/97] Built EndgameChess.Rules.KRKTermination.Targets (273ms)
+✖ [97/97] Building EndgameChess.Rules.KRKTermination.Castle (280ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKTermination/Castle.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKTermination/Castle.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKTermination/Castle.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKTermination/Castle.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKTermination/Castle.setup.json --json
+error: EndgameChess/Rules/KRKTermination/Castle.lean:28:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  q.turn
+in the target expression
+  canCastle q m = true
+
+q : Position
+σ : Colour
+sk rs wk : Square
+m : Move
+hk : IsKRK q σ sk rs wk
+ht : q.turn = σ
+src : m.src = sk
+castle : canCastle q m = true
+uniqueRook : ∀ (s : Square), q.board s = some { colour := σ, kind := PieceType.rook } → s = rs
+atWeak : q.board wk = some { colour := σ.opp, kind := PieceType.king }
+emptyNotWeak : ∀ (s : Square), q.board s = none → s ≠ wk
+actual : canCastle q m = true
+⊢ ∃ ns nr, IsKRK (play q m) σ ns nr wk
+Some required targets logged failures:
+- EndgameChess.Rules.KRKTermination.Castle
+error: build failed

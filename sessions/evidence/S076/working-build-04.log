@@ -1,0 +1,109 @@
+⚠ [97/98] Replayed EndgameChess.Rules.KRKTermination.Castle
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:57:66: This simp argument is unused:
+  Ne.symm oldKingWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldKingWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:59:68: This simp argument is unused:
+  Ne.symm oldRookWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldRookWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:87:66: This simp argument is unused:
+  Ne.symm oldKingWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldKingWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:89:68: This simp argument is unused:
+  Ne.symm oldRookWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldRookWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✖ [98/98] Building EndgameChess.Rules.KRKTermination.Strong (303ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKTermination/Strong.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKTermination/Strong.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKTermination/Strong.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKTermination/Strong.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKTermination/Strong.setup.json --json
+error: EndgameChess/Rules/KRKTermination/Strong.lean:19:5: unknown tactic
+error: EndgameChess/Rules/KRKTermination/Strong.lean:15:2: unsolved goals
+case inl.inl
+q : Position
+σ : Colour
+sk rs wk : Square
+m : Move
+ht : q.turn = σ
+hm : isLegal q m = true
+h12 : sk ≠ rs
+h13 : sk ≠ wk
+h23 : rs ≠ wk
+hb : q.board = krkBoard σ sk rs wk
+esrc : m.src = sk
+hpc : krkBoard σ sk rs wk m.src = some { colour := σ, kind := PieceType.king }
+hcol : { colour := σ, kind := PieceType.king }.colour = q.turn
+hsrc : q.board m.src = some { colour := q.turn, kind := PieceType.king }
+htg : targetOK q m.dst = true
+hpro : m.promo = none
+hg : kingGeom m.src m.dst = true
+⊢ ∃ ns nr, IsKRK (play q m) σ ns nr wk
+
+case inl.inr
+q : Position
+σ : Colour
+sk rs wk : Square
+m : Move
+ht : q.turn = σ
+hm : isLegal q m = true
+h12 : sk ≠ rs
+h13 : sk ≠ wk
+h23 : rs ≠ wk
+hb : q.board = krkBoard σ sk rs wk
+esrc : m.src = sk
+hpc : krkBoard σ sk rs wk m.src = some { colour := σ, kind := PieceType.king }
+hcol : { colour := σ, kind := PieceType.king }.colour = q.turn
+hsrc : q.board m.src = some { colour := q.turn, kind := PieceType.king }
+htg : targetOK q m.dst = true
+hpro : m.promo = none
+castle : canCastle q m = true
+⊢ ∃ ns nr, IsKRK (play q m) σ ns nr wk
+error: EndgameChess/Rules/KRKTermination/Strong.lean:8:44: unsolved goals
+case inr.inl
+q : Position
+σ : Colour
+sk rs wk : Square
+m : Move
+ht : q.turn = σ
+hm : isLegal q m = true
+h12 : sk ≠ rs
+h13 : sk ≠ wk
+h23 : rs ≠ wk
+hb : q.board = krkBoard σ sk rs wk
+hp : isPseudo q m = true
+esrc : m.src = rs
+hpc : krkBoard σ sk rs wk m.src = some { colour := σ, kind := PieceType.rook }
+hcol : { colour := σ, kind := PieceType.rook }.colour = q.turn
+⊢ ∃ ns nr, IsKRK (play q m) σ ns nr wk
+
+case inr.inr
+q : Position
+σ : Colour
+sk rs wk : Square
+m : Move
+ht : q.turn = σ
+hm : isLegal q m = true
+h12 : sk ≠ rs
+h13 : sk ≠ wk
+h23 : rs ≠ wk
+hb : q.board = krkBoard σ sk rs wk
+hp : isPseudo q m = true
+left✝ : m.src = wk
+hpc : krkBoard σ sk rs wk m.src = some { colour := σ.opp, kind := PieceType.king }
+hcol : { colour := σ.opp, kind := PieceType.king }.colour = q.turn
+⊢ ∃ ns nr, IsKRK (play q m) σ ns nr wk
+Some required targets logged failures:
+- EndgameChess.Rules.KRKTermination.Strong
+error: build failed

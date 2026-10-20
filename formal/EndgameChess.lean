@@ -92,3 +92,6 @@ import EndgameChess.Rules.KRKSharper.RawWall
 
 import EndgameChess.Rules.KRKSetup.SharperArrival
 import EndgameChess.Rules.KRKSetup.SharperWeak
+
+import EndgameChess.Rules.KRKTermination.ClockCap
+import EndgameChess.Rules.KRKTermination.TerminalExists

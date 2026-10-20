@@ -1,0 +1,10 @@
+EndgameChess.Rules.krk_material_targets
+EndgameChess.Rules.krk_castle_material
+EndgameChess.Rules.krk_strong_material
+EndgameChess.Rules.krk_legal_material_clock
+EndgameChess.Rules.KRKTermination.step_parent_ongoing
+EndgameChess.Rules.KRKTermination.step_decreases
+EndgameChess.Rules.KRKTermination.path_bound
+EndgameChess.Rules.KRKTermination.krk_clock_cap
+EndgameChess.Rules.KRKTermination.maximal_iff_terminal
+EndgameChess.Rules.KRKTermination.terminal_continuation

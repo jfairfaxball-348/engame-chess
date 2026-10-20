@@ -1,0 +1,13 @@
+✖ [96/97] Building EndgameChess.Rules.KRKTermination.Targets (419ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKTermination/Targets.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKTermination/Targets.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKTermination/Targets.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKTermination/Targets.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKTermination/Targets.setup.json --json
+error: EndgameChess/Rules/KRKTermination/Targets.lean:18:36: unexpected token 'at'; expected '⟩'
+error: EndgameChess/Rules/KRKTermination/Targets.lean:14:70: Dependent elimination failed: Failed to solve equation
+  (match σ with
+    | Colour.white => Colour.black
+    | Colour.black => Colour.white) =
+    q.2
+error: EndgameChess/Rules/KRKTermination/Targets.lean:18:4: Unexpected syntax
+  failed to pretty print term (use 'set_option pp.rawOnError true' for raw representation)
+Some required targets logged failures:
+- EndgameChess.Rules.KRKTermination.Targets
+error: build failed

@@ -621,3 +621,25 @@ import EndgameChess
 #check @EndgameChess.Rules.setup_weak_safe_budget
 #print axioms EndgameChess.Rules.setup_weak_wall_budget
 #check @EndgameChess.Rules.setup_weak_wall_budget
+
+/-! EC-C045: universal admitted RAW KRK clock-bounded termination. -/
+#print axioms EndgameChess.Rules.krk_material_targets
+#check @EndgameChess.Rules.krk_material_targets
+#print axioms EndgameChess.Rules.krk_castle_material
+#check @EndgameChess.Rules.krk_castle_material
+#print axioms EndgameChess.Rules.krk_strong_material
+#check @EndgameChess.Rules.krk_strong_material
+#print axioms EndgameChess.Rules.krk_legal_material_clock
+#check @EndgameChess.Rules.krk_legal_material_clock
+#print axioms EndgameChess.Rules.KRKTermination.step_parent_ongoing
+#check @EndgameChess.Rules.KRKTermination.step_parent_ongoing
+#print axioms EndgameChess.Rules.KRKTermination.step_decreases
+#check @EndgameChess.Rules.KRKTermination.step_decreases
+#print axioms EndgameChess.Rules.KRKTermination.path_bound
+#check @EndgameChess.Rules.KRKTermination.path_bound
+#print axioms EndgameChess.Rules.KRKTermination.krk_clock_cap
+#check @EndgameChess.Rules.KRKTermination.krk_clock_cap
+#print axioms EndgameChess.Rules.KRKTermination.maximal_iff_terminal
+#check @EndgameChess.Rules.KRKTermination.maximal_iff_terminal
+#print axioms EndgameChess.Rules.KRKTermination.terminal_continuation
+#check @EndgameChess.Rules.KRKTermination.terminal_continuation

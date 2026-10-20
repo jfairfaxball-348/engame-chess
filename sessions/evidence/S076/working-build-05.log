@@ -1,0 +1,31 @@
+⚠ [97/98] Replayed EndgameChess.Rules.KRKTermination.Castle
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:57:66: This simp argument is unused:
+  Ne.symm oldKingWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldKingWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:59:68: This simp argument is unused:
+  Ne.symm oldRookWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldRookWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:87:66: This simp argument is unused:
+  Ne.symm oldKingWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldKingWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKTermination/Castle.lean:89:68: This simp argument is unused:
+  Ne.symm oldRookWeak
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [play, ht, oldBoard, krkBoard, oldRookWeak]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [98/98] Built EndgameChess.Rules.KRKTermination.Strong (360ms)
+Build completed successfully (98 jobs).

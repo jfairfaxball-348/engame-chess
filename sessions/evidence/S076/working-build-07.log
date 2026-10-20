@@ -1,0 +1,4 @@
+✔ [97/99] Built EndgameChess.Rules.KRKTermination.Castle (972ms)
+✔ [98/99] Built EndgameChess.Rules.KRKTermination.Strong (367ms)
+✔ [99/99] Built EndgameChess.Rules.KRKTermination.Closure (468ms)
+Build completed successfully (99 jobs).
