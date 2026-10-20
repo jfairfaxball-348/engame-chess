@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S056. Thirty-one theorem bundles are frozen, including the clock-free KRK forcing classification; these are not thirty-one solved material classes.
+Current mathematical evidence: through S057. Thirty-two theorem bundles are frozen, including the clock-free KRK forcing classification; these are not thirty-two solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live and clock-free forcing frozen; projection, raw history/clock/key-count and legal-ep and normalization/key/count prerequisites frozen; raw threshold certificate formally verified | Concrete rule integration and distance |
+| K+R vs K | Dead/live and clock-free forcing frozen; projection, raw history/clock/key-count and legal-ep and normalization/key/count and raw threshold prerequisites frozen | Concrete rule integration and distance |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S056. Thirty-one theorem bundles are froz
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S056 formally verified a raw current/intended clock-and-repetition threshold exclusion certificate; 31 bundles remain frozen and material-class coverage is unchanged.
+Session change: S057 froze the raw threshold exclusion certificate as EC-T0032 after a new exact-source Gate Z check; 32 bundles are frozen and material-class coverage is unchanged.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 

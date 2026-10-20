@@ -96,4 +96,6 @@
 
 | S056 | 2026-10-20 | EC-C034 raw threshold exclusion (Gate L/F) | Explicit root/ALL legal intended-child budgets exclude raw current/intended thresholds. [Closeout](S056_RAW_THRESHOLD_CERTIFICATE.md) | None — 31 frozen bundles |
 
+| S057 | 2026-10-20 | Freeze EC-C034 raw threshold exclusion (Gate Z) | New own-source 83-job build, 281 allowed reports; both complete modules frozen. [Closeout](S057_FREEZE_RAW_THRESHOLD_CERTIFICATE.md) | **+1 → EC-T0032 FROZEN** (32 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

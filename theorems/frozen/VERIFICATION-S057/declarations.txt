@@ -1,0 +1,1 @@
+EndgameChess.Rules.RawClaims.no_threshold_certificate

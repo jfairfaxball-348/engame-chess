@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S056.** Thirty-one frozen theorem bundles (not thirty-one solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S057.** Thirty-two frozen theorem bundles (not thirty-two solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -82,7 +82,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S045: EC-C028 frozen as [EC-T0026](theorems/frozen/EC-T0026/v1.md) after new exact-source Gate Z (73 jobs, 275 allowed reports), with all prior source/records preserved.
 - S046: **EC-C029 FORMAL_VERIFIED**: an actual legal source pawn changing file into an empty destination is exactly the defined LegalEP event; raw marker/flank recovered from kernel legality. [Paper](proofs/EC-C029_LEGAL_EP_CHARACTERIZATION.md), [evidence](sessions/evidence/S046/README.md). Gate Z pending; no ep-normalization or full FIDE key theorem.
 - S047: EC-C029 frozen as [EC-T0027](theorems/frozen/EC-T0027/v1.md) after new exact-source Gate Z (74 jobs, 276 allowed reports), all prior source/records preserved. Owner requested stopping at this closeout.
-- Next: S057, separate exact-source freeze of the raw threshold certificate. Complete FIDE histories/claims/repetition, sufficient-budget lifting and numerical KRK distances remain open.
+- Next: S058, exact raw threshold exclusion characterization. Complete FIDE histories/claims/repetition, sufficient-budget lifting and numerical KRK distances remain open.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
@@ -109,3 +109,5 @@ Read the charter and proof protocol first. Follow the active full prompt in `NEX
 - S055: EC-C033 frozen as [EC-T0031](theorems/frozen/EC-T0031/v1.md), both count modules immutable; separate own-source Gate Z passed. [Evidence](theorems/frozen/VERIFICATION-S055/README.md).
 
 - S056: EC-C034 **FORMAL_VERIFIED**, explicit root and EVERY legal intended-move bounds exclude raw clock/repetition thresholds. [Paper](proofs/EC-C034_RAW_THRESHOLD_CERTIFICATE.md), [evidence](sessions/evidence/S056/README.md). Raw bookkeeping, not certified FIDE claims.
+
+- S057: EC-C034 frozen as [EC-T0032](theorems/frozen/EC-T0032/v1.md), both raw threshold modules immutable; separate own-source Gate Z passed. [Evidence](theorems/frozen/VERIFICATION-S057/README.md).
