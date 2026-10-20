@@ -104,4 +104,6 @@
 
 | S060 | 2026-10-20 | EC-C036 raw mate-first endpoint classifier (Gate L/F) | Exact ongoing nondead/legal-move/150-ply/fivefold guards. [Closeout](S060_RAW_ENDPOINT_CLASSIFIER.md) | None — 33 frozen bundles |
 
+| S061 | 2026-10-20 | Freeze EC-C036 raw endpoint classifier (Gate Z) | New own-source 86-job build, 283 allowed reports; both complete modules frozen. [Closeout](S061_FREEZE_RAW_ENDPOINT_CLASSIFIER.md) | **+1 → EC-T0034 FROZEN** (34 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

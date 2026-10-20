@@ -1,0 +1,4 @@
+Observed current connected managed cloud, running; network unrestricted/enforced.
+No configured secrets, runtime bindings or outbound identities. Network policy
+version1, vpn false; inherited proxy/CA unchanged. Official core Lean4.35.0,
+ELAN_HOME=/workspace/.tools/elan, no dependency/shim. Git authentication reused.
