@@ -12,9 +12,9 @@ Corrections require a new versioned entry and clearly visible supersession note;
 
 **Current toolchain anchor:** EC-T0001–EC-T0006 also have a `v2.md` that re-anchors the theorem on Lean **v4.35.0** (S020 migration, commit `b114ccd`, no source change; see [MIGRATION-S020](frozen/MIGRATION-S020/README.md)). The `v1.md` records remain valid at their own commits on v4.34.1.
 
-EC-T0007–EC-T0028 were first frozen on v4.35.0 and need no migration manifest.
+EC-T0007–EC-T0029 were first frozen on v4.35.0 and need no migration manifest.
 
-Current frozen count: **28 bundles**, not twenty-eight solved material classes:
+Current frozen count: **29 bundles**, not twenty-nine solved material classes:
 - [EC-T0001](frozen/EC-T0001/v1.md): K vs K dead position (frozen S003).
 - [EC-T0002](frozen/EC-T0002/v1.md): K+B vs K dead position (frozen S006).
 - [EC-T0003](frozen/EC-T0003/v1.md): K vs K dead in the general FIDE rules kernel, for any legal arrival and arisen positions. Strengthens EC-T0001. Frozen S010.
@@ -59,3 +59,5 @@ S039: [EC-T0023](frozen/EC-T0023/v1.md) freezes raw multi-step clock growth on a
 - [EC-T0027](frozen/EC-T0027/v1.md): exact kernel LegalEP characterization from actual legality, source pawn, distinct files and empty destination. Frozen S047 from EC-C029. [Evidence](frozen/VERIFICATION-S047/README.md). No normalization/full FIDE key result.
 
 - [EC-T0028](frozen/EC-T0028/v1.md): ordinary raw ep-marker irrelevance, Boolean pseudo-legality and full play; S049 exact-source freeze. [Evidence](frozen/VERIFICATION-S049/README.md).
+
+- [EC-T0029](frozen/EC-T0029/v1.md): effective-ep normalization legality/full-legal-endpoint preservation; both modules frozen S051. [Evidence](frozen/VERIFICATION-S051/README.md).

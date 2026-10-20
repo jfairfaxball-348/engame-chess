@@ -84,4 +84,6 @@
 
 | S050 | 2026-10-20 | EC-C031 effective ep normalization (Gate L/F) | Boolean legality and full legal endpoints preserved for every raw q,m. [Closeout](S050_EFFECTIVE_EP_NORMALIZATION.md) | None — 28 frozen bundles |
 
+| S051 | 2026-10-20 | Freeze EC-C031 effective ep normalization (Gate Z) | New own-source 77-job build, 278 allowed reports; both complete modules frozen. [Closeout](S051_FREEZE_EFFECTIVE_EP_NORMALIZATION.md) | **+1 → EC-T0029 FROZEN** (29 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

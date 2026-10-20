@@ -1,68 +1,73 @@
-# NEXT SESSION — S051: Freeze effective ep normalization preservation
+# NEXT SESSION — S052: Normalized-key legal-move congruence
 
 Owner authorises consecutive sessions until told to stop. Follow AGENTS.md,
 charter/protocol. Fetch ALL remote heads, merge prior unmerged work, latest main,
 existing checkout. Commit/push branch, merge/push main, compare remote identities;
 never force main. Full stable progress table, Syzygy last, immediate session delta.
 
-## Starting point and principal task
+## Starting point and reading
 
-S050 formally verified EC-C031 at OWN full proof-source
-4d47b33549fc5286099cae0bd89de76b05fbeb42. Twenty-eight bundles frozen before
-this session. Read actual S050 evidence/closeout, standalone paper and both audits,
-NormalizationDefinitions/Normalization complete modules and all unchanged imports,
-EC-T0026/27/28 manifests, charter/protocol/roadmap/candidates, S032 specification.
+S051 froze EC-C031 as EC-T0029 at OWN proof-source
+4d47b33549fc5286099cae0bd89de76b05fbeb42; 29 frozen bundles, not solved classes.
+Read actual manifest/Gate Z evidence, S050/51 closeouts, EC-C031 paper/audits,
+NormalizationDefinitions/Normalization, RawRepetition/Definitions, EC-T0026–28,
+RawOccurrences definitions/append, research/KRK_RULE_DISTANCE_SPEC.md and roadmap.
 
-Separate exact-source Gate Z for EC-C031, no Lean source changes. Main
-RawRepetition.normalizeEP_preserves: for EVERY raw q,m,
-isLegal(normalizeEP q)m=isLegal q m AND
-(isLegal q m=true → play(normalizeEP q)m=play q m).
-Shared NEW normalizeEP definition replaces ep with frozen effectiveEP.
-Review exact paper/Lean: available EP gives identity; no-EP/nonshape invokes
-OrdinaryEP then same-turn self-check; no-EP/shape contradicts original legality
-using legalEP_iff_shape and proves normalized pseudo false by nonzero dx,
-empty destination and none marker. Legal-only endpoint equality essential;
-illegal EP raw play equality NOT asserted. Both colours/all promotion/raw flags,
-no history/material/terminal filter, no adverse reply pruning. Same-agent audit
-transparently named, no enumeration/engine/tablebase/stored certificate/full-game
-run/novelty claim. Review retained initial incremental simp failure/correction.
+## Principal task
 
-ONE NEW GitHub clone at OWN FULL proof-source SHA above, .lake absent before
-full lake build then COMPLETE AxiomCheck. Official core Lean4.35.0, standard-three
-subsets only, inspect exact main. Retain full logs/commands/exits/times/UTC,
-toolchain/executable, all source/transitive SHA256, clean HEAD/tree/status; compare
-whole actual S050 report and all formal source bytes. ONE fresh build at a time.
-Hosted CI unobserved unless inspected. Only observed success permits immutable
-EC-T0029/v1.md, freezing BOTH complete NormalizationDefinitions and Normalization
-modules, and exactly one appended ledger row. Prior 28 rows and every prior
-source/paper/audit/evidence/manifest byte preserved. No incremental build when no
-source edit. Relevant ledger tests/structure, evidence/preservation/document checks;
-no unrelated diagnostics/trivial tests. If failure, record honestly, no fake freeze.
+After complete standalone exact paper and separate adversarial audit BEFORE Lean,
+register EC-C032 LOCAL_VERIFIED. NEW shared KeyDefinitions module defines
+noncomputable key (q:Position):Position := normalizeEP q. Key equality means FULL
+normalized Position equality (board function/turn/castling/effective ep); no lossy
+hash or board-only equality. ONE NEW main theorem module KeyCongruence:
 
-## Closeout and next step
+∀q r, key q=key r → ∀m,
+ isLegal q m=isLegal r m ∧
+ (isLegal q m=true → play q m=play r m).
 
-Update candidate/roadmap/README/session ledger/theorems index/progress; write
-sessions/S051_FREEZE_EFFECTIVE_EP_NORMALIZATION.md with actual complete evidence
-and FULL installed S052 prompt. Commit/push/merge/push and compare remotes;
-continue under standing authorisation until told to stop.
+Exact actual Move/promotion retained, every raw q/r including malformed flags,
+both colours, no history/material/terminal/strategy restriction. Proof uses
+normalizeEP_preserves twice, transports along full normalized equality and
+transitivity. Legal equality supplies legality at r before using its endpoint
+preservation. Full endpoints, including newly computed ep and castling rights,
+must coincide. Do not assert equality of raw play for illegal EP-shaped moves.
+This is move/endpoint congruence, one prerequisite for a repetition key; no full
+Article9.2.3 iff, converse, historical rights validity, executable hashing/search
+or equivalence of arbitrary histories. Avoid introducing a global classical
+DecidableEq Position instance unnecessarily; this task needs equality only.
 
-S052 may select the normalized-key congruence prerequisite after its own complete
-paper/audit: NEW shared definition key q := normalizeEP q, and one NEW theorem
-module for ∀q,r, key q=key r → ∀m,
-isLegal q m=isLegal r m ∧ (isLegal q m=true → play q m=play r m).
-Use exact normalized identity, frozen preservation twice and endpoint equality
-transitivity. Include every actual Move/promotion; key equality is FULL normalized
-Position equality (board function, turn, rights, effective target), never board-only
-or a guessed finite hash. This establishes move/endpoint congruence, not yet the
-full FIDE Article9.2.3 iff or historical rights correctness. Select exact smallest
-claim after reviewing raw key definitions/specification; do not invent executable
-key hashing/decidable search from noncomputable definitions. Later count instantiation
-must use consistent key equality and include full history/root/current.
+Audit equal boards but different turn/rights/effective marker do not satisfy key
+premise; raw marker differing only when unavailable can be ignored by frozen
+normalization. Pinned/pseudo-only EP, promotions, king/castling, source=destination,
+no legal moves and all adverse replies remain under the actual quantified Move.
+Symbolic proofs, no coordinate/class enumeration/tablebase/engine/certificates.
+Same-agent review transparently named, not independent external audit; no concrete
+full promotion/castling/threshold game run or novelty claim.
 
-No FIDE key/rights-history correspondence, claims/no-earlier-terminal/adjudication,
-automatic draws/mate precedence, strategy lifting, numerical KRK, holding/outcome,
-WDL/DTZ/Syzygy or initial-position result follows from this normalization freeze.
+## Verification and closeout
 
-Use available cloud runtime guidance/status, network policy and inherited proxy/CA.
-ELAN_HOME=/workspace/.tools/elan, official core Lean4.35.0, no dependencies/shim.
-Lake in formal/, Python at root; one fresh build, TLS/checksums unchanged.
+Frozen sources unchanged, aggregates additive only. Incrementally build changed
+modules/importers, COMPLETE working AxiomCheck. Publish proof source BEFORE ONE
+NEW GitHub Gate F clone at FULL exact SHA, .lake absent before full build then
+COMPLETE runner. Inspect exact main, standard-three axiom subsets only, retain
+full logs/commands/exits/times/UTC/toolchain identity, all source/transitive SHA256,
+clean HEAD/tree/status; compare whole working/clean report and source bytes.
+Official core Lean4.35.0, no dependency/shim. Gate Z separate; no new frozen
+manifest/ledger row this session. Preserve all prior protected records/source/29
+rows. Relevant ledger/evidence/preservation/full-table/full-prompt/local-link/diff
+checks only, no unrelated diagnostics/trivial tests. Record any gap honestly.
+
+Update candidate/roadmap/README/session ledger/progress, write
+sessions/S052_NORMALIZED_KEY_CONGRUENCE.md with actual evidence and FULL installed
+S053 prompt; consider separate own-source freeze before full key counting.
+Commit/push/merge/push and compare remote identities. Hosted CI unobserved unless
+actually inspected. Continue next session under standing owner instruction.
+
+No full FIDE key/rights-history, claim/automatic-draw/mate-precedence adjudication,
+strategy lifting, numerical KRK, holding/outcome, WDL/DTZ/Syzygy or initial-position
+result. No adverse legal replies pruned; key states not assumed to share compatible
+initial-rooted histories.
+
+Use available runtime guidance/status, network policy and inherited proxy/CA.
+ELAN_HOME=/workspace/.tools/elan; lake in formal/, Python at root. ONE fresh build
+at a time, official core toolchain, TLS/checksums unchanged.
