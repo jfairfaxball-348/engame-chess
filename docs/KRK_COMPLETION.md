@@ -9,7 +9,7 @@ clock/count/key/ep prerequisites, endpoint classifier and EC-T0035
 stopped-history append/full-reply lifting.
 
 Next exact prerequisites:
-1. Concrete RAW Layer on admitted stopped histories: FORMAL_VERIFIED S064 (EC-C038); separate S065 freeze pending.
+1. Concrete RAW Layer on admitted stopped histories: FROZEN S065 as EC-T0036 (EC-C038).
 2. Same-budget lifting under explicit claim-safe prefix conditions. Use actual
    trace extensions, preserve every defending reply, permit terminal mate at
    zero remaining budget. Safety is sufficient and is not a KRK-specific witness.
