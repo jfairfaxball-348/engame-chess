@@ -12,9 +12,9 @@ Corrections require a new versioned entry and clearly visible supersession note;
 
 **Current toolchain anchor:** EC-T0001–EC-T0006 also have a `v2.md` that re-anchors the theorem on Lean **v4.35.0** (S020 migration, commit `b114ccd`, no source change; see [MIGRATION-S020](frozen/MIGRATION-S020/README.md)). The `v1.md` records remain valid at their own commits on v4.34.1.
 
-EC-T0007–EC-T0032 were first frozen on v4.35.0 and need no migration manifest.
+EC-T0007–EC-T0033 were first frozen on v4.35.0 and need no migration manifest.
 
-Current frozen count: **32 bundles**, not thirty-two solved material classes:
+Current frozen count: **33 bundles**, not thirty-three solved material classes:
 - [EC-T0001](frozen/EC-T0001/v1.md): K vs K dead position (frozen S003).
 - [EC-T0002](frozen/EC-T0002/v1.md): K+B vs K dead position (frozen S006).
 - [EC-T0003](frozen/EC-T0003/v1.md): K vs K dead in the general FIDE rules kernel, for any legal arrival and arisen positions. Strengthens EC-T0001. Frozen S010.
@@ -67,3 +67,5 @@ S039: [EC-T0023](frozen/EC-T0023/v1.md) freezes raw multi-step clock growth on a
 - [EC-T0031](frozen/EC-T0031/v1.md): concrete current normalized-key count after actual append, S055 exact-source freeze. [Evidence](frozen/VERIFICATION-S055/README.md).
 
 - [EC-T0032](frozen/EC-T0032/v1.md): raw current and every intended threshold exclusion, S057 exact-source freeze. [Evidence](frozen/VERIFICATION-S057/README.md).
+
+- [EC-T0033](frozen/EC-T0033/v1.md): exact raw current and every intended threshold exclusion, S059 exact-source freeze. [Evidence](frozen/VERIFICATION-S059/README.md).

@@ -1,0 +1,30 @@
+{
+  "proof_source": "c75b3760022717e586a789e47c09c03911a43a56",
+  "verified_utc": "2026-10-20T13:43:55Z",
+  "fresh_clone": "/tmp/engame-s059-gate-z",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 437.124,
+  "build_jobs": 84,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 282,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 250,
+    "propext, Quot.sound": 18,
+    "propext": 9
+  },
+  "axiom_free": 5,
+  "bundle_declarations": [
+    "EndgameChess.Rules.RawClaims.no_threshold_iff"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.RawClaims.no_threshold_iff": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/RawClaims/ExclusionCharacterization.lean"
+  ],
+  "dependency_modules": 27,
+  "source_files_hashed": 87,
+  "working_report_byte_identical": true,
+  "hosted_ci": "unobserved"
+}
