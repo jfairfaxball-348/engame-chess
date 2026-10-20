@@ -60,4 +60,6 @@
 
 | S038 | 2026-10-20 | EC-C025 raw multi-step clock bound (Gate L/F) | Exact-state zero and actual RawBoardStep successor; induction includes all resets. Source `22243b9ca5769e1478c75a333befa3c8465c90f2`; ONE NEW 68-job fresh build, 272 allowed reports, main standard-three. Prior sources/records unchanged; S039 exact-source freeze installed. [Closeout](S038_RAW_CLOCK_EXTENSION_BOUND.md) | None — 22 frozen bundles |
 
+| S039 | 2026-10-20 | Freeze EC-C025 actual-trace clock bound (Gate Z) | New exact-source 68-job build; 272 allowed reports, main standard-three; full Gate F equality and source preservation. S040 conditional clock certificate installed. [Closeout](S039_FREEZE_RAW_CLOCK_EXTENSION.md) | **+1 → EC-T0023 FROZEN** (23 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

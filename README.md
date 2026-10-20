@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S038.** Twenty-two frozen theorem bundles (not twenty-two solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S039.** Twenty-three frozen theorem bundles (not twenty-three solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -73,7 +73,8 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 - S036: **EC-C024 FORMAL_VERIFIED**: a raw halfmove fold, legal pawn/capture reset-event equivalence, castling empty-destination fact, exact append update and global/one-step ply bounds. [Paper](proofs/EC-C024_RAW_HALFMOVE_FOLD.md), [evidence](sessions/evidence/S036/README.md). No complete FIDE admissibility/adjudication or numerical KRK bound.
 - S037: EC-C023/024 frozen separately as [EC-T0021](theorems/frozen/EC-T0021/v1.md) and [EC-T0022](theorems/frozen/EC-T0022/v1.md), after two new sequential exact-source Gate Z builds. All ten declarations and source/import identities checked; no formal source changed. [Evidence](theorems/frozen/VERIFICATION-S037/README.md), [closeout](sessions/S037_FREEZE_RAW_TRACE_CLOCK.md).
 - S038: **EC-C025 FORMAL_VERIFIED**: raw multi-step clock growth along actual stored-trace extensions, including resets, with the exact same state at zero plies. [Paper](proofs/EC-C025_RAW_CLOCK_EXTENSION_BOUND.md), [evidence](sessions/evidence/S038/README.md). Gate Z pending; no sufficient-budget lifting or numerical KRK bound.
-- Next: S039, separate exact-source Gate Z review of EC-C025. Complete FIDE histories/claims/repetition, sufficient-budget lifting and numerical KRK distances remain open.
+- S039: EC-C025 frozen as [EC-T0023](theorems/frozen/EC-T0023/v1.md) after a new exact-source Gate Z build and complete axiom audit. All prior source/records unchanged.
+- Next: S040, conditional raw prefix and prospective-ply clock certificate. Complete FIDE histories/claims/repetition, sufficient-budget lifting and numerical KRK distances remain open.
 
 Research can grow in *conceptual* complexity as well as piece count: board boundaries, metrics, colour complexes, opposition, zugzwang, reachability, bounded strategies, pawn structure, promotions, and rule-dependent draw conditions.
 
