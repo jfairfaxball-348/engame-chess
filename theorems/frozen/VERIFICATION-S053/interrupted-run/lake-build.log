@@ -1,0 +1,7 @@
+✔ [2/79] Built EndgameChess.KK (3.4s)
+✔ [3/79] Built EndgameChess.Rules.Board (631ms)
+✔ [4/79] Built EndgameChess.Rules.Position (1.5s)
+✔ [5/79] Built EndgameChess.Rules.Moves (1.0s)
+✔ [6/79] Built EndgameChess.Rules.Lemmas (1.5s)
+✔ [7/79] Built EndgameChess.Rules.AgreeKK (3.2s)
+✔ [8/79] Built EndgameChess.KBK (18s)

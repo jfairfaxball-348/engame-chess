@@ -1,0 +1,49 @@
+[
+  {
+    "args": [
+      "git",
+      "clone",
+      "--no-checkout",
+      "https://github.com/jfairfaxball-348/engame-chess.git",
+      "/tmp/engame-s053-gate-z"
+    ],
+    "cwd": "/workspace/engame-chess",
+    "logfile": "clone.log",
+    "exit": 0,
+    "seconds": 2.475
+  },
+  {
+    "args": [
+      "git",
+      "checkout",
+      "--detach",
+      "7ada0bfa5731cae92a965a17d56695b4dbd221ef"
+    ],
+    "cwd": "/tmp/engame-s053-gate-z",
+    "logfile": "checkout.log",
+    "exit": 0,
+    "seconds": 0.045
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "lean",
+      "--version"
+    ],
+    "cwd": "/tmp/engame-s053-gate-z/formal",
+    "logfile": "toolchain.log",
+    "exit": 0,
+    "seconds": 0.132
+  },
+  {
+    "args": [
+      "lake",
+      "--version"
+    ],
+    "cwd": "/tmp/engame-s053-gate-z/formal",
+    "logfile": "lake-version.log",
+    "exit": 0,
+    "seconds": 0.068
+  }
+]

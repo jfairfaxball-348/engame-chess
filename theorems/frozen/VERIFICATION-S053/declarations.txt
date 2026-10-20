@@ -1,0 +1,1 @@
+EndgameChess.Rules.RawRepetition.key_legal_congr

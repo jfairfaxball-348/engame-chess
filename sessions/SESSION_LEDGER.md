@@ -88,4 +88,6 @@
 
 | S052 | 2026-10-20 | EC-C032 normalized-key congruence (Gate L/F) | Equal keys imply equal Boolean legality and full legal endpoints, all raw q,r,m. [Closeout](S052_NORMALIZED_KEY_CONGRUENCE.md) | None — 29 frozen bundles |
 
+| S053 | 2026-10-20 | Freeze EC-C032 normalized-key congruence (Gate Z) | New own-source 79-job build, 279 allowed reports; both complete modules frozen. [Closeout](S053_FREEZE_NORMALIZED_KEY_CONGRUENCE.md) | **+1 → EC-T0030 FROZEN** (30 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
