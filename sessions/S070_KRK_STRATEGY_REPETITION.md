@@ -128,7 +128,7 @@ moves may repeat or lose. Zero/early named mate bypasses ongoing/claim guards.
 Concrete payoff: exact strong-turn KRK with S.rank<R.rank<W.rank, R.rank=6,
 initial-rooted admitted raw state, either colour/arbitrary flags, clock+84<100,
 currentcount<3 and(d) yields raw RuleMateWithin at84. Use EC-T0037's coordinate
-wall theorem, not the useless uniform 508 budget. This is a PARTIAL geometric/
+wall theorem, not the useless uniform508 budget. This is a PARTIAL geometric/
 history family; no general KRK FIDE win, holding or distance result. Explicitly
 state that raw Layer correctness vs full FIDE remains separate. Do not assert
 compatibility witnesses for histories unless actually supplied/proved.
