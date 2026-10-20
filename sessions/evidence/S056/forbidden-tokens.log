@@ -1,0 +1,5 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/RawClaims/Definitions.lean
+formal/EndgameChess/Rules/RawClaims/Certificate.lean
+Matches: 0

@@ -94,4 +94,6 @@
 
 | S055 | 2026-10-20 | Freeze EC-C033 current normalized-key count (Gate Z) | New own-source 81-job build, 280 allowed reports; both complete modules frozen. [Closeout](S055_FREEZE_NORMALIZED_KEY_OCCURRENCES.md) | **+1 → EC-T0031 FROZEN** (31 bundles) |
 
+| S056 | 2026-10-20 | EC-C034 raw threshold exclusion (Gate L/F) | Explicit root/ALL legal intended-child budgets exclude raw current/intended thresholds. [Closeout](S056_RAW_THRESHOLD_CERTIFICATE.md) | None — 31 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
