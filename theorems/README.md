@@ -12,9 +12,9 @@ Corrections require a new versioned entry and clearly visible supersession note;
 
 **Current toolchain anchor:** EC-T0001–EC-T0006 also have a `v2.md` that re-anchors the theorem on Lean **v4.35.0** (S020 migration, commit `b114ccd`, no source change; see [MIGRATION-S020](frozen/MIGRATION-S020/README.md)). The `v1.md` records remain valid at their own commits on v4.34.1.
 
-EC-T0007–EC-T0023 were first frozen on v4.35.0 and need no migration manifest.
+EC-T0007–EC-T0024 were first frozen on v4.35.0 and need no migration manifest.
 
-Current frozen count: **23 bundles**, not twenty-three solved material classes:
+Current frozen count: **24 bundles**, not twenty-four solved material classes:
 - [EC-T0001](frozen/EC-T0001/v1.md): K vs K dead position (frozen S003).
 - [EC-T0002](frozen/EC-T0002/v1.md): K+B vs K dead position (frozen S006).
 - [EC-T0003](frozen/EC-T0003/v1.md): K vs K dead in the general FIDE rules kernel, for any legal arrival and arisen positions. Strengthens EC-T0001. Frozen S010.
@@ -49,3 +49,5 @@ Current frozen count: **23 bundles**, not twenty-three solved material classes:
 [S037 evidence](frozen/VERIFICATION-S037/README.md) records two NEW sequential fresh GitHub builds at the separate published anchors, 59/66 jobs and 265/271 allowed reports. Twenty-two bundles are not twenty-two solved material classes; full FIDE adjudication and numerical distance remain open.
 
 S039: [EC-T0023](frozen/EC-T0023/v1.md) freezes raw multi-step clock growth on actual trace extensions. [Evidence](frozen/VERIFICATION-S039/README.md). Twenty-three bundles; class coverage unchanged.
+
+- [EC-T0024](frozen/EC-T0024/v1.md): conditional raw prefix and every interior prospective-ply clock certificate. Frozen S041 from EC-C026. [Evidence](frozen/VERIFICATION-S041/README.md). No repetition/FIDE claim or numerical KRK conclusion.

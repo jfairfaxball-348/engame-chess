@@ -64,4 +64,6 @@
 
 | S040 | 2026-10-20 | EC-C026 conditional raw clock certificate (Gate L/F) | Explicit budget; all actual prefixes and EVERY prospective interior ply. Source `dd24ef3b4bd68d429c9c381908a7f3d5bfa9f85f`; fresh 69-job build, 273 allowed reports. One new module; prior sources/records unchanged. S041 freeze installed. [Closeout](S040_RAW_CLOCK_BUDGET_CERTIFICATE.md) | None — 23 frozen bundles |
 
+| S041 | 2026-10-20 | Freeze conditional raw clock certificate (Gate Z) | New own exact-source 69-job build, 273 allowed reports; Gate F report identical, all source/records preserved. S042 generic raw key occurrence counting installed. [Closeout](S041_FREEZE_RAW_CLOCK_BUDGET.md) | **+1 → EC-T0024 FROZEN** (24 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
