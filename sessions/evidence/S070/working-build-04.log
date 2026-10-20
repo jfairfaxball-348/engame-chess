@@ -1,0 +1,10 @@
+✔ [84/92] Built EndgameChess.Rules.KRKStrategy.LeastBudget (262ms)
+✔ [85/92] Built EndgameChess.Rules.KRKStrategy.RankDefinitions (245ms)
+✔ [86/92] Built EndgameChess.Rules.KRKStrategy.RankSpec (282ms)
+✔ [87/92] Built EndgameChess.Rules.KRKStrategy.RankKey (266ms)
+✔ [88/92] Built EndgameChess.Rules.KRKStrategy.Definitions (259ms)
+✔ [89/92] Built EndgameChess.Rules.KRKStrategy.Progress (295ms)
+✔ [90/92] Built EndgameChess.Rules.KRKStrategy.Line (326ms)
+✔ [91/92] Built EndgameChess.Rules.KRKStrategy.Terminal (346ms)
+✔ [92/92] Built EndgameChess.Rules.KRKStrategy.KRK (281ms)
+Build completed successfully (92 jobs).

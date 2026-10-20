@@ -1,0 +1,9 @@
+EndgameChess.Rules.krk_key_simple_strategy
+EndgameChess.Rules.strategy_key_budget
+EndgameChess.Rules.strategy_key_interface
+EndgameChess.Rules.strategy_least_budget
+EndgameChess.Rules.strategy_line_certificate
+EndgameChess.Rules.strategy_progress
+EndgameChess.Rules.strategy_rank_key
+EndgameChess.Rules.strategy_rank_spec
+EndgameChess.Rules.strategy_terminal

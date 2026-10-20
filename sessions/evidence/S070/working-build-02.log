@@ -1,0 +1,27 @@
+✔ [82/91] Built EndgameChess.Rules.KRKStrategy.KeyInterface (278ms)
+✔ [83/91] Built EndgameChess.Rules.KRKStrategy.KeyBudget (293ms)
+✖ [84/91] Building EndgameChess.Rules.KRKStrategy.RankDefinitions (279ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKStrategy/RankDefinitions.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKStrategy/RankDefinitions.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKStrategy/RankDefinitions.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKStrategy/RankDefinitions.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKStrategy/RankDefinitions.setup.json --json
+error: EndgameChess/Rules/KRKStrategy/RankDefinitions.lean:18:38: unknown tactic
+error: EndgameChess/Rules/KRKStrategy/RankDefinitions.lean:18:34: unsolved goals
+σ : Colour
+q : Position
+n✝ : Nat
+hn✝ : MateWithin σ n✝ q
+n : Nat
+ih : ∀ (m : Nat), m < n → MateWithin σ m q → ∃ k, MateWithin σ k q ∧ ∀ (m : Nat), MateWithin σ m q → k ≤ m
+hn : MateWithin σ n q
+lower : ¬∃ k, k < n ∧ MateWithin σ k q
+m : Nat
+hm : MateWithin σ m q
+⊢ n ≤ m
+error: EndgameChess/Rules/KRKStrategy/RankDefinitions.lean:6:61: unsolved goals
+σ : Colour
+q : Position
+n : Nat
+hn : MateWithin σ n q
+least : ∀ (n : Nat), MateWithin σ n q → ∃ k, MateWithin σ k q ∧ ∀ (m : Nat), MateWithin σ m q → k ≤ m
+⊢ ∃ n, MateWithin σ n q ∧ ∀ (m : Nat), MateWithin σ m q → n ≤ m
+Some required targets logged failures:
+- EndgameChess.Rules.KRKStrategy.RankDefinitions
+error: build failed

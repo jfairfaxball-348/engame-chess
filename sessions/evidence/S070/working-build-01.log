@@ -1,0 +1,37 @@
+✖ [82/91] Building EndgameChess.Rules.KRKStrategy.KeyInterface (363ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKStrategy/KeyInterface.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKStrategy/KeyInterface.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKStrategy/KeyInterface.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKStrategy/KeyInterface.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKStrategy/KeyInterface.setup.json --json
+error: EndgameChess/Rules/KRKStrategy/KeyInterface.lean:10:57: Application type mismatch: The argument
+  hk
+has type
+  RawRepetition.key q = RawRepetition.key r
+but is expected to have type
+  q = r
+in the application
+  congrArg Position.board hk
+error: EndgameChess/Rules/KRKStrategy/KeyInterface.lean:11:54: Application type mismatch: The argument
+  hk
+has type
+  RawRepetition.key q = RawRepetition.key r
+but is expected to have type
+  q = r
+in the application
+  congrArg Position.turn hk
+error: EndgameChess/Rules/KRKStrategy/KeyInterface.lean:20:57: Application type mismatch: The argument
+  he
+has type
+  z = play q m
+but is expected to have type
+  play q m = ?m.75
+in the application
+  Eq.trans (Eq.symm (samePlay hm)) he
+error: EndgameChess/Rules/KRKStrategy/KeyInterface.lean:23:57: Application type mismatch: The argument
+  he
+has type
+  z = play r m
+but is expected to have type
+  play r m = ?m.115
+in the application
+  Eq.trans (Eq.symm (samePlay hm)) he
+Some required targets logged failures:
+- EndgameChess.Rules.KRKStrategy.KeyInterface
+error: build failed

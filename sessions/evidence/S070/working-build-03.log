@@ -1,0 +1,45 @@
+✔ [84/91] Built EndgameChess.Rules.KRKStrategy.RankDefinitions (281ms)
+⚠ [85/91] Built EndgameChess.Rules.KRKStrategy.RankSpec (279ms)
+warning: EndgameChess/Rules/KRKStrategy/RankSpec.lean:13:29: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [86/91] Built EndgameChess.Rules.KRKStrategy.RankKey (277ms)
+warning: EndgameChess/Rules/KRKStrategy/RankKey.lean:22:29: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKStrategy/RankKey.lean:22:41: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [87/91] Built EndgameChess.Rules.KRKStrategy.Definitions (293ms)
+✔ [88/91] Built EndgameChess.Rules.KRKStrategy.Progress (313ms)
+✖ [89/91] Building EndgameChess.Rules.KRKStrategy.Line (263ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKStrategy/Line.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKStrategy/Line.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKStrategy/Line.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKStrategy/Line.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKStrategy/Line.setup.json --json
+error: EndgameChess/Rules/KRKStrategy/Line.lean:12:2: Invalid target: Index in target's type is not a variable (consider using the `cases` tactic instead)
+  q :: tail
+✖ [90/91] Building EndgameChess.Rules.KRKStrategy.Terminal (367ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKStrategy/Terminal.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKStrategy/Terminal.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKStrategy/Terminal.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKStrategy/Terminal.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKStrategy/Terminal.setup.json --json
+error: EndgameChess/Rules/KRKStrategy/Terminal.lean:15:37: unsolved goals
+case white.black
+q : Position
+win : ForceMate Colour.white q
+none : ∀ (x : Position), ¬StrategyStep Colour.white q x
+ongoing : ¬MateGoal Colour.white q
+weak : Colour.black = Colour.white.opp → (∃ r, Legal q r) ∧ ∀ (r : Position), ¬Legal q r
+h : q.turn = Colour.black
+⊢ Colour.black = Colour.white.opp
+
+case black.white
+q : Position
+win : ForceMate Colour.black q
+none : ∀ (x : Position), ¬StrategyStep Colour.black q x
+ongoing : ¬MateGoal Colour.black q
+weak : Colour.white = Colour.black.opp → (∃ r, Legal q r) ∧ ∀ (r : Position), ¬Legal q r
+h : q.turn = Colour.white
+⊢ Colour.white = Colour.black.opp
+Some required targets logged failures:
+- EndgameChess.Rules.KRKStrategy.Line
+- EndgameChess.Rules.KRKStrategy.Terminal
+error: build failed

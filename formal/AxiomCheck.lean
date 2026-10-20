@@ -547,3 +547,23 @@ import EndgameChess
 #check @EndgameChess.Rules.krk_wall_ceiling
 #print axioms EndgameChess.Rules.bound_weak_wall
 #check @EndgameChess.Rules.bound_weak_wall
+
+/-! EC-C041: key-simple all-defence KRK rank strategy. -/
+#print axioms EndgameChess.Rules.krk_key_simple_strategy
+#check @EndgameChess.Rules.krk_key_simple_strategy
+#print axioms EndgameChess.Rules.strategy_key_budget
+#check @EndgameChess.Rules.strategy_key_budget
+#print axioms EndgameChess.Rules.strategy_key_interface
+#check @EndgameChess.Rules.strategy_key_interface
+#print axioms EndgameChess.Rules.strategy_least_budget
+#check @EndgameChess.Rules.strategy_least_budget
+#print axioms EndgameChess.Rules.strategy_line_certificate
+#check @EndgameChess.Rules.strategy_line_certificate
+#print axioms EndgameChess.Rules.strategy_progress
+#check @EndgameChess.Rules.strategy_progress
+#print axioms EndgameChess.Rules.strategy_rank_key
+#check @EndgameChess.Rules.strategy_rank_key
+#print axioms EndgameChess.Rules.strategy_rank_spec
+#check @EndgameChess.Rules.strategy_rank_spec
+#print axioms EndgameChess.Rules.strategy_terminal
+#check @EndgameChess.Rules.strategy_terminal

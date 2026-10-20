@@ -83,3 +83,5 @@ import EndgameChess.Rules.RawHistoryLayer.BudgetLifting
 
 import EndgameChess.Rules.KRKBound.Arrival
 import EndgameChess.Rules.KRKBound.AxisWall
+
+import EndgameChess.Rules.KRKStrategy.KRK
