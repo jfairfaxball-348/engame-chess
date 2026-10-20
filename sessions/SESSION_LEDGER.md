@@ -86,4 +86,6 @@
 
 | S051 | 2026-10-20 | Freeze EC-C031 effective ep normalization (Gate Z) | New own-source 77-job build, 278 allowed reports; both complete modules frozen. [Closeout](S051_FREEZE_EFFECTIVE_EP_NORMALIZATION.md) | **+1 → EC-T0029 FROZEN** (29 bundles) |
 
+| S052 | 2026-10-20 | EC-C032 normalized-key congruence (Gate L/F) | Equal keys imply equal Boolean legality and full legal endpoints, all raw q,r,m. [Closeout](S052_NORMALIZED_KEY_CONGRUENCE.md) | None — 29 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

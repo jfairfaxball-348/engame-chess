@@ -1,0 +1,31 @@
+{
+  "proof_source": "7ada0bfa5731cae92a965a17d56695b4dbd221ef",
+  "verified_utc": "2026-10-20T12:41:39Z",
+  "fresh_clone": "/tmp/engame-s052-gate-f",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 481.501,
+  "build_jobs": 79,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 279,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 247,
+    "propext, Quot.sound": 18,
+    "propext": 9
+  },
+  "axiom_free": 5,
+  "bundle_declarations": [
+    "EndgameChess.Rules.RawRepetition.key_legal_congr"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.RawRepetition.key_legal_congr": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/RawRepetition/KeyDefinitions.lean",
+    "formal/EndgameChess/Rules/RawRepetition/KeyCongruence.lean"
+  ],
+  "dependency_modules": 25,
+  "source_files_hashed": 82,
+  "working_report_byte_identical": true,
+  "hosted_ci": "unobserved"
+}
