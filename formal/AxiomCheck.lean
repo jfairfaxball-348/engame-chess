@@ -456,3 +456,7 @@ import EndgameChess
 #print EndgameChess.Rules.RawTrace.Extends
 #check @EndgameChess.Rules.RawClock.clock_le_extension
 #print axioms EndgameChess.Rules.RawClock.clock_le_extension
+
+-- S040 / EC-C026: explicit-hypothesis prefix and prospective-ply clock certificate.
+#check @EndgameChess.Rules.RawClock.clock_budget_certificate
+#print axioms EndgameChess.Rules.RawClock.clock_budget_certificate
