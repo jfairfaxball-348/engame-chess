@@ -1,79 +1,46 @@
-# NEXT SESSION — S067: Direct quantitative attack on KRK closure
+# NEXT SESSION — S068: Formalise the explicit KRK strategy bound
 
-PAUSED — owner authorised installing this roadmap only. DO NOT execute S067,
-run a build/freeze, or start any later session without a new owner request.
-KRK closure is the priority when resumed; stop before KQK. This prompt replaces
-the earlier freeze-only S067 plan. S067 has NOT started.
+Owner has explicitly resumed research and requested consecutive sessions until
+asked to stop (2026-10-20). Continue the direct KRK attack; stop before KQK.
+Follow AGENTS.md, charter and proof protocol; fetch all remote heads, merge prior
+unmerged work and start latest main. Commit/push branch, merge/push main and
+compare identities, never force main. Full stable progress table, Syzygy last.
 
-Follow AGENTS.md, docs/CHARTER.md and docs/PROOF_PROTOCOL.md. Read
-`docs/KRK_COMPLETION.md` first. Fetch ALL remote heads,
-merge prior unmerged work, and use the resulting latest main in the existing
-checkout. Commit/push branch, merge/push main and compare remote identities;
-never force main. Full stable progress table, Syzygy last, immediate session delta.
-A request to run one session does not authorise consecutive sessions automatically.
+Read proofs/EC-C040_KRK_QUANTITATIVE_BOUND.md and its separate same-agent audit
+at audits/EC-C040_KRK_QUANTITATIVE_PAPER.md. EC-C040 is LOCAL_VERIFIED only.
+Principal claim: both colours, arbitrary target flags, exact strong-turn KRK
+with no weak check (hence every legal strong-turn arrival) has MateWithin at
+508 plies. For a rank wall n=7−R.y,g=R.y−S.y, use U(n)=84*n and
+A(n,g)=84*(n−1)+62+4*(g−1). Pursuit with uniform exit budget E costs ≤8*m+E,
+m=remaining oriented strong-file distance≤7. Setup costs ≤4 plies. Every weak
+reply and nonempty witness is retained. Same-budget transport from noRights
+source is NEW; frozen existential transport alone is insufficient.
 
-## Starting evidence
+Formalise the exact paper statement in NEW modules, one main theorem per module,
+shared definitions separately. Preserve all frozen modules/records. Add mains
+and helpers to AxiomCheck and aggregate imports. Use fixed-budget choose/defend,
+not finite-branching sums. Audit n=1/edge mate, g normalization overhead, up to
+three rook tempos before pursuit advance, threatened-rook rescue, back-rank and
+axis-switch setup, all weak branches, source noRights and arbitrary target flags.
+The bound is deliberately coarse and nonoptimal; no exact distance, FIDE rule-aware
+win or occurrence uniqueness follows. EC-C039 remains freeze backlog; do not
+replace the numerical KRK proof with generic library work.
 
-36 frozen bundles, not solved classes. KRK dead/live and clock-free forcing are
-frozen (EC-T0006/7 and EC-T0019, with supporting bundles). Raw history Layer is
-frozen as EC-T0036. S066 EC-C039 is FORMAL_VERIFIED, Gate Z pending, own source
-7155c3424a5e315ea758f916d939b6696e0da261. Read its actual closeout/evidence and
-strong all-raw-prefix hypothesis; do not infer a numerical KRK/history witness.
-The earlier Gate Z checklist remains recorded in the S066 closeout; freezing
-EC-C039 is backlog, not this session's principal task or a precondition for paper
-research. Do not append a theorem-ledger row without a separate successful Gate Z.
+Run appropriate changed-module/importer incremental checks and complete runner.
+Publish OWN full proof-source SHA, then ONE NEW GitHub clone with no .lake before
+full lake build and complete AxiomCheck. Official core Lean4.35.0,
+ELAN_HOME=/workspace/.tools/elan, inherited proxy/CA; no dependency/shim/TLS/checksum
+changes. Retain actual logs, commands/exits/times/UTC, executable/toolchain,
+clean HEAD/tree/status, complete source/transitive hashes and working/clean
+runner equality; standard-three axioms only. Observe results before promotion.
+Gate Z separate. If formalisation is blocked preserve exact failure and next
+KRK-specific obligation; do not weaken the statement silently.
 
-Read actual KRK proof sources/papers: SafeSetup, OffRankSetup, SameRankSetup,
-WallForce, LowerPursuit, rank-advance/rescue, all-axis/strategy transport and weak-
-turn classification; inspect the frozen manifests. Read S032 specification §5/6,
-current candidates and progress. Preserve every frozen source and prior record.
-
-## Principal task — milestone A
-
-Directly attack an explicit quantitative bound for the KRK winning strategy.
-Write standalone paper and a separate adversarial audit BEFORE Lean. State the
-exact domain: every legal strong-turn KRK arrival, both colours, arbitrary kernel
-flags, with every legal defensive reply retained. Target a proved explicit
-coordinate/phase bound B(q) yielding MateWithin at that ply budget, plus a proved
-numerical ceiling. Derive constants from actual setup/pursuit/rank costs; do not
-invent a numeral, cite an unproved classical maximum, or rename existential
-ForceMate as a quantitative result. A sub-100 ceiling is not assumed.
-
-Expose a bound for each strategy phase, tempo/waiting costs, progress measure,
-composition and all-reply branching. Audit threatened rook, back/same-rank setup,
-axis transport, stalemate, captures to KK, terminal mate, flags/castling and ply
-conventions. Identify how the strategy's progress can support repetition control
-on chosen moves and ALL defending branches (milestone B); account for incoming
-history separately. Safety over every arbitrary winning-side move is not required
-of a strategy certificate, and EC-C039's stronger hypothesis is not assumed true.
-
-If the proof closes, formalise the exact audited statement in NEW modules,
-add declarations to AxiomCheck, and follow all applicable Gate F checks, including
-own published full proof-source SHA, a new clean GitHub build/full runner,
-standard-three axiom audit and full retained evidence. Gate Z remains separate;
-no claimed result before observed success. Same-agent audits are labelled honestly.
-No tablebase/engine oracle, exhaustive class proof, stored position certificates
-or unearned novelty/complete FIDE WDL/DTZ claim.
-
-If it does not close, retain the attempted bound and exact blocked lemma, arithmetic
-failure or uncovered family. Install the next direct KRK proof step. A partial
-family is partial. Do not substitute another generic theorem to make a session
-appear successful. A generic prerequisite requires the four-part justification
-in docs/KRK_COMPLETION.md, tied to this actual blocked KRK proof; return to the
-main attack after its exit criterion. No automatic mated-key bookkeeping detour.
-
-## Closeout
-
-Report milestone/claim, numerical bound and newly covered inputs (or explicitly
-unchanged coverage), exact remaining gap and justified dependencies. Update
-candidates only if a claim is actually selected; roadmap/README/session ledger/
-progress as appropriate. Record actual tests/builds/audits or "not run" and preserve
-failures. Write sessions/S067_KRK_QUANTITATIVE_ATTACK.md with the full installed
-next prompt and full stable progress table, following protocol. Commit/push/merge/
-push and compare remotes. Stop after the authorised session unless the owner
-explicitly requests continuation. KRK rule-aware coverage, holding and exact
-WDL/DTZ distances remain open until separately proved and frozen.
-
-Use available runtime guidance/status/network policy, inherited proxy/CA,
-ELAN_HOME=/workspace/.tools/elan. Lake in formal/, Python at root; official core
-Lean4.35.0, no dependency/shim/TLS/checksum changes.
+Update candidate/roadmap/README/progress/completion tracker, session ledger and
+sessions/S068_KRK_QUANTITATIVE_LEAN.md with actual evidence and FULL next prompt.
+Report exact bound/new coverage or unchanged coverage. Following successful Gate F,
+install separate Gate Z for this numerical KRK result, then return to strategy
+history safety and sharper budgets. 508 cannot satisfy clock+n<100; finite macro
+progress does not imply no repeated normalized keys or handle incoming history.
+Complete FIDE integration, every-history outcomes, holding and exact WDL/DTZ
+remain open. Continue consecutive authorised sessions until owner asks to stop.

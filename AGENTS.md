@@ -32,6 +32,6 @@ why current results are insufficient, the smallest missing statement/coverage
 payoff, and an exit criterion returning to the main attack. A blocked direct
 proof is recorded honestly; do not replace it with easier unrelated library work.
 Freeze checks remain mandatory but do not set the research agenda by default.
-Research is PAUSED after S066: this planning update does not start S067. Await an
-explicit owner request; do not infer automatic consecutive-session authority, and
-do not start KQK under the current direction.
+Owner resumed research on 2026-10-20 and explicitly requested consecutive
+sessions until asked to stop. S067 completed the paper quantitative bound;
+continue the installed next prompt. Do not start KQK under the current direction.

@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S066.** Thirty-six frozen theorem bundles (not thirty-six solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S067.** Thirty-six frozen theorem bundles (not thirty-six solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -129,3 +129,8 @@ Read the charter and proof protocol first. Follow the active full prompt in `NEX
 - S065: EC-C038 frozen as [EC-T0036](theorems/frozen/EC-T0036/v1.md), concrete RAW Layer and same-budget projection immutable. [Evidence](theorems/frozen/VERIFICATION-S065/README.md).
 
 - S066: EC-C039 **FORMAL_VERIFIED**, same-budget raw rule-mate lifting under clock+n<100 and count<3 on EVERY actual raw prefix through n. [Paper](proofs/EC-C039_RAW_SUFFICIENT_BUDGET_LIFTING.md), [evidence](sessions/evidence/S066/README.md). Strong sufficient certificate only; no general KRK history/numeric witness or full outcome coverage.
+
+S067: [EC-C040 quantitative KRK paper](proofs/EC-C040_KRK_QUANTITATIVE_BOUND.md)
+and [separate same-agent audit](audits/EC-C040_KRK_QUANTITATIVE_PAPER.md) give a
+508-ply clock-free ceiling, LOCAL_VERIFIED only. S068 formalises it; no rule-aware
+coverage or frozen-bundle change. Consecutive sessions resumed by owner request.

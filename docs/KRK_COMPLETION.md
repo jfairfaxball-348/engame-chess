@@ -1,8 +1,8 @@
 # Short-term roadmap: direct attack on KRK closure
 
 Owner direction, 2026-10-20: KRK closure is the research priority across as many
-sessions as needed. This update installs the plan only. Research remains PAUSED;
-do not start S067 or any later session without a new owner request. Stop before KQK.
+sessions as needed. Owner subsequently resumed research and explicitly requested consecutive
+sessions until asked to stop. Stop before KQK.
 
 ## Evidence and completion standard
 
@@ -37,9 +37,16 @@ that limitation. Neither an invented sub-100 bound nor a clock-only criterion
 settles history-dependent outcomes. A strategy that creates no new repetition
 may still encounter keys already present in the incoming history.
 
-## Next resumed session: S067
+## Current direct attack: EC-C040
 
-Principal target: the quantitative KRK strategy in A, beginning with a paper proof
+S067: EC-C040 is LOCAL_VERIFIED on paper, with a 508-ply global ceiling,
+84*(7−rookRank) wall ceiling, ≤56-ply lower pursuit before a bounded exit, and
+≤4-ply setup. Separate same-agent audit completed; no Lean/build/freeze yet.
+[Paper](../proofs/EC-C040_KRK_QUANTITATIVE_BOUND.md). S068 formalises this exact
+statement. The coarse ceiling exceeds 100 and does not certify history safety.
+Material-class/rule-aware coverage and 36 frozen bundles are unchanged.
+
+Principal target remains the quantitative KRK strategy in A, beginning with a paper proof
 and separate adversarial audit. Read the existing KRK safe-setup, wall, lower-band
 pursuit and rank-advance arguments; make their costs and quantified continuations
 explicit. Choose one well-posed quantitative claim and carry it through the

@@ -118,4 +118,6 @@
 
 S066 planning addendum (2026-10-20): [direct KRK closure roadmap installed](S066_KRK_ROADMAP_ADDENDUM.md); documentation only, mathematical evidence unchanged. S067 has not started.
 
+| S067 | 2026-10-20 | Explicit quantitative KRK strategy (Gate L) | EC-C040 LOCAL_VERIFIED on paper: 508-ply strong-turn arrival ceiling; 84*(7−rookRank) walls, 8*m+E pursuit, ≤4 setup; separate same-agent audit; no Lean/build/freeze. Consecutive sessions resumed; S068 formalisation installed. [Closeout](S067_KRK_QUANTITATIVE_ATTACK.md) | None — 36 frozen bundles; rule-aware coverage unchanged |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

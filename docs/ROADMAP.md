@@ -7,10 +7,10 @@ winning strategy and strategy-specific repetition control first, then concrete
 FIDE integration, complete rule-aware outcome coverage and correct distances.
 These are continuing proof obligations, not one-session deadlines. Generic
 prerequisites must discharge an identified blocked step of the active KRK proof.
-The next resumed S067 targets a numerical strategy bound, replacing the old
-freeze-only priority; EC-C039's separate freeze remains backlog. Research is
-PAUSED. This documentation update does not start S067; await an explicit owner
-request and stop before KQK. Mathematical coverage and all proof statuses are unchanged.
+S067 derived a paper-verified 508-ply KRK strategy ceiling (EC-C040), pending
+Lean and freeze. Owner resumed consecutive sessions until asked to stop; S068
+formalises the numerical bound. EC-C039 freeze remains backlog. Stop before KQK.
+The bound exceeds 100; complete rule-aware coverage remains open.
 
 ## Distant horizon: ultra-weakly solve chess
 **Ultimate ambition (owner, 2026-10-18; unproved):** establish by a rigorous mathematical argument, ideally formalised in Lean, that standard chess from its initial position is a theoretical **draw**: \(V(S_0)=0\), under a complete, explicitly fixed rules model. This is an *ultra-weak* target: prove the position's value, not a playable perfect-move strategy or a "cheat code". The result is not known and must not be inferred from endgame progress. Whether the methods below can generalise as far as the initial position is an open research question.
@@ -32,7 +32,7 @@ The existing objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know, **
 | K vs K | **done** (EC-T0001/0003: every position dead) | done (draw) | n/a | n/a |
 | K+B vs K | **done** (EC-T0002/0004) | done (draw) | n/a | n/a |
 | K+N vs K | **done** (EC-T0005) | done (draw) | n/a | n/a |
-| K+R vs K | **done, frozen**: dead ⇔ lone king to move, not mate, every legal move captures the rook (EC-T0006 + EC-T0007, S023) | Clock-free forcing classified, frozen EC-T0019; FIDE rule-aware outcomes open | Clock-free forcing proved and frozen; rule-aware strategy open | Numeric distance / DTZ open |
+| K+R vs K | **done, frozen**: dead ⇔ lone king to move, not mate, every legal move captures the rook (EC-T0006 + EC-T0007, S023) | Clock-free forcing classified, frozen EC-T0019; FIDE rule-aware outcomes open | Clock-free forcing proved and frozen; rule-aware strategy open | 508-ply upper bound paper-verified; Lean/freeze and exact distance / DTZ open |
 | K+Q vs K | open | open | open | open |
 | K+P vs K | open | open | open | open |
 
