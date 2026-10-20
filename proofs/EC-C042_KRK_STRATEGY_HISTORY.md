@@ -137,3 +137,5 @@ not itself replace incoming H. Failure of the sufficient family is not draw.
 At paper creation: LOCAL_VERIFIED after the separate same-agent audit; Lean,
 Gate F and separate Gate Z pending. EC-C041 also awaits freeze. 37 frozen bundles;
 partial raw-family progress must not be reported as complete KRK closure.
+
+S071 verification addendum: exact statements FORMAL_VERIFIED at `c6e62cc4b2c96061bdb7465eb99f9cc901941b0c`; [observed evidence](../sessions/evidence/S071/README.md). Separate Gate Z pending. Earlier paper-creation status is historical.

@@ -99,3 +99,5 @@ Do not skip a simpler prerequisite solely because another result is famous. New 
 Latest owner instruction 2026-10-20: finish/close S066, then STOP. Further sessions are paused pending explicit resumption; do not start S067 or KQK automatically. Track remaining obligations in [KRK completion](KRK_COMPLETION.md).
 
 S070: EC-C041 formally verifies a minimal-budget KRK strategy with pairwise distinct normalized raw keys on every whole play line, preserving every legal defensive reply. [Paper](../proofs/EC-C041_KRK_STRATEGY_REPETITION.md). Gate Z pending; S071 targets actual stored-trace incoming counts and a partial raw rule-aware wall family. Incoming history and full FIDE correctness remain separate.
+
+S071: EC-C042 formally verifies same-budget actual-history RAW lifting under explicit clock/current/incoming lower-rank count conditions, with an84-ply rank-six KRK wall corollary. [Paper](../proofs/EC-C042_KRK_STRATEGY_HISTORY.md). Partial conditional RAW family, no compatibility witness or full FIDE/complete outcome claim. Separate S072 own-source freeze for EC-C041/042 is next.

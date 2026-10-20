@@ -126,4 +126,6 @@ S066 planning addendum (2026-10-20): [direct KRK closure roadmap installed](S066
 
 | S070 | 2026-10-20 | KRK strategy-specific key nonrepetition (Gate F) | EC-C041 FORMAL_VERIFIED: least-budget policy, every legal weak reply, whole-line pairwise keys, ≤508 plies, terminal iff named mate. Source `fe7efa687ae1481db405cf8808d9ad3437906861`; new 130-job build/320 permitted reports, 9 public declarations/11 modules. S071 actual-history lifting installed. [Closeout](S070_KRK_STRATEGY_REPETITION.md) | None — 37 bundles; incoming-history/rule-aware coverage unchanged |
 
+| S071 | 2026-10-20 | Actual-history KRK winning family (Gate F) | EC-C042 FORMAL_VERIFIED: same-budget rank-policy RAW lift under explicit incoming histogram/clock/count, partial 84-ply rank-six wall. Own source `c6e62cc4b2c96061bdb7465eb99f9cc901941b0c`; new 134-job build/323 permitted reports, 3 declarations/4 modules. Separate own-source EC-C041/042 freeze installed. [Closeout](S071_KRK_STRATEGY_HISTORY.md) | None — 37 bundles; partial conditional RAW coverage only |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

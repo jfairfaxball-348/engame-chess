@@ -1,0 +1,7 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/KRKHistory/Append.lean
+formal/EndgameChess/Rules/KRKHistory/Definitions.lean
+formal/EndgameChess/Rules/KRKHistory/Lifting.lean
+formal/EndgameChess/Rules/KRKHistory/Wall.lean
+Matches: 0

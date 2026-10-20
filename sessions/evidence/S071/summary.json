@@ -1,0 +1,37 @@
+{
+  "proof_source": "c6e62cc4b2c96061bdb7465eb99f9cc901941b0c",
+  "verified_utc": "2026-10-20T18:28:29Z",
+  "fresh_clone": "/workspace/engame-chess/work/s071-gate-f",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 401.171,
+  "build_jobs": 134,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 323,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 290,
+    "propext, Quot.sound": 19,
+    "propext": 9
+  },
+  "axiom_free": 5,
+  "bundle_declarations": [
+    "EndgameChess.Rules.RawHistoryLayer.strategy_append_history",
+    "EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_strategy_history",
+    "EndgameChess.Rules.RawHistoryLayer.raw_rank_six_wall_ruleMateWithin"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.RawHistoryLayer.strategy_append_history": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_strategy_history": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawHistoryLayer.raw_rank_six_wall_ruleMateWithin": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/KRKHistory/Append.lean",
+    "formal/EndgameChess/Rules/KRKHistory/Definitions.lean",
+    "formal/EndgameChess/Rules/KRKHistory/Lifting.lean",
+    "formal/EndgameChess/Rules/KRKHistory/Wall.lean"
+  ],
+  "dependency_modules": 108,
+  "source_files_hashed": 137,
+  "working_report_byte_identical": true,
+  "hosted_ci": "unobserved"
+}

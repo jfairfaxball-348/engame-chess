@@ -1,0 +1,90 @@
+[
+  {
+    "args": [
+      "git",
+      "clone",
+      "--no-checkout",
+      "https://github.com/jfairfaxball-348/engame-chess.git",
+      "/workspace/engame-chess/work/s071-gate-f"
+    ],
+    "cwd": "/workspace/engame-chess",
+    "logfile": "clone.log",
+    "exit": 0,
+    "seconds": 4.18,
+    "started_utc": "2026-10-20T18:21:43.130214+00:00"
+  },
+  {
+    "args": [
+      "git",
+      "checkout",
+      "--detach",
+      "c6e62cc4b2c96061bdb7465eb99f9cc901941b0c"
+    ],
+    "cwd": "/workspace/engame-chess/work/s071-gate-f",
+    "logfile": "checkout.log",
+    "exit": 0,
+    "seconds": 0.077,
+    "started_utc": "2026-10-20T18:21:47.309941+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "lean",
+      "--version"
+    ],
+    "cwd": "/workspace/engame-chess/work/s071-gate-f/formal",
+    "logfile": "toolchain.log",
+    "exit": 0,
+    "seconds": 0.087,
+    "started_utc": "2026-10-20T18:21:47.389333+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "--version"
+    ],
+    "cwd": "/workspace/engame-chess/work/s071-gate-f/formal",
+    "logfile": "lake-version.log",
+    "exit": 0,
+    "seconds": 0.045,
+    "started_utc": "2026-10-20T18:21:47.476734+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "which",
+      "lean"
+    ],
+    "cwd": "/workspace/engame-chess/work/s071-gate-f/formal",
+    "logfile": "lean-executable.txt",
+    "exit": 0,
+    "seconds": 0.048,
+    "started_utc": "2026-10-20T18:21:47.522421+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "build"
+    ],
+    "cwd": "/workspace/engame-chess/work/s071-gate-f/formal",
+    "logfile": "lake-build.log",
+    "exit": 0,
+    "seconds": 401.171,
+    "started_utc": "2026-10-20T18:21:47.570821+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "lean",
+      "AxiomCheck.lean"
+    ],
+    "cwd": "/workspace/engame-chess/work/s071-gate-f/formal",
+    "logfile": "axioms-statements.log",
+    "exit": 0,
+    "seconds": 0.661,
+    "started_utc": "2026-10-20T18:28:28.741948+00:00"
+  }
+]

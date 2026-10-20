@@ -1,0 +1,1502 @@
+'EndgameChess.KK.dead_of_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.dead_of_last_move_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.admissible_of_last_move_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.attack_iff_dInf_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.not_inCheck_of_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.admissible_of_legal_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.admissible_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.not_checkmate_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.legalKK_iff_prose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.exists_legal_move_of_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.checkmate_satisfiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KK.reach_nontrivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.KK.dead_of_admissible : ∀ {p : EndgameChess.KK.KKState},
+  EndgameChess.KK.Admissible p → EndgameChess.KK.Dead p
+EndgameChess.KK.dead_of_last_move_legal : ∀ (q : EndgameChess.KK.KKState),
+  (∃ p, EndgameChess.KK.LegalKK p q) → EndgameChess.KK.Dead q
+'EndgameChess.KBK.dead_of_LKBK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.dead_of_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.dead_of_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.LKBK_of_step' does not depend on any axioms
+'EndgameChess.KBK.weak_has_move_of_inCheck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.colour_of_bishopAttacks' depends on axioms: [propext, Quot.sound]
+'EndgameChess.KBK.colour_orth_neighbour' depends on axioms: [propext, Quot.sound]
+'EndgameChess.KBK.kings_apart_of_LKBK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.strong_not_inCheck_of_LKBK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.closed_of_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.closed_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.not_mated_of_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.admissible_of_capture' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.bishop_check_exists' depends on axioms: [propext, Quot.sound]
+'EndgameChess.KBK.stalemate_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.KBK.mated_satisfiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.KBK.dead_of_LKBK : ∀ {p : EndgameChess.KBK.KBKState},
+  EndgameChess.KBK.LKBK p → EndgameChess.KBK.Dead (EndgameChess.KBK.Pos.kbk p)
+@EndgameChess.KBK.dead_of_step : ∀ {p q : EndgameChess.KBK.KBKState},
+  EndgameChess.KBK.Step (EndgameChess.KBK.Pos.kbk p) (EndgameChess.KBK.Pos.kbk q) →
+    q.sk ≠ q.bs ∧ q.sk ≠ q.wk ∧ q.bs ≠ q.wk → EndgameChess.KBK.Dead (EndgameChess.KBK.Pos.kbk q)
+'EndgameChess.Rules.mem_allSquares' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.initial_wellFormed' does not depend on any axioms
+'EndgameChess.Rules.mem_legalMoves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.mem_legalPositions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.not_inCheck_after_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.legal_mover_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.initial_legal_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.enPassant_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.enPassant_expired' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.enPassant_exposing_king_illegal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.promotion_rules' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.castling_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.castling_through_check_illegal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.castling_without_right_illegal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.pinned_piece_cannot_move' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.king_never_captured' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.castling_queenside_b1_attacked_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.castling_out_of_check_illegal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.dead_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.legal_ofKK_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.legalKK_iff_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.deadK_ofKK_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.kernel_dead_KK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.isBetween_iff_between' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.bishop_kbk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.attacked_kbk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.inCheck_weak' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.inCheck_strong' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.legal_ofKBK_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.deadK_embPos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.deadK_ofKBK_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.kernel_dead_KBK' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.legal_ofKK_iff : ∀ (a : EndgameChess.KK.KKState),
+  a.wk ≠ a.bk →
+    ∀ (q : EndgameChess.Rules.Position),
+      EndgameChess.Rules.Legal (EndgameChess.Rules.ofKK a) q ↔
+        ∃ b, EndgameChess.KK.LegalKK a b ∧ q = EndgameChess.Rules.ofKK b
+EndgameChess.Rules.legal_ofKBK_iff : ∀ (p : EndgameChess.KBK.KBKState),
+  EndgameChess.KBK.LKBK p →
+    ∀ (q : EndgameChess.Rules.Position),
+      EndgameChess.Rules.Legal (EndgameChess.Rules.ofKBK p) q ↔
+        ∃ b, EndgameChess.KBK.Step (EndgameChess.KBK.Pos.kbk p) b ∧ q = EndgameChess.Rules.embPos b
+EndgameChess.Rules.deadK_ofKK_iff : ∀ (a : EndgameChess.KK.KKState),
+  EndgameChess.KK.Admissible a → (EndgameChess.Rules.DeadK (EndgameChess.Rules.ofKK a) ↔ EndgameChess.KK.Dead a)
+EndgameChess.Rules.deadK_ofKBK_iff : ∀ (p : EndgameChess.KBK.KBKState),
+  EndgameChess.KBK.LKBK p →
+    (EndgameChess.Rules.DeadK (EndgameChess.Rules.ofKBK p) ↔ EndgameChess.KBK.Dead (EndgameChess.KBK.Pos.kbk p))
+@EndgameChess.Rules.kernel_dead_KK : ∀ {a : EndgameChess.KK.KKState},
+  EndgameChess.KK.Admissible a → EndgameChess.Rules.DeadK (EndgameChess.Rules.ofKK a)
+@EndgameChess.Rules.kernel_dead_KBK : ∀ {p : EndgameChess.KBK.KBKState},
+  EndgameChess.KBK.LKBK p → EndgameChess.Rules.DeadK (EndgameChess.Rules.ofKBK p)
+'EndgameChess.Rules.kernel_kk_has_move' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.kernel_kbk_check_has_move' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.deadK_normFlags_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.legal_normFlags_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.isPseudo_normFlags' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.play_nrp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.nrp_of_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.dead_of_legal_into_KK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.dead_of_legal_into_KBK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.arisen_KK_dead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.arisen_KBK_dead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.initial_not_KK' depends on axioms: [propext]
+'EndgameChess.Rules.initial_not_KBK' depends on axioms: [propext]
+'EndgameChess.Rules.capture_into_KK_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.kk_drawn_by_rule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.kbk_drawn_by_rule' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.dead_of_legal_into_KK : ∀ {p q : EndgameChess.Rules.Position} {w b : EndgameChess.KK.Square},
+  EndgameChess.Rules.Legal p q → EndgameChess.Rules.IsKK q w b → EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.dead_of_legal_into_KBK : ∀ {p q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk bs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Legal p q → EndgameChess.Rules.IsKBK q σ sk bs wk → EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.arisen_KK_dead : ∀ {q : EndgameChess.Rules.Position} {w b : EndgameChess.KK.Square},
+  EndgameChess.Rules.Arisen q → EndgameChess.Rules.IsKK q w b → EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.arisen_KBK_dead : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk bs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Arisen q → EndgameChess.Rules.IsKBK q σ sk bs wk → EndgameChess.Rules.DeadK q
+def EndgameChess.Rules.Rule5_2_2 : EndgameChess.Rules.Position → EndgameChess.Rules.GameResult → Prop :=
+fun q r => EndgameChess.Rules.Arisen q ∧ EndgameChess.Rules.DeadK q ∧ r = EndgameChess.Rules.GameResult.draw
+@EndgameChess.Rules.kk_drawn_by_rule : ∀ {q : EndgameChess.Rules.Position} {w b : EndgameChess.KK.Square},
+  EndgameChess.Rules.Arisen q →
+    EndgameChess.Rules.IsKK q w b → EndgameChess.Rules.Rule5_2_2 q EndgameChess.Rules.GameResult.draw
+@EndgameChess.Rules.kbk_drawn_by_rule : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk bs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Arisen q →
+    EndgameChess.Rules.IsKBK q σ sk bs wk → EndgameChess.Rules.Rule5_2_2 q EndgameChess.Rules.GameResult.draw
+'EndgameChess.Rules.dead_of_legal_into_KNK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.arisen_KNK_dead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.knk_drawn_by_rule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.initial_not_KNK' depends on axioms: [propext]
+'EndgameChess.Rules.weak_has_move' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.escape_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.knight_not_orth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.ne_of_knight_adj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.kings_apart_of_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.strong_not_inCheck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.step_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.reach_cases' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.not_mated_KNK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.inCheck_weak_knk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.inCheck_strong_knk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.knight_check_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.knk_stalemate_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.knight_capture_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.dead_of_legal_into_KNK : ∀ {p q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk ns wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Legal p q → EndgameChess.Rules.IsKNK q σ sk ns wk → EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.arisen_KNK_dead : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk ns wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Arisen q → EndgameChess.Rules.IsKNK q σ sk ns wk → EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.knk_drawn_by_rule : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk ns wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Arisen q →
+    EndgameChess.Rules.IsKNK q σ sk ns wk → EndgameChess.Rules.Rule5_2_2 q EndgameChess.Rules.GameResult.draw
+'EndgameChess.Rules.reachK_head' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.dead_of_succ_dead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.dead_of_succ_KK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_dead_of_forced_capture' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_forced_capture_drawn_by_rule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.legal_of_legalMoves_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_forced_capture_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_stalemate_dead_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_live_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.dead_of_succ_KK : ∀ {q : EndgameChess.Rules.Position},
+  ¬EndgameChess.Rules.MatedK q →
+    (∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → ∃ w b, EndgameChess.Rules.IsKK r w b) →
+      EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.krk_dead_of_forced_capture : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp →
+      ¬EndgameChess.Rules.MatedK q →
+        (∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → ∃ w b, EndgameChess.Rules.IsKK r w b) →
+          EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.krk_forced_capture_drawn_by_rule : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Arisen q →
+    EndgameChess.Rules.IsKRK q σ sk rs wk →
+      q.turn = σ.opp →
+        ¬EndgameChess.Rules.MatedK q →
+          (∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → ∃ w b, EndgameChess.Rules.IsKK r w b) →
+            EndgameChess.Rules.Rule5_2_2 q EndgameChess.Rules.GameResult.draw
+'EndgameChess.Rules.lineGeom_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.isBetween_iff_onSeg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.pathClear_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rook_attacks_krk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.attacked_krk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.inCheck_weak_krk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.inCheck_strong_krk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.play_board_simple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.legal_of_pseudo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.winM_of_step' does not depend on any axioms
+'EndgameChess.Rules.step_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.mate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.chain_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.not_deadK_of_winM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.step_map' depends on axioms: [propext]
+'EndgameChess.Rules.mate_map' depends on axioms: [propext]
+'EndgameChess.Rules.winM_map' depends on axioms: [propext]
+'EndgameChess.Rules.winM_of_sym' depends on axioms: [propext]
+'EndgameChess.Rules.exists_sym_normal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.tempo_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.lone_step_region' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_lemmaM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_lemmaE_lone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_lemmaE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.Conn.symm' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.Conn.trans' does not depend on any axioms
+'EndgameChess.Rules.rect_minus_box_conn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_conn_region' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_lemmaW' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_lemmaS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_settled_live' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krkM_mate_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krkM_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krkS_rank8_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krkS_g7_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.not_deadK_of_winM : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {a : EndgameChess.Rules.KRKState},
+  EndgameChess.Rules.Matches q σ a → EndgameChess.Rules.WinM a → ¬EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.krk_lemmaS : ∀ {sk wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Normal sk →
+    2 ≤ EndgameChess.KK.dInf sk wk →
+      wk ≠ EndgameChess.Rules.sqH8 →
+        ¬EndgameChess.Rules.RookSees EndgameChess.Rules.sqH8 wk sk wk →
+          EndgameChess.Rules.WinM { sk := sk, rs := EndgameChess.Rules.sqH8, wk := wk, strong := true }
+@EndgameChess.Rules.krk_settled_live : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk EndgameChess.Rules.sqH8 wk →
+    q.turn = σ → EndgameChess.Rules.Normal sk → EndgameChess.Rules.inCheck q σ.opp = false → ¬EndgameChess.Rules.DeadK q
+'EndgameChess.Rules.krk_RLh' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_RLf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rookInv_of_free' does not depend on any axioms
+'EndgameChess.Rules.onSeg_trans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.shield_of_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rook_move_ok' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.after_rook' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_home' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_hfile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_rankToH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_fs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_P1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_live_of_not_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_strong_to_move_live' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.reachK_cons' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.lone_move_cases' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_dead_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.initial_not_KRK' depends on axioms: [propext]
+'EndgameChess.Rules.arisen_krk_strong_live' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_drawn_by_rule_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rlh_exception_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.fsF2_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_strong_live_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_strong_to_move_live : ∀ {p q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Legal p q → EndgameChess.Rules.IsKRK q σ sk rs wk → q.turn = σ → ¬EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.krk_dead_iff : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp →
+      (EndgameChess.Rules.DeadK q ↔
+        ¬EndgameChess.Rules.MatedK q ∧
+          ∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → ∃ w b, EndgameChess.Rules.IsKK r w b)
+@EndgameChess.Rules.arisen_krk_strong_live : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Arisen q → EndgameChess.Rules.IsKRK q σ sk rs wk → q.turn = σ → ¬EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.krk_drawn_by_rule_iff : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Arisen q →
+    EndgameChess.Rules.IsKRK q σ sk rs wk →
+      (EndgameChess.Rules.Rule5_2_2 q EndgameChess.Rules.GameResult.draw ↔
+        q.turn = σ.opp ∧
+          ¬EndgameChess.Rules.MatedK q ∧
+            ∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → ∃ w b, EndgameChess.Rules.IsKK r w b)
+@EndgameChess.Rules.krk_live_of_not_check : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ → EndgameChess.Rules.inCheck q σ.opp = false → ¬EndgameChess.Rules.DeadK q
+'EndgameChess.Rules.mateWithin_mono_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.mateWithin_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.mateWithin_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.forceMate_not_dead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.forceMate_of_goal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.forceMate_no_moves_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.dead_reply_not_forceMate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.stalemate_not_forceMate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.forceMate_choose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.forceMate_defend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_protected_reply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rook_rank_barrier' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.protected_rank_raise_unprotected' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.krk_protected_rank_reply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_optional_capture_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.optional_capture_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_force_mate_in_one_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.protected_rank_stalemate_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.blocked_rank_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.mateWithin_sound : ∀ {σ : EndgameChess.KK.Colour} {n : Nat} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.MateWithin σ n q → ∃ t, EndgameChess.Rules.ReachK q t ∧ EndgameChess.Rules.MateGoal σ t
+@EndgameChess.Rules.forceMate_defend : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  q.turn = σ.opp →
+    (∃ r, EndgameChess.Rules.Legal q r) →
+      (∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → EndgameChess.Rules.ForceMate σ r) →
+        EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.dead_reply_not_forceMate : ∀ {σ : EndgameChess.KK.Colour} {q r : EndgameChess.Rules.Position},
+  q.turn = σ.opp → EndgameChess.Rules.Legal q r → EndgameChess.Rules.DeadK r → ¬EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_protected_rank_reply : ∀ {q r : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp →
+      EndgameChess.Rules.ProtectedRank sk rs wk →
+        EndgameChess.Rules.Legal q r →
+          ∃ t,
+            EndgameChess.Rules.Matches r σ { sk := sk, rs := rs, wk := t, strong := true } ∧
+              EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := false }
+                  { sk := sk, rs := rs, wk := t, strong := true } ∧
+                EndgameChess.Rules.ProtectedRank sk rs t
+'EndgameChess.Rules.krk_safe_reply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_safe_rank_reply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_safe_weak_live' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rank_sees_of_below' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.opposition_check_step' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.opposition_edge_mate' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.opposition_reply_up' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.opposition_up_reply_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_opposition_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_opposition_edge_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.follow_horizontal_reply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_follow_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_opposition_four_ply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.opposition_edge_force_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.two_file_margin_capture' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.three_file_margin_hanging' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.phase_need_not_restore_opposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_safe_reply : ∀ {q r : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp →
+      EndgameChess.Rules.SafeRook sk rs wk →
+        EndgameChess.Rules.Legal q r →
+          ∃ t,
+            EndgameChess.Rules.Matches r σ { sk := sk, rs := rs, wk := t, strong := true } ∧
+              EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := false }
+                { sk := sk, rs := rs, wk := t, strong := true }
+@EndgameChess.Rules.krk_safe_weak_live : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp →
+      EndgameChess.Rules.SafeRook sk rs wk → (∃ r, EndgameChess.Rules.Legal q r) → ¬EndgameChess.Rules.DeadK q
+@EndgameChess.Rules.krk_opposition_check : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ →
+      EndgameChess.Rules.Opposed sk wk →
+        4 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+          ↑rs.snd ≠ ↑wk.snd →
+            ∃ c,
+              EndgameChess.Rules.Legal q c ∧
+                EndgameChess.Rules.Matches c σ
+                    { sk := sk, rs := EndgameChess.Rules.checkRook rs wk, wk := wk, strong := false } ∧
+                  (EndgameChess.Rules.MateGoal σ c ∨
+                    (∃ r, EndgameChess.Rules.Legal c r) ∧
+                      ∀ (r : EndgameChess.Rules.Position),
+                        EndgameChess.Rules.Legal c r →
+                          ∃ t,
+                            EndgameChess.Rules.Matches r σ
+                                { sk := sk, rs := EndgameChess.Rules.checkRook rs wk, wk := t, strong := true } ∧
+                              ↑t.snd = ↑wk.snd + 1 ∧
+                                EndgameChess.KK.absDiff ↑t.fst ↑wk.fst ≤ 1 ∧ 3 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑t.fst)
+@EndgameChess.Rules.krk_opposition_four_ply : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ →
+      EndgameChess.Rules.Opposed sk wk →
+        4 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+          ↑rs.snd ≠ ↑wk.snd →
+            ∃ c,
+              EndgameChess.Rules.Legal q c ∧
+                EndgameChess.Rules.Matches c σ
+                    { sk := sk, rs := EndgameChess.Rules.checkRook rs wk, wk := wk, strong := false } ∧
+                  (EndgameChess.Rules.MateGoal σ c ∨
+                    (∃ r, EndgameChess.Rules.Legal c r) ∧
+                      ∀ (r : EndgameChess.Rules.Position),
+                        EndgameChess.Rules.Legal c r →
+                          ∃ t,
+                            EndgameChess.Rules.Matches r σ
+                                { sk := sk, rs := EndgameChess.Rules.checkRook rs wk, wk := t, strong := true } ∧
+                              ∃ su u,
+                                ↑su.fst = ↑sk.fst ∧
+                                  ↑su.snd = ↑sk.snd + 1 ∧
+                                    EndgameChess.Rules.Legal r u ∧
+                                      EndgameChess.Rules.Matches u σ
+                                          { sk := su, rs := EndgameChess.Rules.checkRook rs wk, wk := t,
+                                            strong := false } ∧
+                                        (∃ v, EndgameChess.Rules.Legal u v) ∧
+                                          ∀ (v : EndgameChess.Rules.Position),
+                                            EndgameChess.Rules.Legal u v →
+                                              ∃ w,
+                                                EndgameChess.Rules.Matches v σ
+                                                    { sk := su, rs := EndgameChess.Rules.checkRook rs wk, wk := w,
+                                                      strong := true } ∧
+                                                  EndgameChess.Rules.DistantBarrier su
+                                                      (EndgameChess.Rules.checkRook rs wk) w ∧
+                                                    7 - ↑w.snd < 7 - ↑wk.snd)
+@EndgameChess.Rules.krk_opposition_edge_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ →
+      EndgameChess.Rules.Opposed sk wk →
+        4 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst → ↑rs.snd ≠ ↑wk.snd → ↑wk.snd = 7 → EndgameChess.Rules.ForceMate σ q
+'EndgameChess.Rules.phase_image_of_replies' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_follow_check_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_opposition_phase_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rank_advance_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.rank_advance_reply_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_rank_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.barrier_horizontal_reply_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_barrier_rook_rescue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_rank_advance_rescue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.phase_image_file_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_phase_image_upper_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.phase_image_chase_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.protected_corner_reentry_stalemate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.lower_band_raise_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.two_file_rank_raise_needs_rescue' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.phase_image_of_replies : ∀ {sk rs wk t su w : EndgameChess.KK.Square},
+  EndgameChess.Rules.Opposed sk wk →
+    4 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+      ↑rs.snd = ↑wk.snd →
+        ↑t.snd = ↑wk.snd + 1 →
+          EndgameChess.KK.absDiff ↑t.fst ↑wk.fst ≤ 1 →
+            ↑su.fst = ↑sk.fst →
+              ↑su.snd = ↑sk.snd + 1 →
+                EndgameChess.Rules.StepM { sk := su, rs := rs, wk := t, strong := false }
+                    { sk := su, rs := rs, wk := w, strong := true } →
+                  EndgameChess.Rules.PhaseImage su rs w
+@EndgameChess.Rules.krk_follow_check_image : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk t : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := t, strong := true } →
+    EndgameChess.Rules.Opposed sk wk →
+      4 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+        ↑rs.snd = ↑wk.snd →
+          ↑t.snd = ↑wk.snd + 1 →
+            EndgameChess.KK.absDiff ↑t.fst ↑wk.fst ≤ 1 →
+              ∃ su u,
+                ↑su.fst = ↑sk.fst ∧
+                  ↑su.snd = ↑sk.snd + 1 ∧
+                    EndgameChess.Rules.Legal q u ∧
+                      EndgameChess.Rules.Matches u σ { sk := su, rs := rs, wk := t, strong := false } ∧
+                        (∃ v, EndgameChess.Rules.Legal u v) ∧
+                          ∀ (v : EndgameChess.Rules.Position),
+                            EndgameChess.Rules.Legal u v →
+                              ∃ w,
+                                EndgameChess.Rules.Matches v σ { sk := su, rs := rs, wk := w, strong := true } ∧
+                                  EndgameChess.Rules.PhaseImage su rs w ∧ 7 - ↑w.snd < 7 - ↑wk.snd
+@EndgameChess.Rules.krk_opposition_phase_image : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ →
+      EndgameChess.Rules.Opposed sk wk →
+        4 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+          ↑rs.snd ≠ ↑wk.snd →
+            ∃ c,
+              EndgameChess.Rules.Legal q c ∧
+                EndgameChess.Rules.Matches c σ
+                    { sk := sk, rs := EndgameChess.Rules.checkRook rs wk, wk := wk, strong := false } ∧
+                  (EndgameChess.Rules.MateGoal σ c ∨
+                    (∃ r, EndgameChess.Rules.Legal c r) ∧
+                      ∀ (r : EndgameChess.Rules.Position),
+                        EndgameChess.Rules.Legal c r →
+                          ∃ t,
+                            EndgameChess.Rules.Matches r σ
+                                { sk := sk, rs := EndgameChess.Rules.checkRook rs wk, wk := t, strong := true } ∧
+                              ∃ su u,
+                                ↑su.fst = ↑sk.fst ∧
+                                  ↑su.snd = ↑sk.snd + 1 ∧
+                                    EndgameChess.Rules.Legal r u ∧
+                                      EndgameChess.Rules.Matches u σ
+                                          { sk := su, rs := EndgameChess.Rules.checkRook rs wk, wk := t,
+                                            strong := false } ∧
+                                        (∃ v, EndgameChess.Rules.Legal u v) ∧
+                                          ∀ (v : EndgameChess.Rules.Position),
+                                            EndgameChess.Rules.Legal u v →
+                                              ∃ w,
+                                                EndgameChess.Rules.Matches v σ
+                                                    { sk := su, rs := EndgameChess.Rules.checkRook rs wk, wk := w,
+                                                      strong := true } ∧
+                                                  EndgameChess.Rules.PhaseImage su (EndgameChess.Rules.checkRook rs wk)
+                                                      w ∧
+                                                    7 - ↑w.snd < 7 - ↑wk.snd)
+@EndgameChess.Rules.rank_advance_step : ∀ {sk rs wk nr : EndgameChess.KK.Square},
+  ↑sk.snd < ↑rs.snd →
+    ↑rs.snd + 2 ≤ ↑wk.snd →
+      ↑nr.fst = ↑rs.fst →
+        ↑nr.snd = ↑rs.snd + 1 →
+          EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := true }
+            { sk := sk, rs := nr, wk := wk, strong := false }
+@EndgameChess.Rules.rank_advance_reply_exists : ∀ {sk rs wk : EndgameChess.KK.Square},
+  ↑sk.snd + 2 ≤ ↑rs.snd →
+    ↑rs.snd < ↑wk.snd →
+      3 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+        ∃ t,
+          EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := false }
+            { sk := sk, rs := rs, wk := t, strong := true }
+@EndgameChess.Rules.krk_rank_advance : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ →
+      ↑sk.snd < ↑rs.snd →
+        ↑rs.snd + 2 ≤ ↑wk.snd →
+          3 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+            ∃ nr c,
+              ↑nr.fst = ↑rs.fst ∧
+                ↑nr.snd = ↑rs.snd + 1 ∧
+                  EndgameChess.Rules.Legal q c ∧
+                    EndgameChess.Rules.Matches c σ { sk := sk, rs := nr, wk := wk, strong := false } ∧
+                      (∃ r, EndgameChess.Rules.Legal c r) ∧
+                        7 - ↑nr.snd < 7 - ↑rs.snd ∧
+                          ∀ (r : EndgameChess.Rules.Position),
+                            EndgameChess.Rules.Legal c r →
+                              ∃ t,
+                                EndgameChess.Rules.Matches r σ { sk := sk, rs := nr, wk := t, strong := true } ∧
+                                  EndgameChess.Rules.DistantBarrier sk nr t
+@EndgameChess.Rules.barrier_horizontal_reply_exists : ∀ {sk rs wk : EndgameChess.KK.Square},
+  ↑sk.snd + 2 ≤ ↑wk.snd →
+    ↑rs.snd < ↑wk.snd →
+      2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+        ∃ t,
+          EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := false }
+            { sk := sk, rs := rs, wk := t, strong := true }
+@EndgameChess.Rules.krk_barrier_rook_rescue : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd < ↑rs.snd →
+      ↑rs.snd < ↑wk.snd →
+        EndgameChess.KK.dInf rs wk < 2 →
+          ∃ nr c,
+            nr.snd = rs.snd ∧
+              4 ≤ EndgameChess.KK.absDiff ↑nr.fst ↑wk.fst ∧
+                EndgameChess.Rules.Legal q c ∧
+                  EndgameChess.Rules.Matches c σ { sk := sk, rs := nr, wk := wk, strong := false } ∧
+                    (∃ r, EndgameChess.Rules.Legal c r) ∧
+                      ∀ (r : EndgameChess.Rules.Position),
+                        EndgameChess.Rules.Legal c r →
+                          ∃ t,
+                            EndgameChess.Rules.Matches r σ { sk := sk, rs := nr, wk := t, strong := true } ∧
+                              EndgameChess.Rules.DistantBarrier sk nr t
+@EndgameChess.Rules.krk_rank_advance_rescue : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ →
+      ↑sk.snd < ↑rs.snd →
+        ↑rs.snd + 2 ≤ ↑wk.snd →
+          2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+            ∃ nr c,
+              ↑nr.fst = ↑rs.fst ∧
+                ↑nr.snd = ↑rs.snd + 1 ∧
+                  EndgameChess.Rules.Legal q c ∧
+                    EndgameChess.Rules.Matches c σ { sk := sk, rs := nr, wk := wk, strong := false } ∧
+                      (∃ r, EndgameChess.Rules.Legal c r) ∧
+                        7 - ↑nr.snd < 7 - ↑rs.snd ∧
+                          ∀ (r : EndgameChess.Rules.Position),
+                            EndgameChess.Rules.Legal c r →
+                              ∃ t,
+                                EndgameChess.Rules.Matches r σ { sk := sk, rs := nr, wk := t, strong := true } ∧
+                                  (EndgameChess.Rules.DistantBarrier sk nr t ∨
+                                    ∃ sr d,
+                                      sr.snd = nr.snd ∧
+                                        4 ≤ EndgameChess.KK.absDiff ↑sr.fst ↑t.fst ∧
+                                          EndgameChess.Rules.Legal r d ∧
+                                            EndgameChess.Rules.Matches d σ
+                                                { sk := sk, rs := sr, wk := t, strong := false } ∧
+                                              (∃ v, EndgameChess.Rules.Legal d v) ∧
+                                                ∀ (v : EndgameChess.Rules.Position),
+                                                  EndgameChess.Rules.Legal d v →
+                                                    ∃ w,
+                                                      EndgameChess.Rules.Matches v σ
+                                                          { sk := sk, rs := sr, wk := w, strong := true } ∧
+                                                        EndgameChess.Rules.DistantBarrier sk sr w)
+@EndgameChess.Rules.phase_image_file_margin : ∀ {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.PhaseImage sk rs wk → ↑sk.snd < ↑rs.snd ∧ 2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst
+@EndgameChess.Rules.krk_phase_image_upper_advance : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ →
+      EndgameChess.Rules.PhaseImage sk rs wk →
+        ↑wk.snd = ↑rs.snd + 2 →
+          ∃ nr c,
+            ↑nr.fst = ↑rs.fst ∧
+              ↑nr.snd = ↑rs.snd + 1 ∧
+                EndgameChess.Rules.Legal q c ∧
+                  EndgameChess.Rules.Matches c σ { sk := sk, rs := nr, wk := wk, strong := false } ∧
+                    (∃ r, EndgameChess.Rules.Legal c r) ∧
+                      7 - ↑nr.snd < 7 - ↑rs.snd ∧
+                        ∀ (r : EndgameChess.Rules.Position),
+                          EndgameChess.Rules.Legal c r →
+                            ∃ t,
+                              EndgameChess.Rules.Matches r σ { sk := sk, rs := nr, wk := t, strong := true } ∧
+                                (EndgameChess.Rules.DistantBarrier sk nr t ∨
+                                  ∃ sr d,
+                                    sr.snd = nr.snd ∧
+                                      4 ≤ EndgameChess.KK.absDiff ↑sr.fst ↑t.fst ∧
+                                        EndgameChess.Rules.Legal r d ∧
+                                          EndgameChess.Rules.Matches d σ
+                                              { sk := sk, rs := sr, wk := t, strong := false } ∧
+                                            (∃ v, EndgameChess.Rules.Legal d v) ∧
+                                              ∀ (v : EndgameChess.Rules.Position),
+                                                EndgameChess.Rules.Legal d v →
+                                                  ∃ w,
+                                                    EndgameChess.Rules.Matches v σ
+                                                        { sk := sk, rs := sr, wk := w, strong := true } ∧
+                                                      EndgameChess.Rules.DistantBarrier sk sr w)
+EndgameChess.Rules.phase_image_chase_cycle : EndgameChess.Rules.isLegal EndgameChess.Rules.chaseStart
+      (EndgameChess.Rules.mv✝ 7 0 7 2) =
+    true ∧
+  EndgameChess.Rules.isLegal EndgameChess.Rules.chaseCheck (EndgameChess.Rules.mv✝ 1 2 1 3) = true ∧
+    EndgameChess.Rules.isLegal EndgameChess.Rules.chaseFirst (EndgameChess.Rules.mv✝ 1 0 1 1) = true ∧
+      EndgameChess.Rules.isLegal EndgameChess.Rules.chaseUp (EndgameChess.Rules.mv✝ 1 3 2 3) = true ∧
+        EndgameChess.Rules.isLegal EndgameChess.Rules.chaseA (EndgameChess.Rules.mv✝ 1 1 2 1) = true ∧
+          EndgameChess.Rules.isLegal EndgameChess.Rules.chaseKingRight (EndgameChess.Rules.mv✝ 2 3 1 3) = true ∧
+            EndgameChess.Rules.isLegal EndgameChess.Rules.chaseB (EndgameChess.Rules.mv✝ 2 1 1 1) = true ∧
+              EndgameChess.Rules.isLegal EndgameChess.Rules.chaseKingLeft (EndgameChess.Rules.mv✝ 1 3 2 3) = true ∧
+                EndgameChess.Rules.PhaseImage (EndgameChess.Rules.sq✝ 1 1) (EndgameChess.Rules.sq✝ 7 2)
+                    (EndgameChess.Rules.sq✝ 2 3) ∧
+                  EndgameChess.Rules.PhaseImage (EndgameChess.Rules.sq✝ 2 1) (EndgameChess.Rules.sq✝ 7 2)
+                      (EndgameChess.Rules.sq✝ 1 3) ∧
+                    ¬EndgameChess.Rules.Opposed (EndgameChess.Rules.sq✝ 1 1) (EndgameChess.Rules.sq✝ 2 3) ∧
+                      ¬EndgameChess.Rules.Opposed (EndgameChess.Rules.sq✝ 2 1) (EndgameChess.Rules.sq✝ 1 3) ∧
+                        EndgameChess.Rules.chaseReturn = EndgameChess.Rules.chaseA
+EndgameChess.Rules.protected_corner_reentry_stalemate : EndgameChess.Rules.PhaseImage (EndgameChess.Rules.sq✝ 5 5)
+    (EndgameChess.Rules.sq✝ 0 6) (EndgameChess.Rules.sq✝ 7 7) ∧
+  EndgameChess.Rules.isLegal EndgameChess.Rules.cornerBefore (EndgameChess.Rules.mv✝ 0 6 6 6) = true ∧
+    EndgameChess.Rules.inCheck EndgameChess.Rules.cornerAfter EndgameChess.KK.Colour.black = false ∧
+      EndgameChess.Rules.legalMoves EndgameChess.Rules.cornerAfter = []
+EndgameChess.Rules.lower_band_raise_crossing : EndgameChess.Rules.PhaseImage (EndgameChess.Rules.sq✝ 0 1)
+    (EndgameChess.Rules.sq✝ 4 2) (EndgameChess.Rules.sq✝ 2 3) ∧
+  EndgameChess.Rules.isLegal EndgameChess.Rules.lowerBefore (EndgameChess.Rules.mv✝ 4 2 4 3) = true ∧
+    EndgameChess.Rules.isLegal EndgameChess.Rules.lowerCheck (EndgameChess.Rules.mv✝ 2 3 2 2) = true
+EndgameChess.Rules.two_file_rank_raise_needs_rescue : EndgameChess.Rules.PhaseImage (EndgameChess.Rules.sq✝ 0 1)
+    (EndgameChess.Rules.sq✝ 4 2) (EndgameChess.Rules.sq✝ 2 4) ∧
+  EndgameChess.Rules.isLegal EndgameChess.Rules.upperBefore (EndgameChess.Rules.mv✝ 4 2 4 3) = true ∧
+    EndgameChess.Rules.isLegal EndgameChess.Rules.upperRaised (EndgameChess.Rules.mv✝ 2 4 3 4) = true ∧
+      ¬EndgameChess.Rules.SafeRook (EndgameChess.Rules.sq✝ 0 1) (EndgameChess.Rules.sq✝ 4 3)
+            (EndgameChess.Rules.sq✝ 3 4) ∧
+        EndgameChess.Rules.isLegal EndgameChess.Rules.upperHanging (EndgameChess.Rules.mv✝ 4 3 7 3) = true
+'EndgameChess.Rules.pursuitFile_bound' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.pursuit_absDiff' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.wall_far_margin' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.wall_wait_choice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_wall_rook_move' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.lower_band_reply_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.pursuit_king_step' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.krk_pursuit_king_move' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.opposition_check_step_two' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.krk_opposition_check_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_two_file_edge_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.pursuit_tempo_return_margin' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.pursuit_file_eq' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.pursuit_margin_step' depends on axioms: [propext, Quot.sound]
+'EndgameChess.Rules.krk_oriented_lower_pursuit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_lower_band_force_of_exits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_rank_wall_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_phase_image_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_vertical_wall_entry_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.two_file_edge_forcing_control' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.former_chase_cycle_is_forcing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.threatened_wall_rook_is_forcing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.direct_setup_capture_controls' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.pursuitFile_bound : ∀ (d : Bool) (s : EndgameChess.KK.Square), EndgameChess.Rules.pursuitFile d s ≤ 7
+EndgameChess.Rules.pursuit_absDiff : ∀ (d : Bool) (s t : EndgameChess.KK.Square),
+  EndgameChess.KK.absDiff (EndgameChess.Rules.pursuitFile d s) (EndgameChess.Rules.pursuitFile d t) =
+    EndgameChess.KK.absDiff ↑s.fst ↑t.fst
+EndgameChess.Rules.wall_far_margin : ∀ (w : Fin 8), 4 ≤ EndgameChess.KK.absDiff ↑(EndgameChess.Rules.wallFarFile w) ↑w
+EndgameChess.Rules.wall_wait_choice : ∀ (r w : Fin 8),
+  EndgameChess.Rules.wallWaitFile r w ≠ r ∧ 3 ≤ EndgameChess.KK.absDiff ↑(EndgameChess.Rules.wallWaitFile r w) ↑w
+@EndgameChess.Rules.krk_wall_rook_move : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk nr : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd < ↑rs.snd →
+      ↑rs.snd < ↑wk.snd →
+        nr.snd = rs.snd →
+          nr ≠ rs →
+            3 ≤ EndgameChess.KK.absDiff ↑nr.fst ↑wk.fst →
+              ∃ c,
+                EndgameChess.Rules.Legal q c ∧
+                  EndgameChess.Rules.Matches c σ { sk := sk, rs := nr, wk := wk, strong := false } ∧
+                    (∃ r, EndgameChess.Rules.Legal c r) ∧
+                      ∀ (r : EndgameChess.Rules.Position),
+                        EndgameChess.Rules.Legal c r →
+                          ∃ t,
+                            EndgameChess.Rules.Matches r σ { sk := sk, rs := nr, wk := t, strong := true } ∧
+                              ↑rs.snd < ↑t.snd ∧
+                                2 ≤ EndgameChess.KK.absDiff ↑nr.fst ↑t.fst ∧
+                                  EndgameChess.KK.absDiff ↑t.fst ↑wk.fst ≤ 1 ∧
+                                    (↑wk.snd = ↑rs.snd + 1 →
+                                      ↑rs.snd + 2 ≤ ↑t.snd ∨
+                                        ↑t.snd = ↑rs.snd + 1 ∧ EndgameChess.KK.absDiff ↑t.fst ↑wk.fst = 1)
+@EndgameChess.Rules.lower_band_reply_shape : ∀ {sk rs wk t : EndgameChess.KK.Square},
+  ↑sk.snd + 1 = ↑rs.snd →
+    ↑wk.snd = ↑rs.snd + 1 →
+      EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := false }
+          { sk := sk, rs := rs, wk := t, strong := true } →
+        ↑rs.snd + 2 ≤ ↑t.snd ∨ ↑t.snd = ↑rs.snd + 1 ∧ EndgameChess.KK.absDiff ↑t.fst ↑wk.fst = 1
+EndgameChess.Rules.pursuit_king_step : ∀ (d : Bool) {sk rs wk : EndgameChess.KK.Square},
+  ↑sk.snd + 1 = ↑rs.snd →
+    ↑wk.snd = ↑rs.snd + 1 →
+      EndgameChess.Rules.pursuitFile d sk + 2 ≤ EndgameChess.Rules.pursuitFile d wk →
+        ∃ su,
+          su.snd = sk.snd ∧
+            EndgameChess.Rules.pursuitFile d su = EndgameChess.Rules.pursuitFile d sk + 1 ∧
+              EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := true }
+                { sk := su, rs := rs, wk := wk, strong := false }
+EndgameChess.Rules.krk_pursuit_king_move : ∀ (d : Bool) {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd + 1 = ↑rs.snd →
+      ↑wk.snd = ↑rs.snd + 1 →
+        EndgameChess.Rules.pursuitFile d sk + 2 ≤ EndgameChess.Rules.pursuitFile d wk →
+          3 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+            ∃ su c,
+              su.snd = sk.snd ∧
+                EndgameChess.Rules.pursuitFile d su = EndgameChess.Rules.pursuitFile d sk + 1 ∧
+                  EndgameChess.Rules.Legal q c ∧
+                    EndgameChess.Rules.Matches c σ { sk := su, rs := rs, wk := wk, strong := false } ∧
+                      (∃ r, EndgameChess.Rules.Legal c r) ∧
+                        ∀ (r : EndgameChess.Rules.Position),
+                          EndgameChess.Rules.Legal c r →
+                            ∃ t,
+                              EndgameChess.Rules.Matches r σ { sk := su, rs := rs, wk := t, strong := true } ∧
+                                2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑t.fst ∧
+                                  EndgameChess.KK.absDiff ↑t.fst ↑wk.fst ≤ 1 ∧
+                                    (↑rs.snd + 2 ≤ ↑t.snd ∨
+                                      ↑t.snd = ↑rs.snd + 1 ∧ EndgameChess.KK.absDiff ↑t.fst ↑wk.fst = 1)
+@EndgameChess.Rules.opposition_check_step_two : ∀ {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Opposed sk wk →
+    2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+      ↑rs.snd ≠ ↑wk.snd →
+        EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := true }
+          { sk := sk, rs := EndgameChess.Rules.checkRook rs wk, wk := wk, strong := false }
+@EndgameChess.Rules.krk_opposition_check_two : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    EndgameChess.Rules.Opposed sk wk →
+      2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+        ↑rs.snd ≠ ↑wk.snd →
+          ∃ c,
+            EndgameChess.Rules.Legal q c ∧
+              EndgameChess.Rules.Matches c σ
+                  { sk := sk, rs := EndgameChess.Rules.checkRook rs wk, wk := wk, strong := false } ∧
+                (EndgameChess.Rules.MateGoal σ c ∨
+                  (∃ r, EndgameChess.Rules.Legal c r) ∧
+                    ∀ (r : EndgameChess.Rules.Position),
+                      EndgameChess.Rules.Legal c r →
+                        ∃ t,
+                          EndgameChess.Rules.Matches r σ
+                              { sk := sk, rs := EndgameChess.Rules.checkRook rs wk, wk := t, strong := true } ∧
+                            ↑t.snd = ↑wk.snd + 1 ∧ EndgameChess.KK.absDiff ↑t.fst ↑wk.fst ≤ 1)
+@EndgameChess.Rules.krk_two_file_edge_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    EndgameChess.Rules.Opposed sk wk →
+      2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst → ↑rs.snd ≠ ↑wk.snd → ↑wk.snd = 7 → EndgameChess.Rules.ForceMate σ q
+EndgameChess.Rules.pursuit_tempo_return_margin : ∀ (d : Bool) {sk wk t : EndgameChess.KK.Square} {rs : Fin 8},
+  EndgameChess.Rules.pursuitFile d wk = EndgameChess.Rules.pursuitFile d sk + 2 →
+    EndgameChess.Rules.pursuitFile d t = EndgameChess.Rules.pursuitFile d sk + 1 →
+      rs = EndgameChess.Rules.wallFarFile wk.fst →
+        3 ≤ EndgameChess.KK.absDiff ↑(EndgameChess.Rules.wallWaitFile rs t.fst) ↑wk.fst
+EndgameChess.Rules.pursuit_file_eq : ∀ (d : Bool) {s t : EndgameChess.KK.Square},
+  EndgameChess.Rules.pursuitFile d s = EndgameChess.Rules.pursuitFile d t → ↑s.fst = ↑t.fst
+@EndgameChess.Rules.pursuit_margin_step : ∀ {a b c : EndgameChess.KK.Square} {k : Nat},
+  k + 1 ≤ EndgameChess.KK.absDiff ↑a.fst ↑b.fst →
+    EndgameChess.KK.absDiff ↑c.fst ↑b.fst ≤ 1 → k ≤ EndgameChess.KK.absDiff ↑a.fst ↑c.fst
+EndgameChess.Rules.krk_oriented_lower_pursuit : ∀ (d : Bool) {σ : EndgameChess.KK.Colour} {y : Nat},
+  EndgameChess.Rules.LowerExitWins σ y →
+    ∀ {q : EndgameChess.Rules.Position} {sk rs wk : EndgameChess.KK.Square},
+      EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+        ↑sk.snd + 1 = y →
+          ↑rs.snd = y →
+            ↑wk.snd = y + 1 →
+              2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+                EndgameChess.Rules.pursuitFile d sk < EndgameChess.Rules.pursuitFile d wk →
+                  EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_lower_band_force_of_exits : ∀ {σ : EndgameChess.KK.Colour} {y : Nat},
+  EndgameChess.Rules.LowerExitWins σ y →
+    ∀ {q : EndgameChess.Rules.Position} {sk rs wk : EndgameChess.KK.Square},
+      EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+        ↑sk.snd + 1 = y →
+          ↑rs.snd = y → ↑wk.snd = y + 1 → 2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_rank_wall_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd < ↑rs.snd → ↑rs.snd < ↑wk.snd → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_phase_image_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    EndgameChess.Rules.PhaseImage sk rs wk → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_vertical_wall_entry_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd + 2 ≤ ↑wk.snd →
+      ↑rs.fst ≠ ↑sk.fst → 2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst → EndgameChess.Rules.ForceMate σ q
+EndgameChess.Rules.two_file_edge_forcing_control : EndgameChess.Rules.ForceMate EndgameChess.KK.Colour.white
+  (EndgameChess.Rules.krkPos EndgameChess.KK.Colour.white (EndgameChess.Rules.sq✝ 2 5) (EndgameChess.Rules.sq✝ 0 0)
+    (EndgameChess.Rules.sq✝ 2 7) EndgameChess.KK.Colour.white)
+EndgameChess.Rules.former_chase_cycle_is_forcing : EndgameChess.Rules.ForceMate EndgameChess.KK.Colour.white
+  (EndgameChess.Rules.krkPos EndgameChess.KK.Colour.white (EndgameChess.Rules.sq✝ 1 1) (EndgameChess.Rules.sq✝ 7 2)
+    (EndgameChess.Rules.sq✝ 2 3) EndgameChess.KK.Colour.white)
+EndgameChess.Rules.threatened_wall_rook_is_forcing : EndgameChess.Rules.ForceMate EndgameChess.KK.Colour.white
+  (EndgameChess.Rules.krkPos EndgameChess.KK.Colour.white (EndgameChess.Rules.sq✝ 0 0) (EndgameChess.Rules.sq✝ 1 2)
+    (EndgameChess.Rules.sq✝ 2 3) EndgameChess.KK.Colour.white)
+EndgameChess.Rules.direct_setup_capture_controls : EndgameChess.Rules.isLegal EndgameChess.Rules.setupBefore
+      (EndgameChess.Rules.mv✝ 3 3 3 1) =
+    true ∧
+  EndgameChess.Rules.isLegal EndgameChess.Rules.setupRankWall (EndgameChess.Rules.mv✝ 2 2 3 1) = true ∧
+    EndgameChess.Rules.IsKK (EndgameChess.Rules.play EndgameChess.Rules.setupRankWall (EndgameChess.Rules.mv✝ 2 2 3 1))
+        (EndgameChess.Rules.sq✝ 0 0) (EndgameChess.Rules.sq✝ 3 1) ∧
+      EndgameChess.Rules.isLegal EndgameChess.Rules.setupBefore (EndgameChess.Rules.mv✝ 3 3 1 3) = true ∧
+        EndgameChess.Rules.isLegal EndgameChess.Rules.setupFileWall (EndgameChess.Rules.mv✝ 2 2 1 3) = true ∧
+          EndgameChess.Rules.IsKK
+            (EndgameChess.Rules.play EndgameChess.Rules.setupFileWall (EndgameChess.Rules.mv✝ 2 2 1 3))
+            (EndgameChess.Rules.sq✝ 0 0) (EndgameChess.Rules.sq✝ 1 3)
+'EndgameChess.Rules.krk_unprotected_capture' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_force_weak_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.noRights_after_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.canCastle_noRights' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_strong_reply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_force_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_axis_wall_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_axis_entry_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_setup_axis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_strong_arrival_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_clear_vertical_entry_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_clear_axis_entry_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_horizontal_entry_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_offrank_setup_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_same_rank_retreat_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_backrank_protected_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_backrank_setup_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_strong_force_of_not_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_strong_arrival_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_weak_force_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.krk_weak_force_safe_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.backrank_preparation_forces' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.black_flagged_file_setup_forces' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.safe_setup_capture_controls' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_unprotected_capture : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp →
+      EndgameChess.KK.dInf wk rs = 1 →
+        2 ≤ EndgameChess.KK.dInf sk rs → ∃ r, EndgameChess.Rules.Legal q r ∧ ∃ w b, EndgameChess.Rules.IsKK r w b
+@EndgameChess.Rules.krk_force_weak_safe : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp → EndgameChess.Rules.ForceMate σ q → EndgameChess.Rules.SafeRook sk rs wk
+@EndgameChess.Rules.noRights_after_legal : ∀ {q r : EndgameChess.Rules.Position},
+  q.castling = EndgameChess.Rules.noRights → EndgameChess.Rules.Legal q r → r.castling = EndgameChess.Rules.noRights
+@EndgameChess.Rules.canCastle_noRights : ∀ {q : EndgameChess.Rules.Position},
+  q.castling = EndgameChess.Rules.noRights → ∀ (m : EndgameChess.Rules.Move), EndgameChess.Rules.canCastle q m = false
+@EndgameChess.Rules.krk_strong_reply : ∀ {q r : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ →
+      q.castling = EndgameChess.Rules.noRights →
+        EndgameChess.Rules.Legal q r →
+          ∃ b,
+            EndgameChess.Rules.Matches r σ b ∧
+              EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := true } b
+EndgameChess.Rules.krk_force_transport : ∀ (g : EndgameChess.Rules.BoardSym) {q t : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {a : EndgameChess.Rules.KRKState},
+  EndgameChess.Rules.Matches q σ a →
+    q.castling = EndgameChess.Rules.noRights →
+      EndgameChess.Rules.Matches t σ (EndgameChess.Rules.KRKState.map g a) →
+        EndgameChess.Rules.ForceMate σ q → EndgameChess.Rules.ForceMate σ t
+EndgameChess.Rules.krk_axis_wall_force : ∀ (g : EndgameChess.Rules.BoardSym) {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑(g.f sk).snd < ↑(g.f rs).snd → ↑(g.f rs).snd < ↑(g.f wk).snd → EndgameChess.Rules.ForceMate σ q
+EndgameChess.Rules.krk_axis_entry_force : ∀ (g : EndgameChess.Rules.BoardSym) {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑(g.f sk).snd + 2 ≤ ↑(g.f wk).snd →
+      ↑(g.f rs).fst ≠ ↑(g.f sk).fst →
+        2 ≤ EndgameChess.KK.absDiff ↑(g.f rs).fst ↑(g.f wk).fst → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_setup_axis : ∀ {sk wk : EndgameChess.KK.Square},
+  2 ≤ EndgameChess.KK.dInf sk wk →
+    ∃ g,
+      (g = EndgameChess.Rules.symId ∨
+          g = EndgameChess.Rules.symY ∨ g = EndgameChess.Rules.symSwap ∨ g = EndgameChess.Rules.symAnti) ∧
+        ↑(g.f sk).snd + 2 ≤ ↑(g.f wk).snd
+@EndgameChess.Rules.krk_strong_arrival_geometry : ∀ {p q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Legal p q →
+    EndgameChess.Rules.IsKRK q σ sk rs wk →
+      q.turn = σ → 2 ≤ EndgameChess.KK.dInf sk wk ∧ ¬EndgameChess.Rules.RookSees rs wk sk wk
+@EndgameChess.Rules.krk_clear_vertical_entry_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd + 2 ≤ ↑wk.snd →
+      ↑rs.fst ≠ ↑sk.fst ∨ ↑sk.snd < ↑rs.snd →
+        2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst → EndgameChess.Rules.ForceMate σ q
+EndgameChess.Rules.krk_clear_axis_entry_force : ∀ (g : EndgameChess.Rules.BoardSym) {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑(g.f sk).snd + 2 ≤ ↑(g.f wk).snd →
+      ↑(g.f rs).fst ≠ ↑(g.f sk).fst ∨ ↑(g.f sk).snd < ↑(g.f rs).snd →
+        2 ≤ EndgameChess.KK.absDiff ↑(g.f rs).fst ↑(g.f wk).fst → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_horizontal_entry_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    2 ≤ EndgameChess.KK.absDiff ↑sk.fst ↑wk.fst →
+      ↑rs.snd ≠ ↑sk.snd → 2 ≤ EndgameChess.KK.absDiff ↑rs.snd ↑wk.snd → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_offrank_setup_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd + 2 ≤ ↑wk.snd →
+      ↑rs.snd ≠ ↑sk.snd → ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_same_rank_retreat_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd + 2 ≤ ↑wk.snd →
+      ↑rs.snd = ↑sk.snd → 0 < ↑sk.snd → ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_backrank_protected_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd = 0 →
+      ↑rs.snd = 0 →
+        2 ≤ ↑wk.snd →
+          EndgameChess.KK.absDiff ↑sk.fst ↑rs.fst = 1 →
+            ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_backrank_setup_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd = 0 →
+      ↑rs.snd = 0 →
+        2 ≤ ↑wk.snd →
+          EndgameChess.KK.absDiff ↑sk.fst ↑wk.fst ≤ 1 →
+            EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst ≤ 1 →
+              ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_strong_force_of_not_check : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ → EndgameChess.Rules.inCheck q σ.opp = false → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_strong_arrival_force : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ → (∃ p, EndgameChess.Rules.Legal p q) → EndgameChess.Rules.ForceMate σ q
+@EndgameChess.Rules.krk_weak_force_iff : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp →
+      (EndgameChess.Rules.ForceMate σ q ↔
+        EndgameChess.Rules.MatedK q ∨
+          (∃ r, EndgameChess.Rules.Legal q r) ∧
+            ∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → ¬∃ w b, EndgameChess.Rules.IsKK r w b)
+@EndgameChess.Rules.krk_weak_force_safe_iff : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp →
+      (EndgameChess.Rules.ForceMate σ q ↔
+        EndgameChess.Rules.MatedK q ∨ EndgameChess.Rules.SafeRook sk rs wk ∧ ∃ r, EndgameChess.Rules.Legal q r)
+EndgameChess.Rules.backrank_preparation_forces : EndgameChess.Rules.ForceMate EndgameChess.KK.Colour.white
+  (EndgameChess.Rules.krkPos EndgameChess.KK.Colour.white (EndgameChess.Rules.sq✝ 0 0) (EndgameChess.Rules.sq✝ 2 0)
+    (EndgameChess.Rules.sq✝ 1 2) EndgameChess.KK.Colour.white)
+EndgameChess.Rules.black_flagged_file_setup_forces : EndgameChess.Rules.ForceMate EndgameChess.KK.Colour.black
+  EndgameChess.Rules.flaggedFileSetup
+EndgameChess.Rules.safe_setup_capture_controls : EndgameChess.Rules.ForceMate EndgameChess.KK.Colour.white
+    EndgameChess.Rules.setupBefore ∧
+  ¬EndgameChess.Rules.ForceMate EndgameChess.KK.Colour.white EndgameChess.Rules.setupRankWall ∧
+    ¬EndgameChess.Rules.ForceMate EndgameChess.KK.Colour.white EndgameChess.Rules.setupFileWall
+structure EndgameChess.Rules.HistoryLayer.Layer.{u} (State : Type u) : Type u
+number of parameters: 1
+fields:
+  EndgameChess.Rules.HistoryLayer.Layer.erase : State → EndgameChess.Rules.Position
+  EndgameChess.Rules.HistoryLayer.Layer.BoardStep : State → State → Prop
+  EndgameChess.Rules.HistoryLayer.Layer.Ongoing : State → Prop
+  EndgameChess.Rules.HistoryLayer.Layer.CanClaim : State → Prop
+  EndgameChess.Rules.HistoryLayer.Layer.step_sound : ∀ {s t : State},
+      self.Ongoing s → self.BoardStep s t → EndgameChess.Rules.Legal (self.erase s) (self.erase t)
+  EndgameChess.Rules.HistoryLayer.Layer.reply_complete : ∀ {s : State} {r : EndgameChess.Rules.Position},
+      self.Ongoing s → EndgameChess.Rules.Legal (self.erase s) r → ∃ t, self.BoardStep s t ∧ self.erase t = r
+  EndgameChess.Rules.HistoryLayer.Layer.ongoing_not_dead : ∀ {s : State},
+      self.Ongoing s → ¬EndgameChess.Rules.DeadK (self.erase s)
+constructor:
+  EndgameChess.Rules.HistoryLayer.Layer.mk.{u} {State : Type u} (erase : State → EndgameChess.Rules.Position)
+    (BoardStep : State → State → Prop) (Ongoing CanClaim : State → Prop)
+    (step_sound : ∀ {s t : State}, Ongoing s → BoardStep s t → EndgameChess.Rules.Legal (erase s) (erase t))
+    (reply_complete :
+      ∀ {s : State} {r : EndgameChess.Rules.Position},
+        Ongoing s → EndgameChess.Rules.Legal (erase s) r → ∃ t, BoardStep s t ∧ erase t = r)
+    (ongoing_not_dead : ∀ {s : State}, Ongoing s → ¬EndgameChess.Rules.DeadK (erase s)) :
+    EndgameChess.Rules.HistoryLayer.Layer State
+def EndgameChess.Rules.HistoryLayer.Goal.{u} : {State : Type u} →
+  EndgameChess.Rules.HistoryLayer.Layer State → EndgameChess.KK.Colour → State → Prop :=
+fun {State} L σ s => EndgameChess.Rules.MateGoal σ (L.erase s)
+def EndgameChess.Rules.HistoryLayer.RuleMateWithin.{u} : {State : Type u} →
+  EndgameChess.Rules.HistoryLayer.Layer State → EndgameChess.KK.Colour → Nat → State → Prop :=
+fun {State} L σ x x_1 =>
+  Nat.brecOn (motive := fun x => State → Prop) x (EndgameChess.Rules.HistoryLayer.RuleMateWithin._f L σ) x_1
+def EndgameChess.Rules.HistoryLayer.RuleForceMate.{u} : {State : Type u} →
+  EndgameChess.Rules.HistoryLayer.Layer State → EndgameChess.KK.Colour → State → Prop :=
+fun {State} L σ s => ∃ n, EndgameChess.Rules.HistoryLayer.RuleMateWithin L σ n s
+'EndgameChess.Rules.HistoryLayer.ruleMateWithin_project' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.HistoryLayer.ruleForceMate_project' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.HistoryLayer.ruleMateWithin_project : ∀ {State : Type u_1}
+  (L : EndgameChess.Rules.HistoryLayer.Layer State) {σ : EndgameChess.KK.Colour} {n : Nat} {s : State},
+  EndgameChess.Rules.HistoryLayer.RuleMateWithin L σ n s → EndgameChess.Rules.MateWithin σ n (L.erase s)
+@EndgameChess.Rules.HistoryLayer.ruleForceMate_project : ∀ {State : Type u_1}
+  (L : EndgameChess.Rules.HistoryLayer.Layer State) {σ : EndgameChess.KK.Colour} {s : State},
+  EndgameChess.Rules.HistoryLayer.RuleForceMate L σ s → EndgameChess.Rules.ForceMate σ (L.erase s)
+inductive EndgameChess.Rules.RawTrace.Trace : EndgameChess.Rules.Position → Type
+number of parameters: 0
+constructors:
+EndgameChess.Rules.RawTrace.Trace.start : EndgameChess.Rules.RawTrace.Trace EndgameChess.Rules.initial
+EndgameChess.Rules.RawTrace.Trace.snoc : {q : EndgameChess.Rules.Position} →
+  EndgameChess.Rules.RawTrace.Trace q →
+    (m : EndgameChess.Rules.Move) →
+      EndgameChess.Rules.isLegal q m = true → EndgameChess.Rules.RawTrace.Trace (EndgameChess.Rules.play q m)
+def EndgameChess.Rules.RawTrace.Trace.moves : {q : EndgameChess.Rules.Position} →
+  EndgameChess.Rules.RawTrace.Trace q → List EndgameChess.Rules.Move :=
+fun {q} t => EndgameChess.Rules.RawTrace.Trace.brecOn t @EndgameChess.Rules.RawTrace.Trace.moves._f
+def EndgameChess.Rules.RawTrace.Trace.positions : {q : EndgameChess.Rules.Position} →
+  EndgameChess.Rules.RawTrace.Trace q → List EndgameChess.Rules.Position :=
+fun {q} t => EndgameChess.Rules.RawTrace.Trace.brecOn t @EndgameChess.Rules.RawTrace.Trace.positions._f
+structure EndgameChess.Rules.RawTrace.State : Type
+number of parameters: 0
+fields:
+  EndgameChess.Rules.RawTrace.State.endpoint : EndgameChess.Rules.Position
+  EndgameChess.Rules.RawTrace.State.trace : EndgameChess.Rules.RawTrace.Trace self.endpoint
+constructor:
+  EndgameChess.Rules.RawTrace.State.mk (endpoint : EndgameChess.Rules.Position)
+    (trace : EndgameChess.Rules.RawTrace.Trace endpoint) : EndgameChess.Rules.RawTrace.State
+def EndgameChess.Rules.RawTrace.erase : EndgameChess.Rules.RawTrace.State → EndgameChess.Rules.Position :=
+fun s => s.endpoint
+def EndgameChess.Rules.RawTrace.initialState : EndgameChess.Rules.RawTrace.State :=
+{ endpoint := EndgameChess.Rules.initial, trace := EndgameChess.Rules.RawTrace.Trace.start }
+def EndgameChess.Rules.RawTrace.append : (s : EndgameChess.Rules.RawTrace.State) →
+  (m : EndgameChess.Rules.Move) →
+    EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true → EndgameChess.Rules.RawTrace.State :=
+fun s m h => { endpoint := EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m, trace := s.trace.snoc m h }
+def EndgameChess.Rules.RawTrace.RawBoardStep : EndgameChess.Rules.RawTrace.State →
+  EndgameChess.Rules.RawTrace.State → Prop :=
+fun s t => ∃ m h, t = EndgameChess.Rules.RawTrace.append s m h
+'EndgameChess.Rules.RawTrace.append_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.RawTrace.raw_step_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.RawTrace.raw_step_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.RawTrace.trace_arisen' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawTrace.append_spec : ∀ (s : EndgameChess.Rules.RawTrace.State) (m : EndgameChess.Rules.Move)
+  (h : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true),
+  EndgameChess.Rules.RawTrace.erase (EndgameChess.Rules.RawTrace.append s m h) =
+      EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m ∧
+    (EndgameChess.Rules.RawTrace.append s m h).trace.moves = s.trace.moves ++ [m] ∧
+      (EndgameChess.Rules.RawTrace.append s m h).trace.positions =
+          s.trace.positions ++ [EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m] ∧
+        (EndgameChess.Rules.RawTrace.append s m h).trace.moves.length = s.trace.moves.length + 1
+@EndgameChess.Rules.RawTrace.raw_step_sound : ∀ {s t : EndgameChess.Rules.RawTrace.State},
+  EndgameChess.Rules.RawTrace.RawBoardStep s t →
+    EndgameChess.Rules.Legal (EndgameChess.Rules.RawTrace.erase s) (EndgameChess.Rules.RawTrace.erase t)
+EndgameChess.Rules.RawTrace.raw_step_complete : ∀ (s : EndgameChess.Rules.RawTrace.State)
+  {r : EndgameChess.Rules.Position},
+  EndgameChess.Rules.Legal (EndgameChess.Rules.RawTrace.erase s) r →
+    ∃ t, EndgameChess.Rules.RawTrace.RawBoardStep s t ∧ EndgameChess.Rules.RawTrace.erase t = r
+@EndgameChess.Rules.RawTrace.trace_arisen : ∀ {q : EndgameChess.Rules.Position}
+  (t : EndgameChess.Rules.RawTrace.Trace q), EndgameChess.Rules.Arisen q
+def EndgameChess.Rules.RawClock.Pawn : EndgameChess.Rules.Position → EndgameChess.Rules.Move → Prop :=
+fun q m => q.board m.src = some { colour := q.turn, kind := EndgameChess.Rules.PieceType.pawn }
+def EndgameChess.Rules.RawClock.zeroing : EndgameChess.Rules.Position → EndgameChess.Rules.Move → Bool :=
+fun q m =>
+  q.board m.src == some { colour := q.turn, kind := EndgameChess.Rules.PieceType.pawn } || (q.board m.dst).isSome
+def EndgameChess.Rules.RawClock.CaptureEvent : EndgameChess.Rules.Position → EndgameChess.Rules.Move → Prop :=
+fun q m =>
+  (∃ pc, q.board m.dst = some pc ∧ pc.colour ≠ q.turn) ∨
+    EndgameChess.Rules.RawClock.Pawn q m ∧
+      q.ep = some m.dst ∧
+        m.src.fst ≠ m.dst.fst ∧
+          q.board m.dst = none ∧
+            q.board (m.dst.fst, m.src.snd) = some { colour := q.turn.opp, kind := EndgameChess.Rules.PieceType.pawn }
+def EndgameChess.Rules.RawClock.clock : {q : EndgameChess.Rules.Position} → EndgameChess.Rules.RawTrace.Trace q → Nat :=
+fun {q} t => EndgameChess.Rules.RawTrace.Trace.brecOn t @EndgameChess.Rules.RawClock.clock._f
+EndgameChess.Rules.RawClock.event_cases : ∀ (q : EndgameChess.Rules.Position) (m : EndgameChess.Rules.Move),
+  (EndgameChess.Rules.RawClock.Pawn q m → EndgameChess.Rules.RawClock.zeroing q m = true) ∧
+    ((∃ pc, q.board m.dst = some pc) → EndgameChess.Rules.RawClock.zeroing q m = true) ∧
+      (¬EndgameChess.Rules.RawClock.Pawn q m → q.board m.dst = none → EndgameChess.Rules.RawClock.zeroing q m = false)
+'EndgameChess.Rules.RawClock.event_cases' depends on axioms: [propext]
+EndgameChess.Rules.RawClock.legal_zero_iff : ∀ (q : EndgameChess.Rules.Position) (m : EndgameChess.Rules.Move),
+  EndgameChess.Rules.isLegal q m = true →
+    (EndgameChess.Rules.RawClock.zeroing q m = true ↔
+      EndgameChess.Rules.RawClock.Pawn q m ∨ EndgameChess.Rules.RawClock.CaptureEvent q m)
+'EndgameChess.Rules.RawClock.legal_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawClock.castle_empty : ∀ (q : EndgameChess.Rules.Position) (m : EndgameChess.Rules.Move),
+  EndgameChess.Rules.canCastle q m = true → q.board m.dst = none
+'EndgameChess.Rules.RawClock.castle_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawClock.append_clock : ∀ (s : EndgameChess.Rules.RawTrace.State) (m : EndgameChess.Rules.Move)
+  (hm : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true),
+  EndgameChess.Rules.RawClock.clock (EndgameChess.Rules.RawTrace.append s m hm).trace =
+    if EndgameChess.Rules.RawClock.zeroing (EndgameChess.Rules.RawTrace.erase s) m = true then 0
+    else EndgameChess.Rules.RawClock.clock s.trace + 1
+'EndgameChess.Rules.RawClock.append_clock' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.RawClock.clock_le_length : ∀ {q : EndgameChess.Rules.Position}
+  (t : EndgameChess.Rules.RawTrace.Trace q), EndgameChess.Rules.RawClock.clock t ≤ t.moves.length
+'EndgameChess.Rules.RawClock.clock_le_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawClock.append_clock_le : ∀ (s : EndgameChess.Rules.RawTrace.State) (m : EndgameChess.Rules.Move)
+  (hm : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true),
+  EndgameChess.Rules.RawClock.clock (EndgameChess.Rules.RawTrace.append s m hm).trace ≤
+    EndgameChess.Rules.RawClock.clock s.trace + 1
+'EndgameChess.Rules.RawClock.append_clock_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+inductive EndgameChess.Rules.RawTrace.Extends : Nat →
+  EndgameChess.Rules.RawTrace.State → EndgameChess.Rules.RawTrace.State → Prop
+number of parameters: 0
+constructors:
+EndgameChess.Rules.RawTrace.Extends.refl : ∀ (s : EndgameChess.Rules.RawTrace.State),
+  EndgameChess.Rules.RawTrace.Extends 0 s s
+EndgameChess.Rules.RawTrace.Extends.snoc : ∀ {n : Nat} {s u t : EndgameChess.Rules.RawTrace.State},
+  EndgameChess.Rules.RawTrace.Extends n s u →
+    EndgameChess.Rules.RawTrace.RawBoardStep u t → EndgameChess.Rules.RawTrace.Extends (n + 1) s t
+@EndgameChess.Rules.RawClock.clock_le_extension : ∀ {n : Nat} {s t : EndgameChess.Rules.RawTrace.State},
+  EndgameChess.Rules.RawTrace.Extends n s t →
+    EndgameChess.Rules.RawClock.clock t.trace ≤ EndgameChess.Rules.RawClock.clock s.trace + n
+'EndgameChess.Rules.RawClock.clock_le_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.RawClock.clock_budget_certificate : ∀ {s : EndgameChess.Rules.RawTrace.State} {n : Nat},
+  EndgameChess.Rules.RawClock.clock s.trace + n < 100 →
+    ∀ {k : Nat} {u : EndgameChess.Rules.RawTrace.State},
+      k ≤ n →
+        EndgameChess.Rules.RawTrace.Extends k s u →
+          EndgameChess.Rules.RawClock.clock u.trace < 100 ∧
+            (k < n →
+              ∀ {v : EndgameChess.Rules.RawTrace.State},
+                EndgameChess.Rules.RawTrace.RawBoardStep u v → EndgameChess.Rules.RawClock.clock v.trace < 100)
+'EndgameChess.Rules.RawClock.clock_budget_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+def EndgameChess.Rules.RawOccurrences.occurrences.{u} : {K : Type u} →
+  [DecidableEq K] →
+    (EndgameChess.Rules.Position → K) →
+      {q : EndgameChess.Rules.Position} → EndgameChess.Rules.RawTrace.Trace q → K → Nat :=
+fun {K} [DecidableEq K] key {q} t a => (List.filter (fun p => decide (key p = a)) t.positions).length
+@EndgameChess.Rules.RawOccurrences.append_occurrences : ∀ {K : Type u_1} [inst : DecidableEq K]
+  (key : EndgameChess.Rules.Position → K) (s : EndgameChess.Rules.RawTrace.State) (m : EndgameChess.Rules.Move)
+  (hm : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true) (a : K),
+  EndgameChess.Rules.RawOccurrences.occurrences key (EndgameChess.Rules.RawTrace.append s m hm).trace a =
+    EndgameChess.Rules.RawOccurrences.occurrences key s.trace a +
+      if key (EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m) = a then 1 else 0
+'EndgameChess.Rules.RawOccurrences.append_occurrences' depends on axioms: [propext, Classical.choice, Quot.sound]
+def EndgameChess.Rules.RawRepetition.LegalEP : EndgameChess.Rules.Position → EndgameChess.Rules.Move → Prop :=
+fun q m =>
+  EndgameChess.Rules.isLegal q m = true ∧
+    EndgameChess.Rules.RawClock.Pawn q m ∧
+      q.ep = some m.dst ∧
+        m.src.fst ≠ m.dst.fst ∧
+          q.board m.dst = none ∧
+            q.board (m.dst.fst, m.src.snd) = some { colour := q.turn.opp, kind := EndgameChess.Rules.PieceType.pawn }
+def EndgameChess.Rules.RawRepetition.effectiveEP : EndgameChess.Rules.Position → Option EndgameChess.KK.Square :=
+fun q => if ∃ m, EndgameChess.Rules.RawRepetition.LegalEP q m then q.ep else none
+EndgameChess.Rules.RawRepetition.effectiveEP_spec : ∀ (q : EndgameChess.Rules.Position),
+  (EndgameChess.Rules.RawRepetition.effectiveEP q = none ↔ ¬∃ m, EndgameChess.Rules.RawRepetition.LegalEP q m) ∧
+    ∀ (dst : EndgameChess.KK.Square),
+      EndgameChess.Rules.RawRepetition.effectiveEP q = some dst ↔
+        ∃ m, EndgameChess.Rules.RawRepetition.LegalEP q m ∧ m.dst = dst
+'EndgameChess.Rules.RawRepetition.effectiveEP_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawRepetition.legalEP_iff_shape : ∀ (q : EndgameChess.Rules.Position) (m : EndgameChess.Rules.Move),
+  EndgameChess.Rules.RawRepetition.LegalEP q m ↔
+    EndgameChess.Rules.isLegal q m = true ∧
+      EndgameChess.Rules.RawClock.Pawn q m ∧ m.src.fst ≠ m.dst.fst ∧ q.board m.dst = none
+'EndgameChess.Rules.RawRepetition.legalEP_iff_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+'EndgameChess.Rules.RawRepetition.ordinary_ep_irrelevance' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawRepetition.ordinary_ep_irrelevance : ∀ (q : EndgameChess.Rules.Position)
+  (m : EndgameChess.Rules.Move) (e : Option EndgameChess.KK.Square),
+  ¬(EndgameChess.Rules.RawClock.Pawn q m ∧ m.src.fst ≠ m.dst.fst ∧ q.board m.dst = none) →
+    EndgameChess.Rules.isPseudo { board := q.board, turn := q.turn, castling := q.castling, ep := e } m =
+        EndgameChess.Rules.isPseudo q m ∧
+      EndgameChess.Rules.play { board := q.board, turn := q.turn, castling := q.castling, ep := e } m =
+        EndgameChess.Rules.play q m
+'EndgameChess.Rules.RawRepetition.normalizeEP_preserves' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawRepetition.normalizeEP_preserves : ∀ (q : EndgameChess.Rules.Position)
+  (m : EndgameChess.Rules.Move),
+  EndgameChess.Rules.isLegal (EndgameChess.Rules.RawRepetition.normalizeEP q) m = EndgameChess.Rules.isLegal q m ∧
+    (EndgameChess.Rules.isLegal q m = true →
+      EndgameChess.Rules.play (EndgameChess.Rules.RawRepetition.normalizeEP q) m = EndgameChess.Rules.play q m)
+'EndgameChess.Rules.RawRepetition.key_legal_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawRepetition.key_legal_congr : ∀ (q r : EndgameChess.Rules.Position),
+  EndgameChess.Rules.RawRepetition.key q = EndgameChess.Rules.RawRepetition.key r →
+    ∀ (m : EndgameChess.Rules.Move),
+      EndgameChess.Rules.isLegal q m = EndgameChess.Rules.isLegal r m ∧
+        (EndgameChess.Rules.isLegal q m = true → EndgameChess.Rules.play q m = EndgameChess.Rules.play r m)
+'EndgameChess.Rules.RawRepetition.append_currentOccurrences' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawRepetition.append_currentOccurrences : ∀ (s : EndgameChess.Rules.RawTrace.State)
+  (m : EndgameChess.Rules.Move) (hm : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true),
+  EndgameChess.Rules.RawRepetition.currentOccurrences (EndgameChess.Rules.RawTrace.append s m hm) =
+    EndgameChess.Rules.RawRepetition.occurrences s.trace
+        (EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m) +
+      1
+'EndgameChess.Rules.RawClaims.no_threshold_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawClaims.no_threshold_certificate : ∀ (s : EndgameChess.Rules.RawTrace.State),
+  EndgameChess.Rules.RawClock.clock s.trace + 1 < 100 →
+    EndgameChess.Rules.RawRepetition.currentOccurrences s < 3 →
+      (∀ (m : EndgameChess.Rules.Move),
+          EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true →
+            EndgameChess.Rules.RawRepetition.occurrences s.trace
+                (EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m) <
+              2) →
+        ¬EndgameChess.Rules.RawClaims.AvailableThreshold s
+'EndgameChess.Rules.RawClaims.no_threshold_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawClaims.no_threshold_iff : ∀ (s : EndgameChess.Rules.RawTrace.State),
+  ¬EndgameChess.Rules.RawClaims.AvailableThreshold s ↔
+    EndgameChess.Rules.RawClock.clock s.trace < 100 ∧
+      EndgameChess.Rules.RawRepetition.currentOccurrences s < 3 ∧
+        ∀ (m : EndgameChess.Rules.Move)
+          (hm : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true),
+          EndgameChess.Rules.RawClock.clock (EndgameChess.Rules.RawTrace.append s m hm).trace < 100 ∧
+            EndgameChess.Rules.RawRepetition.occurrences s.trace
+                (EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m) <
+              2
+'EndgameChess.Rules.RawAdjudication.ongoing_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawAdjudication.ongoing_iff : ∀ (s : EndgameChess.Rules.RawTrace.State),
+  EndgameChess.Rules.RawAdjudication.classify s = EndgameChess.Rules.RawAdjudication.EndpointStatus.ongoing ↔
+    ¬EndgameChess.Rules.DeadK (EndgameChess.Rules.RawTrace.erase s) ∧
+      (∃ r, EndgameChess.Rules.Legal (EndgameChess.Rules.RawTrace.erase s) r) ∧
+        EndgameChess.Rules.RawClock.clock s.trace < 150 ∧ EndgameChess.Rules.RawRepetition.currentOccurrences s < 5
+'EndgameChess.Rules.StoppedHistory.append_and_reply_lifting' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.StoppedHistory.append_and_reply_lifting : ∀ (s : EndgameChess.Rules.RawTrace.State),
+  (∀ (m : EndgameChess.Rules.Move) (hm : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true),
+      EndgameChess.Rules.StoppedHistory.Admissible (EndgameChess.Rules.RawTrace.append s m hm).trace ↔
+        EndgameChess.Rules.StoppedHistory.Admissible s.trace ∧
+          EndgameChess.Rules.RawAdjudication.classify s = EndgameChess.Rules.RawAdjudication.EndpointStatus.ongoing) ∧
+    (EndgameChess.Rules.StoppedHistory.Admissible s.trace →
+      EndgameChess.Rules.RawAdjudication.classify s = EndgameChess.Rules.RawAdjudication.EndpointStatus.ongoing →
+        ∀ (r : EndgameChess.Rules.Position),
+          EndgameChess.Rules.Legal (EndgameChess.Rules.RawTrace.erase s) r →
+            ∃ t,
+              EndgameChess.Rules.StoppedHistory.Admissible t.trace ∧
+                EndgameChess.Rules.RawTrace.RawBoardStep s t ∧ EndgameChess.Rules.RawTrace.erase t = r)
+'EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_project' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_project : ∀ (s : EndgameChess.Rules.RawHistoryLayer.State)
+  (σ : EndgameChess.KK.Colour) (n : Nat),
+  EndgameChess.Rules.HistoryLayer.RuleMateWithin EndgameChess.Rules.RawHistoryLayer.layer σ n s →
+    EndgameChess.Rules.MateWithin σ n (EndgameChess.Rules.RawHistoryLayer.erase s)
+'EndgameChess.Rules.RawTrace.extends_prepend' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.RawTrace.extends_prepend : ∀ {s u t : EndgameChess.Rules.RawTrace.State},
+  EndgameChess.Rules.RawTrace.RawBoardStep s u →
+    ∀ {n : Nat}, EndgameChess.Rules.RawTrace.Extends n u t → EndgameChess.Rules.RawTrace.Extends (n + 1) s t
+'EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_budget : ∀ (s : EndgameChess.Rules.RawHistoryLayer.State)
+  (σ : EndgameChess.KK.Colour) (n : Nat),
+  EndgameChess.Rules.RawClock.clock s.val.trace + n < 100 →
+    (∀ {k : Nat} {t : EndgameChess.Rules.RawTrace.State},
+        k ≤ n →
+          EndgameChess.Rules.RawTrace.Extends k s.val t → EndgameChess.Rules.RawRepetition.currentOccurrences t < 3) →
+      EndgameChess.Rules.MateWithin σ n (EndgameChess.Rules.RawHistoryLayer.erase s) →
+        EndgameChess.Rules.HistoryLayer.RuleMateWithin EndgameChess.Rules.RawHistoryLayer.layer σ n s
+'EndgameChess.Rules.krk_strong_arrival_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_strong_arrival_bound : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ → (∃ p, EndgameChess.Rules.Legal p q) → EndgameChess.Rules.MateWithin σ 508 q
+'EndgameChess.Rules.krk_axis_entry_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.krk_axis_entry_bound : ∀ (g : EndgameChess.Rules.BoardSym) {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑(g.f sk).snd + 2 ≤ ↑(g.f wk).snd →
+      ↑(g.f rs).fst ≠ ↑(g.f sk).fst →
+        2 ≤ EndgameChess.KK.absDiff ↑(g.f rs).fst ↑(g.f wk).fst → EndgameChess.Rules.MateWithin σ 506 q
+'EndgameChess.Rules.krk_axis_wall_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.krk_axis_wall_bound : ∀ (g : EndgameChess.Rules.BoardSym) {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑(g.f sk).snd < ↑(g.f rs).snd → ↑(g.f rs).snd < ↑(g.f wk).snd → EndgameChess.Rules.MateWithin σ 504 q
+'EndgameChess.Rules.krk_backrank_setup_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_backrank_setup_bound : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd = 0 →
+      ↑rs.snd = 0 →
+        2 ≤ ↑wk.snd →
+          EndgameChess.KK.absDiff ↑sk.fst ↑wk.fst ≤ 1 →
+            EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst ≤ 1 →
+              ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.MateWithin σ 508 q
+'EndgameChess.Rules.mateWithin_choose' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.mateWithin_choose : ∀ {σ : EndgameChess.KK.Colour} {q r : EndgameChess.Rules.Position} {n : Nat},
+  q.turn = σ →
+    EndgameChess.Rules.Legal q r → EndgameChess.Rules.MateWithin σ n r → EndgameChess.Rules.MateWithin σ (n + 1) q
+'EndgameChess.Rules.krk_clear_axis_entry_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.krk_clear_axis_entry_bound : ∀ (g : EndgameChess.Rules.BoardSym) {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑(g.f sk).snd + 2 ≤ ↑(g.f wk).snd →
+      ↑(g.f rs).fst ≠ ↑(g.f sk).fst ∨ ↑(g.f sk).snd < ↑(g.f rs).snd →
+        2 ≤ EndgameChess.KK.absDiff ↑(g.f rs).fst ↑(g.f wk).fst → EndgameChess.Rules.MateWithin σ 506 q
+'EndgameChess.Rules.krk_clear_vertical_entry_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_clear_vertical_entry_bound : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd + 2 ≤ ↑wk.snd →
+      ↑rs.fst ≠ ↑sk.fst ∨ ↑sk.snd < ↑rs.snd →
+        2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst → EndgameChess.Rules.MateWithin σ 506 q
+'EndgameChess.Rules.mateWithin_defend' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.mateWithin_defend : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position} {n : Nat},
+  q.turn = σ.opp →
+    (∃ r, EndgameChess.Rules.Legal q r) →
+      (∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → EndgameChess.Rules.MateWithin σ n r) →
+        EndgameChess.Rules.MateWithin σ (n + 1) q
+'EndgameChess.Rules.krk_vertical_wall_entry_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_vertical_wall_entry_bound : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd + 2 ≤ ↑wk.snd →
+      ↑rs.fst ≠ ↑sk.fst → 2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst → EndgameChess.Rules.MateWithin σ 506 q
+'EndgameChess.Rules.krk_horizontal_entry_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_horizontal_entry_bound : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    2 ≤ EndgameChess.KK.absDiff ↑sk.fst ↑wk.fst →
+      ↑rs.snd ≠ ↑sk.snd → 2 ≤ EndgameChess.KK.absDiff ↑rs.snd ↑wk.snd → EndgameChess.Rules.MateWithin σ 506 q
+'EndgameChess.Rules.krk_lower_band_bound_of_exits' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_lower_band_bound_of_exits : ∀ {σ : EndgameChess.KK.Colour} {y E : Nat},
+  EndgameChess.Rules.LowerExitBound σ y E →
+    ∀ {q : EndgameChess.Rules.Position} {sk rs wk : EndgameChess.KK.Square},
+      EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+        ↑sk.snd + 1 = y →
+          ↑rs.snd = y →
+            ↑wk.snd = y + 1 → 2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst → EndgameChess.Rules.MateWithin σ (56 + E) q
+'EndgameChess.Rules.krk_strong_bound_of_not_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_strong_bound_of_not_check : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ → EndgameChess.Rules.inCheck q σ.opp = false → EndgameChess.Rules.MateWithin σ 508 q
+'EndgameChess.Rules.krk_offrank_setup_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_offrank_setup_bound : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd + 2 ≤ ↑wk.snd →
+      ↑rs.snd ≠ ↑sk.snd → ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.MateWithin σ 508 q
+'EndgameChess.Rules.mateWithin_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.mateWithin_pair : ∀ {σ : EndgameChess.KK.Colour} {q c : EndgameChess.Rules.Position} {n : Nat},
+  q.turn = σ →
+    EndgameChess.Rules.Legal q c →
+      c.turn = σ.opp →
+        (∃ r, EndgameChess.Rules.Legal c r) →
+          (∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal c r → EndgameChess.Rules.MateWithin σ n r) →
+            EndgameChess.Rules.MateWithin σ (n + 2) q
+'EndgameChess.Rules.positive_setup_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.positive_setup_bound : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd + 2 ≤ ↑wk.snd → ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.MateWithin σ 508 q
+'EndgameChess.Rules.krk_backrank_protected_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_backrank_protected_bound : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd = 0 →
+      ↑rs.snd = 0 →
+        2 ≤ ↑wk.snd →
+          EndgameChess.KK.absDiff ↑sk.fst ↑rs.fst = 1 →
+            ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.MateWithin σ 506 q
+'EndgameChess.Rules.krk_oriented_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.krk_oriented_lower_bound : ∀ (d : Bool) {σ : EndgameChess.KK.Colour} {y E : Nat},
+  EndgameChess.Rules.LowerExitBound σ y E →
+    ∀ {q : EndgameChess.Rules.Position} {sk rs wk : EndgameChess.KK.Square},
+      EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+        ↑sk.snd + 1 = y →
+          ↑rs.snd = y →
+            ↑wk.snd = y + 1 →
+              2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+                EndgameChess.Rules.pursuitFile d sk < EndgameChess.Rules.pursuitFile d wk →
+                  EndgameChess.Rules.MateWithin σ (8 * (7 - EndgameChess.Rules.pursuitFile d sk) + E) q
+'EndgameChess.Rules.bound_rank_zero_reply' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.bound_rank_zero_reply : ∀ {sk rs wk : EndgameChess.KK.Square},
+  ↑sk.snd = 0 →
+    ↑rs.snd ≤ 1 →
+      2 ≤ ↑wk.snd →
+        ↑rs.fst ≠ ↑wk.fst →
+          ∃ t,
+            EndgameChess.Rules.StepM { sk := sk, rs := rs, wk := wk, strong := false }
+              { sk := sk, rs := rs, wk := t, strong := true }
+'EndgameChess.Rules.krk_same_rank_retreat_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_same_rank_retreat_bound : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd + 2 ≤ ↑wk.snd →
+      ↑rs.snd = ↑sk.snd → 0 < ↑sk.snd → ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.MateWithin σ 506 q
+'EndgameChess.Rules.bound_same_rank_no_file' depends on axioms: [propext, Quot.sound]
+@EndgameChess.Rules.bound_same_rank_no_file : ∀ {sk rs wk : EndgameChess.KK.Square},
+  sk ≠ rs → ↑rs.snd = ↑sk.snd → ↑sk.snd + 2 ≤ ↑wk.snd → ¬EndgameChess.Rules.RookSees rs wk sk wk → ↑rs.fst ≠ ↑wk.fst
+'EndgameChess.Rules.krk_bound_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.krk_bound_transport : ∀ (g : EndgameChess.Rules.BoardSym) {q t : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {a : EndgameChess.Rules.KRKState},
+  EndgameChess.Rules.Matches q σ a →
+    q.castling = EndgameChess.Rules.noRights →
+      EndgameChess.Rules.Matches t σ (EndgameChess.Rules.KRKState.map g a) →
+        ∀ {n : Nat}, EndgameChess.Rules.MateWithin σ n q → EndgameChess.Rules.MateWithin σ n t
+'EndgameChess.Rules.krk_rank_wall_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_rank_wall_bound : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd < ↑rs.snd → ↑rs.snd < ↑wk.snd → EndgameChess.Rules.MateWithin σ (84 * (7 - ↑rs.snd)) q
+'EndgameChess.Rules.krk_wall_ceiling' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_wall_ceiling : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd < ↑rs.snd → ↑rs.snd < ↑wk.snd → EndgameChess.Rules.MateWithin σ 504 q
+'EndgameChess.Rules.bound_weak_wall' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.bound_weak_wall : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := false } →
+    ↑sk.snd < ↑rs.snd →
+      ↑rs.snd < ↑wk.snd →
+        EndgameChess.Rules.SafeRook sk rs wk →
+          (∃ r, EndgameChess.Rules.Legal q r) → EndgameChess.Rules.MateWithin σ 505 q
+'EndgameChess.Rules.krk_key_simple_strategy' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.krk_key_simple_strategy : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ →
+      (∃ p, EndgameChess.Rules.Legal p q) →
+        EndgameChess.Rules.MateWithin σ 508 q ∧
+          EndgameChess.Rules.strategyRank σ q ≤ 508 ∧
+            ∀ {tail : List EndgameChess.Rules.Position},
+              EndgameChess.Rules.StrategyLine σ (q :: tail) →
+                List.Pairwise
+                    (fun a b => EndgameChess.Rules.RawRepetition.key a ≠ EndgameChess.Rules.RawRepetition.key b)
+                    (q :: tail) ∧
+                  (q :: tail).length ≤ 509
+'EndgameChess.Rules.strategy_key_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.strategy_key_budget : ∀ {q r : EndgameChess.Rules.Position},
+  EndgameChess.Rules.RawRepetition.key q = EndgameChess.Rules.RawRepetition.key r →
+    ∀ (σ : EndgameChess.KK.Colour) (n : Nat), EndgameChess.Rules.MateWithin σ n q ↔ EndgameChess.Rules.MateWithin σ n r
+'EndgameChess.Rules.strategy_key_interface' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.strategy_key_interface : ∀ {q r : EndgameChess.Rules.Position},
+  EndgameChess.Rules.RawRepetition.key q = EndgameChess.Rules.RawRepetition.key r →
+    q.turn = r.turn ∧
+      (∀ (c : EndgameChess.KK.Colour), EndgameChess.Rules.inCheck q c = EndgameChess.Rules.inCheck r c) ∧
+        (∀ (z : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q z ↔ EndgameChess.Rules.Legal r z) ∧
+          ∀ (σ : EndgameChess.KK.Colour), EndgameChess.Rules.MateGoal σ q ↔ EndgameChess.Rules.MateGoal σ r
+'EndgameChess.Rules.strategy_least_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.strategy_least_budget : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.ForceMate σ q →
+    ∃ n, EndgameChess.Rules.MateWithin σ n q ∧ ∀ (m : Nat), EndgameChess.Rules.MateWithin σ m q → n ≤ m
+'EndgameChess.Rules.strategy_line_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.strategy_line_certificate : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position}
+  {tail : List EndgameChess.Rules.Position},
+  EndgameChess.Rules.StrategyLine σ (q :: tail) →
+    EndgameChess.Rules.ForceMate σ q ∧
+      (∀ (r : EndgameChess.Rules.Position),
+          r ∈ tail →
+            EndgameChess.Rules.ForceMate σ r ∧
+              EndgameChess.Rules.strategyRank σ r < EndgameChess.Rules.strategyRank σ q) ∧
+        List.Pairwise (fun a b => EndgameChess.Rules.RawRepetition.key a ≠ EndgameChess.Rules.RawRepetition.key b)
+            (q :: tail) ∧
+          (q :: tail).length ≤ EndgameChess.Rules.strategyRank σ q + 1
+'EndgameChess.Rules.strategy_progress' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.strategy_progress : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.ForceMate σ q →
+    ¬EndgameChess.Rules.MateGoal σ q →
+      (q.turn = σ → ∃ r, EndgameChess.Rules.StrategyStep σ q r) ∧
+        (q.turn = σ.opp →
+          (∃ r, EndgameChess.Rules.Legal q r) ∧
+            ∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → EndgameChess.Rules.StrategyStep σ q r)
+'EndgameChess.Rules.strategy_rank_key' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.strategy_rank_key : ∀ {q r : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour},
+  EndgameChess.Rules.RawRepetition.key q = EndgameChess.Rules.RawRepetition.key r →
+    EndgameChess.Rules.strategyRank σ q = EndgameChess.Rules.strategyRank σ r
+'EndgameChess.Rules.strategy_rank_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.strategy_rank_spec : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.ForceMate σ q →
+    EndgameChess.Rules.MateWithin σ (EndgameChess.Rules.strategyRank σ q) q ∧
+      (∀ (n : Nat), EndgameChess.Rules.MateWithin σ n q → EndgameChess.Rules.strategyRank σ q ≤ n) ∧
+        (EndgameChess.Rules.strategyRank σ q = 0 ↔ EndgameChess.Rules.MateGoal σ q)
+'EndgameChess.Rules.strategy_terminal' depends on axioms: [propext, Classical.choice, Quot.sound]
+@EndgameChess.Rules.strategy_terminal : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.ForceMate σ q → ((¬∃ r, EndgameChess.Rules.StrategyStep σ q r) ↔ EndgameChess.Rules.MateGoal σ q)
+'EndgameChess.Rules.RawHistoryLayer.strategy_append_history' depends on axioms: [propext, Classical.choice, Quot.sound]
+EndgameChess.Rules.RawHistoryLayer.strategy_append_history : ∀ (s : EndgameChess.Rules.RawTrace.State)
+  (σ : EndgameChess.KK.Colour),
+  EndgameChess.Rules.RawHistoryLayer.LowerRankHistory σ s →
+    ∀ (m : EndgameChess.Rules.Move) (hm : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true),
+      EndgameChess.Rules.ForceMate σ (EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m) →
+        EndgameChess.Rules.strategyRank σ (EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m) <
+            EndgameChess.Rules.strategyRank σ (EndgameChess.Rules.RawTrace.erase s) →
+          EndgameChess.Rules.RawRepetition.currentOccurrences (EndgameChess.Rules.RawTrace.append s m hm) < 3 ∧
+            EndgameChess.Rules.RawHistoryLayer.LowerRankHistory σ (EndgameChess.Rules.RawTrace.append s m hm)
+'EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_strategy_history' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_strategy_history : ∀
+  (s : EndgameChess.Rules.RawHistoryLayer.State) (σ : EndgameChess.KK.Colour) (n : Nat),
+  EndgameChess.Rules.MateWithin σ n (EndgameChess.Rules.RawHistoryLayer.erase s) →
+    EndgameChess.Rules.RawClock.clock s.val.trace + n < 100 →
+      EndgameChess.Rules.RawRepetition.currentOccurrences s.val < 3 →
+        EndgameChess.Rules.RawHistoryLayer.LowerRankHistory σ s.val →
+          EndgameChess.Rules.HistoryLayer.RuleMateWithin EndgameChess.Rules.RawHistoryLayer.layer σ n s
+'EndgameChess.Rules.RawHistoryLayer.raw_rank_six_wall_ruleMateWithin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+EndgameChess.Rules.RawHistoryLayer.raw_rank_six_wall_ruleMateWithin : ∀ (s : EndgameChess.Rules.RawHistoryLayer.State)
+  (σ : EndgameChess.KK.Colour) {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches (EndgameChess.Rules.RawHistoryLayer.erase s) σ
+      { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd < ↑rs.snd →
+      ↑rs.snd < ↑wk.snd →
+        ↑rs.snd = 6 →
+          EndgameChess.Rules.RawClock.clock s.val.trace + 84 < 100 →
+            EndgameChess.Rules.RawRepetition.currentOccurrences s.val < 3 →
+              EndgameChess.Rules.RawHistoryLayer.LowerRankHistory σ s.val →
+                EndgameChess.Rules.HistoryLayer.RuleMateWithin EndgameChess.Rules.RawHistoryLayer.layer σ 84 s
