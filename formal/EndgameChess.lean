@@ -89,3 +89,6 @@ import EndgameChess.Rules.KRKStrategy.KRK
 import EndgameChess.Rules.KRKHistory.Wall
 
 import EndgameChess.Rules.KRKSharper.RawWall
+
+import EndgameChess.Rules.KRKSetup.SharperArrival
+import EndgameChess.Rules.KRKSetup.SharperWeak

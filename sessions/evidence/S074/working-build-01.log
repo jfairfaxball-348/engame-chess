@@ -1,0 +1,21 @@
+✖ [73/89] Building EndgameChess.Rules.KRKSetup.Definitions (304ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKSetup/Definitions.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKSetup/Definitions.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKSetup/Definitions.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKSetup/Definitions.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKSetup/Definitions.setup.json --json
+error: EndgameChess/Rules/KRKSetup/Definitions.lean:5:66: Application type mismatch: The argument
+  σ
+has type
+  Colour
+but is expected to have type
+  KK.Colour
+in the application
+  Matches q σ
+error: EndgameChess/Rules/KRKSetup/Definitions.lean:6:59: Application type mismatch: The argument
+  σ
+has type
+  Colour
+but is expected to have type
+  KK.Colour
+in the application
+  MateWithin σ
+Some required targets logged failures:
+- EndgameChess.Rules.KRKSetup.Definitions
+error: build failed

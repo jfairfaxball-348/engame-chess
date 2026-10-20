@@ -587,3 +587,37 @@ import EndgameChess
 #check @EndgameChess.Rules.RawHistoryLayer.raw_axis_rank_six_wall_ruleMateWithin_sharper
 #print axioms EndgameChess.Rules.krk_rank_wall_bound_sharper
 #check @EndgameChess.Rules.krk_rank_wall_bound_sharper
+
+/-! EC-C044: actual parametric KRK setup and global442/443 bounds. -/
+#print axioms EndgameChess.Rules.setup_arrival_budget
+#check @EndgameChess.Rules.setup_arrival_budget
+#print axioms EndgameChess.Rules.setup_axis_wall_budget
+#check @EndgameChess.Rules.setup_axis_wall_budget
+#print axioms EndgameChess.Rules.setup_backrank_budget
+#check @EndgameChess.Rules.setup_backrank_budget
+#print axioms EndgameChess.Rules.setup_clear_axis_entry_budget
+#check @EndgameChess.Rules.setup_clear_axis_entry_budget
+#print axioms EndgameChess.Rules.setup_clear_entry_budget
+#check @EndgameChess.Rules.setup_clear_entry_budget
+#print axioms EndgameChess.Rules.setup_horizontal_entry_budget
+#check @EndgameChess.Rules.setup_horizontal_entry_budget
+#print axioms EndgameChess.Rules.setup_strong_budget_of_not_check
+#check @EndgameChess.Rules.setup_strong_budget_of_not_check
+#print axioms EndgameChess.Rules.setup_offrank_budget
+#check @EndgameChess.Rules.setup_offrank_budget
+#print axioms EndgameChess.Rules.setup_positive_budget
+#check @EndgameChess.Rules.setup_positive_budget
+#print axioms EndgameChess.Rules.setup_protected_entry_budget
+#check @EndgameChess.Rules.setup_protected_entry_budget
+#print axioms EndgameChess.Rules.setup_same_rank_budget
+#check @EndgameChess.Rules.setup_same_rank_budget
+#print axioms EndgameChess.Rules.krk_strong_arrival_bound_442
+#check @EndgameChess.Rules.krk_strong_arrival_bound_442
+#print axioms EndgameChess.Rules.krk_weak_forcing_bound_443
+#check @EndgameChess.Rules.krk_weak_forcing_bound_443
+#print axioms EndgameChess.Rules.krk_wall_uniform_438
+#check @EndgameChess.Rules.krk_wall_uniform_438
+#print axioms EndgameChess.Rules.setup_weak_safe_budget
+#check @EndgameChess.Rules.setup_weak_safe_budget
+#print axioms EndgameChess.Rules.setup_weak_wall_budget
+#check @EndgameChess.Rules.setup_weak_wall_budget
