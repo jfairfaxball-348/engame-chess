@@ -1,0 +1,1 @@
+EndgameChess.Rules.RawRepetition.append_currentOccurrences

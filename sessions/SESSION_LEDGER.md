@@ -92,4 +92,6 @@
 
 | S054 | 2026-10-20 | EC-C033 concrete normalized-key current count (Gate L/F) | Full-history count of NEW endpoint plusone after every actual legal append. [Closeout](S054_NORMALIZED_KEY_OCCURRENCES.md) | None — 30 frozen bundles |
 
+| S055 | 2026-10-20 | Freeze EC-C033 current normalized-key count (Gate Z) | New own-source 81-job build, 280 allowed reports; both complete modules frozen. [Closeout](S055_FREEZE_NORMALIZED_KEY_OCCURRENCES.md) | **+1 → EC-T0031 FROZEN** (31 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
