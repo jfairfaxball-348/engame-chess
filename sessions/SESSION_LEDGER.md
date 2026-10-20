@@ -102,4 +102,6 @@
 
 | S059 | 2026-10-20 | Freeze EC-C035 raw threshold exclusion (Gate Z) | New own-source 84-job build, 282 allowed reports; complete characterization module frozen. [Closeout](S059_FREEZE_EXACT_RAW_THRESHOLD_EXCLUSION.md) | **+1 → EC-T0033 FROZEN** (33 bundles) |
 
+| S060 | 2026-10-20 | EC-C036 raw mate-first endpoint classifier (Gate L/F) | Exact ongoing nondead/legal-move/150-ply/fivefold guards. [Closeout](S060_RAW_ENDPOINT_CLASSIFIER.md) | None — 33 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
