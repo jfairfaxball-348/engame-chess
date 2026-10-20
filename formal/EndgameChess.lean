@@ -74,3 +74,4 @@ import EndgameChess.Rules.RawRepetition.OrdinaryEP
 import EndgameChess.Rules.RawRepetition.Normalization
 import EndgameChess.Rules.RawRepetition.KeyCongruence
 import EndgameChess.Rules.RawRepetition.CurrentAppend
+import EndgameChess.Rules.RawClaims.Certificate
