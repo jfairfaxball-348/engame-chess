@@ -1,0 +1,7 @@
+✔ [109/114] Built EndgameChess.Rules.KRKSharper.Definitions (309ms)
+✔ [110/114] Built EndgameChess.Rules.KRKSharper.Pursuit (3.4s)
+✔ [111/114] Built EndgameChess.Rules.KRKSharper.LowerBand (360ms)
+✔ [112/114] Built EndgameChess.Rules.KRKSharper.Wall (2.5s)
+✔ [113/114] Built EndgameChess.Rules.KRKSharper.AxisWall (277ms)
+✔ [114/114] Built EndgameChess.Rules.KRKSharper.RawWall (301ms)
+Build completed successfully (114 jobs).

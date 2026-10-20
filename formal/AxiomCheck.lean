@@ -575,3 +575,15 @@ import EndgameChess
 #check @EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_strategy_history
 #print axioms EndgameChess.Rules.RawHistoryLayer.raw_rank_six_wall_ruleMateWithin
 #check @EndgameChess.Rules.RawHistoryLayer.raw_rank_six_wall_ruleMateWithin
+
+/-! EC-C043: file/rank edge savings, credited walls and RAW clock coverage. -/
+#print axioms EndgameChess.Rules.krk_axis_wall_bound_sharper
+#check @EndgameChess.Rules.krk_axis_wall_bound_sharper
+#print axioms EndgameChess.Rules.krk_lower_band_bound_of_exits_sharper
+#check @EndgameChess.Rules.krk_lower_band_bound_of_exits_sharper
+#print axioms EndgameChess.Rules.krk_oriented_lower_bound_sharper
+#check @EndgameChess.Rules.krk_oriented_lower_bound_sharper
+#print axioms EndgameChess.Rules.RawHistoryLayer.raw_axis_rank_six_wall_ruleMateWithin_sharper
+#check @EndgameChess.Rules.RawHistoryLayer.raw_axis_rank_six_wall_ruleMateWithin_sharper
+#print axioms EndgameChess.Rules.krk_rank_wall_bound_sharper
+#check @EndgameChess.Rules.krk_rank_wall_bound_sharper
