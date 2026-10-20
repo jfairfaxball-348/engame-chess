@@ -477,3 +477,5 @@ import EndgameChess
 #print axioms EndgameChess.Rules.RawRepetition.legalEP_iff_shape
 #print axioms EndgameChess.Rules.RawRepetition.ordinary_ep_irrelevance
 #check @EndgameChess.Rules.RawRepetition.ordinary_ep_irrelevance
+#print axioms EndgameChess.Rules.RawRepetition.normalizeEP_preserves
+#check @EndgameChess.Rules.RawRepetition.normalizeEP_preserves

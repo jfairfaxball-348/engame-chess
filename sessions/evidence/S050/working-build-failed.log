@@ -1,0 +1,31 @@
+✔ [74/77] Built EndgameChess.Rules.RawRepetition.NormalizationDefinitions (373ms)
+✖ [75/77] Building EndgameChess.Rules.RawRepetition.Normalization (402ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/RawRepetition/Normalization.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawRepetition/Normalization.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawRepetition/Normalization.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawRepetition/Normalization.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawRepetition/Normalization.setup.json --json
+error: EndgameChess/Rules/RawRepetition/Normalization.lean:38:6: unsolved goals
+case neg.left
+q : Position
+m : Move
+available : ¬∃ move, LegalEP q move
+shape : ¬(RawClock.Pawn q m ∧ m.src.fst ≠ m.dst.fst ∧ q.board m.dst = none)
+pseudo : isPseudo (normalizeEP q) m = isPseudo q m
+played : play (normalizeEP q) m = play q m
+⊢ (isPseudo { board := q.board, turn := q.turn, castling := q.castling, ep := effectiveEP q } m &&
+      !inCheck (play { board := q.board, turn := q.turn, castling := q.castling, ep := effectiveEP q } m) q.turn) =
+    (isPseudo q m && !inCheck (play q m) q.turn)
+warning: EndgameChess/Rules/RawRepetition/Normalization.lean:38:28: This simp argument is unused:
+  pseudo
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [isLegal, played, normalizeEP]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/RawRepetition/Normalization.lean:38:36: This simp argument is unused:
+  played
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [isLegal, pseudo, normalizeEP]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- EndgameChess.Rules.RawRepetition.Normalization
+error: build failed

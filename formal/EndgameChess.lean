@@ -71,3 +71,4 @@ import EndgameChess.Rules.RawRepetition.Definitions
 import EndgameChess.Rules.RawRepetition.EffectiveEP
 import EndgameChess.Rules.RawRepetition.EPCharacterization
 import EndgameChess.Rules.RawRepetition.OrdinaryEP
+import EndgameChess.Rules.RawRepetition.Normalization
