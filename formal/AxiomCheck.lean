@@ -485,3 +485,5 @@ import EndgameChess
 #check @EndgameChess.Rules.RawRepetition.append_currentOccurrences
 #print axioms EndgameChess.Rules.RawClaims.no_threshold_certificate
 #check @EndgameChess.Rules.RawClaims.no_threshold_certificate
+#print axioms EndgameChess.Rules.RawClaims.no_threshold_iff
+#check @EndgameChess.Rules.RawClaims.no_threshold_iff

@@ -1,0 +1,31 @@
+✖ [82/84] Building EndgameChess.Rules.RawClaims.ExclusionCharacterization (379ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/RawClaims/ExclusionCharacterization.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawClaims/ExclusionCharacterization.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawClaims/ExclusionCharacterization.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawClaims/ExclusionCharacterization.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawClaims/ExclusionCharacterization.setup.json --json
+error: EndgameChess/Rules/RawClaims/ExclusionCharacterization.lean:18:7: unknown tactic
+error: EndgameChess/Rules/RawClaims/ExclusionCharacterization.lean:17:53: unsolved goals
+s : RawTrace.State
+absent : ¬AvailableThreshold s
+root : ¬CurrentThreshold s
+⊢ RawClock.clock s.trace < 100
+error: EndgameChess/Rules/RawClaims/ExclusionCharacterization.lean:15:2: unsolved goals
+case mp
+s : RawTrace.State
+absent : ¬AvailableThreshold s
+root : ¬CurrentThreshold s
+rootClock : RawClock.clock s.trace < 100
+⊢ RawClock.clock s.trace < 100 ∧
+    RawRepetition.currentOccurrences s < 3 ∧
+      ∀ (m : Move) (hm : isLegal (RawTrace.erase s) m = true),
+        RawClock.clock (RawTrace.append s m hm).trace < 100 ∧
+          RawRepetition.occurrences s.trace (play (RawTrace.erase s) m) < 2
+error: EndgameChess/Rules/RawClaims/ExclusionCharacterization.lean:13:78: unsolved goals
+case mpr
+s : RawTrace.State
+⊢ (RawClock.clock s.trace < 100 ∧
+      RawRepetition.currentOccurrences s < 3 ∧
+        ∀ (m : Move) (hm : isLegal (RawTrace.erase s) m = true),
+          RawClock.clock (RawTrace.append s m hm).trace < 100 ∧
+            RawRepetition.occurrences s.trace (play (RawTrace.erase s) m) < 2) →
+    ¬AvailableThreshold s
+Some required targets logged failures:
+- EndgameChess.Rules.RawClaims.ExclusionCharacterization
+error: build failed

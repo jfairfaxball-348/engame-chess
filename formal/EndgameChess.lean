@@ -75,3 +75,4 @@ import EndgameChess.Rules.RawRepetition.Normalization
 import EndgameChess.Rules.RawRepetition.KeyCongruence
 import EndgameChess.Rules.RawRepetition.CurrentAppend
 import EndgameChess.Rules.RawClaims.Certificate
+import EndgameChess.Rules.RawClaims.ExclusionCharacterization
