@@ -74,4 +74,6 @@
 
 | S045 | 2026-10-20 | Freeze effective legal-ep target (Gate Z) | New own exact-source 73-job build, 275 allowed reports; Gate F output identical; prior sources/records preserved. S046 kernel LegalEP characterization installed. [Closeout](S045_FREEZE_EFFECTIVE_EP_TARGET.md) | **+1 → EC-T0026 FROZEN** (26 bundles) |
 
+| S046 | 2026-10-20 | EC-C029 kernel LegalEP characterization (Gate L/F) | Actual legal source pawn changes file into empty dst iff LegalEP; marker/flank recovered via pawnMoveOK and Fin-file dx. Source `421608f5b20fee055bc3cb9d0c5904b0d192527b`; fresh 74-job build, 276 allowed reports. S047 freeze installed. [Closeout](S046_LEGAL_EP_CHARACTERIZATION.md) | None — 26 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
