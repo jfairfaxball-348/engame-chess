@@ -105,3 +105,5 @@ S071: EC-C042 formally verifies same-budget actual-history RAW lifting under exp
 S072: EC-C041/042 separately frozen as EC-T0038/0039 at their own exact sources. Key-simple all-defence rank policy and conditional84-ply RAW actual-history wall family certified; no complete FIDE/class outcome or exact-distance parity. S073 directly attacks sharper pursuit/wall costs to widen useful clock coverage.
 
 S073: EC-C043 formally verifies73*(7−rookRank) clock-free walls and conditional73-ply RAW wall certificates in proved frames, allowing clock≤26 with explicit original history conditions. [Paper](../proofs/EC-C043_KRK_SHARPER_WALL.md). Freeze pending; global508 unchanged until setup composition. S074 targets that direct KRK step, not a generic detour.
+
+S074: EC-C044 formally composes arbitrary actual setup through the new wall budget, yielding442 for legal strong-turn arrivals and443 for weak-turn forcing inputs. [Paper](../proofs/EC-C044_KRK_PARAMETRIC_SETUP.md). Freeze pending; conditional73-ply RAW family unchanged, full FIDE/outcome/holding/distance work open.

@@ -157,3 +157,5 @@ Full FIDE correspondence, every-history outcomes/holding and exact WDL/DTZ remai
 LOCAL_VERIFIED after separate same-agent audit; formal/freeze gates pending.
 39 frozen bundles unchanged. New parametric modules must preserve all supplied
 budgets and exact geometry. No class completion percentages or novelty claim.
+
+S074 verification addendum: exact statements FORMAL_VERIFIED at `7179a31d2a6fcb166c20e850e394b8cf15336031`; [observed evidence](../sessions/evidence/S074/README.md). Separate Gate Z pending; earlier paper-creation status is historical.

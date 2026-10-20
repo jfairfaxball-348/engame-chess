@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S073.** Thirty-nine frozen theorem bundles (not thirty-six solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S074.** Thirty-nine frozen theorem bundles (not thirty-six solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -146,3 +146,5 @@ S071: EC-C042 actual-history strategy lifting and conditional84-ply RAW rank-six
 S072: [EC-T0038](theorems/frozen/EC-T0038/v1.md) and [EC-T0039](theorems/frozen/EC-T0039/v1.md) freeze the key-simple strategy and conditional actual-history RAW wall family at separate own proof sources. 39 bundles; full FIDE/outcome/holding/exact distances remain open. S073 returns to sharper quantitative coverage.
 
 S073: EC-C043 sharper73-per-rank walls and conditional73-ply RAW framed-wall family FORMAL_VERIFIED; [evidence](sessions/evidence/S073/README.md). Clock≤26 under explicit unchanged counts/histogram. Global508/complete FIDE outcomes/exact distances unchanged;39 bundles frozen.
+
+S074: EC-C044 global442/443-ply KRK upper bounds FORMAL_VERIFIED via actual parametric setup; [evidence](sessions/evidence/S074/README.md). Both colours/all flags/every weak reply, weak result keeps forcing premise. Bounds exceed100; no general FIDE outcome/exact distance claim.39 bundles frozen.
