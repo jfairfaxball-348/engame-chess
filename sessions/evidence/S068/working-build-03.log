@@ -1,0 +1,106 @@
+✖ [46/46] Building EndgameChess.Rules.KRKBound.Wall (1.8s)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKBound/Wall.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKBound/Wall.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKBound/Wall.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKBound/Wall.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKBound/Wall.setup.json --json
+error: EndgameChess/Rules/KRKBound/Wall.lean:78:65: Application type mismatch: The argument
+  hmate
+has type
+  MateGoal σ c
+but is expected to have type
+  MateWithin σ ?m.1203 c
+in the application
+  mateWithin_choose hm.right hl hmate
+error: EndgameChess/Rules/KRKBound/Wall.lean:78:76: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ k ≤ 5
+  j ≥ 0
+  j - 84*k ≥ 4
+  0 ≤ i ≤ 7
+  h ≥ 2
+  f ≥ 2
+  0 ≤ e ≤ 7
+  e + k ≥ 7
+  0 ≤ d ≤ 7
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b ≥ 1
+  a - d ≤ -1
+where
+ a := ↑↑rs✝.snd
+ b := ↑↑sk✝.snd
+ d := ↑↑wk✝.snd
+ e := ↑↑wk.snd
+ f := ↑(absDiff ↑r.fst ↑w.fst)
+ h := ↑(absDiff ↑rr.fst ↑u.fst)
+ i := ↑↑u.fst
+ j := ↑?m.1203
+ k := ↑(n - 1)
+error: EndgameChess/Rules/KRKBound/Wall.lean:102:8: Tactic `apply` failed: could not unify the conclusion of `mateWithin_pair hq.right hl hm.right hne`
+  MateWithin (if { sk := sk, rs := rs, wk := wk, strong := true }.strong = true then σ else σ.opp) (?m.1523 + 2) q
+with the goal
+  MateWithin σ (84 * (n - 1) + 62 + 4 * (g - 1)) q
+
+Note: The full type of `mateWithin_pair hq.right hl hm.right hne` is
+  (∀ (r : Position),
+      Legal c r →
+        MateWithin (if { sk := sk, rs := rs, wk := wk, strong := true }.strong = true then σ else σ.opp) ?m.1523 r) →
+    MateWithin (if { sk := sk, rs := rs, wk := wk, strong := true }.strong = true then σ else σ.opp) (?m.1523 + 2) q
+
+case neg
+q✝ : Position
+σ : Colour
+sk✝ rs✝ wk✝ : Square
+hq✝ : Matches q✝ σ { sk := sk✝, rs := rs✝, wk := wk✝, strong := true }
+hb✝ : ↑sk✝.snd < ↑rs✝.snd
+hw✝ : ↑rs✝.snd < ↑wk✝.snd
+n : Nat
+rankIH :
+  ∀ (m : Nat),
+    m < n →
+      ∀ {q : Position} {sk rs wk : Square},
+        Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+          ↑sk.snd < ↑rs.snd → ↑rs.snd < ↑wk.snd → 7 - ↑rs.snd = m → MateWithin σ (84 * m) q
+g : Nat
+gapIH :
+  ∀ (m : Nat),
+    m < g →
+      ∀ {q : Position} {sk rs wk : Square},
+        Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+          ↑sk.snd < ↑rs.snd →
+            ↑rs.snd < ↑wk.snd →
+              7 - ↑rs.snd = n → ↑rs.snd - ↑sk.snd = m → MateWithin σ (84 * (n - 1) + 62 + 4 * (m - 1)) q
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hb : ↑sk.snd < ↑rs.snd
+hw : ↑rs.snd < ↑wk.snd
+hrank : 7 - ↑rs.snd = n
+hgap : ↑rs.snd - ↑sk.snd = g
+upper :
+  ∀ {p : Position} {s r w : Square},
+    Matches p σ { sk := s, rs := r, wk := w, strong := true } →
+      ↑s.snd = ↑sk.snd →
+        ↑r.snd = ↑rs.snd → ↑r.snd + 2 ≤ ↑w.snd → 2 ≤ absDiff ↑r.fst ↑w.fst → MateWithin σ (4 + 84 * (n - 1)) p
+ready :
+  ∀ {p : Position} {r w : Square},
+    Matches p σ { sk := sk, rs := r, wk := w, strong := true } →
+      ↑r.snd = ↑rs.snd → ↑r.snd < ↑w.snd → 2 ≤ absDiff ↑r.fst ↑w.fst → MateWithin σ (84 * (n - 1) + 60 + 4 * (g - 1)) p
+hf : ¬2 ≤ absDiff ↑rs.fst ↑wk.fst
+nr : Square := (wallFarFile wk.fst, rs.snd)
+hfar : 4 ≤ absDiff ↑nr.fst ↑wk.fst
+hnr : nr ≠ rs
+c : Position
+hl : Legal q c
+hm : Matches c σ { sk := sk, rs := nr, wk := wk, strong := false }
+hne : ∃ r, Legal c r
+hall :
+  ∀ (r : Position),
+    Legal c r →
+      ∃ t,
+        Matches r σ { sk := sk, rs := nr, wk := t, strong := true } ∧
+          ↑rs.snd < ↑t.snd ∧
+            2 ≤ absDiff ↑nr.fst ↑t.fst ∧
+              absDiff ↑t.fst ↑wk.fst ≤ 1 ∧
+                (↑wk.snd = ↑rs.snd + 1 → ↑rs.snd + 2 ≤ ↑t.snd ∨ ↑t.snd = ↑rs.snd + 1 ∧ absDiff ↑t.fst ↑wk.fst = 1)
+⊢ MateWithin σ (84 * (n - 1) + 62 + 4 * (g - 1)) q
+Some required targets logged failures:
+- EndgameChess.Rules.KRKBound.Wall
+error: build failed

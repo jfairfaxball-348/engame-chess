@@ -1,0 +1,43 @@
+✔ [48/54] Built EndgameChess.Rules.KRKBound.WallCeiling (317ms)
+✖ [49/54] Building EndgameChess.Rules.KRKBound.Entry (426ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKBound/Entry.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKBound/Entry.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKBound/Entry.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKBound/Entry.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKBound/Entry.setup.json --json
+error: EndgameChess/Rules/KRKBound/Entry.lean:18:74: Expected type must not contain metavariables
+  504 ≤ ?m.97
+error: EndgameChess/Rules/KRKBound/Entry.lean:30:2: Tactic `apply` failed: could not unify the conclusion of `mateWithin_pair hq.right hl hm.right (Exists.intro r hr)`
+  MateWithin (if { sk := sk, rs := rs, wk := wk, strong := true }.strong = true then σ else σ.opp) (?m.310 + 2) q
+with the goal
+  ForceMate σ q
+
+Note: The full type of `mateWithin_pair hq.right hl hm.right (Exists.intro r hr)` is
+  (∀ (r : Position),
+      Legal c r →
+        MateWithin (if { sk := sk, rs := rs, wk := wk, strong := true }.strong = true then σ else σ.opp) ?m.310 r) →
+    MateWithin (if { sk := sk, rs := rs, wk := wk, strong := true }.strong = true then σ else σ.opp) (?m.310 + 2) q
+
+case neg
+q : Position
+σ : Colour
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hgap : ↑sk.snd + 2 ≤ ↑wk.snd
+hx : ↑rs.fst ≠ ↑sk.fst
+hf : 2 ≤ absDiff ↑rs.fst ↑wk.fst
+nr : Square := (rs.fst, ⟨↑sk.snd + 1, ⋯⟩)
+hny : ↑nr.snd = ↑sk.snd + 1
+hy : ¬↑rs.snd = ↑sk.snd + 1
+hs : StepM { sk := sk, rs := rs, wk := wk, strong := true } { sk := sk, rs := nr, wk := wk, strong := false }
+c : Position
+hl : Legal q c
+hm : Matches c σ { sk := sk, rs := nr, wk := wk, strong := false }
+hbelow : ↑sk.snd < ↑nr.snd
+habove : ↑nr.snd < ↑wk.snd
+hfile : 2 ≤ absDiff ↑nr.fst ↑wk.fst
+t : Square
+ht : StepM { sk := sk, rs := nr, wk := wk, strong := false } { sk := sk, rs := nr, wk := t, strong := true }
+r : Position
+hr : Legal c r
+right✝ : Matches r σ { sk := sk, rs := nr, wk := t, strong := true }
+⊢ ForceMate σ q
+Some required targets logged failures:
+- EndgameChess.Rules.KRKBound.Entry
+error: build failed

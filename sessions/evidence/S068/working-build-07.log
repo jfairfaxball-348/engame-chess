@@ -1,0 +1,5 @@
+✔ [51/54] Built EndgameChess.Rules.KRKBound.ClearEntry (632ms)
+✔ [52/54] Built EndgameChess.Rules.KRKBound.OffRank (22s)
+✔ [53/54] Built EndgameChess.Rules.KRKBound.SameRank (9.6s)
+✔ [54/54] Built EndgameChess.Rules.KRKBound.Setup (440ms)
+Build completed successfully (54 jobs).

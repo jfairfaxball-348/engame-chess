@@ -1,0 +1,10 @@
+✖ [2/3] Running EndgameChess.Rules.KRKBound.Transport
+error: no such file or directory (error code: 2)
+  file: /workspace/engame-chess/formal/EndgameChess/Rules/KRKBound/Transport.lean
+✖ [3/3] Running EndgameChess.Rules.KRKBound.LowerBand
+error: no such file or directory (error code: 2)
+  file: /workspace/engame-chess/formal/EndgameChess/Rules/KRKBound/LowerBand.lean
+Some required targets logged failures:
+- EndgameChess.Rules.KRKBound.Transport
+- EndgameChess.Rules.KRKBound.LowerBand
+error: build failed

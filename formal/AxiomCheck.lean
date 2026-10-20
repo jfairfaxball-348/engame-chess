@@ -497,3 +497,53 @@ import EndgameChess
 #check @EndgameChess.Rules.RawTrace.extends_prepend
 #print axioms EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_budget
 #check @EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_budget
+
+/-! EC-C040: explicit 508-ply KRK strategy and all public helpers. -/
+#print axioms EndgameChess.Rules.krk_strong_arrival_bound
+#check @EndgameChess.Rules.krk_strong_arrival_bound
+#print axioms EndgameChess.Rules.krk_axis_entry_bound
+#check @EndgameChess.Rules.krk_axis_entry_bound
+#print axioms EndgameChess.Rules.krk_axis_wall_bound
+#check @EndgameChess.Rules.krk_axis_wall_bound
+#print axioms EndgameChess.Rules.krk_backrank_setup_bound
+#check @EndgameChess.Rules.krk_backrank_setup_bound
+#print axioms EndgameChess.Rules.mateWithin_choose
+#check @EndgameChess.Rules.mateWithin_choose
+#print axioms EndgameChess.Rules.krk_clear_axis_entry_bound
+#check @EndgameChess.Rules.krk_clear_axis_entry_bound
+#print axioms EndgameChess.Rules.krk_clear_vertical_entry_bound
+#check @EndgameChess.Rules.krk_clear_vertical_entry_bound
+#print axioms EndgameChess.Rules.mateWithin_defend
+#check @EndgameChess.Rules.mateWithin_defend
+#print axioms EndgameChess.Rules.krk_vertical_wall_entry_bound
+#check @EndgameChess.Rules.krk_vertical_wall_entry_bound
+#print axioms EndgameChess.Rules.krk_horizontal_entry_bound
+#check @EndgameChess.Rules.krk_horizontal_entry_bound
+#print axioms EndgameChess.Rules.krk_lower_band_bound_of_exits
+#check @EndgameChess.Rules.krk_lower_band_bound_of_exits
+#print axioms EndgameChess.Rules.krk_strong_bound_of_not_check
+#check @EndgameChess.Rules.krk_strong_bound_of_not_check
+#print axioms EndgameChess.Rules.krk_offrank_setup_bound
+#check @EndgameChess.Rules.krk_offrank_setup_bound
+#print axioms EndgameChess.Rules.mateWithin_pair
+#check @EndgameChess.Rules.mateWithin_pair
+#print axioms EndgameChess.Rules.positive_setup_bound
+#check @EndgameChess.Rules.positive_setup_bound
+#print axioms EndgameChess.Rules.krk_backrank_protected_bound
+#check @EndgameChess.Rules.krk_backrank_protected_bound
+#print axioms EndgameChess.Rules.krk_oriented_lower_bound
+#check @EndgameChess.Rules.krk_oriented_lower_bound
+#print axioms EndgameChess.Rules.bound_rank_zero_reply
+#check @EndgameChess.Rules.bound_rank_zero_reply
+#print axioms EndgameChess.Rules.krk_same_rank_retreat_bound
+#check @EndgameChess.Rules.krk_same_rank_retreat_bound
+#print axioms EndgameChess.Rules.bound_same_rank_no_file
+#check @EndgameChess.Rules.bound_same_rank_no_file
+#print axioms EndgameChess.Rules.krk_bound_transport
+#check @EndgameChess.Rules.krk_bound_transport
+#print axioms EndgameChess.Rules.krk_rank_wall_bound
+#check @EndgameChess.Rules.krk_rank_wall_bound
+#print axioms EndgameChess.Rules.krk_wall_ceiling
+#check @EndgameChess.Rules.krk_wall_ceiling
+#print axioms EndgameChess.Rules.bound_weak_wall
+#check @EndgameChess.Rules.bound_weak_wall
