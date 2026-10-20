@@ -82,3 +82,8 @@ S039: [EC-T0023](frozen/EC-T0023/v1.md) freezes raw multi-step clock growth on a
 - [EC-T0039](frozen/EC-T0039/v1.md): same-budget actual-history rank-policy RAW lift and conditional84-ply rank-six wall family; own S071 source, separate new S072 Gate Z. Full FIDE/complete outcomes/exact distances open.
 
 [S072 evidence](frozen/VERIFICATION-S072/README.md) retains two separate own-source clone/build/full-runner verifications. 39 bundles, not solved classes.
+
+- [EC-T0040](frozen/EC-T0040/v1.md): sharper73*(7−rookRank) walls and conditional73-ply RAW framed-wall family, clock≤26 with explicit original incoming conditions.
+- [EC-T0041](frozen/EC-T0041/v1.md): actual KRK parametric setup and global442/443 clock-free ceilings, every legal weak reply, all flags/colours, weak result retains forcing premise.
+
+[S075 evidence](frozen/VERIFICATION-S075/README.md): two separate own-source new clone/build/full-runner checks.41 bundles, no full FIDE/class/exact-distance closure.

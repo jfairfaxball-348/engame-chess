@@ -1,0 +1,110 @@
+@EndgameChess.Rules.setup_arrival_budget : ∀ {B : Nat} {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.IsKRK q σ sk rs wk →
+      q.turn = σ → (∃ p, EndgameChess.Rules.Legal p q) → EndgameChess.Rules.MateWithin σ (B + 4) q
+
+@EndgameChess.Rules.setup_axis_wall_budget : ∀ {B : Nat} {σ : EndgameChess.KK.Colour},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    ∀ (g : EndgameChess.Rules.BoardSym) {q : EndgameChess.Rules.Position} {sk rs wk : EndgameChess.KK.Square},
+      EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+        ↑(g.f sk).snd < ↑(g.f rs).snd → ↑(g.f rs).snd < ↑(g.f wk).snd → EndgameChess.Rules.MateWithin σ B q
+
+@EndgameChess.Rules.setup_backrank_budget : ∀ {B : Nat} {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+      ↑sk.snd = 0 →
+        ↑rs.snd = 0 →
+          2 ≤ ↑wk.snd →
+            EndgameChess.KK.absDiff ↑sk.fst ↑wk.fst ≤ 1 →
+              EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst ≤ 1 →
+                ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.MateWithin σ (B + 4) q
+
+@EndgameChess.Rules.setup_clear_axis_entry_budget : ∀ {B : Nat} {σ : EndgameChess.KK.Colour},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    ∀ (g : EndgameChess.Rules.BoardSym) {q : EndgameChess.Rules.Position} {sk rs wk : EndgameChess.KK.Square},
+      EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+        ↑(g.f sk).snd + 2 ≤ ↑(g.f wk).snd →
+          ↑(g.f rs).fst ≠ ↑(g.f sk).fst ∨ ↑(g.f sk).snd < ↑(g.f rs).snd →
+            2 ≤ EndgameChess.KK.absDiff ↑(g.f rs).fst ↑(g.f wk).fst → EndgameChess.Rules.MateWithin σ (B + 2) q
+
+@EndgameChess.Rules.setup_clear_entry_budget : ∀ {B : Nat} {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+      ↑sk.snd + 2 ≤ ↑wk.snd →
+        ↑rs.fst ≠ ↑sk.fst ∨ ↑sk.snd < ↑rs.snd →
+          2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst → EndgameChess.Rules.MateWithin σ (B + 2) q
+
+@EndgameChess.Rules.setup_horizontal_entry_budget : ∀ {B : Nat} {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+      2 ≤ EndgameChess.KK.absDiff ↑sk.fst ↑wk.fst →
+        ↑rs.snd ≠ ↑sk.snd → 2 ≤ EndgameChess.KK.absDiff ↑rs.snd ↑wk.snd → EndgameChess.Rules.MateWithin σ (B + 2) q
+
+@EndgameChess.Rules.setup_strong_budget_of_not_check : ∀ {B : Nat} {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.IsKRK q σ sk rs wk →
+      q.turn = σ → EndgameChess.Rules.inCheck q σ.opp = false → EndgameChess.Rules.MateWithin σ (B + 4) q
+
+@EndgameChess.Rules.setup_offrank_budget : ∀ {B : Nat} {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+      ↑sk.snd + 2 ≤ ↑wk.snd →
+        ↑rs.snd ≠ ↑sk.snd → ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.MateWithin σ (B + 4) q
+
+@EndgameChess.Rules.setup_positive_budget : ∀ {B : Nat} {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+      ↑sk.snd + 2 ≤ ↑wk.snd → ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.MateWithin σ (B + 4) q
+
+@EndgameChess.Rules.setup_protected_entry_budget : ∀ {B : Nat} {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+      ↑sk.snd = 0 →
+        ↑rs.snd = 0 →
+          2 ≤ ↑wk.snd →
+            EndgameChess.KK.absDiff ↑sk.fst ↑rs.fst = 1 →
+              ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.MateWithin σ (B + 2) q
+
+@EndgameChess.Rules.setup_same_rank_budget : ∀ {B : Nat} {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+      ↑sk.snd + 2 ≤ ↑wk.snd →
+        ↑rs.snd = ↑sk.snd →
+          0 < ↑sk.snd → ¬EndgameChess.Rules.RookSees rs wk sk wk → EndgameChess.Rules.MateWithin σ (B + 2) q
+
+@EndgameChess.Rules.krk_strong_arrival_bound_442 : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ → (∃ p, EndgameChess.Rules.Legal p q) → EndgameChess.Rules.MateWithin σ 442 q
+
+@EndgameChess.Rules.krk_weak_forcing_bound_443 : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ.opp → EndgameChess.Rules.ForceMate σ q → EndgameChess.Rules.MateWithin σ 443 q
+
+EndgameChess.Rules.krk_wall_uniform_438 : ∀ (σ : EndgameChess.KK.Colour), EndgameChess.Rules.KRKWallBudget σ 438
+
+@EndgameChess.Rules.setup_weak_safe_budget : ∀ {B : Nat} {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := false } →
+      EndgameChess.Rules.SafeRook sk rs wk →
+        (∃ r, EndgameChess.Rules.Legal q r) → EndgameChess.Rules.MateWithin σ (B + 5) q
+
+@EndgameChess.Rules.setup_weak_wall_budget : ∀ {B : Nat} {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.KRKWallBudget σ B →
+    EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := false } →
+      ↑sk.snd < ↑rs.snd →
+        ↑rs.snd < ↑wk.snd →
+          EndgameChess.Rules.SafeRook sk rs wk →
+            (∃ r, EndgameChess.Rules.Legal q r) → EndgameChess.Rules.MateWithin σ (B + 1) q

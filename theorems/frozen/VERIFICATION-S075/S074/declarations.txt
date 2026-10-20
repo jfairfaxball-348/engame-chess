@@ -1,0 +1,16 @@
+EndgameChess.Rules.setup_arrival_budget
+EndgameChess.Rules.setup_axis_wall_budget
+EndgameChess.Rules.setup_backrank_budget
+EndgameChess.Rules.setup_clear_axis_entry_budget
+EndgameChess.Rules.setup_clear_entry_budget
+EndgameChess.Rules.setup_horizontal_entry_budget
+EndgameChess.Rules.setup_strong_budget_of_not_check
+EndgameChess.Rules.setup_offrank_budget
+EndgameChess.Rules.setup_positive_budget
+EndgameChess.Rules.setup_protected_entry_budget
+EndgameChess.Rules.setup_same_rank_budget
+EndgameChess.Rules.krk_strong_arrival_bound_442
+EndgameChess.Rules.krk_weak_forcing_bound_443
+EndgameChess.Rules.krk_wall_uniform_438
+EndgameChess.Rules.setup_weak_safe_budget
+EndgameChess.Rules.setup_weak_wall_budget

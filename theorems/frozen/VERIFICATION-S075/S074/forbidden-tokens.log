@@ -1,0 +1,20 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/KRKSetup/Arrival.lean
+formal/EndgameChess/Rules/KRKSetup/AxisWall.lean
+formal/EndgameChess/Rules/KRKSetup/BackRank.lean
+formal/EndgameChess/Rules/KRKSetup/ClearAxisEntry.lean
+formal/EndgameChess/Rules/KRKSetup/ClearEntry.lean
+formal/EndgameChess/Rules/KRKSetup/Definitions.lean
+formal/EndgameChess/Rules/KRKSetup/HorizontalEntry.lean
+formal/EndgameChess/Rules/KRKSetup/NotCheck.lean
+formal/EndgameChess/Rules/KRKSetup/OffRank.lean
+formal/EndgameChess/Rules/KRKSetup/PositiveSetup.lean
+formal/EndgameChess/Rules/KRKSetup/ProtectedEntry.lean
+formal/EndgameChess/Rules/KRKSetup/SameRank.lean
+formal/EndgameChess/Rules/KRKSetup/SharperArrival.lean
+formal/EndgameChess/Rules/KRKSetup/SharperWeak.lean
+formal/EndgameChess/Rules/KRKSetup/UniformWall.lean
+formal/EndgameChess/Rules/KRKSetup/WeakSafe.lean
+formal/EndgameChess/Rules/KRKSetup/WeakWall.lean
+Matches: 0

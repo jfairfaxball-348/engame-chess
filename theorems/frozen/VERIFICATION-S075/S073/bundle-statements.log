@@ -1,0 +1,42 @@
+EndgameChess.Rules.krk_axis_wall_bound_sharper : ∀ (g : EndgameChess.Rules.BoardSym) {q : EndgameChess.Rules.Position}
+  {σ : EndgameChess.KK.Colour} {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑(g.f sk).snd < ↑(g.f rs).snd →
+      ↑(g.f rs).snd < ↑(g.f wk).snd → EndgameChess.Rules.MateWithin σ (73 * (7 - ↑(g.f rs).snd)) q
+
+@EndgameChess.Rules.krk_lower_band_bound_of_exits_sharper : ∀ {σ : EndgameChess.KK.Colour} {y E : Nat},
+  EndgameChess.Rules.LowerExitBound σ y E →
+    ∀ {q : EndgameChess.Rules.Position} {sk rs wk : EndgameChess.KK.Square},
+      EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+        ↑sk.snd + 1 = y →
+          ↑rs.snd = y →
+            ↑wk.snd = y + 1 → 2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst → EndgameChess.Rules.MateWithin σ (50 + E) q
+
+EndgameChess.Rules.krk_oriented_lower_bound_sharper : ∀ (d : Bool) {σ : EndgameChess.KK.Colour} {y E : Nat},
+  EndgameChess.Rules.LowerExitBound σ y E →
+    ∀ {q : EndgameChess.Rules.Position} {sk rs wk : EndgameChess.KK.Square},
+      EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+        ↑sk.snd + 1 = y →
+          ↑rs.snd = y →
+            ↑wk.snd = y + 1 →
+              2 ≤ EndgameChess.KK.absDiff ↑rs.fst ↑wk.fst →
+                EndgameChess.Rules.pursuitFile d sk < EndgameChess.Rules.pursuitFile d wk →
+                  EndgameChess.Rules.MateWithin σ (8 * (7 - EndgameChess.Rules.pursuitFile d sk) - 6 + E) q
+
+EndgameChess.Rules.RawHistoryLayer.raw_axis_rank_six_wall_ruleMateWithin_sharper : ∀
+  (s : EndgameChess.Rules.RawHistoryLayer.State) (σ : EndgameChess.KK.Colour) (g : EndgameChess.Rules.BoardSym)
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches (EndgameChess.Rules.RawHistoryLayer.erase s) σ
+      { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑(g.f sk).snd < ↑(g.f rs).snd →
+      ↑(g.f rs).snd < ↑(g.f wk).snd →
+        ↑(g.f rs).snd = 6 →
+          EndgameChess.Rules.RawClock.clock s.val.trace + 73 < 100 →
+            EndgameChess.Rules.RawRepetition.currentOccurrences s.val < 3 →
+              EndgameChess.Rules.RawHistoryLayer.LowerRankHistory σ s.val →
+                EndgameChess.Rules.HistoryLayer.RuleMateWithin EndgameChess.Rules.RawHistoryLayer.layer σ 73 s
+
+@EndgameChess.Rules.krk_rank_wall_bound_sharper : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd < ↑rs.snd → ↑rs.snd < ↑wk.snd → EndgameChess.Rules.MateWithin σ (73 * (7 - ↑rs.snd)) q

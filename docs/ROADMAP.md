@@ -32,7 +32,7 @@ The existing objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know, **
 | K vs K | **done** (EC-T0001/0003: every position dead) | done (draw) | n/a | n/a |
 | K+B vs K | **done** (EC-T0002/0004) | done (draw) | n/a | n/a |
 | K+N vs K | **done** (EC-T0005) | done (draw) | n/a | n/a |
-| K+R vs K | **done, frozen**: dead ⇔ lone king to move, not mate, every legal move captures the rook (EC-T0006 + EC-T0007, S023) | Clock-free forcing classified, frozen EC-T0019; FIDE rule-aware outcomes open | Clock-free forcing proved and frozen; rule-aware strategy open | 508-ply upper bound frozen EC-T0037; exact distance / DTZ open |
+| K+R vs K | **done, frozen**: dead ⇔ lone king to move, not mate, every legal move captures the rook (EC-T0006 + EC-T0007, S023) | Clock-free forcing classified, frozen EC-T0019; FIDE rule-aware outcomes open | Clock-free forcing proved and frozen; rule-aware strategy open | 442/443-ply upper bounds frozen EC-T0041; exact distance / DTZ open |
 | K+Q vs K | open | open | open | open |
 | K+P vs K | open | open | open | open |
 
@@ -107,3 +107,5 @@ S072: EC-C041/042 separately frozen as EC-T0038/0039 at their own exact sources.
 S073: EC-C043 formally verifies73*(7−rookRank) clock-free walls and conditional73-ply RAW wall certificates in proved frames, allowing clock≤26 with explicit original history conditions. [Paper](../proofs/EC-C043_KRK_SHARPER_WALL.md). Freeze pending; global508 unchanged until setup composition. S074 targets that direct KRK step, not a generic detour.
 
 S074: EC-C044 formally composes arbitrary actual setup through the new wall budget, yielding442 for legal strong-turn arrivals and443 for weak-turn forcing inputs. [Paper](../proofs/EC-C044_KRK_PARAMETRIC_SETUP.md). Freeze pending; conditional73-ply RAW family unchanged, full FIDE/outcome/holding/distance work open.
+
+S075: EC-C043/044 frozen as EC-T0040/0041 at separate OWN sources, all modules/helpers/explicit domains retained. Sharper73 conditional RAW family and global442/443 upper bounds certified;41 bundles, not solved classes. S076 attacks universal actual KRK clock termination as a direct outcome/holding step; full FIDE correspondence/exact distances stay open.

@@ -1,0 +1,5 @@
+EndgameChess.Rules.krk_axis_wall_bound_sharper
+EndgameChess.Rules.krk_lower_band_bound_of_exits_sharper
+EndgameChess.Rules.krk_oriented_lower_bound_sharper
+EndgameChess.Rules.RawHistoryLayer.raw_axis_rank_six_wall_ruleMateWithin_sharper
+EndgameChess.Rules.krk_rank_wall_bound_sharper

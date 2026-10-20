@@ -9,7 +9,7 @@ sessions until asked to stop. Stop before KQK.
 KRK dead/live and clock-free forcing classification are frozen. The concrete RAW
 history Layer is frozen as EC-T0036. EC-C039's conditional lifting is formally
 verified at proof source `7155c3424a5e315ea758f916d939b6696e0da261`, awaiting
-Gate Z. There are 39 frozen bundles after S072; material-class coverage is unchanged.
+Gate Z. There are 41 frozen bundles after S075; material-class coverage is unchanged.
 
 Closure means complete rule-aware KRK outcomes/strategies and the project's
 specified distance correctness, with all necessary results verified and frozen.
@@ -105,3 +105,5 @@ S072: [EC-T0038](../theorems/frozen/EC-T0038/v1.md) and [EC-T0039](../theorems/f
 S073: EC-C043 FORMAL_VERIFIED, [file/rank-edge credited walls and conditional73-ply RAW frame-wall family](../proofs/EC-C043_KRK_SHARPER_WALL.md), clock≤26 under unchanged incoming conditions. Gate Z pending; global508 arrival bound unchanged. S074 directly proves parametric setup composition before any global442 claim. Full FIDE/outcome/holding/distance obligations remain open.
 
 S074: EC-C044 FORMAL_VERIFIED, [actual parametric setup and global442/443 ceilings](../proofs/EC-C044_KRK_PARAMETRIC_SETUP.md). WallBudget(B)→B+4/B+5 instantiated from proved438; all weak replies/flags retained. No general RAW/FIDE win because bounds exceed100. S075 separate own-source freeze for EC-C043/044, then direct outcome/holding termination attack.
+
+S075: [EC-T0040](../theorems/frozen/EC-T0040/v1.md) and [EC-T0041](../theorems/frozen/EC-T0041/v1.md) separately freeze sharper73 walls/conditional RAW family and global442/443 actual setup. Direct next obligation is all-flag KRK material/quiet-step and admitted clock-bounded termination toward outcomes/holding. No full FIDE/class/distance closure.
