@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S044. Twenty-five theorem bundles are frozen, including the clock-free KRK forcing classification; these are not twenty-five solved material classes.
+Current mathematical evidence: through S045. Twenty-six theorem bundles are frozen, including the clock-free KRK forcing classification; these are not twenty-six solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live and clock-free forcing frozen; projection, raw trace/clock and generic key counting frozen; effective-ep target formally verified | FIDE history/adjudication and distance |
+| K+R vs K | Dead/live and clock-free forcing frozen; projection, raw trace/clock and generic key counting frozen; effective-ep target frozen | FIDE history/adjudication and distance |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S044. Twenty-five theorem bundles are fro
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S044 formally verified legality-filtered en-passant availability and its effective-target specification; 25 bundles remain frozen and material-class coverage is unchanged.
+Session change: S045 froze the legality-filtered effective en-passant target as EC-T0026 after a new exact-source Gate Z check; 26 bundles are frozen and material-class coverage is unchanged.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 

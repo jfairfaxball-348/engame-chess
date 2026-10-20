@@ -72,4 +72,6 @@
 
 | S044 | 2026-10-20 | EC-C028 effective legal-ep target (Gate L/F) | Actual LegalEP event, classical effective target, none/no-witness and some/exact-witness spec. Source `28bdacfa34995ed3d778bfb2dab1654e46999f0c`; fresh 73-job build, 275 allowed reports. No full FIDE key. S045 freeze installed. [Closeout](S044_EFFECTIVE_EP_TARGET.md) | None — 25 frozen bundles |
 
+| S045 | 2026-10-20 | Freeze effective legal-ep target (Gate Z) | New own exact-source 73-job build, 275 allowed reports; Gate F output identical; prior sources/records preserved. S046 kernel LegalEP characterization installed. [Closeout](S045_FREEZE_EFFECTIVE_EP_TARGET.md) | **+1 → EC-T0026 FROZEN** (26 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
