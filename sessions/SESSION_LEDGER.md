@@ -80,4 +80,6 @@
 
 | S048 | 2026-10-20 | EC-C030 ordinary ep irrelevance (Gate L/F) | Full pseudo/play preservation outside EP shape; 75-job clean build, 277 allowed reports. [Closeout](S048_ORDINARY_EP_IRRELEVANCE.md) | None — 27 frozen bundles |
 
+| S049 | 2026-10-20 | Freeze EC-C030 ordinary ep irrelevance (Gate Z) | New own exact-source 75-job build, 277 allowed reports, source/record preservation. [Closeout](S049_FREEZE_ORDINARY_EP_IRRELEVANCE.md) | **+1 → EC-T0028 FROZEN** (28 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

@@ -1,0 +1,4 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/RawRepetition/OrdinaryEP.lean
+Matches: 0
