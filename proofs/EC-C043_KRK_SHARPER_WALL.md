@@ -146,3 +146,5 @@ proofs/manifests and the global508 arrival theorem are not edited or upgraded.
 To improve the global bound, actual setup/axis composition must expose the new
 wall budget in NEW statements, rather than reusing hardcoded504/506/508 results
 as if parametric. Wider geometry/clocks and full FIDE/outcome/distance work remain.
+
+S073 verification addendum: exact statements FORMAL_VERIFIED at `f462629793680fc0b9cb21ce5e9fb15393722c93`; [observed evidence](../sessions/evidence/S073/README.md). Separate Gate Z pending. Earlier paper-creation status is historical.

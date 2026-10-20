@@ -1,0 +1,43 @@
+{
+  "proof_source": "f462629793680fc0b9cb21ce5e9fb15393722c93",
+  "verified_utc": "2026-10-20T18:55:31Z",
+  "fresh_clone": "/workspace/engame-chess/work/s073-gate-f",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 404.683,
+  "build_jobs": 140,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 328,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 295,
+    "propext, Quot.sound": 19,
+    "propext": 9
+  },
+  "axiom_free": 5,
+  "bundle_declarations": [
+    "EndgameChess.Rules.krk_axis_wall_bound_sharper",
+    "EndgameChess.Rules.krk_lower_band_bound_of_exits_sharper",
+    "EndgameChess.Rules.krk_oriented_lower_bound_sharper",
+    "EndgameChess.Rules.RawHistoryLayer.raw_axis_rank_six_wall_ruleMateWithin_sharper",
+    "EndgameChess.Rules.krk_rank_wall_bound_sharper"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.krk_axis_wall_bound_sharper": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.krk_lower_band_bound_of_exits_sharper": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.krk_oriented_lower_bound_sharper": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.RawHistoryLayer.raw_axis_rank_six_wall_ruleMateWithin_sharper": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.krk_rank_wall_bound_sharper": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/KRKSharper/AxisWall.lean",
+    "formal/EndgameChess/Rules/KRKSharper/Definitions.lean",
+    "formal/EndgameChess/Rules/KRKSharper/LowerBand.lean",
+    "formal/EndgameChess/Rules/KRKSharper/Pursuit.lean",
+    "formal/EndgameChess/Rules/KRKSharper/RawWall.lean",
+    "formal/EndgameChess/Rules/KRKSharper/Wall.lean"
+  ],
+  "dependency_modules": 113,
+  "source_files_hashed": 143,
+  "working_report_byte_identical": true,
+  "hosted_ci": "unobserved"
+}

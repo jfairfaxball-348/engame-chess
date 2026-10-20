@@ -103,3 +103,5 @@ S070: EC-C041 formally verifies a minimal-budget KRK strategy with pairwise dist
 S071: EC-C042 formally verifies same-budget actual-history RAW lifting under explicit clock/current/incoming lower-rank count conditions, with an84-ply rank-six KRK wall corollary. [Paper](../proofs/EC-C042_KRK_STRATEGY_HISTORY.md). Partial conditional RAW family, no compatibility witness or full FIDE/complete outcome claim. Separate S072 own-source freeze for EC-C041/042 is next.
 
 S072: EC-C041/042 separately frozen as EC-T0038/0039 at their own exact sources. Key-simple all-defence rank policy and conditional84-ply RAW actual-history wall family certified; no complete FIDE/class outcome or exact-distance parity. S073 directly attacks sharper pursuit/wall costs to widen useful clock coverage.
+
+S073: EC-C043 formally verifies73*(7−rookRank) clock-free walls and conditional73-ply RAW wall certificates in proved frames, allowing clock≤26 with explicit original history conditions. [Paper](../proofs/EC-C043_KRK_SHARPER_WALL.md). Freeze pending; global508 unchanged until setup composition. S074 targets that direct KRK step, not a generic detour.

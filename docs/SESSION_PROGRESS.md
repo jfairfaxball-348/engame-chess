@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S072. Thirty-nine theorem bundles are frozen, including the clock-free KRK forcing classification; these are not thirty-six solved material classes.
+Current mathematical evidence: through S073. Thirty-nine theorem bundles are frozen, including the clock-free KRK forcing classification; these are not thirty-six solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live and clock-free forcing frozen; raw history/rule prerequisites frozen; conditional budget lifting formally verified; 508-ply bound frozen; key-simple strategy and conditional 84-ply RAW wall family frozen | Concrete FIDE integration, complete rule-aware outcomes and distance |
+| K+R vs K | Dead/live and clock-free forcing frozen; raw history/rule prerequisites frozen; conditional budget lifting formally verified; 508-ply bound frozen; key-simple strategy and conditional 84-ply RAW wall family frozen; sharper 73-ply framed wall formally verified | Concrete FIDE integration, complete rule-aware outcomes and distance |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S072. Thirty-nine theorem bundles are fro
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S072 froze the key-simple strategy and conditional actual-history 84-ply RAW wall certificate as EC-T0038/0039; 39 bundles are frozen, while full FIDE outcomes and exact distances remain open.
+Session change: S073 formally verified 73*(7−rookRank) walls and a conditional 73-ply RAW family in proved frames, raising its strict clock allowance from 15 to 26; global 508 and full FIDE/class outcomes remain unchanged, with 39 frozen bundles.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 

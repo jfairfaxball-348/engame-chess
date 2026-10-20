@@ -1,69 +1,74 @@
-# NEXT SESSION — S073: Sharper KRK pursuit/wall clock coverage
+# NEXT SESSION — S074: Compose the sharper KRK wall bound through arbitrary setup
 
 Owner requests consecutive sessions until asked to stop. KRK only; stop before
-KQK. Follow AGENTS/charter/proof protocol. Fetch ALL heads, merge prior unmerged
-work, latest main in existing checkout. Commit/push branch, merge/push main,
-compare remote identities. Full stable progress table, Syzygy last and delta.
+KQK. Follow AGENTS/charter/protocol. ALL-head fetch, merge unmerged prior work,
+latest main in existing checkout; commit/push branch, merge/push main, compare
+remote identities. Stable full progress table, Syzygy last, immediate delta.
 
-Milestones A/B starting evidence: EC-T0037 global 508-ply clock-free KRK arrival
-ceiling and wall 84*(7−R.y); EC-T0038 minimal-rank key-simple all-defence strategy;
-EC-T0039 actual-history RAW lifting and conditional 84-ply rank-six wall family.
-39 frozen bundles, not classes. Source anchors: EC-C040 3a4a543625673383f66de70a8f847e340d820570,
-EC-C041 fe7efa687ae1481db405cf8808d9ad3437906861,
-EC-C042 c6e62cc4b2c96061bdb7465eb99f9cc901941b0c.
-EC-C039 remains older verified backlog, not a default freeze detour. Full FIDE
-correspondence, complete all-history outcomes/holding and exact distances open.
+Starting evidence: 39 bundles frozen, EC-T0037 global 508 arrival bound,
+EC-T0038 key-simple all-defence minimal-rank strategy, EC-T0039 actual-history
+RAW lift/conditional 84-ply wall family. S073 EC-C043 FORMAL_VERIFIED, Gate Z
+pending, OWN source f462629793680fc0b9cb21ce5e9fb15393722c93: oriented pursuit
+8*m−6+E/uniform 50+E, credited wall 73*(7−rookRank), same-budget frame transport,
+conditional 73-ply RAW frame-wall family with clock≤26 and original count/histogram
+conditions. FILE-edge m1 and RANK-edge n1 savings are distinct. Read actual
+paper/audits/evidence and NEW KRKSharper source. Global508 remains unchanged.
+EC-C039 stays backlog; no default generic freeze detour or KQK.
 
-Principal direct task: improve the numerical strategy bound and thereby widen
-its concrete RAW clock/history family. Start from actual frozen KRKBound.Pursuit,
-LowerBand, Wall, WallCeiling, KRKHistory.Wall and their complete paper/audits.
-Use a standalone paper and separate SAME-AGENT adversarial audit BEFORE Lean.
-Do not invent a sub100 global maximum or claim optimality from an upper bound.
-Every weak legal reply and nonempty witness must remain.
+Principal direct KRK task: actual setup composition must expose the sharper wall
+budget for every legal strong-turn arrival, both colours/arbitrary flags. Prove
+an exact cost interface rather than relabelling the frozen fixed 504/506/508
+results. A suitable parameterised claim is:
 
-A precise tractable candidate to investigate (NOT a proved result): the current
-oriented pursuit cost 8*m+E overpays at m=1. At remaining oriented distance1,
-strict offset forces the weak king onto the approached edge; an offset-one
-rook tempo can only exit upward or align, so costs at most2 plies. Test whether
-induction gives8*m−6+E for m≥1, with local good/wide/offset-one costs 2/6/8.
-Wide/good states require m≥2; do not use truncated subtraction without this.
-At m=1 the continuing wide branch must be impossible by file bounds. Alignment
-still costs the exit budget, not an invented free mating move. Upward exits
-and both physical directions retained. If proved, the uniform lower bound is
-50+E instead of56+E.
+Let WallBudget σ B mean that EVERY exact strong-turn canonical strict rank wall,
+with arbitrary flags, has MateWithin σ B. Under that hypothesis prove exact KRK
+strong-turn/no-weak-check (and hence legal incoming arrival) has
+MateWithin σ (B+4). Use canonical noRights sources and the frozen SAME-budget
+transport for all axis changes, preserving every legal weak reply/nonempty
+witness. A rank wall has 1≤rookRank≤6; EC-C043 gives WallBudget σ 438. Only AFTER
+actual composition is proved/formalised may the new global arrival ceiling 442
+be claimed. This is a derived nonoptimal proposal, not a sub100/FIDE result.
 
-Then audit an explicit wall budget 76*(7−R.y) using inner
-76*(n−1)+56+4*(g−1), ready smaller by2. Normalization at EACH gap still costs 2;
-king-rank advance adds2; upper rank advance/rescue costs 4. g≤6 gives overhead
-at most76, so coefficient76 is a proposal derived from the candidate pursuit
-bound. Edge n=1 must use actual named mate and no nonexistent rank-seven wall.
-If valid, an admitted rank-six wall with clock+76<100 (clock≤23), currentcount<3
-and the unchanged LowerRankHistory certificate gets raw RuleMateWithin at 76,
-using EC-T0039's supplied-budget lift. This is a PARTIAL conditional RAW family,
-no compatible-history witness/full FIDE or class closure. Do not silently upgrade
-the existing frozen 84 theorem or edit its module.
+Exact phase accounting: clear entry ≤B+2, off-rank retreat+entry ≤B+4, same-rank
+king retreat/protected back-rank entry ≤B+2, back-rank king preparation+protected
+entry ≤B+4. Existing wall case costs B. Logical axis transformations cost 0.
+Do not require all arbitrary strong moves safe; chosen strategy only. Weak
+replies ALL retained, including when vertical gap shrinks and perpendicular
+entry is needed. Handle threatened rook before defending turn, rank-zero witness,
+stalemate/nonempty, source noRights and arbitrary target flags.
 
-Choose the exact claim only after the paper/audit closes. If this improvement
-fails, retain the exact inequality/counterfamily and continue the direct pursuit
-cost problem rather than substituting an unrelated generic theorem. A stronger
-amortized bound may be researched, but do not assume it or hide waiting/rescue
-costs. Do not claim a new global arrival ceiling unless its actual setup/axis
-composition is also proved/formalised. The fixed constants in frozen setup
-modules cannot simply be renamed to imply 460 or another numeral.
+Admission against exact KRK blocked step: (1) full strong-arrival improved budget
+cannot yet compose from the NEW wall budget; (2) frozen setup outputs hardcoded
+504/506/508 or existential ForceMate, not a parametric cost statement; (3) the
+smallest KRK-specific WallBudget→B+4 interface and concrete438→442 application;
+(4) exit immediately back to broader clock/history coverage and remaining
+FIDE/outcome gaps. No generic library detour or automatic helper series.
 
-If closed, new one-main-per-theorem modules/shared definitions, add mains/helpers
-to AxiomCheck, preserve every frozen source/record. Incremental changed/importer
-build and full runner; own published FULL proof-source SHA, then ONE NEW GitHub
-clone/.lake absent/full build/full runner, standard-three only; full retained
-logs/commands/exits/times/UTC, source/import/executable hashes, clean identity and
-working/clean equality. Official core Lean4.35.0, ELAN_HOME=/workspace/.tools/elan,
-inherited proxy/CA, no dependency/shim/TLS/checksum changes. Gate Z separate;
-no promotion before observed evidence. No oracle/tablebase/exhaustive class proof
-or stored per-position certificates. Same-agent audits labelled honestly.
+Standalone exact paper and separate SAME-AGENT adversarial audit BEFORE Lean;
+select candidate only after exact claim fixed. Shared WallBudget definition
+separate, one main per new module, public helpers in AxiomCheck. Reuse frozen
+public geometry helpers where possible; never edit frozen modules. Conditional
+interfaces must retain explicit hypotheses, not introduce axioms or assume the
+new442 result during its proof. A noncomputable/existential finite witness alone
+is not a numerical bound. Keep supplied successor budgets in fixed-budget
+constructors; existential constructors may only supply nondeadness guards.
+
+Appropriate changed/importer build/full runner, OWN published FULL source SHA,
+then ONE NEW GitHub clone/.lake absent/full build/full runner, standard-three
+only, exact statements and entire working/clean equality. Full logs/commands/
+exits/times/UTC, source/import/executable hashes and clean identity. Official
+core Lean4.35.0, ELAN_HOME=/workspace/.tools/elan, inherited proxy/CA; no dependency/
+shim/TLS/checksum changes. No status promotion before observed success; Gate Z
+separate. If blocked preserve exact geometric/budget gap and next direct step,
+not an easier unrelated theorem. No oracle/tablebase/class enumeration/stored
+per-position certificates or unearned novelty.
 
 Update candidate/roadmap/README/completion/progress/session ledger and
-sessions/S073_KRK_SHARPER_WALL_BOUND.md with actual evidence, exact newly covered
-clock/history inputs or unchanged coverage, remaining gap and FULL next prompt.
-Commit/push/merge/push, compare remotes, continue authorised sessions until owner
-asks to stop. Sharper budgets, history compatibility/FIDE bridges, complete
-necessary-and-sufficient outcomes/holding and exact WDL/DTZ all remain separate.
+sessions/S074_KRK_PARAMETRIC_SETUP.md with actual evidence, exact bound/covered
+inputs or unchanged coverage and FULL next prompt. Commit/push/merge/push,
+compare remotes, continue until owner asks to stop. Following a verified
+composition, a separate own-source freeze milestone for EC-C043 and the new
+result may be appropriate; retain distinct own source anchors/full inventories.
+442 (if proved) still exceeds 100, so it does not certify general RAW/FIDE wins.
+The conditional 73 clock≤26 family remains partial; compatibility/FIDE bridges,
+complete necessary-and-sufficient outcomes/holding and exact WDL/DTZ remain open.

@@ -1,0 +1,9 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/KRKSharper/AxisWall.lean
+formal/EndgameChess/Rules/KRKSharper/Definitions.lean
+formal/EndgameChess/Rules/KRKSharper/LowerBand.lean
+formal/EndgameChess/Rules/KRKSharper/Pursuit.lean
+formal/EndgameChess/Rules/KRKSharper/RawWall.lean
+formal/EndgameChess/Rules/KRKSharper/Wall.lean
+Matches: 0
