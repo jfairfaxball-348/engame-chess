@@ -98,4 +98,6 @@
 
 | S057 | 2026-10-20 | Freeze EC-C034 raw threshold exclusion (Gate Z) | New own-source 83-job build, 281 allowed reports; both complete modules frozen. [Closeout](S057_FREEZE_RAW_THRESHOLD_CERTIFICATE.md) | **+1 → EC-T0032 FROZEN** (32 bundles) |
 
+| S058 | 2026-10-20 | EC-C035 exact raw threshold complement (Gate L/F) | Exact root/ALL legal-child clock/count exclusion iff. [Closeout](S058_EXACT_RAW_THRESHOLD_EXCLUSION.md) | None — 32 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

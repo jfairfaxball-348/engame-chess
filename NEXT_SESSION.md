@@ -1,67 +1,52 @@
-# NEXT SESSION — S058: Exact raw threshold exclusion characterization
+# NEXT SESSION — S059: Freeze exact raw threshold exclusion
 
 Owner authorises consecutive sessions until told to stop. Follow AGENTS.md,
 charter/protocol. Fetch ALL remote heads, merge prior unmerged work, latest main,
 existing checkout. Commit/push branch, merge/push main, compare remote identities;
 never force main. FULL stable progress table, Syzygy last, immediate session delta.
 
-## Starting point
+S058 formally verified EC-C035 at OWN full proof-source
+c75b3760022717e586a789e47c09c03911a43a56. Read actual S058 evidence/closeout,
+paper/audits, complete RawClaims.ExclusionCharacterization and frozen definitions/
+current append dependencies, EC-T0032 manifest, S032 specification and roadmap.
+32 bundles frozen before this session; bundles not solved classes.
 
-S057 froze EC-C034 as EC-T0032, OWN proof-source
-1f262968c80a1352c156f6e0c07dd5132c432b13; 32 frozen bundles, not solved classes.
-Read manifest/Gate Z evidence, S056/57 closeouts, paper/audits, RawClaims complete
-definitions/certificate, frozen current count append/clock append definitions,
-S032 specification, charter/protocol/roadmap/candidates.
+Principal task: separate exact-source Gate Z, no Lean edits. Main no_threshold_iff
+for EVERY raw s: no AvailableThreshold iff rootclock<100/currentcount<3 and EVERY
+actual legal intended child's clock<100/NEW endpoint old-history query<2. Exact
+childclock retained, not sufficient uniform root+1 budget. Review both directions,
+root bounds independent, actual append count+1 arithmetic, full quantified legal
+moves/indexed trace/hm. Boundaries99/100,2/3,zeroing/no-reply/pseudo-only symbolic.
+Raw bookkeeping NOT certified FIDE CanClaim/adjudication. Same-agent audit, not
+independent external audit; no enumeration/oracle/certificates/full-game run/novelty.
+Review retained initial core-tactic authoring failure and unchanged-statement fix.
 
-## Principal task
+ONE NEW GitHub clone at OWN FULL SHA above, .lake absent before full build then
+COMPLETE AxiomCheck. Official core Lean4.35.0, standard-three subsets only;
+inspect exact main, full S058 report equality/all formal bytes, full source/
+transitive SHA256, clean HEAD/tree/status, full logs/commands/exits/times/UTC and
+toolchain/executable identity. One fresh build; interruptions/retries honestly
+retained. Hosted CI unobserved unless inspected. Only observed success permits
+EC-T0033/v1.md freezing complete ExclusionCharacterization and exactly one appended
+ledger row. All prior protected files/32 rows preserved. No incremental build
+without source edit. Relevant ledger tests/structure/evidence/preservation/full
+progress table/prompt/local-link/diff checks, no unrelated diagnostics/trivial tests.
 
-Exact standalone paper and separate adversarial audit BEFORE Lean, then register
-EC-C035 LOCAL_VERIFIED only after complete local argument. ONE NEW main theorem
-module RawClaims/ExclusionCharacterization, no extra definitions needed:
-for EVERY raw state s,
- ¬AvailableThreshold s ↔
- RawClock.clock s.trace <100 ∧
- RawRepetition.currentOccurrences s <3 ∧
- (∀m,∀hm:isLegal(erase s)m=true,
-   RawClock.clock (append s m hm).trace <100 ∧
-   RawRepetition.occurrences s.trace (play(erase s)m) <2).
+Update candidate/roadmap/README/session ledger/theorems index/progress; write
+sessions/S059_FREEZE_EXACT_RAW_THRESHOLD_EXCLUSION.md with actual evidence and
+FULL installed S060 prompt. Commit/push/merge/push and compare remotes; continue
+under owner authorisation until told to stop.
 
-Use exact frozen raw threshold definitions, every actual legal append and frozen
-append_currentOccurrences. Forward: exclude root and each intended child;
-childcount=queriedcount+1<3 iff queriedcount<2. Reverse: root and every child below
-threshold, refute disjunction/existential. This is an IFF, not the sufficient
-rootclock+1 budget of EC-T0032. It keeps actual childclock: zeroing child can be
-safe despite large root clock; root itself still checked separately. Never
-substitute old current key for new endpoint query, drop an adverse intended
-move or assume raw illegal play equality. All flags/colours/promotions/stored
-traces/hm retained. No-reply universal vacuous but root conditions required.
-Audit boundaries99/100,2/3, child old-query1/2, zeroing and pseudo-only cases.
-Same-agent review, not independent external audit; symbolic controls, no concrete
-full-game diagnostic, enumeration/engine/tablebase/certificates or novelty.
-
-Raw bookkeeping ONLY: not FIDE CanClaim correctness, no full key/rights-history
-identity, no-earlier-terminal admissibility, real claims/automatic draws/mate
-precedence, complete Layer, strategy lifting, numerical KRK, holding/outcome,
-WDL/DTZ/Syzygy or initial-position result. Do not alter frozen sources/definitions.
-
-## Verification and closeout
-
-Aggregates additive, incremental changed module/importers plus COMPLETE working
-runner. Publish proof source BEFORE ONE NEW GitHub Gate F clone at FULL exact SHA,
-.lake absent before full build then COMPLETE AxiomCheck; inspect exact main and
-standard-three subsets. Retain full logs/commands/exits/times/UTC/toolchain/
-executable, all source/transitive SHA256, clean HEAD/tree/status; compare full
-working/clean output and formal bytes. Official core Lean4.35.0, no dependency/shim.
-One fresh build at a time; interruptions/retries honestly retained. Gate Z separate,
-no frozen manifest/ledger row in S058. Preserve all prior protected files/32 rows.
-Relevant ledger/evidence/preservation/full-table/full-prompt/local-link/diff checks,
-no unrelated diagnostics/trivial tests. Hosted CI unobserved unless inspected.
-
-Update candidate/roadmap/README/session ledger/progress; write
-sessions/S058_EXACT_RAW_THRESHOLD_EXCLUSION.md with actual evidence and FULL
-installed S059 prompt (consider own-source freeze). Commit/push/merge/push,
-compare remotes; continue until owner stops. Record any gap honestly.
+S060 should review remaining concrete FIDE-model gaps in S032 specification and
+select smallest exact next prerequisite, with full paper/adversarial audit BEFORE
+Lean. Current raw thresholds still lack certified FIDE key/rights-history and
+no-earlier-terminal histories, automatic draw/mate precedence/real claim protocol.
+Consider exact automatic 75-move/fivefold threshold bookkeeping with checkmate
+precedence explicitly separated; do not claim full adjudication correctness from
+numeric inequalities alone. Freeze existing work before broadening model. Avoid
+inventing numerical KRK witness, strategy lifting or full Layer without proofs.
+No full FIDE WDL/DTZ/Syzygy/initial-position result follows here.
 
 Use available runtime guidance/status/network policy, inherited proxy/CA,
-ELAN_HOME=/workspace/.tools/elan. Lake in formal/, Python root; official core
-Lean4.35.0, TLS/checksums unchanged.
+ELAN_HOME=/workspace/.tools/elan. Lake in formal/, Python root, official core
+Lean4.35.0, no dependency/shim, TLS/checksums unchanged.
