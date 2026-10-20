@@ -1,0 +1,1 @@
+EndgameChess.Rules.StoppedHistory.append_and_reply_lifting

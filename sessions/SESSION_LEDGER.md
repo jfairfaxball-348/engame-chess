@@ -108,4 +108,6 @@
 
 | S062 | 2026-10-20 | EC-C037 stopped-history append/full replies (Gate L/F) | Exact admissible ongoing-parent append iff; every legal reply lifted, terminal children retained. [Closeout](S062_STOPPED_HISTORY_LIFTING.md) | None — 34 frozen bundles |
 
+| S063 | 2026-10-20 | Freeze EC-C037 stopped-history append/full replies (Gate Z) | New exact-source build and complete axiom audit; both modules frozen. [Closeout](S063_FREEZE_STOPPED_HISTORY_LIFTING.md) | **+1 → EC-T0035 FROZEN** (35 bundles) |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

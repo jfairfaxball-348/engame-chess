@@ -1,0 +1,31 @@
+{
+  "proof_source": "67850895bf6130a1f193c299597cd7d4ac209485",
+  "verified_utc": "2026-10-20T14:30:39Z",
+  "fresh_clone": "/workspace/engame-chess/work/s063-gate-z",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 554.998,
+  "build_jobs": 88,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 284,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 252,
+    "propext, Quot.sound": 18,
+    "propext": 9
+  },
+  "axiom_free": 5,
+  "bundle_declarations": [
+    "EndgameChess.Rules.StoppedHistory.append_and_reply_lifting"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.StoppedHistory.append_and_reply_lifting": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/StoppedHistory/Definitions.lean",
+    "formal/EndgameChess/Rules/StoppedHistory/AppendLifting.lean"
+  ],
+  "dependency_modules": 26,
+  "source_files_hashed": 91,
+  "working_report_byte_identical": true,
+  "hosted_ci": "unobserved"
+}

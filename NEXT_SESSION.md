@@ -1,54 +1,62 @@
-# NEXT SESSION — S063: Freeze stopped-history append and full reply lifting
+# NEXT SESSION — S064: Concrete RAW stopped-history Layer
 
 Owner instruction (2026-10-20): keep running sessions until KRK is entirely
-finished and frozen; stop BEFORE KQK. Complete KRK means the remaining concrete
-rule-aware outcome/strategy and distance obligations, not merely bundle counts.
-Owner authorises consecutive sessions until told to stop. Follow AGENTS.md,
-charter/protocol. Fetch ALL remote heads, merge prior unmerged work, latest main,
-existing checkout. Commit/push branch, merge/push main, compare remote identities;
-never force main. FULL stable progress table, Syzygy last, immediate session delta.
+finished and frozen; stop BEFORE KQK. Finish remaining concrete rule-aware
+outcome/strategy and distance obligations, not merely bundle counts.
+Follow AGENTS.md/charter/protocol. Fetch ALL heads, merge prior unmerged work,
+latest main in existing checkout. Commit/push branch, merge/push main, compare
+remote identities; never force main. Full stable progress table, Syzygy last,
+immediate session delta. Consecutive sessions/publication authorised.
 
-S062 FORMAL_VERIFIED EC-C037, exact stopped-history append/full legal-reply interface.
-OWN full proof-source SHA: 67850895bf6130a1f193c299597cd7d4ac209485.
-Read actual S062 evidence/closeout and its FULL own proof-source SHA before any
-freeze; 34 bundles frozen before this session, not solved classes. Read paper,
-separate same-agent audits, complete StoppedHistory Definitions/AppendLifting,
-frozen RawTrace and RawAdjudication dependencies, HistoryLayer interface, EC-T0034
-manifest/evidence, S032 §2/4, charter/protocol/roadmap/candidates.
+S063 freezes EC-C037 as EC-T0035 from OWN source
+67850895bf6130a1f193c299597cd7d4ac209485, only after observed Gate Z success.
+35 frozen bundles if actual S063 evidence passed; read actual records first.
+Read S062/63 closeouts/evidence, EC-C037 paper/audits, complete frozen stopped
+history/RawTrace/RawAdjudication modules, HistoryLayer full interface/projection,
+RawClaims definitions, EC-T0034/35 manifests, S032 §2/4/5, roadmap/candidates.
 
-Principal task: separate exact-source Gate Z, no Lean edits. For EVERY raw s,
-main conjunction: EVERY legal m/hm has Admissible actual append iff Admissible
-s.trace AND classify s ongoing; admissible ongoing parent lifts EVERY kernel
-Legal reply to admissible actual RawBoardStep with exact erased endpoint.
-Inspect exact indexed q/prior/m/hm and snoc definition; start True, strict
-prefixes ongoing only, current terminal endpoint allowed. NO child-ongoing
-restriction; adverse draw/mate children retained, no move after terminal parent.
-Optional claim opportunities may be declined; no successful/invalid claim or
-procedural claim phase in board-move traces. Raw classifier-relative stopped
-history, NOT certified complete FIDE history/rights-key/claim correctness.
-Same-agent audit, no independent external review, full-game run/enumeration/
-oracle/certificates/novelty. No full Layer/strategy/numerical KRK/WDL/DTZ result.
+Principal task: standalone exact paper and separate adversarial audit BEFORE
+Lean, then LOCAL_VERIFIED only after argument closes. Construct NEW RAW Layer
+on subtype {s : RawTrace.State // StoppedHistory.Admissible s.trace}.
+Erase underlying raw state; BoardStep actual RawBoardStep on underlying states;
+Ongoing underlying classify=ongoing; CanClaim raw AvailableThreshold.
+Prove step_sound from frozen raw soundness; reply_complete from EC-T0035 with
+EVERY legal child retained (including terminal draw/mate); ongoing_not_dead from
+frozen ongoing_iff. Do not assume a legal child is ongoing. No arbitrary seed
+history/counts. State has proof of admissibility but no invented FIDE key/rights
+or successful/invalid claim semantics. Named RAW Layer is concrete relative to
+chosen classifier and thresholds, NOT certified complete FIDE Layer.
 
-ONE NEW GitHub clone at S062 OWN FULL proof-source SHA, .lake absent before full
-build then COMPLETE AxiomCheck. Official core Lean4.35.0, standard-three subsets
-only; exact main, full S062 report equality/all formal bytes, full source/
-transitive SHA256, clean HEAD/tree/status, logs/commands/exits/times/UTC and
-executable/toolchain identity. One fresh build; interruptions/retries retained.
-Hosted CI unobserved unless inspected. Only observed success permits EC-T0035/v1.md
-freezing complete Definitions/AppendLifting and exactly one appended ledger row.
-Prior protected files/34 rows preserved. No incremental build without source edit.
-Relevant ledger tests/structure/evidence/preservation/full-table/full-prompt/
-local-link/diff checks; no unrelated diagnostics/trivial tests.
+One NEW shared definitions module for state/layer and one main theorem module:
+for every admitted state, colour and ply budget, a RuleMateWithin certificate
+for this raw layer projects to clock-free MateWithin at EXACT SAME budget.
+Use frozen generic projection only after checking all concrete Layer fields;
+no converse, numeric bound or rule-aware KRK WDL claim inferred. Inspect exact
+CanClaim/ongoing interactions and all raw flags/promotions/colours. Audit start,
+terminal current endpoint, terminal parent, terminal children, optional claims,
+proof-subtype witness, every Legal reply and history retention. Transparent
+same-agent review, not independent external audit; no enumeration/oracle/full-
+game diagnostic/per-position certificates/novelty. Existing FIDE mapping retained.
 
-Update candidate/roadmap/README/session ledger/theorems index/progress; write
-sessions/S063_FREEZE_STOPPED_HISTORY_LIFTING.md with actual evidence and FULL
-installed S064 prompt. Commit/push/merge/push, compare remotes; continue until stop.
-S064 should choose the smallest exact next raw history-layer prerequisite, with
-standalone paper and adversarial audit BEFORE Lean. Consider a concrete RAW
-HistoryLayer over the admissible-state subtype, with ongoing from classify,
-actual append BoardStep, raw AvailableThreshold claim predicate; prove all
-interface obligations without pruning terminal children. Keep all FIDE key/
-rights-history/real claim protocol correspondence gaps explicit. No automatic
-promotion of raw bookkeeping to FIDE correctness or converse strategy lifting.
+Frozen sources untouched; new modules and additive aggregates/runner only.
+Incremental changed modules/importers and COMPLETE working runner. Commit/push
+proof source BEFORE ONE NEW GitHub Gate F clone at FULL own SHA; .lake absent
+before full build then COMPLETE AxiomCheck, exact main/standard-three subsets.
+Retain all logs/commands/exits/times/UTC, executable/toolchain identity, all source/
+transitive SHA256, clean HEAD/tree/status; whole working/clean output and formal
+byte equality. Official core Lean4.35.0, no dependencies/shim, one fresh build;
+interruptions/retries retained, hosted CI unobserved unless inspected.
+Gate Z separate, no manifest/ledger addition in S064. Preserve prior protected
+files/35 rows. Relevant ledger tests/structure/evidence/preservation/full-table/
+full-prompt/local-link/diff checks; no unrelated diagnostics/trivial tests.
+Update candidates/roadmap/README/session ledger/progress, write
+sessions/S064_RAW_STOPPED_HISTORY_LAYER.md with actual evidence and FULL S065
+prompt (consider separate own-source freeze). Commit/push/merge/push and compare
+remotes, continue KRK until complete/frozen, stop before KQK.
+
+Later select substantive remaining FIDE/history and KRK distance prerequisites;
+possible next bridge: a mated current endpoint's normalized key cannot occur at
+any strict ongoing prefix, hence no feasible fivefold-mate overlap, with exact
+trace/count proof. Do not invent a numerical KRK witness or complete FIDE model.
 Use runtime status/network policy, inherited proxy/CA, ELAN_HOME=/workspace/.tools/elan.
 Lake in formal/, Python root; official core Lean4.35.0, TLS/checksums unchanged.
