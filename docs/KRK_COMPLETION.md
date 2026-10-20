@@ -9,7 +9,7 @@ sessions until asked to stop. Stop before KQK.
 KRK dead/live and clock-free forcing classification are frozen. The concrete RAW
 history Layer is frozen as EC-T0036. EC-C039's conditional lifting is formally
 verified at proof source `7155c3424a5e315ea758f916d939b6696e0da261`, awaiting
-Gate Z. There are 37 frozen bundles after S069; material-class coverage is unchanged.
+Gate Z. There are 39 frozen bundles after S072; material-class coverage is unchanged.
 
 Closure means complete rule-aware KRK outcomes/strategies and the project's
 specified distance correctness, with all necessary results verified and frozen.
@@ -99,3 +99,5 @@ S069: EC-C040 frozen as [EC-T0037](../theorems/frozen/EC-T0037/v1.md) after a ne
 S070: EC-C041 FORMAL_VERIFIED, [key-simple minimal-budget strategy](../proofs/EC-C041_KRK_STRATEGY_REPETITION.md). Every weak legal reply retained; full-line pairwise raw keys and ≤508-ply root ceiling. Gate Z pending. Milestone B now returns to actual incoming-history counts and raw rule-layer lifting; no rule-aware input family certified yet.
 
 S071: EC-C042 FORMAL_VERIFIED, [actual-history rank-policy lifting and conditional84-ply RAW rank-six wall family](../proofs/EC-C042_KRK_STRATEGY_HISTORY.md). Supplied clock/current count and static incoming lower-winning-rank histogram remain explicit; all weak executed/intended replies retained. Partial RAW input coverage only, full FIDE/outcome/holding/distances open. S072 freezes own sources for EC-C041/042 before returning to direct quantitative coverage.
+
+S072: [EC-T0038](../theorems/frozen/EC-T0038/v1.md) and [EC-T0039](../theorems/frozen/EC-T0039/v1.md) freeze the key-simple strategy and actual-history conditional84-ply RAW wall family at their separate own sources. S073 returns to sharper numerical wall/pursuit costs and clock coverage; complete FIDE/outcome/holding/distance obligations stay open.

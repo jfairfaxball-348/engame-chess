@@ -1,0 +1,3 @@
+EndgameChess.Rules.RawHistoryLayer.strategy_append_history
+EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_strategy_history
+EndgameChess.Rules.RawHistoryLayer.raw_rank_six_wall_ruleMateWithin

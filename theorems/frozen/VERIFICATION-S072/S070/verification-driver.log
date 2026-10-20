@@ -1,0 +1,57 @@
+{
+  "proof_source": "fe7efa687ae1481db405cf8808d9ad3437906861",
+  "verified_utc": "2026-10-20T18:35:40Z",
+  "fresh_clone": "/workspace/engame-chess/work/s072-s070-gate-z",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 400.775,
+  "build_jobs": 130,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 320,
+  "axiom_counts": {
+    "propext, Classical.choice, Quot.sound": 287,
+    "propext, Quot.sound": 19,
+    "propext": 9
+  },
+  "axiom_free": 5,
+  "bundle_declarations": [
+    "EndgameChess.Rules.krk_key_simple_strategy",
+    "EndgameChess.Rules.strategy_key_budget",
+    "EndgameChess.Rules.strategy_key_interface",
+    "EndgameChess.Rules.strategy_least_budget",
+    "EndgameChess.Rules.strategy_line_certificate",
+    "EndgameChess.Rules.strategy_progress",
+    "EndgameChess.Rules.strategy_rank_key",
+    "EndgameChess.Rules.strategy_rank_spec",
+    "EndgameChess.Rules.strategy_terminal"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.krk_key_simple_strategy": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.strategy_key_budget": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.strategy_key_interface": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.strategy_least_budget": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.strategy_line_certificate": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.strategy_progress": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.strategy_rank_key": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.strategy_rank_spec": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.strategy_terminal": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/KRKStrategy/Definitions.lean",
+    "formal/EndgameChess/Rules/KRKStrategy/KRK.lean",
+    "formal/EndgameChess/Rules/KRKStrategy/KeyBudget.lean",
+    "formal/EndgameChess/Rules/KRKStrategy/KeyInterface.lean",
+    "formal/EndgameChess/Rules/KRKStrategy/LeastBudget.lean",
+    "formal/EndgameChess/Rules/KRKStrategy/Line.lean",
+    "formal/EndgameChess/Rules/KRKStrategy/Progress.lean",
+    "formal/EndgameChess/Rules/KRKStrategy/RankDefinitions.lean",
+    "formal/EndgameChess/Rules/KRKStrategy/RankKey.lean",
+    "formal/EndgameChess/Rules/KRKStrategy/RankSpec.lean",
+    "formal/EndgameChess/Rules/KRKStrategy/Terminal.lean"
+  ],
+  "dependency_modules": 91,
+  "source_files_hashed": 133,
+  "working_report_byte_identical": true,
+  "gate_f_full_source_inventory_equal": true,
+  "hosted_ci": "unobserved"
+}

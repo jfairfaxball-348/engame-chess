@@ -1,0 +1,29 @@
+EndgameChess.Rules.RawHistoryLayer.strategy_append_history : ∀ (s : EndgameChess.Rules.RawTrace.State)
+  (σ : EndgameChess.KK.Colour),
+  EndgameChess.Rules.RawHistoryLayer.LowerRankHistory σ s →
+    ∀ (m : EndgameChess.Rules.Move) (hm : EndgameChess.Rules.isLegal (EndgameChess.Rules.RawTrace.erase s) m = true),
+      EndgameChess.Rules.ForceMate σ (EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m) →
+        EndgameChess.Rules.strategyRank σ (EndgameChess.Rules.play (EndgameChess.Rules.RawTrace.erase s) m) <
+            EndgameChess.Rules.strategyRank σ (EndgameChess.Rules.RawTrace.erase s) →
+          EndgameChess.Rules.RawRepetition.currentOccurrences (EndgameChess.Rules.RawTrace.append s m hm) < 3 ∧
+            EndgameChess.Rules.RawHistoryLayer.LowerRankHistory σ (EndgameChess.Rules.RawTrace.append s m hm)
+
+EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_strategy_history : ∀
+  (s : EndgameChess.Rules.RawHistoryLayer.State) (σ : EndgameChess.KK.Colour) (n : Nat),
+  EndgameChess.Rules.MateWithin σ n (EndgameChess.Rules.RawHistoryLayer.erase s) →
+    EndgameChess.Rules.RawClock.clock s.val.trace + n < 100 →
+      EndgameChess.Rules.RawRepetition.currentOccurrences s.val < 3 →
+        EndgameChess.Rules.RawHistoryLayer.LowerRankHistory σ s.val →
+          EndgameChess.Rules.HistoryLayer.RuleMateWithin EndgameChess.Rules.RawHistoryLayer.layer σ n s
+
+EndgameChess.Rules.RawHistoryLayer.raw_rank_six_wall_ruleMateWithin : ∀ (s : EndgameChess.Rules.RawHistoryLayer.State)
+  (σ : EndgameChess.KK.Colour) {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.Matches (EndgameChess.Rules.RawHistoryLayer.erase s) σ
+      { sk := sk, rs := rs, wk := wk, strong := true } →
+    ↑sk.snd < ↑rs.snd →
+      ↑rs.snd < ↑wk.snd →
+        ↑rs.snd = 6 →
+          EndgameChess.Rules.RawClock.clock s.val.trace + 84 < 100 →
+            EndgameChess.Rules.RawRepetition.currentOccurrences s.val < 3 →
+              EndgameChess.Rules.RawHistoryLayer.LowerRankHistory σ s.val →
+                EndgameChess.Rules.HistoryLayer.RuleMateWithin EndgameChess.Rules.RawHistoryLayer.layer σ 84 s

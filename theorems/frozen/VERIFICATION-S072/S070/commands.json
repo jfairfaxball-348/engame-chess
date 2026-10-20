@@ -1,0 +1,90 @@
+[
+  {
+    "args": [
+      "git",
+      "clone",
+      "--no-checkout",
+      "https://github.com/jfairfaxball-348/engame-chess.git",
+      "/workspace/engame-chess/work/s072-s070-gate-z"
+    ],
+    "cwd": "/workspace/engame-chess",
+    "logfile": "clone.log",
+    "exit": 0,
+    "seconds": 2.315,
+    "started_utc": "2026-10-20T18:28:56.553037+00:00"
+  },
+  {
+    "args": [
+      "git",
+      "checkout",
+      "--detach",
+      "fe7efa687ae1481db405cf8808d9ad3437906861"
+    ],
+    "cwd": "/workspace/engame-chess/work/s072-s070-gate-z",
+    "logfile": "checkout.log",
+    "exit": 0,
+    "seconds": 0.082,
+    "started_utc": "2026-10-20T18:28:58.867852+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "lean",
+      "--version"
+    ],
+    "cwd": "/workspace/engame-chess/work/s072-s070-gate-z/formal",
+    "logfile": "toolchain.log",
+    "exit": 0,
+    "seconds": 0.082,
+    "started_utc": "2026-10-20T18:28:58.952587+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "--version"
+    ],
+    "cwd": "/workspace/engame-chess/work/s072-s070-gate-z/formal",
+    "logfile": "lake-version.log",
+    "exit": 0,
+    "seconds": 0.044,
+    "started_utc": "2026-10-20T18:28:59.034674+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "which",
+      "lean"
+    ],
+    "cwd": "/workspace/engame-chess/work/s072-s070-gate-z/formal",
+    "logfile": "lean-executable.txt",
+    "exit": 0,
+    "seconds": 0.045,
+    "started_utc": "2026-10-20T18:28:59.078469+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "build"
+    ],
+    "cwd": "/workspace/engame-chess/work/s072-s070-gate-z/formal",
+    "logfile": "lake-build.log",
+    "exit": 0,
+    "seconds": 400.775,
+    "started_utc": "2026-10-20T18:28:59.123793+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "lean",
+      "AxiomCheck.lean"
+    ],
+    "cwd": "/workspace/engame-chess/work/s072-s070-gate-z/formal",
+    "logfile": "axioms-statements.log",
+    "exit": 0,
+    "seconds": 0.639,
+    "started_utc": "2026-10-20T18:35:39.898844+00:00"
+  }
+]

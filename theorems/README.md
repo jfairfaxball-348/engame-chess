@@ -77,3 +77,8 @@ S039: [EC-T0023](frozen/EC-T0023/v1.md) freezes raw multi-step clock growth on a
 - [EC-T0036](frozen/EC-T0036/v1.md): concrete RAW stopped-history Layer and same-budget certificate projection; both modules frozen S065. [Evidence](frozen/VERIFICATION-S065/README.md).
 
 - [EC-T0037](frozen/EC-T0037/v1.md): explicit 508-ply clock-free KRK strong-turn arrival bound, coordinate wall/pursuit budgets and same-budget transport. Frozen S069 from EC-C040; [new exact-source Gate Z](frozen/VERIFICATION-S069/README.md). Nonoptimal ceiling exceeds 100; no history-aware outcome/exact distance parity.
+
+- [EC-T0038](frozen/EC-T0038/v1.md): minimal-budget all-defence KRK rank policy, whole-line pairwise raw keys, ≤508 plies; own S070 source, new S072 Gate Z.
+- [EC-T0039](frozen/EC-T0039/v1.md): same-budget actual-history rank-policy RAW lift and conditional84-ply rank-six wall family; own S071 source, separate new S072 Gate Z. Full FIDE/complete outcomes/exact distances open.
+
+[S072 evidence](frozen/VERIFICATION-S072/README.md) retains two separate own-source clone/build/full-runner verifications. 39 bundles, not solved classes.

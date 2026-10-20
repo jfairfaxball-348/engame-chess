@@ -1,0 +1,61 @@
+@EndgameChess.Rules.krk_key_simple_strategy : ∀ {q : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour}
+  {sk rs wk : EndgameChess.KK.Square},
+  EndgameChess.Rules.IsKRK q σ sk rs wk →
+    q.turn = σ →
+      (∃ p, EndgameChess.Rules.Legal p q) →
+        EndgameChess.Rules.MateWithin σ 508 q ∧
+          EndgameChess.Rules.strategyRank σ q ≤ 508 ∧
+            ∀ {tail : List EndgameChess.Rules.Position},
+              EndgameChess.Rules.StrategyLine σ (q :: tail) →
+                List.Pairwise
+                    (fun a b => EndgameChess.Rules.RawRepetition.key a ≠ EndgameChess.Rules.RawRepetition.key b)
+                    (q :: tail) ∧
+                  (q :: tail).length ≤ 509
+
+@EndgameChess.Rules.strategy_key_budget : ∀ {q r : EndgameChess.Rules.Position},
+  EndgameChess.Rules.RawRepetition.key q = EndgameChess.Rules.RawRepetition.key r →
+    ∀ (σ : EndgameChess.KK.Colour) (n : Nat), EndgameChess.Rules.MateWithin σ n q ↔ EndgameChess.Rules.MateWithin σ n r
+
+@EndgameChess.Rules.strategy_key_interface : ∀ {q r : EndgameChess.Rules.Position},
+  EndgameChess.Rules.RawRepetition.key q = EndgameChess.Rules.RawRepetition.key r →
+    q.turn = r.turn ∧
+      (∀ (c : EndgameChess.KK.Colour), EndgameChess.Rules.inCheck q c = EndgameChess.Rules.inCheck r c) ∧
+        (∀ (z : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q z ↔ EndgameChess.Rules.Legal r z) ∧
+          ∀ (σ : EndgameChess.KK.Colour), EndgameChess.Rules.MateGoal σ q ↔ EndgameChess.Rules.MateGoal σ r
+
+@EndgameChess.Rules.strategy_least_budget : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.ForceMate σ q →
+    ∃ n, EndgameChess.Rules.MateWithin σ n q ∧ ∀ (m : Nat), EndgameChess.Rules.MateWithin σ m q → n ≤ m
+
+@EndgameChess.Rules.strategy_line_certificate : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position}
+  {tail : List EndgameChess.Rules.Position},
+  EndgameChess.Rules.StrategyLine σ (q :: tail) →
+    EndgameChess.Rules.ForceMate σ q ∧
+      (∀ (r : EndgameChess.Rules.Position),
+          r ∈ tail →
+            EndgameChess.Rules.ForceMate σ r ∧
+              EndgameChess.Rules.strategyRank σ r < EndgameChess.Rules.strategyRank σ q) ∧
+        List.Pairwise (fun a b => EndgameChess.Rules.RawRepetition.key a ≠ EndgameChess.Rules.RawRepetition.key b)
+            (q :: tail) ∧
+          (q :: tail).length ≤ EndgameChess.Rules.strategyRank σ q + 1
+
+@EndgameChess.Rules.strategy_progress : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.ForceMate σ q →
+    ¬EndgameChess.Rules.MateGoal σ q →
+      (q.turn = σ → ∃ r, EndgameChess.Rules.StrategyStep σ q r) ∧
+        (q.turn = σ.opp →
+          (∃ r, EndgameChess.Rules.Legal q r) ∧
+            ∀ (r : EndgameChess.Rules.Position), EndgameChess.Rules.Legal q r → EndgameChess.Rules.StrategyStep σ q r)
+
+@EndgameChess.Rules.strategy_rank_key : ∀ {q r : EndgameChess.Rules.Position} {σ : EndgameChess.KK.Colour},
+  EndgameChess.Rules.RawRepetition.key q = EndgameChess.Rules.RawRepetition.key r →
+    EndgameChess.Rules.strategyRank σ q = EndgameChess.Rules.strategyRank σ r
+
+@EndgameChess.Rules.strategy_rank_spec : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.ForceMate σ q →
+    EndgameChess.Rules.MateWithin σ (EndgameChess.Rules.strategyRank σ q) q ∧
+      (∀ (n : Nat), EndgameChess.Rules.MateWithin σ n q → EndgameChess.Rules.strategyRank σ q ≤ n) ∧
+        (EndgameChess.Rules.strategyRank σ q = 0 ↔ EndgameChess.Rules.MateGoal σ q)
+
+@EndgameChess.Rules.strategy_terminal : ∀ {σ : EndgameChess.KK.Colour} {q : EndgameChess.Rules.Position},
+  EndgameChess.Rules.ForceMate σ q → ((¬∃ r, EndgameChess.Rules.StrategyStep σ q r) ↔ EndgameChess.Rules.MateGoal σ q)

@@ -1,71 +1,69 @@
-# NEXT SESSION — S072: Freeze the KRK rank strategy and actual-history wall family
+# NEXT SESSION — S073: Sharper KRK pursuit/wall clock coverage
 
-Owner requests consecutive sessions until asked to stop. KRK only, stop before
-KQK. Follow AGENTS/charter/protocol, ALL-head fetch/merge prior unmerged work,
-latest main in existing checkout. Commit/push branch, merge/push main, compare
-remote identities, never force main. Stable full progress table, Syzygy last.
+Owner requests consecutive sessions until asked to stop. KRK only; stop before
+KQK. Follow AGENTS/charter/proof protocol. Fetch ALL heads, merge prior unmerged
+work, latest main in existing checkout. Commit/push branch, merge/push main,
+compare remote identities. Full stable progress table, Syzygy last and delta.
 
-Principal: separate Gate Z for the actual milestone B strategy/history result,
-not a generic prerequisite detour. 37 bundles frozen. Exact OWN proof sources:
-EC-C041 (S070) fe7efa687ae1481db405cf8808d9ad3437906861;
-EC-C042 (S071) c6e62cc4b2c96061bdb7465eb99f9cc901941b0c.
-Read actual S070/S071 evidence/closeouts, papers, separate same-agent paper/Lean
-audits, all new modules and frozen dependencies. EC-C039 stays backlog; its older
-historical expected ID does not reserve the next free theorem ID.
+Milestones A/B starting evidence: EC-T0037 global 508-ply clock-free KRK arrival
+ceiling and wall 84*(7−R.y); EC-T0038 minimal-rank key-simple all-defence strategy;
+EC-T0039 actual-history RAW lifting and conditional 84-ply rank-six wall family.
+39 frozen bundles, not classes. Source anchors: EC-C040 3a4a543625673383f66de70a8f847e340d820570,
+EC-C041 fe7efa687ae1481db405cf8808d9ad3437906861,
+EC-C042 c6e62cc4b2c96061bdb7465eb99f9cc901941b0c.
+EC-C039 remains older verified backlog, not a default freeze detour. Full FIDE
+correspondence, complete all-history outcomes/holding and exact distances open.
 
-EC-C041: new least-budget strategy from any legal strong-turn KRK arrival, either
-colour/all flags. Every legal weak reply retained, strong descending choice,
-whole-line pairwise raw keys and ≤508 plies, terminal iff named mate at winning
-policy node. Same-budget normalized-key interface and least natural witness are
-proved. It is not every raw path or the frozen geometric policy.
-EC-C042: actual admitted initial-rooted traces, supplied budget N, clock+N<100,
-rootcount<3 and OLD histogram<2 at EVERY strictly lower WINNING rank imply RAW
-RuleMateWithin at SAME N. Actual append queries NEW key+1 and adds0 at strictly
-lower future keys. Strong branch bounds only chosen move; weak branch retains
-ALL legal executed/intended moves and nonempty replies. Concrete rank-six strict
-wall has RAW certificate at 84 with clock≤15/currentcount/histogram conditions,
-both colours/all flags. Conditional PARTIAL family only; no compatible-history
-witness/nonemptiness, full FIDE correspondence, complete outcomes/holding or
-exact distance result. Failure of a sufficient certificate does not imply draw.
+Principal direct task: improve the numerical strategy bound and thereby widen
+its concrete RAW clock/history family. Start from actual frozen KRKBound.Pursuit,
+LowerBand, Wall, WallCeiling, KRKHistory.Wall and their complete paper/audits.
+Use a standalone paper and separate SAME-AGENT adversarial audit BEFORE Lean.
+Do not invent a sub100 global maximum or claim optimality from an upper bound.
+Every weak legal reply and nonempty witness must remain.
 
-Perform TWO NEW separate sequential GitHub clones, each at its OWN full source
-above, .lake absent before each full build, then COMPLETE corresponding runner:
-S070 130 jobs/320 permitted reports/9 public declarations/11 complete modules;
-S071 134 jobs/323 reports/3 declarations/4 complete modules. Actual observed jobs
-may be recorded from logs; no fabricated success. Official core Lean4.35.0,
-ELAN_HOME=/workspace/.tools/elan, inherited proxy/CA, no dependency/shim/TLS/checksum
-changes. Retain full logs/commands/exits/times/UTC, executable/toolchain identity,
-clean HEAD/tree/status, full source/transitive hashes and exact declarations.
+A precise tractable candidate to investigate (NOT a proved result): the current
+oriented pursuit cost 8*m+E overpays at m=1. At remaining oriented distance1,
+strict offset forces the weak king onto the approached edge; an offset-one
+rook tempo can only exit upward or align, so costs at most2 plies. Test whether
+induction gives8*m−6+E for m≥1, with local good/wide/offset-one costs 2/6/8.
+Wide/good states require m≥2; do not use truncated subtraction without this.
+At m=1 the continuing wide branch must be impossible by file bounds. Alignment
+still costs the exit budget, not an invented free mating move. Upward exits
+and both physical directions retained. If proved, the uniform lower bound is
+50+E instead of56+E.
 
-IMPORTANT older-anchor check: S070's aggregate/runner differ from current main
-because S071 added imports/declarations. Compare the ENTIRE S070 runner against
-its OWN working report and every S070 source byte/hash against its OWN Gate F
-source inventory, not current main's aggregates. Earlier underlying modules and
-all 11 KRKStrategy files must remain identical. S071 similarly compares its own
-runner/inventory. Do not weaken equality to a selected subset. Preserve failures
-and retries. Hosted CI unobserved unless actually inspected. No Lean edits or
-incremental builds without changed source.
+Then audit an explicit wall budget 76*(7−R.y) using inner
+76*(n−1)+56+4*(g−1), ready smaller by2. Normalization at EACH gap still costs 2;
+king-rank advance adds2; upper rank advance/rescue costs 4. g≤6 gives overhead
+at most76, so coefficient76 is a proposal derived from the candidate pursuit
+bound. Edge n=1 must use actual named mate and no nonexistent rank-seven wall.
+If valid, an admitted rank-six wall with clock+76<100 (clock≤23), currentcount<3
+and the unchanged LowerRankHistory certificate gets raw RuleMateWithin at 76,
+using EC-T0039's supplied-budget lift. This is a PARTIAL conditional RAW family,
+no compatible-history witness/full FIDE or class closure. Do not silently upgrade
+the existing frozen 84 theorem or edit its module.
 
-Only after each observed separate Gate Z success freeze EC-C041 as EC-T0038 and
-EC-C042 as EC-T0039 (next free IDs), COMPLETE module boundaries including all
-helpers/definitions, exact source statements, imports/hashes/trust/scope/provenance.
-Append exactly two ledger rows, prior 37 bytes and all earlier frozen records
-preserved. Gates are per own source, not one newer build certifying both.
-Run relevant ledger tests/structure, preservation/evidence/module/statement hash,
-links/full table/full prompt and diff checks. Update candidate/roadmap/README/
-completion/theorem index/progress, session ledger and
-sessions/S072_FREEZE_KRK_STRATEGY_HISTORY.md with actual evidence and FULL next
-prompt. Commit/push/merge/push, compare remotes; continue until asked to stop.
+Choose the exact claim only after the paper/audit closes. If this improvement
+fails, retain the exact inequality/counterfamily and continue the direct pursuit
+cost problem rather than substituting an unrelated generic theorem. A stronger
+amortized bound may be researched, but do not assume it or hide waiting/rescue
+costs. Do not claim a new global arrival ceiling unless its actual setup/axis
+composition is also proved/formalised. The fixed constants in frozen setup
+modules cannot simply be renamed to imply 460 or another numeral.
 
-After this milestone freeze, return directly to quantitative KRK coverage and
-FIDE/outcome gaps. A suitable S073 principal task is a paper-first sharper
-coordinate/phase bound for the existing KRK wall/pursuit strategy, exposing where
-8*m pursuit and repeated gap normalization overpay and identifying how a proved
-smaller budget broadens the RAW wall family beyond clock≤15 or beyond rank6.
-Do not assume a sub100 global ceiling or invent a target as established. Derive
-constants from actual choices/all legal replies, retain waiting/alignment/rescue,
-read frozen geometry and raw histogram certificate. If blocked retain exact
-inequality/uncovered family and continue that direct step; no generic bookkeeping
-or easier theorem substituted. Concrete FIDE correspondence, necessary/sufficient
-every-history outcomes, holding and exact WDL/DTZ remain open until proved/frozen.
-No KQK/tablebase/engine/exhaustive proof/stored position certificates.
+If closed, new one-main-per-theorem modules/shared definitions, add mains/helpers
+to AxiomCheck, preserve every frozen source/record. Incremental changed/importer
+build and full runner; own published FULL proof-source SHA, then ONE NEW GitHub
+clone/.lake absent/full build/full runner, standard-three only; full retained
+logs/commands/exits/times/UTC, source/import/executable hashes, clean identity and
+working/clean equality. Official core Lean4.35.0, ELAN_HOME=/workspace/.tools/elan,
+inherited proxy/CA, no dependency/shim/TLS/checksum changes. Gate Z separate;
+no promotion before observed evidence. No oracle/tablebase/exhaustive class proof
+or stored per-position certificates. Same-agent audits labelled honestly.
+
+Update candidate/roadmap/README/completion/progress/session ledger and
+sessions/S073_KRK_SHARPER_WALL_BOUND.md with actual evidence, exact newly covered
+clock/history inputs or unchanged coverage, remaining gap and FULL next prompt.
+Commit/push/merge/push, compare remotes, continue authorised sessions until owner
+asks to stop. Sharper budgets, history compatibility/FIDE bridges, complete
+necessary-and-sufficient outcomes/holding and exact WDL/DTZ all remain separate.
