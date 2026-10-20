@@ -465,3 +465,9 @@ import EndgameChess
 #print EndgameChess.Rules.RawOccurrences.occurrences
 #check @EndgameChess.Rules.RawOccurrences.append_occurrences
 #print axioms EndgameChess.Rules.RawOccurrences.append_occurrences
+
+-- S044 / EC-C028: actual legal ep event and effective target consistency.
+#print EndgameChess.Rules.RawRepetition.LegalEP
+#print EndgameChess.Rules.RawRepetition.effectiveEP
+#check @EndgameChess.Rules.RawRepetition.effectiveEP_spec
+#print axioms EndgameChess.Rules.RawRepetition.effectiveEP_spec

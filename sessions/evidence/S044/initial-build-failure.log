@@ -1,0 +1,28 @@
+✔ [70/73] Built EndgameChess.Rules.RawRepetition.Definitions (347ms)
+✖ [71/73] Building EndgameChess.Rules.RawRepetition.EffectiveEP (335ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/RawRepetition/EffectiveEP.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawRepetition/EffectiveEP.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawRepetition/EffectiveEP.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawRepetition/EffectiveEP.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawRepetition/EffectiveEP.setup.json --json
+error: EndgameChess/Rules/RawRepetition/EffectiveEP.lean:16:66: Unknown identifier `available`
+error: EndgameChess/Rules/RawRepetition/EffectiveEP.lean:16:44: unsolved goals
+q : Position
+m : Move
+hm : LegalEP q m
+flag : q.ep = some m.dst
+⊢ (∀ (x : Move), ¬LegalEP q x) → none = q.ep
+error: EndgameChess/Rules/RawRepetition/EffectiveEP.lean:18:28: Unknown identifier `available`
+error: EndgameChess/Rules/RawRepetition/EffectiveEP.lean:18:4: unsolved goals
+case pos.left
+q : Position
+m : Move
+hm : LegalEP q m
+flag : q.ep = some m.dst
+selected : effectiveEP q = q.ep
+⊢ ∃ m, LegalEP q m
+warning: EndgameChess/Rules/RawRepetition/EffectiveEP.lean:33:10: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [effectiveEP, available] at target
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Some required targets logged failures:
+- EndgameChess.Rules.RawRepetition.EffectiveEP
+error: build failed

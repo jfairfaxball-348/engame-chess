@@ -67,3 +67,5 @@ import EndgameChess.Rules.RawClock.ExtensionBound
 import EndgameChess.Rules.RawClock.BudgetCertificate
 import EndgameChess.Rules.RawOccurrences.Definitions
 import EndgameChess.Rules.RawOccurrences.Append
+import EndgameChess.Rules.RawRepetition.Definitions
+import EndgameChess.Rules.RawRepetition.EffectiveEP
