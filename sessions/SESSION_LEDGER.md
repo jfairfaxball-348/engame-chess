@@ -62,4 +62,6 @@
 
 | S039 | 2026-10-20 | Freeze EC-C025 actual-trace clock bound (Gate Z) | New exact-source 68-job build; 272 allowed reports, main standard-three; full Gate F equality and source preservation. S040 conditional clock certificate installed. [Closeout](S039_FREEZE_RAW_CLOCK_EXTENSION.md) | **+1 → EC-T0023 FROZEN** (23 bundles) |
 
+| S040 | 2026-10-20 | EC-C026 conditional raw clock certificate (Gate L/F) | Explicit budget; all actual prefixes and EVERY prospective interior ply. Source `dd24ef3b4bd68d429c9c381908a7f3d5bfa9f85f`; fresh 69-job build, 273 allowed reports. One new module; prior sources/records unchanged. S041 freeze installed. [Closeout](S040_RAW_CLOCK_BUDGET_CERTIFICATE.md) | None — 23 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

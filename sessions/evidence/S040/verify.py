@@ -14,13 +14,20 @@ import time
 
 root, out, clone = map(lambda s: Path(s).resolve(), sys.argv[1:4])
 sha = sys.argv[4]
-assert not clone.exists(), 'Gate F clone must be new'
+resume = len(sys.argv) > 5 and sys.argv[5] == '--resume-prebuild'
+if resume:
+    assert clone.exists() and not (clone / 'formal/.lake').exists()
+    assert subprocess.check_output(['git', 'rev-parse', 'HEAD'],cwd=clone,text=True).strip() == sha
+else:
+    assert not clone.exists(), 'Gate F clone must be new'
 assert not (out / 'summary.json').exists(), 'Do not overwrite completed evidence'
 out.mkdir(parents=True, exist_ok=True)
 env = os.environ.copy()
 env['ELAN_HOME'] = '/workspace/.tools/elan'
 env['PATH'] = env['ELAN_HOME'] + '/bin:' + env['PATH']
-commands = []
+commands = json.loads((out / 'commands.json').read_text()) if resume else []
+if resume:
+    assert len(commands) == 2 and all(c['exit'] == 0 for c in commands)
 
 def run(args, cwd, logfile):
     start = time.monotonic()
@@ -32,7 +39,8 @@ def run(args, cwd, logfile):
     assert result.returncode == 0, (args, result.returncode, logfile)
     return seconds
 
-run(['git', 'clone', '--no-checkout', 'https://github.com/jfairfaxball-348/engame-chess.git', str(clone)], root, 'clone.log')
+if not resume:
+    run(['git', 'clone', '--no-checkout', 'https://github.com/jfairfaxball-348/engame-chess.git', str(clone)], root, 'clone.log')
 run(['git', 'checkout', '--detach', sha], clone, 'checkout.log')
 assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=clone, text=True).strip() == sha
 assert not (clone / 'formal/.lake').exists()

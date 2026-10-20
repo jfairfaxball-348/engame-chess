@@ -22,3 +22,17 @@ Exact statement inspected: main uses [propext, Classical.choice, Quot.sound].
 No finite diagnostic or fixed full promotion/ep/castling/threshold game was run.
 No FIDE claim predicate, repetition control, sufficient-budget lifting or numeric
 KRK bound follows. Gate F pending until published exact-source fresh verification.
+
+## Completed Gate F
+
+Own published source `dd24ef3b4bd68d429c9c381908a7f3d5bfa9f85f`; ONE NEW GitHub clone, no formal/.lake
+before build. Full 69-job lake build exit 0, 442.648s; complete AxiomCheck
+exit 0 at 2026-10-20T08:07:13Z. 273 allowed reports; main standard-three only.
+Exact statement inspected, working/clean reports byte-identical; all source/
+transitive hashes and clean HEAD/tree/status retained. No forbidden proof tokens.
+Official core Lean4.35.0 release eb6cafb7290e8bd5f2937522d8d804f58f02bafc,
+no dependencies/shim. Initial full-HEAD assertion rejected a short SHA BEFORE
+any Lean command; same new clone resumed at FULL SHA, no cache, ONE build/runner.
+That prebuild failure and original checkout/command records are retained. The
+verifier gained an explicit prebuild-only resume guard; formal source unchanged.
+Gate F passed, Gate Z pending; hosted CI unobserved. Evidence: sessions/evidence/S040/.

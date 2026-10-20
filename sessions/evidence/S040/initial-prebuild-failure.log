@@ -1,0 +1,3 @@
+Initial verifier invocation supplied short SHA dd24ef3. Clone and checkout succeeded; strict full-HEAD comparison raised AssertionError BEFORE any toolchain query or Lean build.
+Observed exact HEAD: dd24ef3b4bd68d429c9c381908a7f3d5bfa9f85f
+formal/.lake absent. Same new clone resumed with full SHA, retaining initial command records and short-SHA checkout log; no Lean command repeated.

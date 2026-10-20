@@ -1,96 +1,100 @@
-# NEXT SESSION — S040: Raw prefix and prospective-ply clock certificate
+# NEXT SESSION — S041: Freeze the conditional raw clock certificate
 
-Execute as the next authorised session. Follow AGENTS.md: explicitly fetch ALL
-remote heads, merge earlier unmerged work, start from latest main in the existing
-checkout, no worktree. Publication authorised. Commit/push the session branch,
-merge/push main and compare remote SHAs; never force main. Update and reproduce
-the FULL stable progress table in closeout and owner report, Syzygy parity LAST,
-with a one-sentence session delta below. Bundles are not solved classes.
+Execute as the next authorised session. Follow AGENTS.md: fetch ALL remote
+heads explicitly, merge earlier unmerged session work, read latest main's prompt,
+use existing checkout, no worktree. Publication authorised. End committed/pushed
+on the session branch, merged/pushed to main, compare remote SHAs, never force
+main. Update and reproduce the FULL stable progress table in closeout and owner
+report, Syzygy parity LAST, then one sentence session delta. No class-count
+upgrade from theorem bundle counts. Consecutive execution remains authorised
+until the owner says stop.
 
 ## Starting point and reading
 
-S039 froze EC-C025 as EC-T0023 at its own exact proof-source anchor
-22243b9ca5769e1478c75a333befa3c8465c90f2 after a NEW Gate Z clone. Read the actual
-manifest and VERIFICATION-S039 evidence, EC-T0021/0022 manifests and unchanged
-RawTrace/RawClock definitions. Read docs/CHARTER.md, docs/PROOF_PROTOCOL.md,
-docs/ROADMAP.md, research/CANDIDATES.md, research/KRK_RULE_DISTANCE_SPEC.md
-(especially intended claims and sufficient-budget lifting), S038/S039 closeouts,
-EC-C025 paper/audits, exact Extends constructors and clock_le_extension statement.
-Twenty-three frozen bundles; full FIDE adjudication and numerical KRK bounds open.
+S040 establishes EC-C026 at Gate F only. Its OWN exact published proof-source:
+`dd24ef3b4bd68d429c9c381908a7f3d5bfa9f85f`.
+Read docs/CHARTER.md, docs/PROOF_PROTOCOL.md, docs/ROADMAP.md,
+research/CANDIDATES.md and research/KRK_RULE_DISTANCE_SPEC.md §§4–5. Read
+EC-T0021/0022/0023 manifests and definitions, actual S039 freeze evidence,
+proofs/EC-C026_RAW_CLOCK_BUDGET_CERTIFICATE.md, both EC-C026 audits,
+sessions/S040_RAW_CLOCK_BUDGET_CERTIFICATE.md and actual sessions/evidence/S040/
+logs, summary, full source/transitive hashes and clean-source identities.
+Twenty-three frozen bundles; full FIDE history/claims and numerical KRK open.
 
-## Principal task: one explicitly conditional clock certificate
+## Principal task: one exact-source Gate Z review and freeze
 
-Write a standalone paper and adversarial audit BEFORE Lean and only then
-register EC-C026. Prove this precise statement (all counters in BOARD PLIES):
+Review paper/Lean fidelity BEFORE freeze. The one new complete module is
+formal/EndgameChess/Rules/RawClock/BudgetCertificate.lean. Its sole main is
+EndgameChess.Rules.RawClock.clock_budget_certificate:
 
-For every raw state s and n:Nat, if clock(s.trace)+n<100, then for EVERY
-k≤n and EVERY actual Extends k s u,
+For every s,n, under clock(s.trace)+n<100, for every k≤n and Extends k s u,
+clock(u.trace)<100 AND
+(k<n → ∀ v, RawBoardStep u v → clock(v.trace)<100).
 
-  clock(u.trace)<100 AND
-  (k<n → for EVERY v, RawBoardStep u v → clock(v.trace)<100).
+The hypothesis is explicit, not a uniform KRK result. The prospective child
+ranges over EVERY raw legal append, even outside a strategy and draw-ending
+children; it is not an executed claim action. At k=n only the current prefix
+is bounded; n=0 grants no prospective ply. All indices are BOARD PLIES.
+The proof applies frozen growth to the given path and actual Extends.snoc,
+uses k+1≤n and monotone addition/transitivity. Full traces, legality witnesses,
+resets and equal-erasure history distinctions are retained. No endpoint-clock
+premise, ReachK surrogate, arbitrary seeds, terminal or material/colour filter.
 
-The root budget inequality is a HYPOTHESIS, not a promised bound for KRK.
-The second conjunct quantifies over EVERY raw legal prospective append at
-an interior prefix, including moves outside a selected strategy and reset or
-draw-ending children. The announced prospective move is not asserted to be
-played; the theorem merely bounds its computed child. This does not model
-claim actions. k=n must retain the current-prefix bound but makes NO claim
-about another ply. n=0 still bounds the root and gives no prospective guarantee.
+Use ONE NEW GitHub Gate Z clone at the OWN FULL exact SHA above; no formal/.lake
+before build. Run full lake build THEN COMPLETE AxiomCheck. Inspect the exact
+new main statement/report: only propext/Classical.choice/Quot.sound subset.
+Retain full logs, exits/timings, UTC, official toolchain identity, full source/
+transitive hashes and clean-source identities. Compare the whole report with
+actual S040 Gate F output; no cached build or previous clone reuse. Source is
+already published: do not re-anchor unchanged code. The S040 prebuild verifier
+initially rejected a short SHA before any Lean command; its same fresh clone
+then checked the FULL SHA and ran ONE build/runner. Retain that prior evidence;
+this Gate Z is a separate NEW clone/run.
 
-Use frozen full-state Extends, RawBoardStep and clock_le_extension unchanged.
-One combined theorem in one NEW module suffices; no redundant arithmetic or
-prefix extraction declarations, arbitrary clock seeds, ReachK surrogate,
-endpoint clock hypothesis, terminal filtering or strategy tree is needed.
-The prefix clock bound follows from k≤n and frozen growth. For k<n, construct
-Extends (k+1) s v with its actual RawBoardStep and use k+1≤n. Keep the complete
-trace and all original imports unchanged. Add the new main statement/axioms to
-AxiomCheck and the aggregate import additively; one module per main theorem.
-Classical arithmetic certificate, no novelty claim, oracle, tablebase, engine,
-class enumeration, stored certificate or fabricated compatible KRK history.
+Only on actual success freeze EC-C026 as next unused ID, expected EC-T0024
+(inspect ledger first). Add one immutable manifest recording full module,
+exact theorem/axioms, paper/audit/trust links, this own source SHA and fresh
+Gate Z evidence. Append exactly one ledger row preserving all prior rows.
+If blocked/fidelity fails, record the blocker and do not freeze or edit prior
+source. No Lean change or incremental build is expected for this session.
 
-## Audit and semantic limits
+## Audit controls and limits
 
-Attempt falsification at n=0, k=0, k=n, one quiet edge, zeroing edge, mixed
-reset paths, equal erased boards with differing histories, and an earlier raw
-draw. Check strict boundaries: clock(s)+n=99 satisfies the threshold condition;
-=100 does not. At a terminal-depth prefix with clock 99, a further quiet
-prospective move could reach 100, explaining why k<n is essential. These are
-symbolic controls; do not claim a concrete initial-rooted full game was run.
-No fixed promotion/ep/castling prefix is required or may be fabricated.
+Recheck n=0, k=0, k=n, strict sums 99/100, quiet/reset/mixed paths, every
+prospective reply, equal boards with different histories and earlier raw draws.
+Controls symbolic only; no fixed initial-rooted promotion/ep/castling/threshold
+game was run or is required. Never prune adverse draw-ending children.
+This is a conditional CLOCK certificate, not a theorem that FIDE CanClaim is
+false, repetition control/key correctness, no-earlier-terminal admissibility,
+claim semantics, automatic fivefold/75-move adjudication, mate precedence,
+full Layer instance, strategy extraction, rule-aware lifting, numerical KRK
+mate bound, holding/outcome, DTM/DTZ/WDL/Syzygy or initial-position value.
+No tablebase, engine, enumeration, stored-position certificate or novelty claim.
 
-This certificate supplies only the clock side of a later sufficient-budget
-argument. It does NOT prove a FIDE CanClaim predicate false, repetition bounds,
-no-earlier-terminal admissibility, key correctness, current/intended claim
-semantics, automatic fivefold/75-move adjudication, mate precedence, full Layer
-A/B/C instance, strategy-tree extraction, rule-aware lifting, numerical KRK mate
-bound, holding/outcomes, DTM/DTZ/WDL/Syzygy parity or initial-position value.
-Do not claim that all KRK states admit this budget. Full preceding history and
-every defender's repetition/intended-move claims remain separate obligations.
+## Verification, next obligation and closeout
 
-## Verification and closeout
+Preserve all prior formal/candidate/frozen source, papers/audits/evidence and
+manifests; prior ledger bytes are a prefix with only one new row appended.
+Aggregate imports/runner remain unchanged unless actually needed additively.
+Run ledger structure/tests and relevant preservation/evidence/document checks;
+no unrelated diagnostic suite or new trivial tests.
 
-Run only changed modules/importers incrementally. Publish the proof-source
-commit BEFORE ONE NEW fresh GitHub Gate F clone detached at its exact SHA;
-no formal/.lake before build. Full lake build THEN complete AxiomCheck must
-actually pass. Inspect the new exact statement and axiom report (only subsets
-of propext/Classical.choice/Quot.sound). Retain full logs, exits/timings, UTC,
-official toolchain identity, full source/transitive hashes and clean-source
-identities. Compare working and clean outputs. Gate Z is separate; no new
-frozen row or manifest expected. Preserve all prior source/papers/audits/evidence
-and ledger bytes; aggregate Lean files only gain additive entries.
-
-Update candidate status only from actual evidence, roadmap/README, session
-ledger and progress table. Write sessions/S040_RAW_CLOCK_BUDGET_CERTIFICATE.md
-with complete evidence and FULL installed S041 prompt. Select the next narrow
-obligation from actual results, considering separate Gate Z before expanding
-scope. Run relevant evidence/preservation/document checks and ledger structure;
-no unrelated diagnostic suite or trivial tests. Commit/push/merge/push and
-verify remote SHAs; hosted CI remains unobserved unless actually inspected.
+Update candidate status, roadmap/README/theorem index, session ledger and
+progress table; write sessions/S041_FREEZE_RAW_CLOCK_BUDGET.md with complete
+observed evidence and FULL installed S042 prompt. Select the next narrow
+obligation from actual results. One useful next prerequisite is full-history
+occurrence counting for an explicit arbitrary Position→Key map with decidable
+key equality, retaining the root and proving an exact append count law from
+frozen append_spec. If selected, its generic key MUST NOT be claimed to be the
+FIDE repetition key: effective legal en-passant, rights/history fidelity and
+claim/adjudication semantics remain separate. Avoid assuming a repetition
+certificate or a numerical mate bound. Fix a well-posed statement before Lean.
+Commit/push session branch, merge/push main and compare remote SHAs. Hosted CI
+remains unobserved unless actually inspected. Continue only the installed prompt.
 
 ## Cloud activation
 
-Use runtime skill, inspect environment/network policy and reuse inherited Git
-proxy authentication. Official unmodified core Lean4.35.0, no new dependency.
-ELAN_HOME=/workspace/.tools/elan; prepend its bin directory to PATH. Lake in
-formal/, Python at root. One fresh build at a time. Keep TLS/checksum validation.
-Existing environment suffices unless actual evidence establishes otherwise.
+Use runtime skill and inspect network policy; reuse inherited Git proxy.
+Official core Lean4.35.0, no new dependency. ELAN_HOME=/workspace/.tools/elan;
+prepend bin to PATH. Lake in formal/, Python at root. ONE fresh build at a time,
+TLS/checksums unchanged. Existing environment suffices absent an actual blocker.
