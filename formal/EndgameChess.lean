@@ -85,3 +85,5 @@ import EndgameChess.Rules.KRKBound.Arrival
 import EndgameChess.Rules.KRKBound.AxisWall
 
 import EndgameChess.Rules.KRKStrategy.KRK
+
+import EndgameChess.Rules.KRKHistory.Wall

@@ -567,3 +567,11 @@ import EndgameChess
 #check @EndgameChess.Rules.strategy_rank_spec
 #print axioms EndgameChess.Rules.strategy_terminal
 #check @EndgameChess.Rules.strategy_terminal
+
+/-! EC-C042: actual-history rank-policy lifting and 84-ply RAW wall family. -/
+#print axioms EndgameChess.Rules.RawHistoryLayer.strategy_append_history
+#check @EndgameChess.Rules.RawHistoryLayer.strategy_append_history
+#print axioms EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_strategy_history
+#check @EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_of_strategy_history
+#print axioms EndgameChess.Rules.RawHistoryLayer.raw_rank_six_wall_ruleMateWithin
+#check @EndgameChess.Rules.RawHistoryLayer.raw_rank_six_wall_ruleMateWithin

@@ -1,0 +1,4 @@
+{"args": ["lake", "build", "EndgameChess.Rules.KRKHistory.Wall"], "cwd": "/workspace/engame-chess/formal", "logfile": "working-build-01.log", "exit": 1, "seconds": 1.261, "started_utc": "2026-10-20T18:20:43.182975+00:00"}
+{"args": ["lake", "build", "EndgameChess.Rules.KRKHistory.Wall"], "cwd": "/workspace/engame-chess/formal", "logfile": "working-build-02.log", "exit": 0, "seconds": 0.952, "started_utc": "2026-10-20T18:20:59.338317+00:00"}
+{"args": ["lake", "build"], "cwd": "/workspace/engame-chess/formal", "logfile": "working-build-final.log", "exit": 0, "seconds": 0.347, "started_utc": "2026-10-20T18:21:08.105619+00:00"}
+{"args": ["lake", "env", "lean", "AxiomCheck.lean"], "cwd": "/workspace/engame-chess/formal", "logfile": "working-axioms.log", "exit": 0, "seconds": 0.664, "started_utc": "2026-10-20T18:21:08.483132+00:00"}

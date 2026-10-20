@@ -1,0 +1,53 @@
+✔ [106/109] Built EndgameChess.Rules.KRKHistory.Definitions (328ms)
+✔ [107/109] Built EndgameChess.Rules.KRKHistory.Append (292ms)
+✖ [108/109] Building EndgameChess.Rules.KRKHistory.Lifting (533ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/KRKHistory/Lifting.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKHistory/Lifting.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/KRKHistory/Lifting.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKHistory/Lifting.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/KRKHistory/Lifting.setup.json --json
+error: EndgameChess/Rules/KRKHistory/Lifting.lean:44:10: Type mismatch: After simplification, term
+  childWin
+ has type
+  ForceMate σ (RawTrace.erase (RawTrace.append s.val m hm))
+but is expected to have type
+  ForceMate σ (play (RawTrace.erase s.val) m)
+error: EndgameChess/Rules/KRKHistory/Lifting.lean:45:10: Type mismatch: After simplification, term
+  childRank
+ has type
+  @LT.lt Nat instLTNat (strategyRank σ (RawTrace.erase (RawTrace.append s.val m hm)))
+    (strategyRank σ (RawTrace.erase s.val))
+but is expected to have type
+  @LT.lt Nat instLTNat (strategyRank σ (play (RawTrace.erase s.val) m)) (strategyRank σ (RawTrace.erase s.val))
+error: EndgameChess/Rules/KRKHistory/Lifting.lean:52:12: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  layer.erase t
+in the target expression
+  StrategyStep σ (erase s) (erase t)
+
+σ : Colour
+n : Nat
+ih :
+  ∀ (s : State),
+    MateWithin σ n (erase s) →
+      RawClock.clock s.val.trace + n < 100 →
+        RawRepetition.currentOccurrences s.val < 3 → LowerRankHistory σ s.val → HistoryLayer.RuleMateWithin layer σ n s
+s : State
+winning : MateWithin σ (n + 1) (erase s)
+clockBudget : RawClock.clock s.val.trace + (n + 1) < 100
+rootCount : RawRepetition.currentOccurrences s.val < 3
+hist : LowerRankHistory σ s.val
+goal : ¬MateGoal σ (erase s)
+win : ForceMate σ (erase s)
+rankBound : strategyRank σ (erase s) ≤ n + 1
+strong : (erase s).turn = σ → ∃ r, StrategyStep σ (erase s) r
+weak :
+  (erase s).turn = σ.opp → (∃ r, Legal (erase s) r) ∧ ∀ (r : Position), Legal (erase s) r → StrategyStep σ (erase s) r
+moves : ∃ r, Legal (erase s) r
+ongoing : Ongoing s
+descend : ∀ (t : State), BoardStep s t → StrategyStep σ (erase s) (erase t) → HistoryLayer.RuleMateWithin layer σ n t
+turn : (erase s).turn = σ
+r : Position
+policy : StrategyStep σ (erase s) r
+t : State
+actual : layer.BoardStep s t
+endpoint : layer.erase t = r
+⊢ StrategyStep σ (erase s) (erase t)
+Some required targets logged failures:
+- EndgameChess.Rules.KRKHistory.Lifting
+error: build failed
