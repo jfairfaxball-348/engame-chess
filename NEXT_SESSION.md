@@ -1,99 +1,102 @@
-# NEXT SESSION — S047: Freeze the kernel legal-en-passant characterization
+# NEXT SESSION — S048: Raw ep-marker irrelevance outside en-passant shape
 
-Execute as next authorised session. Follow AGENTS.md: explicitly fetch ALL remote
-heads, merge earlier unmerged work, read latest main prompt, existing checkout/no
-worktree. Publication authorised. Commit/push branch, merge/push main, compare
-remote SHAs; never force main. Update/reproduce FULL stable progress table in
-closeout/owner report, Syzygy parity LAST, one sentence delta below. Continue
-installed sessions until owner stops. Bundles are not solved material classes.
+**Owner instruction:** Prepared handover ONLY. The owner asked to finish S047
+and stop. Do NOT start this session automatically. Execute only on a new owner
+instruction to resume. Follow AGENTS.md: explicitly fetch ALL remote heads,
+merge earlier unmerged work, read latest main prompt, existing checkout/no
+worktree. Publication authorised when resumed. Commit/push branch, merge/push
+main, compare remote SHAs, never force main. Update/reproduce FULL stable progress
+table in closeout/owner report, Syzygy parity LAST, one sentence delta below.
+Bundles are not solved material classes.
 
-## Starting point and required reading
+## Starting point and reading
 
-S046 establishes EC-C029 at Gate F only. OWN FULL published proof-source:
-`421608f5b20fee055bc3cb9d0c5904b0d192527b`.
-Read charter/protocol/roadmap/candidates, S032 repetition/claim specification,
-EC-T0021–0026 manifests, frozen RawRepetition Definitions/EffectiveEP,
-RawClock.Pawn, Rules.Board dx and Moves isLegal/isPseudo/pawnMoveOK/play,
-proofs/EC-C029_LEGAL_EP_CHARACTERIZATION.md and both EC-C029 audits,
-sessions/S046_LEGAL_EP_CHARACTERIZATION.md and actual sessions/evidence/S046/
-logs/summary/source/transitive hashes/clean identity. Twenty-six bundles frozen.
+S047 froze EC-C029 as EC-T0027 at own proof-source
+`421608f5b20fee055bc3cb9d0c5904b0d192527b` after NEW exact-source Gate Z.
+Read actual EC-T0027 manifest/VERIFICATION-S047 evidence, EC-T0026 event/target
+manifest and RawRepetition definitions, EC-C029 paper/audits, Rules.Board dx,
+Moves pawnCaptureGeom/pawnMoveOK/isPseudo/canCastle/play/isLegal and updateCastling,
+charter/protocol/roadmap/candidates, S046/S047 closeouts and S032 specification.
+Twenty-seven bundles frozen; full ep normalization/key/FIDE adjudication open.
 
-## Principal task: one OWN exact-source Gate Z obligation
+## Principal task: smallest ordinary-move prerequisite for normalization
 
-Review paper-to-Lean fidelity BEFORE freeze. Complete new bundle is exactly
-formal/EndgameChess/Rules/RawRepetition/EPCharacterization.lean, one main
-EndgameChess.Rules.RawRepetition.legalEP_iff_shape. For every raw q,m:
+Before attempting the broader effective-ep normalization theorem, prove the
+ordinary-move ep-marker irrelevance it needs. Write standalone exact paper and
+adversarial audit BEFORE Lean, then register EC-C030 only after fixing a complete
+local argument. Add one NEW theorem module, no extra definitions needed; frozen
+source unchanged, aggregate imports/runner additive only.
 
- LegalEP q m ↔ isLegal q m=true ∧ RawClock.Pawn q m ∧
-   m.src.file≠m.dst.file ∧ q.board m.dst=none.
+For EVERY raw Position q, actual Move m, and arbitrary e:Option Square, let
+r={q with ep:=e}. Under the explicit hypothesis
 
-Raw ep marker/opposing flank pawn are RECOVERED, not RHS premises. Actual
-legality retained including self-check/promotion fields. Backward proof shows
-dx≠0 using Fin.ext/integer arithmetic, extracts isPseudo/pawnMoveOK from actual
-legality and source pawn, excludes single/double by dx and ordinary capture by
-empty dst, then reconstructs LegalEP from EP branch flag/flank. No enumeration,
-extra definitions, seed, erased-history surrogate or terminal/material/side filter.
+ ¬(RawClock.Pawn q m ∧ m.src.file≠m.dst.file ∧ q.board m.dst=none),
 
-Use ONE NEW GitHub Gate Z clone at OWN FULL SHA above, no .lake before build.
-Full lake build THEN COMPLETE AxiomCheck must pass. Inspect exact main and
-standard-three subset axioms. Retain full logs/commands/exits/timings/UTC,
-official toolchain identity, all source/transitive hashes, clean HEAD/tree/status.
-Compare ENTIRE report with actual S046 Gate F. No reuse of clone/cache, re-anchor
-of unchanged proof or unrelated verification. No Lean edit/incremental build expected.
+prove the combined exact statement:
 
-Only on actual success freeze EC-C029 as next unused ID, expected EC-T0027
-(inspect ledger first). Add immutable manifest recording COMPLETE module,
-exact theorem/source/axioms, own SHA, paper/audit/trust links and fresh Gate Z
-results. Append exactly one ledger row preserving prior bytes. If fidelity/build
-fails, record blocker, do not freeze or edit old source or manufacture success.
+ isPseudo r m = isPseudo q m AND play r m = play q m.
 
-## Audit and semantic limits
+These are Boolean equality and FULL played Position equality, not just board
+equality. No actual legality premise is required for these raw non-EP-shaped
+moves. Same board/turn/castling, all Move/promotion fields, both colours, arbitrary
+raw markers. Do not claim r has a compatible initial-rooted trace or lawful
+FIDE history. No clock/count seed or terminal/material/strategy filter.
 
-Recheck straight single/double, ordinary occupied captures, nonpawns, missing/
-wrong marker/flank, both colours, promotion fields and pseudo-only/self-check
-ep. Distinct files is not itself full capture geometry; actual legality supplies
-the remaining kernel constraints. No concrete pinned/initial-rooted full
-promotion/ep/castling/threshold game claimed run. Symbolic branch controls only.
-No ep-normalization preservation, full repetition key/Article9.2.3/rights-history
-correspondence, low-count certificate, claims/admissibility/adjudication/mate
-precedence, full Layer/strategy extraction/lifting, numerical KRK, holding/outcome,
-DTM/DTZ/WDL/Syzygy or initial-position result. No adverse reply pruning,
-tablebase/engine/enumeration/stored certificates/arbitrary-clock KRK witness or
-novelty claim. Raw malformed flags not certified as lawful FIDE histories.
+Audit ALL raw ep uses. play's local epCapture uses exactly source pawn, raw
+marker, distinct files and empty dst. Under the hypothesis its capture branch
+is false for BOTH markers. Its output ep flag is freshly derived from source
+pawn/dy and does not retain the old marker; prove equality of this field too.
+All other output fields/arriving promotion/castling effects must be checked.
+isPseudo reads ep only through the pawnMoveOK EP branch; if the source is not
+q.turn pawn, handle absent/nonpawn/wrong-colour sources and the outer colour
+guard precisely. If it IS that pawn, either files coincide (dx=0, capture
+geometry false), or destination occupied (EP empty-dst test false). canCastle
+and attack tests do not read ep; demonstrate this from actual definitions.
+Do not assume pseudo-legality equality from unchanged boards alone.
 
-## Verification, next obligation and closeout
+This selects one missing prerequisite, not an assertion that full normalization
+is already proved or falsified. Later normalizeEP(q)={q with ep:=effectiveEP q}
+could use this lemma outside the EP shape and frozen legalEP_iff_shape inside
+it, but that combined preservation theorem remains a separate obligation.
 
-Preserve all prior formal/candidate/frozen source/papers/audits/evidence/manifests.
-Prior ledger prefix plus exactly one new row. Aggregates unchanged unless
-actually needed additively. Run relevant ledger structure/tests, preservation/
-evidence/document checks; no unrelated diagnostics/trivial tests. Update candidate,
-roadmap/README/theorem index, session ledger/progress table. Write
-sessions/S047_FREEZE_LEGAL_EP_CHARACTERIZATION.md with actual evidence and FULL
-installed S048 prompt. Commit/push/merge/push, compare remote SHAs; hosted CI
-unobserved unless inspected. Continue only installed next prompt.
+## Adversarial controls and semantic limits
 
-Choose next small obligation from actual results. A useful candidate is raw
-ep-field normalization: NEW normalizeEP(q)={q with ep:=effectiveEP(q)}, explicitly
-noncomputable, preserving board/turn/castling. Consider the combined exact target
-for EVERY q,m:
+Audit source absent, wrong-colour pawn, ordinary nonpawn/king/rook/castling,
+same-file single/double pawn moves, occupied captures, promotion choices,
+source=destination raw moves, both colours and arbitrary malformed ep markers.
+Crucially, ¬LegalEP ALONE is NOT this hypothesis: an illegal/pinned EP-shaped
+move can still activate total raw play's off-destination removal. Do not weaken
+the guard or assume raw play is legality filtered. Use symbolic branch arguments,
+not a claim that a concrete pinned or compatible full promotion/ep/castling/
+threshold game was run. No coordinate/class enumeration or lookup proof.
 
- isLegal (normalizeEP q) m = isLegal q m AND
- (isLegal q m=true → play (normalizeEP q) m = play q m).
+The conditional lemma is not reply pruning; every EP-shaped move must remain
+covered separately in any later legal-game theorem. No full effective-ep
+normalization preservation, repetition key/Article9.2.3/rights-history theorem,
+low-count certificate, claims/admissibility/adjudication/mate precedence, full
+Layer/strategy extraction/lifting, numerical KRK bound, holding/outcome,
+DTM/DTZ/WDL/Syzygy or initial-position result. Classical kernel reasoning,
+no novelty/tablebase/engine/stored certificates/arbitrary-clock KRK witness.
 
-Do NOT assume this result. Fix paper/adversarial audit before registering the
-next candidate/Lean. Inspect ALL ep uses in kernel legality/play, including
-canCastle and self-check. If an actual legal ep exists, normalization is q
-itself. Otherwise both positions admit no legal empty-dst file-changing pawn
-move (use characterization and absent normalized flag). For all other moves,
-prove pseudo-legality/play effects independent of raw ep: same-file pawn moves
-cannot satisfy capture geometry, occupied destinations cannot trigger ep,
-nonpawns do not use pawn ep branch, and castling tests do not read ep. Prove
-these facts, including exact played endpoint/updated flags, rather than pruning
-or assuming them. Missing marker, pseudo-only/pinned ep, both colours, malformed
-raw flags, ordinary captures/quiet/castling/promotion moves are audit risks.
-If too broad or falsified, record honest gaps and select the smallest well-posed
-prerequisite; no automatic full FIDE key/claim result follows. Never edit frozen
-Definitions to add normalization; use a NEW shared definitions module.
+## Verification and closeout
+
+Run changed module/importers incrementally. Publish proof source BEFORE ONE NEW
+GitHub Gate F clone at FULL exact SHA; no .lake before full build, then COMPLETE
+AxiomCheck must actually pass. Inspect exact main/axioms (standard-three subsets
+only), retain full logs/commands/exits/timings/UTC, official toolchain, all source/
+transitive hashes, clean HEAD/tree/status; compare whole working/clean output.
+Gate Z separate: no frozen row/manifest this session. Preserve every prior
+source/paper/audit/evidence/ledger byte; aggregates additive only. No unrelated
+diagnostics or trivial tests. If a gap/counterexample appears, record it honestly,
+not a weakened or fabricated successful statement.
+
+Update candidate/roadmap/README/session ledger/progress table. Write
+sessions/S048_ORDINARY_EP_IRRELEVANCE.md with complete actual evidence and FULL
+installed S049 prompt. Consider separate exact-source freeze before broader
+normalization. Run relevant ledger/evidence/preservation/document checks,
+commit/push/merge/push and compare remote SHAs; hosted CI unobserved unless
+actually inspected. Stop at closeout unless the owner explicitly authorises
+further consecutive sessions again.
 
 ## Cloud activation
 

@@ -1,0 +1,1 @@
+EndgameChess.Rules.RawRepetition.legalEP_iff_shape

@@ -12,9 +12,9 @@ Corrections require a new versioned entry and clearly visible supersession note;
 
 **Current toolchain anchor:** EC-T0001–EC-T0006 also have a `v2.md` that re-anchors the theorem on Lean **v4.35.0** (S020 migration, commit `b114ccd`, no source change; see [MIGRATION-S020](frozen/MIGRATION-S020/README.md)). The `v1.md` records remain valid at their own commits on v4.34.1.
 
-EC-T0007–EC-T0026 were first frozen on v4.35.0 and need no migration manifest.
+EC-T0007–EC-T0027 were first frozen on v4.35.0 and need no migration manifest.
 
-Current frozen count: **26 bundles**, not twenty-six solved material classes:
+Current frozen count: **27 bundles**, not twenty-seven solved material classes:
 - [EC-T0001](frozen/EC-T0001/v1.md): K vs K dead position (frozen S003).
 - [EC-T0002](frozen/EC-T0002/v1.md): K+B vs K dead position (frozen S006).
 - [EC-T0003](frozen/EC-T0003/v1.md): K vs K dead in the general FIDE rules kernel, for any legal arrival and arisen positions. Strengthens EC-T0001. Frozen S010.
@@ -55,3 +55,5 @@ S039: [EC-T0023](frozen/EC-T0023/v1.md) freezes raw multi-step clock growth on a
 - [EC-T0025](frozen/EC-T0025/v1.md): generic fixed-key full raw-history occurrences and exact append count law. Frozen S043 from EC-C027. [Evidence](frozen/VERIFICATION-S043/README.md). Not a FIDE repetition-key/threshold result.
 
 - [EC-T0026](frozen/EC-T0026/v1.md): actual legal-ep availability/effective-target specification. Frozen S045 from EC-C028. [Evidence](frozen/VERIFICATION-S045/README.md). No full FIDE repetition-key/claim result.
+
+- [EC-T0027](frozen/EC-T0027/v1.md): exact kernel LegalEP characterization from actual legality, source pawn, distinct files and empty destination. Frozen S047 from EC-C029. [Evidence](frozen/VERIFICATION-S047/README.md). No normalization/full FIDE key result.
