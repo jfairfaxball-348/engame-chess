@@ -460,3 +460,8 @@ import EndgameChess
 -- S040 / EC-C026: explicit-hypothesis prefix and prospective-ply clock certificate.
 #check @EndgameChess.Rules.RawClock.clock_budget_certificate
 #print axioms EndgameChess.Rules.RawClock.clock_budget_certificate
+
+-- S042 / EC-C027: generic full-history key count and exact append law.
+#print EndgameChess.Rules.RawOccurrences.occurrences
+#check @EndgameChess.Rules.RawOccurrences.append_occurrences
+#print axioms EndgameChess.Rules.RawOccurrences.append_occurrences

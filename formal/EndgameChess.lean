@@ -65,3 +65,5 @@ import EndgameChess.Rules.RawClock.StepBound
 import EndgameChess.Rules.RawTrace.ExtensionDefinitions
 import EndgameChess.Rules.RawClock.ExtensionBound
 import EndgameChess.Rules.RawClock.BudgetCertificate
+import EndgameChess.Rules.RawOccurrences.Definitions
+import EndgameChess.Rules.RawOccurrences.Append
