@@ -77,3 +77,4 @@ import EndgameChess.Rules.RawRepetition.CurrentAppend
 import EndgameChess.Rules.RawClaims.Certificate
 import EndgameChess.Rules.RawClaims.ExclusionCharacterization
 import EndgameChess.Rules.RawAdjudication.Ongoing
+import EndgameChess.Rules.StoppedHistory.AppendLifting

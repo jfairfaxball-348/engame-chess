@@ -489,3 +489,5 @@ import EndgameChess
 #check @EndgameChess.Rules.RawClaims.no_threshold_iff
 #print axioms EndgameChess.Rules.RawAdjudication.ongoing_iff
 #check @EndgameChess.Rules.RawAdjudication.ongoing_iff
+#print axioms EndgameChess.Rules.StoppedHistory.append_and_reply_lifting
+#check @EndgameChess.Rules.StoppedHistory.append_and_reply_lifting

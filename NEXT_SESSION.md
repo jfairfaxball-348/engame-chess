@@ -1,68 +1,50 @@
-# NEXT SESSION — S062: Stopped-history actual append and full legal-reply lifting
+# NEXT SESSION — S063: Freeze stopped-history append and full reply lifting
 
 Owner authorises consecutive sessions until told to stop. Follow AGENTS.md,
 charter/protocol. Fetch ALL remote heads, merge prior unmerged work, latest main,
 existing checkout. Commit/push branch, merge/push main, compare remote identities;
 never force main. FULL stable progress table, Syzygy last, immediate session delta.
 
-S061 froze EC-C036 as EC-T0034, OWN source
-c3cbef551dbf7e16d002815d0a508540439e6ef6; 34 frozen bundles, not solved classes.
-Read actual manifest/evidence, S060/61 closeouts, EC-C036 paper/audits, raw endpoint
-Definitions/Ongoing, RawTrace indexed definitions/append/completeness/soundness,
-HistoryLayer full interface, S032 §2/4, charter/protocol/roadmap/candidates.
+S062 develops EC-C037, exact stopped-history append/full legal-reply interface.
+Read actual S062 evidence/closeout and its FULL own proof-source SHA before any
+freeze; 34 bundles frozen before this session, not solved classes. Read paper,
+separate same-agent audits, complete StoppedHistory Definitions/AppendLifting,
+frozen RawTrace and RawAdjudication dependencies, HistoryLayer interface, EC-T0034
+manifest/evidence, S032 §2/4, charter/protocol/roadmap/candidates.
 
-## Principal task
+Principal task: separate exact-source Gate Z, no Lean edits. For EVERY raw s,
+main conjunction: EVERY legal m/hm has Admissible actual append iff Admissible
+s.trace AND classify s ongoing; admissible ongoing parent lifts EVERY kernel
+Legal reply to admissible actual RawBoardStep with exact erased endpoint.
+Inspect exact indexed q/prior/m/hm and snoc definition; start True, strict
+prefixes ongoing only, current terminal endpoint allowed. NO child-ongoing
+restriction; adverse draw/mate children retained, no move after terminal parent.
+Optional claim opportunities may be declined; no successful/invalid claim or
+procedural claim phase in board-move traces. Raw classifier-relative stopped
+history, NOT certified complete FIDE history/rights-key/claim correctness.
+Same-agent audit, no independent external review, full-game run/enumeration/
+oracle/certificates/novelty. No full Layer/strategy/numerical KRK/WDL/DTZ result.
 
-Full standalone paper and separate adversarial audit BEFORE Lean, then EC-C037
-LOCAL_VERIFIED only after complete exact argument. NEW shared stopped-history
-definition over frozen initial-rooted indexed Trace:
-Admissible .start := True;
-Admissible (@Trace.snoc q prior m hm) := Admissible prior ∧
-  RawAdjudication.classify (state with exact endpoint q and exact prior trace)=ongoing.
-Inspect actual State constructor/erase names. Use actual stored trace/m/hm, not
-an erased-history replacement or arbitrary-seed count vector. This admits terminal
-CURRENT endpoint but requires every STRICT prefix ongoing; no successful claim
-is present in board-move traces. Relative to CHOSEN RAW classifier only, not yet
-certified full FIDE legal-history/rights-key/claim-protocol correspondence.
+ONE NEW GitHub clone at S062 OWN FULL proof-source SHA, .lake absent before full
+build then COMPLETE AxiomCheck. Official core Lean4.35.0, standard-three subsets
+only; exact main, full S062 report equality/all formal bytes, full source/
+transitive SHA256, clean HEAD/tree/status, logs/commands/exits/times/UTC and
+executable/toolchain identity. One fresh build; interruptions/retries retained.
+Hosted CI unobserved unless inspected. Only observed success permits EC-T0035/v1.md
+freezing complete Definitions/AppendLifting and exactly one appended ledger row.
+Prior protected files/34 rows preserved. No incremental build without source edit.
+Relevant ledger tests/structure/evidence/preservation/full-table/full-prompt/
+local-link/diff checks; no unrelated diagnostics/trivial tests.
 
-ONE NEW main theorem/module for every raw state s, combining:
-(1) ∀m,∀hm actual legal, Admissible(append s m hm).trace ↔
-    Admissible s.trace ∧ classify s=ongoing;
-(2) Admissible s.trace → classify s=ongoing → ∀r,Legal(erase s)r →
-    ∃t,Admissible t.trace ∧ RawBoardStep s t ∧ erase t=r.
-
-Exact conjunction is one append-and-full-reply interface. Unfold stopped-history
-snoc for(1), use actual witness m/hm from Legal plus actual append for(2).
-No child-ongoing condition! Every legal child may immediately draw/mate, and
-remains lifted. Root .start allowed as current endpoint without requiring any
-strict prefix. No future trace after terminal parent admitted. Optional claim
-opportunities may be declined; do not treat availability as automatic terminal.
-No board-move trace records a successful claim/invalid claim/procedural phase.
-Audit zero-length, one-ply, terminal parent vs child, every adverse terminal-ending
-reply, exact hm/trace dependence, both colours/promotion/raw flags. Current histories
-have initial-rooted q/flags by frozen Trace, but no new historical-rights/FIDE key
-correspondence theorem inferred. Same-agent audit transparently named, no independent
-external review/full-game diagnostic/novelty/enumeration/oracle/certificates.
-
-## Verification and closeout
-
-Frozen sources untouched; definitions separate, one main module, aggregates additive.
-Incremental changed modules/importers and COMPLETE working runner. Publish proof
-source BEFORE ONE NEW GitHub Gate F clone at FULL exact SHA, .lake absent before
-full build then COMPLETE AxiomCheck, exact main/standard-three subsets. Full logs/
-commands/exits/times/UTC/toolchain/executable, all source/transitive SHA256,
-clean HEAD/tree/status, whole working/clean output/formal-byte equality. Official
-core Lean4.35.0, no dependency/shim, one fresh build; interruptions/retries retained.
-Gate Z separate, no frozen manifest/row in S062. Preserve prior protected files/34
-rows; relevant ledger/evidence/preservation/full-table/full-prompt/local-link/diff
-checks; no unrelated diagnostics/trivial tests. Hosted CI unobserved unless inspected.
-Record any model/proof gap honestly before changing claim.
-
-Update candidate/roadmap/README/session ledger/progress; write
-sessions/S062_STOPPED_HISTORY_LIFTING.md with actual evidence and FULL installed
-S063 prompt (consider own-source freeze). Commit/push/merge/push, compare remotes;
-continue until owner stops. No full FIDE Layer/adjudication/claim correctness,
-strategy lifting, numerical KRK, holding/outcome, WDL/DTZ or initial value follows.
-Use available runtime guidance/status/network policy, inherited proxy/CA,
-ELAN_HOME=/workspace/.tools/elan. Lake in formal/, Python root; official core
-Lean4.35.0, TLS/checksums unchanged.
+Update candidate/roadmap/README/session ledger/theorems index/progress; write
+sessions/S063_FREEZE_STOPPED_HISTORY_LIFTING.md with actual evidence and FULL
+installed S064 prompt. Commit/push/merge/push, compare remotes; continue until stop.
+S064 should choose the smallest exact next raw history-layer prerequisite, with
+standalone paper and adversarial audit BEFORE Lean. Consider a concrete RAW
+HistoryLayer over the admissible-state subtype, with ongoing from classify,
+actual append BoardStep, raw AvailableThreshold claim predicate; prove all
+interface obligations without pruning terminal children. Keep all FIDE key/
+rights-history/real claim protocol correspondence gaps explicit. No automatic
+promotion of raw bookkeeping to FIDE correctness or converse strategy lifting.
+Use runtime status/network policy, inherited proxy/CA, ELAN_HOME=/workspace/.tools/elan.
+Lake in formal/, Python root; official core Lean4.35.0, TLS/checksums unchanged.
