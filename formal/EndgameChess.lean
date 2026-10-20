@@ -69,3 +69,4 @@ import EndgameChess.Rules.RawOccurrences.Definitions
 import EndgameChess.Rules.RawOccurrences.Append
 import EndgameChess.Rules.RawRepetition.Definitions
 import EndgameChess.Rules.RawRepetition.EffectiveEP
+import EndgameChess.Rules.RawRepetition.EPCharacterization
