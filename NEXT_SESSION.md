@@ -8,6 +8,7 @@ latest main in existing checkout. Commit/push branch, merge/push main, compare
 remote identities; never force main. Full stable progress table, Syzygy last,
 immediate delta. Consecutive sessions/publication authorised.
 
+OWN S064 proof-source SHA: e346ebccd93971887cb3017487ecd1efff1bf51e.
 Read actual S064 evidence/closeout for FULL OWN proof-source SHA and success,
 35 frozen bundles before this session. Read EC-C038 paper/separate audits,
 complete RawHistoryLayer Definitions/Projection and all frozen dependencies,
@@ -43,14 +44,22 @@ tracker, write sessions/S065_FREEZE_RAW_STOPPED_HISTORY_LAYER.md with actual
 evidence and FULL S066 prompt. Commit/push/merge/push, compare remotes; continue
 KRK until complete/frozen, stop before KQK.
 
-S066 should select the next substantive prerequisite with standalone paper and
-separate adversarial audit BEFORE Lean. Consider same-budget converse lifting
-under an EXPLICIT universally claim-safe finite-prefix certificate for actual
-raw histories. A certificate is sufficient only; prove its descent along actual
-appends and all defending moves, ongoing preservation from nondead/legal moves
-and strict numeric bounds, terminal named-mate handling at budget zero, optional
-claims excluded where needed. Do not assume a claim-safe certificate or numeric
-mate bound holds for every KRK history. No unproved concrete FIDE bridge.
+S066 should prove the next substantive conditional lifting prerequisite, with
+standalone paper/separate audit BEFORE Lean. For every admitted raw-layer state s,
+colour σ, budget n, assume clock-free MateWithin σ n (erase s),
+clock(s.val.trace)+n<100, and EVERY actual raw Extends k s.val t with k≤n has
+currentOccurrences(t)<3. Prove raw-layer RuleMateWithin at EXACT SAME n.
+First prove actual-step prepend for Extends (new helper module), then induct on
+MateWithin budget: named mate immediately; otherwise nondead/legal-successor plus
+strict clock/count imply ongoing, EVERY intended legal child below100/3 excludes
+all raw claims, and both bounds descend to EVERY actual child using clock append
+bound and exact prefix prepend. Strong chosen move/ALL weak replies retained.
+This is a conservative SUFFICIENT all-raw-prefix certificate, not necessity or a
+numerical KRK witness; includes prefixes even beyond terminal raw paths. Existing
+MateWithin recursive witnesses permit direct induction without a new finite-tree
+datatype; explain exact quantifiers rather than assume strategy extraction.
+Do not assert this repetition/clock certificate holds for all KRK histories.
+No unproved concrete FIDE bridge, outcome or distance theorem follows.
 Alternative remaining history bridge: mated endpoint's normalized key cannot
 appear in strict ongoing prefix, hence feasible fivefold/mate overlap absent.
 Do not conflate generic conditional lifting with a numerical KRK/outcome theorem.

@@ -110,4 +110,6 @@
 
 | S063 | 2026-10-20 | Freeze EC-C037 stopped-history append/full replies (Gate Z) | New exact-source build and complete axiom audit; both modules frozen. [Closeout](S063_FREEZE_STOPPED_HISTORY_LIFTING.md) | **+1 → EC-T0035 FROZEN** (35 bundles) |
 
+| S064 | 2026-10-20 | EC-C038 concrete RAW stopped-history Layer (Gate L/F) | All interface fields, full legal replies and same-budget projection. [Closeout](S064_RAW_STOPPED_HISTORY_LAYER.md) | None — 35 frozen bundles |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
