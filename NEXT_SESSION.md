@@ -1,76 +1,68 @@
-# NEXT SESSION — S050: Effective en-passant normalization preservation
+# NEXT SESSION — S051: Freeze effective ep normalization preservation
 
 Owner authorises consecutive sessions until told to stop. Follow AGENTS.md,
-charter/protocol. Explicitly fetch ALL remote heads, merge unmerged prior work,
-start latest main in existing checkout. Publication authorised: commit/push
-session branch, merge/push main, compare remote SHAs; never force main. Full
-stable progress table in closeout/report, Syzygy last, immediate session delta.
+charter/protocol. Fetch ALL remote heads, merge prior unmerged work, latest main,
+existing checkout. Commit/push branch, merge/push main, compare remote identities;
+never force main. Full stable progress table, Syzygy last, immediate session delta.
 
-## Starting point and reading
+## Starting point and principal task
 
-S049 froze ordinary ep-marker irrelevance EC-C030 as EC-T0028, OWN source
-c4c900036dcffd209d6c08f27e2323637852c940. Read its manifest/evidence, complete
-OrdinaryEP source/paper/audits, EC-T0026/27 definitions/specification/characterization,
-Rules/Moves all ep uses and inCheck, S048/49 closeouts, roadmap/candidates and
-research/KRK_RULE_DISTANCE_SPEC.md. Twenty-eight frozen bundles, not classes.
+S050 formally verified EC-C031 at OWN full proof-source
+4d47b33549fc5286099cae0bd89de76b05fbeb42. Twenty-eight bundles frozen before
+this session. Read actual S050 evidence/closeout, standalone paper and both audits,
+NormalizationDefinitions/Normalization complete modules and all unchanged imports,
+EC-T0026/27/28 manifests, charter/protocol/roadmap/candidates, S032 specification.
 
-## Principal task
+Separate exact-source Gate Z for EC-C031, no Lean source changes. Main
+RawRepetition.normalizeEP_preserves: for EVERY raw q,m,
+isLegal(normalizeEP q)m=isLegal q m AND
+(isLegal q m=true → play(normalizeEP q)m=play q m).
+Shared NEW normalizeEP definition replaces ep with frozen effectiveEP.
+Review exact paper/Lean: available EP gives identity; no-EP/nonshape invokes
+OrdinaryEP then same-turn self-check; no-EP/shape contradicts original legality
+using legalEP_iff_shape and proves normalized pseudo false by nonzero dx,
+empty destination and none marker. Legal-only endpoint equality essential;
+illegal EP raw play equality NOT asserted. Both colours/all promotion/raw flags,
+no history/material/terminal filter, no adverse reply pruning. Same-agent audit
+transparently named, no enumeration/engine/tablebase/stored certificate/full-game
+run/novelty claim. Review retained initial incremental simp failure/correction.
 
-Before Lean, write exact standalone paper and separate adversarial audit. Register
-EC-C031 only after complete local argument, LOCAL_VERIFIED. Add NEW shared
-NormalizationDefinitions module defining noncomputable normalizeEP q :=
-{q with ep := effectiveEP q}, then ONE NEW main theorem module Normalization:
-for EVERY raw q,m,
- isLegal (normalizeEP q) m = isLegal q m ∧
- (isLegal q m = true → play (normalizeEP q) m = play q m).
-First equality Boolean; second FULL Position equality for actual legal moves.
-No valid-history, material, terminal, colour or promotion restriction; no new
-seed/clock/count/game filter. Frozen sources untouched; aggregates additive only.
+ONE NEW GitHub clone at OWN FULL proof-source SHA above, .lake absent before
+full lake build then COMPLETE AxiomCheck. Official core Lean4.35.0, standard-three
+subsets only, inspect exact main. Retain full logs/commands/exits/times/UTC,
+toolchain/executable, all source/transitive SHA256, clean HEAD/tree/status; compare
+whole actual S050 report and all formal source bytes. ONE fresh build at a time.
+Hosted CI unobserved unless inspected. Only observed success permits immutable
+EC-T0029/v1.md, freezing BOTH complete NormalizationDefinitions and Normalization
+modules, and exactly one appended ledger row. Prior 28 rows and every prior
+source/paper/audit/evidence/manifest byte preserved. No incremental build when no
+source edit. Relevant ledger tests/structure, evidence/preservation/document checks;
+no unrelated diagnostics/trivial tests. If failure, record honestly, no fake freeze.
 
-Complete argument to audit:
-* If ∃move,LegalEP q move, effectiveEP q=q.ep, hence normalizeEP q=q.
-* Otherwise effectiveEP q=none. Outside source-Pawn/distinct-file/empty-dst raw
-  shape, frozen ordinary_ep_irrelevance gives identical isPseudo and full play;
-  same turn then gives identical inCheck test and isLegal.
-* Inside shape, original move cannot be legal by frozen legalEP_iff_shape and
-  no legal EP witness. Normalized source pawn/turn/board unchanged; dx≠0 removes
-  straight single/double, empty dst removes ordinary capture, marker none removes
-  EP branch, so normalized isPseudo/isLegal false too. Prove both Booleans false.
-  Actual-legal implication impossible in this branch. Do NOT claim raw play
-  equal for illegal EP-shaped moves (pinned/raw marker removal control).
+## Closeout and next step
 
-Audit absent/wrong-colour/nonpawn/king/castling, same-file/occupied pawn moves,
-promotion fields, source=destination, both colours, malformed markers, pseudo-only
-EP exposing check. Keep actual original Move and self-check semantics. Symbolic
-branch proof, no enumeration/tablebase/engine/stored certificates. Same-agent
-review transparently named; no claim of independently staffed audit or concrete
-full promotion/castling/threshold game run. Classical kernel reasoning, no novelty.
+Update candidate/roadmap/README/session ledger/theorems index/progress; write
+sessions/S051_FREEZE_EFFECTIVE_EP_NORMALIZATION.md with actual complete evidence
+and FULL installed S052 prompt. Commit/push/merge/push and compare remotes;
+continue under standing authorisation until told to stop.
 
-## Verification and closeout
+S052 may select the normalized-key congruence prerequisite after its own complete
+paper/audit: NEW shared definition key q := normalizeEP q, and one NEW theorem
+module for ∀q,r, key q=key r → ∀m,
+isLegal q m=isLegal r m ∧ (isLegal q m=true → play q m=play r m).
+Use exact normalized identity, frozen preservation twice and endpoint equality
+transitivity. Include every actual Move/promotion; key equality is FULL normalized
+Position equality (board function, turn, rights, effective target), never board-only
+or a guessed finite hash. This establishes move/endpoint congruence, not yet the
+full FIDE Article9.2.3 iff or historical rights correctness. Select exact smallest
+claim after reviewing raw key definitions/specification; do not invent executable
+key hashing/decidable search from noncomputable definitions. Later count instantiation
+must use consistent key equality and include full history/root/current.
 
-Incrementally build changed modules/importers; full working AxiomCheck. Publish
-proof source BEFORE ONE NEW GitHub Gate F clone at FULL exact SHA; no .lake
-before full build then COMPLETE runner. Inspect exact main and only standard-three
-axiom subsets; retain all logs/commands/exits/times/UTC/toolchain identity,
-source/transitive SHA256, clean HEAD/tree/status; compare full working/clean
-output and formal bytes. Official core Lean4.35.0, no dependencies/shim. Gate Z
-separate; no frozen manifest/ledger row in S050. Preserve prior frozen sources,
-papers/audits/evidence/ledger byte-for-byte. Relevant ledger/evidence/preservation/
-full table/prompt/local-link/diff checks; no unrelated diagnostics/trivial tests.
-If gap appears, record honestly rather than weakening statement or claiming success.
+No FIDE key/rights-history correspondence, claims/no-earlier-terminal/adjudication,
+automatic draws/mate precedence, strategy lifting, numerical KRK, holding/outcome,
+WDL/DTZ/Syzygy or initial-position result follows from this normalization freeze.
 
-Update candidate/roadmap/README/session ledger/progress; write
-sessions/S050_EFFECTIVE_EP_NORMALIZATION.md with actual evidence and FULL installed
-S051 prompt (consider separate exact-source freeze before composing key).
-Commit/push/merge/push and compare remote identities. Hosted CI unobserved unless
-actually inspected. Continue next session under owner authorisation unless stopped.
-
-No full FIDE repetition-key/Article9.2.3/rights-history correspondence, lawful-history
-invariants, claim/automatic draw/mate precedence adjudication, strategy lifting,
-numerical KRK bound, holding/outcome, WDL/DTZ/Syzygy or initial-position result.
-This preservation lemma is one component; altered raw q need not have compatible
-initial-rooted history. No adverse legal reply may be pruned.
-
-Use available cloud runtime guidance/status/network policy; inherited proxy/CA,
-ELAN_HOME=/workspace/.tools/elan and official toolchain. Lake in formal/, Python
-at root; ONE fresh build at a time, TLS/checksums unchanged.
+Use available cloud runtime guidance/status, network policy and inherited proxy/CA.
+ELAN_HOME=/workspace/.tools/elan, official core Lean4.35.0, no dependencies/shim.
+Lake in formal/, Python at root; one fresh build, TLS/checksums unchanged.

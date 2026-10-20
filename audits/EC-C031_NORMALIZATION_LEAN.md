@@ -16,3 +16,10 @@ using ordinary-branch equalities. Explicit change/rw resolved this unchanged
 statement; full failure log retained. Final 77-job incremental build and COMPLETE
 working AxiomCheck passed without warnings, 278 allowed reports, main standard
 three. Gate F pending. No unrelated diagnostics or concrete full-game run.
+
+## Observed Gate F
+
+Own proof-source `4d47b33549fc5286099cae0bd89de76b05fbeb42`; NEW GitHub clone `/tmp/engame-s050-gate-f`, no .lake before build. Full 77-job build exit 0 in 469.893s, COMPLETE AxiomCheck exit 0 at 2026-10-20T12:23:48Z; 278 allowed reports, main standard-three. Full working/clean report byte-identical.
+Full source/transitive hashes, clean HEAD/tree/status and command/exits/times
+retained; exact main inspected, forbidden scan zero. Official core Lean4.35.0,
+no dependency/shim. No clean-build failure/repetition. Hosted CI unobserved.

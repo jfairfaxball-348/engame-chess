@@ -1,0 +1,5 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/RawRepetition/NormalizationDefinitions.lean
+formal/EndgameChess/Rules/RawRepetition/Normalization.lean
+Matches: 0
