@@ -9,7 +9,7 @@ sessions until asked to stop. Stop before KQK.
 KRK dead/live and clock-free forcing classification are frozen. The concrete RAW
 history Layer is frozen as EC-T0036. EC-C039's conditional lifting is formally
 verified at proof source `7155c3424a5e315ea758f916d939b6696e0da261`, awaiting
-Gate Z. There are 36 frozen bundles; material-class coverage is unchanged.
+Gate Z. There are 37 frozen bundles after S069; material-class coverage is unchanged.
 
 Closure means complete rule-aware KRK outcomes/strategies and the project's
 specified distance correctness, with all necessary results verified and frozen.
@@ -95,3 +95,5 @@ Existing frozen sources/records remain immutable; new proofs use new modules.
 EC-C040 FORMAL_VERIFIED at `3a4a543625673383f66de70a8f847e340d820570`: 508-ply strong-turn arrival ceiling, coordinate wall bound and same-budget transport. [Evidence](../sessions/evidence/S068/README.md). S069 separately freezes this direct KRK result, then returns to strategy-specific repetition safety. 508 exceeds100; no additional history-aware inputs or exact distances are covered.
 
 S069: EC-C040 frozen as [EC-T0037](../theorems/frozen/EC-T0037/v1.md) after a new own-source Gate Z. Milestone A has a certified explicit ceiling; milestone B is next. 37 bundles, no new rule-aware covered inputs. S070 attacks a minimal-rank strategy with all-defence normalized-key nonrepetition; incoming history remains separate.
+
+S070: EC-C041 FORMAL_VERIFIED, [key-simple minimal-budget strategy](../proofs/EC-C041_KRK_STRATEGY_REPETITION.md). Every weak legal reply retained; full-line pairwise raw keys and ≤508-ply root ceiling. Gate Z pending. Milestone B now returns to actual incoming-history counts and raw rule-layer lifting; no rule-aware input family certified yet.

@@ -167,3 +167,5 @@ numerical evaluation or external distance-parity claim is made.
 Status at paper creation: LOCAL_VERIFIED after separate same-agent adversarial
 audit; Lean/Gate F and separate Gate Z pending. The theorem ledger remains at
 37 frozen bundles. Mathematical input coverage for rule-aware wins is unchanged.
+
+S070 verification addendum: exact paper statements FORMAL_VERIFIED at `fe7efa687ae1481db405cf8808d9ad3437906861`; [observed evidence](../sessions/evidence/S070/README.md). Separate Gate Z remains pending. Earlier paper-creation status is historical.

@@ -124,4 +124,6 @@ S066 planning addendum (2026-10-20): [direct KRK closure roadmap installed](S066
 
 | S069 | 2026-10-20 | Freeze quantitative KRK strategy (Gate Z) | EC-T0037 from EC-C040: new exact-source 119-job build,311 allowed reports, 24 exact declarations, 27 complete modules and all hashes; 508-ply strong-turn arrival ceiling, no history/exact-distance claim. S070 direct strategy repetition attack installed. [Closeout](S069_FREEZE_KRK_QUANTITATIVE.md) | **+1 → EC-T0037 FROZEN** (37 bundles) |
 
+| S070 | 2026-10-20 | KRK strategy-specific key nonrepetition (Gate F) | EC-C041 FORMAL_VERIFIED: least-budget policy, every legal weak reply, whole-line pairwise keys, ≤508 plies, terminal iff named mate. Source `fe7efa687ae1481db405cf8808d9ad3437906861`; new 130-job build/320 permitted reports, 9 public declarations/11 modules. S071 actual-history lifting installed. [Closeout](S070_KRK_STRATEGY_REPETITION.md) | None — 37 bundles; incoming-history/rule-aware coverage unchanged |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

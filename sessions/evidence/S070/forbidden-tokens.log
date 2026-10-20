@@ -1,0 +1,14 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/KRKStrategy/Definitions.lean
+formal/EndgameChess/Rules/KRKStrategy/KRK.lean
+formal/EndgameChess/Rules/KRKStrategy/KeyBudget.lean
+formal/EndgameChess/Rules/KRKStrategy/KeyInterface.lean
+formal/EndgameChess/Rules/KRKStrategy/LeastBudget.lean
+formal/EndgameChess/Rules/KRKStrategy/Line.lean
+formal/EndgameChess/Rules/KRKStrategy/Progress.lean
+formal/EndgameChess/Rules/KRKStrategy/RankDefinitions.lean
+formal/EndgameChess/Rules/KRKStrategy/RankKey.lean
+formal/EndgameChess/Rules/KRKStrategy/RankSpec.lean
+formal/EndgameChess/Rules/KRKStrategy/Terminal.lean
+Matches: 0

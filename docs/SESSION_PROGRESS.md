@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S069. Thirty-six theorem bundles are frozen, including the clock-free KRK forcing classification; these are not thirty-six solved material classes.
+Current mathematical evidence: through S070. Thirty-seven theorem bundles are frozen, including the clock-free KRK forcing classification; these are not thirty-six solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live and clock-free forcing frozen; raw history/rule prerequisites frozen; conditional budget lifting formally verified; 508-ply bound frozen | Concrete FIDE integration, complete rule-aware outcomes and distance |
+| K+R vs K | Dead/live and clock-free forcing frozen; raw history/rule prerequisites frozen; conditional budget lifting formally verified; 508-ply bound frozen; key-simple strategy formally verified | Concrete FIDE integration, complete rule-aware outcomes and distance |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S069. Thirty-six theorem bundles are froz
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S069 froze the 508-ply clock-free KRK strategy as EC-T0037; 37 bundles are frozen, while rule-aware coverage and exact distances remain unchanged.
+Session change: S070 formally verified a KRK winning rank policy with pairwise distinct normalized keys and all legal weak replies; incoming-history/rule-aware coverage is unchanged, with 37 frozen bundles.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 
