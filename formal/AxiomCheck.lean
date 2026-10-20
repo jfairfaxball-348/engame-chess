@@ -481,3 +481,5 @@ import EndgameChess
 #check @EndgameChess.Rules.RawRepetition.normalizeEP_preserves
 #print axioms EndgameChess.Rules.RawRepetition.key_legal_congr
 #check @EndgameChess.Rules.RawRepetition.key_legal_congr
+#print axioms EndgameChess.Rules.RawRepetition.append_currentOccurrences
+#check @EndgameChess.Rules.RawRepetition.append_currentOccurrences
