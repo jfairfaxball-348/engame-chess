@@ -451,3 +451,8 @@ import EndgameChess
 #print axioms EndgameChess.Rules.RawClock.clock_le_length
 #check @EndgameChess.Rules.RawClock.append_clock_le
 #print axioms EndgameChess.Rules.RawClock.append_clock_le
+
+-- S038 / EC-C025: actual finite extensions and raw multi-step bound.
+#print EndgameChess.Rules.RawTrace.Extends
+#check @EndgameChess.Rules.RawClock.clock_le_extension
+#print axioms EndgameChess.Rules.RawClock.clock_le_extension

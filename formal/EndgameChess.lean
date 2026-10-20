@@ -62,3 +62,5 @@ import EndgameChess.Rules.RawClock.CastleEmpty
 import EndgameChess.Rules.RawClock.Append
 import EndgameChess.Rules.RawClock.LengthBound
 import EndgameChess.Rules.RawClock.StepBound
+import EndgameChess.Rules.RawTrace.ExtensionDefinitions
+import EndgameChess.Rules.RawClock.ExtensionBound

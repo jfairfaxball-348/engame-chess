@@ -1,0 +1,28 @@
+✔ [50/68] Built EndgameChess.Rules.HistoryLayer.Definitions (931ms)
+✔ [51/68] Built EndgameChess.Rules.RawTrace.Definitions (981ms)
+✔ [52/68] Built EndgameChess.Rules.RawTrace.Completeness (485ms)
+✔ [53/68] Built EndgameChess.Rules.HistoryLayer.Projection (596ms)
+✔ [54/68] Built EndgameChess.Rules.RawTrace.ExtensionDefinitions (534ms)
+✔ [55/68] Built EndgameChess.Rules.RawTrace.Soundness (540ms)
+✔ [56/68] Built EndgameChess.Rules.RawTrace.Origin (637ms)
+✔ [57/68] Built EndgameChess.Rules.RawTrace.Append (728ms)
+✔ [58/68] Built EndgameChess.Rules.HistoryLayer.ForcingProjection (401ms)
+✔ [59/68] Built EndgameChess.Rules.RawClock.Definitions (344ms)
+✔ [60/68] Built EndgameChess.Rules.RawClock.LengthBound (545ms)
+✔ [61/68] Built EndgameChess.Rules.RawClock.CastleEmpty (643ms)
+✔ [62/68] Built EndgameChess.Rules.RawClock.Append (604ms)
+✔ [63/68] Built EndgameChess.Rules.RawClock.EventCases (525ms)
+✔ [64/68] Built EndgameChess.Rules.RawClock.LegalEvent (706ms)
+✔ [65/68] Built EndgameChess.Rules.RawClock.StepBound (599ms)
+✖ [66/68] Building EndgameChess.Rules.RawClock.ExtensionBound (297ms)
+trace: .> LEAN_PATH=/workspace/engame-chess/formal/.lake/build/lib/lean /workspace/.tools/lean-4.35.0-linux/bin/lean /workspace/engame-chess/formal/EndgameChess/Rules/RawClock/ExtensionBound.lean -o /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawClock/ExtensionBound.olean -i /workspace/engame-chess/formal/.lake/build/lib/lean/EndgameChess/Rules/RawClock/ExtensionBound.ilean -c /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawClock/ExtensionBound.c --setup /workspace/engame-chess/formal/.lake/build/ir/EndgameChess/Rules/RawClock/ExtensionBound.setup.json --json
+error: EndgameChess/Rules/RawClock/ExtensionBound.lean:16:26: unexpected identifier; expected ')', ',' or ':'
+error: EndgameChess/Rules/RawClock/ExtensionBound.lean:15:33: Type mismatch: After simplification, term
+  Nat.add_le_add_right
+ has type
+  ?m.54 ≤ ?m.55 → ∀ (k : Nat), ?m.54 + k ≤ ?m.55 + k
+but is expected to have type
+  clock u.trace + 1 ≤ clock s.trace + (n + 1)
+Some required targets logged failures:
+- EndgameChess.Rules.RawClock.ExtensionBound
+error: build failed
