@@ -1,0 +1,1 @@
+Initial document validation: git diff --check flagged CRLF on the newly appended CSV row. Python csv writer defaulted to CRLF; fixed ONLY new row to LF, preserving prior ledger bytes. No Lean/build/statement issue. Final document validation rerun.

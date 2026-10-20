@@ -1,0 +1,3 @@
+Prior 36 ledger rows byte-prefix preserved; exactly one new row.
+All pre-existing frozen records and all Lean sources unchanged.
+All formal source hashes equal the verified proof-source inventory.

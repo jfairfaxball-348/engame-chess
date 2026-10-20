@@ -75,3 +75,5 @@ S039: [EC-T0023](frozen/EC-T0023/v1.md) freezes raw multi-step clock growth on a
 - [EC-T0035](frozen/EC-T0035/v1.md): stopped-history append and full legal replies including terminal children; both modules frozen S063. [Evidence](frozen/VERIFICATION-S063/README.md).
 
 - [EC-T0036](frozen/EC-T0036/v1.md): concrete RAW stopped-history Layer and same-budget certificate projection; both modules frozen S065. [Evidence](frozen/VERIFICATION-S065/README.md).
+
+- [EC-T0037](frozen/EC-T0037/v1.md): explicit 508-ply clock-free KRK strong-turn arrival bound, coordinate wall/pursuit budgets and same-budget transport. Frozen S069 from EC-C040; [new exact-source Gate Z](frozen/VERIFICATION-S069/README.md). Nonoptimal ceiling exceeds 100; no history-aware outcome/exact distance parity.

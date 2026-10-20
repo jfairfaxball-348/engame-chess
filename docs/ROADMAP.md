@@ -8,7 +8,7 @@ FIDE integration, complete rule-aware outcome coverage and correct distances.
 These are continuing proof obligations, not one-session deadlines. Generic
 prerequisites must discharge an identified blocked step of the active KRK proof.
 S067 derived the 508-ply KRK strategy ceiling (EC-C040), formally verified
-in S068; separate S069 freeze follows. Owner resumed consecutive sessions until
+in S068 and frozen as EC-T0037 in S069. Owner resumed consecutive sessions until
 asked to stop. EC-C039 freeze remains backlog. Stop before KQK.
 The bound exceeds 100; complete rule-aware coverage remains open.
 
@@ -32,7 +32,7 @@ The existing objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know, **
 | K vs K | **done** (EC-T0001/0003: every position dead) | done (draw) | n/a | n/a |
 | K+B vs K | **done** (EC-T0002/0004) | done (draw) | n/a | n/a |
 | K+N vs K | **done** (EC-T0005) | done (draw) | n/a | n/a |
-| K+R vs K | **done, frozen**: dead ⇔ lone king to move, not mate, every legal move captures the rook (EC-T0006 + EC-T0007, S023) | Clock-free forcing classified, frozen EC-T0019; FIDE rule-aware outcomes open | Clock-free forcing proved and frozen; rule-aware strategy open | 508-ply upper bound formally verified, freeze pending; exact distance / DTZ open |
+| K+R vs K | **done, frozen**: dead ⇔ lone king to move, not mate, every legal move captures the rook (EC-T0006 + EC-T0007, S023) | Clock-free forcing classified, frozen EC-T0019; FIDE rule-aware outcomes open | Clock-free forcing proved and frozen; rule-aware strategy open | 508-ply upper bound frozen EC-T0037; exact distance / DTZ open |
 | K+Q vs K | open | open | open | open |
 | K+P vs K | open | open | open | open |
 

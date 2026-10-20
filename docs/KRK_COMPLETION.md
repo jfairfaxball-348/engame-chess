@@ -93,3 +93,5 @@ Existing frozen sources/records remain immutable; new proofs use new modules.
 ## S068 quantitative milestone evidence
 
 EC-C040 FORMAL_VERIFIED at `3a4a543625673383f66de70a8f847e340d820570`: 508-ply strong-turn arrival ceiling, coordinate wall bound and same-budget transport. [Evidence](../sessions/evidence/S068/README.md). S069 separately freezes this direct KRK result, then returns to strategy-specific repetition safety. 508 exceeds100; no additional history-aware inputs or exact distances are covered.
+
+S069: EC-C040 frozen as [EC-T0037](../theorems/frozen/EC-T0037/v1.md) after a new own-source Gate Z. Milestone A has a certified explicit ceiling; milestone B is next. 37 bundles, no new rule-aware covered inputs. S070 attacks a minimal-rank strategy with all-defence normalized-key nonrepetition; incoming history remains separate.

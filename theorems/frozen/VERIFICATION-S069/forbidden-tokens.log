@@ -1,0 +1,30 @@
+Pattern: \b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b
+Modules:
+formal/EndgameChess/Rules/KRKBound/Arrival.lean
+formal/EndgameChess/Rules/KRKBound/AxisEntry.lean
+formal/EndgameChess/Rules/KRKBound/AxisWall.lean
+formal/EndgameChess/Rules/KRKBound/BackRank.lean
+formal/EndgameChess/Rules/KRKBound/Budget.lean
+formal/EndgameChess/Rules/KRKBound/Choose.lean
+formal/EndgameChess/Rules/KRKBound/ClearAxisEntry.lean
+formal/EndgameChess/Rules/KRKBound/ClearEntry.lean
+formal/EndgameChess/Rules/KRKBound/Defend.lean
+formal/EndgameChess/Rules/KRKBound/Definitions.lean
+formal/EndgameChess/Rules/KRKBound/Entry.lean
+formal/EndgameChess/Rules/KRKBound/HorizontalEntry.lean
+formal/EndgameChess/Rules/KRKBound/LowerBand.lean
+formal/EndgameChess/Rules/KRKBound/NotCheck.lean
+formal/EndgameChess/Rules/KRKBound/OffRank.lean
+formal/EndgameChess/Rules/KRKBound/Pair.lean
+formal/EndgameChess/Rules/KRKBound/PositiveSetup.lean
+formal/EndgameChess/Rules/KRKBound/ProtectedEntry.lean
+formal/EndgameChess/Rules/KRKBound/Pursuit.lean
+formal/EndgameChess/Rules/KRKBound/RankZeroReply.lean
+formal/EndgameChess/Rules/KRKBound/SameRank.lean
+formal/EndgameChess/Rules/KRKBound/SameRankFile.lean
+formal/EndgameChess/Rules/KRKBound/SetupGeometry.lean
+formal/EndgameChess/Rules/KRKBound/Transport.lean
+formal/EndgameChess/Rules/KRKBound/Wall.lean
+formal/EndgameChess/Rules/KRKBound/WallCeiling.lean
+formal/EndgameChess/Rules/KRKBound/WeakWall.lean
+Matches: 0
