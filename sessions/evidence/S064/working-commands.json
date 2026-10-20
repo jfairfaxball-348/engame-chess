@@ -1,0 +1,26 @@
+[
+  {
+    "args": [
+      "lake",
+      "build"
+    ],
+    "cwd": "formal",
+    "logfile": "working-build.log",
+    "exit": 0,
+    "seconds": 1.195,
+    "started_utc": "2026-10-20T14:31:31.487492+00:00"
+  },
+  {
+    "args": [
+      "lake",
+      "env",
+      "lean",
+      "AxiomCheck.lean"
+    ],
+    "cwd": "formal",
+    "logfile": "working-axioms.log",
+    "exit": 0,
+    "seconds": 0.807,
+    "started_utc": "2026-10-20T14:31:32.682559+00:00"
+  }
+]

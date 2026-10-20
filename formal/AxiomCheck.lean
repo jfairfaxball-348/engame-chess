@@ -491,3 +491,5 @@ import EndgameChess
 #check @EndgameChess.Rules.RawAdjudication.ongoing_iff
 #print axioms EndgameChess.Rules.StoppedHistory.append_and_reply_lifting
 #check @EndgameChess.Rules.StoppedHistory.append_and_reply_lifting
+#print axioms EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_project
+#check @EndgameChess.Rules.RawHistoryLayer.raw_ruleMateWithin_project
