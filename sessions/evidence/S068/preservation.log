@@ -1,0 +1,3 @@
+All pre-existing theorem modules, frozen manifests, theorem ledger and prior evidence unchanged against ed2c32b0cb399274387ae1cde8cf0f7f4e1becce.
+Only aggregate imports and axiom runner changed among pre-existing Lean files.
+New-module forbidden scan: 0 matches.

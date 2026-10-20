@@ -89,3 +89,7 @@ candidate promotion is authorised by this planning update.
 
 No tablebases, engine oracles, exhaustive class proofs or per-position certificates.
 Existing frozen sources/records remain immutable; new proofs use new modules.
+
+## S068 quantitative milestone evidence
+
+EC-C040 FORMAL_VERIFIED at `3a4a543625673383f66de70a8f847e340d820570`: 508-ply strong-turn arrival ceiling, coordinate wall bound and same-budget transport. [Evidence](../sessions/evidence/S068/README.md). S069 separately freezes this direct KRK result, then returns to strategy-specific repetition safety. 508 exceeds100; no additional history-aware inputs or exact distances are covered.

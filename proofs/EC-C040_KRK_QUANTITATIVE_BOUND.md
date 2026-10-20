@@ -181,3 +181,5 @@ implement same-budget composition/transport, uniform-exit 8*m+E pursuit, the
 A/U wall induction and the ≤4 setup composition in NEW modules. Frozen modules
 and theorem ledger remain unchanged. Until observed Gate F and separate Gate Z,
 508 is a paper-verified bound only; KRK rule-aware coverage remains unchanged.
+
+S068 addendum: exact paper claim FORMAL_VERIFIED at own proof source `3a4a543625673383f66de70a8f847e340d820570`; [evidence](../sessions/evidence/S068/README.md). New clean GitHub build and complete axiom runner passed; Gate Z pending. Earlier S067 status descriptions above are historical.

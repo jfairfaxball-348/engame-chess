@@ -120,4 +120,6 @@ S066 planning addendum (2026-10-20): [direct KRK closure roadmap installed](S066
 
 | S067 | 2026-10-20 | Explicit quantitative KRK strategy (Gate L) | EC-C040 LOCAL_VERIFIED on paper: 508-ply strong-turn arrival ceiling; 84*(7−rookRank) walls, 8*m+E pursuit, ≤4 setup; separate same-agent audit; no Lean/build/freeze. Consecutive sessions resumed; S068 formalisation installed. [Closeout](S067_KRK_QUANTITATIVE_ATTACK.md) | None — 36 frozen bundles; rule-aware coverage unchanged |
 
+| S068 | 2026-10-20 | Explicit KRK bound (Gate F) | EC-C040 FORMAL_VERIFIED: 508-ply arrival bound, 84*(7−rookRank) wall, 8*m+E pursuit, same-budget transport. Source `3a4a543625673383f66de70a8f847e340d820570`; fresh 119-job build, 311 allowed axiom reports; 27 new modules/24 public declarations. S069 separate direct-result freeze installed. [Closeout](S068_KRK_QUANTITATIVE_LEAN.md) | None — 36 frozen bundles; rule-aware coverage unchanged |
+
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.

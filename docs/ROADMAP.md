@@ -7,9 +7,9 @@ winning strategy and strategy-specific repetition control first, then concrete
 FIDE integration, complete rule-aware outcome coverage and correct distances.
 These are continuing proof obligations, not one-session deadlines. Generic
 prerequisites must discharge an identified blocked step of the active KRK proof.
-S067 derived a paper-verified 508-ply KRK strategy ceiling (EC-C040), pending
-Lean and freeze. Owner resumed consecutive sessions until asked to stop; S068
-formalises the numerical bound. EC-C039 freeze remains backlog. Stop before KQK.
+S067 derived the 508-ply KRK strategy ceiling (EC-C040), formally verified
+in S068; separate S069 freeze follows. Owner resumed consecutive sessions until
+asked to stop. EC-C039 freeze remains backlog. Stop before KQK.
 The bound exceeds 100; complete rule-aware coverage remains open.
 
 ## Distant horizon: ultra-weakly solve chess
@@ -32,7 +32,7 @@ The existing objective (owner, 2026-10-18; [CHARTER](CHARTER.md)) is to know, **
 | K vs K | **done** (EC-T0001/0003: every position dead) | done (draw) | n/a | n/a |
 | K+B vs K | **done** (EC-T0002/0004) | done (draw) | n/a | n/a |
 | K+N vs K | **done** (EC-T0005) | done (draw) | n/a | n/a |
-| K+R vs K | **done, frozen**: dead ⇔ lone king to move, not mate, every legal move captures the rook (EC-T0006 + EC-T0007, S023) | Clock-free forcing classified, frozen EC-T0019; FIDE rule-aware outcomes open | Clock-free forcing proved and frozen; rule-aware strategy open | 508-ply upper bound paper-verified; Lean/freeze and exact distance / DTZ open |
+| K+R vs K | **done, frozen**: dead ⇔ lone king to move, not mate, every legal move captures the rook (EC-T0006 + EC-T0007, S023) | Clock-free forcing classified, frozen EC-T0019; FIDE rule-aware outcomes open | Clock-free forcing proved and frozen; rule-aware strategy open | 508-ply upper bound formally verified, freeze pending; exact distance / DTZ open |
 | K+Q vs K | open | open | open | open |
 | K+P vs K | open | open | open | open |
 

@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S067.** Thirty-six frozen theorem bundles (not thirty-six solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S068.** Thirty-six frozen theorem bundles (not thirty-six solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -134,3 +134,5 @@ S067: [EC-C040 quantitative KRK paper](proofs/EC-C040_KRK_QUANTITATIVE_BOUND.md)
 and [separate same-agent audit](audits/EC-C040_KRK_QUANTITATIVE_PAPER.md) give a
 508-ply clock-free ceiling, LOCAL_VERIFIED only. S068 formalises it; no rule-aware
 coverage or frozen-bundle change. Consecutive sessions resumed by owner request.
+
+S068: EC-C040 508-ply KRK bound is FORMAL_VERIFIED; [fresh exact-source evidence](sessions/evidence/S068/README.md). Gate Z remains separate; 36 bundles frozen, rule-aware outcomes and exact distance still open.
