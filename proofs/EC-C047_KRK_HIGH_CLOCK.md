@@ -128,3 +128,5 @@ still stop strategically important lines and exact optimal geometry matters.
 Neither the large442/443 ceiling nor key simplicity controls all incoming keys.
 Full FIDE correspondence and exact WDL/DTZ are also still open. Continue the
 direct low-clock/history classification rather than declaring KRK complete.
+
+Observed Gate F: OWN source `6d295929f2e42aad5729fbe09083095d1dc37c89`; NEW GitHub clone without .lake, full190-job build exit0 in360.484s; COMPLETE374-report AxiomCheck exit0 at2026-10-21T08:24:51Z. Whole working/clean runner and published Git source bytes match. All10 public types/11 complete modules and transitive imports inspected. Official native Windows Lean4.35.0; source/import/executable hashes, commands/exits/times/UTC and clean HEAD/tree/status retained. No dependency/shim/TLS/checksum change. Hosted CI unobserved. Separate Gate Z pending.

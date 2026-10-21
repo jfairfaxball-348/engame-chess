@@ -145,3 +145,5 @@ Full session closeouts live as `sessions/S###_*.md`. New research sessions are i
 | S078 | 2026-10-21 | All-history RAW KRK holding policies (Gate F) | Actual legal policy/complement iff and bounded stopped compliant play. Own source d8a77d1b785da39d0a644169750283f4ade935fe; new179-job build/364 permitted reports. [Closeout](S078_KRK_HOLDING.md); S079 separate own-source freeze | None —42 frozen bundles; full KRK closure open |
 
 | S079 | 2026-10-21 | Freeze actual RAW KRK holding (Gate Z) | Separate own-source new179-job build/364 permitted reports; complete own-source/import/runner equality. [Closeout](S079_FREEZE_KRK_HOLDING.md); direct S080 high-clock outcomes | **+1 -> EC-T0043 FROZEN** (43 bundles); no new mathematical coverage |
+
+| S080 | 2026-10-21 | Strong nonloss and exact high-clock RAW KRK (Gate F) | All-history strong holding; weak h>=99 nonforcing/hold; strong h>=98 forcing iff mate-in1 with exact budget1. Own source 6d295929f2e42aad5729fbe09083095d1dc37c89; new190-job build/374 permitted reports. [Closeout](S080_KRK_HIGH_CLOCK.md) | None —43 bundles; new partial RAW outcome/distance coverage |

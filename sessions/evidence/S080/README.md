@@ -22,3 +22,5 @@ exact WDL/DTZ remain open. No oracle/tablebase/enumeration/position certificates
 New exact published-source clean Gate F required, with .lake absent, full build,
 complete matching runner, source/import/executable hashes, clean identity and
 all observed logs. Gate Z separate. Hosted CI unobserved until inspected.
+
+Observed Gate F: OWN source `6d295929f2e42aad5729fbe09083095d1dc37c89`; NEW GitHub clone without .lake, full190-job build exit0 in360.484s; COMPLETE374-report AxiomCheck exit0 at2026-10-21T08:24:51Z. Whole working/clean runner and published Git source bytes match. All10 public types/11 complete modules and transitive imports inspected. Official native Windows Lean4.35.0; source/import/executable hashes, commands/exits/times/UTC and clean HEAD/tree/status retained. No dependency/shim/TLS/checksum change. Hosted CI unobserved. Separate Gate Z pending.

@@ -1,45 +1,47 @@
-# NEXT SESSION — S080: Exact high-clock RAW KRK outcomes and strong nonloss
+# NEXT SESSION — S081: Freeze strong RAW nonloss and exact high-clock KRK
 
-Owner2026-10-21: continue consecutive sessions until KRK closure; stop before
-KQK. Fetch ALL heads, reconcile unmerged work/latest main; commit/push branch,
-ordinary merge/push main and compare exact remote identities.43 frozen bundles
-after EC-T0043, all-history actual RAW holding duality and150-h horizon available.
+Owner2026-10-21: continue consecutive KRK sessions until closure; stop before
+KQK. Fetch ALL heads, reconcile earlier unmerged work/latest main; commit/push
+branch, ordinary merge/push main and compare identities.43 frozen bundles;
+next free EC-T0044. Preserve prior43 rows/records and all older frozen modules.
 
-Direct principal candidate EC-C047, paper/audit BEFORE new Lean:
-(1) Every admitted exact KRK root has an actual strong-side holding policy,
-and weak-side full RuleForceMate is impossible, both turns/all incoming data.
-(2) Ongoing weak-turn h>=99: strong nonforcing and actual weak holding.
-(3) Ongoing strong-turn h>=98: strong forcing IFF an actual admitted child is
-immediate named mate; otherwise both sides hold. Both colours/all actual flags,
-every complete history/count/clock; no histogram or low-repetition assumption.
-These are exact high-clock criteria, not a renamed generic game recurrence.
+Direct milestone EC-C047: all-history actual strong holding/weak nonforcing;
+ongoing weak h>=99 strong nonforcing+weak policy; ongoing strong h>=98 forcing
+iff actual immediate mate, exact winning budget1/not0. Both turns/colours/all
+actual flags and incoming full trace/counts. Root ongoing mandatory for clock
+criteria, terminal mate at150 retained; no universal quiet-witness assumption.
+Full low-clock geometric classification, actual winning-policy correspondence,
+full FIDE and exact global WDL/DTZ remain open. No class closure inferred.
 
-Strong nonloss: actual KRK is not initial, last legal weak move at a strong-turn
-root leaves weak king safe, so king-distance symmetry excludes strong check.
-Every admitted KRK move retains KRK or dead KK; KRK-or-dead invariant excludes
-weak Goal on every path. Use a globally legal policy and actual S078 safety
-definition, not an assumed no-loss slogan. Root terminal/current mate respected.
+Read exact paper, separate same-agent paper/Lean audits, all11 complete new
+KRKHighClock modules and10 main types/imports. OWN source `6d295929f2e42aad5729fbe09083095d1dc37c89`; NEW GitHub clone without .lake, full190-job build exit0 in360.484s; COMPLETE374-report AxiomCheck exit0 at2026-10-21T08:24:51Z. Whole working/clean runner and published Git source bytes match. All10 public types/11 complete modules and transitive imports inspected. Official native Windows Lean4.35.0; source/import/executable hashes, commands/exits/times/UTC and clean HEAD/tree/status retained. No dependency/shim/TLS/checksum change. Hosted CI unobserved.
 
-High-clock proof: under a hypothetical strong certificate at ongoing weak turn,
-choose its retained legal child. A dead capture contradicts certificate
-projection/nondeadness; retained KRK is quiet, actual append has h+1>=100 and
-supports intended claim at parent. Contradicts noClaim. Do NOT assert every
-weak KRK root has a quiet legal move without excluding dead captures. On strong
-h>=98 a certified child is quiet KRK on weak turn with h>=99; if ongoing it
-cannot force, if terminal its certificate is already Goal. Converse is actual
-one-ply mate. Retain every legal move/current/intended claim and mate at150.
+Separate Gate Z: ONE NEW GitHub clone at FULL OWN SHA 6d295929f2e42aad5729fbe09083095d1dc37c89, .lake
+absent before full build and COMPLETE own AxiomCheck. Compare ENTIRE own Gate F
+source/transitive inventories and complete decoded runner, not later aggregates.
+Native official pinned4.35.0/inherited environment; no source/toolchain/dependency/
+shim/TLS/checksum changes or incremental substitute. Record full logs/commands/
+exits/times/UTC, all failures/retries, source/import/executable hashes and clean
+identity. Hosted CI only passed if actually observed. Only then freeze EC-T0044
+with all11 complete modules/helpers/Definitions, all10 verbatim types and full
+transitive closure/trust/scope/provenance; exactly one new ledger row. Relevant
+ledger/preservation/hash/type/link/diff/full prompt/stable table checks. Update
+all current statuses, full session closeout/table/immediate delta; publish/merge.
 
-No unsupported classical16-move maximum. No tablebase/oracle/class enumeration
-or stored certificates. Prior frozen sources/records immutable; one main theorem
-per additive module and all main declarations in AxiomCheck. Separate adversarial
-same-agent paper/Lean audits. Gate F is NEW own published-source GitHub clone,
-.lake absent, full build/complete matching runner; record exact commands/exits/
-times/UTC, source/import/executable hashes, clean identity and failures/retries.
-Native official pinned4.35.0/inherited environment; no shim/dependency/TLS changes.
-Gate Z separate. Relevant checks, full stable progress table/immediate delta,
-full installed next prompt, current statuses and session closeout; publish/merge.
-
-Full low-clock arbitrary-history geometry, FIDE rights/key/claim/adjudication
-correspondence and exact WDL/DTZ remain closure obligations. The442/443 bounds
-exceed100 and sufficient73 family is partial. Continue the next direct KRK
-obligation after publication; do not call the high-clock family class closure.
+Return directly to S082 candidate EC-C048: actual winning policies corresponding
+to full finite rule-forcing certificates on every admitted RAW KRK history.
+Exact blocked step: holding duality and certificate recurrences alone do not
+prove an ACTUAL winner policy forces named mate against every move/claim. Define
+winning independently: globally legal total history policy, own ongoing moves
+never select a claim, every opponent ongoing prefix has NO correct current/
+intended claim, every terminal prefix is named mate, and a UNIFORM finite board-
+ply cap prevents vacuous infinite play. Extract a policy preserving full F;
+universal KRK fuel gives its cap. Converse extracts W(B) by induction on actual
+policy horizon B, preserving every opponent child, not by renaming RW. Prove
+bounded actual terminal continuation and mate, including all zero-ply claims.
+This is the smallest direct strategy-soundness gap; exit back to low-clock
+history/geometry and correct distances after it closes. Paper/separate audit
+BEFORE additive Lean and all exact-source gates. No oracle/tablebase/class
+enumeration or stored certificates. Do not claim this generic bridge decides
+the remaining low-clock boards or completes FIDE/WDL/DTZ. Continue until actual
+KRK closure under owner authority; stop before KQK.
