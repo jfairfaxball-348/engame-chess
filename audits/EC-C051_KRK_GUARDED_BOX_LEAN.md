@@ -49,3 +49,6 @@ No sorry/admit/axiom/unsafe/native_decide or external proof token is introduced.
 
 Observed verification and immutable status require the fresh own-source Gate F
 and separate Gate Z records; an incremental build is not either gate.
+
+
+S087 observed Gate F addendum: Own published source `84161c2650b902e98f37252532a706ec50f40ed4`; NEW GitHub clone `C:\engame-checkouts\s087-gate-f`, .lake absent before full214-job build exit0 in371.031s. Complete395-report runner exit0 at2026-10-21T11:36:01Z, full working/clean runner and published source bytes match; standard-three axioms only. Gate Z pending; hosted CI unobserved.

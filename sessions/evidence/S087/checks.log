@@ -1,0 +1,20 @@
+$ python -m unittest discover -s tests -p test_validate_ledger.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.024s
+
+OK
+
+$ python scripts/validate_ledger.py
+LEDGER VALID: 46 frozen theorem(s) (structure only)
+
+$ git diff --check
+warning: in the working copy of 'NEXT_SESSION.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'audits/EC-C051_KRK_GUARDED_BOX_LEAN.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/KRK_COMPLETION.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/SESSION_PROGRESS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'proofs/EC-C050_KRK_GLOBAL_GEOMETRY_ATTACK.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'proofs/EC-C051_KRK_GUARDED_BOX_PHASE.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'research/CANDIDATES.md', LF will be replaced by CRLF the next time Git touches it
+
+PASS: 971 prior source/config/frozen/ledger files unchanged as canonical Git bytes.46 ledger rows unchanged; six own-source modules/five exact main types/395 reports; selected diagnostics57 nodes/261 weak edges and16-ply cycle; original runtime source hashes match published LF/CRLF encodings; full table/delta/prompt/local links/diff passed.

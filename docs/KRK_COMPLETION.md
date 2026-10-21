@@ -6,6 +6,21 @@ Owner direction, 2026-10-20: KRK closure is the research priority across as many
 sessions as needed. Owner explicitly resumed on 2026-10-21: run the next session
 and keep going until KRK is closed. Stop before KQK.
 
+## S087 direct geometry advance — KRK NOT CLOSED
+
+EC-C051 has passed its own-source Gate F; separate Gate Z is pending. The actual
+normalized guarded NE phase contracts widths5/6 within at most8 plies, including
+all crossing replies and two paid escort pairs. Both endpoint costs decrease
+8*large-side-excess. A fixed16-ply kernel cycle refutes its naive width4 extension.
+Five main declarations/six complete modules; older frozen sources unchanged.
+
+The repeated/reflected/axis <=32-ply result reaches a guarded <=4x4 box on PAPER
+only; it is neither a newly formalised theorem nor a mate bound. Entry from
+arbitrary KRK, an actual small-box mating finish and their combined global budget
+remain unproved. This phase fills one explicit EC-C050 geometric step; it does
+not close the global95/sub100 claim, all-history outcomes, full FIDE or exact
+global WDL/DTZ. No class completion follows from theorem counts.
+
 ## Live closure audit after S086 — KRK NOT CLOSED
 
 Owner's continue-until-closure direction persists. No publication/merge changes

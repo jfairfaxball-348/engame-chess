@@ -141,3 +141,16 @@ is partial; actual strategy equivalences and termination do not evaluate all
 remaining low-clock histories or establish full FIDE/global exact WDL/DTZ.
 The next substantive obligation is the explicit safe nonstalemating geometric
 phase/potential statement above, not another generic bookkeeping lemma.
+
+
+## S087 substantive phase advance
+
+[EC-C051](EC-C051_KRK_GUARDED_BOX_PHASE.md) supplies an actual guarded NE
+width5/6 phase within8 plies with all weak replies, paid crossing escort and
+closed endpoint cost inequalities; own-source Gate F passed. A fixed16-ply
+kernel cycle shows why blindly extending that phase to width4 fails. The paper
+repeated/reflected <=32-ply corollary ends at a small guarded box and is NOT
+a newly formalised result or a mate bound. Arbitrary guarded entry, small-box
+mating finish and an integrated global sub100 budget remain unproved.
+Thus the principal EC-C050 claim remains PROPOSED/open; this is partial direct
+geometry progress, not full outcome/FIDE/distance closure.
