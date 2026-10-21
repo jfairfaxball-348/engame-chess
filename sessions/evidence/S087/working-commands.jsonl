@@ -1,0 +1,2 @@
+{"args": ["lake", "build"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 0.828, "finished_utc": "2026-10-21T11:28:19.047177+00:00", "logfile": "working-001.log"}
+{"args": ["lake", "env", "lean", "AxiomCheck.lean"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 1.031, "finished_utc": "2026-10-21T11:28:20.172305+00:00", "logfile": "working-002.log"}

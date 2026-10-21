@@ -1,0 +1,221 @@
+{
+  "scope": "SIX disclosed local guarded-box phase trees, all weak replies for <=8 plies; supplementary only",
+  "results": [
+    {
+      "a": 1,
+      "b": 1,
+      "weak": [
+        2,
+        2
+      ],
+      "weak_nodes": 20,
+      "weak_edges": 89,
+      "right_leaves": 11,
+      "left_leaves": 59,
+      "max_plies": 8
+    },
+    {
+      "a": 2,
+      "b": 3,
+      "weak": [
+        3,
+        4
+      ],
+      "weak_nodes": 20,
+      "weak_edges": 106,
+      "right_leaves": 11,
+      "left_leaves": 76,
+      "max_plies": 8
+    },
+    {
+      "a": 1,
+      "b": 6,
+      "weak": [
+        2,
+        7
+      ],
+      "weak_nodes": 2,
+      "weak_edges": 2,
+      "right_leaves": 1,
+      "left_leaves": 0,
+      "max_plies": 4
+    },
+    {
+      "a": 2,
+      "b": 6,
+      "weak": [
+        4,
+        7
+      ],
+      "weak_nodes": 5,
+      "weak_edges": 9,
+      "right_leaves": 3,
+      "left_leaves": 2,
+      "max_plies": 8
+    },
+    {
+      "a": 1,
+      "b": 2,
+      "weak": [
+        7,
+        7
+      ],
+      "weak_nodes": 4,
+      "weak_edges": 21,
+      "right_leaves": 18,
+      "left_leaves": 0,
+      "max_plies": 4
+    },
+    {
+      "a": 2,
+      "b": 1,
+      "weak": [
+        6,
+        2
+      ],
+      "weak_nodes": 6,
+      "weak_edges": 34,
+      "right_leaves": 29,
+      "left_leaves": 0,
+      "max_plies": 4
+    }
+  ],
+  "width_four_cycle": [
+    {
+      "side": "W",
+      "kind": "K",
+      "target": [
+        3,
+        2
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "target": [
+        4,
+        5
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "R",
+      "target": [
+        4,
+        3
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "target": [
+        3,
+        4
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "K",
+      "target": [
+        4,
+        2
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "target": [
+        2,
+        4
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "K",
+      "target": [
+        5,
+        2
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "target": [
+        3,
+        4
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "K",
+      "target": [
+        4,
+        2
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "target": [
+        3,
+        5
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "R",
+      "target": [
+        3,
+        3
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "target": [
+        4,
+        4
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "K",
+      "target": [
+        3,
+        2
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "target": [
+        5,
+        4
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "K",
+      "target": [
+        2,
+        2
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "target": [
+        4,
+        4
+      ]
+    }
+  ],
+  "independent_direct_edge_replay": true,
+  "raw_initial_history": "NOT ASSERTED",
+  "class_enumeration": false,
+  "finished_utc": "2026-10-21T11:21:01.001609+00:00",
+  "source_hashes": {
+    "sessions\\evidence\\S087\\guarded_box_diagnostic.py": "e7246e5bc243438109d2e68624adae0a7357c0add2db4c91896c8124e73f77d1",
+    "scripts\\krk_diagnostic.py": "6ba33b07a57d1da49b15d3ddc908f04dfd89f9c8d65990b315867614bfd4bd35"
+  }
+}

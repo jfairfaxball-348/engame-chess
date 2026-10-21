@@ -723,3 +723,15 @@ import EndgameChess
 #check @EndgameChess.Rules.KRKFresh.clock_zero_sub100
 #print axioms EndgameChess.Rules.KRKFresh.clock_zero_axis_wall
 #check @EndgameChess.Rules.KRKFresh.clock_zero_axis_wall
+
+/-! EC-C051: guarded large-box phase; small-box finish remains open. -/
+#print axioms EndgameChess.Rules.krk_box_reply_exists
+#check @EndgameChess.Rules.krk_box_reply_exists
+#print axioms EndgameChess.Rules.krk_box_reply_region
+#check @EndgameChess.Rules.krk_box_reply_region
+#print axioms EndgameChess.Rules.krk_guarded_large_box_phase
+#check @EndgameChess.Rules.krk_guarded_large_box_phase
+#print axioms EndgameChess.Rules.krk_guarded_large_box_cost
+#check @EndgameChess.Rules.krk_guarded_large_box_cost
+#print axioms EndgameChess.Rules.krk_width_four_escort_cycle
+#check @EndgameChess.Rules.krk_width_four_escort_cycle

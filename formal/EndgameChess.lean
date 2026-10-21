@@ -106,3 +106,5 @@ import EndgameChess.Rules.KRKWinning.Equivalence
 import EndgameChess.Rules.KRKWinning.MateExists
 
 import EndgameChess.Rules.KRKFresh.Wall
+
+import EndgameChess.Rules.KRKBox.Cycle
