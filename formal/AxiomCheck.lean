@@ -687,3 +687,21 @@ import EndgameChess
 #check @EndgameChess.Rules.KRKHighClock.strong_high_clock_iff
 #print axioms EndgameChess.Rules.KRKHighClock.high_clock_exact_one
 #check @EndgameChess.Rules.KRKHighClock.high_clock_exact_one
+
+/-! EC-C048: independent actual bounded winning policies and exact certificate bridge. -/
+#print axioms EndgameChess.Rules.KRKWinning.forcing_actions
+#check @EndgameChess.Rules.KRKWinning.forcing_actions
+#print axioms EndgameChess.Rules.KRKWinning.winning_policy
+#check @EndgameChess.Rules.KRKWinning.winning_policy
+#print axioms EndgameChess.Rules.KRKWinning.winning_safety
+#check @EndgameChess.Rules.KRKWinning.winning_safety
+#print axioms EndgameChess.Rules.KRKWinning.actual_win_of_force
+#check @EndgameChess.Rules.KRKWinning.actual_win_of_force
+#print axioms EndgameChess.Rules.KRKWinning.policy_certificate
+#check @EndgameChess.Rules.KRKWinning.policy_certificate
+#print axioms EndgameChess.Rules.KRKWinning.actual_win_iff_force
+#check @EndgameChess.Rules.KRKWinning.actual_win_iff_force
+#print axioms EndgameChess.Rules.KRKWinning.winning_maximal_goal
+#check @EndgameChess.Rules.KRKWinning.winning_maximal_goal
+#print axioms EndgameChess.Rules.KRKWinning.winning_mate_continuation
+#check @EndgameChess.Rules.KRKWinning.winning_mate_continuation

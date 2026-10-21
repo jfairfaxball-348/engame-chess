@@ -101,3 +101,6 @@ import EndgameChess.Rules.KRKHolding.StoppedExists
 
 import EndgameChess.Rules.KRKHighClock.WeakNotForce
 import EndgameChess.Rules.KRKHighClock.Distance
+
+import EndgameChess.Rules.KRKWinning.Equivalence
+import EndgameChess.Rules.KRKWinning.MateExists

@@ -1,0 +1,47 @@
+⚠ [115/143] Replayed EndgameChess.Rules.KRKTermination.Step
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:38: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [119/143] Replayed EndgameChess.Rules.KRKTermination.ClockCap
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:15:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:18:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [140/143] Built EndgameChess.Rules.KRKWinning.MaximalGoal (669ms)
+✖ [141/143] Building EndgameChess.Rules.KRKWinning.Certificate (716ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKWinning\Certificate.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKWinning\Certificate.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKWinning\Certificate.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKWinning\Certificate.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKWinning\Certificate.setup.json --json
+error: EndgameChess/Rules/KRKWinning/Certificate.lean:20:31: Type mismatch
+  value
+has type
+  π root = some t
+but is expected to have type
+  some t = some t
+✔ [143/143] Built EndgameChess.Rules.KRKWinning.MateExists (620ms)
+Some required targets logged failures:
+- EndgameChess.Rules.KRKWinning.Certificate
+error: build failed
