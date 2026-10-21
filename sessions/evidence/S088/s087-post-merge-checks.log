@@ -1,0 +1,14 @@
+$ python -m unittest discover -s tests -p test_validate_ledger.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.015s
+
+OK
+
+$ python scripts/validate_ledger.py
+LEDGER VALID: 46 frozen theorem(s) (structure only)
+
+$ git diff --check
+warning: in the working copy of 'sessions/evidence/S087/checks.log', LF will be replaced by CRLF the next time Git touches it
+
+PASS: 971 prior source/config/frozen/ledger files unchanged as canonical Git bytes.46 ledger rows unchanged; six own-source modules/five exact main types/395 reports; selected diagnostics57 nodes/261 weak edges and16-ply cycle; original runtime source hashes match published LF/CRLF encodings; full table/delta/prompt/local links/diff passed.

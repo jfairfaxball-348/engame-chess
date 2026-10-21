@@ -1,47 +1,48 @@
-# NEXT SESSION — S088: Own-source guarded-box Gate Z, then return to geometry
+# NEXT SESSION — S089: Close the guarded small-box mating phase
 
-Owner2026-10-21: continue consecutive sessions until KRK closure; no inferred
-pause/new approval gate; stop before KQK. Fetch ALL heads/reconcile unmerged
-work/latest main; commit/push branch, ordinary main merge/push and exact remote
-main/session identity comparison. Do not edit frozen sources/records.
+Owner2026-10-21: continue consecutive sessions until KRK is closed, no inferred
+pause or new approval gate. Fetch ALL heads/reconcile unmerged work/latest main;
+commit/push branch, ordinary main merge/push and exact remote identity comparison.
+Stop before KQK; preserve all frozen sources/records.47 frozen bundles.
 
-EC-C051 FORMAL_VERIFIED at OWN published proof source
-84161c2650b902e98f37252532a706ec50f40ed4. S087 fresh Gate F passed214 jobs,
-complete395 permitted axiom/type reports, five main declarations and six complete
-KRKBox modules/private helpers/Definitions. Read full paper and separate paper/
-Lean audits, own Gate F inventories/full runner, and the selected six local
-phase trees plus16-ply counterexample.46 bundles frozen; KRK NOT CLOSED.
+New direct geometry: EC-T0047 freezes OWN source
+84161c2650b902e98f37252532a706ec50f40ed4 after S087 Gate F and S088 separate
+fresh Gate Z,214-job builds and complete395 permitted axiom/type reports.
+Read C051 paper, separate paper/Lean audits, full new modules and exact source
+manifests. The FORMAL result is NORMALIZED NE guarded widths5/6 contraction
+within8 plies with EVERY actual weak reply, both endpoint cost inequalities,
+and a fixed16-ply kernel cycle defeating the naive width4 extension. The paper
+repeated/reflected/axis <=32-ply SMALL-BOX ENTRY corollary is NOT a frozen
+declaration and is NOT mate. No full history symmetry is assumed.
 
-Run a SEPARATE NEW exact-source GitHub clone with .lake absent before full build,
-official pinned native Windows Lean4.35.0/inherited environment. Recheck ALL own
-source and transitive inventories, five exact main types and COMPLETE395-report
-runner against own Gate F. Retain full logs/commands/exits/times/UTC, source/
-import/executable hashes and clean identities/failures. No dependency/shim/TLS/
-checksum changes, incremental substitute, editing source or invented hosted CI.
-Only observed Gate Z permits new immutable EC-T0047 manifest and ONE ledger row.
+Principal EC-C050 global sub100 remains PROPOSED/open. Exact next obligation:
+an actual all-defence mating policy for guarded boxes with both dimensions<=4,
+or another genuine global sub100 strong-arrival strategy. Use a new well-posed
+numeric statement, explicit invariant/potential, rook protection/nonempty and
+nonstalemate conditions, EVERY weak reply and all paid king/rook tempos.
+Guarded normal input S=(a-1,b-1), R=(a,b), W.x>a,W.y>b with3<=a,b<=6;
+reflect/transpose only through proved geometric/kernel interfaces. Need to
+handle the 1x1 corner and width4 crossing/cycle explicitly, not assume monotone
+box shrink. Choose derived cap F, not an unproved classical number. Full
+arbitrary guarded-box entry has separate cost E. Any integrated wall target
+must actually pay entry+large-box phase+finish<=95, or prove another real N<100
+strong-arrival certificate. Do not fill these missing inequalities with a
+generic finite-policy/semantic equivalence or relabel a paper box-entry bound.
 
-Exact formal scope: normalized NE guarded box with widths5/6, every actual weak
-reply, <=8-ply contraction and both endpoint cost inequalities; kernel16-ply
-width4 escort cycle. Both colours/arbitrary flags, ordinary chosen strong moves.
-The paper <=32 repeated/reflected/axis small-box-entry corollary is NOT in the
-new formal declarations. Do not freeze it as a mate or global sub100 result.
+Read S086 failed scalar/amortisation/no-wait controls too. Existing442/443
+remain the global certified ceilings. Strong wall B<=95 would give B+4<=99
+and fresh clock0 RAW coverage; weak B+5=100 at B95 does NOT satisfy N<100.
+The separate complete arbitrary-clock/incoming-history outcome formula, full
+FIDE rights/key/current-and-intended-claim/adjudication correspondence and exact
+global WDL/DTZ conventions/optimality remain OPEN. Partial geometry/high-clock/
+fresh-wall results and47 bundles do not establish material-class closure.
 
-After freezing/publishing S088, continue directly to S089 geometric work under
-the persistent owner instruction. Principal EC-C050 remains PROPOSED/open. Need
-an actual safe <=4x4 guarded-box mating finish AND costed arbitrary guarded-box
-entry, or another genuine global sub100 strong-arrival strategy. The large-box
-phase does not solve these. Blind width4 contraction cycles; blindly shrinking
-one-square boxes stalemates. Specify a genuine all-defence geometric phase,
-rook protection/nonempty replies, legal progress and numeric potential, with
-paper/separate audit BEFORE Lean. No unrelated strategy-bookkeeping detour.
-
-Existing442/443 are the global certified ceilings;95 remains only a sufficient
-wall target. Strong B+4<=99 would enter the fresh clock0 lift; weak B+5=100
-at B95 does NOT satisfy N<100. Complete arbitrary-clock/incoming-history outcomes,
-FIDE rights/key/current-and-intended-claim/adjudication and exact global WDL/DTZ
-remain additional closure obligations. No tablebase/oracle/exhaustive class proof
-or stored position-value certificates. Selected local diagnostics only, scoped.
-
-Full stable progress table/immediate mathematical delta/full next prompt and
-honest session closeout; publish/merge and compare actual remote main. KQK stays
-unexecuted. Keep working toward KRK closure; do not infer closure from a freeze.
+Standalone paper/separate adversarial audit BEFORE Lean. Additive one-main-
+theorem modules/all AxiomCheck entries, actual own published-source NEW clean
+Gate F then SEPARATE NEW Gate Z. Official native pinned4.35.0/inherited environment;
+full logs/commands/exits/times/UTC, source/import/executable hashes, clean identity
+and failures retained. No dependency/shim/TLS/checksum change, proof escape,
+invented hosted CI success, tablebase/oracle/exhaustive class proof or stored
+per-position value certificates. Selected local diagnostics only, explicitly
+scoped. Full stable progress table/immediate mathematical delta/full next prompt
+and honest closeout; publish/merge/check remote main. Continue toward closure.

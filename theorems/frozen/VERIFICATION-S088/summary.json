@@ -1,0 +1,41 @@
+{
+  "proof_source": "84161c2650b902e98f37252532a706ec50f40ed4",
+  "verified_utc": "2026-10-21T11:43:45Z",
+  "fresh_clone": "C:\\engame-checkouts\\s088-gate-z",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 364.266,
+  "build_jobs": 214,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 395,
+  "bundle_declarations": [
+    "EndgameChess.Rules.krk_box_reply_exists",
+    "EndgameChess.Rules.krk_box_reply_region",
+    "EndgameChess.Rules.krk_guarded_large_box_phase",
+    "EndgameChess.Rules.krk_guarded_large_box_cost",
+    "EndgameChess.Rules.krk_width_four_escort_cycle"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.krk_box_reply_exists": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.krk_box_reply_region": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.krk_guarded_large_box_phase": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.krk_guarded_large_box_cost": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.krk_width_four_escort_cycle": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/KRKBox/Cost.lean",
+    "formal/EndgameChess/Rules/KRKBox/Cycle.lean",
+    "formal/EndgameChess/Rules/KRKBox/Definitions.lean",
+    "formal/EndgameChess/Rules/KRKBox/Phase.lean",
+    "formal/EndgameChess/Rules/KRKBox/Region.lean",
+    "formal/EndgameChess/Rules/KRKBox/Reply.lean"
+  ],
+  "dependency_modules": 26,
+  "source_files_hashed": 217,
+  "complete_runner_matches_working": true,
+  "source_matches_published_git_bytes": true,
+  "platform": "official native Windows Lean4.35.0; inherited environment",
+  "hosted_ci": "unobserved",
+  "gate": "Z",
+  "entire_own_gate_f_inventory_and_complete_runner_match": true
+}

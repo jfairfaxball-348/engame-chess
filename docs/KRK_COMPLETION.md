@@ -6,6 +6,13 @@ Owner direction, 2026-10-20: KRK closure is the research priority across as many
 sessions as needed. Owner explicitly resumed on 2026-10-21: run the next session
 and keep going until KRK is closed. Stop before KQK.
 
+## S088 verification update — KRK NOT CLOSED
+
+EC-C051 is now FROZEN as EC-T0047 after separate fresh own-source Gate Z.
+47 bundles; normalized guarded width5/6 phase<=8 plies, both cost inequalities
+and fixed16-ply width4 cycle only. S087 scope limits below remain. The next
+principal geometry target is a safe small-box mating finish and costed entry.
+
 ## S087 direct geometry advance — KRK NOT CLOSED
 
 EC-C051 has passed its own-source Gate F; separate Gate Z is pending. The actual

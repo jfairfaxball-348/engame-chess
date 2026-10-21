@@ -1,0 +1,5 @@
+EndgameChess.Rules.krk_box_reply_exists
+EndgameChess.Rules.krk_box_reply_region
+EndgameChess.Rules.krk_guarded_large_box_phase
+EndgameChess.Rules.krk_guarded_large_box_cost
+EndgameChess.Rules.krk_width_four_escort_cycle
