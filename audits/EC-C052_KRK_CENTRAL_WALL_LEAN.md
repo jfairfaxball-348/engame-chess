@@ -3,7 +3,8 @@
 2026-10-21. Separate same-agent review; no independent external reviewer.
 Scope: ALL29 complete new `KRKCentral` modules, including private `pivot_right`,
 the three shared-definition modules, aggregate import and26 main runner entries.
-Gate F and separate Gate Z are pending at this source checkpoint.
+Final status: FROZEN as EC-T0048; separate own-source Gate F/Z passed.
+Earlier pending-status notes below are chronological.
 
 The theorem is `KRKCentral.wall93`: exact strong-turn Matches, S.y<R.y<W.y,
 MateWithin sigma93. It has no extra ready/central/weak-noncheck/flags premise.
@@ -97,3 +98,11 @@ Own published proof source `2311abe71bc1a4eed47026feccd5ba5a0760d5bb`; NEW GitHu
 The final93/97/98 and explicit clock0 winning criterion are FORMAL_VERIFIED.
 This supersedes pending-F wording in earlier chronological notes; no claim of
 Gate Z, ledger change, positive-clock completeness, FIDE or exact distances.
+
+## S091 separate own-source Gate Z and freeze
+
+Own proof source `2311abe71bc1a4eed47026feccd5ba5a0760d5bb`; separate NEW GitHub clone `C:\engame-checkouts\s091-gate-z`, .lake absent,243-job full build exit0 in367.828s; complete421-report runner exit0 at2026-10-21T13:20:15Z. Entire own Gate F source/import/declaration inventories and full runner match; standard-three axioms only. All29 complete modules/26 main declarations frozen as EC-T0048. Hosted CI unobserved.
+
+[Immutable EC-T0048 manifest](../theorems/frozen/EC-T0048/v1.md) records the
+exact full scope and module boundary. Earlier frozen sources/rows are preserved.
+Positive-clock/history, full FIDE and exact distance obligations remain OPEN.

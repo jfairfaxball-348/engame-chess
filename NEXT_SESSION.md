@@ -1,46 +1,58 @@
-# NEXT SESSION - S091: Freeze the integrated KRK geometry and clock0 criterion
+# NEXT SESSION - S092: Complete the positive-clock/history KRK outcome criterion
 
-Owner2026-10-21: continue until KRK is closed. Session boundaries are checkpoints,
-not stopping instructions. Apply AGENTS direct-obligation/necessary-prerequisite
-rules to all targets. No KQK. Fetch/reconcile all heads, preserve frozen sources,
-commit/push branch, ordinary merge/push main and compare final exact refs.
+Owner2026-10-21: continue consecutive KRK sessions until full closure. Apply
+AGENTS direct-obligation/necessary-foundation rules; no KQK and no new approval
+gate. Fetch/reconcile ALL remote heads/latest main. Preserve ALL frozen modules,
+records and ledger prefixes; publish session branch, ordinary merge/push main,
+then fetch and compare exact refs. A checkpoint never pauses the active goal.
 
-EC-C052 is FORMAL_VERIFIED at OWN published source
-2311abe71bc1a4eed47026feccd5ba5a0760d5bb. Read its complete paper, separate
-same-agent paper/Lean audits, all29 KRKCentral modules and full S090 evidence.
-S090 own Gate F: NEW GitHub clone/.lake absent;243-job full build in372.594s,
-421 exact permitted axiom/type reports at2026-10-21T13:11:36Z, complete working/
-clean runner/source bytes match. Earlier95-source verification is separate;
-do NOT freeze a separate weaker95 bundle.47 existing bundles unchanged.
+S091 froze EC-C052 as EC-T0048 at OWN source
+2311abe71bc1a4eed47026feccd5ba5a0760d5bb. Separate new Gate F/Z clones,243-job
+builds and complete421 permitted reports, full source/import/runner identities.
+Gate Z367.828s at2026-10-21T13:20:15Z. All29 complete KRKCentral modules now
+IMMUTABLE.48 frozen bundles. Read full manifest, S090 proof/audits and S091
+records. No additional verification of this unchanged result is an obligation.
 
-Exact integrated scope: all strong-turn strict rank walls MateWithin93, both
-colours/arbitrary flags/every weak reply; every strong legal arrival97; weak
-forcing98 retains ForceMate; actual RAW clock0 wins without incoming count
-premises. Explicit BOTH-turn ActualWin criterion at clock0 is: strong turn OR
-already mate OR safe rook with a legal reply. Actual initial-rooted trace gives
-the strong incoming-edge witness. No compatible history is invented for local
-samples. No full positive-clock/history/FIDE or exact WDL/DTZ claim.
+Certified: all strong-turn strict walls93, strong legal arrivals97, weak
+forcing98 retaining its premise; BOTH budgets<100. On EVERY admitted RAW KRK
+clock0 state, BOTH turns, the independent actual strong winning criterion is:
+strong turn OR already mate OR safe rook with a legal reply. Actual initial-
+rooted traces supply strong arrival compatibility. No incoming count condition.
+This settles the whole clock-safe geometry and clock0 subdomain, not positive
+clocks/full incoming histories, FIDE correspondence or exact minimax/WDL-DTZ.
 
-Next required step is SEPARATE fresh OWN-source Gate Z. Run:
-python sessions/evidence/S091/verify.py C:/engame-checkouts/s091-gate-z
-It guards on observed final Gate F, uses NEW GitHub clone/.lake absent and
-compares entire source/import/declaration inventories and complete runner with
-S090 gate-f93. Keep all failures, exact commands/exits/time/UTC and executable/
-source hashes. Then and ONLY then create EC-T0048 manifest for ALL29 COMPLETE
-modules/26 main declarations at the above proof SHA and append one ledger row.
-Inspect exact scope, definitions/private helper, axioms, inventories and clean
-identity; never edit an old frozen source/manifest/row. Hosted CI unobserved
-unless its actual jobs are inspected. Gate F/Z are required evidence, not
-additional mathematical scope or material-class completion.
+Highest-priority exact missing claim: a compact, explicitly evaluated actual
+win/draw/strategy criterion on EVERY admitted positive-clock KRK history, both
+turns/colours, retaining terminal states, optional/current/intended claims,
+legal captures to KK, and original incoming history. State its necessary FIDE
+board/correct-claim correspondence and exact distance convention boundaries.
+Read research/KRK_POSITIVE_CLOCK_FRONTIER.md and the live closure/spec/charter.
+No rename of W, bounded minimax recurrence, generic policy equivalence, stored
+position values, per-position certificates or class enumeration counts as the
+required compact characterisation. A nonoptimal policy failure is not a draw.
 
-After freeze/records/table/publishing, continue immediately to the highest
-remaining direct KRK obligation: complete positive-clock/incoming-history
-outcomes, with necessary FIDE correspondence and exact WDL/DTZ. The general
-W/policy equivalence and a nonoptimal geometric cap do not evaluate this domain.
-State the exact full-domain missing claim and chosen direct route before work;
-no isolated corner/example, generic library or another lemma-count milestone.
-Foundations require a named necessary step and smallest scope. Preserve UNKNOWN.
-No tablebases, engine oracles, exhaustive class proof or per-position values.
+Chosen direct research route to investigate: separate incoming-key claim
+barriers and remaining-clock constraints from geometric minimum mating costs;
+derive explicit geometric regions with matching ALL-strong-move defender lower
+bounds. This is not yet a proved reduction. A key-simple future policy does
+not control incoming repeats; strong may decline its own claim; weak intended
+claims can involve a strong-turn child. Rook-capture/stalemate and mate precedence
+remain. Any proposed formula must survive those cases on actual admitted
+histories; do not invent compatible prefixes for coordinate samples.
 
-Full stable progress table, immediate obligation delta and this full prompt
-must appear in closeout. Publishing and freezing do not pause the active goal.
+No new foundation or isolated case is admitted by this prompt. Derive the
+full-domain criterion on paper first. If a named necessary step blocks it,
+record exact smallest statement, why existing frozen results fail, its concrete
+use and immediate return criterion BEFORE starting its proof. Do not choose
+another faster sufficient bound, terminal example or isolated exact optimum as
+an easier agenda. Prior analytic-source triage found a special-root optimum,
+not an arbitrary-history solution; general rectangular conjectures are not proofs.
+Continue another direct route if this one fails; preserve OPEN/UNKNOWN honestly.
+
+Full FIDE and exact global distances remain closure requirements. A required
+full-domain FIDE bridge may be a direct step if its necessity to the criterion
+is made explicit; generic histories/key libraries are not automatic prerequisites.
+Standalone paper/separate audit BEFORE Lean; one main/module and AxiomCheck;
+new OWN-source Gate F and separate Gate Z only for genuinely new proved claims.
+No tablebases/engine oracles/exhaustive class proof. Full stable progress table,
+immediate obligation movement and this full next prompt in closeout. Continue.

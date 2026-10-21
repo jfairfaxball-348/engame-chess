@@ -2,6 +2,15 @@
 
 Current owner direction (2026-10-21): resume consecutive KRK sessions until closure, superseding the S076 pause. Stop before KQK.
 
+## S091 current evidence
+
+EC-T0048 freezes the all-defence wall93/strong-arrival97/weak-forcing98 bounds
+and the explicit BOTH-turn actual RAW clock0 winning criterion. The global
+clock-safe geometry gap is certified. Complete positive-clock/incoming-history
+outcomes, necessary full FIDE correspondence and exact global WDL/DTZ remain
+OPEN.48 bundles are not48 solved classes. Continue the direct KRK frontier in
+[KRK_COMPLETION](KRK_COMPLETION.md); do not start KQK.
+
 ## Current priority — direct KRK closure (planning update, 2026-10-20)
 
 Follow the [short-term KRK closure roadmap](KRK_COMPLETION.md): quantitative

@@ -1,0 +1,22 @@
+$ python -m unittest discover -s tests -p test_validate_ledger.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.024s
+
+OK
+
+$ python scripts/validate_ledger.py
+LEDGER VALID: 48 frozen theorem(s) (structure only)
+
+$ git diff --check
+warning: in the working copy of 'NEXT_SESSION.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'audits/EC-C052_KRK_CENTRAL_WALL_LEAN.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'audits/EC-C052_KRK_CENTRAL_WALL_PAPER.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/KRK_COMPLETION.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/ROADMAP.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/SESSION_PROGRESS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'proofs/EC-C052_KRK_CENTRAL_WALL_95.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'research/CANDIDATES.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'theorems/LEDGER.csv', LF will be replaced by CRLF the next time Git touches it
+
+PASS: separate own-source Gate Z243 jobs/421 reports; entire Gate F inventories/runner match.29 complete modules/26 exact types frozen as EC-T0048. 1024 prior COMPLETE formal/frozen files unchanged; old47-row ledger prefix retained plus exactly one48th row. Full stable table, next prompt, links and diff pass. KRK NOT CLOSED.

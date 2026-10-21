@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S090. Forty-seven theorem bundles are frozen. Wall93, arrivals97/98 and the complete BOTH-turn RAW clock0 winning criterion are formally verified at their own published source; separate Gate Z is pending. Bundles are not solved material classes.
+Current mathematical evidence: through S091. Forty-eight theorem bundles are frozen, including EC-T0048: whole-wall93, arrivals97/98 and the explicit BOTH-turn RAW clock0 winning criterion. Bundles are not solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Earlier dead/live, forcing and partial RAW results frozen; wall93, arrivals97/98 and BOTH-turn clock0 RAW winning criterion formally verified; freeze pending | Immediate: freeze the verified integrated result; then complete positive-clock/history outcomes, full FIDE correspondence and global exact WDL/DTZ |
+| K+R vs K | Earlier dead/live, forcing and partial RAW results frozen; wall93, arrivals97/98 and BOTH-turn clock0 RAW winning criterion frozen | Immediate: complete positive-clock/incoming-history outcomes, full FIDE correspondence and global exact WDL/DTZ |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S090. Forty-seven theorem bundles are fro
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S090 proves and formally verifies the WHOLE wall93/arrivals97-98 route and explicit BOTH-turn actual RAW clock0 winning criterion. The global clock-safe geometry gap is discharged at Gate F, and the clock0 outcome subdomain is covered; freeze remains. Positive-clock/history classification, full FIDE and exact WDL/DTZ remain OPEN.47 bundles frozen; KRK NOT CLOSED.
+Session change: S091 freezes the complete S090 geometry/clock0 result as EC-T0048 after a separate fresh own-source Gate Z. No mathematical scope beyond S090 is added. Positive-clock/incoming-history classification, full FIDE correspondence and exact WDL/DTZ remain OPEN;48 bundles frozen; KRK NOT CLOSED.
 
 S090 owner-directed rules update: the direct-obligation/necessary-prerequisite
 rule now applies to every research target. This is governance work and changes
@@ -26,10 +26,10 @@ no mathematical claim. KRK research continues under the existing instruction.
 
 ### Movement of the current target's direct obligations
 
-| Closure obligation | Current coverage | Actual movement during S090 |
+| Closure obligation | Current coverage | Actual movement through S091 |
 |---|---|---|
-| Global clock-safe geometry | Wall93/arrivals97-98 formally verified; freeze pending | Whole geometry obligation closed at OWN Gate F; separate fresh Gate Z pending |
-| Complete rule-aware outcomes | High-clock tests frozen; explicit BOTH-turn clock0 winning criterion formally verified | Clock0 subdomain newly covered; positive-clock/incoming-history classification still OPEN |
+| Global clock-safe geometry | Wall93/arrivals97-98 frozen as EC-T0048 | Whole geometry obligation certified at OWN Gate F/Z; no new scope in S091 |
+| Complete rule-aware outcomes | High-clock tests frozen; explicit BOTH-turn clock0 winning criterion frozen | Clock0 subdomain newly covered; positive-clock/incoming-history classification still OPEN |
 | Full FIDE correspondence | Partial kernel/history/key/claim interfaces | Full correspondence still OPEN; headline gap unchanged |
 | Exact global distances/WDL-DTZ | Partial one-ply optimality and nonoptimal upper bounds | Global optimality/convention coverage still OPEN; headline gap unchanged |
 

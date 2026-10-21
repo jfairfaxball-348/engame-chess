@@ -1,7 +1,7 @@
 # EC-C052 — Centralised all-defence KRK wall strategy, candidate95 ceiling strengthened to93
 
-S090,2026-10-21. LOCAL_VERIFIED on paper after the separate same-agent audit;
-Lean, own-source Gate F and separate Gate Z remain pending.
+S090-S091,2026-10-21. FROZEN as EC-T0048 after separate own-source Gate F/Z.
+Earlier pending-status notes below are chronological; this is the current status.
 Classical king/rook confinement and centralisation; no novelty claim. No
 tablebase, engine oracle, class enumeration or stored position values. This
 attacks EC-C050's WHOLE wall obligation, not an isolated family or library goal.
@@ -313,3 +313,11 @@ Own published proof source `2311abe71bc1a4eed47026feccd5ba5a0760d5bb`; NEW GitHu
 The final93/97/98 and explicit clock0 winning criterion are FORMAL_VERIFIED.
 This supersedes pending-F wording in earlier chronological notes; no claim of
 Gate Z, ledger change, positive-clock completeness, FIDE or exact distances.
+
+## S091 separate own-source Gate Z and freeze
+
+Own proof source `2311abe71bc1a4eed47026feccd5ba5a0760d5bb`; separate NEW GitHub clone `C:\engame-checkouts\s091-gate-z`, .lake absent,243-job full build exit0 in367.828s; complete421-report runner exit0 at2026-10-21T13:20:15Z. Entire own Gate F source/import/declaration inventories and full runner match; standard-three axioms only. All29 complete modules/26 main declarations frozen as EC-T0048. Hosted CI unobserved.
+
+[Immutable EC-T0048 manifest](../theorems/frozen/EC-T0048/v1.md) records the
+exact full scope and module boundary. Earlier frozen sources/rows are preserved.
+Positive-clock/history, full FIDE and exact distance obligations remain OPEN.

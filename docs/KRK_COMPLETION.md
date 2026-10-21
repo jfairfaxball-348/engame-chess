@@ -6,6 +6,20 @@ Owner direction, 2026-10-20: KRK closure is the research priority across as many
 sessions as needed. Owner explicitly resumed on 2026-10-21: run the next session
 and keep going until KRK is closed. Stop before KQK.
 
+## S091 freeze complete - KRK NOT CLOSED
+
+EC-C052 is now FROZEN as EC-T0048 at its own exact proof source. The complete
+wall93/arrivals97-98 and BOTH-turn actual RAW clock0 winning criterion are
+certified;48 bundles are not48 solved classes. No additional mathematical
+scope is claimed for this verification session.
+
+Own proof source `2311abe71bc1a4eed47026feccd5ba5a0760d5bb`; separate NEW GitHub clone `C:\engame-checkouts\s091-gate-z`, .lake absent,243-job full build exit0 in367.828s; complete421-report runner exit0 at2026-10-21T13:20:15Z. Entire own Gate F source/import/declaration inventories and full runner match; standard-three axioms only. All29 complete modules/26 main declarations frozen as EC-T0048. Hosted CI unobserved.
+
+Immediate direct gap: complete positive-clock/incoming-history outcomes, with
+necessary full FIDE correspondence and exact global distances/WDL-DTZ. See
+[the exact frontier](../research/KRK_POSITIVE_CLOCK_FRONTIER.md). Do not replace
+that gap with another conditional sufficient family or isolated optimum.
+
 ## S090 whole geometry and clock0 winning criterion FORMAL_VERIFIED
 
 EC-C052 now proves all-wall93, strong legal arrivals97 and weak forcing98, both
