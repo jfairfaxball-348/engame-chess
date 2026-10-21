@@ -1,0 +1,8 @@
+EndgameChess.Rules.KRKWinning.forcing_actions
+EndgameChess.Rules.KRKWinning.winning_policy
+EndgameChess.Rules.KRKWinning.winning_safety
+EndgameChess.Rules.KRKWinning.actual_win_of_force
+EndgameChess.Rules.KRKWinning.policy_certificate
+EndgameChess.Rules.KRKWinning.actual_win_iff_force
+EndgameChess.Rules.KRKWinning.winning_maximal_goal
+EndgameChess.Rules.KRKWinning.winning_mate_continuation

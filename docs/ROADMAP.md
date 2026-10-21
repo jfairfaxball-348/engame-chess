@@ -123,3 +123,5 @@ S079 froze actual all-history RAW KRK holding duality and bounded stopped policy
 S080 formally verified universal strong RAW holding/weak nonforcing, exact ongoing high-clock criteria (weak h>=99; strong h>=98 iff immediate mate), and exact one-ply budget on those wins.43 bundles remain frozen; low-clock geometry, actual winning-policy bridge, full FIDE and global WDL/DTZ remain open. [Paper](../proofs/EC-C047_KRK_HIGH_CLOCK.md).
 
 S081 froze universal strong RAW nonloss, exact high-clock forcing criteria and local optimal one-ply budget as EC-T0044;44 bundles. Mathematical coverage unchanged from S080; low-clock geometry, actual winning-policy bridge, full FIDE and global WDL/DTZ remain open. [EC-T0044](../theorems/frozen/EC-T0044/v1.md).
+
+S082 formally verified independent actual bounded winning policies iff full RAW forcing on every admitted KRK history, exact same-B certificate extraction and actual terminal mate continuations.44 bundles frozen; geometric low-clock coverage, full FIDE and global exact WDL/DTZ remain open. [Paper](../proofs/EC-C048_KRK_WINNING_POLICY.md).

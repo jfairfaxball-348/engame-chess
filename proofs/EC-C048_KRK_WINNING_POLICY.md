@@ -129,3 +129,5 @@ finite forcing semantics on ALL admitted KRK histories, and preserves exact B
 in the policy-to-certificate direction. It is not an evaluated low-clock
 geometric outcome formula, full FIDE key/rights/claim/adjudication correspondence,
 global numeric DTM or Syzygy WDL/DTZ parity. Those remain required for KRK closure.
+
+Observed Gate F: OWN source `028364a700afb7d94d13d3b7e7a9ddce628cf5ec`; NEW GitHub clone without .lake, full199-job build exit0 in365.109s; COMPLETE382-report AxiomCheck exit0 at2026-10-21T08:43:51Z. Whole working/clean runner and exact published Git source bytes match. All8 main types/9 complete modules and imports inspected. Official native Windows Lean4.35.0; complete source/import/executable hashes, clean HEAD/tree/status, commands/exits/times/UTC retained. No source/dependency/shim/TLS/checksum changes; hosted CI unobserved. Separate Gate Z pending.

@@ -39,3 +39,5 @@ unchanged. All new source additive, no custom axioms or unsafe escapes.
 Low-clock geometric classification, full FIDE correspondence and exact global
 WDL/DTZ remain OPEN. Actual strategy equivalence alone is not class closure.
 Fresh own-source Gate F and separate Gate Z still required; no hosted CI inferred.
+
+Observed Gate F: OWN source `028364a700afb7d94d13d3b7e7a9ddce628cf5ec`; NEW GitHub clone without .lake, full199-job build exit0 in365.109s; COMPLETE382-report AxiomCheck exit0 at2026-10-21T08:43:51Z. Whole working/clean runner and exact published Git source bytes match. All8 main types/9 complete modules and imports inspected. Official native Windows Lean4.35.0; complete source/import/executable hashes, clean HEAD/tree/status, commands/exits/times/UTC retained. No source/dependency/shim/TLS/checksum changes; hosted CI unobserved. Separate Gate Z pending.
