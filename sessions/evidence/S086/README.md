@@ -26,3 +26,6 @@ for this concrete model policy; it does NOT disprove the main optimal95 claim.
 Packaging/ledger/preservation/link/table/prompt checks in checks.log. Full class,
 full FIDE and exact global WDL/DTZ remain open. No mathematical progress beyond
 the existing frozen results is claimed for S086.
+
+Post-merge checkout-only CRLF provenance and mutable candidate-count wording
+repair are documented in post-merge-audit.md; original runtime hashes retained.

@@ -30,6 +30,8 @@ mathematical results. Full low-clock/arbitrary-history outcomes, full FIDE and
 global exact WDL/DTZ remain OPEN; current live checklist in KRK_COMPLETION.
 Publication recorded by Git branch commit/push, ordinary main merge/push and
 exact remote comparison. S087 retains the explicit new geometric phase obligation.
+Post-merge LF/CRLF provenance and packaging-log repair are documented in
+evidence/S086/post-merge-audit.md; original runtime hashes and failures retained.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|

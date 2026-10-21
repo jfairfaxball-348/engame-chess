@@ -1,20 +1,16 @@
 $ python -m unittest discover -s tests -p test_validate_ledger.py
-......
-----------------------------------------------------------------------
-Ran 6 tests in 0.025s
-
-OK
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.016s
+
+OK
 
 $ python scripts/validate_ledger.py
-LEDGER VALID: 46 frozen theorem(s) (structure only)
+LEDGER VALID: 46 frozen theorem(s) (structure only)
 
+Observed checkout-only LF/CRLF variation; original runtime hash retained and matched exact first-publication Git source variant: sessions/evidence/S086/selected_policy.py
 $ git diff --check
-warning: in the working copy of 'NEXT_SESSION.md', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'docs/KRK_COMPLETION.md', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'docs/ROADMAP.md', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'docs/SESSION_PROGRESS.md', LF will be replaced by CRLF the next time Git touches it
 warning: in the working copy of 'research/CANDIDATES.md', LF will be replaced by CRLF the next time Git touches it
-warning: in the working copy of 'sessions/SESSION_LEDGER.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'sessions/evidence/S086/checks.log', LF will be replaced by CRLF the next time Git touches it
 
 PASS: 984 prior formal/theorem/diagnostic-source files unchanged as canonical Git bytes; all46 rows/frozen records preserved, no formal/theorem edits or new Lean. Single109-edge model diagnostic record/source hashes intact; full stable table, explicit unchanged mathematical delta, complete next prompt/links/diff. Packaging and model diagnostic do not prove KRK closure or optimal95.

@@ -1,0 +1,9 @@
+{
+  "command": [
+    "python",
+    "sessions/evidence/S086/check.py"
+  ],
+  "exit": 1,
+  "scope": "packaging only; no proof or diagnostic change",
+  "full_output_log": "$ python -m unittest discover -s tests -p test_validate_ledger.py\r\n......\r\r\n----------------------------------------------------------------------\r\r\nRan 6 tests in 0.015s\r\r\n\r\r\nOK\r\r\n\r\n$ python scripts/validate_ledger.py\r\nLEDGER VALID: 46 frozen theorem(s) (structure only)\r\r\n\r\nObserved checkout-only LF/CRLF variation; original runtime hash retained and matched exact first-publication Git source variant: sessions/evidence/S086/selected_policy.py\r\n$ git diff --check\r\nwarning: in the working copy of 'research/CANDIDATES.md', LF will be replaced by CRLF the next time Git touches it\r\nsessions/evidence/S086/checks.log:4: trailing whitespace.\r\n+Ran 6 tests in 0.015s\r\r\r\n"
+}
