@@ -1,0 +1,10 @@
+EndgameChess.Rules.KRKHighClock.arisen_no_weak_goal
+EndgameChess.Rules.KRKHighClock.good_step
+EndgameChess.Rules.KRKHighClock.good_no_weak_goal
+EndgameChess.Rules.KRKHighClock.strong_hold
+EndgameChess.Rules.KRKHighClock.weak_not_force
+EndgameChess.Rules.KRKHighClock.terminal_force_iff_goal
+EndgameChess.Rules.KRKHighClock.winning_child_quiet
+EndgameChess.Rules.KRKHighClock.weak_high_clock_not_force
+EndgameChess.Rules.KRKHighClock.strong_high_clock_iff
+EndgameChess.Rules.KRKHighClock.high_clock_exact_one

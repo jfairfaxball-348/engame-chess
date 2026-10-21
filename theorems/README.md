@@ -91,3 +91,5 @@ S039: [EC-T0023](frozen/EC-T0023/v1.md) freezes raw multi-step clock growth on a
 - [EC-T0042](frozen/EC-T0042/v1.md): universal admitted RAW KRK termination, every legal move/all flags/both turns; own S076 source, separate native Windows S077 Gate Z. [Evidence](frozen/VERIFICATION-S077/summary.json).
 
 - [EC-T0043](frozen/EC-T0043/v1.md): genuine actual all-history RAW KRK holding/nonforcing duality, full legal policies and bounded stopped play. [Own-source S079 Gate Z](frozen/VERIFICATION-S079/README.md).
+
+- [EC-T0044](frozen/EC-T0044/v1.md): universal actual strong holding and weak nonforcing, exact high-clock RAW forcing criteria, exact one-ply optimal budget on those wins. [Separate own-source S081 Gate Z](frozen/VERIFICATION-S081/README.md).
