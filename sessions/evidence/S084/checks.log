@@ -1,0 +1,23 @@
+$ python -m unittest discover -s tests -p test_validate_ledger.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.023s
+
+OK
+
+$ python scripts/validate_ledger.py
+LEDGER VALID: 45 frozen theorem(s) (structure only)
+
+$ git diff --check
+warning: in the working copy of 'NEXT_SESSION.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'audits/EC-C049_KRK_FRESH_HISTORY_LEAN.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/KRK_COMPLETION.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/ROADMAP.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/SESSION_PROGRESS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'proofs/EC-C049_KRK_FRESH_HISTORY.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'research/CANDIDATES.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'sessions/SESSION_LEDGER.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'sessions/evidence/S084/README.md', LF will be replaced by CRLF the next time Git touches it
+
+PASS: 944 prior source/config/frozen/ledger files preserved as canonical Git bytes using one git cat-file batch; only aggregate importer/runner changed.45 rows unchanged; observed390 permitted reports/9 complete modules/8 main types; no forbidden proof tokens; stable table/immediate delta/full prompt; local links/diff. Packaging checks add no mathematical claims.

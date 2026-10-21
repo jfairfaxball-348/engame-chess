@@ -39,3 +39,5 @@ no statement weakened. Earlier frozen deprecation warnings unchanged. This is
 new partial RAW input coverage, not full low-clock KRK, full FIDE or global exact
 DTM/WDL/DTZ.73 is an upper bound. No oracle/tablebase/enumeration/certificates.
 Fresh own-source Gate F and separate Gate Z required; no hosted CI inferred.
+
+Observed Gate F: OWN source `2469238e2ec6a9aa39c157923c7a03165be48307`; NEW GitHub clone without .lake, full208-job build exit0 in370.859s; COMPLETE390-report runner exit0 at2026-10-21T09:06:45Z. Whole working/clean runner and exact published Git source bytes match. All8 main types/9 complete modules/imports inspected. Official native Windows Lean4.35.0; source/import/executable hashes, commands/exits/times/UTC, clean HEAD/tree/status retained. No source/dependency/shim/TLS/checksum changes; hosted CI unobserved. Separate Gate Z pending.

@@ -1,0 +1,8 @@
+EndgameChess.Rules.KRKFresh.key_material
+EndgameChess.Rules.KRKFresh.prefix_region
+EndgameChess.Rules.KRKFresh.clock_zero_counts
+EndgameChess.Rules.KRKFresh.winning_move_material
+EndgameChess.Rules.KRKFresh.restricted_append
+EndgameChess.Rules.KRKFresh.restricted_lifting
+EndgameChess.Rules.KRKFresh.clock_zero_sub100
+EndgameChess.Rules.KRKFresh.clock_zero_axis_wall

@@ -137,3 +137,5 @@ This is constructive proof-based coverage of the declared family. It supplies
 an upper bound73, not optimal DTM or DTZ. No numerical universal sub100 maximum,
 full low-clock arbitrary-board classification, FIDE correspondence, global
 distance or class closure follows. Continue those direct obligations afterward.
+
+Observed Gate F: OWN source `2469238e2ec6a9aa39c157923c7a03165be48307`; NEW GitHub clone without .lake, full208-job build exit0 in370.859s; COMPLETE390-report runner exit0 at2026-10-21T09:06:45Z. Whole working/clean runner and exact published Git source bytes match. All8 main types/9 complete modules/imports inspected. Official native Windows Lean4.35.0; source/import/executable hashes, commands/exits/times/UTC, clean HEAD/tree/status retained. No source/dependency/shim/TLS/checksum changes; hosted CI unobserved. Separate Gate Z pending.
