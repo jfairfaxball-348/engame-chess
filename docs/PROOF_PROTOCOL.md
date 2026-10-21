@@ -1,5 +1,36 @@
 # Protocol — propose, prove, formalise, freeze
 
+## Admission: direct obligation before new research
+
+Apply the [repository-wide direct-obligation rule](../AGENTS.md) for the active
+target, including future targets after KRK. Before new research or formalisation,
+put this short admission record in the session document or linked proof:
+
+- **Target and priority:** the active material class and highest-priority open
+  closure obligation being attacked.
+- **Exact gap:** the missing quantified statement, input domain and criterion
+  that would close or materially narrow that obligation.
+- **Direct contribution:** the proposed work's role in that proof and the
+  outcome/distance coverage or quantitative improvement it would establish.
+- **Necessity, if foundational:** the named blocked proof step, smallest needed
+  lemma, why existing results fail, and its explicit use in the chosen direct
+  route. General usefulness alone does not admit a prerequisite.
+- **Return criterion:** when the prerequisite/local case/diagnostic ends and
+  the direct proof resumes. Further prerequisite work needs its own necessity
+  record; no automatic library-building sequence.
+
+Do not replace a hard quantified obligation with isolated examples, generic
+equivalences, reusable infrastructure or theorem-count milestones. Necessary
+foundations and necessary cases are allowed, with the above dependency made
+concrete. Required proof and verification gates remain mandatory for admitted
+results; passing a gate does not itself advance material-class coverage.
+
+At closeout, compare the actual result with this admission record. Name each
+closure obligation closed, narrowed or unchanged and distinguish supporting
+work from newly covered inputs. The chart must expose the immediate blocker;
+unchanged headline gaps must be reported as unchanged. Owner-directed governance
+or tooling is recorded separately and creates no mathematical claim.
+
 ## Gate P: proposed
 Record a theorem candidate with unique ID, exact board/rules assumptions, quantifier order, precise result type and known counterexample risks. Status `PROPOSED`. No theorem-ledger row is required for a candidate: use `research/CANDIDATES.md`.
 
@@ -58,5 +89,14 @@ If the migration needs Lean source edits to frozen modules (e.g. the module-syst
 
 ## Session closeout
 Each session must record: changes and links; proven, conjectured, computationally tested and blocked findings separately; checks actually run (or 'not run'); exact commit/tree state; ledger effect; and full text of the installed next session prompt. Never imply that a remote CI job passed just because a workflow file was committed.
+
+Closeout is a checkpoint, not a pause. An owner instruction to continue until
+the active target closes persists across sessions, commits, merges, freezes and
+handoffs. Complete these records and continue the next necessary direct step;
+do not end the run solely because a milestone finished. Preserve open proof
+status honestly. Only actual closure, an explicit owner stop/scope change or a
+concrete unavailable-input/external-action dependency supplies a stopping reason;
+continue independent authorised direct work where possible. No new approval
+gate is implied by an unfinished proof or a session boundary.
 
 **Required progress table (owner instruction, 2026-10-19):** update [SESSION_PROGRESS.md](SESSION_PROGRESS.md) and reproduce its table in the written closeout and the final reply to the owner, including sessions with no mathematical change. Keep its columns and baseline rows in order, from K vs K through every material-size stage, with full Syzygy parity last. Preserve the distinction between frozen results, formal verification, partial coverage and open work. Follow the table with one sentence describing this session's change, or stating that mathematical progress is unchanged. The table is a reporting summary, not a theorem certificate or a substitute for Gates F/Z.

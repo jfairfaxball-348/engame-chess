@@ -1,5 +1,13 @@
 # NEXT SESSION — S090: Finish the actual guarded small-box mating strategy
 
+Owner clarification during S090 (2026-10-21): apply the repository-wide direct-
+obligation rule in AGENTS.md and the admission record in PROOF_PROTOCOL.md.
+This applies to KRK and every later active target. Foundations require necessity
+for a named step of the chosen direct proof, not general usefulness. The present
+owner-directed rules/reporting edit is governance work, with no mathematical
+progress claimed. Continue the direct whole-family geometric obligation after
+publishing it; do not end the run at this edit or another session milestone.
+
 Owner2026-10-21: continue consecutive KRK sessions until closure; no inferred
 pause/new approval gate; stop before KQK. Fetch ALL heads/reconcile unmerged
 work/latest main; commit/push branch, ordinary main merge/push and exact remote
