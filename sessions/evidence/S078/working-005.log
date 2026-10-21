@@ -1,0 +1,58 @@
+⚠ [150/179] Replayed EndgameChess.Rules.KRKTermination.Step
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:38: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [152/179] Replayed EndgameChess.Rules.KRKTermination.ClockCap
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:15:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:18:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✖ [175/179] Building EndgameChess.Rules.KRKHolding.Maximal (768ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKHolding\Maximal.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKHolding\Maximal.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKHolding\Maximal.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKHolding\Maximal.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKHolding\Maximal.setup.json --json
+error: EndgameChess/Rules/KRKHolding/Maximal.lean:16:37: Application type mismatch: The argument
+  value
+has type
+  π s = none
+but is expected to have type
+  none = none
+in the application
+  And.intro value
+✖ [176/179] Building EndgameChess.Rules.KRKHolding.PathBound (745ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKHolding\PathBound.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKHolding\PathBound.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKHolding\PathBound.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKHolding\PathBound.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKHolding\PathBound.setup.json --json
+error: EndgameChess/Rules/KRKHolding/PathBound.lean:12:43: Application type mismatch: The argument
+  ih
+has type
+  Region σ u✝ → Path n✝ u✝ t✝
+but is expected to have type
+  Path n✝ u✝ t✝
+in the application
+  Path.cons edge ih
+Some required targets logged failures:
+- EndgameChess.Rules.KRKHolding.Maximal
+- EndgameChess.Rules.KRKHolding.PathBound
+error: build failed

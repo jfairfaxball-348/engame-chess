@@ -1,0 +1,73 @@
+⚠ [115/127] Replayed EndgameChess.Rules.KRKTermination.Step
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:38: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [119/127] Replayed EndgameChess.Rules.KRKTermination.ClockCap
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:15:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:18:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✖ [123/127] Building EndgameChess.Rules.KRKHolding.Choice (756ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKHolding\Choice.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKHolding\Choice.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKHolding\Choice.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKHolding\Choice.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKHolding\Choice.setup.json --json
+error: EndgameChess/Rules/KRKHolding/Choice.lean:20:7: unknown tactic
+error: EndgameChess/Rules/KRKHolding/Choice.lean:18:49: unsolved goals
+σ c : Colour
+s : State
+region : Region σ s
+notWin : ¬F c.opp s
+ongoing : Ongoing s
+turn : (erase s).turn = c
+noClaim : ¬CanClaim s
+noChild : ¬∃ t, BoardStep s t ∧ ¬F c.opp t
+t : State
+edge : BoardStep s t
+⊢ F c.opp t
+error: EndgameChess/Rules/KRKHolding/Choice.lean:15:2: unsolved goals
+case right
+σ c : Colour
+s : State
+region : Region σ s
+notWin : ¬F c.opp s
+ongoing : Ongoing s
+turn : (erase s).turn = c
+noClaim : ¬CanClaim s
+noChild : ¬∃ t, BoardStep s t ∧ ¬F c.opp t
+all : ∀ (t : State), BoardStep s t → F c.opp t
+⊢ False
+✖ [126/127] Building EndgameChess.Rules.KRKHolding.Converse (777ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKHolding\Converse.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKHolding\Converse.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKHolding\Converse.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKHolding\Converse.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKHolding\Converse.setup.json --json
+error: EndgameChess/Rules/KRKHolding/Converse.lean:23:46: Type mismatch: After simplification, term
+  turn
+ has type
+  @Eq Colour (layer.erase s).turn c
+but is expected to have type
+  @Eq Colour (erase s).turn c
+Some required targets logged failures:
+- EndgameChess.Rules.KRKHolding.Choice
+- EndgameChess.Rules.KRKHolding.Converse
+error: build failed

@@ -643,3 +643,25 @@ import EndgameChess
 #check @EndgameChess.Rules.KRKTermination.maximal_iff_terminal
 #print axioms EndgameChess.Rules.KRKTermination.terminal_continuation
 #check @EndgameChess.Rules.KRKTermination.terminal_continuation
+
+/-! EC-C046: actual all-history RAW KRK holding policies. -/
+#print axioms EndgameChess.Rules.KRKHolding.budget_monotone
+#check @EndgameChess.Rules.KRKHolding.budget_monotone
+#print axioms EndgameChess.Rules.KRKHolding.fuel_saturation
+#check @EndgameChess.Rules.KRKHolding.fuel_saturation
+#print axioms EndgameChess.Rules.KRKHolding.defensive_choice
+#check @EndgameChess.Rules.KRKHolding.defensive_choice
+#print axioms EndgameChess.Rules.KRKHolding.holding_policy
+#check @EndgameChess.Rules.KRKHolding.holding_policy
+#print axioms EndgameChess.Rules.KRKHolding.hold_of_not_force
+#check @EndgameChess.Rules.KRKHolding.hold_of_not_force
+#print axioms EndgameChess.Rules.KRKHolding.not_force_of_hold
+#check @EndgameChess.Rules.KRKHolding.not_force_of_hold
+#print axioms EndgameChess.Rules.KRKHolding.holding_iff_not_force
+#check @EndgameChess.Rules.KRKHolding.holding_iff_not_force
+#print axioms EndgameChess.Rules.KRKHolding.policy_path_bound
+#check @EndgameChess.Rules.KRKHolding.policy_path_bound
+#print axioms EndgameChess.Rules.KRKHolding.policy_maximal_iff_stopped
+#check @EndgameChess.Rules.KRKHolding.policy_maximal_iff_stopped
+#print axioms EndgameChess.Rules.KRKHolding.stopped_continuation
+#check @EndgameChess.Rules.KRKHolding.stopped_continuation

@@ -95,3 +95,6 @@ import EndgameChess.Rules.KRKSetup.SharperWeak
 
 import EndgameChess.Rules.KRKTermination.ClockCap
 import EndgameChess.Rules.KRKTermination.TerminalExists
+
+import EndgameChess.Rules.KRKHolding.Equivalence
+import EndgameChess.Rules.KRKHolding.StoppedExists
