@@ -1,0 +1,104 @@
+[
+  {
+    "args": [
+      "git",
+      "-c",
+      "core.autocrlf=false",
+      "clone",
+      "--no-checkout",
+      "https://github.com/jfairfaxball-348/engame-chess.git",
+      "C:\\tmp\\engame-s077-gate-z"
+    ],
+    "cwd": "C:\\engame-chess",
+    "logfile": "clone.log",
+    "exit": 0,
+    "seconds": 1.625,
+    "started_utc": "2026-10-21T07:44:19.316420+00:00"
+  },
+  {
+    "args": [
+      "git",
+      "config",
+      "core.autocrlf",
+      "false"
+    ],
+    "cwd": "C:\\tmp\\engame-s077-gate-z",
+    "logfile": "clone-config.log",
+    "exit": 0,
+    "seconds": 0.031,
+    "started_utc": "2026-10-21T07:44:20.945101+00:00"
+  },
+  {
+    "args": [
+      "git",
+      "checkout",
+      "--detach",
+      "e7508e103b3515dc138ed21e2ea5d3adda255add"
+    ],
+    "cwd": "C:\\tmp\\engame-s077-gate-z",
+    "logfile": "checkout.log",
+    "exit": 0,
+    "seconds": 0.687,
+    "started_utc": "2026-10-21T07:44:20.981287+00:00"
+  },
+  {
+    "args": [
+      "C:\\Users\\johnf\\.elan\\bin\\lake.EXE",
+      "env",
+      "lean",
+      "--version"
+    ],
+    "cwd": "C:\\tmp\\engame-s077-gate-z\\formal",
+    "logfile": "toolchain.log",
+    "exit": 0,
+    "seconds": 0.171,
+    "started_utc": "2026-10-21T07:44:21.703971+00:00"
+  },
+  {
+    "args": [
+      "C:\\Users\\johnf\\.elan\\bin\\lake.EXE",
+      "--version"
+    ],
+    "cwd": "C:\\tmp\\engame-s077-gate-z\\formal",
+    "logfile": "lake-version.log",
+    "exit": 0,
+    "seconds": 0.094,
+    "started_utc": "2026-10-21T07:44:21.870603+00:00"
+  },
+  {
+    "args": [
+      "C:\\Users\\johnf\\.elan\\bin\\elan.EXE",
+      "which",
+      "lean"
+    ],
+    "cwd": "C:\\tmp\\engame-s077-gate-z\\formal",
+    "logfile": "lean-executable.txt",
+    "exit": 0,
+    "seconds": 0.031,
+    "started_utc": "2026-10-21T07:44:21.967769+00:00"
+  },
+  {
+    "args": [
+      "C:\\Users\\johnf\\.elan\\bin\\lake.EXE",
+      "build"
+    ],
+    "cwd": "C:\\tmp\\engame-s077-gate-z\\formal",
+    "logfile": "lake-build.log",
+    "exit": 0,
+    "seconds": 378.516,
+    "started_utc": "2026-10-21T07:44:22.010333+00:00"
+  },
+  {
+    "args": [
+      "C:\\Users\\johnf\\.elan\\bin\\lake.EXE",
+      "env",
+      "lean",
+      "AxiomCheck.lean"
+    ],
+    "cwd": "C:\\tmp\\engame-s077-gate-z\\formal",
+    "logfile": "axioms-statements.log",
+    "exit": 0,
+    "seconds": 1.062,
+    "started_utc": "2026-10-21T07:50:40.528576+00:00"
+  }
+]

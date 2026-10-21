@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S076.** Forty-one frozen theorem bundles (not forty-one solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S077.** Forty-two frozen theorem bundles (not forty-two solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -152,3 +152,5 @@ S074: EC-C044 global442/443-ply KRK upper bounds FORMAL_VERIFIED via actual para
 S075: [EC-T0040](theorems/frozen/EC-T0040/v1.md) and [EC-T0041](theorems/frozen/EC-T0041/v1.md) freeze sharper73 framed walls/conditional RAW clock family and global442/443 ceilings.41 bundles; full FIDE outcomes/holding/exact distances open. S076 returns to all-branch actual-history clock termination.
 
 S076: EC-C045 FORMAL_VERIFIED. Universal admitted RAW KRK termination formally verified: every ongoing root of clock h has at most150−h board plies, terminal roots0; both turns/colours/all flags/every legal move including castling and terminal rook capture. [Evidence](sessions/evidence/S076/README.md). 41 frozen bundles; Gate Z pending. Complete RAW holding/outcomes, full FIDE correspondence and exact WDL/DTZ remain open. Owner requested STOP after S076; S077 is saved and paused, requiring explicit resumption.
+
+S077: S077 froze universal admitted RAW KRK termination as EC-T0042 after separate own-source Gate Z; 42 bundles. Complete RAW holding/outcomes, full FIDE correspondence and exact WDL/DTZ remain open. Owner resumed consecutive KRK sessions until closure; stop before KQK. [Freeze](theorems/frozen/EC-T0042/v1.md).

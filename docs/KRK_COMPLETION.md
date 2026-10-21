@@ -1,15 +1,18 @@
 # Short-term roadmap: direct attack on KRK closure
 
+Current owner direction (2026-10-21): resume consecutive KRK sessions until closure, superseding the S076 pause. Stop before KQK.
+
 Owner direction, 2026-10-20: KRK closure is the research priority across as many
-sessions as needed. Latest owner instruction: finish S076, then STOP. Further
-sessions require explicit resumption; do not start S077 automatically. Stop before KQK.
+sessions as needed. Owner explicitly resumed on 2026-10-21: run the next session
+and keep going until KRK is closed. Stop before KQK.
 
 ## Evidence and completion standard
 
 KRK dead/live and clock-free forcing classification are frozen. The concrete RAW
 history Layer is frozen as EC-T0036. EC-C039's conditional lifting is formally
 verified at proof source `7155c3424a5e315ea758f916d939b6696e0da261`, awaiting
-Gate Z. There are 41 frozen bundles after S075; material-class coverage is unchanged.
+Gate Z. There are 42 frozen bundles after S077, including universal RAW termination;
+complete material-class coverage remains open.
 
 Closure means complete rule-aware KRK outcomes/strategies and the project's
 specified distance correctness, with all necessary results verified and frozen.
@@ -109,3 +112,5 @@ S074: EC-C044 FORMAL_VERIFIED, [actual parametric setup and global442/443 ceilin
 S075: [EC-T0040](../theorems/frozen/EC-T0040/v1.md) and [EC-T0041](../theorems/frozen/EC-T0041/v1.md) separately freeze sharper73 walls/conditional RAW family and global442/443 actual setup. Direct next obligation is all-flag KRK material/quiet-step and admitted clock-bounded termination toward outcomes/holding. No full FIDE/class/distance closure.
 
 S076: EC-C045 FORMAL_VERIFIED. Universal admitted RAW KRK termination formally verified: every ongoing root of clock h has at most150−h board plies, terminal roots0; both turns/colours/all flags/every legal move including castling and terminal rook capture. [Evidence](../sessions/evidence/S076/README.md). 41 frozen bundles; Gate Z pending. Complete RAW holding/outcomes, full FIDE correspondence and exact WDL/DTZ remain open. Owner requested STOP after S076; S077 is saved and paused, requiring explicit resumption.
+
+S077: S077 froze universal admitted RAW KRK termination as EC-T0042 after separate own-source Gate Z; 42 bundles. Complete RAW holding/outcomes, full FIDE correspondence and exact WDL/DTZ remain open. Owner resumed consecutive KRK sessions until closure; stop before KQK. [EC-T0042](../theorems/frozen/EC-T0042/v1.md). S078 attacks genuine all-history RAW holding policies.

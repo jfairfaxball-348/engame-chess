@@ -139,3 +139,5 @@ S066 planning addendum (2026-10-20): [direct KRK closure roadmap installed](S066
 | S076 | 2026-10-20 | Universal admitted RAW KRK termination (Gate F) | EC-C045 FORMAL_VERIFIED: all moves/turns/flags, potential150−h, terminal roots0, maximal terminal and continuation. Own source `e7508e103b3515dc138ed21e2ea5d3adda255add`; 168-job fresh build/354 permitted reports, 10 declarations/11 modules. [Closeout](S076_KRK_CLOCK_TERMINATION.md). Owner requested STOP; S077 saved/paused | None — 41 frozen bundles; full FIDE/outcomes/holding/exact distance open |
 
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
+
+| S077 | 2026-10-21 | Freeze universal RAW KRK termination (Gate Z) | Separate exact own-source native Windows fresh build and354-report runner; all source/import inventories match. [Closeout](S077_FREEZE_KRK_TERMINATION.md). Continue S078 holding under owner resumption | **+1 -> EC-T0042 FROZEN** (42 bundles); full closure open |

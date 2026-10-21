@@ -87,3 +87,5 @@ S039: [EC-T0023](frozen/EC-T0023/v1.md) freezes raw multi-step clock growth on a
 - [EC-T0041](frozen/EC-T0041/v1.md): actual KRK parametric setup and global442/443 clock-free ceilings, every legal weak reply, all flags/colours, weak result retains forcing premise.
 
 [S075 evidence](frozen/VERIFICATION-S075/README.md): two separate own-source new clone/build/full-runner checks.41 bundles, no full FIDE/class/exact-distance closure.
+
+- [EC-T0042](frozen/EC-T0042/v1.md): universal admitted RAW KRK termination, every legal move/all flags/both turns; own S076 source, separate native Windows S077 Gate Z. [Evidence](frozen/VERIFICATION-S077/summary.json).

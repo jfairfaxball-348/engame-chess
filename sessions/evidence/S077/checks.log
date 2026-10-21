@@ -1,0 +1,22 @@
+$ python -m unittest discover -s tests -p test_validate_ledger.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.043s
+
+OK
+
+$ python scripts/validate_ledger.py
+LEDGER VALID: 42 frozen theorem(s) (structure only)
+
+$ git diff --check
+warning: in the working copy of 'NEXT_SESSION.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/KRK_COMPLETION.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/ROADMAP.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/SESSION_PROGRESS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'research/CANDIDATES.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'sessions/SESSION_LEDGER.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'theorems/LEDGER.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'theorems/README.md', LF will be replaced by CRLF the next time Git touches it
+
+PASS: 842 prior formal/config/frozen files preserved as canonical Git bytes; prior41 ledger rows unchanged; exactly42 rows; all10 exact public types and11 complete modules in manifest; source hashes; full stable table and full next prompt; local links; diff. No mathematical validity inferred from packaging checks.

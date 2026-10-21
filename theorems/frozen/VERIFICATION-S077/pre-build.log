@@ -1,0 +1,5 @@
+NEW GitHub clone: C:\tmp\engame-s077-gate-z
+Exact HEAD: e7508e103b3515dc138ed21e2ea5d3adda255add
+formal/.lake absent before build: true
+Native Windows; inherited ELAN_HOME=(default)
+core.autocrlf=false preserves exact committed LF bytes.
