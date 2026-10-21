@@ -1,0 +1,58 @@
+⚠ [115/137] Replayed EndgameChess.Rules.KRKTermination.Step
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:38: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [119/137] Replayed EndgameChess.Rules.KRKTermination.ClockCap
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:15:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:18:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [130/137] Built EndgameChess.Rules.KRKHighClock.Definitions (658ms)
+✔ [131/137] Built EndgameChess.Rules.KRKHighClock.NoWeakGoal (747ms)
+✔ [132/137] Built EndgameChess.Rules.KRKHighClock.Material (747ms)
+✔ [133/137] Built EndgameChess.Rules.KRKHighClock.Terminal (731ms)
+✖ [134/137] Building EndgameChess.Rules.KRKHighClock.WinningChild (767ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKHighClock\WinningChild.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKHighClock\WinningChild.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKHighClock\WinningChild.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKHighClock\WinningChild.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKHighClock\WinningChild.setup.json --json
+error: EndgameChess/Rules/KRKHighClock/WinningChild.lean:18:55: `simp` made no progress
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    s
+  has type
+    State
+  but is expected to have type
+    { s // StoppedHistory.Admissible s.trace }
+  in the application
+    s.val
+✔ [135/137] Built EndgameChess.Rules.KRKHighClock.GoodGoal (632ms)
+✔ [136/137] Built EndgameChess.Rules.KRKHighClock.StrongHold (603ms)
+✔ [137/137] Built EndgameChess.Rules.KRKHighClock.WeakNotForce (625ms)
+Some required targets logged failures:
+- EndgameChess.Rules.KRKHighClock.WinningChild
+error: build failed

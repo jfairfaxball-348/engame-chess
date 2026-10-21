@@ -98,3 +98,6 @@ import EndgameChess.Rules.KRKTermination.TerminalExists
 
 import EndgameChess.Rules.KRKHolding.Equivalence
 import EndgameChess.Rules.KRKHolding.StoppedExists
+
+import EndgameChess.Rules.KRKHighClock.WeakNotForce
+import EndgameChess.Rules.KRKHighClock.Distance

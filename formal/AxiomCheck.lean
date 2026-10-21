@@ -665,3 +665,25 @@ import EndgameChess
 #check @EndgameChess.Rules.KRKHolding.policy_maximal_iff_stopped
 #print axioms EndgameChess.Rules.KRKHolding.stopped_continuation
 #check @EndgameChess.Rules.KRKHolding.stopped_continuation
+
+/-! EC-C047: universal strong nonloss and exact high-clock RAW KRK criteria. -/
+#print axioms EndgameChess.Rules.KRKHighClock.arisen_no_weak_goal
+#check @EndgameChess.Rules.KRKHighClock.arisen_no_weak_goal
+#print axioms EndgameChess.Rules.KRKHighClock.good_step
+#check @EndgameChess.Rules.KRKHighClock.good_step
+#print axioms EndgameChess.Rules.KRKHighClock.good_no_weak_goal
+#check @EndgameChess.Rules.KRKHighClock.good_no_weak_goal
+#print axioms EndgameChess.Rules.KRKHighClock.strong_hold
+#check @EndgameChess.Rules.KRKHighClock.strong_hold
+#print axioms EndgameChess.Rules.KRKHighClock.weak_not_force
+#check @EndgameChess.Rules.KRKHighClock.weak_not_force
+#print axioms EndgameChess.Rules.KRKHighClock.terminal_force_iff_goal
+#check @EndgameChess.Rules.KRKHighClock.terminal_force_iff_goal
+#print axioms EndgameChess.Rules.KRKHighClock.winning_child_quiet
+#check @EndgameChess.Rules.KRKHighClock.winning_child_quiet
+#print axioms EndgameChess.Rules.KRKHighClock.weak_high_clock_not_force
+#check @EndgameChess.Rules.KRKHighClock.weak_high_clock_not_force
+#print axioms EndgameChess.Rules.KRKHighClock.strong_high_clock_iff
+#check @EndgameChess.Rules.KRKHighClock.strong_high_clock_iff
+#print axioms EndgameChess.Rules.KRKHighClock.high_clock_exact_one
+#check @EndgameChess.Rules.KRKHighClock.high_clock_exact_one
