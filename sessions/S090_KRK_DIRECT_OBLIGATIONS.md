@@ -44,13 +44,62 @@ Investigate tighter phase accounting and a globally costed wall/frame policy;
 do not promote scalar arithmetic into a chess proof. Existing frozen wide-box
 phase and paper7 corner case are available components, not closure evidence.
 
-Prerequisite admission: NONE at this checkpoint. No isolated-case formalisation,
-generic equivalence, history-count lemma or library extension has been admitted.
-Any later prerequisite must identify its exact blocked proof step and satisfy
-the new necessity rule before work begins.
+Prerequisite admission at the governance checkpoint: NONE. Subsequent admission
+for the integrated EC-C052 proof is recorded below; no isolated corner finish,
+generic equivalence or history-count extension is admitted.
 
 Return/completion criterion: close the actual quantified geometric argument and
 its numerical inequality before its formalisation; if a route fails, record the
 specific failure and continue another direct route. Later complete history
 outcomes, FIDE correspondence and global exact WDL/DTZ remain open regardless
 of a geometric bound. Session publishing and milestones do not end the run.
+
+## EC-C052 integrated wall95 route and necessary formal steps
+
+The whole-family argument is in `proofs/EC-C052_KRK_CENTRAL_WALL_95.md`.
+The separate same-agent paper audit is in
+`audits/EC-C052_KRK_CENTRAL_WALL_PAPER.md`. These establish a locally reviewed
+paper candidate, not a frozen bound. The existing certified ceilings remain
+442/443. The immediate obligation has narrowed to formal verification of this
+specific complete route. No independent external paper audit is claimed.
+
+The admitted Lean components have the following necessary uses. `KingBelow`
+supplies actual legal catch-up moves at file margin2; existing pursuit only
+supplies same-rank moves at margin3. `RankTwo` supplies the rank advance at
+margin2; the older action's margin3 premise is unavailable at a ready exit.
+`BackEven` and `Back` cost the even and arbitrary-offset back-rook branches of
+central pursuit; the old pursuit bounds are too large for wall95. Their exact
+return point is the central/column pursuit bound, not a separate freeze.
+Subsequent central/column pursuit, restoration and guarded cuts are admitted
+only in the ranges and costs used by the paper's wall95 induction. Existing
+actual-move and symmetry results are reused. Each module proves one needed
+step; all are to be integrated into the single whole-family certificate before
+its Gate F/Z. The isolated 1x1 corner lemma is unnecessary and is not admitted.
+
+The selected-coordinate diagnostic records 36 trajectories from nine named
+roots and four local reply selectors, maximum49 plies. Its independent edge
+validator and phase checks passed; it is not a universal proof or tablebase.
+Source, complete output and Lean authoring logs are retained under
+`sessions/evidence/S090/`. All actual Lean attempts use the recorded runner.
+
+## Complete local integrated result, source audit pending Gate F
+
+The complete27-module/24-main route now builds locally, including `wall95`,
+`arrival99`, `weak100` (forcing premise retained) and `fresh_arrival99` (actual
+W99 and ActualWin at clock0, no incoming count restrictions). The full local
+build passes241 jobs and the complete419-report AxiomCheck passes with standard
+axioms only. These are authoring checks, not fresh own-source Gate F/Z.
+
+The formalisation review caught the paper's overly strong margin3 citation in
+its low-file prefix. It was replaced by the simpler three-pair interior escort,
+which uses the admitted margin2 below-wall action and ends FULL, not ready.
+The updated standalone paper and separate paper/Lean audits disclose this.
+Actual16-ply column bound is conservatively charged18; global95 is unchanged.
+Initial preparation is explicitly formalised in two-king blocks, including
+the final rescue at even distance. No isolated corner lemma was formalised.
+
+The new direct result covers the WHOLE strict-wall domain and every strong
+legal arrival, both colours/all flags/every actual defence. This materially
+narrows the geometry obligation. Full lower-clock/incoming-history outcomes,
+FIDE correspondence and global exact WDL/DTZ are still OPEN.47 frozen bundles
+remain. Publish this OWN source, then run fresh Gate F; no session stop implied.

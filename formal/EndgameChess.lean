@@ -108,3 +108,5 @@ import EndgameChess.Rules.KRKWinning.MateExists
 import EndgameChess.Rules.KRKFresh.Wall
 
 import EndgameChess.Rules.KRKBox.Cycle
+
+import EndgameChess.Rules.KRKCentral.FreshArrival

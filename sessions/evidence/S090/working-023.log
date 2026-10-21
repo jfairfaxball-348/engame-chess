@@ -1,0 +1,33 @@
+✖ [66/67] Building EndgameChess.Rules.KRKCentral.ReadyCut (1.6s)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\ReadyCut.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\ReadyCut.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\ReadyCut.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\ReadyCut.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\ReadyCut.setup.json --json
+error: EndgameChess/Rules/KRKCentral/ReadyCut.lean:37:45: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  4 ≤ l ≤ 7
+  0 ≤ k ≤ 7
+  0 ≤ j ≤ 7
+  j - k ≥ 1
+  0 ≤ i ≤ 7
+  i ≥ 4
+  0 ≤ h ≤ 7
+  g ≥ 2
+  f ≥ 2
+  2 ≤ e ≤ 7
+  e - h ≤ 0
+  d ≥ 3
+  0 ≤ b ≤ 1
+  a ≥ 2
+where
+ a := ↑(absDiff ↑rs.fst ↑wk.fst)
+ b := ↑(absDiff ↑sk.fst ↑wk.fst)
+ d := ↑(absDiff ↑(wallWaitFile rs.fst wk.fst) ↑wk.fst)
+ e := ↑↑t.snd
+ f := ↑(absDiff ↑nr.fst ↑t.fst)
+ g := ↑(absDiff ↑sk.fst ↑t.fst)
+ h := ↑↑nr.snd
+ i := ↑↑t.fst
+ j := ↑↑rs.fst
+ k := ↑↑(wallWaitFile rs.fst wk.fst)
+ l := ↑↑wk.fst
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.ReadyCut
+error: build failed

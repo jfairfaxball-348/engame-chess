@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S089. Forty-seven theorem bundles are frozen, including universal admitted RAW KRK termination. Bundles are not solved material classes.
+Current mathematical evidence: S090 in progress. Forty-seven theorem bundles are frozen. The integrated wall95/arrival99 and clock0 RAW win now build locally; fresh own-source Gate F/Z remain pending. Bundles are not solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live and clock-free forcing; RAW termination, holding/winning policies, strong nonloss, high-clock criteria and clock0 73-ply wall family frozen; normalized guarded large-box phase frozen; guarded1x1 finish<=7 plies on paper | Immediate: global clock-safe geometric bound with all entry/phase/finish costs; then complete low-clock/history outcomes, full FIDE correspondence and global exact WDL/DTZ |
+| K+R vs K | Earlier dead/live, forcing and partial RAW results frozen; integrated all-wall95/strong-arrival99 and clock0 RAW win build locally, Gate F/Z pending | Immediate: certify the integrated bound; then complete low-clock/history outcomes, full FIDE correspondence and global exact WDL/DTZ |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S089. Forty-seven theorem bundles are fro
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S089 closes the guarded1x1 corner finish within7 plies ON PAPER and audits both replies; a selected8-ply cycle defeats the check-and-restore repair. A sufficiently short full <=4x4 finish, arbitrary entry and global sub100 remain OPEN. No new Lean/Gate F/Z or ledger row;47 bundles unchanged; KRK NOT CLOSED.
+S090 movement so far: the whole wall95/strong-arrival99/clock0 winning route is now locally checked in Lean, including setup and every defensive reply; source audit and own-source Gates F/Z remain. The geometry gap has narrowed directly. Full history outcomes, FIDE and exact WDL/DTZ remain open;47 frozen bundles unchanged; KRK NOT CLOSED.
 
 S090 owner-directed rules update: the direct-obligation/necessary-prerequisite
 rule now applies to every research target. This is governance work and changes
@@ -26,9 +26,9 @@ no mathematical claim. KRK research continues under the existing instruction.
 
 ### Movement of the current target's direct obligations
 
-| Closure obligation | Current coverage | Actual movement through S089 |
+| Closure obligation | Current coverage | Actual movement during S090 |
 |---|---|---|
-| Global clock-safe geometry | Global certified ceiling442/443; no global sub100 certificate | Wide-box phase frozen and1x1 case on paper; integrated whole-family entry/phase/finish bound still OPEN |
+| Global clock-safe geometry | Certified442/443; new integrated95 wall/99 strong arrival and clock0 RAW win locally checked | Whole-family paper and local Lean proof complete; own-source Gate F/Z pending |
 | Complete rule-aware outcomes | High-clock tests and conditional/fresh wall families | No complete low-clock/incoming-history classification; headline gap unchanged |
 | Full FIDE correspondence | Partial kernel/history/key/claim interfaces | Full correspondence still OPEN; headline gap unchanged |
 | Exact global distances/WDL-DTZ | Partial one-ply optimality and nonoptimal upper bounds | Global optimality/convention coverage still OPEN; headline gap unchanged |

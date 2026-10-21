@@ -735,3 +735,53 @@ import EndgameChess
 #check @EndgameChess.Rules.krk_guarded_large_box_cost
 #print axioms EndgameChess.Rules.krk_width_four_escort_cycle
 #check @EndgameChess.Rules.krk_width_four_escort_cycle
+
+/-! EC-C052: integrated all-wall95, strong arrivals99 and clock-zero actual win. -/
+#print axioms EndgameChess.Rules.KRKCentral.arrival99
+#check @EndgameChess.Rules.KRKCentral.arrival99
+#print axioms EndgameChess.Rules.KRKCentral.back_bound
+#check @EndgameChess.Rules.KRKCentral.back_bound
+#print axioms EndgameChess.Rules.KRKCentral.back_even_bound
+#check @EndgameChess.Rules.KRKCentral.back_even_bound
+#print axioms EndgameChess.Rules.KRKCentral.central_bound
+#check @EndgameChess.Rules.KRKCentral.central_bound
+#print axioms EndgameChess.Rules.KRKCentral.column_bound
+#check @EndgameChess.Rules.KRKCentral.column_bound
+#print axioms EndgameChess.Rules.KRKCentral.column_wall_bound
+#check @EndgameChess.Rules.KRKCentral.column_wall_bound
+#print axioms EndgameChess.Rules.KRKCentral.exit_step_bound
+#check @EndgameChess.Rules.KRKCentral.exit_step_bound
+#print axioms EndgameChess.Rules.KRKCentral.fresh_arrival99
+#check @EndgameChess.Rules.KRKCentral.fresh_arrival99
+#print axioms EndgameChess.Rules.KRKCentral.full_bound
+#check @EndgameChess.Rules.KRKCentral.full_bound
+#print axioms EndgameChess.Rules.KRKCentral.full_cut_bound
+#check @EndgameChess.Rules.KRKCentral.full_cut_bound
+#print axioms EndgameChess.Rules.KRKCentral.guarded_bound
+#check @EndgameChess.Rules.KRKCentral.guarded_bound
+#print axioms EndgameChess.Rules.KRKCentral.king_below_pair
+#check @EndgameChess.Rules.KRKCentral.king_below_pair
+#print axioms EndgameChess.Rules.KRKCentral.pivot_bound
+#check @EndgameChess.Rules.KRKCentral.pivot_bound
+#print axioms EndgameChess.Rules.KRKCentral.positive_bound
+#check @EndgameChess.Rules.KRKCentral.positive_bound
+#print axioms EndgameChess.Rules.KRKCentral.prep_bound
+#check @EndgameChess.Rules.KRKCentral.prep_bound
+#print axioms EndgameChess.Rules.KRKCentral.prep_pair
+#check @EndgameChess.Rules.KRKCentral.prep_pair
+#print axioms EndgameChess.Rules.KRKCentral.rank_two_pair
+#check @EndgameChess.Rules.KRKCentral.rank_two_pair
+#print axioms EndgameChess.Rules.KRKCentral.ready_bound
+#check @EndgameChess.Rules.KRKCentral.ready_bound
+#print axioms EndgameChess.Rules.KRKCentral.ready_cut_bound
+#check @EndgameChess.Rules.KRKCentral.ready_cut_bound
+#print axioms EndgameChess.Rules.KRKCentral.restoration_bound
+#check @EndgameChess.Rules.KRKCentral.restoration_bound
+#print axioms EndgameChess.Rules.KRKCentral.small_central_bound
+#check @EndgameChess.Rules.KRKCentral.small_central_bound
+#print axioms EndgameChess.Rules.KRKCentral.wait_even_bound
+#check @EndgameChess.Rules.KRKCentral.wait_even_bound
+#print axioms EndgameChess.Rules.KRKCentral.wall95
+#check @EndgameChess.Rules.KRKCentral.wall95
+#print axioms EndgameChess.Rules.KRKCentral.weak100
+#check @EndgameChess.Rules.KRKCentral.weak100

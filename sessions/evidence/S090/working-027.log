@@ -1,0 +1,610 @@
+✔ [71/72] Built EndgameChess.Rules.KRKCentral.PrepDefinitions (621ms)
+✖ [72/72] Building EndgameChess.Rules.KRKCentral.PrepPair (2.5s)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\PrepPair.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\PrepPair.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\PrepPair.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\PrepPair.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\PrepPair.setup.json --json
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:16: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:16: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:16: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:16: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:16: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:16: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:16: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:16: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ f ≤ 7
+  0 ≤ e ≤ 7
+  e - f ≥ 2
+  d ≥ 0
+  2 ≤ c ≤ 3
+  c - d ≥ 0
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + d ≤ -2
+  -1 ≤ a + d ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(3 - ↑sk.fst)
+ d := ↑(↑rs.snd - (↑sk.snd + 1))
+ e := ↑↑wk.fst
+ f := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ f ≤ 7
+  0 ≤ e ≤ 7
+  e - f ≥ 2
+  d ≥ 1
+  d ≥ 1
+  4 ≤ c ≤ 7
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + d ≤ -2
+  -1 ≤ a + d ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑↑sk.fst
+ d := ↑(↑rs.snd - (↑sk.snd + 1))
+ e := ↑↑wk.fst
+ f := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 7
+  0 ≤ d ≤ 7
+  d - e ≥ 2
+  0 ≤ c ≤ 1
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + c ≤ -2
+  -1 ≤ a + c ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑rs.snd - (↑sk.snd + 1))
+ d := ↑↑wk.fst
+ e := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ f ≤ 7
+  0 ≤ e ≤ 7
+  e - f ≥ 2
+  2 ≤ d ≤ 3
+  d ≥ 0
+  0 ≤ c ≤ 7
+  b ≥ 2
+  b ≥ 1
+  -6 ≤ b - c ≤ 0
+  b ≥ 1
+  0 ≤ a ≤ 7
+  a + b - c ≥ 2
+where
+ a := ↑↑wk.snd
+ b := ↑(↑⟨↑sk.snd + 1, ⋯⟩ - ↑sk.snd)
+ c := ↑↑⟨↑sk.snd + 1, ⋯⟩
+ d := ↑(3 - ↑sk.fst)
+ e := ↑↑wk.fst
+ f := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 7
+  0 ≤ d ≤ 7
+  d - e ≥ 2
+  0 ≤ c ≤ 7
+  b ≥ 2
+  b ≥ 1
+  -6 ≤ b - c ≤ 0
+  b ≥ 1
+  0 ≤ a ≤ 7
+  a + b - c ≥ 2
+where
+ a := ↑↑wk.snd
+ b := ↑(↑⟨↑sk.snd + 1, ⋯⟩ - ↑sk.snd)
+ c := ↑↑⟨↑sk.snd + 1, ⋯⟩
+ d := ↑↑wk.fst
+ e := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ f ≤ 7
+  0 ≤ e ≤ 7
+  e - f ≥ 2
+  d ≥ 0
+  2 ≤ c ≤ 3
+  c - d ≥ 0
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + d ≤ -2
+  -1 ≤ a + d ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(3 - ↑sk.fst)
+ d := ↑(↑rs.snd - (↑sk.snd + 1))
+ e := ↑↑wk.fst
+ f := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ f ≤ 7
+  0 ≤ e ≤ 7
+  e - f ≥ 2
+  d ≥ 1
+  d ≥ 1
+  4 ≤ c ≤ 7
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + d ≤ -2
+  -1 ≤ a + d ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑↑sk.fst
+ d := ↑(↑rs.snd - (↑sk.snd + 1))
+ e := ↑↑wk.fst
+ f := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 7
+  0 ≤ d ≤ 7
+  d - e ≥ 2
+  0 ≤ c ≤ 1
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + c ≤ -2
+  -1 ≤ a + c ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑rs.snd - (↑sk.snd + 1))
+ d := ↑↑wk.fst
+ e := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ f ≤ 7
+  0 ≤ e ≤ 7
+  e - f ≥ 2
+  2 ≤ d ≤ 3
+  d ≥ 0
+  0 ≤ c ≤ 7
+  b ≥ 2
+  b ≥ 1
+  -6 ≤ b - c ≤ 0
+  b ≥ 1
+  0 ≤ a ≤ 7
+  a + b - c ≥ 2
+where
+ a := ↑↑wk.snd
+ b := ↑(↑⟨↑sk.snd + 1, ⋯⟩ - ↑sk.snd)
+ c := ↑↑⟨↑sk.snd + 1, ⋯⟩
+ d := ↑(3 - ↑sk.fst)
+ e := ↑↑wk.fst
+ f := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 7
+  0 ≤ d ≤ 7
+  d - e ≥ 2
+  0 ≤ c ≤ 7
+  b ≥ 2
+  b ≥ 1
+  -6 ≤ b - c ≤ 0
+  b ≥ 1
+  0 ≤ a ≤ 7
+  a + b - c ≥ 2
+where
+ a := ↑↑wk.snd
+ b := ↑(↑⟨↑sk.snd + 1, ⋯⟩ - ↑sk.snd)
+ c := ↑↑⟨↑sk.snd + 1, ⋯⟩
+ d := ↑↑wk.fst
+ e := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  e ≥ 0
+  1 ≤ d ≤ 3
+  d - e ≥ 0
+  c ≥ 1
+  c ≥ 2
+  c ≥ 2
+  2 ≤ c - d ≤ 4
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + e ≤ -2
+  -1 ≤ a + e ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑sk.fst - ↑⟨↑sk.fst + 1, ⋯⟩)
+ d := ↑(↑sk.fst - 4)
+ e := ↑(↑rs.snd - (↑sk.snd + 1))
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  e ≥ 0
+  1 ≤ d ≤ 3
+  d - e ≥ 0
+  c ≥ 2
+  c ≥ 2
+  1 ≤ c + d ≤ 3
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + e ≤ -2
+  -1 ≤ a + e ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑⟨↑sk.fst + 1, ⋯⟩ - ↑sk.fst)
+ d := ↑(↑sk.fst - 4)
+ e := ↑(↑rs.snd - (↑sk.snd + 1))
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  e ≥ 0
+  1 ≤ d ≤ 3
+  d - e ≥ 0
+  c ≥ 1
+  c ≥ 2
+  c ≥ 2
+  0 ≤ c - d ≤ 1
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + e ≤ -2
+  -1 ≤ a + e ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑sk.fst - ↑⟨↑sk.fst + 1, ⋯⟩)
+ d := ↑(↑sk.fst - 4)
+ e := ↑(↑rs.snd - (↑sk.snd + 1))
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  e ≥ 0
+  1 ≤ d ≤ 3
+  d - e ≥ 0
+  c ≥ 1
+  c ≥ 2
+  c ≥ 2
+  2 ≤ c - d ≤ 4
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + e ≤ -2
+  -1 ≤ a + e ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑sk.fst - ↑⟨↑sk.fst - 1, ⋯⟩)
+ d := ↑(↑sk.fst - 4)
+ e := ↑(↑rs.snd - (↑sk.snd + 1))
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  e ≥ 0
+  1 ≤ d ≤ 3
+  d - e ≥ 0
+  c ≥ 2
+  c ≥ 2
+  1 ≤ c + d ≤ 3
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + e ≤ -2
+  -1 ≤ a + e ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑⟨↑sk.fst - 1, ⋯⟩ - ↑sk.fst)
+ d := ↑(↑sk.fst - 4)
+ e := ↑(↑rs.snd - (↑sk.snd + 1))
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  e ≥ 0
+  1 ≤ d ≤ 3
+  d - e ≥ 0
+  c ≥ 1
+  c ≥ 2
+  c ≥ 2
+  0 ≤ c - d ≤ 1
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + e ≤ -2
+  -1 ≤ a + e ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑sk.fst - ↑⟨↑sk.fst - 1, ⋯⟩)
+ d := ↑(↑sk.fst - 4)
+ e := ↑(↑rs.snd - (↑sk.snd + 1))
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  1 ≤ e ≤ 3
+  e ≥ 0
+  0 ≤ d ≤ 7
+  c ≥ 1
+  2 ≤ c - e ≤ 4
+  b ≥ 2
+  b - c ≥ 0
+  -6 ≤ b - d ≤ 0
+  b ≥ 1
+  0 ≤ a ≤ 7
+  a + b - d ≥ 2
+where
+ a := ↑↑wk.snd
+ b := ↑(↑⟨↑sk.snd + 1, ⋯⟩ - ↑sk.snd)
+ c := ↑(↑sk.fst - ↑⟨↑sk.fst + 1, ⋯⟩)
+ d := ↑↑⟨↑sk.snd + 1, ⋯⟩
+ e := ↑(↑sk.fst - 4)
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 7
+  0 ≤ d ≤ 7
+  d - e ≥ 2
+  1 ≤ c ≤ 3
+  c ≥ 0
+  0 ≤ b ≤ 6
+  0 ≤ a ≤ 7
+  a - b ≥ 2
+where
+ a := ↑↑wk.snd
+ b := ↑↑⟨↑sk.snd + 1, ⋯⟩
+ c := ↑(↑sk.fst - 4)
+ d := ↑↑wk.fst
+ e := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  1 ≤ e ≤ 3
+  e ≥ 0
+  0 ≤ d ≤ 7
+  c ≥ 1
+  0 ≤ c - e ≤ 1
+  b ≥ 2
+  b - c ≥ 0
+  -6 ≤ b - d ≤ 0
+  b ≥ 1
+  0 ≤ a ≤ 7
+  a + b - d ≥ 2
+where
+ a := ↑↑wk.snd
+ b := ↑(↑⟨↑sk.snd + 1, ⋯⟩ - ↑sk.snd)
+ c := ↑(↑sk.fst - ↑⟨↑sk.fst + 1, ⋯⟩)
+ d := ↑↑⟨↑sk.snd + 1, ⋯⟩
+ e := ↑(↑sk.fst - 4)
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ f ≤ 7
+  0 ≤ e ≤ 7
+  e - f ≥ 2
+  1 ≤ d ≤ 3
+  d ≥ 0
+  c ≥ 1
+  c ≥ 2
+  c ≥ 1
+  2 ≤ c - d ≤ 4
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 6
+  a - b ≤ -2
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑sk.fst - ↑⟨↑sk.fst - 1, ⋯⟩)
+ d := ↑(↑sk.fst - 4)
+ e := ↑↑wk.fst
+ f := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 7
+  0 ≤ d ≤ 7
+  d - e ≥ 2
+  1 ≤ c ≤ 3
+  c ≥ 0
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 6
+  a - b ≤ -2
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑sk.fst - 4)
+ d := ↑↑wk.fst
+ e := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ f ≤ 7
+  0 ≤ e ≤ 7
+  e - f ≥ 2
+  1 ≤ d ≤ 3
+  d ≥ 0
+  c ≥ 1
+  c ≥ 2
+  c ≥ 1
+  0 ≤ c - d ≤ 1
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 6
+  a - b ≤ -2
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑(↑sk.fst - ↑⟨↑sk.fst - 1, ⋯⟩)
+ d := ↑(↑sk.fst - 4)
+ e := ↑↑wk.fst
+ f := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  e ≥ 1
+  d ≥ 1
+  d ≥ 2
+  d ≥ 2
+  0 ≤ c ≤ 2
+  3 ≤ c + d ≤ 4
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + e ≤ -2
+  -1 ≤ a + e ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑↑⟨↑sk.fst + 1, ⋯⟩
+ d := ↑(↑sk.fst - ↑⟨↑sk.fst + 1, ⋯⟩)
+ e := ↑(↑rs.snd - (↑sk.snd + 1))
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  e ≥ 1
+  d ≥ 2
+  d ≥ 2
+  5 ≤ c ≤ 7
+  3 ≤ c - d ≤ 4
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + e ≤ -2
+  -1 ≤ a + e ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑↑⟨↑sk.fst + 1, ⋯⟩
+ d := ↑(↑⟨↑sk.fst + 1, ⋯⟩ - ↑sk.fst)
+ e := ↑(↑rs.snd - (↑sk.snd + 1))
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ g ≤ 7
+  0 ≤ f ≤ 7
+  f - g ≥ 2
+  e ≥ 1
+  3 ≤ d ≤ 4
+  3 ≤ c ≤ 4
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + e ≤ -2
+  -1 ≤ a + e ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑↑sk.fst
+ d := ↑↑⟨↑sk.fst + 1, ⋯⟩
+ e := ↑(↑rs.snd - (↑sk.snd + 1))
+ f := ↑↑wk.fst
+ g := ↑↑rs.fst
+error: EndgameChess/Rules/KRKCentral/PrepPair.lean:28:54: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ f ≤ 7
+  0 ≤ e ≤ 7
+  e - f ≥ 2
+  d ≥ 1
+  3 ≤ c ≤ 4
+  0 ≤ b ≤ 7
+  0 ≤ a ≤ 7
+  a - b + d ≤ -2
+  -1 ≤ a + d ≤ 6
+where
+ a := ↑↑sk.snd
+ b := ↑↑wk.snd
+ c := ↑↑sk.fst
+ d := ↑(↑rs.snd - (↑sk.snd + 1))
+ e := ↑↑wk.fst
+ f := ↑↑rs.fst
+warning: EndgameChess/Rules/KRKCentral/PrepPair.lean:27:16: This simp argument is unused:
+  dif_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [su, x, z, prepDistance, centreDistance, dInf, absDiff, dif_pos, hx, hx4, hy, ↓reduceIte] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.PrepPair
+error: build failed

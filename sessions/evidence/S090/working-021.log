@@ -1,0 +1,34 @@
+✖ [65/65] Building EndgameChess.Rules.KRKCentral.Pivot (907ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\Pivot.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Pivot.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Pivot.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Pivot.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Pivot.setup.json --json
+error: EndgameChess/Rules/KRKCentral/Pivot.lean:28:55: unsolved goals
+case refine_1
+σ : Colour
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hsy : ↑sk.snd + 1 = ↑rs.snd
+hwy : ↑wk.snd = ↑rs.snd + 1
+hs : ↑sk.fst = 3 ∨ ↑sk.fst = 4
+hx : ↑sk.fst + 2 ≤ ↑wk.fst
+nr : Square := (⟨↑sk.fst + 1, ⋯⟩, rs.snd)
+hnrne : ↑rs.fst ≠ ↑sk.fst + 1
+hnrx hnry : True
+he : ¬(↑sk.fst + 1 = ↑rs.fst ∧ True)
+⊢ ¬(↑rs.fst = ↑sk.fst + 1 ∧ True) ∧ (↑rs.fst = ↑sk.fst + 1 ∨ True)
+info: EndgameChess/Rules/KRKCentral/Pivot.lean:31:14: case refine_1
+σ : Colour
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hsy : ↑sk.snd + 1 = ↑rs.snd
+hwy : ↑wk.snd = ↑rs.snd + 1
+hs : ↑sk.fst = 3 ∨ ↑sk.fst = 4
+hx : ↑sk.fst + 2 ≤ ↑wk.fst
+nr : Square := (⟨↑sk.fst + 1, ⋯⟩, rs.snd)
+hnrne : ↑rs.fst ≠ ↑sk.fst + 1
+hnrx hnry : True
+he : ¬(↑sk.fst + 1 = ↑rs.fst ∧ True)
+⊢ ¬(↑rs.fst = ↑sk.fst + 1 ∧ True) ∧ (↑rs.fst = ↑sk.fst + 1 ∨ True)
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.Pivot
+error: build failed

@@ -1,0 +1,6 @@
+✖ [58/58] Building EndgameChess.Rules.KRKCentral.Column (1.8s)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\Column.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Column.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Column.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Column.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Column.setup.json --json
+error: EndgameChess/Rules/KRKCentral/Column.lean:30:68: Unknown constant `Nat.lt_of_add_one_eq`
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.Column
+error: build failed

@@ -1,0 +1,34 @@
+✖ [57/57] Building EndgameChess.Rules.KRKCentral.SmallCentral (683ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\SmallCentral.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\SmallCentral.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\SmallCentral.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\SmallCentral.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\SmallCentral.setup.json --json
+error: EndgameChess/Rules/KRKCentral/SmallCentral.lean:21:7: unknown tactic
+error: EndgameChess/Rules/KRKCentral/SmallCentral.lean:12:4: Type mismatch
+  main (7 - ?m.70) ?m.70 rfl
+has type
+  Matches ?m.73 σ { sk := ?m.74, rs := ?m.75, wk := ?m.76, strong := true } →
+    ↑(Prod.snd ?m.74) + 1 = ?m.70 →
+      ↑(Prod.snd ?m.75) = ?m.70 →
+        ?m.70 < ↑(Prod.snd ?m.76) →
+          ↑(Prod.fst ?m.74) = 3 ∨ ↑(Prod.fst ?m.74) = 4 → MateWithin σ (18 * (7 - ?m.70 - 1) + 11) ?m.73
+but is expected to have type
+  CentralBound σ y (18 * (7 - y - 1) + 11)
+error: EndgameChess/Rules/KRKCentral/SmallCentral.lean:15:13: unsolved goals
+case ind
+σ : Colour
+y✝ n : Nat
+ih : ∀ (m : Nat), m < n → ∀ (y : Nat), 7 - y = m → CentralBound σ y (18 * (m - 1) + 11)
+y : Nat
+hn : 7 - y = n
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hsy : ↑sk.snd + 1 = y
+hry : ↑rs.snd = y
+hwy : y < ↑wk.snd
+hs : ↑sk.fst = 3 ∨ ↑sk.fst = 4
+hy : y ≤ 6
+hn1 : 1 ≤ n
+child : 2 ≤ n → CentralBound σ (y + 1) (18 * (n - 2) + 11)
+⊢ MateWithin σ (18 * (n - 1) + 11) q
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.SmallCentral
+error: build failed

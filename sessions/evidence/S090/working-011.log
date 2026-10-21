@@ -1,0 +1,90 @@
+✖ [57/57] Building EndgameChess.Rules.KRKCentral.SmallCentral (1.1s)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\SmallCentral.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\SmallCentral.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\SmallCentral.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\SmallCentral.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\SmallCentral.setup.json --json
+error: EndgameChess/Rules/KRKCentral/SmallCentral.lean:21:17: don't know how to synthesize implicit argument `wk`
+  @ih (n - 1) (Decidable.byContradiction fun a => small_central_bound._proof_1_3 n y hn2 a) (y + 1)
+    (Decidable.byContradiction fun a => small_central_bound._proof_1_4 n y hn hsy hry hs hy hn2 a) ?m.203 ?m.204 ?m.205
+    ?m.206
+context:
+σ : Colour
+y✝ n : Nat
+ih : ∀ (m : Nat), m < n → ∀ (y : Nat), 7 - y = m → CentralBound σ y (18 * (m - 1) + 11)
+y : Nat
+hn : 7 - y = n
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hsy : ↑sk.snd + 1 = y
+hry : ↑rs.snd = y
+hwy : y < ↑wk.snd
+hs : ↑sk.fst = 3 ∨ ↑sk.fst = 4
+hy : y ≤ 6
+hn1 : 1 ≤ n
+hn2 : 2 ≤ n
+⊢ Square
+error: EndgameChess/Rules/KRKCentral/SmallCentral.lean:21:17: don't know how to synthesize implicit argument `rs`
+  @ih (n - 1) (Decidable.byContradiction fun a => small_central_bound._proof_1_3 n y hn2 a) (y + 1)
+    (Decidable.byContradiction fun a => small_central_bound._proof_1_4 n y hn hsy hry hs hy hn2 a) ?m.203 ?m.204 ?m.205
+    ?m.206
+context:
+σ : Colour
+y✝ n : Nat
+ih : ∀ (m : Nat), m < n → ∀ (y : Nat), 7 - y = m → CentralBound σ y (18 * (m - 1) + 11)
+y : Nat
+hn : 7 - y = n
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hsy : ↑sk.snd + 1 = y
+hry : ↑rs.snd = y
+hwy : y < ↑wk.snd
+hs : ↑sk.fst = 3 ∨ ↑sk.fst = 4
+hy : y ≤ 6
+hn1 : 1 ≤ n
+hn2 : 2 ≤ n
+⊢ Square
+error: EndgameChess/Rules/KRKCentral/SmallCentral.lean:21:17: don't know how to synthesize implicit argument `sk`
+  @ih (n - 1) (Decidable.byContradiction fun a => small_central_bound._proof_1_3 n y hn2 a) (y + 1)
+    (Decidable.byContradiction fun a => small_central_bound._proof_1_4 n y hn hsy hry hs hy hn2 a) ?m.203 ?m.204 ?m.205
+    ?m.206
+context:
+σ : Colour
+y✝ n : Nat
+ih : ∀ (m : Nat), m < n → ∀ (y : Nat), 7 - y = m → CentralBound σ y (18 * (m - 1) + 11)
+y : Nat
+hn : 7 - y = n
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hsy : ↑sk.snd + 1 = y
+hry : ↑rs.snd = y
+hwy : y < ↑wk.snd
+hs : ↑sk.fst = 3 ∨ ↑sk.fst = 4
+hy : y ≤ 6
+hn1 : 1 ≤ n
+hn2 : 2 ≤ n
+⊢ Square
+error: EndgameChess/Rules/KRKCentral/SmallCentral.lean:21:17: don't know how to synthesize implicit argument `q`
+  @ih (n - 1) (Decidable.byContradiction fun a => small_central_bound._proof_1_3 n y hn2 a) (y + 1)
+    (Decidable.byContradiction fun a => small_central_bound._proof_1_4 n y hn hsy hry hs hy hn2 a) ?m.203 ?m.204 ?m.205
+    ?m.206
+context:
+σ : Colour
+y✝ n : Nat
+ih : ∀ (m : Nat), m < n → ∀ (y : Nat), 7 - y = m → CentralBound σ y (18 * (m - 1) + 11)
+y : Nat
+hn : 7 - y = n
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hsy : ↑sk.snd + 1 = y
+hry : ↑rs.snd = y
+hwy : y < ↑wk.snd
+hs : ↑sk.fst = 3 ∨ ↑sk.fst = 4
+hy : y ≤ 6
+hn1 : 1 ≤ n
+hn2 : 2 ≤ n
+⊢ Position
+error: EndgameChess/Rules/KRKCentral/SmallCentral.lean:21:11: failed to infer `have` declaration type
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.SmallCentral
+error: build failed

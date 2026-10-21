@@ -1,0 +1,54 @@
+✔ [68/70] Built EndgameChess.Rules.KRKCentral.Costs (624ms)
+✖ [69/70] Building EndgameChess.Rules.KRKCentral.Full (783ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\Full.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Full.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Full.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Full.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Full.setup.json --json
+error: EndgameChess/Rules/KRKCentral/Full.lean:31:14: Tactic `split` failed: Could not split an `if` or `match` expression in the goal
+
+Hint: Use `set_option trace.split.failure true` to display additional diagnostic information
+
+case neg.isTrue
+σ : Colour
+y✝ n : Nat
+ih : ∀ (m : Nat), m < n → ∀ (y : Nat), 7 - y = m → CentralBound σ y (fullCost m)
+y : Nat
+hn : 7 - y = n
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hsy : ↑sk.snd + 1 = y
+hry : ↑rs.snd = y
+hwy : y < ↑wk.snd
+hs : ↑sk.fst = 3 ∨ ↑sk.fst = 4
+hy : y ≤ 6
+hn1 : 1 ≤ n
+hsmall : ¬n ≤ 3
+child : CentralBound σ (y + 1) (fullCost (n - 1))
+he : ExitBound σ y (fullCost (n - 1) + 8)
+h✝ : n - 1 ≤ 3
+⊢ max (18 * (n - 1 - 1) + 11 + 8 + 4) 63 ≤ 12 * n + 15
+error: EndgameChess/Rules/KRKCentral/Full.lean:31:14: Tactic `split` failed: Could not split an `if` or `match` expression in the goal
+
+Hint: Use `set_option trace.split.failure true` to display additional diagnostic information
+
+case neg.isFalse
+σ : Colour
+y✝ n : Nat
+ih : ∀ (m : Nat), m < n → ∀ (y : Nat), 7 - y = m → CentralBound σ y (fullCost m)
+y : Nat
+hn : 7 - y = n
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hsy : ↑sk.snd + 1 = y
+hry : ↑rs.snd = y
+hwy : y < ↑wk.snd
+hs : ↑sk.fst = 3 ∨ ↑sk.fst = 4
+hy : y ≤ 6
+hn1 : 1 ≤ n
+hsmall : ¬n ≤ 3
+child : CentralBound σ (y + 1) (fullCost (n - 1))
+he : ExitBound σ y (fullCost (n - 1) + 8)
+h✝ : ¬n - 1 ≤ 3
+⊢ max (12 * (n - 1) + 15 + 8 + 4) 63 ≤ 12 * n + 15
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.Full
+error: build failed

@@ -1,0 +1,62 @@
+✖ [52/52] Building EndgameChess.Rules.KRKCentral.Back (1.5s)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\Back.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Back.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Back.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Back.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Back.setup.json --json
+error: EndgameChess/Rules/KRKCentral/Back.lean:40:43: unsolved goals
+case false
+σ : Colour
+y E : Nat
+hexit : ExitBound σ y E
+q✝ : Position
+sk✝ rs✝ wk✝ : Square
+hq✝ : Matches q✝ σ { sk := sk✝, rs := rs✝, wk := wk✝, strong := true }
+hsy✝ : ↑sk✝.snd + 1 = y
+hry✝ : ↑rs✝.snd = y
+hwy✝ : y < ↑wk✝.snd
+n : Nat
+q : Position
+sk rs wk : Square
+hq : Matches q σ { sk := sk, rs := rs, wk := wk, strong := true }
+hsy : ↑sk.snd + 1 = y
+hry : ↑rs.snd = y
+hwy : y < ↑wk.snd
+phys : 1 ≤ ↑sk.fst ∧ ↑sk.fst ≤ 6
+hf : 2 ≤ absDiff ↑rs.fst ↑wk.fst
+hup : ¬y + 2 ≤ ↑wk.snd
+halign : ¬↑sk.fst = ↑wk.fst
+hs✝ : 3 ≤ pursuitFile false sk✝
+hs6✝ : pursuitFile false sk✝ ≤ 6
+hr✝ : pursuitFile false rs✝ ≤ 1
+hw✝ : pursuitFile false sk✝ ≤ pursuitFile false wk✝
+ih :
+  ∀ (m : Nat),
+    m < n →
+      ∀ {q : Position} {sk rs wk : Square},
+        Matches q σ { sk := sk, rs := rs, wk := wk, strong := true } →
+          ↑sk.snd + 1 = y →
+            ↑rs.snd = y →
+              y < ↑wk.snd →
+                3 ≤ pursuitFile false sk →
+                  pursuitFile false sk ≤ 6 →
+                    pursuitFile false rs ≤ 1 →
+                      pursuitFile false sk ≤ pursuitFile false wk →
+                        6 - pursuitFile false sk = m → MateWithin σ (E + 2 * (m + 1)) q
+hs : 3 ≤ pursuitFile false sk
+hs6 : pursuitFile false sk ≤ 6
+hr : pursuitFile false rs ≤ 1
+hw : pursuitFile false sk ≤ pursuitFile false wk
+hn : 6 - pursuitFile false sk = n
+hnot : pursuitFile false sk ≠ pursuitFile false wk
+hone : pursuitFile false wk = pursuitFile false sk + 1
+k : Fin 8 := if pursuitFile false rs = 0 then 1 else 0
+nr : Square := backRook false k rs
+⊢ 7 - (7 - ↑k) = ↑k
+error: EndgameChess/Rules/KRKCentral/Back.lean:65:8: Type mismatch: After simplification, term
+  back_even_bound d hexit hmt hsy hry
+    (Decidable.byContradiction fun a => back_bound._proof_1_20 d hry✝ n hsy hry hwy hup hnry t htband hev a) hs hs6
+    (Decidable.byContradiction fun a => back_bound._proof_1_21 d n hnr hk t hev a) hev
+ has type
+  MateWithin σ (E + 2 * (6 - pursuitFile d sk)) v
+but is expected to have type
+  MateWithin (if True then σ else σ.opp) (E + 2 * (6 - pursuitFile d sk)) v
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.Back
+error: build failed

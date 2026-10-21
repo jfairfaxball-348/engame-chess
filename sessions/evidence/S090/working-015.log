@@ -1,0 +1,11 @@
+⚠ [59/60] Built EndgameChess.Rules.KRKCentral.ExitStep (732ms)
+warning: EndgameChess/Rules/KRKCentral/ExitStep.lean:16:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKCentral/ExitStep.lean:35:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [60/60] Built EndgameChess.Rules.KRKCentral.ColumnWall (655ms)
+Build completed successfully (60 jobs).

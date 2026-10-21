@@ -1,0 +1,12 @@
+✖ [73/73] Building EndgameChess.Rules.KRKCentral.Prep (1.7s)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\Prep.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Prep.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Prep.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Prep.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Prep.setup.json --json
+error: EndgameChess/Rules/KRKCentral/Prep.lean:35:87: No goals to be solved
+error: EndgameChess/Rules/KRKCentral/Prep.lean:58:41: Type mismatch: After simplification, term
+  hdist
+ has type
+  prepDistance y su + 1 = 1
+but is expected to have type
+  prepDistance y su = 0
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.Prep
+error: build failed

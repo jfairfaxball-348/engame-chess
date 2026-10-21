@@ -1,0 +1,20 @@
+✔ [54/55] Built EndgameChess.Rules.KRKCentral.WaitEven (869ms)
+✖ [55/55] Building EndgameChess.Rules.KRKCentral.Central (1.1s)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\Central.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Central.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Central.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Central.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Central.setup.json --json
+error: EndgameChess/Rules/KRKCentral/Central.lean:32:4: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 7
+  d ≥ 4
+  0 ≤ c ≤ 1
+  0 ≤ b ≤ 7
+  1 ≤ a ≤ 7
+  a - b ≤ -1
+where
+ a := ↑↑rs.snd
+ b := ↑↑wk.snd
+ c := ↑(absDiff ↑rs.fst ↑wk.fst)
+ d := ↑(absDiff ↑nr.fst ↑wk.fst)
+ e := ↑↑rs.fst
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.Central
+error: build failed

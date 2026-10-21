@@ -1,0 +1,51 @@
+⚠ [59/61] Replayed EndgameChess.Rules.KRKCentral.ExitStep
+warning: EndgameChess/Rules/KRKCentral/ExitStep.lean:16:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKCentral/ExitStep.lean:35:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✖ [61/61] Building EndgameChess.Rules.KRKCentral.Guarded (1.7s)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\Guarded.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Guarded.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Guarded.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Guarded.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Guarded.setup.json --json
+error: EndgameChess/Rules/KRKCentral/Guarded.lean:27:16: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 6
+  0 ≤ d ≤ 7
+  1 ≤ b ≤ 7
+  b - d ≤ -1
+  3 ≤ a ≤ 5
+  a - e ≤ -1
+where
+ a := ↑↑rs.fst
+ b := ↑↑rs.snd
+ d := ↑↑wk.snd
+ e := ↑↑⟨↑wk.fst + 1, ⋯⟩
+error: EndgameChess/Rules/KRKCentral/Guarded.lean:27:16: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  2 ≤ d ≤ 4
+  0 ≤ b ≤ 7
+  2 ≤ b ≤ 8
+  0 ≤ a ≤ 6
+  a - d ≥ 2
+where
+ a := ↑↑wk.fst
+ b := ↑↑wk.snd
+ d := ↑↑⟨↑wk.fst + 1, ⋯⟩
+error: EndgameChess/Rules/KRKCentral/Guarded.lean:27:16: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  3 ≤ e ≤ 5
+  0 ≤ d ≤ 7
+  0 ≤ b ≤ 6
+  b - e ≥ 1
+  1 ≤ a ≤ 7
+  a - d ≤ -1
+where
+ a := ↑↑rs.snd
+ b := ↑↑wk.fst
+ d := ↑↑wk.snd
+ e := ↑↑⟨↑wk.fst + 1, ⋯⟩
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.Guarded
+error: build failed

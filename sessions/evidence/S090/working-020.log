@@ -1,0 +1,15 @@
+✖ [65/65] Building EndgameChess.Rules.KRKCentral.Pivot (922ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKCentral\Pivot.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Pivot.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKCentral\Pivot.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Pivot.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKCentral\Pivot.setup.json --json
+error: EndgameChess/Rules/KRKCentral/Pivot.lean:30:72: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ c ≤ 3
+  0 ≤ b ≤ 7
+  b ≥ 5
+  2 ≤ a ≤ 7
+where
+ a := ↑↑wk.snd
+ b := ↑↑wk.fst
+ c := ↑↑rs.fst
+Some required targets logged failures:
+- EndgameChess.Rules.KRKCentral.Pivot
+error: build failed
