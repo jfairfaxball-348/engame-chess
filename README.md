@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S081.** Forty-four frozen theorem bundles (not forty-four solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S083.** Forty-five frozen theorem bundles (not forty-five solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -164,3 +164,5 @@ S080 formally verified universal strong RAW holding/weak nonforcing, exact ongoi
 S081 froze universal strong RAW nonloss, exact high-clock forcing criteria and local optimal one-ply budget as EC-T0044;44 bundles. Mathematical coverage unchanged from S080; low-clock geometry, actual winning-policy bridge, full FIDE and global WDL/DTZ remain open. [EC-T0044](theorems/frozen/EC-T0044/v1.md).
 
 S082 formally verified independent actual bounded winning policies iff full RAW forcing on every admitted KRK history, exact same-B certificate extraction and actual terminal mate continuations.44 bundles frozen; geometric low-clock coverage, full FIDE and global exact WDL/DTZ remain open. [Paper](proofs/EC-C048_KRK_WINNING_POLICY.md).
+
+S083 froze independent actual bounded RAW winning-policy correspondence, exact B certificate extraction and actual terminal mate continuation as EC-T0045;45 bundles. Mathematical coverage unchanged from S082; low-clock geometry/full FIDE/global exact WDL-DTZ remain open. [EC-T0045](theorems/frozen/EC-T0045/v1.md).

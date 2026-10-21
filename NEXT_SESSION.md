@@ -1,55 +1,48 @@
-# NEXT SESSION — S083: Freeze actual RAW KRK winning-policy correspondence
+# NEXT SESSION — S084: Clock-zero KRK histories and assumption-free incoming counts
 
-Owner2026-10-21: continue consecutive sessions until KRK closes; stop before
-KQK. Fetch ALL heads, reconcile unmerged work/latest main; commit/push branch,
-ordinary merge/push main, compare identities.44 frozen bundles, next EC-T0045.
-Preserve every earlier complete frozen module/record and prior44 ledger rows.
+Owner2026-10-21: continue consecutive KRK sessions until closure; stop before
+KQK. Fetch ALL remote heads/reconcile unmerged work/latest main; commit/push
+branch, ordinary merge/push main and compare identities.45 frozen bundles after
+EC-T0045. Preserve every frozen source/record; next candidate EC-C049.
 
-Direct EC-C048 milestone: ActualWin is independent actual global legal history
-policy + all-prefix outcome/claim safety + UNIFORM finite B bound. On every
-admitted exact KRK history or terminal Region, ActualWin iff full old F.
-ANY bounded winning policy gives the EXACT B-ply old certificate. Actual maximal
-endpoints and a genuine terminal continuation are named mate within fuel.
-Every opponent child and correct current/intended claim retained; claims0 plies,
-never passes. No generic F-preserving-no-cycle assumption: KRK fuel supplies cap.
-Both named/material colours/turns/all actual flags and complete incoming traces/
-clocks/counts. No evaluated low-clock geometric formula/FIDE/global WDL-DTZ.
+Direct principal payoff: an admitted clock-zero strong-turn framed rank-six KRK
+wall has RAW W73 AND ActualWin with NO supplied current-count or incoming
+histogram assumptions. Keep both colours/all actual flags/full incoming history
+and every weak executed/intended move. The73 bound is nonoptimal; this remains
+a partial RAW family, not full low-clock geometry/FIDE/global WDL-DTZ closure.
+No compatible-history witness is asserted merely from a board/count vector.
 
-Read standalone paper, separate same-agent paper/fidelity audits, all9 complete
-KRKWinning modules (all helpers/shared definitions),8 main types and imports.
-OWN source `028364a700afb7d94d13d3b7e7a9ddce628cf5ec`; NEW GitHub clone without .lake, full199-job build exit0 in365.109s; COMPLETE382-report AxiomCheck exit0 at2026-10-21T08:43:51Z. Whole working/clean runner and exact published Git source bytes match. All8 main types/9 complete modules and imports inspected. Official native Windows Lean4.35.0; complete source/import/executable hashes, clean HEAD/tree/status, commands/exits/times/UTC retained. No source/dependency/shim/TLS/checksum changes; hosted CI unobserved.
+Read C045 all-move closure/admission/fuel, C042 actual rank-history lifting,
+C043 framed73 geometry, C048 actual winning-policy bridge and raw key/count
+definitions. Paper and separate adversarial audit BEFORE new Lean.
 
-Gate Z: ONE NEW GitHub clone at FULL OWN SHA 028364a700afb7d94d13d3b7e7a9ddce628cf5ec, .lake absent
-before full build and COMPLETE OWN AxiomCheck. Compare ENTIRE own Gate F source/
-transitive inventories and full decoded runner, not later aggregate outputs.
-Native official pinned4.35.0/inherited environment; no Lean/dependency/shim/TLS/
-checksum changes or incremental substitute. Record full command/log/exits/times/
-UTC, source/import/executable hashes, clean identity and retained failures.
-Only after observed success freeze EC-T0045 with all9 complete modules/helpers,
-8 exact types/full source boundary/transitive closure/scope/trust/provenance,
-exactly one row. Relevant ledger/preservation/type/hash/link/diff checks; update
-all current statuses, stable table/immediate delta, full prompt and closeout.
-Publish/merge/compare remote main; return directly to low-clock KRK history.
+Exact blocked KRK step: old LowerRankHistory quantifies ALL earlier material
+and is too strong to follow from clock0. Earlier larger-material repetitions
+cannot match future KRK boards. Smallest statement/payoff: normalized key
+equality preserves boards, an earlier exact same-colour KRK prefix forces all
+later ongoing admitted endpoints into exact KRK (capture dead KK stops), and
+clock0/nondead current endpoint excludes ANY earlier KRK prefix. A quiet last
+KRK move gives clock>0; a reset capture gives dead child. Thus each KRK query
+has full incoming count<=1 at clock0. Do not silently truncate history or assume
+an arbitrary independent incoming count vector is compatible.
 
-S084 candidate EC-C049: attack the concrete low-clock incoming-history gap.
-Target a history-unrestricted clock-zero rank-six framed-wall RAW winning family,
-using the proved73-ply geometry. Existing LowerRankHistory ranges over ALL earlier
-material and is too broad; earlier larger-material repeats cannot match future
-KRK boards. Prove from actual strict-prefix admission and all-move material
-closure that an earlier exact KRK prefix forces every later ongoing prefix into
-exact same-colour KRK; a rook capture is dead and cannot be followed by a move.
-At a last clock-reset step ending nondead, any earlier KRK prefix would make
-that reset impossible (quiet retained KRK or dead KK). Hence an admitted nondead
-clock-zero KRK root has NO earlier KRK endpoints: each matching KRK query key
-occurs only at current root, at most1. Do not prune arbitrary earlier history
-without this proof or assume an arbitrary compatible count vector.
+Define a NEW KRK-restricted lower-winning-rank histogram. Prove preservation
+on an actual descending KRK append, retaining original counts. A CLOCK-FREE
+winning child from KRK cannot be dead capture, so material survives; do NOT
+use a RAW certificate before proving the lift. Adapt the same-budget rank
+lifting at exact KRK nodes, including every weak legal intended move. It is
+NOT enough to assert the older all-material histogram. Instantiate73 wall at
+clock0, derive root/current/restricted counts from the new actual history lemma,
+then obtain actual winning policy via the frozen bridge. Exit directly into
+this new input family; if blocked record precise missing lemma and leave scope
+open, no generic detour or class completion claim.
 
-Use the smallest KRK-restricted lower-rank count invariant, preserved by actual
-rank-policy append, to remove the original incoming assumptions in the clock0
-wall family. It is NOT enough to assert the old all-material histogram follows.
-Paper and separate audit BEFORE any additive Lean; if the route blocks, record
-the exact missing statement/inequality and keep the input scope open. No unrelated
-generic detours or class-completion claims. Low-clock ALL-board geometry, full
-FIDE correspondence and exact global WDL/DTZ still required. No oracle/tablebase/
+Additive one-main-theorem modules and complete AxiomCheck; no frozen edits.
+Gate F is NEW own published exact-source GitHub clone without .lake, full build
+and complete matching runner, exact statements/source/import/executable hashes,
+clean identity, commands/exits/times/UTC and retained failures. Native official
+4.35.0/inherited environment, no dependencies/shims/TLS/checksum changes. Gate Z
+separate. Relevant checks/current statuses/full table/immediate delta/full next
+prompt/session closeout; publish/merge/compare main. No tablebase/engine oracle,
 class enumeration or stored per-position certificates. Continue direct KRK
 work under owner authority; stop before KQK.

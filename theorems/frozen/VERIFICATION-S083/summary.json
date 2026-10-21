@@ -1,0 +1,50 @@
+{
+  "proof_source": "028364a700afb7d94d13d3b7e7a9ddce628cf5ec",
+  "verified_utc": "2026-10-21T08:54:45Z",
+  "fresh_clone": "C:\\tmp\\engame-s083-gate-z",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 365.312,
+  "build_jobs": 199,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 382,
+  "bundle_declarations": [
+    "EndgameChess.Rules.KRKWinning.forcing_actions",
+    "EndgameChess.Rules.KRKWinning.winning_policy",
+    "EndgameChess.Rules.KRKWinning.winning_safety",
+    "EndgameChess.Rules.KRKWinning.actual_win_of_force",
+    "EndgameChess.Rules.KRKWinning.policy_certificate",
+    "EndgameChess.Rules.KRKWinning.actual_win_iff_force",
+    "EndgameChess.Rules.KRKWinning.winning_maximal_goal",
+    "EndgameChess.Rules.KRKWinning.winning_mate_continuation"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.KRKWinning.forcing_actions": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKWinning.winning_policy": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKWinning.winning_safety": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKWinning.actual_win_of_force": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKWinning.policy_certificate": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKWinning.actual_win_iff_force": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKWinning.winning_maximal_goal": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKWinning.winning_mate_continuation": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/KRKWinning/Actions.lean",
+    "formal/EndgameChess/Rules/KRKWinning/Certificate.lean",
+    "formal/EndgameChess/Rules/KRKWinning/Definitions.lean",
+    "formal/EndgameChess/Rules/KRKWinning/Equivalence.lean",
+    "formal/EndgameChess/Rules/KRKWinning/FromForce.lean",
+    "formal/EndgameChess/Rules/KRKWinning/MateExists.lean",
+    "formal/EndgameChess/Rules/KRKWinning/MaximalGoal.lean",
+    "formal/EndgameChess/Rules/KRKWinning/Policy.lean",
+    "formal/EndgameChess/Rules/KRKWinning/Safety.lean"
+  ],
+  "dependency_modules": 142,
+  "source_files_hashed": 202,
+  "complete_runner_matches_working": true,
+  "source_matches_published_git_bytes": true,
+  "platform": "official native Windows Lean4.35.0; inherited environment",
+  "hosted_ci": "unobserved",
+  "gate": "Z",
+  "entire_own_gate_f_inventory_and_complete_runner_match": true
+}
