@@ -89,3 +89,11 @@ example. It covers both turns/colours/claims/weak replies and leaves positive
 clocks, FIDE correspondence and exact distance open. All26 main axiom reports
 and statements were inspected in the final local runner. No extra framework
 or generic winning equivalence was introduced for this corollary.
+
+## Observed final own-source Gate F
+
+Own published proof source `2311abe71bc1a4eed47026feccd5ba5a0760d5bb`; NEW GitHub clone `C:\engame-checkouts\s090-gate-f93`, .lake absent before full243-job build exit0 in372.594s. Complete421-report runner exit0 at2026-10-21T13:11:36Z; all26 exact main types and standard-three axioms inspected. Entire working/clean runner and all published formal bytes match,204 transitive modules/246 source/config files hashed. Official native Windows Lean4.35.0, inherited environment. Hosted CI unobserved. Separate fresh Gate Z pending.
+
+The final93/97/98 and explicit clock0 winning criterion are FORMAL_VERIFIED.
+This supersedes pending-F wording in earlier chronological notes; no claim of
+Gate Z, ledger change, positive-clock completeness, FIDE or exact distances.

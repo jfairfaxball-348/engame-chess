@@ -6,20 +6,23 @@ Owner direction, 2026-10-20: KRK closure is the research priority across as many
 sessions as needed. Owner explicitly resumed on 2026-10-21: run the next session
 and keep going until KRK is closed. Stop before KQK.
 
-## S090 integrated global geometry and clock0 outcomes - KRK NOT CLOSED
+## S090 whole geometry and clock0 winning criterion FORMAL_VERIFIED
 
-[EC-C052 paper](../proofs/EC-C052_KRK_CENTRAL_WALL_95.md) and separate same-agent
-paper/Lean audits now give all-wall93, strong legal arrivals97 and weak forcing98.
-BOTH turn budgets are<100 and lift at actual RAW clock0 without incoming counts.
-The explicit complete clock0 winning criterion is: strong turn OR already mate
-OR a safe rook with a legal reply. All29 modules/26 mains build locally; complete
-243-job build/421-report runner passed. The tightened source still needs its OWN
-fresh Gate F and separate Gate Z; the earlier95/99/100 source passed Gate F at
-`1b5f0b313b6752173052a2d36aed4c7ebbbf452f`,241 jobs/419 reports,373.031s,
-2026-10-21T13:02:51Z. That older checkout does not certify the tightened source.
-Do not freeze a separate weaker95 bundle.47 frozen bundles remain. The main
-geometry and clock0 subdomain gaps have moved directly. Positive-clock/history
-outcomes, full FIDE correspondence and exact global WDL/DTZ remain OPEN.
+EC-C052 now proves all-wall93, strong legal arrivals97 and weak forcing98, both
+colours/all flags/every defence. Both<100 budgets lift at actual RAW clock0
+without incoming counts. On BOTH turns the explicit ActualWin criterion is:
+strong turn OR already mate OR a safe rook with a legal reply. This discharges
+the principal clock-safe geometry obligation at Gate F and covers the clock0
+outcome subdomain. A nonoptimal ceiling is not an exact distance.
+
+Own published proof source `2311abe71bc1a4eed47026feccd5ba5a0760d5bb`; NEW GitHub clone `C:\engame-checkouts\s090-gate-f93`, .lake absent before full243-job build exit0 in372.594s. Complete421-report runner exit0 at2026-10-21T13:11:36Z; all26 exact main types and standard-three axioms inspected. Entire working/clean runner and all published formal bytes match,204 transitive modules/246 source/config files hashed. Official native Windows Lean4.35.0, inherited environment. Hosted CI unobserved. Separate fresh Gate Z pending.
+
+Paper and separate same-agent paper/Lean audits precede the exact-source check.
+No independent external reviewer is claimed.29 complete modules/26 mains;47
+frozen bundles unchanged. Earlier95-source verification is retained separately,
+not separately frozen. Next: fresh Gate Z, then the principal positive-clock/
+incoming-history outcome gap, necessary full FIDE correspondence and exact
+minimax/WDL-DTZ semantics. KRK NOT CLOSED; do not begin KQK.
 
 ## S089 direct small-box frontier — KRK NOT CLOSED
 

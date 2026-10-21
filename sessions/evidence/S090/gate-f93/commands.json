@@ -1,0 +1,104 @@
+[
+  {
+    "args": [
+      "git",
+      "-c",
+      "core.autocrlf=false",
+      "clone",
+      "--no-checkout",
+      "https://github.com/jfairfaxball-348/engame-chess.git",
+      "C:\\engame-checkouts\\s090-gate-f93"
+    ],
+    "cwd": "C:\\engame-chess",
+    "logfile": "clone.log",
+    "exit": 0,
+    "seconds": 1.687,
+    "started_utc": "2026-10-21T13:05:12.555629+00:00"
+  },
+  {
+    "args": [
+      "git",
+      "config",
+      "core.autocrlf",
+      "false"
+    ],
+    "cwd": "C:\\engame-checkouts\\s090-gate-f93",
+    "logfile": "clone-config.log",
+    "exit": 0,
+    "seconds": 0.032,
+    "started_utc": "2026-10-21T13:05:14.242788+00:00"
+  },
+  {
+    "args": [
+      "git",
+      "checkout",
+      "--detach",
+      "2311abe71bc1a4eed47026feccd5ba5a0760d5bb"
+    ],
+    "cwd": "C:\\engame-checkouts\\s090-gate-f93",
+    "logfile": "checkout.log",
+    "exit": 0,
+    "seconds": 0.812,
+    "started_utc": "2026-10-21T13:05:14.271896+00:00"
+  },
+  {
+    "args": [
+      "C:\\Users\\johnf\\.elan\\bin\\lake.EXE",
+      "env",
+      "lean",
+      "--version"
+    ],
+    "cwd": "C:\\engame-checkouts\\s090-gate-f93\\formal",
+    "logfile": "toolchain.log",
+    "exit": 0,
+    "seconds": 0.156,
+    "started_utc": "2026-10-21T13:05:15.110708+00:00"
+  },
+  {
+    "args": [
+      "C:\\Users\\johnf\\.elan\\bin\\lake.EXE",
+      "--version"
+    ],
+    "cwd": "C:\\engame-checkouts\\s090-gate-f93\\formal",
+    "logfile": "lake-version.log",
+    "exit": 0,
+    "seconds": 0.078,
+    "started_utc": "2026-10-21T13:05:15.266756+00:00"
+  },
+  {
+    "args": [
+      "C:\\Users\\johnf\\.elan\\bin\\elan.EXE",
+      "which",
+      "lean"
+    ],
+    "cwd": "C:\\engame-checkouts\\s090-gate-f93\\formal",
+    "logfile": "lean-executable.txt",
+    "exit": 0,
+    "seconds": 0.031,
+    "started_utc": "2026-10-21T13:05:15.345245+00:00"
+  },
+  {
+    "args": [
+      "C:\\Users\\johnf\\.elan\\bin\\lake.EXE",
+      "build"
+    ],
+    "cwd": "C:\\engame-checkouts\\s090-gate-f93\\formal",
+    "logfile": "lake-build.log",
+    "exit": 0,
+    "seconds": 372.594,
+    "started_utc": "2026-10-21T13:05:15.371935+00:00"
+  },
+  {
+    "args": [
+      "C:\\Users\\johnf\\.elan\\bin\\lake.EXE",
+      "env",
+      "lean",
+      "AxiomCheck.lean"
+    ],
+    "cwd": "C:\\engame-checkouts\\s090-gate-f93\\formal",
+    "logfile": "axioms-statements.log",
+    "exit": 0,
+    "seconds": 1.093,
+    "started_utc": "2026-10-21T13:11:27.973664+00:00"
+  }
+]

@@ -1,38 +1,46 @@
-# NEXT SESSION - S090 in progress: certify integrated all-wall93
+# NEXT SESSION - S091: Freeze the integrated KRK geometry and clock0 criterion
 
-Owner2026-10-21: continue KRK until closure; session boundaries are checkpoints,
-not stops. Apply AGENTS.md direct-obligation/necessary-prerequisite rules to
-EVERY target. Do not begin KQK. Fetch/reconcile all remote heads, preserve frozen
-sources and ledger; commit/push branch, ordinary merge/push main, compare refs.
+Owner2026-10-21: continue until KRK is closed. Session boundaries are checkpoints,
+not stopping instructions. Apply AGENTS direct-obligation/necessary-prerequisite
+rules to all targets. No KQK. Fetch/reconcile all heads, preserve frozen sources,
+commit/push branch, ordinary merge/push main and compare final exact refs.
 
-Highest direct gap has moved: EC-C052 has a complete standalone paper and
-complete local Lean implementation of all-wall93, strong legal arrivals97,
-weak forcing98 and an explicit complete BOTH-turn RAW clock0 winning criterion
-without incoming counts (strong turn OR mate OR safe rook with a legal reply).
-Read proofs/EC-C052_KRK_CENTRAL_WALL_95.md and its separate same-agent paper and
-Lean audits.29 new modules/26 main declarations. Local full243-job build and
-421-report complete axiom/statement runner passed; tightened-source F/Z pending.
-Earlier95 source passed own Gate F; that does not certify this tightened source.
-Do not call a local build certified or frozen.47 frozen bundles remain.
+EC-C052 is FORMAL_VERIFIED at OWN published source
+2311abe71bc1a4eed47026feccd5ba5a0760d5bb. Read its complete paper, separate
+same-agent paper/Lean audits, all29 KRKCentral modules and full S090 evidence.
+S090 own Gate F: NEW GitHub clone/.lake absent;243-job full build in372.594s,
+421 exact permitted axiom/type reports at2026-10-21T13:11:36Z, complete working/
+clean runner/source bytes match. Earlier95-source verification is separate;
+do NOT freeze a separate weaker95 bundle.47 existing bundles unchanged.
 
-The necessary integrated route is central pursuit, ready/full separation,
-margin2 advance, six-ply full restoration, protected width2/3 cut, noncircular
-uncut small-height continuation and costed initial centralisation including final
-repair. The old low-file prefix was replaced by a simpler below-wall escort;
-no isolated corner7 or additional generic foundation is needed.
+Exact integrated scope: all strong-turn strict rank walls MateWithin93, both
+colours/arbitrary flags/every weak reply; every strong legal arrival97; weak
+forcing98 retains ForceMate; actual RAW clock0 wins without incoming count
+premises. Explicit BOTH-turn ActualWin criterion at clock0 is: strong turn OR
+already mate OR safe rook with a legal reply. Actual initial-rooted trace gives
+the strong incoming-edge witness. No compatible history is invented for local
+samples. No full positive-clock/history/FIDE or exact WDL/DTZ claim.
 
-Next action: publish the complete OWN proof source and run
-sessions/evidence/S090/verify.py OWN_SHA NEW_CLONE NEW_OUTPUT for fresh Gate F.
-Inspect full build, exact statements/standard axioms, source/runner identities
-and scope. Do not claim hosted CI unless actually observed. Then complete S090
-records/progress table and continue immediately to a separately fresh Gate Z.
-After freeze, carry forward the next highest direct obligation: complete
-positive-clock/incoming-history outcomes and necessary FIDE correspondence, then
-exact global WDL/DTZ. A clock0 win is not arbitrary-history classification.
-Weak98 now DOES satisfy strict N<100; the previous100 bound did not. Never infer optimality
-from an upper bound, or complete material coverage from theorem counts.
+Next required step is SEPARATE fresh OWN-source Gate Z. Run:
+python sessions/evidence/S091/verify.py C:/engame-checkouts/s091-gate-z
+It guards on observed final Gate F, uses NEW GitHub clone/.lake absent and
+compares entire source/import/declaration inventories and complete runner with
+S090 gate-f93. Keep all failures, exact commands/exits/time/UTC and executable/
+source hashes. Then and ONLY then create EC-T0048 manifest for ALL29 COMPLETE
+modules/26 main declarations at the above proof SHA and append one ledger row.
+Inspect exact scope, definitions/private helper, axioms, inventories and clean
+identity; never edit an old frozen source/manifest/row. Hosted CI unobserved
+unless its actual jobs are inspected. Gate F/Z are required evidence, not
+additional mathematical scope or material-class completion.
 
-Retain known failed controls in the historic S086-S089 records. No tablebases,
-engine oracles, exhaustive class proof or per-position value certificates.
-Selected coordinate diagnostics are error checks only. Do not re-open old
-small-box examples as the agenda now that the integrated global route exists.
+After freeze/records/table/publishing, continue immediately to the highest
+remaining direct KRK obligation: complete positive-clock/incoming-history
+outcomes, with necessary FIDE correspondence and exact WDL/DTZ. The general
+W/policy equivalence and a nonoptimal geometric cap do not evaluate this domain.
+State the exact full-domain missing claim and chosen direct route before work;
+no isolated corner/example, generic library or another lemma-count milestone.
+Foundations require a named necessary step and smallest scope. Preserve UNKNOWN.
+No tablebases, engine oracles, exhaustive class proof or per-position values.
+
+Full stable progress table, immediate obligation delta and this full prompt
+must appear in closeout. Publishing and freezing do not pause the active goal.
