@@ -44,7 +44,7 @@ Classical chess, 8×8 board, ordinary FIDE piece movement and legal positions. W
 
 ## Scientific status
 
-**After S085.** Forty-six frozen theorem bundles (not forty-six solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
+**After S086.** Forty-six frozen theorem bundles (not forty-six solved material classes). K+R vs K dead/live and its clock-free strong-turn forcing and weak-turn terminal/capture classification are frozen. Full FIDE rule/distance parity remains open.
 - [EC-T0001](theorems/frozen/EC-T0001/v1.md) (K vs K) and [EC-T0002](theorems/frozen/EC-T0002/v1.md) (K+B vs K) were proved over bespoke models.
 - [EC-T0003](theorems/frozen/EC-T0003/v1.md) and [EC-T0004](theorems/frozen/EC-T0004/v1.md) strengthen them over the general FIDE rules kernel (`formal/EndgameChess/Rules/`): every K vs K or K+B vs K position produced by *any* legal move, including a capture from larger material, is dead, and every arisen one is drawn immediately under the named rule encoding `Rule5_2_2` (Art. 5.2.2).
 - What remains trusted: assumption A1 and the kernel bridge [docs/RULES_KERNEL.md](docs/RULES_KERNEL.md). The project owner reviewed the kernel rules on 2026-10-18 and found no issues. Manifests frozen before that date still say the review is open; they are not edited (frozen-record rule).
@@ -170,3 +170,5 @@ S083 froze independent actual bounded RAW winning-policy correspondence, exact B
 S084 formally verified automatic KRK incoming-count control at nondead clock0 and same-budget lifting of any supplied N<100 certificate; framed rank-six clock0 walls now have RAW W73/actual win without incoming premises.45 bundles frozen; full low-clock geometry/FIDE/global exact WDL-DTZ remain open. [Paper](proofs/EC-C049_KRK_FRESH_HISTORY.md).
 
 S085 froze clock-zero KRK count control, incoming-premise-free supplied-budget lift and concrete73 framed-wall actual wins as EC-T0046;46 bundles. Mathematical coverage unchanged from S084; complete low-clock/history outcomes, full FIDE and global exact WDL-DTZ remain open. [EC-T0046](theorems/frozen/EC-T0046/v1.md).
+
+S086 made no new mathematical progress: the global sub100 geometric proof remains open after budget, amortisation, box-shrink and no-wait attacks; a single109-ply clock-free model trajectory defeats the tested policy only.46 frozen bundles unchanged; KRK NOT CLOSED. [Live closure audit](docs/KRK_COMPLETION.md).

@@ -1,0 +1,14 @@
+{
+  "args": [
+    "python",
+    "sessions/evidence/S086/selected_policy.py",
+    "C:/engame-chess",
+    "C:/engame-chess/sessions/evidence/S086"
+  ],
+  "cwd": "C:/engame-chess",
+  "exit": 0,
+  "elapsed_seconds": 0.0,
+  "finished_utc": "2026-10-21T10:15:55.501815+01:00",
+  "output": "selected-policy.json",
+  "scope": "one clock-free selected trajectory only"
+}

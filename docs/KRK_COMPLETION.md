@@ -6,6 +6,28 @@ Owner direction, 2026-10-20: KRK closure is the research priority across as many
 sessions as needed. Owner explicitly resumed on 2026-10-21: run the next session
 and keep going until KRK is closed. Stop before KQK.
 
+## Live closure audit after S086 — KRK NOT CLOSED
+
+Owner's continue-until-closure direction persists. No publication/merge changes
+the following proof boundary;46 bundles are not46 solved material classes.
+
+| KRK obligation | Actual evidence | Remaining |
+|---|---|---|
+| Dead/live and clock-free forcing | Frozen kernel classification; global nonoptimal442/443 ceilings | Faster geometry if needed for clock-safe coverage |
+| All-branch RAW termination | EC-T0042, all turns/flags/legal moves,150-h horizon | Full FIDE correspondence remains separate |
+| Actual holding and winning strategies | EC-T0043/0045, independent legal policies, all move/claim branches, finite cap | Evaluate complete geometric/history outcome domain |
+| Strong nonloss and high-clock tests | EC-T0044, all-history strong holding, weak h>=99/strong h>=98 criteria, optimal1 on those wins | Lower-clock arbitrary histories |
+| Clock-zero incoming history | EC-T0046: supplied N<100 lift with no incoming count premises; framed73 wall family | Supplied global sub100 geometry is NOT proved |
+| Complete all-history outcome formula | OPEN; generic F/policy equivalence does not evaluate it | Necessary and sufficient coverage of every admissible KRK input |
+| Full FIDE model correspondence | OPEN: rights, normalized key, claims, adjudication/history bridges | Exact board/correct-claim model fidelity |
+| Exact global distances/WDL-DTZ | OPEN; local1 and upper bounds only | Pinned conventions, minimax optimality and full covered-domain comparison |
+
+S086's95 sufficient route is unproved, not falsified. The tested concrete
+coordinate policy has a109-ply clock-free model line; naive protected-box shrink
+stalemates, and naive no-wait king chase cycles. The precise next obligation is
+an all-reply safe nonstalemating geometric phase with a closed global cost/potential
+inequality. No fresh theorem was certified in S086. Stop before KQK.
+
 ## Evidence and completion standard
 
 KRK dead/live and clock-free forcing classification are frozen. The concrete RAW
@@ -130,3 +152,5 @@ S083 froze independent actual bounded RAW winning-policy correspondence, exact B
 S084 formally verified automatic KRK incoming-count control at nondead clock0 and same-budget lifting of any supplied N<100 certificate; framed rank-six clock0 walls now have RAW W73/actual win without incoming premises.45 bundles frozen; full low-clock geometry/FIDE/global exact WDL-DTZ remain open. [Paper](../proofs/EC-C049_KRK_FRESH_HISTORY.md).
 
 S085 froze clock-zero KRK count control, incoming-premise-free supplied-budget lift and concrete73 framed-wall actual wins as EC-T0046;46 bundles. Mathematical coverage unchanged from S084; complete low-clock/history outcomes, full FIDE and global exact WDL-DTZ remain open. [EC-T0046](../theorems/frozen/EC-T0046/v1.md).
+
+S086 made no new mathematical progress: the global sub100 geometric proof remains open after budget, amortisation, box-shrink and no-wait attacks; a single109-ply clock-free model trajectory defeats the tested policy only.46 frozen bundles unchanged; KRK NOT CLOSED. [Attempt](../proofs/EC-C050_KRK_GLOBAL_GEOMETRY_ATTACK.md).

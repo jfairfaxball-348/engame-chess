@@ -1,0 +1,4652 @@
+{
+  "scope": "ONE selected clock-free ordinary coordinate-policy trajectory; NOT RAW admitted history or class proof",
+  "root": {
+    "strong_king": [
+      0,
+      0
+    ],
+    "rook": [
+      7,
+      1
+    ],
+    "weak_king": [
+      1,
+      2
+    ],
+    "turn": "W",
+    "rights": "none"
+  },
+  "selector": "immediate lowest rank, farthest king file, most interior on ties, file tie-break; no lookahead/evaluation",
+  "result": {
+    "plies": 109,
+    "wait": 7,
+    "normalize": 6,
+    "chase": 31,
+    "raise": 0,
+    "catch_up": 5,
+    "check": 6
+  },
+  "failure": null,
+  "replayed_legal_edges": 109,
+  "moves": [
+    {
+      "ply": 1,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        7,
+        1
+      ],
+      "dst": [
+        6,
+        1
+      ]
+    },
+    {
+      "ply": 2,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        1,
+        2
+      ],
+      "dst": [
+        2,
+        2
+      ]
+    },
+    {
+      "ply": 3,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        0,
+        0
+      ],
+      "dst": [
+        1,
+        0
+      ]
+    },
+    {
+      "ply": 4,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        2,
+        2
+      ],
+      "dst": [
+        3,
+        2
+      ]
+    },
+    {
+      "ply": 5,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        1,
+        0
+      ],
+      "dst": [
+        2,
+        0
+      ]
+    },
+    {
+      "ply": 6,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        3,
+        2
+      ],
+      "dst": [
+        4,
+        2
+      ]
+    },
+    {
+      "ply": 7,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        6,
+        1
+      ],
+      "dst": [
+        0,
+        1
+      ]
+    },
+    {
+      "ply": 8,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        4,
+        2
+      ],
+      "dst": [
+        5,
+        2
+      ]
+    },
+    {
+      "ply": 9,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        2,
+        0
+      ],
+      "dst": [
+        3,
+        0
+      ]
+    },
+    {
+      "ply": 10,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        5,
+        2
+      ],
+      "dst": [
+        6,
+        2
+      ]
+    },
+    {
+      "ply": 11,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        3,
+        0
+      ],
+      "dst": [
+        4,
+        0
+      ]
+    },
+    {
+      "ply": 12,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        6,
+        2
+      ],
+      "dst": [
+        7,
+        2
+      ]
+    },
+    {
+      "ply": 13,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        4,
+        0
+      ],
+      "dst": [
+        5,
+        0
+      ]
+    },
+    {
+      "ply": 14,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        7,
+        2
+      ],
+      "dst": [
+        6,
+        2
+      ]
+    },
+    {
+      "ply": 15,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        0,
+        1
+      ],
+      "dst": [
+        1,
+        1
+      ]
+    },
+    {
+      "ply": 16,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        6,
+        2
+      ],
+      "dst": [
+        7,
+        2
+      ]
+    },
+    {
+      "ply": 17,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        5,
+        0
+      ],
+      "dst": [
+        6,
+        0
+      ]
+    },
+    {
+      "ply": 18,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        7,
+        2
+      ],
+      "dst": [
+        6,
+        2
+      ]
+    },
+    {
+      "ply": 19,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        1,
+        1
+      ],
+      "dst": [
+        1,
+        2
+      ]
+    },
+    {
+      "ply": 20,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        6,
+        2
+      ],
+      "dst": [
+        5,
+        3
+      ]
+    },
+    {
+      "ply": 21,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        6,
+        0
+      ],
+      "dst": [
+        6,
+        1
+      ]
+    },
+    {
+      "ply": 22,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        5,
+        3
+      ],
+      "dst": [
+        4,
+        3
+      ]
+    },
+    {
+      "ply": 23,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        6,
+        1
+      ],
+      "dst": [
+        5,
+        1
+      ]
+    },
+    {
+      "ply": 24,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        4,
+        3
+      ],
+      "dst": [
+        3,
+        3
+      ]
+    },
+    {
+      "ply": 25,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        1,
+        2
+      ],
+      "dst": [
+        7,
+        2
+      ]
+    },
+    {
+      "ply": 26,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        3,
+        3
+      ],
+      "dst": [
+        2,
+        3
+      ]
+    },
+    {
+      "ply": 27,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        5,
+        1
+      ],
+      "dst": [
+        4,
+        1
+      ]
+    },
+    {
+      "ply": 28,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        2,
+        3
+      ],
+      "dst": [
+        1,
+        3
+      ]
+    },
+    {
+      "ply": 29,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        4,
+        1
+      ],
+      "dst": [
+        3,
+        1
+      ]
+    },
+    {
+      "ply": 30,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        1,
+        3
+      ],
+      "dst": [
+        0,
+        3
+      ]
+    },
+    {
+      "ply": 31,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        3,
+        1
+      ],
+      "dst": [
+        2,
+        1
+      ]
+    },
+    {
+      "ply": 32,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        0,
+        3
+      ],
+      "dst": [
+        1,
+        3
+      ]
+    },
+    {
+      "ply": 33,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        7,
+        2
+      ],
+      "dst": [
+        6,
+        2
+      ]
+    },
+    {
+      "ply": 34,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        1,
+        3
+      ],
+      "dst": [
+        0,
+        3
+      ]
+    },
+    {
+      "ply": 35,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        2,
+        1
+      ],
+      "dst": [
+        1,
+        1
+      ]
+    },
+    {
+      "ply": 36,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        0,
+        3
+      ],
+      "dst": [
+        1,
+        3
+      ]
+    },
+    {
+      "ply": 37,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        6,
+        2
+      ],
+      "dst": [
+        6,
+        3
+      ]
+    },
+    {
+      "ply": 38,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        1,
+        3
+      ],
+      "dst": [
+        2,
+        4
+      ]
+    },
+    {
+      "ply": 39,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        1,
+        1
+      ],
+      "dst": [
+        1,
+        2
+      ]
+    },
+    {
+      "ply": 40,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        2,
+        4
+      ],
+      "dst": [
+        3,
+        4
+      ]
+    },
+    {
+      "ply": 41,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        1,
+        2
+      ],
+      "dst": [
+        2,
+        2
+      ]
+    },
+    {
+      "ply": 42,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        3,
+        4
+      ],
+      "dst": [
+        4,
+        4
+      ]
+    },
+    {
+      "ply": 43,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        6,
+        3
+      ],
+      "dst": [
+        0,
+        3
+      ]
+    },
+    {
+      "ply": 44,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        4,
+        4
+      ],
+      "dst": [
+        5,
+        4
+      ]
+    },
+    {
+      "ply": 45,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        2,
+        2
+      ],
+      "dst": [
+        3,
+        2
+      ]
+    },
+    {
+      "ply": 46,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        5,
+        4
+      ],
+      "dst": [
+        6,
+        4
+      ]
+    },
+    {
+      "ply": 47,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        3,
+        2
+      ],
+      "dst": [
+        4,
+        2
+      ]
+    },
+    {
+      "ply": 48,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        6,
+        4
+      ],
+      "dst": [
+        7,
+        4
+      ]
+    },
+    {
+      "ply": 49,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        4,
+        2
+      ],
+      "dst": [
+        5,
+        2
+      ]
+    },
+    {
+      "ply": 50,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        7,
+        4
+      ],
+      "dst": [
+        6,
+        4
+      ]
+    },
+    {
+      "ply": 51,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        0,
+        3
+      ],
+      "dst": [
+        1,
+        3
+      ]
+    },
+    {
+      "ply": 52,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        6,
+        4
+      ],
+      "dst": [
+        7,
+        4
+      ]
+    },
+    {
+      "ply": 53,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        5,
+        2
+      ],
+      "dst": [
+        6,
+        2
+      ]
+    },
+    {
+      "ply": 54,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        7,
+        4
+      ],
+      "dst": [
+        6,
+        4
+      ]
+    },
+    {
+      "ply": 55,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        1,
+        3
+      ],
+      "dst": [
+        1,
+        4
+      ]
+    },
+    {
+      "ply": 56,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        6,
+        4
+      ],
+      "dst": [
+        5,
+        5
+      ]
+    },
+    {
+      "ply": 57,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        6,
+        2
+      ],
+      "dst": [
+        6,
+        3
+      ]
+    },
+    {
+      "ply": 58,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        5,
+        5
+      ],
+      "dst": [
+        4,
+        5
+      ]
+    },
+    {
+      "ply": 59,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        6,
+        3
+      ],
+      "dst": [
+        5,
+        3
+      ]
+    },
+    {
+      "ply": 60,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        4,
+        5
+      ],
+      "dst": [
+        3,
+        5
+      ]
+    },
+    {
+      "ply": 61,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        1,
+        4
+      ],
+      "dst": [
+        7,
+        4
+      ]
+    },
+    {
+      "ply": 62,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        3,
+        5
+      ],
+      "dst": [
+        2,
+        5
+      ]
+    },
+    {
+      "ply": 63,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        5,
+        3
+      ],
+      "dst": [
+        4,
+        3
+      ]
+    },
+    {
+      "ply": 64,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        2,
+        5
+      ],
+      "dst": [
+        1,
+        5
+      ]
+    },
+    {
+      "ply": 65,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        4,
+        3
+      ],
+      "dst": [
+        3,
+        3
+      ]
+    },
+    {
+      "ply": 66,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        1,
+        5
+      ],
+      "dst": [
+        0,
+        5
+      ]
+    },
+    {
+      "ply": 67,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        3,
+        3
+      ],
+      "dst": [
+        2,
+        3
+      ]
+    },
+    {
+      "ply": 68,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        0,
+        5
+      ],
+      "dst": [
+        1,
+        5
+      ]
+    },
+    {
+      "ply": 69,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        7,
+        4
+      ],
+      "dst": [
+        6,
+        4
+      ]
+    },
+    {
+      "ply": 70,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        1,
+        5
+      ],
+      "dst": [
+        0,
+        5
+      ]
+    },
+    {
+      "ply": 71,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        2,
+        3
+      ],
+      "dst": [
+        1,
+        3
+      ]
+    },
+    {
+      "ply": 72,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        0,
+        5
+      ],
+      "dst": [
+        1,
+        5
+      ]
+    },
+    {
+      "ply": 73,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        6,
+        4
+      ],
+      "dst": [
+        6,
+        5
+      ]
+    },
+    {
+      "ply": 74,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        1,
+        5
+      ],
+      "dst": [
+        2,
+        6
+      ]
+    },
+    {
+      "ply": 75,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        1,
+        3
+      ],
+      "dst": [
+        1,
+        4
+      ]
+    },
+    {
+      "ply": 76,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        2,
+        6
+      ],
+      "dst": [
+        3,
+        6
+      ]
+    },
+    {
+      "ply": 77,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        1,
+        4
+      ],
+      "dst": [
+        2,
+        4
+      ]
+    },
+    {
+      "ply": 78,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        3,
+        6
+      ],
+      "dst": [
+        4,
+        6
+      ]
+    },
+    {
+      "ply": 79,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        6,
+        5
+      ],
+      "dst": [
+        0,
+        5
+      ]
+    },
+    {
+      "ply": 80,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        4,
+        6
+      ],
+      "dst": [
+        5,
+        6
+      ]
+    },
+    {
+      "ply": 81,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        2,
+        4
+      ],
+      "dst": [
+        3,
+        4
+      ]
+    },
+    {
+      "ply": 82,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        5,
+        6
+      ],
+      "dst": [
+        6,
+        6
+      ]
+    },
+    {
+      "ply": 83,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        3,
+        4
+      ],
+      "dst": [
+        4,
+        4
+      ]
+    },
+    {
+      "ply": 84,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        6,
+        6
+      ],
+      "dst": [
+        7,
+        6
+      ]
+    },
+    {
+      "ply": 85,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        4,
+        4
+      ],
+      "dst": [
+        5,
+        4
+      ]
+    },
+    {
+      "ply": 86,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        7,
+        6
+      ],
+      "dst": [
+        6,
+        6
+      ]
+    },
+    {
+      "ply": 87,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        0,
+        5
+      ],
+      "dst": [
+        1,
+        5
+      ]
+    },
+    {
+      "ply": 88,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        6,
+        6
+      ],
+      "dst": [
+        7,
+        6
+      ]
+    },
+    {
+      "ply": 89,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        5,
+        4
+      ],
+      "dst": [
+        6,
+        4
+      ]
+    },
+    {
+      "ply": 90,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        7,
+        6
+      ],
+      "dst": [
+        6,
+        6
+      ]
+    },
+    {
+      "ply": 91,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        1,
+        5
+      ],
+      "dst": [
+        1,
+        6
+      ]
+    },
+    {
+      "ply": 92,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        6,
+        6
+      ],
+      "dst": [
+        5,
+        7
+      ]
+    },
+    {
+      "ply": 93,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        6,
+        4
+      ],
+      "dst": [
+        6,
+        5
+      ]
+    },
+    {
+      "ply": 94,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        5,
+        7
+      ],
+      "dst": [
+        4,
+        7
+      ]
+    },
+    {
+      "ply": 95,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        6,
+        5
+      ],
+      "dst": [
+        5,
+        5
+      ]
+    },
+    {
+      "ply": 96,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        4,
+        7
+      ],
+      "dst": [
+        3,
+        7
+      ]
+    },
+    {
+      "ply": 97,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        1,
+        6
+      ],
+      "dst": [
+        7,
+        6
+      ]
+    },
+    {
+      "ply": 98,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        3,
+        7
+      ],
+      "dst": [
+        2,
+        7
+      ]
+    },
+    {
+      "ply": 99,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        5,
+        5
+      ],
+      "dst": [
+        4,
+        5
+      ]
+    },
+    {
+      "ply": 100,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        2,
+        7
+      ],
+      "dst": [
+        1,
+        7
+      ]
+    },
+    {
+      "ply": 101,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        4,
+        5
+      ],
+      "dst": [
+        3,
+        5
+      ]
+    },
+    {
+      "ply": 102,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        1,
+        7
+      ],
+      "dst": [
+        0,
+        7
+      ]
+    },
+    {
+      "ply": 103,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        3,
+        5
+      ],
+      "dst": [
+        2,
+        5
+      ]
+    },
+    {
+      "ply": 104,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        0,
+        7
+      ],
+      "dst": [
+        1,
+        7
+      ]
+    },
+    {
+      "ply": 105,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        7,
+        6
+      ],
+      "dst": [
+        6,
+        6
+      ]
+    },
+    {
+      "ply": 106,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        1,
+        7
+      ],
+      "dst": [
+        0,
+        7
+      ]
+    },
+    {
+      "ply": 107,
+      "side": "W",
+      "piece": "K",
+      "src": [
+        2,
+        5
+      ],
+      "dst": [
+        1,
+        5
+      ]
+    },
+    {
+      "ply": 108,
+      "side": "B",
+      "piece": "K",
+      "src": [
+        0,
+        7
+      ],
+      "dst": [
+        1,
+        7
+      ]
+    },
+    {
+      "ply": 109,
+      "side": "W",
+      "piece": "R",
+      "src": [
+        6,
+        6
+      ],
+      "dst": [
+        6,
+        7
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "ply": 0,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            0,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 1,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            0,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 2,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            0,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 3,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 4,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 5,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 6,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 7,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 8,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 9,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 10,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 11,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 12,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 13,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 14,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 15,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 16,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 17,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 18,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 19,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 20,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            0
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 21,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 22,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 23,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 24,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 25,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 26,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 27,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 28,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 29,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 30,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 31,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 32,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 33,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 34,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 35,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 36,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 37,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 38,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            1
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 39,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 40,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 41,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 42,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 43,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 44,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 45,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 46,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 47,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 48,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 49,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 50,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 51,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 52,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 53,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 54,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 55,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 56,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            2
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 57,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 58,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 59,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 60,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 61,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 62,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 63,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 64,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 65,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 66,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 67,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 68,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 69,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 70,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 71,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 72,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 73,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 74,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 75,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 76,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 77,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 78,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 79,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 80,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 81,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 82,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 83,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 84,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 85,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 86,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 87,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 88,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 89,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            7,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 90,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 91,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 92,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 93,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            5,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 94,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            6,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 95,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            4,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 96,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 97,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            3,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 98,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            5,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 99,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            2,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 100,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            4,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 101,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 102,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            3,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 103,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 104,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            7,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 105,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 106,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            2,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 107,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            0,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 108,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "ply": 109,
+      "pieces": [
+        {
+          "colour": "B",
+          "kind": "K",
+          "square": [
+            1,
+            7
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "K",
+          "square": [
+            1,
+            5
+          ]
+        },
+        {
+          "colour": "W",
+          "kind": "R",
+          "square": [
+            6,
+            7
+          ]
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 0.0,
+  "finished_utc": "2026-10-21T09:15:55.501815+00:00",
+  "raw_history_compatibility": "NOT ASSERTED; after claim/automatic thresholds this remains CLOCK-FREE ONLY",
+  "source_sha256": {
+    "C:\\engame-chess\\sessions\\evidence\\S086\\selected_policy.py": "307fd912cc67d2e645e274b8322acd362aa93e93e6b37b5ac42d88118e962780",
+    "C:\\engame-chess\\scripts\\krk_diagnostic.py": "6ba33b07a57d1da49b15d3ddc908f04dfd89f9c8d65990b315867614bfd4bd35",
+    "C:\\engame-chess\\scripts\\krk_check_phase_diagnostic.py": "22d24b969aaa9aa5b7fd710181161eca15545edbf616ba1138a1d3034ae92ec1",
+    "C:\\engame-chess\\scripts\\krk_wall_policy_diagnostic.py": "c95628e6815b7d735fc2981e216f36e06a10302fddd3183e01e35b537b464aba"
+  },
+  "ends_in_model_mate": true
+}

@@ -1,0 +1,20 @@
+$ python -m unittest discover -s tests -p test_validate_ledger.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.025s
+
+OK
+
+$ python scripts/validate_ledger.py
+LEDGER VALID: 46 frozen theorem(s) (structure only)
+
+$ git diff --check
+warning: in the working copy of 'NEXT_SESSION.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/KRK_COMPLETION.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/ROADMAP.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/SESSION_PROGRESS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'research/CANDIDATES.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'sessions/SESSION_LEDGER.md', LF will be replaced by CRLF the next time Git touches it
+
+PASS: 984 prior formal/theorem/diagnostic-source files unchanged as canonical Git bytes; all46 rows/frozen records preserved, no formal/theorem edits or new Lean. Single109-edge model diagnostic record/source hashes intact; full stable table, explicit unchanged mathematical delta, complete next prompt/links/diff. Packaging and model diagnostic do not prove KRK closure or optimal95.

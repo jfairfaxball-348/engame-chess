@@ -2,7 +2,7 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S085. Forty-six theorem bundles are frozen, including universal admitted RAW KRK termination. Bundles are not solved material classes.
+Current mathematical evidence: through S086. Forty-six theorem bundles are frozen, including universal admitted RAW KRK termination. Bundles are not solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
@@ -18,7 +18,7 @@ Current mathematical evidence: through S085. Forty-six theorem bundles are froze
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S085 froze clock-zero KRK count control, incoming-premise-free supplied-budget lift and concrete73 framed-wall actual wins as EC-T0046;46 bundles. Mathematical coverage unchanged from S084; complete low-clock/history outcomes, full FIDE and global exact WDL-DTZ remain open.
+Session change: S086 made no new mathematical progress: the global sub100 geometric proof remains open after budget, amortisation, box-shrink and no-wait attacks; a single109-ply clock-free model trajectory defeats the tested policy only.46 frozen bundles unchanged; KRK NOT CLOSED.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 
