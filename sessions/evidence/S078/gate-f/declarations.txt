@@ -1,0 +1,10 @@
+EndgameChess.Rules.KRKHolding.budget_monotone
+EndgameChess.Rules.KRKHolding.fuel_saturation
+EndgameChess.Rules.KRKHolding.defensive_choice
+EndgameChess.Rules.KRKHolding.holding_policy
+EndgameChess.Rules.KRKHolding.hold_of_not_force
+EndgameChess.Rules.KRKHolding.not_force_of_hold
+EndgameChess.Rules.KRKHolding.holding_iff_not_force
+EndgameChess.Rules.KRKHolding.policy_path_bound
+EndgameChess.Rules.KRKHolding.policy_maximal_iff_stopped
+EndgameChess.Rules.KRKHolding.stopped_continuation

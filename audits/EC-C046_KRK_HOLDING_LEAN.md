@@ -43,3 +43,5 @@ encoding failure happened AFTER the first successful source build; runner
 printing was fixed without a proof change. Earlier frozen modules replay
 deprecation warnings, preserved unchanged. Complete axioms and new exact-source
 clean Gate F must be observed before FORMAL_VERIFIED; Gate Z stays separate.
+
+Observed exact-source Gate F: OWN proof-source `d8a77d1b785da39d0a644169750283f4ade935fe`; NEW GitHub clone without .lake, full179-job build exit0 in372.297s; complete364-report AxiomCheck exit0 at2026-10-21T08:04:26Z. Full working/clean runner and published Git source bytes match; source/transitive/executable hashes and clean identity retained. Official native Windows Lean4.35.0; inherited environment, no toolchain/dependency/shim/TLS/checksum changes. Hosted CI unobserved. Separate Gate Z pending.

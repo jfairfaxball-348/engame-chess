@@ -157,3 +157,5 @@ or DTZ, or close KRK. The policy is classical/noncomputable, not a tablebase.
 After proof/audit/formal verification return to necessary-and-sufficient
 KRK history/geometry outcomes, actual rules correspondence and distance
 optimality. A generic theorem's existence is not class closure.
+
+Observed exact-source Gate F: OWN proof-source `d8a77d1b785da39d0a644169750283f4ade935fe`; NEW GitHub clone without .lake, full179-job build exit0 in372.297s; complete364-report AxiomCheck exit0 at2026-10-21T08:04:26Z. Full working/clean runner and published Git source bytes match; source/transitive/executable hashes and clean identity retained. Official native Windows Lean4.35.0; inherited environment, no toolchain/dependency/shim/TLS/checksum changes. Hosted CI unobserved. Separate Gate Z pending.

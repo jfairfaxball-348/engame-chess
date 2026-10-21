@@ -141,3 +141,5 @@ S066 planning addendum (2026-10-20): [direct KRK closure roadmap installed](S066
 Full session closeouts live as `sessions/S###_*.md`. New research sessions are installed in the root `NEXT_SESSION.md`. Each closeout must state explicitly which mathematical and formal checks were *actually* run.
 
 | S077 | 2026-10-21 | Freeze universal RAW KRK termination (Gate Z) | Separate exact own-source native Windows fresh build and354-report runner; all source/import inventories match. [Closeout](S077_FREEZE_KRK_TERMINATION.md). Continue S078 holding under owner resumption | **+1 -> EC-T0042 FROZEN** (42 bundles); full closure open |
+
+| S078 | 2026-10-21 | All-history RAW KRK holding policies (Gate F) | Actual legal policy/complement iff and bounded stopped compliant play. Own source d8a77d1b785da39d0a644169750283f4ade935fe; new179-job build/364 permitted reports. [Closeout](S078_KRK_HOLDING.md); S079 separate own-source freeze | None —42 frozen bundles; full KRK closure open |
