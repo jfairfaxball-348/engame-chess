@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S084. Forty-five theorem bundles are frozen, including universal admitted RAW KRK termination. Bundles are not solved material classes.
+Current mathematical evidence: through S085. Forty-six theorem bundles are frozen, including universal admitted RAW KRK termination. Bundles are not solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live, clock-free forcing, conditional 73-ply RAW family and 442/443 bounds and universal RAW termination frozen; all-history RAW holding frozen; strong nonloss/high-clock criteria frozen; actual winning-policy bridge frozen; clock0 history-free73 family formally verified | Full FIDE, low-clock geometric coverage and global exact distance |
+| K+R vs K | Dead/live and clock-free forcing; RAW termination, holding/winning policies, strong nonloss, high-clock criteria and clock0 73-ply wall family frozen | Complete low-clock/history outcomes, full FIDE correspondence and global exact WDL/DTZ |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S084. Forty-five theorem bundles are froz
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S084 formally verified automatic KRK incoming-count control at nondead clock0 and same-budget lifting of any supplied N<100 certificate; framed rank-six clock0 walls now have RAW W73/actual win without incoming premises.45 bundles frozen; full low-clock geometry/FIDE/global exact WDL-DTZ remain open.
+Session change: S085 froze clock-zero KRK count control, incoming-premise-free supplied-budget lift and concrete73 framed-wall actual wins as EC-T0046;46 bundles. Mathematical coverage unchanged from S084; complete low-clock/history outcomes, full FIDE and global exact WDL-DTZ remain open.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 

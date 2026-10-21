@@ -95,3 +95,5 @@ S039: [EC-T0023](frozen/EC-T0023/v1.md) freezes raw multi-step clock growth on a
 - [EC-T0044](frozen/EC-T0044/v1.md): universal actual strong holding and weak nonforcing, exact high-clock RAW forcing criteria, exact one-ply optimal budget on those wins. [Separate own-source S081 Gate Z](frozen/VERIFICATION-S081/README.md).
 
 - [EC-T0045](frozen/EC-T0045/v1.md): independent actual bounded RAW KRK winning policy iff full F, same-B certificate extraction and actual terminal mate continuation. [Separate own-source Gate Z](frozen/VERIFICATION-S083/README.md).
+
+- [EC-T0046](frozen/EC-T0046/v1.md): actual clock0 KRK incoming counts<=1, supplied N<100 same-budget RAW/ActualWin with no incoming premises, concrete73 framed-wall family. [Separate own-source Gate Z](frozen/VERIFICATION-S085/README.md).

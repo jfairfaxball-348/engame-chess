@@ -129,3 +129,5 @@ S082 formally verified independent actual bounded winning policies iff full RAW 
 S083 froze independent actual bounded RAW winning-policy correspondence, exact B certificate extraction and actual terminal mate continuation as EC-T0045;45 bundles. Mathematical coverage unchanged from S082; low-clock geometry/full FIDE/global exact WDL-DTZ remain open. [EC-T0045](../theorems/frozen/EC-T0045/v1.md).
 
 S084 formally verified automatic KRK incoming-count control at nondead clock0 and same-budget lifting of any supplied N<100 certificate; framed rank-six clock0 walls now have RAW W73/actual win without incoming premises.45 bundles frozen; full low-clock geometry/FIDE/global exact WDL-DTZ remain open. [Paper](../proofs/EC-C049_KRK_FRESH_HISTORY.md).
+
+S085 froze clock-zero KRK count control, incoming-premise-free supplied-budget lift and concrete73 framed-wall actual wins as EC-T0046;46 bundles. Mathematical coverage unchanged from S084; complete low-clock/history outcomes, full FIDE and global exact WDL-DTZ remain open. [EC-T0046](../theorems/frozen/EC-T0046/v1.md).

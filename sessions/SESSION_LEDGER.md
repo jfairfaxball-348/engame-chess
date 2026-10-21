@@ -155,3 +155,5 @@ Full session closeouts live as `sessions/S###_*.md`. New research sessions are i
 | S083 | 2026-10-21 | Freeze actual RAW KRK winning policies (Gate Z) | New own-source199-job build/382 permitted reports, complete own source/import/runner equality. [Closeout](S083_FREEZE_KRK_WINNING_POLICY.md); direct clock0 history gap next | **+1 -> EC-T0045 FROZEN** (45 bundles); no new geometric coverage |
 
 | S084 | 2026-10-21 | Clock-zero KRK history and incoming-count-free73 walls (Gate F) | Actual KRK query counts<=1 at nondead clock0; supplied N<100 same-budget RAW/ActualWin, concrete framed73 family. Own source 2469238e2ec6a9aa39c157923c7a03165be48307; new208-job build/390 permitted reports. [Closeout](S084_KRK_FRESH_HISTORY.md) | None —45 bundles; new partial RAW input coverage |
+
+| S085 | 2026-10-21 | Freeze clock0 KRK history/fresh73 wins (Gate Z) | New own-source208-job build/390 permitted reports, complete own source/import/runner equality. [Closeout](S085_FREEZE_KRK_FRESH_HISTORY.md); direct global geometry next | **+1 -> EC-T0046 FROZEN** (46 bundles); mathematical coverage unchanged |

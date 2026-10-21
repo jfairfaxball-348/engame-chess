@@ -1,0 +1,50 @@
+{
+  "proof_source": "2469238e2ec6a9aa39c157923c7a03165be48307",
+  "verified_utc": "2026-10-21T09:14:14Z",
+  "fresh_clone": "C:\\tmp\\engame-s085-gate-z",
+  "lake_absent_before_build": true,
+  "build_exit": 0,
+  "build_seconds": 377.203,
+  "build_jobs": 208,
+  "axiom_statement_exit": 0,
+  "total_axiom_reports": 390,
+  "bundle_declarations": [
+    "EndgameChess.Rules.KRKFresh.key_material",
+    "EndgameChess.Rules.KRKFresh.prefix_region",
+    "EndgameChess.Rules.KRKFresh.clock_zero_counts",
+    "EndgameChess.Rules.KRKFresh.winning_move_material",
+    "EndgameChess.Rules.KRKFresh.restricted_append",
+    "EndgameChess.Rules.KRKFresh.restricted_lifting",
+    "EndgameChess.Rules.KRKFresh.clock_zero_sub100",
+    "EndgameChess.Rules.KRKFresh.clock_zero_axis_wall"
+  ],
+  "bundle_axioms": {
+    "EndgameChess.Rules.KRKFresh.key_material": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKFresh.prefix_region": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKFresh.clock_zero_counts": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKFresh.winning_move_material": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKFresh.restricted_append": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKFresh.restricted_lifting": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKFresh.clock_zero_sub100": "propext, Classical.choice, Quot.sound",
+    "EndgameChess.Rules.KRKFresh.clock_zero_axis_wall": "propext, Classical.choice, Quot.sound"
+  },
+  "complete_modules": [
+    "formal/EndgameChess/Rules/KRKFresh/Append.lean",
+    "formal/EndgameChess/Rules/KRKFresh/ClockZeroCounts.lean",
+    "formal/EndgameChess/Rules/KRKFresh/Definitions.lean",
+    "formal/EndgameChess/Rules/KRKFresh/FreshLift.lean",
+    "formal/EndgameChess/Rules/KRKFresh/KeyMaterial.lean",
+    "formal/EndgameChess/Rules/KRKFresh/Lifting.lean",
+    "formal/EndgameChess/Rules/KRKFresh/PrefixRegion.lean",
+    "formal/EndgameChess/Rules/KRKFresh/Wall.lean",
+    "formal/EndgameChess/Rules/KRKFresh/WinningMaterial.lean"
+  ],
+  "dependency_modules": 172,
+  "source_files_hashed": 211,
+  "complete_runner_matches_working": true,
+  "source_matches_published_git_bytes": true,
+  "platform": "official native Windows Lean4.35.0; inherited environment",
+  "hosted_ci": "unobserved",
+  "gate": "Z",
+  "entire_own_gate_f_inventory_and_complete_runner_match": true
+}
