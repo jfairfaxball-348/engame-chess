@@ -1,61 +1,15 @@
-# NEXT SESSION - S093: FUTURE / UNEXECUTED; awaiting owner resumption
+# Current work — KRK (live bookmark, not a session gate)
 
-Latest owner instruction (2026-10-21): "finish up here and closeout cleanly".
-S092 is CLOSED AT OWNER REQUEST. The continuing KRK run is STOPPED, with KRK
-OPEN. This supersedes the earlier keep-going instruction. Do not execute this
-future session or start KQK without explicit owner resumption.
+**Status:** KRK OPEN. Research was last stopped at the owner's request after S092; work can resume in an ordinary local work period or upon the next 'run next session' request. No numbered session, closeout, report or rewritten prompt is required.
 
-If resumed, apply AGENTS.md and docs/PROOF_PROTOCOL.md. Fetch/reconcile all
-remote heads and latest main before writes. Preserve frozen modules, records
-and ledger. Publish the session branch, ordinary merge/push main, then fetch
-and compare exact refs. Apply the repository-wide direct-obligation rule.
+**Objective:** Prove and formalise a compact, explicitly evaluated outcome/strategy criterion for **every admitted KRK history with positive halfmove clock**, both sides to move, both colours, all legal terminal cases and relevant current/intended draw claims. Stay with the hardest open quantified obligation; do not replace it with a collection of sufficient special cases.
 
-Certified baseline: 48 frozen bundles through S091, including EC-T0048 at
-proof source 2311abe71bc1a4eed47026feccd5ba5a0760d5bb. Whole strong-turn strict
-walls have bound93, strong legal arrivals97, weak forcing98 with its premise.
-The explicit BOTH-turn actual RAW clock0 winning criterion is: strong turn OR
-already mate OR safe rook with a legal reply. No incoming count premise at
-clock0. This is partial KRK outcome coverage, not full class closure or exact
-distance. All29 complete KRKCentral modules are frozen and immutable.
-Read theorems/frozen/EC-T0048/v1.md and sessions/S091* for actual evidence;
-do not repeat checks of unchanged frozen results.
+**Immediate mathematical gap:** The [fixed-incoming-key-barrier paper reduction](proofs/KRK_STATIC_HISTORY_REDUCTION_S092.md) is not yet a closed geometric result. Evaluate that barrier condition analytically with explicit regions **and matching defender lower bounds against every strong-side legal alternative**. Integrate the deadline max(1,100-h) on strong turns and 100-h on weak turns, including original incoming history, legal rook captures and root/mate exceptions. The deadline lemma EC-C053 has passed local Lean checks but is not frozen. The reduction is paper-only, not Lean-formalised.
 
-S092 supporting work: EC-C053 necessary deadline is LOCAL_VERIFIED with local
-Lean checks only: strong max(1,100-h), weak100-h, same incoming history. The
-245-job incremental build and complete422-report runner passed; all4 attempts
-are retained in sessions/evidence/S092. No own-source Gate F/Z, no new freeze
-or outcome coverage. Read proofs/KRK_EXACT_CLOCK_DEADLINE_S092.md and its audits.
+**Then:** Establish full FIDE-rule correspondence for the actual history/claims model and exact global WDL/DTZ distance semantics; verify and freeze completed claims using [the minimal proof standard](docs/PROOF_PROTOCOL.md). A clock-free strategy, generic game recurrence, per-position certificates or an upper bound alone does not settle these obligations.
 
-The full original-history to fixed incoming-key-barrier reduction is argued
-on PAPER in proofs/KRK_STATIC_HISTORY_REDUCTION_S092.md and its separate
-same-agent paper audit. It includes the exempt root, weak intended claims,
-mating precedence, turn parity and least-rank key-simple sufficiency. It is
-NOT formalised. The compact geometric condition and matching lower bounds
-remain OPEN. Read research/KRK_POSITIVE_CLOCK_FRONTIER.md, docs/KRK_COMPLETION.md,
-docs/CHARTER.md and the live specification. No independent external review or
-hosted CI success is claimed.
+**Trusted starting point:** 48 frozen theorem bundles through EC-T0048 in [the ledger](theorems/LEDGER.csv). EC-T0048 certifies all-wall93, legal strong arrivals97, weak forcing98 and the both-turn RAW clock-zero win criterion. These are partial KRK results, not full outcome/distance parity. Historic S092 details live in [the frontier](research/KRK_POSITIVE_CLOCK_FRONTIER.md), [the proof](proofs/KRK_EXACT_CLOCK_DEADLINE_S092.md) and existing evidence.
 
-Highest-priority missing claim on resumption: a compact explicitly evaluated
-actual win/draw/strategy criterion on EVERY admitted positive-clock KRK history,
-both turns/colours, including terminal states, optional/current/intended claims,
-legal captures to KK and original incoming history. Evaluate the fixed-barrier
-geometric condition using explicit regions and matching defender lower bounds
-against ALL strong choices. A generic recurrence, renamed winning predicate,
-per-position value certificate, tablebase, engine oracle or class enumeration
-is not the required characterisation. Failure of a sufficient policy is not
-a draw proof. Preserve OPEN/UNKNOWN honestly if the route fails.
+**Working method:** Focus on the direct missing proof; run tests and Lean checks when warranted, commit meaningful source or finished mathematics, freeze only verified theorems. Keep working across multiple milestones without creating `sessions/S094...` files or end-of-session tables. Update this page only when the actual next obligation changes.
 
-Return directly from the deadline dependency to that full-domain geometric
-proof. Do not freeze the deadline alone as another milestone. Admit a new
-prerequisite only after naming its blocked direct step, smallest necessary
-statement, why existing results fail, concrete use and immediate return
-criterion. No generic library development or unrelated isolated cases.
-
-Full FIDE correspondence and exact global minimax/WDL-DTZ conventions remain
-separate closure requirements. A FIDE bridge is a direct step only with its
-necessity to the chosen criterion recorded. Paper proof and separate audit
-precede Lean; one main per module and AxiomCheck; own-source Gate F and separate
-Gate Z before any new freeze. No scientific status changes from publishing.
-At closeout update the full stable progress table, obligation movement, actual
-checks, ledger effect and full next prompt. Follow the owner's then-current
-scope and stopping instructions. This prompt itself authorises no new research.
+**Next material class:** KQK only after KRK closure and owner direction.

@@ -5,7 +5,7 @@ The ultimate ambition is **ultra-weak solving as a draw**: prove the game-theore
 
 A **weak** solution would additionally exhibit an effective way to achieve the initial position's game-theoretic value against arbitrary opposition; a **strong** solution covers all legal positions. A value proof may entail that strategies exist without specifying them. Do not confuse these goals with the much stronger active intermediate programme of proving exact outcomes of all positions in material classes through seven pieces. Neither local forced-mate proofs nor mathematical strategy lemmas are prohibited by the ultra-weak ambition; they can be useful tools without constituting a playing oracle.
 
-**Priority order is unchanged:** operational seven-piece tablebase parity, pursued through the already installed next session and the existing proof → formalisation → freeze gates. The initial-position draw remains a distant, conjectural objective, not a replacement task.
+**Priority order:** operational seven-piece tablebase parity, pursued through the live KRK obligation with mathematical proof → Lean formalisation → verified freeze, without mandatory per-session reporting. The initial-position draw remains a distant, conjectural objective, not a replacement task.
 
 ## Allowed mathematics
 Combinatorial game theory, turn-based reachability games, adversarial quantification (exists move / for all replies), finite/infinite plays, game graphs, graph kernels, fixed points, invariants, metric and lattice geometry, piece-attacks as functions, parity/colouring, symmetries, symbolic logic, and elementary geometry of boundaries.

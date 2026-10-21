@@ -12,7 +12,7 @@
 ## Hierarchy of ambitions (not a change of session priorities)
 - **Distant ambition:** prove the single initial-position value of standard chess is a draw (*ultra-weak* solving). A value proof is enough even if it is non-constructive; no practical move recommendation is required.
 - **Major intermediate milestone:** the existing up-to-seven-piece Syzygy-parity programme, through general characterisations and Lean proofs, with no tablebase lookup.
-- **Near-term execution:** the existing per-theorem proof → audit → Lean → freeze progression. Do not substitute a speculative starting-position attack for the installed next session, change its deliverables, or relax its verification gates.
+- **Near-term execution:** tackle the live mathematical obligation, prove sound lemmas, formalise in Lean and freeze theorems when truly verified. There are no mandatory numbered sessions or duplicate administrative freeze stages. Do not substitute a speculative initial-position attack for the active endgame target.
 
 Terminology matters: an *ultra-weak* solution establishes the theoretical value of the initial position; a *weak* solution additionally provides a way to achieve that value from the initial position against every opponent response; a *strong* solution determines correct play or values for all legal positions. Proving a draw value logically implies that non-losing strategies exist, but an ultra-weak proof need not construct them. Local constructive forcing-strategy lemmas remain valid and often necessary intermediate mathematics; the ultimate ambition simply does not demand an end-user chess-playing algorithm.
 
@@ -44,5 +44,5 @@ The detailed gates, required artifacts and exceptional correction procedure are 
 ## Complexity policy
 Piece count is the default first ordering, *not* a permanent restriction. Later rungs may instead be organised by information, branching factor, geometric constraints, forcing strategy, rule dependence, pawn promotion or depth of reasoning. Choose the next tractable proof, not the most impressive-sounding claim.
 
-## Session convention
-One principal claim or prerequisite per session; explicit deliverables, checkable closeout, full next-session prompt. Research sessions are `S001`, `S002`, …; bootstrap `S000` is administrative. A pasted or linked numbered session prompt authorises its execution. If a claim fails, document the failure and preserve the candidate for refinement.
+## Working convention
+Work continuously on the current material-class obligation, including during local laptop sessions. Session numbers, one-claim-per-session limits, formal closeouts, session ledgers, reports and full next-session prompts are no longer required. Preserve substantive proof/counterexample findings in the relevant mathematical source; retain the frozen Lean and ledger safeguards described in [PROOF_PROTOCOL.md](PROOF_PROTOCOL.md). The optional [live work note](../NEXT_SESSION.md) is updated only when the obligation actually changes.

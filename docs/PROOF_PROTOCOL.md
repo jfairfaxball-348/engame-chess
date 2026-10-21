@@ -1,102 +1,29 @@
-# Protocol — propose, prove, formalise, freeze
+# Minimal proof and freeze standard
 
-## Admission: direct obligation before new research
+This document governs **mathematical trust**, not work sessions. An interactive session may contain several proofs, freezes or none. No separate proof/freeze session, numbered handover, full progress table, mandatory status report, or repeated session evidence bundle is needed.
 
-Apply the [repository-wide direct-obligation rule](../AGENTS.md) for the active
-target, including future targets after KRK. Before new research or formalisation,
-put this short admission record in the session document or linked proof:
+## 1. Research the active obligation
+Start with the open mathematical obligation in [current work](../NEXT_SESSION.md). Use existing results first. A necessary auxiliary lemma, diagnostic or counterexample search is legitimate; it must feed the actual obligation rather than create a parallel theorem-count programme. Failed attempts need recording only when their counterexample or insight materially affects the next proof. Paper notes belong with the relevant proof, not in a session diary.
 
-- **Target and priority:** the active material class and highest-priority open
-  closure obligation being attacked.
-- **Exact gap:** the missing quantified statement, input domain and criterion
-  that would close or materially narrow that obligation.
-- **Direct contribution:** the proposed work's role in that proof and the
-  outcome/distance coverage or quantitative improvement it would establish.
-- **Necessity, if foundational:** the named blocked proof step, smallest needed
-  lemma, why existing results fail, and its explicit use in the chosen direct
-  route. General usefulness alone does not admit a prerequisite.
-- **Return criterion:** when the prerequisite/local case/diagnostic ends and
-  the direct proof resumes. Further prerequisite work needs its own necessity
-  record; no automatic library-building sequence.
+## 2. Prove the statement (LOCAL_VERIFIED)
+Write the mathematical claim and argument in `proofs/` or `research/` with precise input domain, rule model, move and quantifier semantics, and all essential lemmas. Stress-test legality, captures, terminal branches, repetition, clock thresholds, side to move, and adversarial replies as applicable. Resolve genuine gaps before claiming a proof. Counterexample scripts are diagnostics, not substitutes for general proof. Keep a brief proof critique/caveat inside the proof itself (or a separate audit when substantive). A candidate may remain open without an administrative status-change document.
 
-Do not replace a hard quantified obligation with isolated examples, generic
-equivalences, reusable infrastructure or theorem-count milestones. Necessary
-foundations and necessary cases are allowed, with the above dependency made
-concrete. Required proof and verification gates remain mandatory for admitted
-results; passing a gate does not itself advance material-class coverage.
+## 3. Formalise and check (FORMAL_VERIFIED)
+Represent the actual claim faithfully in Lean 4, not a weaker surrogate. Give each principal result an identifiable module/declaration and add new exported main declarations to `formal/AxiomCheck.lean`. At verification, record the pinned toolchain/dependencies, exact source commit and declaration, a successful reproducible `lake build`, the `#print axioms` output/allowed assumptions, and any material limitations of the prose–Lean bridge. Disallow `sorry`, `admit`, ad hoc proof axioms or unsafe escapes. Inspect non-vacuity and audit any nonstandard assumptions.
 
-At closeout, compare the actual result with this admission record. Name each
-closure obligation closed, narrowed or unchanged and distinguish supporting
-work from newly covered inputs. The chart must expose the immediate blocker;
-unchanged headline gaps must be reported as unchanged. Owner-directed governance
-or tooling is recorded separately and creates no mathematical claim.
+Verification is **incremental** for day-to-day work: changed modules and their dependants, including frozen consumers of changed shared definitions. A clean checkout is required **once for certification**, not again just because a session ended or a separate freeze session was scheduled. A single verified source and captured evidence can support both FORMAL_VERIFIED and its subsequent freeze without a duplicated full build. Do not claim external CI/Palomar checks unless their results were observed.
 
-## Gate P: proposed
-Record a theorem candidate with unique ID, exact board/rules assumptions, quantifier order, precise result type and known counterexample risks. Status `PROPOSED`. No theorem-ledger row is required for a candidate: use `research/CANDIDATES.md`.
+## 4. Freeze a verified result (FROZEN)
+When ready, create one compact `theorems/frozen/<ID>/vN.md` manifest containing:
+- Exact proved statement, scope, rules and known boundaries; proof and relevant audit links.
+- Lean path/declaration, pinned Lean toolchain/dependencies, **verified proof-source commit SHA**, checks and any accepted axioms/trust assumptions.
+- Date/version and relationship to previous frozen claims, when relevant.
 
-## Gate L: locally verified mathematics
-Before touching Lean, write a standalone proof in `research/` or `proofs/` with:
-- Unambiguous definitions for every symbol; distinguish reachability from play stopped by rules.
-- Proof of required lemmas, including preservation of legality under every relevant move.
-- Adversarial counterexample search: illegal placements, boundaries, side-to-move, path length zero, opponent cooperation, definitions of check/checkmate, and all declared rules.
-- An independent audit note listing attempted falsifications and outcomes.
-- Source attribution. Classical results must not be described as novel.
+Then add **one** `FROZEN` row to `theorems/LEDGER.csv`. Keep the ledger schema and existing rows intact. One verified proof-source commit plus one manifest/ledger commit is enough; no mandatory intervening session, fresh duplicate build, log-copy factory or separate session closeout. Preserve only the essential reproducibility evidence and genuine mathematical caveats.
 
-Once every gap is resolved, mark the candidate `LOCAL_VERIFIED`; keep evidence and reviewer/session reference. **Computational evidence alone is insufficient.**
+A frozen theorem module and historical manifest are immutable. Corrections or strengthening require a new module/declaration and a conspicuous new or superseding manifest; never rewrite history. Toolchain migrations are distinct from theorem changes: rebuild and check affected declarations with unchanged statements and justified axioms, recording a concise migration provenance instead of manufacturing per-theorem session reports.
 
-## Gate F: formal verification
-Implement the exact local statement in Lean 4, preferably using mathlib if it decreases trusted code. Pin the `lean-toolchain` and `lakefile` dependency revisions as soon as a Lean project is introduced. The formal theorem must correspond to the prose statement: do not replace chess legality with a weaker surrogate without stating that reduction and proving it.
+## 5. Progress means mathematical coverage
+Advance to the next **obligation**, not the next session number. Only claim a material class closed when all legal positions, both turns, appropriate rule-aware WDL and distance semantics have actually been covered by checked mathematics. The theorem count is not the number of solved endgames.
 
-Required checks at the referenced commit:
-- `lake build` successful in a clean reproducible checkout.
-- No `sorry`, `admit`, unjustified `axiom`, `unsafe` proof escapes or fabricated proof tokens.
-- `#print axioms <qualified_theorem_name>` inspected and recorded.
-- Audit all imported axioms and the trusted kernel assumptions.
-- Verify no incorrect coercion of a finite test or a tautology into the intended theorem.
-- Save full build logs/toolchain revision and proof declaration name.
-
-Set `FORMAL_VERIFIED` only once evidence exists.
-
-### Re-checking obligations (incremental verification)
-The library will hold many small proofs. They are **not** all re-verified on every commit.
-- **One module per theorem** (`formal/EndgameChess/<Topic>.lean`). Definitions shared by several theorems live in their own modules and are imported.
-- **Lean CI** (`.github/workflows/lean-build.yml`) runs only when `formal/**` changes. It restores the cached `formal/.lake`, so `lake build` rebuilds only the changed modules and the modules that import them.
-- **What must be re-checked:**
-  1. a new or edited proof module;
-  2. every module downstream of a changed shared definition, frozen ones included, because the statement's meaning may have changed;
-  3. everything, after a toolchain or dependency bump (the cache key changes).
-  Nothing else is an obligation.
-- **The full clean-checkout verification above** is a one-off at Gate F and again at Gate Z, for the theorem being certified only. It is not a per-commit duty for the rest of the library.
-
-## Gate Z: freeze
-Create an immutable theorem statement/proof manifest under `theorems/frozen/<ID>/` which records: ID, theorem statement and scope, rule edition, local proof audit, Lean source path/declaration, toolchain/dependency revisions, full verified **proof-source commit SHA**, axiom-check findings, clean build evidence, date and version. Then add a single `FROZEN` row to `theorems/LEDGER.csv`. Reference the already-created verified proof-source commit, avoiding a circular reference to the commit containing its own ledger row.
-
-A frozen theorem's Lean module is **never edited**. A correction is a new module or declaration plus a superseding manifest version. Shared modules a frozen theorem imports may change only if CI shows the frozen module still builds, with the same statement and the same axioms. Frozen proofs are not quietly edited or reclassified. If a defect is discovered, append a conspicuous correction/superseding record and update ledger history via an additional auditable commit. Git history is the permanent record; an optional immutable Git tag can additionally anchor each release.
-
-**Versioning convention (owner decision, S009).** A strengthened or re-anchored form of a frozen result is frozen as a **new theorem ID** (e.g. the kernel-level K vs K result becomes EC-T0003). Its manifest states which earlier ID it strengthens, and how it supersedes that ID's trust boundary. Earlier ledger rows and manifests are never rewritten, and the ledger schema is unchanged (one row per ID). A genuine *defect* in a frozen theorem still requires a conspicuous correction record, as described above.
-
-### Toolchain migration (owner decision, S020)
-A toolchain bump is a **migration**, not a correction:
-- Rebuild every frozen theorem from a clean clone on the new toolchain.
-- Confirm that each statement's `#check` output is identical and that each main declaration's axioms stay within the standard three.
-- Write a `vN+1.md` manifest per theorem, citing the migration commit, with shared logs under `theorems/frozen/MIGRATION-<session>/`.
-- Earlier manifests and ledger rows are not rewritten.
-
-If the migration needs Lean source edits to frozen modules (e.g. the module-system port Palomar requires), the same rule applies, plus per-module hashes in the new manifests.
-
-## Permitted status transitions
-`PROPOSED → LOCAL_VERIFIED → FORMAL_VERIFIED → FROZEN`. A falsified candidate becomes `REJECTED` *in the candidate register only*, with a concrete counterexample. A blocked claim remains in its current stage. No 'all clear' or theorem count until the actual checks have run.
-
-## Session closeout
-Each session must record: changes and links; proven, conjectured, computationally tested and blocked findings separately; checks actually run (or 'not run'); exact commit/tree state; ledger effect; and full text of the installed next session prompt. Never imply that a remote CI job passed just because a workflow file was committed.
-
-Closeout is a checkpoint, not a pause. An owner instruction to continue until
-the active target closes persists across sessions, commits, merges, freezes and
-handoffs. Complete these records and continue the next necessary direct step;
-do not end the run solely because a milestone finished. Preserve open proof
-status honestly. Only actual closure, an explicit owner stop/scope change or a
-concrete unavailable-input/external-action dependency supplies a stopping reason;
-continue independent authorised direct work where possible. No new approval
-gate is implied by an unfinished proof or a session boundary.
-
-**Required progress table (owner instruction, 2026-10-19):** update [SESSION_PROGRESS.md](SESSION_PROGRESS.md) and reproduce its table in the written closeout and the final reply to the owner, including sessions with no mathematical change. Keep its columns and baseline rows in order, from K vs K through every material-size stage, with full Syzygy parity last. Preserve the distinction between frozen results, formal verification, partial coverage and open work. Follow the table with one sentence describing this session's change, or stating that mathematical progress is unchanged. The table is a reporting summary, not a theorem certificate or a substitute for Gates F/Z.
+Update the short [live work note](../NEXT_SESSION.md) if the key open obligation changes, the [roadmap](ROADMAP.md) if a class milestone changes, and the immutable theorem ledger **only on a genuine freeze**. No other routine reporting is required. Existing `sessions/` and old evidence remain historical records, not a process to repeat.
