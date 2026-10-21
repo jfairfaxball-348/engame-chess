@@ -104,3 +104,5 @@ import EndgameChess.Rules.KRKHighClock.Distance
 
 import EndgameChess.Rules.KRKWinning.Equivalence
 import EndgameChess.Rules.KRKWinning.MateExists
+
+import EndgameChess.Rules.KRKFresh.Wall

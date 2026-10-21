@@ -705,3 +705,21 @@ import EndgameChess
 #check @EndgameChess.Rules.KRKWinning.winning_maximal_goal
 #print axioms EndgameChess.Rules.KRKWinning.winning_mate_continuation
 #check @EndgameChess.Rules.KRKWinning.winning_mate_continuation
+
+/-! EC-C049: actual clock-zero KRK history control and fresh73 wall coverage. -/
+#print axioms EndgameChess.Rules.KRKFresh.key_material
+#check @EndgameChess.Rules.KRKFresh.key_material
+#print axioms EndgameChess.Rules.KRKFresh.prefix_region
+#check @EndgameChess.Rules.KRKFresh.prefix_region
+#print axioms EndgameChess.Rules.KRKFresh.clock_zero_counts
+#check @EndgameChess.Rules.KRKFresh.clock_zero_counts
+#print axioms EndgameChess.Rules.KRKFresh.winning_move_material
+#check @EndgameChess.Rules.KRKFresh.winning_move_material
+#print axioms EndgameChess.Rules.KRKFresh.restricted_append
+#check @EndgameChess.Rules.KRKFresh.restricted_append
+#print axioms EndgameChess.Rules.KRKFresh.restricted_lifting
+#check @EndgameChess.Rules.KRKFresh.restricted_lifting
+#print axioms EndgameChess.Rules.KRKFresh.clock_zero_sub100
+#check @EndgameChess.Rules.KRKFresh.clock_zero_sub100
+#print axioms EndgameChess.Rules.KRKFresh.clock_zero_axis_wall
+#check @EndgameChess.Rules.KRKFresh.clock_zero_axis_wall
