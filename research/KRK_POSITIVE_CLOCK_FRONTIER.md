@@ -37,13 +37,29 @@ the actual unknown domain rather than add another conditional certificate.
    argument against other legal strong choices before it supplies necessity.
    Failure of the chosen policy is not a draw proof.
 
-One prospective route is to separate incoming-key barriers from geometric
-minimum mating costs, then derive explicit geometric regions with matching
-defender lower bounds. It is NOT yet a proved reduction: removal of a repeated
-board-key segment must preserve legality, all defensive branches, flags and
-correct claim/terminal semantics. No generic taboo-game framework is admitted
-merely because such a reduction might be useful. First derive a concrete full-
-domain formula or a necessary blocked step of its chosen proof on paper.
+The selected route now has a [complete paper reduction](../proofs/KRK_STATIC_HISTORY_REDUCTION_S092.md)
+and [separate same-agent audit](../audits/KRK_STATIC_HISTORY_REDUCTION_S092_PAPER.md):
+use the exact turn-dependent deadline and fixed barriers at keys already seen
+at least twice in the ORIGINAL history, exempting the initial root and mate
+leaves. Weak-root current claims are checked separately. Sufficiency requires
+a least-rank policy for the fixed-barrier objective, making future keys simple;
+it does NOT assume the old unconstrained clock-free policy avoids old keys.
+The normalized-key exact legal-child interface is already frozen, so a generic
+history-loop-removal framework is unnecessary. This reduction is PAPER ONLY
+and remains unformalised; its fixed-barrier mate condition is NOT an explicitly
+evaluated geometric formula and does not close the outcome obligation.
+
+[EC-C053 deadline](../proofs/KRK_EXACT_CLOCK_DEADLINE_S092.md) is the one admitted
+necessary time dependency, with local Lean checks only: winning requires
+budget max(1,100-h) on strong turn and100-h on weak turn, retaining the same
+incoming history. It fixes the equality-at100/high-clock-mate boundary and
+returns immediately to the full comparison. No standalone freeze is planned.
+
+Exact remaining step: evaluate the fixed-barrier geometric mate condition by
+compact analytic regions with matching lower bounds against ALL strong choices.
+A renaming of that condition, its finite search recurrence or another sufficient
+wall policy would not complete the claim. No further foundation is automatically
+admitted. Full FIDE correspondence and exact global WDL/DTZ are still OPEN.
 
 ## Primary-source triage (no oracle data used)
 

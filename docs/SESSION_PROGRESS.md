@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S091. Forty-eight theorem bundles are frozen, including EC-T0048: whole-wall93, arrivals97/98 and the explicit BOTH-turn RAW clock0 winning criterion. Bundles are not solved material classes.
+Current mathematical evidence: S092 in progress; certified coverage through S091. Forty-eight theorem bundles are frozen, including EC-T0048: whole-wall93, arrivals97/98 and the explicit BOTH-turn RAW clock0 winning criterion. Bundles are not solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Earlier dead/live, forcing and partial RAW results frozen; wall93, arrivals97/98 and BOTH-turn clock0 RAW winning criterion frozen | Immediate: complete positive-clock/incoming-history outcomes, full FIDE correspondence and global exact WDL/DTZ |
+| K+R vs K | Earlier dead/live, forcing and partial RAW results frozen; wall93, arrivals97/98 and BOTH-turn clock0 RAW winning criterion frozen | Immediate: evaluate the positive-clock/history geometric criterion (barrier reduction paper only); full FIDE correspondence and exact WDL/DTZ |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S091. Forty-eight theorem bundles are fro
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S091 freezes the complete S090 geometry/clock0 result as EC-T0048 after a separate fresh own-source Gate Z. No mathematical scope beyond S090 is added. Positive-clock/incoming-history classification, full FIDE correspondence and exact WDL/DTZ remain OPEN;48 bundles frozen; KRK NOT CLOSED.
+S092 movement so far: the necessary exact deadline passes local Lean checks; the all-history reduction to a fixed incoming-key barrier problem is argued on paper. The compact geometric evaluation and matching lower bounds are still missing. No new outcome coverage, own-source F/Z or freeze;48 bundles unchanged; KRK NOT CLOSED.
 
 S090 owner-directed rules update: the direct-obligation/necessary-prerequisite
 rule now applies to every research target. This is governance work and changes
@@ -26,10 +26,10 @@ no mathematical claim. KRK research continues under the existing instruction.
 
 ### Movement of the current target's direct obligations
 
-| Closure obligation | Current coverage | Actual movement through S091 |
+| Closure obligation | Current coverage | Actual movement during S092 |
 |---|---|---|
 | Global clock-safe geometry | Wall93/arrivals97-98 frozen as EC-T0048 | Whole geometry obligation certified at OWN Gate F/Z; no new scope in S091 |
-| Complete rule-aware outcomes | High-clock tests frozen; explicit BOTH-turn clock0 winning criterion frozen | Clock0 subdomain newly covered; positive-clock/incoming-history classification still OPEN |
+| Complete rule-aware outcomes | High-clock tests frozen; explicit BOTH-turn clock0 winning criterion frozen | Exact deadline locally checked and fixed-barrier reduction on paper; compact positive-clock/history criterion still OPEN |
 | Full FIDE correspondence | Partial kernel/history/key/claim interfaces | Full correspondence still OPEN; headline gap unchanged |
 | Exact global distances/WDL-DTZ | Partial one-ply optimality and nonoptimal upper bounds | Global optimality/convention coverage still OPEN; headline gap unchanged |
 

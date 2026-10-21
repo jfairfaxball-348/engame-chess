@@ -1,0 +1,143 @@
+⚠ [115/134] Replayed EndgameChess.Rules.KRKTermination.Step
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:38: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [119/134] Replayed EndgameChess.Rules.KRKTermination.ClockCap
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:15:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:18:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [133/134] Built EndgameChess.Rules.KRKDeadline.Definitions (675ms)
+✖ [134/134] Building EndgameChess.Rules.KRKDeadline.Necessary (665ms)
+trace: .> LEAN_PATH=C:\engame-chess\formal\.lake\build\lib\lean c:\Users\johnf\.elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\engame-chess\formal\EndgameChess\Rules\KRKDeadline\Necessary.lean -o C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKDeadline\Necessary.olean -i C:\engame-chess\formal\.lake\build\lib\lean\EndgameChess\Rules\KRKDeadline\Necessary.ilean -c C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKDeadline\Necessary.c --setup C:\engame-chess\formal\.lake\build\ir\EndgameChess\Rules\KRKDeadline\Necessary.setup.json --json
+error: EndgameChess/Rules/KRKDeadline/Necessary.lean:35:11: unknown tactic
+error: EndgameChess/Rules/KRKDeadline/Necessary.lean:26:82: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+error: EndgameChess/Rules/KRKDeadline/Necessary.lean:33:14: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (RawTrace.erase t.val).turn
+in the target expression
+  (erase t).turn = σ.opp
+
+σ : Colour
+s✝ : State
+sk✝ rs✝ wk✝ : Square
+material : IsKRK (erase s✝) σ sk✝ rs✝ wk✝
+win : F σ s✝
+n : Nat
+ih : ∀ {s : State} {sk rs wk : Square}, IsKRK (erase s) σ sk rs wk → W σ n s → W σ (budget σ s) s
+s : State
+sk rs wk : Square
+hk : IsKRK (erase s) σ sk rs wk
+ongoing : layer.Ongoing s
+turn : (layer.erase s).turn = σ
+t : State
+edge : layer.BoardStep s t
+child : HistoryLayer.RuleMateWithin layer σ n t
+goal : ¬G σ t
+childOngoing : Ongoing t
+clock : RawClock.clock t.val.trace = RawClock.clock s.val.trace + 1
+ns nr nw : Square
+next : IsKRK (erase t) σ ns nr nw
+⊢ (erase t).turn = σ.opp
+error: EndgameChess/Rules/KRKDeadline/Necessary.lean:34:57: unsolved goals
+σ : Colour
+s✝ : State
+sk✝ rs✝ wk✝ : Square
+material : IsKRK (erase s✝) σ sk✝ rs✝ wk✝
+win : F σ s✝
+n : Nat
+ih : ∀ {s : State} {sk rs wk : Square}, IsKRK (erase s) σ sk rs wk → W σ n s → W σ (budget σ s) s
+s : State
+sk rs wk : Square
+hk : IsKRK (erase s) σ sk rs wk
+ongoing : layer.Ongoing s
+turn : (layer.erase s).turn = σ
+t : State
+edge : layer.BoardStep s t
+child : HistoryLayer.RuleMateWithin layer σ n t
+goal : ¬G σ t
+childOngoing : Ongoing t
+clock : RawClock.clock t.val.trace = RawClock.clock s.val.trace + 1
+ns nr nw : Square
+next : IsKRK (erase t) σ ns nr nw
+childTurn : (erase t).turn = σ.opp
+⊢ RawClock.clock t.val.trace < 99
+error: EndgameChess/Rules/KRKDeadline/Necessary.lean:23:6: unsolved goals
+case neg
+σ : Colour
+s✝ : State
+sk✝ rs✝ wk✝ : Square
+material : IsKRK (erase s✝) σ sk✝ rs✝ wk✝
+win : F σ s✝
+n : Nat
+ih : ∀ {s : State} {sk rs wk : Square}, IsKRK (erase s) σ sk rs wk → W σ n s → W σ (budget σ s) s
+s : State
+sk rs wk : Square
+hk : IsKRK (erase s) σ sk rs wk
+ongoing : layer.Ongoing s
+turn : (layer.erase s).turn = σ
+t : State
+edge : layer.BoardStep s t
+child : HistoryLayer.RuleMateWithin layer σ n t
+goal : ¬G σ t
+childOngoing : Ongoing t
+clock : RawClock.clock t.val.trace = RawClock.clock s.val.trace + 1
+ns nr nw : Square
+next : IsKRK (erase t) σ ns nr nw
+childTurn : (erase t).turn = σ.opp
+childLow : RawClock.clock t.val.trace < 99
+⊢ W σ (budget σ s) s
+error: EndgameChess/Rules/KRKDeadline/Necessary.lean:19:16: unsolved goals
+case succ.inr.inr
+σ : Colour
+s✝ : State
+sk✝ rs✝ wk✝ : Square
+material : IsKRK (erase s✝) σ sk✝ rs✝ wk✝
+win : F σ s✝
+n : Nat
+ih : ∀ {s : State} {sk rs wk : Square}, IsKRK (erase s) σ sk rs wk → W σ n s → W σ (budget σ s) s
+s : State
+sk rs wk : Square
+hk : IsKRK (erase s) σ sk rs wk
+ongoing : layer.Ongoing s
+defended :
+  (layer.erase s).turn = σ.opp ∧
+    ¬layer.CanClaim s ∧
+      (∃ t, layer.BoardStep s t) ∧ ∀ (t : State), layer.BoardStep s t → HistoryLayer.RuleMateWithin layer σ n t
+⊢ W σ (budget σ s) s
+error: EndgameChess/Rules/KRKDeadline/Necessary.lean:11:64: unsolved goals
+σ : Colour
+s : State
+sk rs wk : Square
+material : IsKRK (erase s) σ sk rs wk
+win : F σ s
+saturate : ∀ (n : Nat) {s : State} {sk rs wk : Square}, IsKRK (erase s) σ sk rs wk → W σ n s → W σ (budget σ s) s
+⊢ W σ (budget σ s) s ∧ MateWithin σ (budget σ s) (erase s)
+Some required targets logged failures:
+- EndgameChess.Rules.KRKDeadline.Necessary
+error: build failed

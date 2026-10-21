@@ -789,3 +789,7 @@ import EndgameChess
 #check @EndgameChess.Rules.KRKCentral.wall93
 #print axioms EndgameChess.Rules.KRKCentral.weak98
 #check @EndgameChess.Rules.KRKCentral.weak98
+
+/-! S092 working dependency: exact necessary optional-claim deadline. -/
+#print axioms EndgameChess.Rules.KRKDeadline.winning_deadline
+#check @EndgameChess.Rules.KRKDeadline.winning_deadline

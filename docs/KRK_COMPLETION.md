@@ -6,6 +6,18 @@ Owner direction, 2026-10-20: KRK closure is the research priority across as many
 sessions as needed. Owner explicitly resumed on 2026-10-21: run the next session
 and keep going until KRK is closed. Stop before KQK.
 
+## S092 direct all-history route - IN PROGRESS
+
+The [fixed-barrier reduction](../proofs/KRK_STATIC_HISTORY_REDUCTION_S092.md)
+is now argued on paper, including root exceptions and current/intended claims;
+its least-rank fixed-barrier policy step is unformalised. EC-C053 is the named
+necessary time dependency: strong max(1,100-h), weak100-h, retaining the exact
+incoming history. It passes local Lean checks only, not own-source F/Z.
+The next missing claim is the compact GEOMETRIC EVALUATION and matching lower
+bounds of the fixed-barrier condition. A generic recurrence/reduction is not
+material-class closure. No standalone dependency freeze, new outcome coverage,
+FIDE or exact-distance result;48 bundles unchanged. Continue S092 directly.
+
 ## S091 freeze complete - KRK NOT CLOSED
 
 EC-C052 is now FROZEN as EC-T0048 at its own exact proof source. The complete

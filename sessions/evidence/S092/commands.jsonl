@@ -1,0 +1,4 @@
+{"args": ["lake", "build", "EndgameChess.Rules.KRKDeadline.Necessary"], "cwd": "C:\\engame-chess\\formal", "exit": 1, "seconds": 1.5, "started_utc": "2026-10-21T13:30:26.315403+00:00", "log": "working-001.log"}
+{"args": ["lake", "build", "EndgameChess.Rules.KRKDeadline.Necessary"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 0.953, "started_utc": "2026-10-21T13:30:54.215296+00:00", "log": "working-002.log"}
+{"args": ["lake", "build"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 0.922, "started_utc": "2026-10-21T13:36:37.801101+00:00", "log": "working-003.log"}
+{"args": ["lake", "env", "lean", "AxiomCheck.lean"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 1.11, "started_utc": "2026-10-21T13:36:38.799791+00:00", "log": "working-004.log"}

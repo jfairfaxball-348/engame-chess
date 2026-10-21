@@ -1,5 +1,20 @@
 # NEXT SESSION - S092: Complete the positive-clock/history KRK outcome criterion
 
+S092 CURRENT WORKING CHECKPOINT (not closeout): read
+proofs/KRK_STATIC_HISTORY_REDUCTION_S092.md and its separate paper audit.
+The full RAW-history -> fixed incoming-key-barrier reduction is now argued on
+PAPER, including the exempt root/current-vs-intended claims and key-simple
+least-rank sufficiency. It is NOT formally verified and has NOT evaluated the
+remaining geometric mate condition. One necessary deadline dependency EC-C053
+has local Lean checks (245-job aggregate/422 allowed reports): strong
+max(1,100-h), weak100-h. All4 authoring attempts retained under S092. NO own-
+source F/Z, no new frozen bundle, no additional outcome coverage.48 unchanged.
+Do not freeze the deadline alone or turn the reduction into a generic framework
+milestone. NEXT DIRECT ACTION: evaluate the fixed-barrier geometric condition
+by compact explicit regions and matching ALL-strong-choice defender lower bounds.
+Current session stays IN PROGRESS; continue it under the existing closure goal.
+
+
 Owner2026-10-21: continue consecutive KRK sessions until full closure. Apply
 AGENTS direct-obligation/necessary-foundation rules; no KQK and no new approval
 gate. Fetch/reconcile ALL remote heads/latest main. Preserve ALL frozen modules,
