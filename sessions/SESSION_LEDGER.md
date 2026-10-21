@@ -143,3 +143,5 @@ Full session closeouts live as `sessions/S###_*.md`. New research sessions are i
 | S077 | 2026-10-21 | Freeze universal RAW KRK termination (Gate Z) | Separate exact own-source native Windows fresh build and354-report runner; all source/import inventories match. [Closeout](S077_FREEZE_KRK_TERMINATION.md). Continue S078 holding under owner resumption | **+1 -> EC-T0042 FROZEN** (42 bundles); full closure open |
 
 | S078 | 2026-10-21 | All-history RAW KRK holding policies (Gate F) | Actual legal policy/complement iff and bounded stopped compliant play. Own source d8a77d1b785da39d0a644169750283f4ade935fe; new179-job build/364 permitted reports. [Closeout](S078_KRK_HOLDING.md); S079 separate own-source freeze | None —42 frozen bundles; full KRK closure open |
+
+| S079 | 2026-10-21 | Freeze actual RAW KRK holding (Gate Z) | Separate own-source new179-job build/364 permitted reports; complete own-source/import/runner equality. [Closeout](S079_FREEZE_KRK_HOLDING.md); direct S080 high-clock outcomes | **+1 -> EC-T0043 FROZEN** (43 bundles); no new mathematical coverage |

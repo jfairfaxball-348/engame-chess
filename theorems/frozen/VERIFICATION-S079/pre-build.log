@@ -1,0 +1,5 @@
+NEW GitHub clone: C:\tmp\engame-s079-gate-z
+HEAD: d8a77d1b785da39d0a644169750283f4ade935fe
+formal/.lake absent before full build: true
+Native Windows; official installed toolchain; inherited ELAN_HOME=(default)
+core.autocrlf=false

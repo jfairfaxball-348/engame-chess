@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S078. Forty-two theorem bundles are frozen, including universal admitted RAW KRK termination. Bundles are not solved material classes.
+Current mathematical evidence: through S079. Forty-three theorem bundles are frozen, including universal admitted RAW KRK termination. Bundles are not solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live, clock-free forcing, conditional 73-ply RAW family and 442/443 bounds and universal RAW termination frozen; all-history RAW holding formally verified | Concrete FIDE integration, geometric outcome coverage and exact distance |
+| K+R vs K | Dead/live, clock-free forcing, conditional 73-ply RAW family and 442/443 bounds and universal RAW termination frozen; all-history RAW holding frozen | Concrete FIDE integration, geometric outcome coverage and exact distance |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S078. Forty-two theorem bundles are froze
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S078 formally verified actual legal all-history RAW KRK holding policies iff opponent nonforcing, plus bounded stopped compliant play.42 bundles remain frozen; geometric outcome characterisation, full FIDE correspondence and exact WDL/DTZ remain open.
+Session change: S079 froze actual all-history RAW KRK holding duality and bounded stopped policy play as EC-T0043;43 bundles. Mathematical coverage is unchanged from S078; geometric outcomes, full FIDE correspondence and exact WDL/DTZ remain open.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 

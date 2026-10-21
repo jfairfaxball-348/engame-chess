@@ -11,7 +11,7 @@ and keep going until KRK is closed. Stop before KQK.
 KRK dead/live and clock-free forcing classification are frozen. The concrete RAW
 history Layer is frozen as EC-T0036. EC-C039's conditional lifting is formally
 verified at proof source `7155c3424a5e315ea758f916d939b6696e0da261`, awaiting
-Gate Z. There are 42 frozen bundles after S077, including universal RAW termination;
+Gate Z. There are 43 frozen bundles after S079, including universal RAW termination;
 complete material-class coverage remains open.
 
 Closure means complete rule-aware KRK outcomes/strategies and the project's
@@ -116,3 +116,5 @@ S076: EC-C045 FORMAL_VERIFIED. Universal admitted RAW KRK termination formally v
 S077: S077 froze universal admitted RAW KRK termination as EC-T0042 after separate own-source Gate Z; 42 bundles. Complete RAW holding/outcomes, full FIDE correspondence and exact WDL/DTZ remain open. Owner resumed consecutive KRK sessions until closure; stop before KQK. [EC-T0042](../theorems/frozen/EC-T0042/v1.md). S078 attacks genuine all-history RAW holding policies.
 
 S078 formally verified actual legal all-history RAW KRK holding policies iff opponent nonforcing, plus bounded stopped compliant play.42 bundles remain frozen; geometric outcome characterisation, full FIDE correspondence and exact WDL/DTZ remain open. [Paper](../proofs/EC-C046_KRK_HOLDING.md).
+
+S079 froze actual all-history RAW KRK holding duality and bounded stopped policy play as EC-T0043;43 bundles. Mathematical coverage is unchanged from S078; geometric outcomes, full FIDE correspondence and exact WDL/DTZ remain open. [EC-T0043](../theorems/frozen/EC-T0043/v1.md).
