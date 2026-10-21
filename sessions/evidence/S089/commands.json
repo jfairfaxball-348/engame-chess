@@ -1,0 +1,11 @@
+{
+  "args": [
+    "python",
+    "sessions\\evidence\\S089\\small_box_diagnostic.py"
+  ],
+  "cwd": "C:\\engame-chess",
+  "exit": 0,
+  "elapsed_seconds": 0.093,
+  "started_utc": "2026-10-21T11:48:14.627213+00:00",
+  "log": "diagnostic.log"
+}

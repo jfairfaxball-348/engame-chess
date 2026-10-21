@@ -1,0 +1,10 @@
+{
+  "scope": "Fixed guarded1x1 corner policy, ALL weak replies <=7 plies; fixed8-ply check-and-restore cycle only",
+  "corner_terminal_lengths": [
+    5,
+    7
+  ],
+  "independent_direct_edge_replay": true,
+  "universal_class_or_RAW_history_certificate": false,
+  "finished_utc": "2026-10-21T11:48:14.711968+00:00"
+}

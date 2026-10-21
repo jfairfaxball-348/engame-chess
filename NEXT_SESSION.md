@@ -1,48 +1,57 @@
-# NEXT SESSION — S089: Close the guarded small-box mating phase
+# NEXT SESSION — S090: Finish the actual guarded small-box mating strategy
 
-Owner2026-10-21: continue consecutive sessions until KRK is closed, no inferred
-pause or new approval gate. Fetch ALL heads/reconcile unmerged work/latest main;
-commit/push branch, ordinary main merge/push and exact remote identity comparison.
-Stop before KQK; preserve all frozen sources/records.47 frozen bundles.
+Owner2026-10-21: continue consecutive KRK sessions until closure; no inferred
+pause/new approval gate; stop before KQK. Fetch ALL heads/reconcile unmerged
+work/latest main; commit/push branch, ordinary main merge/push and exact remote
+identity comparison.47 frozen bundles; preserve all frozen sources/records.
 
-New direct geometry: EC-T0047 freezes OWN source
-84161c2650b902e98f37252532a706ec50f40ed4 after S087 Gate F and S088 separate
-fresh Gate Z,214-job builds and complete395 permitted axiom/type reports.
-Read C051 paper, separate paper/Lean audits, full new modules and exact source
-manifests. The FORMAL result is NORMALIZED NE guarded widths5/6 contraction
-within8 plies with EVERY actual weak reply, both endpoint cost inequalities,
-and a fixed16-ply kernel cycle defeating the naive width4 extension. The paper
-repeated/reflected/axis <=32-ply SMALL-BOX ENTRY corollary is NOT a frozen
-declaration and is NOT mate. No full history symmetry is assumed.
+Principal EC-C050 remains PROPOSED/open. Read S089 full small-box paper and
+separate audit, selected corner branches and check-and-restore cycle. Positive
+PAPER result: guarded1x1 S=f6,R=g7,W=h8 has all-reply clock-free mate<=7:
+Ra7 Kg8, Rb7 [Kf8 Rb8# OR Kh8 Kg6 Kg8 Rb8#]. All reply completeness/mates
+are proved on paper and checked locally; NOT Lean verified/Gate F/Z/frozen.
+No compatible full initial history is inferred. Do not promote this to the
+whole guarded <=4x4 domain or stop at formalising only this terminal example.
 
-Principal EC-C050 global sub100 remains PROPOSED/open. Exact next obligation:
-an actual all-defence mating policy for guarded boxes with both dimensions<=4,
-or another genuine global sub100 strong-arrival strategy. Use a new well-posed
-numeric statement, explicit invariant/potential, rook protection/nonempty and
-nonstalemate conditions, EVERY weak reply and all paid king/rook tempos.
-Guarded normal input S=(a-1,b-1), R=(a,b), W.x>a,W.y>b with3<=a,b<=6;
-reflect/transpose only through proved geometric/kernel interfaces. Need to
-handle the 1x1 corner and width4 crossing/cycle explicitly, not assume monotone
-box shrink. Choose derived cap F, not an unproved classical number. Full
-arbitrary guarded-box entry has separate cost E. Any integrated wall target
-must actually pay entry+large-box phase+finish<=95, or prove another real N<100
-strong-arrival certificate. Do not fill these missing inequalities with a
-generic finite-policy/semantic equivalence or relabel a paper box-entry bound.
+New failed repair: S=c3,R=d4,W=f5; Kd3 Ke5 Re4 Kd5 Rd4 Ke5 Kc3 Kf5 is a
+selected legal8-ply board/turn cycle, independently replayed in a direct move
+checker. It rejects that check-and-restore rule and any strict board-only
+potential along it; not a global mate lower bound or admitted RAW loop.
+Also retain EC-T0047's16-ply width4 escort cycle and the older protected-corner
+stalemate/no-wait chase controls. Quiet shrink, occupied/adjacent king steps
+and one-file checks still require genuine legal alternatives.
 
-Read S086 failed scalar/amortisation/no-wait controls too. Existing442/443
-remain the global certified ceilings. Strong wall B<=95 would give B+4<=99
-and fresh clock0 RAW coverage; weak B+5=100 at B95 does NOT satisfy N<100.
-The separate complete arbitrary-clock/incoming-history outcome formula, full
-FIDE rights/key/current-and-intended-claim/adjudication correspondence and exact
-global WDL/DTZ conventions/optimality remain OPEN. Partial geometry/high-clock/
-fresh-wall results and47 bundles do not establish material-class closure.
+Exact next obligation: a sufficiently SHORT all-defence guarded <=4x4 mating policy with
+DERIVED uniform ply cap F fitting the combined clock-safe budget. The frozen wall theorem already proves a finite292 ceiling for these inputs; finite mating is settled. Normal input S=(a-1,b-1),R=(a,b),W NE,3<=a,b<=6,
+strong turn, both colours/all flags; signed/axis variants need actual proved
+transport. Every nonterminal weak node needs a legal witness and every reply
+retained, rook safety, blocked rays, terminal mate/stalemate and paid tempos.
+Specify a closed invariant and numeric phase-cost/potential inequality; a named
+room/critical-distance measure alone is not a proof. Integrate the paper7
+terminal case into that WHOLE proof. No unrelated generic strategy-equivalence
+or count lemma in place of the missing geometric phase.
 
-Standalone paper/separate adversarial audit BEFORE Lean. Additive one-main-
-theorem modules/all AxiomCheck entries, actual own published-source NEW clean
-Gate F then SEPARATE NEW Gate Z. Official native pinned4.35.0/inherited environment;
+EC-T0047's actual FORMAL normalized NE widths5/6 contraction<=8 plies/cost
+inequalities and fixed16-ply cycle are frozen at own source
+84161c2650b902e98f37252532a706ec50f40ed4. Own S087 Gate F and separate S088
+Gate Z each passed214 jobs/complete395 permitted axiom/type reports. The paper
+<=32 repeated/reflected/axis result is SMALL-BOX ENTRY ONLY and is NOT a frozen
+declaration. Arbitrary guarded entry E, all needed transports and an integrated
+bound such as E+32+F<=95 remain separate actual proof obligations. Existing
+442/443 remain the only global certified arrival ceilings. Strong wall B<=95
+would give B+4<=99 for fresh clock0 lifting; weak B+5=100 at B95 is NOT N<100.
+
+Complete arbitrary-clock/incoming-history outcomes, full FIDE rights/key/current-
+and-intended-claim/adjudication correspondence, exact global WDL/DTZ conventions/
+optimality remain OPEN. No material-class completion from theorem counts,
+partial upper bounds, local diagnostics or semantic equivalences.
+
+Standalone paper/separate adversarial audit BEFORE Lean; additive one-main-
+theorem modules/all AxiomCheck entries; own published-source NEW clean Gate F
+then SEPARATE NEW Gate Z. Official native pinned4.35.0/inherited environment;
 full logs/commands/exits/times/UTC, source/import/executable hashes, clean identity
-and failures retained. No dependency/shim/TLS/checksum change, proof escape,
-invented hosted CI success, tablebase/oracle/exhaustive class proof or stored
-per-position value certificates. Selected local diagnostics only, explicitly
-scoped. Full stable progress table/immediate mathematical delta/full next prompt
-and honest closeout; publish/merge/check remote main. Continue toward closure.
+and failures retained. No deps/shims/TLS/checksum change, proof escapes, invented
+hosted CI success, tablebases/oracles/exhaustive class proof or stored position
+value certificates. Selected local diagnostics only, explicitly scoped. Full
+stable progress table/immediate delta/full next prompt/honest closeout; publish/
+merge/check remote main. Continue toward KRK closure; KQK remains unexecuted.

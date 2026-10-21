@@ -6,6 +6,17 @@ Owner direction, 2026-10-20: KRK closure is the research priority across as many
 sessions as needed. Owner explicitly resumed on 2026-10-21: run the next session
 and keep going until KRK is closed. Stop before KQK.
 
+## S089 direct small-box frontier — KRK NOT CLOSED
+
+[Small-box attempt](../proofs/KRK_SMALL_BOX_S089.md) and
+[separate same-agent audit](../audits/KRK_SMALL_BOX_S089_PAPER.md): a constructive
+guarded1x1 corner finish has a PAPER7-ply cap, every legal weak reply included.
+It temporarily reopens the box, avoiding the known stalemate trap. It is NOT
+Lean verified/frozen. A selected8-ply legal cycle refutes a check-and-restore
+repair for the wider small-box phase. The old frozen wall theorem already supplies a finite292 ceiling here; a sufficiently short guarded <=4x4 finish F, costed
+arbitrary entry E, the necessary phase transports and integrated sub100 bound
+remain unproved.47 frozen bundles, all earlier sources/records unchanged.
+
 ## S088 verification update — KRK NOT CLOSED
 
 EC-C051 is now FROZEN as EC-T0047 after separate fresh own-source Gate Z.

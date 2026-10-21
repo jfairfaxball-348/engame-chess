@@ -1,0 +1,222 @@
+{
+  "scope": "Fixed guarded1x1 corner policy, ALL weak replies <=7 plies; fixed8-ply check-and-restore cycle only",
+  "corner_terminal_lengths": [
+    5,
+    7
+  ],
+  "corner_distinct_edges": [
+    {
+      "side": "W",
+      "kind": "R",
+      "source": [
+        6,
+        6
+      ],
+      "target": [
+        0,
+        6
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "source": [
+        7,
+        7
+      ],
+      "target": [
+        6,
+        7
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "R",
+      "source": [
+        0,
+        6
+      ],
+      "target": [
+        1,
+        6
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "source": [
+        6,
+        7
+      ],
+      "target": [
+        7,
+        7
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "source": [
+        6,
+        7
+      ],
+      "target": [
+        5,
+        7
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "K",
+      "source": [
+        5,
+        5
+      ],
+      "target": [
+        6,
+        5
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "source": [
+        7,
+        7
+      ],
+      "target": [
+        6,
+        7
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "R",
+      "source": [
+        1,
+        6
+      ],
+      "target": [
+        1,
+        7
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "R",
+      "source": [
+        1,
+        6
+      ],
+      "target": [
+        1,
+        7
+      ]
+    }
+  ],
+  "check_restore_cycle": [
+    {
+      "side": "W",
+      "kind": "K",
+      "source": [
+        2,
+        2
+      ],
+      "target": [
+        3,
+        2
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "source": [
+        5,
+        4
+      ],
+      "target": [
+        4,
+        4
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "R",
+      "source": [
+        3,
+        3
+      ],
+      "target": [
+        4,
+        3
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "source": [
+        4,
+        4
+      ],
+      "target": [
+        3,
+        4
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "R",
+      "source": [
+        4,
+        3
+      ],
+      "target": [
+        3,
+        3
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "source": [
+        3,
+        4
+      ],
+      "target": [
+        4,
+        4
+      ]
+    },
+    {
+      "side": "W",
+      "kind": "K",
+      "source": [
+        3,
+        2
+      ],
+      "target": [
+        2,
+        2
+      ]
+    },
+    {
+      "side": "B",
+      "kind": "K",
+      "source": [
+        4,
+        4
+      ],
+      "target": [
+        5,
+        4
+      ]
+    }
+  ],
+  "independent_direct_edge_replay": true,
+  "universal_class_or_RAW_history_certificate": false,
+  "finished_utc": "2026-10-21T11:48:14.711968+00:00",
+  "source_hashes": {
+    "sessions\\evidence\\S089\\small_box_diagnostic.py": "c0a4003544ea35ffef7fa3cd4c982e414f21c55a9e3685c17012bd14335eacce",
+    "scripts\\krk_diagnostic.py": "6ba33b07a57d1da49b15d3ddc908f04dfd89f9c8d65990b315867614bfd4bd35"
+  }
+}

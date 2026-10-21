@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: through S088. Forty-seven theorem bundles are frozen, including universal admitted RAW KRK termination. Bundles are not solved material classes.
+Current mathematical evidence: through S089. Forty-seven theorem bundles are frozen, including universal admitted RAW KRK termination. Bundles are not solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Dead/live and clock-free forcing; RAW termination, holding/winning policies, strong nonloss, high-clock criteria and clock0 73-ply wall family frozen; normalized guarded large-box phase frozen | Complete low-clock/history outcomes, full FIDE correspondence and global exact WDL/DTZ |
+| K+R vs K | Dead/live and clock-free forcing; RAW termination, holding/winning policies, strong nonloss, high-clock criteria and clock0 73-ply wall family frozen; normalized guarded large-box phase frozen; guarded1x1 finish<=7 plies on paper | Complete low-clock/history outcomes, full FIDE correspondence and global exact WDL/DTZ |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: through S088. Forty-seven theorem bundles are fro
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-Session change: S088 freezes EC-T0047 after a separate fresh own-source Gate Z: normalized guarded large-box phase<=8 plies, both cost inequalities and the fixed16-ply width4 control.47 bundles frozen; no new mathematical scope beyond S087. Arbitrary entry/small-box finish/global sub100 and full KRK closure remain OPEN.
+Session change: S089 closes the guarded1x1 corner finish within7 plies ON PAPER and audits both replies; a selected8-ply cycle defeats the check-and-restore repair. A sufficiently short full <=4x4 finish, arbitrary entry and global sub100 remain OPEN. No new Lean/Gate F/Z or ledger row;47 bundles unchanged; KRK NOT CLOSED.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
 
