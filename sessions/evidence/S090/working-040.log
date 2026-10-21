@@ -1,0 +1,55 @@
+⚠ [162/243] Replayed EndgameChess.Rules.KRKTermination.Step
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:38: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [164/243] Replayed EndgameChess.Rules.KRKTermination.ClockCap
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:15:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:18:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [223/243] Built EndgameChess.Rules.KRKCentral.Column (2.0s)
+✔ [224/243] Built EndgameChess.Rules.KRKCentral.ExitStep (874ms)
+✔ [225/243] Built EndgameChess.Rules.KRKCentral.ColumnWall (726ms)
+✔ [226/243] Built EndgameChess.Rules.KRKCentral.Guarded (2.3s)
+✔ [227/243] Built EndgameChess.Rules.KRKCentral.Pivot (1.0s)
+✔ [228/243] Built EndgameChess.Rules.KRKCentral.ReadyCut (1.6s)
+✔ [229/243] Built EndgameChess.Rules.KRKCentral.FullCut (671ms)
+✔ [230/243] Built EndgameChess.Rules.KRKCentral.Costs (596ms)
+✔ [231/243] Built EndgameChess.Rules.KRKCentral.Full (826ms)
+✔ [232/243] Built EndgameChess.Rules.KRKCentral.Ready (695ms)
+✔ [233/243] Built EndgameChess.Rules.KRKCentral.PrepDefinitions (594ms)
+✔ [234/243] Built EndgameChess.Rules.KRKCentral.PrepPair (1.4s)
+✔ [235/243] Built EndgameChess.Rules.KRKCentral.Prep (1.8s)
+✔ [236/243] Built EndgameChess.Rules.KRKCentral.Wall (744ms)
+✔ [237/243] Built EndgameChess.Rules.KRKCentral.Arrival (676ms)
+✔ [238/243] Built EndgameChess.Rules.KRKCentral.Weak (634ms)
+✔ [239/243] Built EndgameChess.Rules.KRKCentral.FreshArrival (604ms)
+✔ [240/243] Built EndgameChess.Rules.KRKCentral.FreshWeak (632ms)
+✔ [241/243] Built EndgameChess.Rules.KRKCentral.FreshOutcome (630ms)
+✔ [242/243] Built EndgameChess (635ms)
+Build completed successfully (243 jobs).

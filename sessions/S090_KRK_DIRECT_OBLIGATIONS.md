@@ -103,3 +103,26 @@ legal arrival, both colours/all flags/every actual defence. This materially
 narrows the geometry obligation. Full lower-clock/incoming-history outcomes,
 FIDE correspondence and global exact WDL/DTZ are still OPEN.47 frozen bundles
 remain. Publish this OWN source, then run fresh Gate F; no session stop implied.
+
+## Two-ply sharpening closes the BOTH-turn clock0 outcome subdomain locally
+
+Necessary direct refinement: use the actual16-ply column entry instead of18.
+Its named payoff is weak-turn98<100 rather than100, which is required to lift
+that entire missing clock0 domain. No new foundation was needed. Guarded/cut
+costs drop2, full/ready costs drop2 above height3, wall93 and arrivals97/98.
+The paper and audits were updated before the new clock0 corollaries.
+
+`fresh_weak98` and `fresh_outcome` reuse the frozen lift/projection and board
+classification. The latter gives an EXPLICIT criterion for independent actual
+winning, both turns on EVERY admitted clock0 KRK history: strong turn OR mate
+OR a safe rook with a legal reply. Strong incoming-edge compatibility is derived
+from the actual trace, not assumed for a coordinate sample. This directly
+covers a whole rule-aware subdomain. Positive clocks/history, full FIDE and
+exact global distances remain OPEN. Local final243-job build/421-report runner
+pass (working-040/041);29 modules/26 mains. No new frozen bundle yet.
+
+Earlier95 source OWN Gate F passed at1b5f0b313b6752173052a2d36aed4c7ebbbf452f,
+NEW GitHub clone/.lake absent,241 jobs in373.031s,419 allowed exact runner at
+2026-10-21T13:02:51Z. The old checkout does not certify tightened source. Keep
+its full evidence, publish the sharper OWN source and verify it independently
+before Gate Z. No separate weaker95 freeze or session stopping point is planned.

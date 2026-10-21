@@ -1,4 +1,4 @@
-# NEXT SESSION - S090 in progress: certify integrated all-wall95
+# NEXT SESSION - S090 in progress: certify integrated all-wall93
 
 Owner2026-10-21: continue KRK until closure; session boundaries are checkpoints,
 not stops. Apply AGENTS.md direct-obligation/necessary-prerequisite rules to
@@ -6,11 +6,13 @@ EVERY target. Do not begin KQK. Fetch/reconcile all remote heads, preserve froze
 sources and ledger; commit/push branch, ordinary merge/push main, compare refs.
 
 Highest direct gap has moved: EC-C052 has a complete standalone paper and
-complete local Lean implementation of all-wall95, strong legal arrivals99,
-weak forcing100 and actual RAW clock0 strong-arrival win without incoming counts.
+complete local Lean implementation of all-wall93, strong legal arrivals97,
+weak forcing98 and an explicit complete BOTH-turn RAW clock0 winning criterion
+without incoming counts (strong turn OR mate OR safe rook with a legal reply).
 Read proofs/EC-C052_KRK_CENTRAL_WALL_95.md and its separate same-agent paper and
-Lean audits.27 new modules/24 main declarations. Local full241-job build and
-419-report complete axiom/statement runner passed; own-source Gate F/Z pending.
+Lean audits.29 new modules/26 main declarations. Local full243-job build and
+421-report complete axiom/statement runner passed; tightened-source F/Z pending.
+Earlier95 source passed own Gate F; that does not certify this tightened source.
 Do not call a local build certified or frozen.47 frozen bundles remain.
 
 The necessary integrated route is central pursuit, ready/full separation,
@@ -25,9 +27,9 @@ Inspect full build, exact statements/standard axioms, source/runner identities
 and scope. Do not claim hosted CI unless actually observed. Then complete S090
 records/progress table and continue immediately to a separately fresh Gate Z.
 After freeze, carry forward the next highest direct obligation: complete
-lower-clock/incoming-history outcomes and necessary FIDE correspondence, then
+positive-clock/incoming-history outcomes and necessary FIDE correspondence, then
 exact global WDL/DTZ. A clock0 win is not arbitrary-history classification.
-Weak100 does NOT satisfy the strict N<100 fresh lift. Never infer optimality
+Weak98 now DOES satisfy strict N<100; the previous100 bound did not. Never infer optimality
 from an upper bound, or complete material coverage from theorem counts.
 
 Retain known failed controls in the historic S086-S089 records. No tablebases,

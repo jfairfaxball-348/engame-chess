@@ -35,16 +35,16 @@ log=(out/'axioms-statements.log').read_text(encoding='utf-8')
 assert not re.search(r'sorryAx|Lean.ofReduceBool|error:|warning:',log)
 reports=re.findall(r"'([^']+)' depends on axioms: \[([^\]]*)\]",log)
 free=re.findall(r"'([^']+)' does not depend on any axioms",log)
-assert len(reports)+len(free)==419
+assert len(reports)+len(free)==421
 assert all(set(re.split(r',\s*',a)) <= {'propext','Classical.choice','Quot.sound'} for _,a in reports)
-assert log==(root/'sessions/evidence/S090/working-035.log').read_text(encoding='utf-8')
-names=['EndgameChess.Rules.KRKCentral.arrival99', 'EndgameChess.Rules.KRKCentral.back_bound', 'EndgameChess.Rules.KRKCentral.back_even_bound', 'EndgameChess.Rules.KRKCentral.central_bound', 'EndgameChess.Rules.KRKCentral.column_bound', 'EndgameChess.Rules.KRKCentral.column_wall_bound', 'EndgameChess.Rules.KRKCentral.exit_step_bound', 'EndgameChess.Rules.KRKCentral.fresh_arrival99', 'EndgameChess.Rules.KRKCentral.full_bound', 'EndgameChess.Rules.KRKCentral.full_cut_bound', 'EndgameChess.Rules.KRKCentral.guarded_bound', 'EndgameChess.Rules.KRKCentral.king_below_pair', 'EndgameChess.Rules.KRKCentral.pivot_bound', 'EndgameChess.Rules.KRKCentral.positive_bound', 'EndgameChess.Rules.KRKCentral.prep_bound', 'EndgameChess.Rules.KRKCentral.prep_pair', 'EndgameChess.Rules.KRKCentral.rank_two_pair', 'EndgameChess.Rules.KRKCentral.ready_bound', 'EndgameChess.Rules.KRKCentral.ready_cut_bound', 'EndgameChess.Rules.KRKCentral.restoration_bound', 'EndgameChess.Rules.KRKCentral.small_central_bound', 'EndgameChess.Rules.KRKCentral.wait_even_bound', 'EndgameChess.Rules.KRKCentral.wall95', 'EndgameChess.Rules.KRKCentral.weak100']
+assert log==(root/'sessions/evidence/S090/working-041.log').read_text(encoding='utf-8')
+names=['EndgameChess.Rules.KRKCentral.arrival97', 'EndgameChess.Rules.KRKCentral.back_bound', 'EndgameChess.Rules.KRKCentral.back_even_bound', 'EndgameChess.Rules.KRKCentral.central_bound', 'EndgameChess.Rules.KRKCentral.column_bound', 'EndgameChess.Rules.KRKCentral.column_wall_bound', 'EndgameChess.Rules.KRKCentral.exit_step_bound', 'EndgameChess.Rules.KRKCentral.fresh_arrival97', 'EndgameChess.Rules.KRKCentral.fresh_outcome', 'EndgameChess.Rules.KRKCentral.fresh_weak98', 'EndgameChess.Rules.KRKCentral.full_bound', 'EndgameChess.Rules.KRKCentral.full_cut_bound', 'EndgameChess.Rules.KRKCentral.guarded_bound', 'EndgameChess.Rules.KRKCentral.king_below_pair', 'EndgameChess.Rules.KRKCentral.pivot_bound', 'EndgameChess.Rules.KRKCentral.positive_bound', 'EndgameChess.Rules.KRKCentral.prep_bound', 'EndgameChess.Rules.KRKCentral.prep_pair', 'EndgameChess.Rules.KRKCentral.rank_two_pair', 'EndgameChess.Rules.KRKCentral.ready_bound', 'EndgameChess.Rules.KRKCentral.ready_cut_bound', 'EndgameChess.Rules.KRKCentral.restoration_bound', 'EndgameChess.Rules.KRKCentral.small_central_bound', 'EndgameChess.Rules.KRKCentral.wait_even_bound', 'EndgameChess.Rules.KRKCentral.wall93', 'EndgameChess.Rules.KRKCentral.weak98']
 for name in names:
     assert name in dict(reports) or name in free
     assert re.search(r'^@?'+re.escape(name)+r' :',log,re.M)
 (out/'declarations.txt').write_text('\n'.join(names)+'\n',encoding='utf-8')
 modules=sorted(p.relative_to(clone).as_posix() for p in (formal/'EndgameChess/Rules/KRKCentral').glob('*.lean'))
-assert len(modules)==27
+assert len(modules)==29
 for p in modules:assert not re.search(r'\b(sorry|admit|axiom|unsafe|native_decide|implemented_by|extern)\b',(clone/p).read_text(encoding='utf-8'))
 files=sorted(p for p in formal.rglob('*.lean') if '.lake' not in p.parts)+[formal/p for p in ['lean-toolchain','lakefile.toml','lake-manifest.json']]
 for p in files:

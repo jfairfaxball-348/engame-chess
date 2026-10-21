@@ -9,7 +9,7 @@ private theorem pivot_right {σ : Colour} {q : Position} {sk rs wk : Square}
     (hq : Matches q σ ⟨sk,rs,wk,true⟩)
     (hsy : sk.2.val+1=rs.2.val) (hwy : wk.2.val=rs.2.val+1)
     (hs : sk.1.val=3 ∨ sk.1.val=4) (hx : sk.1.val+2≤wk.1.val) :
-    MateWithin σ 59 q := by
+    MateWithin σ 57 q := by
   let nr : Square := (⟨sk.1.val+1,by omega⟩,rs.2)
   have hnrx : nr.1.val=sk.1.val+1 := rfl
   have hnry : nr.2=rs.2 := rfl
@@ -18,7 +18,7 @@ private theorem pivot_right {σ : Colour} {q : Position} {sk rs wk : Square}
       hsy (by rw [←he]; change sk.1.val+1<wk.1.val; omega) (by omega)
       (by rw [←he]; change 3≤sk.1.val+1; omega)
       (by rw [←he]; change sk.1.val+1≤5; omega))
-      (by rw [←he]; change 18*(7-(sk.1.val+1))+3≤59; omega)
+      (by rw [←he]; change 18*(7-(sk.1.val+1))+1≤57; omega)
   have hnrne : rs.1.val≠sk.1.val+1 := by
     intro hh
     apply he
@@ -34,7 +34,7 @@ private theorem pivot_right {σ : Colour} {q : Position} {sk rs wk : Square}
     (by change rs.2.val<wk.2.val; omega) (by omega) (by omega)
     (Or.inl (by omega)) (by omega) (by omega)
   obtain ⟨v,hv,_⟩ := step_sound hm ht
-  apply mateWithin_mono (n := 57+2) ?_ (by omega)
+  apply mateWithin_mono (n := 55+2) ?_ (by omega)
   apply mateWithin_pair (σ := σ) hq.2 hl hm.2 ⟨v,hv⟩
   intro z hz
   obtain ⟨t,hmt,hty,hunit,hxt⟩ := krk_box_reply_region hm
@@ -51,7 +51,7 @@ theorem pivot_bound {σ : Colour} {q : Position} {sk rs wk : Square}
     (hq : Matches q σ ⟨sk,rs,wk,true⟩)
     (hsy : sk.2.val+1=rs.2.val) (hwy : wk.2.val=rs.2.val+1)
     (hs : sk.1.val=3 ∨ sk.1.val=4) (hx : 2≤absDiff sk.1.val wk.1.val) :
-    MateWithin σ 59 q := by
+    MateWithin σ 57 q := by
   by_cases hright : sk.1.val<wk.1.val
   · exact pivot_right hq hsy hwy hs (by simp only [absDiff] at hx; omega)
   have hcanon : Matches (krkPos σ (symX.f sk) (symX.f rs) (symX.f wk) σ) σ

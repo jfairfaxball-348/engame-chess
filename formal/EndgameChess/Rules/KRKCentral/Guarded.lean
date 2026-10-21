@@ -13,7 +13,7 @@ theorem guarded_bound {σ : Colour} {q : Position} {sk rs wk : Square}
     (hsx : sk.1.val+1=rs.1.val) (hsy : sk.2.val+1=rs.2.val)
     (hwx : rs.1.val<wk.1.val) (hwy : rs.2.val<wk.2.val)
     (ha : 3≤rs.1.val) (ha5 : rs.1.val≤5) :
-    MateWithin σ (18*(7-rs.1.val)+3) q := by
+    MateWithin σ (18*(7-rs.1.val)+1) q := by
   let su : Square := (sk.1,rs.2)
   have hstep : StepM ⟨sk,rs,wk,true⟩ ⟨su,rs,wk,false⟩ := by
     refine StepM.king ?_ ?_ ?_ <;>
@@ -26,7 +26,7 @@ theorem guarded_bound {σ : Colour} {q : Position} {sk rs wk : Square}
       simp only [su,tt,tx,dInf,absDiff,ne_iff_coords,RookSees,RookLine,OnSeg] at * <;>
       split <;> (try dsimp only at *) <;> omega
   obtain ⟨v,hv,_⟩ := step_sound hm ht
-  apply mateWithin_mono (n := (18*(7-rs.1.val)+1)+2) ?_ (by omega)
+  apply mateWithin_mono (n := (18*(7-rs.1.val)-1)+2) ?_ (by omega)
   apply mateWithin_pair (σ := σ) hq.2 hl hm.2 ⟨v,hv⟩
   intro z hz
   have hsafe : SafeRook su rs wk := Or.inr (by

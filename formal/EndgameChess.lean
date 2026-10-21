@@ -109,4 +109,4 @@ import EndgameChess.Rules.KRKFresh.Wall
 
 import EndgameChess.Rules.KRKBox.Cycle
 
-import EndgameChess.Rules.KRKCentral.FreshArrival
+import EndgameChess.Rules.KRKCentral.FreshOutcome

@@ -1,0 +1,5 @@
+NEW GitHub clone: C:\engame-checkouts\s090-gate-f
+HEAD: 1b5f0b313b6752173052a2d36aed4c7ebbbf452f
+formal/.lake absent before full build: true
+Native Windows; official installed toolchain; inherited ELAN_HOME=(default)
+core.autocrlf=false

@@ -2,14 +2,14 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: S090 in progress. Forty-seven theorem bundles are frozen. The integrated wall95/arrival99 and clock0 RAW win now build locally; fresh own-source Gate F/Z remain pending. Bundles are not solved material classes.
+Current mathematical evidence: S090 in progress. Forty-seven theorem bundles are frozen. The earlier wall95 source passed Gate F. The sharpened wall93/arrivals97-98 and complete clock0 RAW winning criterion build locally; their fresh Gate F/Z remain pending. Bundles are not solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
 | K vs K | Draw proved and frozen | — |
 | K+B vs K | Draw proved and frozen | — |
 | K+N vs K | Draw proved and frozen | — |
-| K+R vs K | Earlier dead/live, forcing and partial RAW results frozen; integrated all-wall95/strong-arrival99 and clock0 RAW win build locally, Gate F/Z pending | Immediate: certify the integrated bound; then complete low-clock/history outcomes, full FIDE correspondence and global exact WDL/DTZ |
+| K+R vs K | Earlier dead/live, forcing and partial RAW results frozen; all-wall95 Gate F passed; sharper wall93/arrivals97-98 and BOTH-turn clock0 RAW winning criterion build locally, own Gate F/Z pending | Immediate: certify the integrated bound; then complete positive-clock/history outcomes, full FIDE correspondence and global exact WDL/DTZ |
 | K+Q vs K | Open in this project | General proof and formal verification |
 | K+P vs K | Open in this project | General proof and formal verification |
 | All four-piece endgames | Open in this project | Every material class and legal position |
@@ -18,7 +18,7 @@ Current mathematical evidence: S090 in progress. Forty-seven theorem bundles are
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-S090 movement so far: the whole wall95/strong-arrival99/clock0 winning route is now locally checked in Lean, including setup and every defensive reply; source audit and own-source Gates F/Z remain. The geometry gap has narrowed directly. Full history outcomes, FIDE and exact WDL/DTZ remain open;47 frozen bundles unchanged; KRK NOT CLOSED.
+S090 movement so far: wall95 passed its own-source Gate F; the tightened whole wall93/arrivals97-98 route and complete BOTH-turn clock0 actual winning criterion are locally checked in Lean, with exact-source F/Z pending. The geometry gap has narrowed directly. Full history outcomes, FIDE and exact WDL/DTZ remain open;47 frozen bundles unchanged; KRK NOT CLOSED.
 
 S090 owner-directed rules update: the direct-obligation/necessary-prerequisite
 rule now applies to every research target. This is governance work and changes
@@ -28,8 +28,8 @@ no mathematical claim. KRK research continues under the existing instruction.
 
 | Closure obligation | Current coverage | Actual movement during S090 |
 |---|---|---|
-| Global clock-safe geometry | Certified442/443; new integrated95 wall/99 strong arrival and clock0 RAW win locally checked | Whole-family paper and local Lean proof complete; own-source Gate F/Z pending |
-| Complete rule-aware outcomes | High-clock tests and conditional/fresh wall families | No complete low-clock/incoming-history classification; headline gap unchanged |
+| Global clock-safe geometry | Frozen442/443; wall95/99 Gate F passed; sharper93/97-98 locally checked | Whole geometry proof and BOTH-turn clock0 criterion complete locally; certify tightened source at own F/Z |
+| Complete rule-aware outcomes | High-clock tests frozen; explicit BOTH-turn clock0 winning criterion locally checked | Clock0 subdomain newly covered; positive-clock/incoming-history classification still OPEN |
 | Full FIDE correspondence | Partial kernel/history/key/claim interfaces | Full correspondence still OPEN; headline gap unchanged |
 | Exact global distances/WDL-DTZ | Partial one-ply optimality and nonoptimal upper bounds | Global optimality/convention coverage still OPEN; headline gap unchanged |
 

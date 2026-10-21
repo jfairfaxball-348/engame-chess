@@ -33,3 +33,9 @@
 {"args": ["lake", "build", "EndgameChess.Rules.KRKCentral.FreshArrival"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 2.062, "started_utc": "2026-10-21T12:51:45.141325+00:00", "log": "working-033.log"}
 {"args": ["lake", "build"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 0.828, "started_utc": "2026-10-21T12:52:54.111806+00:00", "log": "working-034.log"}
 {"args": ["lake", "env", "lean", "AxiomCheck.lean"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 1.094, "started_utc": "2026-10-21T12:53:11.508775+00:00", "log": "working-035.log"}
+{"args": ["lake", "build", "EndgameChess.Rules.KRKCentral.FreshArrival"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 17.891, "started_utc": "2026-10-21T12:58:29.788590+00:00", "log": "working-036.log"}
+{"args": ["lake", "build", "EndgameChess.Rules.KRKCentral.FreshOutcome"], "cwd": "C:\\engame-chess\\formal", "exit": 1, "seconds": 1.469, "started_utc": "2026-10-21T13:00:53.082564+00:00", "log": "working-037.log"}
+{"args": ["lake", "build", "EndgameChess.Rules.KRKCentral.FreshOutcome"], "cwd": "C:\\engame-chess\\formal", "exit": 1, "seconds": 0.953, "started_utc": "2026-10-21T13:01:04.676648+00:00", "log": "working-038.log"}
+{"args": ["lake", "build", "EndgameChess.Rules.KRKCentral.FreshOutcome"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 1.063, "started_utc": "2026-10-21T13:01:16.708441+00:00", "log": "working-039.log"}
+{"args": ["lake", "build"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 19.906, "started_utc": "2026-10-21T13:01:48.303132+00:00", "log": "working-040.log"}
+{"args": ["lake", "env", "lean", "AxiomCheck.lean"], "cwd": "C:\\engame-chess\\formal", "exit": 0, "seconds": 1.094, "started_utc": "2026-10-21T13:02:14.548608+00:00", "log": "working-041.log"}

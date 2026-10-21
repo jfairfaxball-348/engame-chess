@@ -5,7 +5,7 @@ open EndgameChess.KK
 set_option maxHeartbeats 4000000
 
 /-- The complete full-central wall induction: costs at heights1..6 are
-11,29,47,63,75,87. Its restoration endpoint is FULL, not assumed ready. -/
+11,29,47,61,73,85. Its restoration endpoint is FULL, not assumed ready. -/
 theorem full_bound {σ : Colour} {y : Nat} : CentralBound σ y (fullCost (7-y)) := by
   suffices main : ∀ n y, 7-y=n → CentralBound σ y (fullCost n) by
     intro q sk rs wk hq hsy hry hwy hs

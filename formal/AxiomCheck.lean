@@ -736,9 +736,9 @@ import EndgameChess
 #print axioms EndgameChess.Rules.krk_width_four_escort_cycle
 #check @EndgameChess.Rules.krk_width_four_escort_cycle
 
-/-! EC-C052: integrated all-wall95, strong arrivals99 and clock-zero actual win. -/
-#print axioms EndgameChess.Rules.KRKCentral.arrival99
-#check @EndgameChess.Rules.KRKCentral.arrival99
+/-! EC-C052: integrated wall93, arrivals97/98 and complete RAW clock0 winning criterion. -/
+#print axioms EndgameChess.Rules.KRKCentral.arrival97
+#check @EndgameChess.Rules.KRKCentral.arrival97
 #print axioms EndgameChess.Rules.KRKCentral.back_bound
 #check @EndgameChess.Rules.KRKCentral.back_bound
 #print axioms EndgameChess.Rules.KRKCentral.back_even_bound
@@ -751,8 +751,12 @@ import EndgameChess
 #check @EndgameChess.Rules.KRKCentral.column_wall_bound
 #print axioms EndgameChess.Rules.KRKCentral.exit_step_bound
 #check @EndgameChess.Rules.KRKCentral.exit_step_bound
-#print axioms EndgameChess.Rules.KRKCentral.fresh_arrival99
-#check @EndgameChess.Rules.KRKCentral.fresh_arrival99
+#print axioms EndgameChess.Rules.KRKCentral.fresh_arrival97
+#check @EndgameChess.Rules.KRKCentral.fresh_arrival97
+#print axioms EndgameChess.Rules.KRKCentral.fresh_outcome
+#check @EndgameChess.Rules.KRKCentral.fresh_outcome
+#print axioms EndgameChess.Rules.KRKCentral.fresh_weak98
+#check @EndgameChess.Rules.KRKCentral.fresh_weak98
 #print axioms EndgameChess.Rules.KRKCentral.full_bound
 #check @EndgameChess.Rules.KRKCentral.full_bound
 #print axioms EndgameChess.Rules.KRKCentral.full_cut_bound
@@ -781,7 +785,7 @@ import EndgameChess
 #check @EndgameChess.Rules.KRKCentral.small_central_bound
 #print axioms EndgameChess.Rules.KRKCentral.wait_even_bound
 #check @EndgameChess.Rules.KRKCentral.wait_even_bound
-#print axioms EndgameChess.Rules.KRKCentral.wall95
-#check @EndgameChess.Rules.KRKCentral.wall95
-#print axioms EndgameChess.Rules.KRKCentral.weak100
-#check @EndgameChess.Rules.KRKCentral.weak100
+#print axioms EndgameChess.Rules.KRKCentral.wall93
+#check @EndgameChess.Rules.KRKCentral.wall93
+#print axioms EndgameChess.Rules.KRKCentral.weak98
+#check @EndgameChess.Rules.KRKCentral.weak98

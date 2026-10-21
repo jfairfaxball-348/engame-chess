@@ -22,3 +22,18 @@ checks .lake is absent, builds, runs AxiomCheck and checks source/executable/
 dependency identities. Each command has a1200-second ceiling. Gate Z must use
 a separate fresh checkout. Frozen sources and scientific claims are unchanged
 until those gates actually pass. Hosted CI is unobserved at this checkpoint.
+
+Intermediate95 source own Gate F PASSED at
+1b5f0b313b6752173052a2d36aed4c7ebbbf452f: NEW GitHub clone
+C:/engame-checkouts/s090-gate-f, .lake absent;241 jobs exit0 in373.031s,
+419-report exact runner passed at2026-10-21T13:02:51Z. Full logs in gate-f/.
+This does NOT certify subsequent sharpened source. No separate95 freeze.
+
+Tightening uses the actually proved16-ply column bound, saving2 globally and
+covering the missing weak clock0 domain. New wall93/arrivals97-98 and complete
+BOTH-turn actual clock0 criterion:29 modules/26 mains, working-040 full243-job
+build and working-041 complete421-report runner exit0. All authoring attempts
+retained through41. The current verify.py checks THIS source, working-041 and
+421 reports/29 modules, with the explicit26-main list. Run it against a new own
+source commit and a different fresh checkout/output (gate-f93); gate-f remains
+the immutable earlier95 record. Gate Z is separate again.

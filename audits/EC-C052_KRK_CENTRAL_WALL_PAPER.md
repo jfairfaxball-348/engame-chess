@@ -20,7 +20,7 @@ argument, not the36 selected lines.
    invalid. Section2 now REPLACES that case split with an independent shorter
    escort proof. One far rescue leaves margin3; two same-rank below-wall king
    pairs need margins3 then2, ending at a full central wall. Prefix6 plus
-   central10 gives16, conservatively charged18. This covers every upper/lower
+   central10 gives16, now charged16 in the strengthened route. This covers every upper/lower
    reply and never assumes a ready endpoint. The original claim of margin3
    for all cited prefix actions is withdrawn; the replacement is the audited
    argument used by Lean `column_bound`.
@@ -52,15 +52,15 @@ argument, not the36 selected lines.
     A repair leaves margin>=3 and permits two safe king moves. Targets remain
     below R, each king step changes a missing coordinate, and all destinations
     stay at least two ranks from W. Output is genuinely READY.
-12. Recomputed F1..6=11,29,47,63,75,87 and R1..6=11,29,47,61,73,85. Initial
-    preparation plus ready totals at n1..6 are27,43,57,71,83,95. These numbers
+12. Recomputed F1..6=11,29,47,61,73,85 and R1..6=11,29,47,59,71,83. Initial
+    preparation plus ready totals at n1..6 are27,43,57,69,81,93. These numbers
     come from the actual retained-action recurrences, not scalar substitution.
 13. Every nonmating weak node has a safe rook and explicit legal reply. Strong
     nodes remain exact KRK; existing nondeadness interfaces or backward
     MateWithin composition supply guards. Use actual opposition-edge mate;
     no stalemate/dead continuation. Both colours/all flags retained, ordinary
-    strong choices. Strong setup99 fits the strict fresh lift; weak100 does
-    NOT. No arbitrary-clock/history, full FIDE or exact WDL/DTZ claim follows.
+    strong choices. The original strong99/weak100 boundary was respected. The tightened
+    entry now gives strong97/weak98, BOTH fitting the strict fresh lift. No arbitrary-clock/history, full FIDE or exact WDL/DTZ claim follows.
 
 Supplementary diagnostic: nine disclosed roots times four immediate coordinate
 selectors,36 selected clock-free lines, longest observed49 plies. Every selected
@@ -76,3 +76,13 @@ risk: central/back pursuit counts, margin2 rank action, restoration and initial
 ready endpoint. No Gate F/Z/ledger row, certified global95, RAW99 or KRK closure
 yet. Existing47 bundles and certified442/443 are unchanged. No unrelated
 foundation or standalone terminal-example freeze is admitted.
+
+Strengthening audit: using the proved16 rather than conservatively18 in the
+column entry reduces G by2, hence the cut by2, then F/R by2 at heights4..6.
+Preparation is unchanged: all-wall93. Strong97 and weak98 now BOTH fit the
+clock0 lift. The explicit both-turn clock0 winning criterion follows from the
+frozen board classification and actual winning projection. Every admitted KRK
+trace has a legal incoming edge because initial is not KRK; no local board
+example is promoted to an actual history. This closes only the clock0 outcome
+subdomain; positive clocks and full FIDE/exact global distances remain open.
+The earlier95-source verification is separate evidence, not this source's Gate F.

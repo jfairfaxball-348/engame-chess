@@ -4,7 +4,7 @@ namespace EndgameChess.Rules.KRKCentral
 open EndgameChess.KK
 set_option maxHeartbeats 4000000
 
-/-- Ready central costs are11,29,47,61,73,85. The advance calls Full on
+/-- Ready central costs are11,29,47,59,71,83. The advance calls Full on
 the next rank; it never silently carries a readiness premise through restoration. -/
 theorem ready_bound {σ : Colour} {q : Position} {sk rs wk : Square}
     (hq : Matches q σ ⟨sk,rs,wk,true⟩)

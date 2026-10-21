@@ -6,18 +6,20 @@ Owner direction, 2026-10-20: KRK closure is the research priority across as many
 sessions as needed. Owner explicitly resumed on 2026-10-21: run the next session
 and keep going until KRK is closed. Stop before KQK.
 
-## S090 integrated global geometry — KRK NOT CLOSED
+## S090 integrated global geometry and clock0 outcomes - KRK NOT CLOSED
 
-[EC-C052 paper](../proofs/EC-C052_KRK_CENTRAL_WALL_95.md) and
-[separate same-agent audit](../audits/EC-C052_KRK_CENTRAL_WALL_PAPER.md)
-give a complete all-defence wall95 route, with strong legal arrivals99 and
-clock0 RAW wins without incoming-count restrictions. Its complete local Lean
-implementation now builds; own-source fresh Gate F and separate Gate Z remain
-pending. The principal geometry gap has narrowed to these audits/certification,
-not another isolated example. Until then the certified ceilings remain442/443.
-Weak forcing100 is clock-free only, not an application of the strict<100 lift.
-Full lower-clock/incoming-history outcomes, FIDE correspondence and exact
-global WDL/DTZ remain OPEN. Do not begin KQK.
+[EC-C052 paper](../proofs/EC-C052_KRK_CENTRAL_WALL_95.md) and separate same-agent
+paper/Lean audits now give all-wall93, strong legal arrivals97 and weak forcing98.
+BOTH turn budgets are<100 and lift at actual RAW clock0 without incoming counts.
+The explicit complete clock0 winning criterion is: strong turn OR already mate
+OR a safe rook with a legal reply. All29 modules/26 mains build locally; complete
+243-job build/421-report runner passed. The tightened source still needs its OWN
+fresh Gate F and separate Gate Z; the earlier95/99/100 source passed Gate F at
+`1b5f0b313b6752173052a2d36aed4c7ebbbf452f`,241 jobs/419 reports,373.031s,
+2026-10-21T13:02:51Z. That older checkout does not certify the tightened source.
+Do not freeze a separate weaker95 bundle.47 frozen bundles remain. The main
+geometry and clock0 subdomain gaps have moved directly. Positive-clock/history
+outcomes, full FIDE correspondence and exact global WDL/DTZ remain OPEN.
 
 ## S089 direct small-box frontier — KRK NOT CLOSED
 

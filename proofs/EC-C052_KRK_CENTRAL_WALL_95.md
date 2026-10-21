@@ -1,4 +1,4 @@
-# EC-C052 — Centralised all-defence KRK wall strategy, candidate95 ceiling
+# EC-C052 — Centralised all-defence KRK wall strategy, candidate95 ceiling strengthened to93
 
 S090,2026-10-21. LOCAL_VERIFIED on paper after the separate same-agent audit;
 Lean, own-source Gate F and separate Gate Z remain pending.
@@ -9,13 +9,13 @@ attacks EC-C050's WHOLE wall obligation, not an isolated family or library goal.
 ## Statement and exact payoff
 
 For either strong colour sigma, every exact strong-turn kernel KRK position
-with squares S,R,W and S.y<R.y<W.y has MateWithin sigma95. All raw flags and
+with squares S,R,W and S.y<R.y<W.y has MateWithin sigma93. All raw flags and
 EVERY actual legal weak reply are included. No incoming weak-noncheck premise
 is needed for this wall statement. Coordinates range0..7; costs are BOARD PLIES.
 
-If verified, existing parametric setup gives every strong legal arrival99,
-and safe nonterminal weak inputs100. Only99 is strictly<100 and enters the
-existing clock0 lift directly;100 must NOT be silently called clock-safe.
+If verified, existing parametric setup gives every strong legal arrival97,
+and safe nonterminal weak inputs98. BOTH are strictly<100 and enter the
+existing clock0 lift; no incoming repetition-count premise is required.
 Neither budget is optimal distance. Complete arbitrary-history outcomes,
 full FIDE correspondence and exact global WDL/DTZ remain separate obligations.
 
@@ -107,7 +107,7 @@ Conclusion Pcentral=10 for ANY central close wall, including a threatened rook.
 The output is an exit with rook margin>=2 and king file in[1,6]. Both directions
 and arbitrary flags are retained; early upper replies are charged as prefixes.
 
-## 2. Collinear positive-file start:18-ply exit bound
+## 2. Collinear positive-file start:16-ply exit bound
 
 This special INITIAL shape is needed by the guarded-cut continuation:
 S.x=R.x=b,1<=b<=6, W.x>b, with a close wall. Its upper-ready case exits at0.
@@ -128,15 +128,13 @@ accepts exactly this full central wall without requiring readiness. Each weak
 node has the margin2 horizontal reply witness. No weak file-motion/parity
 assumption or upper-to-lower special case is needed in this prefix.
 
-The prefix costs at most6 plies and Section1 costs10, giving16. Keep the
-conservative18-ply budget in subsequent displayed recurrences. This argument
+The prefix costs at most6 plies and Section1 costs10, giving16. Use this
+sharper budget in the integrated route. This argument
 does not require collinearity or a specified weak file, so it applies in
 particular to the exact guarded-entry shape. It adds no separate research goal.
 
-Each cited good step has BEFORE-move margin>=3; each cited Wait/Normalize has
-destination margin>=3. After every pair margin>=2. The arithmetic partitions
-the initial file/offset conditions and the +/-1 replies, not a class enumeration.
-Conclusion Pcolumn=18, output ready exit, final strong file in[1,6].
+Conclusion Pcolumn=16, output ready exit after Section1, final strong file
+in[1,6]. Only the intermediate escort endpoint is full and may be unready.
 
 ## 3. One rank advance and a six-ply central restoration
 
@@ -174,7 +172,7 @@ costs6, then T(n-1). Hence T(n)=10+2+6+T(n-1). Numerals:
 This is a quantified all-defence recurrence with actual chess actions, not
 an upper-envelope number substituted for a strategy.
 
-## 5. Guarded narrow cuts: width2/3 mates within57
+## 5. Guarded narrow cuts: width2/3 mates within55
 
 Canonical guarded NE input S=(a-1,b-1),R=(a,b),W.x>a,W.y>b, with
 2<=w=7-a<=4 and1<=h=7-b<=6. Move S UP to(a-1,b), costing one pair.
@@ -185,13 +183,13 @@ least two files from S. This proof does NOT claim that move is safe at w=h=1:
 there it stalemates, and that unused case is excluded explicitly.
 
 Swap axes. The active wall is close, n=w, its strong and rook file are both b,
-and the weak file is>b. Section2 gives an exit within18. If w1 were included
+and the weak file is>b. Section2 gives an exit within16. If w1 were included
 one would need a separate terminal argument; WE DO NOT INCLUDE IT. For w>=2,
 advance2, restoration6, and T(w-1), with w-1<=3. Total
 
-    G(w)=2+18+2+6+[18*(w-2)+11] = 18*w+3.
+    G(w)=2+16+2+6+[18*(w-2)+11] = 18*w+1.
 
-Thus w2 costs39, w3 costs57, w4 costs75. The global cut below uses ONLY w2/3.
+Thus w2 costs37, w3 costs55, w4 costs73. The global cut below uses ONLY w2/3.
 This covers the whole required cut-continuation family, all other dimensions
 h1..6, not one selected corner. No 1x1 formalisation is needed for this route.
 
@@ -206,7 +204,7 @@ The weak file interval toward its edge has length2 or3 (S.x3/4), giving a
 horizontal legal reply witness. No one-square stalemate box is created.
 
 Reflect horizontally if necessary. The endpoint is exactly Section5 with
-width2/3 and other dimension n<=6. Cost<=2+57=59, independently of n.
+width2/3 and other dimension n<=6. Cost<=2+55=57, independently of n.
 
 At a READY central close root: an upper/aligned root is already an exit.
 A wide lower root cuts immediately. At offset1 use a distinct horizontal
@@ -220,18 +218,18 @@ Full search therefore costs<=4. All newly selected rook tempos are paid.
 Let F(n) bound FULL central close walls. For n1..3 use Section4. For n4..6,
 full search leads either to a cut or to a rank advance plus full restoration:
 
-    F(n) <= max(4+2+57, 4+2+6+F(n-1)).
-    F(1..6) = 11,29,47,63,75,87.
+    F(n) <= max(4+2+55, 4+2+6+F(n-1)).
+    F(1..6) = 11,29,47,61,73,85.
 
 For READY roots the first search costs2 instead4; the child after restoration
 is FULL, not silently ready. Therefore
 
     R(1..3) <= 11,29,47,
-    R(4)<=max(61,10+47)=61,
-    R(5)<=max(61,10+63)=73,
-    R(6)<=max(61,10+75)=85.
+    R(4)<=max(59,10+47)=59,
+    R(5)<=max(59,10+61)=71,
+    R(6)<=max(59,10+73)=83.
 
-The initial ready/full distinction is essential to the final95, not notation.
+The initial ready/full distinction is essential to the final93, not notation.
 Neither the hanging-rook successor nor its two-ply repair is forgotten.
 
 ## 8. Initial wall centralisation, preserving every weak reply
@@ -256,14 +254,14 @@ or lands on R. Output is CENTRAL, close and READY. Since r=7-n:
 
 | n | bound on t | centralisation plies | ready remainder | total |
 |---|---|---|---|---|
-|6|3|10|85|95|
-|5|3|10|73|83|
-|4|3|10|61|71|
+|6|3|10|83|93|
+|5|3|10|71|81|
+|4|3|10|59|69|
 |3|3|10|47|57|
 |2|4|14|29|43|
 |1|5|16|11|27|
 
-Each total is<=95. This closes the stated ALL-wall95 strategy on paper if
+Each total is<=93. This closes the strengthened ALL-wall93 strategy on paper if
 the separate audit validates the pursuit, composition, transport and every
 nonempty/terminal branch. No Lean or freeze status is inferred from the table.
 
@@ -284,3 +282,26 @@ failed box-shrink rule. Selected local policy traces may test this construction
 but cannot establish the universal claim. The [separate paper audit](../audits/EC-C052_KRK_CENTRAL_WALL_PAPER.md)
 records LOCAL_VERIFIED scope and remaining formal obligations. Fresh own-source
 Gate F and separate Gate Z are still required after Lean.
+
+## 9. Clock-zero outcome coverage on BOTH turns
+
+The two-ply gain is needed by the missing weak-turn clock0 domain:98 now
+fits the strict<100 lift, unlike the earlier100. On every admitted RAW KRK
+state with clock0, the strong side actually wins exactly when the board has
+strong turn OR is already mate OR has a safe rook and a legal move. For weak
+turn this is the frozen clock-free safe-rook/mate classification; use weak98
+then the frozen incoming-count-free clock0 lift. On strong turn, the admitted
+trace cannot be initial (initial is not KRK), so it ends with a kernel-legal
+incoming move. Strong arrival97 and the same lift give actual win. Conversely,
+an actual RAW winning policy yields a RAW forcing certificate; projection
+gives clock-free forcing, and the frozen board classification gives exactly
+the stated criterion. Dead/stalemated or capturable-rook weak roots therefore
+fail the winning criterion. Existing strong holding and complementary weak
+holding supply their strategy interpretation; no full FIDE correspondence or
+positive-clock classification is asserted. This is a complete named subdomain,
+not another conditional geometric family or a redefinition of winning.
+
+The original95/99/100 published source has a distinct verification record.
+The stronger93/97/98 source and the clock0 classification require their own
+exact-source checks before promotion; no result from the earlier checkout is
+attributed to the tightened source. No separate95 bundle is to be frozen.

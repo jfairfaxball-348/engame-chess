@@ -7,12 +7,12 @@ set_option maxHeartbeats 4000000
 /-- Interior-file close-wall entry, including the column shape produced by
 the guarded axis swap. A far rescue gives three files of margin; two king
 pairs leave enough margin for the second move, then central pursuit costs10.
-This simpler 16-ply entry is used within the paper's conservative18 budget. -/
+This16-ply entry supplies the sharpened global93 budget. -/
 theorem column_bound {σ : Colour} {y E : Nat}
     (hexit : ExitBound σ y E) {q : Position} {sk rs wk : Square}
     (hq : Matches q σ ⟨sk,rs,wk,true⟩)
     (hsy : sk.2.val+1=y) (hry : rs.2.val=y) (hwy : y<wk.2.val)
-    (hs1 : 1≤sk.1.val) (hs6 : sk.1.val≤6) : MateWithin σ (E+18) q := by
+    (hs1 : 1≤sk.1.val) (hs6 : sk.1.val≤6) : MateWithin σ (E+16) q := by
   by_cases hcentral : sk.1.val=3 ∨ sk.1.val=4
   · exact mateWithin_mono (central_bound hexit hq hsy hry hwy hcentral) (by omega)
   have catch_up : ∀ {v : Position} {rr ww : Square},

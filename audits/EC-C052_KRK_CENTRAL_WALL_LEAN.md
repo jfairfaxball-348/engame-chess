@@ -1,17 +1,17 @@
 # EC-C052 exact-source Lean audit — S090
 
 2026-10-21. Separate same-agent review; no independent external reviewer.
-Scope: ALL27 complete new `KRKCentral` modules, including private `pivot_right`,
-the three shared-definition modules, aggregate import and24 main runner entries.
+Scope: ALL29 complete new `KRKCentral` modules, including private `pivot_right`,
+the three shared-definition modules, aggregate import and26 main runner entries.
 Gate F and separate Gate Z are pending at this source checkpoint.
 
-The theorem is `KRKCentral.wall95`: exact strong-turn Matches, S.y<R.y<W.y,
-MateWithin sigma95. It has no extra ready/central/weak-noncheck/flags premise.
-`arrival99` instantiates existing parametric setup with this ALL-wall theorem;
+The theorem is `KRKCentral.wall93`: exact strong-turn Matches, S.y<R.y<W.y,
+MateWithin sigma93. It has no extra ready/central/weak-noncheck/flags premise.
+`arrival97` instantiates existing parametric setup with this ALL-wall theorem;
 it retains exact material, strong turn and an actual legal incoming edge.
-`fresh_arrival99` retains those premises and actual RAW clock0, returning W99
-AND ActualWin without any incoming count/histogram premise. `weak100` retains
-ForceMate and is only clock-free; the strict<100 RAW lift is not applied to it.
+`fresh_arrival97` retains those premises and actual RAW clock0, returning W97
+AND ActualWin without any incoming count/histogram premise. `weak98` retains
+ForceMate and now fits the strict<100 RAW lift; `fresh_weak98` applies it.
 
 ## Exact proof correspondence and hostile checks
 
@@ -32,7 +32,7 @@ ForceMate and is only clock-free; the strict<100 RAW lift is not applied to it.
   citation. At most two below-wall king pairs are enough from files1..6.
   A far repair gives margin3, after first reply margin2 is enough for the
   second. Final readiness is not asserted; Central handles any margin.
-  Actual cost16 fits the declared18 budget. No exhaustive board enumeration.
+  Actual cost16 is now used in the declared budget. No exhaustive board enumeration.
 * `Restoration` charges one possible repair and at most two king pairs:6.
   Its endpoint is FULL central, not ready. `ExitStep` charges rank advance2
   plus restoration6; edge opposition uses actual MateGoal in one ply.
@@ -42,29 +42,50 @@ ForceMate and is only clock-free; the strict<100 RAW lift is not applied to it.
   later full-cut induction. Width2..4 excludes the known1x1 stalemate.
 * `Guarded` gives a concrete horizontal weak witness in an interval of at
   least two files and proves both NE rays constrain EVERY reply. `Pivot`
-  creates only width2/3, costing at most59. Already-present cut is zero moves;
+  creates only width2/3, costing at most57. Already-present cut is zero moves;
   no null move is used. `symX` transport includes the canonical source and
   exact map-map target identity; it is not a RAW-history symmetry claim.
 * `ReadyCut` is upper/aligned exit, direct wide cut, or one paid wait making
   a lower-band offset even. `FullCut` pays the extra repair. `Full` recurses
   at strictly smaller wall height and calls its FULL child after restoration.
-  `Ready` calls Full, yielding exactly the paper's11/29/47/61/73/85 table.
+  `Ready` calls Full, yielding exactly the paper's11/29/47/59/71/83 table.
 * `PrepPair` decreases max(rank gap, central-file distance) exactly once and
   includes every weak reply. `Prep` groups two king pairs after margin3, then
   recurses at distance t-2. One- and zero-distance cases separately pay for
   readiness. Its budget2*(t+t/2+1) includes the final repair for even t.
-  `Wall` bounds this cost plus Ready by95 using coordinates0..7. This is a
+  `Wall` bounds this cost plus Ready by93 using coordinates0..7. This is a
   symbolic strategy proof, not per-position values or a finite class oracle.
 * Every selected strong move has a material-exact Matches target; every
   nonmating weak node has an explicit actual legal witness. MateWithin's
   pair composition supplies the nondeadness guards. All quantifiers are
   actual kernel Legal; no surrogate weak-game enumeration replaces them.
 
-Local full `lake build` exit0,241 jobs; complete AxiomCheck exit0,419 reports.
-Every new main statement was inspected in `working-035.log`; all24 use only
+Local full `lake build` exit0,243 jobs; complete AxiomCheck exit0,421 reports.
+Every new main statement was inspected in `working-041.log`; all26 use only
 the standard three axioms. This also bounds all imported/private dependencies.
 All authoring successes and failures are retained in the sequential command
 log; diagnostic36 selected paths do not prove the universal theorem. Fresh
 own-source verification is still required before FORMAL_VERIFIED, and another
 fresh Gate Z before the ledger. No frozen source is edited. No FIDE or optimal
 distance claim, no full all-history classification, and no KRK closure claim.
+
+## Two-ply sharpening and complete clock0 criterion
+
+The earlier published95/99/100 source is retained as an intermediate record;
+its fresh verification cannot certify this tightened source. The16-ply column
+entry reduces guarded/cut costs by2, giving full central11/29/47/61/73/85, ready
+11/29/47/59/71/83, uniform wall93, strong arrival97 and weak forcing98. Every
+changed recurrence was checked symbolically in Lean; no favourable reply was
+removed. The new weak clock0 result is the reason to use the saved two plies.
+
+`fresh_outcome` states an EXPLICIT criterion for the independent ActualWin on
+EVERY admitted clock0 KRK state: strong turn OR board mate OR safe rook with a
+legal reply. Necessity projects actual winning through the existing policy
+certificate and uses the frozen weak geometric classification. Sufficiency
+uses strong97 or weak98. The strong arrival witness is derived by destructing
+the actual initial-rooted trace: initial cannot be KRK, every snoc gives a real
+legal incoming edge. No compatible-history assumption is invented for a local
+example. It covers both turns/colours/claims/weak replies and leaves positive
+clocks, FIDE correspondence and exact distance open. All26 main axiom reports
+and statements were inspected in the final local runner. No extra framework
+or generic winning equivalence was introduced for this corollary.
