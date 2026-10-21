@@ -84,7 +84,15 @@ rule-aware outcomes and distance correctness are the priorities across sessions.
 Apply the repository-wide direct-obligation and necessity rules above. A blocked
 direct proof is recorded honestly and carried forward. Freeze checks remain
 mandatory but do not set the research agenda by default.
-Owner's latest instruction (2026-10-21): run the next session and keep going
+Earlier owner instruction (2026-10-21): run the next session and keep going
 until KRK is closed. This explicitly resumes S077 and subsequent KRK sessions,
 superseding the 2026-10-20 pause. Preserve all proof and freeze gates and report
 open obligations honestly. Do not start KQK under the current direction.
+
+
+## Latest owner stop overrides the continuing run
+Owner instruction (2026-10-21): "finish up here and closeout cleanly".
+Close S092 and publish its records; stop the continuing KRK run with KRK OPEN.
+The earlier keep-going instruction is superseded. S093 is FUTURE / UNEXECUTED
+and requires explicit owner resumption. The direct-obligation and necessary-
+prerequisite rules remain applicable when research resumes. Do not start KQK.

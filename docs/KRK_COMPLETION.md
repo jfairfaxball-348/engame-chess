@@ -1,12 +1,12 @@
 # Short-term roadmap: direct attack on KRK closure
 
-Current owner direction (2026-10-21): resume consecutive KRK sessions until closure, superseding the S076 pause. Stop before KQK.
+Current owner direction (2026-10-21): "finish up here and closeout cleanly". S092 is CLOSED AT OWNER REQUEST; the continuing run is STOPPED with KRK OPEN. Earlier continuation directions below are historical. S093 is FUTURE / UNEXECUTED pending explicit owner resumption. Stop before KQK.
 
 Owner direction, 2026-10-20: KRK closure is the research priority across as many
 sessions as needed. Owner explicitly resumed on 2026-10-21: run the next session
 and keep going until KRK is closed. Stop before KQK.
 
-## S092 direct all-history route - IN PROGRESS
+## S092 direct all-history route - CLOSED AT OWNER REQUEST; target OPEN
 
 The [fixed-barrier reduction](../proofs/KRK_STATIC_HISTORY_REDUCTION_S092.md)
 is now argued on paper, including root exceptions and current/intended claims;
@@ -16,7 +16,7 @@ incoming history. It passes local Lean checks only, not own-source F/Z.
 The next missing claim is the compact GEOMETRIC EVALUATION and matching lower
 bounds of the fixed-barrier condition. A generic recurrence/reduction is not
 material-class closure. No standalone dependency freeze, new outcome coverage,
-FIDE or exact-distance result;48 bundles unchanged. Continue S092 directly.
+FIDE or exact-distance result;48 bundles unchanged. Research stopped at owner request; carry the direct gap into S093 only if resumed.
 
 ## S091 freeze complete - KRK NOT CLOSED
 

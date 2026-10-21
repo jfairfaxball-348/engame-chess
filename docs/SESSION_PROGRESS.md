@@ -2,7 +2,7 @@
 
 Owner reporting rule installed 2026-10-19. Update this table after every session, then copy it into both the session closeout and the final reply. Keep the columns and baseline row order stable so successive reports are easy to compare. Always keep full Syzygy parity last, even when adding detail above it.
 
-Current mathematical evidence: S092 in progress; certified coverage through S091. Forty-eight theorem bundles are frozen, including EC-T0048: whole-wall93, arrivals97/98 and the explicit BOTH-turn RAW clock0 winning criterion. Bundles are not solved material classes.
+Current mathematical evidence: S092 closed at owner request; continuing run stopped. Certified coverage through S091. Forty-eight theorem bundles are frozen, including EC-T0048: whole-wall93, arrivals97/98 and the explicit BOTH-turn RAW clock0 winning criterion. Bundles are not solved material classes.
 
 | Endgames / target | Progress | Remaining |
 |---|---|---|
@@ -18,23 +18,23 @@ Current mathematical evidence: S092 in progress; certified coverage through S091
 | All seven-piece endgames | Open in this project | Every material class and legal position |
 | **Full Syzygy parity (through seven pieces)** | **Open** | **Complete class coverage, 50-move WDL and DTZ parity** |
 
-S092 movement so far: the necessary exact deadline passes local Lean checks; the all-history reduction to a fixed incoming-key barrier problem is argued on paper. The compact geometric evaluation and matching lower bounds are still missing. No new outcome coverage, own-source F/Z or freeze;48 bundles unchanged; KRK NOT CLOSED.
+Session change (S092): the necessary exact deadline passes local Lean checks; the all-history reduction to a fixed incoming-key barrier problem is argued on paper. The compact geometric evaluation and matching lower bounds are still missing. No new outcome coverage, own-source F/Z or freeze;48 bundles unchanged; KRK NOT CLOSED.
 
 S090 owner-directed rules update: the direct-obligation/necessary-prerequisite
 rule now applies to every research target. This is governance work and changes
-no mathematical claim. KRK research continues under the existing instruction.
+no mathematical claim. KRK research is now stopped under the latest owner closeout instruction.
 
 ### Movement of the current target's direct obligations
 
 | Closure obligation | Current coverage | Actual movement during S092 |
 |---|---|---|
-| Global clock-safe geometry | Wall93/arrivals97-98 frozen as EC-T0048 | Whole geometry obligation certified at OWN Gate F/Z; no new scope in S091 |
+| Global clock-safe geometry | Wall93/arrivals97-98 frozen as EC-T0048 | Unchanged during S092; certified through S091 |
 | Complete rule-aware outcomes | High-clock tests frozen; explicit BOTH-turn clock0 winning criterion frozen | Exact deadline locally checked and fixed-barrier reduction on paper; compact positive-clock/history criterion still OPEN |
 | Full FIDE correspondence | Partial kernel/history/key/claim interfaces | Full correspondence still OPEN; headline gap unchanged |
 | Exact global distances/WDL-DTZ | Partial one-ply optimality and nonoptimal upper bounds | Global optimality/convention coverage still OPEN; headline gap unchanged |
 
 Each future session must update this obligation-level account from actual
-evidence. A supporting result is reported in the first row without implying
+evidence. A supporting result is reported under its relevant obligation without implying
 that the global certificate or any later obligation has closed.
 
 Piece counts include both kings. The four- through seven-piece rows include all material classes at each size, including mixed material and promotions; they are not claims of completed work. Add individual class rows above their aggregate as work begins, retaining the aggregate rows and the final parity row.
