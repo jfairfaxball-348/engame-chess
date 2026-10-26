@@ -113,8 +113,98 @@ def run_interior():
                          interior_weak_four_positive=positive, examples=examples), indent=2))
 
 
+def edge_candidate(sk, rook, wk):
+    """Unproved bottom-edge four-ply formula, conditional on a nonterminal root."""
+    x, y = wk
+    assert y == 0
+    if x >= 4:
+        sk, rook, wk = (7-sk[0], sk[1]), (7-rook[0], rook[1]), (7-x, y)
+        x = wk[0]
+    rx, ry = rook
+    sx, sy = sk
+    if x >= 2:
+        return last_reply(sk, rook, wk) or (sk == (x, 2) and ry >= 3)
+    if x == 1:
+        return ((sk == (0, 2) and rx == 2 and ry >= 2) or
+                (sk == (1, 2) and (ry >= 3 or (ry == 2 and rx >= 2) or
+                                   (ry == 1 and rx in (2, 3)))) or
+                (sk == (2, 2) and ((rx == 0 and ry >= 2) or
+                                   (rx >= 3 and rook != (3, 1)))))
+    return ((sk == (0, 2) and (ry >= 2 or rx == 2)) or
+            (sk == (2, 0) and (rx >= 2 or ry == 2)) or
+            (sk == (1, 2) and ry >= 1) or (sk == (2, 1) and rx >= 1) or
+            (sk == (2, 2) and ((rx >= 3 and ry >= 3) or (rx == 0 and ry >= 2) or
+                               (ry == 0 and rx >= 2) or rook in ((1, 2), (2, 1)))) or
+            (sy == 3 and sx <= 2 and rook == (2, 1)) or
+            (sx == 3 and sy <= 2 and rook == (1, 2)))
+
+
+def run_edges():
+    checked = positive = 0
+    mismatches = []
+    for wx in (0, 1, 2, 3):
+        wk = (wx, 0)
+        for sk in SQUARES:
+            for rook in SQUARES:
+                if len({wk, sk, rook}) < 3 or distance(sk, wk) < 2:
+                    continue
+                replies = legal_moves({(W, "K"): sk, (W, "R"): rook, (B, "K"): wk}, B)
+                if not replies:
+                    continue  # the conjecture explicitly excludes terminal roots
+                observed = all((W, "R") in p and three(p[W, "K"], p[W, "R"], p[B, "K"])
+                               for p in replies)
+                predicted = edge_candidate(sk, rook, wk)
+                checked += 1
+                positive += observed
+                if observed != predicted:
+                    mismatches.append(dict(sk=sk, rook=rook, wk=wk, observed=observed,
+                                           predicted=predicted))
+    print(json.dumps(dict(diagnostic_only=True, conjecture="edge four-ply coordinate formula",
+                         checked=checked, positive=positive, mismatch_count=len(mismatches),
+                         examples=mismatches[:12]), indent=2))
+    return not mismatches
+
+
+def three_middle_candidate(sk, rook, wk):
+    x, y = wk
+    assert y == 0 and 2 <= x <= 5
+    sx, sy = sk
+    rx, ry = rook
+    return ((sk == (x, 2) and ry != 0 and abs(rx-x) >= 2) or
+            (ry >= 2 and rx == x-1 and distance(sk, (x+1, 2)) == 1) or
+            (ry >= 2 and rx == x+1 and distance(sk, (x-1, 2)) == 1) or
+            (sk == (x+1, 2) and (rx == x-1 or ry >= 3 or (ry == 2 and rx < sx))) or
+            (sk == (x-1, 2) and (rx == x+1 or ry >= 3 or (ry == 2 and sx < rx))))
+
+
+def run_middle_three():
+    checked = 0
+    mismatches = []
+    for x in (2, 3, 4, 5):
+        wk = (x, 0)
+        for sk in SQUARES:
+            for rook in SQUARES:
+                if len({wk, sk, rook}) < 3 or distance(sk, wk) < 2:
+                    continue
+                checked += 1
+                predicted = three_middle_candidate(sk, rook, wk)
+                observed = three(sk, rook, wk)
+                if observed != predicted:
+                    mismatches.append(dict(sk=sk, rook=rook, wk=wk, observed=observed,
+                                           predicted=predicted))
+    print(json.dumps(dict(diagnostic_only=True, conjecture="central-edge three-ply expansion",
+                         checked=checked, mismatch_count=len(mismatches), examples=mismatches[:12]), indent=2))
+    return not mismatches
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--interior", action="store_true", help="check three selected inward-band families")
+    parser.add_argument("--edge-formula", action="store_true", help="test the unproved coordinate conjecture")
+    parser.add_argument("--middle-three", action="store_true", help="test the unproved central three-ply expansion")
     args = parser.parse_args()
+    if args.middle_three:
+        raise SystemExit(0 if run_middle_three() else 1)
+    if args.edge_formula:
+        raise SystemExit(0 if run_edges() else 1)
     run_interior() if args.interior else run()
