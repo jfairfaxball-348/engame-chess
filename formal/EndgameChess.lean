@@ -121,3 +121,4 @@ import EndgameChess.Rules.KRKThreePlyHistory
 import EndgameChess.Rules.KRKInteriorHolding
 import EndgameChess.Rules.KRKThreePlyMiddle
 import EndgameChess.Rules.KRKFourPlyMiddle
+import EndgameChess.Rules.KRKRookRayBarriers

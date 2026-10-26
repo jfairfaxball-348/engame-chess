@@ -872,3 +872,12 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKFourPlyMiddle.central_four_necessary
 #print axioms EndgameChess.Rules.KRKFourPlyMiddle.opposition_replies
 #print axioms EndgameChess.Rules.KRKFourPlyMiddle.weak_four_iff
+#print axioms EndgameChess.Rules.KRKLastReply.weak_move_eq
+#print axioms EndgameChess.Rules.KRKLastReply.lone_step_legal
+#print axioms EndgameChess.Rules.KRKThreePly.rook_entry_legal
+#print axioms EndgameChess.Rules.KRKRookRayBarriers.ray_last_iff
+#print axioms EndgameChess.Rules.KRKRookRayBarriers.ray_sees_iff
+#print axioms EndgameChess.Rules.KRKRookRayBarriers.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKRookRayBarriers.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKRookRayBarriers.high_clock_hold_iff
+#print axioms EndgameChess.Rules.KRKRookRayBarriers.high_clock_exact_three

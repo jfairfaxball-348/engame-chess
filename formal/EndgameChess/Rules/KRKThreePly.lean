@@ -135,6 +135,27 @@ theorem last_entry_move {q : Position} {σ : Colour} {sk rs wk ns nr : Square}
     exact Or.inr ⟨src, pseudo.2.1, sees, moved, last⟩
   · exact False.elim (opp_ne σ (colour.trans turn).symm)
 
+/-- An explicit rook entry has the canonical actual legal move, with flags
+preserved by play rather than reconstructed from a geometric board. -/
+theorem rook_entry_legal {q : Position} {σ : Colour} {sk rs wk t : Square}
+    (material : IsKRK q σ sk rs wk) (turn : q.turn = σ) (far : 2 ≤ dInf sk wk)
+    (sees : RookSees rs t sk wk) (notKing : t ≠ sk) (notWeak : t ≠ wk)
+    (last : LastReply sk t wk) : isLegal q ⟨rs, t, none⟩ = true := by
+  obtain ⟨r, ⟨m, legal, rfl⟩, next⟩ := step_sound
+    (show Matches q σ ⟨sk, rs, wk, true⟩ from ⟨material, turn⟩)
+    (StepM.rook sees.1 sees.2.1 sees.2.2 notKing notWeak far)
+  rcases last_entry_move material turn legal next.1 last with
+    ⟨_, _, distance, moved, _⟩ | ⟨src, promo, _, moved, _⟩
+  · have dst := king_square next.1 (t := m.dst)
+      (by rw [moved.2.2.2]; exact krkBoard_sk)
+    rw [dst, (dInf_eq_zero_iff.mpr rfl)] at distance
+    contradiction
+  · have dst := rook_square next.1 (t := m.dst)
+      (by rw [moved.2.2.2]; exact krkBoard_rs moved.1)
+    have canonical : m = ⟨rs, t, none⟩ := by
+      cases m; simp only [Move.mk.injEq]; exact ⟨src, dst, promo⟩
+    rwa [canonical] at legal
+
 /-- Complete geometric three-ply criterion on legal strong arrivals. Every
 ordinary strong move and both castling alternatives are covered. -/
 theorem strong_three_iff {q : Position} {σ : Colour} {sk rs wk : Square}

@@ -25,6 +25,32 @@ private theorem weak_move_shape {q : Position} {σ : Colour} {sk rs wk : Square}
     refine ⟨src, promo, ?_⟩
     simp [play, atKing, turn, promo]
 
+/-- Canonical data for every actual weak move that retains exact KRK. -/
+theorem weak_move_eq {q : Position} {σ : Colour} {sk rs wk u : Square} {m : Move}
+    (material : IsKRK q σ sk rs wk) (turn : q.turn = σ.opp)
+    (legal : isLegal q m = true) (next : IsKRK (play q m) σ sk rs u) :
+    m = ⟨wk, u, none⟩ := by
+  obtain ⟨src, promo, atKing⟩ := weak_move_shape material turn legal
+  rw [next.2.2.2] at atKing
+  have dst : m.dst = u := by
+    rcases krkBoard_some atKing with ⟨_, bad⟩ | ⟨_, bad⟩ | ⟨eq, _⟩
+    · exact False.elim (opp_ne σ (congrArg Piece.colour bad).symm)
+    · have badKind := congrArg Piece.kind bad; cases badKind
+    · exact eq
+  cases m
+  simp only [Move.mk.injEq]
+  exact ⟨src, dst, promo⟩
+
+/-- Expose the actual canonical move in model soundness for a weak step. -/
+theorem lone_step_legal {q : Position} {σ : Colour} {sk rs wk u : Square}
+    (material : IsKRK q σ sk rs wk) (turn : q.turn = σ.opp)
+    (step : StepM ⟨sk, rs, wk, false⟩ ⟨sk, rs, u, true⟩) :
+    isLegal q ⟨wk, u, none⟩ = true := by
+  obtain ⟨r, ⟨m, legal, rfl⟩, next⟩ := step_sound
+    (show Matches q σ ⟨sk, rs, wk, false⟩ from ⟨material, turn⟩) step
+  have canonical := weak_move_eq material turn legal next.1
+  rwa [canonical] at legal
+
 /-- The coordinate last-reply region determines one actual move, including
 its source and promotion data, for every legal defender alternative. -/
 theorem unique_legal_reply {q : Position} {σ : Colour} {sk rs wk : Square}
