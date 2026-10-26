@@ -40,9 +40,9 @@ whereas the final king in the terminal formula is two lines inward. A king
 cannot make that displacement in one move. This geometric ordinary-step
 statement is checked in `king_step_not_mate`. Castling must be handled separately:
 the resulting king and rook on the same back rank do not fit either template.
-Hence the paper argument says a mating move must be a rook move. The full
-actual-move statement, including castling, remains unformalised; do not read
-the ordinary-step theorem as that stronger statement.
+The full actual-move statement, including castling, is now proved separately
+in [KRK_MATING_MOVES.md](KRK_MATING_MOVES.md); the original ordinary-step
+theorem alone is not that stronger statement.
 
 ## Lean correspondence and proof critique
 

@@ -114,3 +114,5 @@ import EndgameChess.Rules.KRKCentral.FreshOutcome
 import EndgameChess.Rules.KRKDeadline.Necessary
 
 import EndgameChess.Rules.KRKMateGeometry
+import EndgameChess.Rules.KRKImmediateHistory
+import EndgameChess.Rules.KRKEdgeDepthHistory

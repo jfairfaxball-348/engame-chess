@@ -804,3 +804,23 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKMateGeometry.kernel_mate_iff
 #check @EndgameChess.Rules.KRKMateGeometry.kernel_mate_iff
 #check @EndgameChess.Rules.KRKMateGeometry.king_step_not_mate
+
+#print axioms EndgameChess.Rules.KRKMatingMove.castle_not_mate
+#print axioms EndgameChess.Rules.KRKMatingMove.king_move_not_mate
+#print axioms EndgameChess.Rules.KRKMatingMove.mating_source
+#print axioms EndgameChess.Rules.KRKMatingMove.rook_move_model
+#print axioms EndgameChess.Rules.KRKImmediate.immediate_iff
+#print axioms EndgameChess.Rules.KRKImmediate.admitted_immediate_iff
+#print axioms EndgameChess.Rules.KRKImmediate.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKImmediate.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKImmediate.high_clock_hold_iff
+#print axioms EndgameChess.Rules.KRKEdgeDepth.depth_step
+#print axioms EndgameChess.Rules.KRKEdgeDepth.terminal_depth_zero
+#print axioms EndgameChess.Rules.KRKEdgeDepth.ready_predecessor_depth_zero
+#print axioms EndgameChess.Rules.KRKEdgeDepth.weak_interior_not_three
+#print axioms EndgameChess.Rules.KRKEdgeDepth.arrival_far
+#print axioms EndgameChess.Rules.KRKEdgeDepth.mate_depth_lower
+#print axioms EndgameChess.Rules.KRKEdgeDepth.clock_depth_necessary
+#print axioms EndgameChess.Rules.KRKEdgeDepth.clock_depth_holding
+#check @EndgameChess.Rules.KRKImmediate.high_clock_actual_iff
+#check @EndgameChess.Rules.KRKEdgeDepth.clock_depth_holding
