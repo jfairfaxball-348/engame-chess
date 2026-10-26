@@ -835,3 +835,17 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKLastReply.high_clock_actual_iff
 #print axioms EndgameChess.Rules.KRKLastReply.high_clock_hold_iff
 #print axioms EndgameChess.Rules.KRKLastReply.high_clock_exact_two
+#print axioms EndgameChess.Rules.KRKLastReply.strong_two_to_one
+#print axioms EndgameChess.Rules.KRKLastReply.unique_legal_reply
+#print axioms EndgameChess.Rules.KRKLastReply.no_claim_at_unique_reply
+#print axioms EndgameChess.Rules.KRKLastReply.high_clock_actual_key_iff
+#print axioms EndgameChess.Rules.KRKThreePly.castle_not_last
+#print axioms EndgameChess.Rules.KRKThreePly.king_move_model
+#print axioms EndgameChess.Rules.KRKThreePly.last_entry_move
+#print axioms EndgameChess.Rules.KRKThreePly.strong_three_iff
+#print axioms EndgameChess.Rules.KRKThreePly.entry_no_claim_iff
+#print axioms EndgameChess.Rules.KRKThreePly.history_three_sufficient
+#print axioms EndgameChess.Rules.KRKThreePly.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKThreePly.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKThreePly.high_clock_hold_iff
+#print axioms EndgameChess.Rules.KRKThreePly.high_clock_exact_three

@@ -62,6 +62,12 @@ have exact optimal distance two board plies: no ongoing weak-turn root can
 mate in zero or one ply. This does not assert
 completed FIDE correspondence or classification at all lower clocks.
 
+The follow-on `KRKLastReplyKey.lean` evaluates that claim predicate within
+LastReply using the unique actual reply: h<99, current occurrences<3, and
+occurrences of the forced child key in the incoming trace<2. The source and
+promotion data of the unique move are proved, so flags are preserved by the
+actual kernel append. See [the three-ply barrier result](KRK_THREE_PLY_BARRIERS.md).
+
 ## Verification scope
 
 Lean sources: `KRKLastReply.lean`, `KRKLastReplyKernel.lean`, and

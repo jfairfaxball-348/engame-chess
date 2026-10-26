@@ -51,7 +51,7 @@ theorem weak_two_iff {q : Position} {σ : Colour} {sk rs wk : Square}
       apply (strong_one_iff next.2).mpr
       exact (immediate_iff next.1 next.2 nextFar notCheck).mpr (every w move)
 
-private theorem strong_two_to_one {q : Position} {σ : Colour} (turn : q.turn = σ)
+theorem strong_two_to_one {q : Position} {σ : Colour} (turn : q.turn = σ)
     (win : MateWithin σ 2 q) : MateWithin σ 1 q := by
   rcases win with goal | ⟨_, chosen | defended⟩
   · exact Or.inl goal
