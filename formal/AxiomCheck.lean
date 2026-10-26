@@ -793,3 +793,14 @@ import EndgameChess
 /-! S092 working dependency: exact necessary optional-claim deadline. -/
 #print axioms EndgameChess.Rules.KRKDeadline.winning_deadline
 #check @EndgameChess.Rules.KRKDeadline.winning_deadline
+
+/-! Working terminal geometry for the positive-clock lower-bound problem. -/
+#print axioms EndgameChess.Rules.KRKMateGeometry.horizontal_edge
+#print axioms EndgameChess.Rules.KRKMateGeometry.horizontal_necessity
+#print axioms EndgameChess.Rules.KRKMateGeometry.horizontal_sufficiency
+#print axioms EndgameChess.Rules.KRKMateGeometry.mate_iff_terminal
+#print axioms EndgameChess.Rules.KRKMateGeometry.king_step_not_mate
+#print axioms EndgameChess.Rules.KRKMateGeometry.kernel_mate_model
+#print axioms EndgameChess.Rules.KRKMateGeometry.kernel_mate_iff
+#check @EndgameChess.Rules.KRKMateGeometry.kernel_mate_iff
+#check @EndgameChess.Rules.KRKMateGeometry.king_step_not_mate

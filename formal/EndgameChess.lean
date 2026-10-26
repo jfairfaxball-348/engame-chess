@@ -112,3 +112,5 @@ import EndgameChess.Rules.KRKBox.Cycle
 import EndgameChess.Rules.KRKCentral.FreshOutcome
 
 import EndgameChess.Rules.KRKDeadline.Necessary
+
+import EndgameChess.Rules.KRKMateGeometry
