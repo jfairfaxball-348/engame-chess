@@ -864,3 +864,11 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKFourPlyEscape.mate_depth_lower
 #print axioms EndgameChess.Rules.KRKFourPlyEscape.clock_depth_necessary
 #print axioms EndgameChess.Rules.KRKFourPlyEscape.clock_depth_holding
+#print axioms EndgameChess.Rules.KRKThreePly.last_middle_iff
+#print axioms EndgameChess.Rules.KRKThreePly.immediate_middle_iff
+#print axioms EndgameChess.Rules.KRKThreePly.king_entry_middle_iff
+#print axioms EndgameChess.Rules.KRKThreePly.rook_entry_middle_iff
+#print axioms EndgameChess.Rules.KRKThreePly.three_middle_iff
+#print axioms EndgameChess.Rules.KRKFourPlyMiddle.central_four_necessary
+#print axioms EndgameChess.Rules.KRKFourPlyMiddle.opposition_replies
+#print axioms EndgameChess.Rules.KRKFourPlyMiddle.weak_four_iff

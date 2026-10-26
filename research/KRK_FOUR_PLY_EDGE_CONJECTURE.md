@@ -1,9 +1,14 @@
 # Four-ply edge regions — coordinate conjecture
 
-**UNPROVED.** This note records the next geometric target after the checked
+**FULL TABLE UNPROVED.** This note records the next geometric target after the checked
 [interior escape theorem](../proofs/KRK_INTERIOR_LOWER_BOUND.md). The tables
-below passed local diagnostics. They have no Lean necessity/sufficiency proof
-and do not settle any new history-dependent outcome.
+below passed local diagnostics. They are not yet covered by a complete Lean
+necessity/sufficiency proof and do not settle a new history-dependent outcome.
+
+The x=3,4 board case is now proved in
+[the central four-ply theorem](../proofs/KRK_CENTRAL_EDGE_FOUR_PLY.md). The full
+edge table, its other files/corners, and its history-aware outcome remain
+unproved. The supporting central three-ply witness elimination is also checked.
 
 Assume exact KRK, kings separated by at least two squares, the weak king to
 move, and a nonterminal root with at least one legal reply. Coordinates are
@@ -60,7 +65,7 @@ shares the king's rank and blocks one required relocation, whereas ranks
 three through seven permit both clear rook entries. The corner and near-corner
 cases require explicit checks on both adjoining edges.
 
-A useful next supporting result is a **coordinate-only three-ply formula**
+A checked supporting result is the [coordinate-only three-ply formula](../proofs/KRK_CENTRAL_EDGE_THREE_PLY.md)
 on a central bottom edge, eliminating the landing-square witnesses in Three.
 For 2<=x<=5, distinct S,R, W=(x,0), put F-=x-1 and F+=x+1. The proposed
 expansion is the disjunction of:
@@ -74,8 +79,9 @@ expansion is the disjunction of:
 Rows 4/5 eliminate the rook destination: a source already on the required
 file has a free vertical ray; otherwise a horizontal crossing must stay on
 the same side of the strong king when it shares rank two. This supporting
-formula is also unproved. Its separate selected-family diagnostic passed
-14,384 cases without mismatch. Prove it before using it in the four-ply proof.
+formula has now passed a Lean proof in `KRKThreePlyMiddle.lean`; its separate
+selected-family diagnostic passed 14,384 cases without mismatch. This advances
+the supporting elimination argument, not the unproved full four-ply table.
 
 ## Executed diagnostic
 
