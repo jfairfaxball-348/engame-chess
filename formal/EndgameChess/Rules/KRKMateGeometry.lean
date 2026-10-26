@@ -196,4 +196,3 @@ theorem kernel_mate_iff {q : Position} {σ : Colour} {sk rs wk : Square}
       ((mate_iff_terminal far).mpr h)
 
 end EndgameChess.Rules.KRKMateGeometry
-
