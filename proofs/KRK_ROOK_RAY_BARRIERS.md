@@ -66,7 +66,7 @@ The supporting weak_move_eq/lone_step_legal and rook_entry_legal lemmas expose
 canonical actual moves from the already checked geometry. They preserve the
 actual flags through play. Existing frozen sources and manifests are unchanged.
 
-To close the preceding weak-turn four-ply family, both possible first weak
-replies must be checked and their newly appended keys reconciled with that
-earlier incoming trace. That wrapper is not asserted by this theorem. Full
-FIDE correspondence and global WDL/DTZ remain open.
+The preceding weak-turn wrapper is now checked separately in
+[the central weak history theorem](KRK_CENTRAL_WEAK_HISTORY.md), retaining both
+possible first weak replies and reconciling their appended keys with the
+earlier incoming trace. Full FIDE correspondence and global WDL/DTZ remain open.

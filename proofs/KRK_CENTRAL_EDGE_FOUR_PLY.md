@@ -58,7 +58,8 @@ The aggregate `lake build` passed (263 jobs), and `lake env lean AxiomCheck.lean
 passed with only `propext`, `Classical.choice`, and `Quot.sound` for the new
 public declarations.
 
-Incoming-history barriers for the added opposition family remain open. The
-next argument must evaluate which permitted rook rank avoids both intermediate
-keys on every legal weak branch; an unrestricted board certificate alone does
-not establish a RAW/FIDE winning history.
+Incoming-history barriers for this added opposition family are now evaluated
+separately in [the central weak history theorem](KRK_CENTRAL_WEAK_HISTORY.md).
+That result checks the permitted rook ranks and both intermediate keys on
+every legal weak branch. This board theorem alone does not establish a
+RAW/FIDE winning history.

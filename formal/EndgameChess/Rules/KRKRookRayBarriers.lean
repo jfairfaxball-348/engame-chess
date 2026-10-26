@@ -38,7 +38,7 @@ theorem ray_sees_iff {sk rs wk : Square} {f y : Fin 8}
   unfold Side at side
   omega
 
-private theorem return_legal {q : Position} {σ : Colour} {sk rs wk : Square} {f y : Fin 8}
+theorem return_legal {q : Position} {σ : Colour} {sk rs wk : Square} {f y : Fin 8}
     (material : IsKRK q σ sk rs wk) (turn : q.turn = σ)
     (rank : wk.2.val = 0) (sy : sk.2.val = 2) (side : Side sk wk f)
     (height : 2 ≤ y.val) (legal : isLegal q ⟨rs, (f, y), none⟩ = true) :

@@ -1,8 +1,10 @@
 # Incoming-history target for the checked central four-ply region
 
-**NOT YET LEAN-PROVED.** The board region on middle files is checked, and the
+**NOW LEAN-PROVED for the stated family.** See the
+[complete central weak-turn history theorem](../proofs/KRK_CENTRAL_WEAK_HISTORY.md).
+The board region on middle files is checked, and the
 [strong rook-ray barrier theorem](../proofs/KRK_ROOK_RAY_BARRIERS.md) is checked.
-This note fixes the exact remaining weak-root history formula and proof route.
+This note retains the formula and the proof route used to close that obligation.
 
 Fix an ongoing admitted weak-turn root q with W=(x,0), S=(x,2), 3<=x<=4,
 R.y>=3, incoming trace H and h>=95. The only possible weak replies are
@@ -16,7 +18,7 @@ after U it requires file x+2. Every winning strong move is a rook relocation,
 with landing rank in the checked Allowed interval. The forced final weak reply
 returns to the original square W.
 
-The proposed complete RAW forcing criterion in this opposition family is:
+The checked complete RAW forcing criterion in this opposition family is:
 
 1. h<97 and c_H(q)<3;
 2. for each allowed t in {L,U}, c_H(play(q,weak_move_t))<2;
@@ -37,14 +39,15 @@ Its key also differs from q1. Thus appending q1 contributes zero to both later
 barrier queries. Root current count and q1's intended-claim count are separate
 conditions; omitting either would change the outcome.
 
-Suggested Lean steps: prove a key inequality from different exact weak-king
+Executed Lean steps: prove a key inequality from different exact weak-king
 squares; rewrite occurrence counts across the first append; prove the two
 actual weak branches and their rook-file guards; apply the checked ray theorem
 to every allowed branch, with child ongoingness derived from the supplied
 counts, clock and nondead board certificate. The matching defender implication
-must retain every legal strong move, using ray necessity rather than failure of
-a selected policy. Winning distance here should be four, since LastReply is
+retains every legal strong move, using ray necessity rather than failure of
+a selected policy. Winning distance here is four, since LastReply is
 disjoint from direct opposition on these central files.
 
-After this wrapper, incorporate the existing LastReply root branch and then
-prove the remaining edge files/corners. The full KRK objective remains open.
+The wrapper and existing LastReply root branch are now combined in
+`KRKCentralWeakBand.lean`. Remaining edge files/corners and the full KRK
+objective remain open.

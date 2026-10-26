@@ -36,7 +36,7 @@ private theorem strong_four_to_three {q : Position} {σ : Colour} {sk rs wk : Sq
     exact mateWithin_choose turn ⟨m, legal, rfl⟩ reduced
   · exact False.elim (opp_ne σ (turn.symm.trans defended.1))
 
-private theorem weak_five_to_four {q : Position} {σ : Colour} {sk rs wk : Square}
+theorem weak_five_to_four {q : Position} {σ : Colour} {sk rs wk : Square}
     (material : IsKRK q σ sk rs wk) (turn : q.turn = σ.opp)
     (win : MateWithin σ 5 q) : MateWithin σ 4 q := by
   have safe := krk_force_weak_safe material turn ⟨5, win⟩

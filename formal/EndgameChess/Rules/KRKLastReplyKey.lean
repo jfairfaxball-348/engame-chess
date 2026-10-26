@@ -85,7 +85,7 @@ theorem unique_legal_reply {q : Position} {σ : Colour} {sk rs wk : Square}
     exact ⟨src, dst, promo⟩
   exact ⟨t, by simpa only [shape m legal] using legal, shape⟩
 
-private theorem weak_safe_quiet {q : Position} {σ : Colour} {sk rs wk : Square}
+theorem weak_safe_quiet {q : Position} {σ : Colour} {sk rs wk : Square}
     {m : Move} (material : IsKRK q σ sk rs wk) (turn : q.turn = σ.opp)
     (safe : SafeRook sk rs wk) (legal : isLegal q m = true) :
     RawClock.zeroing q m = false := by
