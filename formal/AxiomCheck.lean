@@ -824,3 +824,14 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKEdgeDepth.clock_depth_holding
 #check @EndgameChess.Rules.KRKImmediate.high_clock_actual_iff
 #check @EndgameChess.Rules.KRKEdgeDepth.clock_depth_holding
+
+#print axioms EndgameChess.Rules.KRKEdgeDepth.horizontal_predecessor
+#print axioms EndgameChess.Rules.KRKLastReply.ready_neighbour_unique
+#print axioms EndgameChess.Rules.KRKLastReply.model_last_iff
+#print axioms EndgameChess.Rules.KRKLastReply.weak_two_iff
+#print axioms EndgameChess.Rules.KRKLastReply.weak_three_iff
+#print axioms EndgameChess.Rules.KRKLastReply.rule_two_iff
+#print axioms EndgameChess.Rules.KRKLastReply.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKLastReply.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKLastReply.high_clock_hold_iff
+#print axioms EndgameChess.Rules.KRKLastReply.high_clock_exact_two

@@ -21,7 +21,7 @@ theorem terminal_depth_zero {sk rs wk : Square} (terminal : Terminal sk rs wk) :
     dsimp only at edge
     simp only [depth]; omega
 
-private theorem horizontal_predecessor {sk dst wk t : Square}
+theorem horizontal_predecessor {sk dst wk t : Square}
     (far : 2 ≤ dInf sk wk) (step : dInf wk t = 1)
     (terminal : Horizontal sk dst t) : wk.2.val = t.2.val := by
   obtain ⟨_, edge, _, left, right, middle⟩ := terminal
