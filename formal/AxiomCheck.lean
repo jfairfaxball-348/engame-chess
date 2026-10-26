@@ -903,3 +903,8 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKCentralWeakBand.high_clock_hold_iff
 #print axioms EndgameChess.Rules.KRKCentralWeakBand.high_clock_draw_iff
 #print axioms EndgameChess.Rules.KRKCentralWeakBand.high_clock_distance_cases
+#print axioms EndgameChess.Rules.KRKThreePly.last_near_iff
+#print axioms EndgameChess.Rules.KRKThreePly.immediate_near_iff
+#print axioms EndgameChess.Rules.KRKThreePly.king_entry_near_iff
+#print axioms EndgameChess.Rules.KRKThreePly.rook_entry_near_iff
+#print axioms EndgameChess.Rules.KRKThreePly.three_near_iff

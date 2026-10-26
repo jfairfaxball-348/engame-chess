@@ -197,12 +197,44 @@ def run_middle_three():
     return not mismatches
 
 
+def corner_three_candidate(sk, rook):
+    sx, sy = sk
+    rx, ry = rook
+    return ((sy == 2 and sx <= 1 and rx >= 2 and ry != 0) or
+            (sx == 2 and sy <= 1 and ry >= 2 and rx != 0) or
+            (rx >= 3 and ry >= 1 and distance(sk, (1, 2)) == 1) or
+            (ry >= 3 and rx >= 1 and distance(sk, (2, 1)) == 1) or
+            (sk == (1, 2) and (rx >= 3 or (ry >= 1 and (ry != 2 or rx > 1)))) or
+            (sk == (2, 1) and (ry >= 3 or (rx >= 1 and (rx != 2 or ry > 1)))))
+
+
+def run_corner_three():
+    wk = (0, 0)
+    checked = 0
+    mismatches = []
+    for sk in SQUARES:
+        for rook in SQUARES:
+            if len({wk, sk, rook}) < 3 or distance(sk, wk) < 2:
+                continue
+            checked += 1
+            predicted = corner_three_candidate(sk, rook)
+            observed = three(sk, rook, wk)
+            if observed != predicted:
+                mismatches.append(dict(sk=sk, rook=rook, observed=observed, predicted=predicted))
+    print(json.dumps(dict(diagnostic_only=True, conjecture="corner three-ply expansion",
+                         checked=checked, mismatch_count=len(mismatches), examples=mismatches[:12]), indent=2))
+    return not mismatches
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--interior", action="store_true", help="check three selected inward-band families")
     parser.add_argument("--edge-formula", action="store_true", help="test the unproved coordinate conjecture")
-    parser.add_argument("--middle-three", action="store_true", help="test the unproved central three-ply expansion")
+    parser.add_argument("--middle-three", action="store_true", help="diagnose the central three-ply expansion")
+    parser.add_argument("--corner-three", action="store_true", help="test the unproved corner three-ply expansion")
     args = parser.parse_args()
+    if args.corner_three:
+        raise SystemExit(0 if run_corner_three() else 1)
     if args.middle_three:
         raise SystemExit(0 if run_middle_three() else 1)
     if args.edge_formula:
