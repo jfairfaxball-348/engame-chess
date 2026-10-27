@@ -960,3 +960,16 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKSecondWeakBand.high_clock_hold_iff
 #print axioms EndgameChess.Rules.KRKSecondWeakBand.high_clock_draw_iff
 #print axioms EndgameChess.Rules.KRKSecondWeakBand.high_clock_distance_cases
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.slot_geometry
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.slot_reply_distance
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.last_slots_iff
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.flat_return_legal
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.slot_sees_iff
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.king_history_iff
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.rook_history_iff
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.high_clock_hold_iff
+#print axioms EndgameChess.Rules.KRKNearSlotBarriers.high_clock_distance_cases
+#print axioms EndgameChess.Rules.KRKWeakPrefixEntry.entry_queries_unchanged
+#print axioms EndgameChess.Rules.KRKWeakPrefixEntry.entry_append_iff
