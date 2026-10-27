@@ -908,3 +908,15 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKThreePly.king_entry_near_iff
 #print axioms EndgameChess.Rules.KRKThreePly.rook_entry_near_iff
 #print axioms EndgameChess.Rules.KRKThreePly.three_near_iff
+
+#print axioms EndgameChess.Rules.KRKThreePly.last_corner_iff
+#print axioms EndgameChess.Rules.KRKThreePly.immediate_corner_iff
+#print axioms EndgameChess.Rules.KRKThreePly.king_entry_corner_iff
+#print axioms EndgameChess.Rules.KRKThreePly.rook_entry_corner_iff
+#print axioms EndgameChess.Rules.KRKThreePly.three_corner_iff
+#print axioms EndgameChess.Rules.KRKFourPlyMiddle.covered_or_middle
+#print axioms EndgameChess.Rules.KRKFourPlySecond.covered_or_near
+#print axioms EndgameChess.Rules.KRKFourPlySecond.second_four_necessary
+#print axioms EndgameChess.Rules.KRKFourPlySecond.opposition_replies
+#print axioms EndgameChess.Rules.KRKFourPlySecond.weak_four_iff
+#print axioms EndgameChess.Rules.KRKFourPlyEscape.three_map

@@ -5,9 +5,10 @@
 below passed local diagnostics. They are not yet covered by a complete Lean
 necessity/sufficiency proof and do not settle a new history-dependent outcome.
 
-The x=3,4 board case is now proved in
+The x=2 board case is now proved in `KRKFourPlySecond.lean`; the x=3,4
+board case is proved in
 [the central four-ply theorem](../proofs/KRK_CENTRAL_EDGE_FOUR_PLY.md). The full
-edge table, its other files/corners, and its history-aware outcome remain
+edge table, its near-corner/corner files and reflected versions, and its history-aware outcome remain
 unproved. The supporting central three-ply witness elimination is also checked.
 
 Assume exact KRK, kings separated by at least two squares, the weak king to

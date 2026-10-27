@@ -5,7 +5,7 @@ namespace EndgameChess.Rules.KRKFourPlyEscape
 open EndgameChess.KK KRKLastReply KRKImmediate KRKThreePly
 set_option maxHeartbeats 1000000
 
-private theorem three_map (g : BoardSym) {sk rs wk : Square}
+theorem three_map (g : BoardSym) {sk rs wk : Square}
     (distinct : sk ≠ rs) (notKing : sk ≠ wk) (notRook : rs ≠ wk)
     (far : 2 ≤ dInf sk wk) (notCheck : ¬RookSees rs wk sk wk) (three : Three sk rs wk) :
     Three (g.f sk) (g.f rs) (g.f wk) := by

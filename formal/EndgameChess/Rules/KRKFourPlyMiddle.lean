@@ -5,7 +5,7 @@ namespace EndgameChess.Rules.KRKFourPlyMiddle
 open EndgameChess.KK KRKThreePly KRKLastReply KRKFourPlyEscape KRKMateGeometry
 set_option maxHeartbeats 4000000
 
-private theorem covered_or_middle {sk rs wk t : Square} (distinct : sk ≠ rs)
+theorem covered_or_middle {sk rs wk t : Square} (distinct : sk ≠ rs)
     (safe : SafeRook sk rs wk) (distance : dInf wk t = 1)
     (rank : t.2.val = 0) (low : 2 ≤ t.1.val) (high : t.1.val ≤ 5)
     (every : ∀ u, StepM ⟨sk, rs, wk, false⟩ ⟨sk, rs, u, true⟩ → Three sk rs u) :
