@@ -99,30 +99,41 @@ theorem weak_append_iff {s : RawTrace.State} {σ : Colour} {sk rs wk ns nr : Squ
 
 /-- The evaluated weak tests plus an actual coordinate reply imply a live
 state. The explicit reply requirement excludes vacuous stalemate entries. -/
-theorem weak_clear_ongoing {s : RawHistoryLayer.State} {σ : Colour} {sk rs wk : Square}
-    (material : IsKRK (RawHistoryLayer.erase s) σ sk rs wk)
-    (turn : (RawHistoryLayer.erase s).turn = σ.opp)
-    (clear : KRKGlobalWeakBand.Clear s.val sk rs wk)
-    (reply : ∃ t, KRKCornerWeakBand.Guard sk rs wk t) : RawHistoryLayer.Ongoing s := by
+theorem weak_clear_kernel {s : RawTrace.State} {σ : Colour} {sk rs wk : Square}
+    (material : IsKRK (RawTrace.erase s) σ sk rs wk)
+    (turn : (RawTrace.erase s).turn = σ.opp)
+    (clear : KRKGlobalWeakBand.Clear s sk rs wk)
+    (reply : ∃ t, KRKCornerWeakBand.Guard sk rs wk t) : MateWithin σ 4 (RawTrace.erase s) := by
   have safe := clear.1
   obtain ⟨t,guard⟩ := reply
   have legal := KRKCornerWeakBand.guard_legal material turn guard
-  have nonempty : ∃ r, Legal (RawHistoryLayer.erase s) r := ⟨_,⟨_,legal,rfl⟩⟩
-  have board : MateWithin σ 4 (RawHistoryLayer.erase s) := by
+  have nonempty : ∃ r, Legal (RawTrace.erase s) r := ⟨_,⟨_,legal,rfl⟩⟩
+  have board : MateWithin σ 4 (RawTrace.erase s) := by
     apply mateWithin_defend turn nonempty
     intro r edge
     obtain ⟨m,legal,rfl⟩ := edge
-    have edge : Legal (RawHistoryLayer.erase s) (play (RawHistoryLayer.erase s) m) := ⟨m,legal,rfl⟩
+    have edge : Legal (RawTrace.erase s) (play (RawTrace.erase s) m) := ⟨m,legal,rfl⟩
     obtain ⟨u,next,step⟩ := krk_safe_reply material turn safe edge
     have canonical := weak_move_eq material turn legal next.1
     have guard := KRKCornerWeakBand.step_guard step
     have branch := clear.2.2.2 u guard
     have normal := normalize_spec branch.2.1
-    have childLegal : isLegal (RawHistoryLayer.erase s) ⟨wk,u,none⟩ = true := by rwa [←canonical]
+    have childLegal : isLegal (RawTrace.erase s) ⟨wk,u,none⟩ = true := by rwa [←canonical]
     have history := (KRKFramedPrefix.history_append_iff (normalize u) material turn safe childLegal normal.1 normal.2).mpr branch.2.2
     have geometry := KRKWeakBranch.history_geometry history
     obtain ⟨far,notCheck⟩ := krk_strong_arrival_geometry edge next.1 next.2
     exact (strong_three_iff next.1 next.2 far notCheck).mpr geometry
+  exact board
+
+theorem weak_clear_ongoing {s : RawHistoryLayer.State} {σ : Colour} {sk rs wk : Square}
+    (material : IsKRK (RawHistoryLayer.erase s) σ sk rs wk)
+    (turn : (RawHistoryLayer.erase s).turn = σ.opp)
+    (clear : KRKGlobalWeakBand.Clear s.val sk rs wk)
+    (reply : ∃ t, KRKCornerWeakBand.Guard sk rs wk t) : RawHistoryLayer.Ongoing s := by
+  have board := weak_clear_kernel material turn clear reply
+  obtain ⟨t,guard⟩ := reply
+  have legal := KRKCornerWeakBand.guard_legal material turn guard
+  have nonempty : ∃ r, Legal (RawHistoryLayer.erase s) r := ⟨_,⟨_,legal,rfl⟩⟩
   apply (RawAdjudication.ongoing_iff s.val).mpr
   exact ⟨forceMate_not_dead ⟨4,board⟩,nonempty,by have h := clear.2.1; omega,
     by have h := clear.2.2.1; omega⟩

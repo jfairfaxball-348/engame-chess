@@ -153,3 +153,7 @@ import EndgameChess.Rules.KRKOrdinaryEntry
 import EndgameChess.Rules.KRKDistanceParity
 import EndgameChess.Rules.KRKThreePlyExact
 import EndgameChess.Rules.KRKFivePlyHistory
+
+import EndgameChess.Rules.KRKFiveWeakPrefix
+import EndgameChess.Rules.KRKFourPlyExact
+import EndgameChess.Rules.KRKSixPlyHistory

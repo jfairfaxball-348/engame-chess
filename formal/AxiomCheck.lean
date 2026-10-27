@@ -1129,3 +1129,25 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKFivePlyHistory.high_clock_hold_iff
 #print axioms EndgameChess.Rules.KRKFivePlyHistory.high_clock_draw_iff
 #print axioms EndgameChess.Rules.KRKFivePlyHistory.high_clock_distance_cases
+
+-- Complete weak >=93 band and exact two/four/six distances.
+#print axioms EndgameChess.Rules.KRKFiveWeakPrefix.first_occurrences_eq
+#print axioms EndgameChess.Rules.KRKFiveWeakPrefix.second_occurrences_eq
+#print axioms EndgameChess.Rules.KRKFiveWeakPrefix.fourth_entry_append_iff
+#print axioms EndgameChess.Rules.KRKFiveWeakPrefix.inner_clear_append_iff
+#print axioms EndgameChess.Rules.KRKFiveWeakPrefix.weak_after_append_iff
+#print axioms EndgameChess.Rules.KRKFiveWeakPrefix.strong_clear_append_iff
+#print axioms EndgameChess.Rules.KRKFourPlyExact.necessary
+#print axioms EndgameChess.Rules.KRKFourPlyExact.rule_four_iff
+#print axioms EndgameChess.Rules.KRKSixPlyHistory.child_five_certificate
+#print axioms EndgameChess.Rules.KRKSixPlyHistory.necessary
+#print axioms EndgameChess.Rules.KRKSixPlyHistory.sufficient
+#print axioms EndgameChess.Rules.KRKSixPlyHistory.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKSixPlyHistory.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKSixPlyHistory.high_clock_hold_iff
+#print axioms EndgameChess.Rules.KRKSixPlyHistory.high_clock_draw_iff
+#print axioms EndgameChess.Rules.KRKSixPlyHistory.high_clock_distance_cases
+#print axioms EndgameChess.Rules.KRKStrongPrefix.weak_clear_kernel
+#print axioms EndgameChess.Rules.KRKFivePlyHistory.entry_kernel
+#print axioms EndgameChess.Rules.KRKFivePlyHistory.clear_kernel
+#print axioms EndgameChess.Rules.KRKDistanceParity.weak_five_four

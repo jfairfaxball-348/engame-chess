@@ -85,6 +85,52 @@ theorem sufficient {s : State} {σ : Colour} {sk rs wk : Square}
     have legal := KRKOrdinaryEntry.rook_legal material turn sees apartKing apartWeak (KRKWeakBranch.admitted_far material)
     exact entry_certificate material ongoing turn legal (KRKMatingMove.rook_move_model material turn legal rfl).1 live clear
 
+theorem entry_kernel {s : RawTrace.State} {σ : Colour} {sk rs wk ns nr : Square} {m : Move}
+    (material : IsKRK (RawTrace.erase s) σ sk rs wk) (turn : (RawTrace.erase s).turn = σ)
+    (legal : isLegal (RawTrace.erase s) m = true) (next : IsKRK (play (RawTrace.erase s) m) σ ns nr wk)
+    (live : Live ns nr wk) (clear : WeakAfter s m ns nr wk) : MateWithin σ 5 (RawTrace.erase s) := by
+  have evaluated := (KRKStrongPrefix.weak_append_iff material turn legal).mpr clear
+  have child := KRKStrongPrefix.weak_clear_kernel (s := RawTrace.append s m legal) next
+    (by change (play (RawTrace.erase s) m).turn = σ.opp; rw [play_turn,turn]) evaluated live
+  exact mateWithin_choose turn ⟨m,legal,rfl⟩ child
+
+theorem clear_kernel {s : RawTrace.State} {σ : Colour} {sk rs wk : Square}
+    (material : IsKRK (RawTrace.erase s) σ sk rs wk) (turn : (RawTrace.erase s).turn = σ)
+    (far : 2 ≤ dInf sk wk) (notCheck : ¬RookSees rs wk sk wk)
+    (clear : Clear s sk rs wk) : MateWithin σ 5 (RawTrace.erase s) := by
+  rcases clear with immediate | ⟨depth,points | rays⟩
+  · obtain ⟨r,edge,goal⟩ := (KRKImmediate.immediate_iff material turn far notCheck).mpr immediate
+    exact mateWithin_choose turn edge (Or.inl goal)
+  · obtain ⟨i,valid,region,mappedDistance,apart,mappedFar,live,clear⟩ := points
+    have distance : dInf sk ((normalize wk).r (king ((normalize wk).f wk) i)) = 1 := by
+      have preserved := (normalize wk).distance sk ((normalize wk).r (king ((normalize wk).f wk) i))
+      rw [(normalize wk).right_inv,mappedDistance] at preserved
+      exact preserved.symm
+    have notRook : (normalize wk).r (king ((normalize wk).f wk) i) ≠ rs := by
+      intro equal; have same := congrArg (normalize wk).f equal
+      rw [(normalize wk).right_inv] at same
+      exact apart same
+    have far : 2 ≤ dInf ((normalize wk).r (king ((normalize wk).f wk) i)) wk := by
+      have preserved := (normalize wk).distance ((normalize wk).r (king ((normalize wk).f wk) i)) wk
+      rw [(normalize wk).right_inv] at preserved
+      rwa [←preserved]
+    have legal := KRKOrdinaryEntry.king_legal material turn distance notRook far
+    exact entry_kernel material turn legal (canonical_king_material material turn distance notRook far) live clear
+  · obtain ⟨i,valid,equal,a,v,mappedSees,notKing,notWeak,region,live,clear⟩ := rays
+    have sees : RookSees rs ((normalize wk).r (a.target ((normalize wk).f rs) v)) sk wk := by
+      apply ((normalize wk).sees _ _ _ _).mp
+      simpa only [(normalize wk).right_inv] using mappedSees
+    have apartKing : (normalize wk).r (a.target ((normalize wk).f rs) v) ≠ sk := by
+      intro equal; have same := congrArg (normalize wk).f equal
+      rw [(normalize wk).right_inv] at same
+      exact notKing same
+    have apartWeak : (normalize wk).r (a.target ((normalize wk).f rs) v) ≠ wk := by
+      intro equal; have same := congrArg (normalize wk).f equal
+      rw [(normalize wk).right_inv] at same
+      exact notWeak same
+    have legal := KRKOrdinaryEntry.rook_legal material turn sees apartKing apartWeak far
+    exact entry_kernel material turn legal (KRKMatingMove.rook_move_model material turn legal rfl).1 live clear
+
 theorem necessary {s : RawHistoryLayer.State} {σ : Colour} {sk rs wk : Square}
     (material : IsKRK (RawHistoryLayer.erase s) σ sk rs wk) (ongoing : RawHistoryLayer.Ongoing s)
     (turn : (RawHistoryLayer.erase s).turn = σ) (high : 94 ≤ RawClock.clock s.val.trace)

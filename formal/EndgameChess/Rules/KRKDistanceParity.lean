@@ -44,4 +44,14 @@ theorem strong_four_three {s : State} {σ : Colour} (turn : (erase s).turn = σ)
     exact Or.inr ⟨ongoing,Or.inl ⟨turn,t,edge,weak_three_two weak child⟩⟩
   · exact False.elim (opp_ne σ (turn.symm.trans defended.1))
 
+theorem weak_five_four {s : State} {σ : Colour} (turn : (erase s).turn = σ.opp)
+    (cert : W σ 5 s) : W σ 4 s := by
+  rcases cert with goal | ⟨ongoing,chosen | defended⟩
+  · exact Or.inl goal
+  · exact False.elim (opp_ne σ (chosen.1.symm.trans turn))
+  · refine Or.inr ⟨ongoing,Or.inr ⟨turn,defended.2.1,defended.2.2.1,?_⟩⟩
+    intro t edge
+    have strong : (erase t).turn = σ := by rw [child_turn edge,turn,opp_opp]
+    exact strong_four_three strong (defended.2.2.2 t edge)
+
 end EndgameChess.Rules.KRKDistanceParity
