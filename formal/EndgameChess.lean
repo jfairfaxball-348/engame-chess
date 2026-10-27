@@ -126,3 +126,4 @@ import EndgameChess.Rules.KRKCentralWeakBand
 import EndgameChess.Rules.KRKThreePlyNearCorner
 import EndgameChess.Rules.KRKThreePlyCorner
 import EndgameChess.Rules.KRKFourPlySecond
+import EndgameChess.Rules.KRKFourPlyNearKernel

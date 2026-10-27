@@ -920,3 +920,8 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKFourPlySecond.opposition_replies
 #print axioms EndgameChess.Rules.KRKFourPlySecond.weak_four_iff
 #print axioms EndgameChess.Rules.KRKFourPlyEscape.three_map
+#print axioms EndgameChess.Rules.KRKFourPlyNearCorner.covered_or_swapped_near
+#print axioms EndgameChess.Rules.KRKFourPlyNearCorner.near_four_necessary
+#print axioms EndgameChess.Rules.KRKFourPlyNearCorner.near_four_replies
+#print axioms EndgameChess.Rules.KRKFourPlyNearCorner.near_four_safe
+#print axioms EndgameChess.Rules.KRKFourPlyNearCorner.weak_four_iff

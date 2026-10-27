@@ -7,9 +7,9 @@ necessity/sufficiency proof and do not settle a new history-dependent outcome.
 
 The x=2 board case is now proved in `KRKFourPlySecond.lean`; the x=3,4
 board case is proved in
-[the central four-ply theorem](../proofs/KRK_CENTRAL_EDGE_FOUR_PLY.md). The full
-edge table, its near-corner/corner files and reflected versions, and its history-aware outcome remain
-unproved. The supporting central three-ply witness elimination is also checked.
+[the central four-ply theorem](../proofs/KRK_CENTRAL_EDGE_FOUR_PLY.md). The W=(1,0) case is also proved in
+[the near-corner four-ply theorem](../proofs/KRK_NEAR_CORNER_FOUR_PLY.md).
+The corner, reflected versions and remaining history-aware outcomes are open. The supporting central three-ply witness elimination is also checked.
 
 Assume exact KRK, kings separated by at least two squares, the weak king to
 move, and a nonterminal root with at least one legal reply. Coordinates are
