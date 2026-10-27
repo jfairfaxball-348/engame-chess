@@ -164,4 +164,34 @@ theorem kernel_five_iff {q : Position} {σ : Colour} {sk rs wk : Square}
     MateWithin σ 5 q ↔ Clear sk rs wk :=
   ⟨necessary material turn far notCheck,sufficient material turn far notCheck⟩
 
+
+/-- Pure five-ply geometry transports through a board isometry. The proof
+uses synthetic castling-free boards; no actual game's flags are transformed. -/
+theorem map (g : BoardSym) {sk rs wk : Square}
+    (distinct : sk ≠ rs) (notKing : sk ≠ wk) (notRook : rs ≠ wk)
+    (far : 2 ≤ dInf sk wk) (notCheck : ¬RookSees rs wk sk wk) (clear : Clear sk rs wk) :
+    Clear (g.f sk) (g.f rs) (g.f wk) := by
+  let q := krkPos .white sk rs wk .white
+  let r := krkPos .white (g.f sk) (g.f rs) (g.f wk) .white
+  have material : IsKRK q .white sk rs wk := ⟨distinct,notKing,notRook,rfl⟩
+  have mapped : IsKRK r .white (g.f sk) (g.f rs) (g.f wk) :=
+    ⟨g.ne_iff.mpr distinct,g.ne_iff.mpr notKing,g.ne_iff.mpr notRook,rfl⟩
+  have win := (kernel_five_iff material rfl far notCheck).mpr clear
+  have transported := krk_bound_transport g
+    (show Matches q .white ⟨sk,rs,wk,true⟩ from ⟨material,rfl⟩) rfl
+    (show Matches r .white ((⟨sk,rs,wk,true⟩ : KRKState).map g) from ⟨mapped,rfl⟩) win
+  have mappedCheck : ¬RookSees (g.f rs) (g.f wk) (g.f sk) (g.f wk) := fun seen => notCheck ((g.sees_iff _ _ _ _).mp seen)
+  exact (kernel_five_iff mapped rfl (by rwa [g.dInf_eq]) mappedCheck).mp transported
+
+theorem map_iff (g : BoardSym) {sk rs wk : Square}
+    (distinct : sk ≠ rs) (notKing : sk ≠ wk) (notRook : rs ≠ wk)
+    (far : 2 ≤ dInf sk wk) (notCheck : ¬RookSees rs wk sk wk) :
+    Clear (g.f sk) (g.f rs) (g.f wk) ↔ Clear sk rs wk := by
+  constructor
+  · intro clear
+    have check : ¬RookSees (g.f rs) (g.f wk) (g.f sk) (g.f wk) := fun seen => notCheck ((g.sees_iff _ _ _ _).mp seen)
+    simpa only [g.invol] using map g (g.ne_iff.mpr distinct) (g.ne_iff.mpr notKing) (g.ne_iff.mpr notRook)
+      (by rwa [g.dInf_eq]) check clear
+  · exact map g distinct notKing notRook far notCheck
+
 end EndgameChess.Rules.KRKFiveGeometry

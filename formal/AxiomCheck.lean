@@ -1171,3 +1171,26 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKCastleSix.winning_entry_not_castle
 #print axioms EndgameChess.Rules.KRKFourGeometry.framed_shape_sufficient
 #print axioms EndgameChess.Rules.KRKFourGeometry.global_shape_sufficient
+
+-- Compact five-ply middle formulas and six-ply destination restrictions.
+#print axioms EndgameChess.Rules.KRKFiveMiddle.normalize_f
+#print axioms EndgameChess.Rules.KRKFiveMiddle.normalize_r
+#print axioms EndgameChess.Rules.KRKFiveMiddle.middle_slot_properties
+#print axioms EndgameChess.Rules.KRKFiveMiddle.king_points_iff
+#print axioms EndgameChess.Rules.KRKFiveMiddle.middle_reachable
+#print axioms EndgameChess.Rules.KRKFiveMiddle.west_reachable_iff
+#print axioms EndgameChess.Rules.KRKFiveMiddle.east_reachable_iff
+#print axioms EndgameChess.Rules.KRKFiveMiddle.rook_rays_iff
+#print axioms EndgameChess.Rules.KRKFiveMiddle.clear_iff
+#print axioms EndgameChess.Rules.KRKFiveMiddle.kernel_five_iff
+#print axioms EndgameChess.Rules.KRKFiveMiddle.bottom_clear_iff
+#print axioms EndgameChess.Rules.KRKFiveMiddle.low_rook_bottom_iff
+#print axioms EndgameChess.Rules.KRKFiveMiddle.rank_two_bottom_iff
+#print axioms EndgameChess.Rules.KRKSixMiddle.covered_or_five
+#print axioms EndgameChess.Rules.KRKSixMiddle.central_six_necessary
+#print axioms EndgameChess.Rules.KRKSixMiddle.kernel_six_four_iff
+#print axioms EndgameChess.Rules.KRKSixInterior.strip_escape
+#print axioms EndgameChess.Rules.KRKSixInterior.interior_corner_necessary
+#print axioms EndgameChess.Rules.KRKSixInterior.weak_six_interior_corner
+#print axioms EndgameChess.Rules.KRKFiveGeometry.map
+#print axioms EndgameChess.Rules.KRKFiveGeometry.map_iff
