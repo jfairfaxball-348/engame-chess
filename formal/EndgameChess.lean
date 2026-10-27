@@ -137,3 +137,10 @@ import EndgameChess.Rules.KRKCornerSlotBarriers
 import EndgameChess.Rules.KRKVerticalNearSlotBarriers
 import EndgameChess.Rules.KRKCornerWeakBand
 import EndgameChess.Rules.KRKNearWeakBand
+
+import EndgameChess.Rules.KRKGeometricSymmetry
+import EndgameChess.Rules.KRKNativeFrame
+import EndgameChess.Rules.KRKCanonicalSlots
+import EndgameChess.Rules.KRKFramedHistory
+import EndgameChess.Rules.KRKFramedPrefix
+import EndgameChess.Rules.KRKGlobalWeakBand
