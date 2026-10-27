@@ -929,3 +929,11 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKFourPlyCorner.corner_four_replies
 #print axioms EndgameChess.Rules.KRKFourPlyCorner.corner_four_safe
 #print axioms EndgameChess.Rules.KRKFourPlyCorner.weak_four_iff
+#print axioms EndgameChess.Rules.KRKThreePly.king_entry_legal
+#print axioms EndgameChess.Rules.KRKThreePly.canonical_king_material
+#print axioms EndgameChess.Rules.KRKNearKingBarrier.king_history_iff
+#print axioms EndgameChess.Rules.KRKNearKingBarrier.rook_history_iff
+#print axioms EndgameChess.Rules.KRKNearKingBarrier.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKNearKingBarrier.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKNearKingBarrier.high_clock_hold_iff
+#print axioms EndgameChess.Rules.KRKNearKingBarrier.high_clock_exact_three

@@ -84,7 +84,7 @@ def RookHistoryEntry (s : RawTrace.State) (sk rs wk : Square) : Prop :=
 def ThreeHistory (s : RawTrace.State) (sk rs wk : Square) : Prop :=
   MateNow sk rs wk ∨ KingHistoryEntry s sk rs wk ∨ RookHistoryEntry s sk rs wk
 
-private theorem canonical_king_material {q : Position} {σ : Colour} {sk rs wk t : Square}
+theorem canonical_king_material {q : Position} {σ : Colour} {sk rs wk t : Square}
     (material : IsKRK q σ sk rs wk) (turn : q.turn = σ)
     (distance : dInf sk t = 1) (notRook : t ≠ rs) (far : 2 ≤ dInf t wk) :
     IsKRK (play q ⟨sk, t, none⟩) σ t rs wk := by
