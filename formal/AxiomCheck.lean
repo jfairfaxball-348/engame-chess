@@ -1221,3 +1221,12 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKSixInteriorHolding.high_clock_interior_necessary
 #print axioms EndgameChess.Rules.KRKSixInteriorHolding.high_clock_interior_holding
 #print axioms EndgameChess.Rules.KRKSixInterior.every_map
+
+#print axioms EndgameChess.Rules.KRKSixCorner.blocked_or_near
+#print axioms EndgameChess.Rules.KRKSixCorner.live_not_diagonal_rook
+#print axioms EndgameChess.Rules.KRKSixCorner.corner_six_necessary
+#print axioms EndgameChess.Rules.KRKSixCorner.region_swap
+#print axioms EndgameChess.Rules.KRKSixCorner.region_excludes_inward
+#print axioms EndgameChess.Rules.KRKSixCorner.region_south_five
+#print axioms EndgameChess.Rules.KRKSixCorner.region_replies
+#print axioms EndgameChess.Rules.KRKSixCorner.kernel_six_iff
