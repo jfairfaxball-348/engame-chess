@@ -1,26 +1,28 @@
 # Four-ply edge regions — coordinate conjecture
 
-**FULL TABLE UNPROVED.** This note records the next geometric target after the checked
-[interior escape theorem](../proofs/KRK_INTERIOR_LOWER_BOUND.md). The tables
-below passed local diagnostics. They are not yet covered by a complete Lean
-necessity/sufficiency proof and do not settle a new history-dependent outcome.
+**NORMALIZED BOARD CASES CHECKED; FULL HISTORY OUTCOMES OPEN.** The tables
+below are now covered by Lean necessity/sufficiency proofs at W=(0,0), (1,0),
+(2,0), (3,0), (4,0), with exact KRK and separated kings. General board
+symmetry and original-history transport must remain distinct. The tables
+do not by themselves settle the remaining history-dependent outcomes.
 
 The x=2 board case is now proved in `KRKFourPlySecond.lean`; the x=3,4
 board case is proved in
 [the central four-ply theorem](../proofs/KRK_CENTRAL_EDGE_FOUR_PLY.md). The W=(1,0) case is also proved in
 [the near-corner four-ply theorem](../proofs/KRK_NEAR_CORNER_FOUR_PLY.md).
-The corner, reflected versions and remaining history-aware outcomes are open. The supporting central three-ply witness elimination is also checked.
+The [corner four-ply theorem](../proofs/KRK_CORNER_FOUR_PLY.md) is checked too.
+Reflected versions and remaining history-aware outcomes are still open. The supporting central three-ply witness elimination is also checked.
 
 Assume exact KRK, kings separated by at least two squares, the weak king to
 move, and a nonterminal root with at least one legal reply. Coordinates are
 zero-based. Normalize W=(x,0) with 0<=x<=3 by reflections/transposition. The
-conjecture describes clock-free mate within four plies. Terminal mate and
+table describes clock-free mate within four plies. Terminal mate and
 stalemate must remain separate; some displayed placements can be stalemate
 when the nonempty-reply hypothesis is dropped.
 
 ## Central edge: x=2 or 3 (also x=4 or 5 by reflection)
 
-The proposed criterion is
+The checked criterion is
 
     LastReply(S,R,W) OR [S=(x,2) AND R.y>=3].
 
@@ -29,7 +31,7 @@ inward. Safety and all relevant capture boundaries remain in LastReply.
 
 ## One file from the corner: W=(1,0)
 
-Exactly one of the following rows is proposed:
+The checked region is the following row disjunction:
 
 | Strong king S | Rook condition |
 |---|---|
@@ -43,7 +45,7 @@ unqualified rook-ray condition because safety and king protection change.
 
 ## Corner: W=(0,0)
 
-Exactly one of the following rows is proposed:
+The checked region is the following row disjunction:
 
 | Strong king S | Rook condition |
 |---|---|

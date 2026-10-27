@@ -925,3 +925,7 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKFourPlyNearCorner.near_four_replies
 #print axioms EndgameChess.Rules.KRKFourPlyNearCorner.near_four_safe
 #print axioms EndgameChess.Rules.KRKFourPlyNearCorner.weak_four_iff
+#print axioms EndgameChess.Rules.KRKFourPlyCorner.corner_four_necessary
+#print axioms EndgameChess.Rules.KRKFourPlyCorner.corner_four_replies
+#print axioms EndgameChess.Rules.KRKFourPlyCorner.corner_four_safe
+#print axioms EndgameChess.Rules.KRKFourPlyCorner.weak_four_iff
