@@ -42,7 +42,7 @@ theorem entry_queries_unchanged {s : RawTrace.State} {σ : Colour}
   · exact append_query firstLegal (weak_keys_ne first third moved)
 
 /-- Generic original-trace form of a three-ply entry after an initial
-quiet weak move. All moves are actual and all flags remain unchanged. -/
+quiet weak move. All moves and flag updates are those of actual play. -/
 theorem entry_append_iff {s : RawTrace.State} {σ : Colour}
     {sk rs wk t ns nr u : Square} {m : Move}
     (material : IsKRK (RawTrace.erase s) σ sk rs wk)
