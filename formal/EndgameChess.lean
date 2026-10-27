@@ -133,3 +133,4 @@ import EndgameChess.Rules.KRKSecondOppositionPrefix
 import EndgameChess.Rules.KRKSecondWeakBand
 import EndgameChess.Rules.KRKNearSlotBarriers
 import EndgameChess.Rules.KRKWeakPrefixEntry
+import EndgameChess.Rules.KRKCornerSlotBarriers

@@ -973,3 +973,17 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKNearSlotBarriers.high_clock_distance_cases
 #print axioms EndgameChess.Rules.KRKWeakPrefixEntry.entry_queries_unchanged
 #print axioms EndgameChess.Rules.KRKWeakPrefixEntry.entry_append_iff
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.slot_geometry
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.slot_reply_distance
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.slot_far
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.last_slots_iff
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.slot_not_rook
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.slot_reply_legal
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.ray_sees_iff
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.line_target
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.king_history_iff
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.rook_history_iff
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.high_clock_hold_iff
+#print axioms EndgameChess.Rules.KRKCornerSlotBarriers.high_clock_distance_cases
