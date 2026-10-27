@@ -1,11 +1,18 @@
 # KRK — current mathematical closure obligations
 
-**Status: OPEN.** Existing mathematical work was paused at the owner's request after S092. [NEXT_SESSION.md](../NEXT_SESSION.md) is the concise live entry point. This is an obligation list, not a timetable or series of session closeouts.
+**Status: OPEN, active research.** The owner has resumed sustained KRK work. [NEXT_SESSION.md](../NEXT_SESSION.md) is the concise live entry point. This is an obligation list, not a timetable or series of session closeouts.
 
 ## Certified baseline
 - 48 frozen theorem bundles through [EC-T0048](../theorems/frozen/EC-T0048/v1.md), proved in the pinned Lean model. These establish important partial results, not all KRK WDL/DTZ outcomes.
 - EC-T0048 establishes an all-defence uniform wall bound93, strong legal arrivals97, weak forcing98 and the explicit both-turn actual RAW clock-zero winning criterion (strong turn, already mate, or safe rook with legal reply).
 - Clock-free KRK dead/live and forcing results are frozen. High-clock and some history interfaces are also verified and frozen. See the exact [frozen ledger](../theorems/LEDGER.csv) for scope. No global distance optimality is claimed.
+
+Current unfrozen results evaluate every ongoing RAW strong-turn history at
+h>=94 and weak-turn history at h>=93, both colours and all orientations, with
+exact winning distances 1/3/5 and 2/4/6 respectively. See the
+[strong criterion](../proofs/KRK_FIVE_PLY_HISTORY.md) and
+[weak criterion](../proofs/KRK_SIX_PLY_HISTORY.md). Lower-clock outcomes and
+class-wide model/distance closure remain outstanding.
 
 ## Direct obligations, in priority order
 1. **Complete positive-clock/all-history KRK outcome formula.** An explicitly evaluated compact geometric characterisation over every admitted history, either player to move/colour, every legal rook capture, terminal state, current/intended draw claim and actual incoming history. Include an actual justified policy for winning regions AND matching defender lower bounds for drawn regions. An unevaluated minimax recurrence, a per-position atlas or failure of a chosen sufficient policy cannot close this.

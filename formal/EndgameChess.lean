@@ -157,3 +157,7 @@ import EndgameChess.Rules.KRKFivePlyHistory
 import EndgameChess.Rules.KRKFiveWeakPrefix
 import EndgameChess.Rules.KRKFourPlyExact
 import EndgameChess.Rules.KRKSixPlyHistory
+
+import EndgameChess.Rules.KRKFiveGeometry
+import EndgameChess.Rules.KRKSixGeometry
+import EndgameChess.Rules.KRKCastleSix

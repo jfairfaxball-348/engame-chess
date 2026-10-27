@@ -104,4 +104,45 @@ theorem global_shape_necessary {q : Position} {σ : Colour} {sk rs wk : Square}
   have normal := normalize_spec depth
   exact ⟨depth, framed_shape_necessary (normalize wk) material turn far notMate normal.1 normal.2 win⟩
 
+
+/-- Converse geometric transport for a live weak destination. Actual weak
+moves are mapped one at a time; no actual castling flags or trace are mapped. -/
+theorem framed_shape_sufficient {q : Position} {σ : Colour} {sk rs wk : Square} (g : Frame)
+    (material : IsKRK q σ sk rs wk) (turn : q.turn = σ.opp)
+    (far : 2 ≤ dInf sk wk) (safe : SafeRook sk rs wk) (nonempty : ∃ r, Legal q r)
+    (rank : (g.f wk).2.val = 0) (high : (g.f wk).1.val ≤ 3)
+    (shape : Shape (g.f sk) (g.f rs) (g.f wk)) : MateWithin σ 4 q := by
+  obtain ⟨r,legal⟩ := nonempty
+  obtain ⟨t,_,step⟩ := krk_safe_reply material turn safe legal
+  let p := krkPos σ (g.f sk) (g.f rs) (g.f wk) σ.opp
+  have mapped : IsKRK p σ (g.f sk) (g.f rs) (g.f wk) :=
+    ⟨g.ne_iff.mpr material.1,g.ne_iff.mpr material.2.1,g.ne_iff.mpr material.2.2.1,rfl⟩
+  have matched : Matches p σ ⟨g.f sk,g.f rs,g.f wk,false⟩ := ⟨mapped,rfl⟩
+  obtain ⟨v,edge,_⟩ := step_sound matched (g.map_step step)
+  have live : ∃ r, Legal p r := ⟨v,edge⟩
+  have noMate : ¬MatedK p := fun mate => mate.2 live
+  have winP := (canonical_shape_iff mapped rfl (by rwa [g.distance]) rank high noMate live).mpr shape
+  have all : ∀ r, Legal p r → MateWithin σ 3 r := by
+    rcases winP with goal | ⟨_,chosen | defended⟩
+    · exact False.elim (noMate goal.2)
+    · exact False.elim (opp_ne σ chosen.1.symm)
+    · exact defended.2.2
+  apply mateWithin_defend turn ⟨r,legal⟩
+  intro r edge
+  obtain ⟨u,next,move⟩ := krk_safe_reply material turn safe edge
+  obtain ⟨v,legalP,nextP⟩ := step_sound matched (g.map_step move)
+  obtain ⟨farP,notCheckP⟩ := krk_strong_arrival_geometry legalP nextP.1 nextP.2
+  have threeP := (strong_three_iff nextP.1 nextP.2 farP notCheckP).mp (all v legalP)
+  have three := (three_iff g).mp threeP
+  obtain ⟨farR,notCheckR⟩ := krk_strong_arrival_geometry edge next.1 next.2
+  exact (strong_three_iff next.1 next.2 farR notCheckR).mpr three
+
+theorem global_shape_sufficient {q : Position} {σ : Colour} {sk rs wk : Square}
+    (material : IsKRK q σ sk rs wk) (turn : q.turn = σ.opp)
+    (far : 2 ≤ dInf sk wk) (safe : SafeRook sk rs wk) (nonempty : ∃ r, Legal q r)
+    (depth : KRKEdgeDepth.depth wk = 0)
+    (shape : Shape ((normalize wk).f sk) ((normalize wk).f rs) ((normalize wk).f wk)) : MateWithin σ 4 q := by
+  have normal := normalize_spec depth
+  exact framed_shape_sufficient (normalize wk) material turn far safe nonempty normal.1 normal.2 shape
+
 end EndgameChess.Rules.KRKFourGeometry

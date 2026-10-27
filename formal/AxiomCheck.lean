@@ -1151,3 +1151,23 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKFivePlyHistory.entry_kernel
 #print axioms EndgameChess.Rules.KRKFivePlyHistory.clear_kernel
 #print axioms EndgameChess.Rules.KRKDistanceParity.weak_five_four
+
+-- Deeper geometry and actual castling exclusion for strong >=92 entries.
+#print axioms EndgameChess.Rules.KRKFiveGeometry.entry_sufficient
+#print axioms EndgameChess.Rules.KRKFiveGeometry.sufficient
+#print axioms EndgameChess.Rules.KRKFiveGeometry.entry_necessary
+#print axioms EndgameChess.Rules.KRKFiveGeometry.necessary
+#print axioms EndgameChess.Rules.KRKFiveGeometry.kernel_five_iff
+#print axioms EndgameChess.Rules.KRKSixGeometry.kernel_six_iff
+#print axioms EndgameChess.Rules.KRKSixGeometry.strong_six_five
+#print axioms EndgameChess.Rules.KRKSixGeometry.weak_seven_six
+#print axioms EndgameChess.Rules.KRKCastleSix.five_depth_zero
+#print axioms EndgameChess.Rules.KRKCastleSix.interior_covered
+#print axioms EndgameChess.Rules.KRKCastleSix.rank_prison
+#print axioms EndgameChess.Rules.KRKCastleSix.corner_prison
+#print axioms EndgameChess.Rules.KRKCastleSix.cover_flip
+#print axioms EndgameChess.Rules.KRKCastleSix.home_prison
+#print axioms EndgameChess.Rules.KRKCastleSix.castle_not_six
+#print axioms EndgameChess.Rules.KRKCastleSix.winning_entry_not_castle
+#print axioms EndgameChess.Rules.KRKFourGeometry.framed_shape_sufficient
+#print axioms EndgameChess.Rules.KRKFourGeometry.global_shape_sufficient
