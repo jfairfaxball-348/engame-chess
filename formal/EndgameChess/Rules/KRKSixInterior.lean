@@ -42,7 +42,7 @@ theorem strip_escape {sk rs wk : Square} (distinct : sk ≠ rs)
   dsimp [symSwap] at impossible
   omega
 
-private theorem every_map (g : BoardSym) {sk rs wk : Square} (distinct : sk ≠ rs)
+theorem every_map (g : BoardSym) {sk rs wk : Square} (distinct : sk ≠ rs)
     (every : ∀ u, StepM ⟨sk, rs, wk, false⟩ ⟨sk, rs, u, true⟩ → KRKFiveGeometry.Clear sk rs u) :
     ∀ u, StepM ⟨g.f sk, g.f rs, g.f wk, false⟩ ⟨g.f sk, g.f rs, u, true⟩ →
       KRKFiveGeometry.Clear (g.f sk) (g.f rs) u := by

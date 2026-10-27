@@ -165,3 +165,7 @@ import EndgameChess.Rules.KRKCastleSix
 import EndgameChess.Rules.KRKFiveMiddle
 import EndgameChess.Rules.KRKSixMiddle
 import EndgameChess.Rules.KRKSixInterior
+
+import EndgameChess.Rules.KRKFiveNear
+import EndgameChess.Rules.KRKSixInwardCorner
+import EndgameChess.Rules.KRKSixInteriorHolding

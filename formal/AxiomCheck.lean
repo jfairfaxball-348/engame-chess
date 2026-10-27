@@ -1194,3 +1194,30 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKSixInterior.weak_six_interior_corner
 #print axioms EndgameChess.Rules.KRKFiveGeometry.map
 #print axioms EndgameChess.Rules.KRKFiveGeometry.map_iff
+
+-- Complete interior six-ply geometry and strong >=92 interior drawing region.
+#print axioms EndgameChess.Rules.KRKFiveNear.near_slot_properties
+#print axioms EndgameChess.Rules.KRKFiveNear.king_points_iff
+#print axioms EndgameChess.Rules.KRKFiveNear.west_reachable_iff
+#print axioms EndgameChess.Rules.KRKFiveNear.middle_reachable
+#print axioms EndgameChess.Rules.KRKFiveNear.east_reachable
+#print axioms EndgameChess.Rules.KRKFiveNear.rook_rays_iff
+#print axioms EndgameChess.Rules.KRKFiveNear.clear_iff
+#print axioms EndgameChess.Rules.KRKFiveNear.kernel_five_iff
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.near_from_step
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.horizontal_necessary
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.upper_escape
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.no_five_diagonal
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.necessary
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.horizontal_replies
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.replies_of_region
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.kernel_six_iff
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.region_clear
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.map_six
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.inner_sym_spec
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.global_kernel_six_iff
+#print axioms EndgameChess.Rules.KRKSixInwardCorner.global_kernel_exact_six
+#print axioms EndgameChess.Rules.KRKSixInteriorHolding.strong_eight_interior_corner
+#print axioms EndgameChess.Rules.KRKSixInteriorHolding.high_clock_interior_necessary
+#print axioms EndgameChess.Rules.KRKSixInteriorHolding.high_clock_interior_holding
+#print axioms EndgameChess.Rules.KRKSixInterior.every_map
