@@ -144,3 +144,12 @@ import EndgameChess.Rules.KRKCanonicalSlots
 import EndgameChess.Rules.KRKFramedHistory
 import EndgameChess.Rules.KRKFramedPrefix
 import EndgameChess.Rules.KRKGlobalWeakBand
+
+import EndgameChess.Rules.KRKFourGeometry
+import EndgameChess.Rules.KRKCastleFour
+import EndgameChess.Rules.KRKFourSlots
+import EndgameChess.Rules.KRKStrongPrefix
+import EndgameChess.Rules.KRKOrdinaryEntry
+import EndgameChess.Rules.KRKDistanceParity
+import EndgameChess.Rules.KRKThreePlyExact
+import EndgameChess.Rules.KRKFivePlyHistory
