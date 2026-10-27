@@ -26,7 +26,7 @@ def OppositionClear (s : RawTrace.State) (sk rs wk : Square) (high : wk.1.val �
     (rs.1.val ≠ wk.1.val + 1 → BranchClear s sk rs wk (east wk high) (eastFile wk high))
 
 theorem opposition_step_cases {sk rs wk u : Square} (rank : wk.2.val = 0)
-    (low : 3 ≤ wk.1.val) (high : wk.1.val ≤ 4)
+    (low : 2 ≤ wk.1.val) (high : wk.1.val ≤ 4)
     (sx : sk.1.val = wk.1.val) (sy : sk.2.val = 2) (ry : 3 ≤ rs.2.val)
     (step : StepM ⟨sk, rs, wk, false⟩ ⟨sk, rs, u, true⟩) :
     (u = west wk ∧ rs.1.val + 1 ≠ wk.1.val) ∨
@@ -55,7 +55,7 @@ theorem opposition_step_cases {sk rs wk u : Square} (rank : wk.2.val = 0)
 
 theorem west_legal {q : Position} {σ : Colour} {sk rs wk : Square}
     (material : IsKRK q σ sk rs wk) (turn : q.turn = σ.opp)
-    (rank : wk.2.val = 0) (low : 3 ≤ wk.1.val) (high : wk.1.val ≤ 4)
+    (rank : wk.2.val = 0) (low : 2 ≤ wk.1.val) (high : wk.1.val ≤ 4)
     (sx : sk.1.val = wk.1.val) (sy : sk.2.val = 2) (ry : 3 ≤ rs.2.val)
     (guard : rs.1.val + 1 ≠ wk.1.val) : isLegal q ⟨wk, west wk, none⟩ = true := by
   apply lone_step_legal material turn
@@ -67,7 +67,7 @@ theorem west_legal {q : Position} {σ : Colour} {sk rs wk : Square}
 
 theorem east_legal {q : Position} {σ : Colour} {sk rs wk : Square}
     (material : IsKRK q σ sk rs wk) (turn : q.turn = σ.opp)
-    (rank : wk.2.val = 0) (low : 3 ≤ wk.1.val) (high : wk.1.val ≤ 4)
+    (rank : wk.2.val = 0) (low : 2 ≤ wk.1.val) (high : wk.1.val ≤ 4)
     (sx : sk.1.val = wk.1.val) (sy : sk.2.val = 2) (ry : 3 ≤ rs.2.val)
     (guard : rs.1.val ≠ wk.1.val + 1) : isLegal q ⟨wk, east wk high, none⟩ = true := by
   apply lone_step_legal material turn
@@ -77,7 +77,7 @@ theorem east_legal {q : Position} {σ : Colour} {sk rs wk : Square}
   · simp [dInf, absDiff, east, sx, sy] <;> omega
   · simp [RookSees, RookLine, east]; omega
 
-private theorem weak_force_data {s : State} {σ : Colour} (ongoing : Ongoing s)
+theorem weak_force_data {s : State} {σ : Colour} (ongoing : Ongoing s)
     (turn : (erase s).turn = σ.opp) (win : F σ s) :
     ¬CanClaim s ∧ (∃ v, BoardStep s v) ∧ ∀ v, BoardStep s v → F σ v := by
   have notGoal : ¬G σ s := fun goal =>
@@ -95,7 +95,7 @@ theorem weak_force_no_claim {s : State} {σ : Colour} (ongoing : Ongoing s)
     (turn : (erase s).turn = σ.opp) (win : F σ s) : ¬CanClaim s :=
   (weak_force_data ongoing turn win).1
 
-private theorem branch_necessary {s : State} {σ : Colour} {sk rs wk t : Square} {f : Fin 8}
+theorem branch_necessary {s : State} {σ : Colour} {sk rs wk t : Square} {f : Fin 8}
     (material : IsKRK (erase s) σ sk rs wk) (ongoing : Ongoing s)
     (turn : (erase s).turn = σ.opp) (highClock : 95 ≤ RawClock.clock s.val.trace)
     (rank : wk.2.val = 0) (sy : sk.2.val = 2) (ry : 3 ≤ rs.2.val)
@@ -137,14 +137,14 @@ theorem opposition_necessary {s : State} {σ : Colour} {sk rs wk : Square}
     intro guard
     apply branch_necessary material ongoing turn highClock rank sy ry rfl
       (by dsimp [west]; omega) (by dsimp [west]; omega) ?_ noClaim all
-      (west_legal material turn rank low high sx sy ry guard)
+      (west_legal material turn rank (by omega) high sx sy ry guard)
     unfold Side; left; dsimp [west, westFile]; omega
   have rightBranch : rs.1.val ≠ wk.1.val + 1 →
       RawClock.clock s.val.trace < 97 ∧ BranchClear s.val sk rs wk (east wk high) (eastFile wk high) := by
     intro guard
     apply branch_necessary material ongoing turn highClock rank sy ry rfl
       (by dsimp [east]; omega) (by dsimp [east]; omega) ?_ noClaim all
-      (east_legal material turn rank low high sx sy ry guard)
+      (east_legal material turn rank (by omega) high sx sy ry guard)
     unfold Side; right; dsimp [east, eastFile]; omega
   have clock : RawClock.clock s.val.trace < 97 := by
     by_cases guard : rs.1.val + 1 ≠ wk.1.val
@@ -153,12 +153,12 @@ theorem opposition_necessary {s : State} {σ : Colour} {sk rs wk : Square}
   exact ⟨clock, ((RawClaims.no_threshold_iff s.val).mp noClaim).2.1,
     fun guard => (leftBranch guard).2, fun guard => (rightBranch guard).2⟩
 
-private def weakChild (s : State) (ongoing : Ongoing s) (wk t : Square)
+def weakChild (s : State) (ongoing : Ongoing s) (wk t : Square)
     (legal : isLegal (erase s) ⟨wk, t, none⟩ = true) : State :=
   ⟨RawTrace.append s.val ⟨wk, t, none⟩ legal,
     ((StoppedHistory.append_and_reply_lifting s.val).1 _ legal).mpr ⟨s.property, ongoing⟩⟩
 
-private theorem branch_certificate {s : State} {σ : Colour} {sk rs wk t : Square} {f : Fin 8}
+theorem branch_certificate {s : State} {σ : Colour} {sk rs wk t : Square} {f : Fin 8}
     (material : IsKRK (erase s) σ sk rs wk) (ongoing : Ongoing s)
     (turn : (erase s).turn = σ.opp) (highClock : 95 ≤ RawClock.clock s.val.trace)
     (rank : wk.2.val = 0) (sy : sk.2.val = 2) (ry : 3 ≤ rs.2.val)
@@ -210,7 +210,7 @@ private theorem move_branch {s : State} {σ : Colour} {sk rs wk : Square} {m : M
   have safe : SafeRook sk rs wk := Or.inl (by simp [dInf, absDiff, rank] <;> omega)
   obtain ⟨t, next, step⟩ := krk_safe_reply material turn safe ⟨m, legal, rfl⟩
   have canonical := weak_move_eq material turn legal next.1
-  rcases opposition_step_cases rank low high sx sy ry step with ⟨target, guard⟩ | ⟨target, guard⟩
+  rcases opposition_step_cases rank (by omega) high sx sy ry step with ⟨target, guard⟩ | ⟨target, guard⟩
   · subst t
     refine ⟨west wk, westFile wk, canonical, rfl, ?_, ?_, ?_, clear.2.2.1 guard⟩
     · dsimp [west]; omega
@@ -243,9 +243,9 @@ theorem opposition_sufficient {s : State} {σ : Colour} {sk rs wk : Square}
       exact branch.1
   have nonempty : ∃ v, BoardStep s v := by
     by_cases guard : rs.1.val + 1 ≠ wk.1.val
-    · have legal := west_legal material turn rank low high sx sy ry guard
+    · have legal := west_legal material turn rank (by omega) high sx sy ry guard
       exact ⟨weakChild s ongoing wk (west wk) legal, ⟨_, legal, rfl⟩⟩
-    · have legal := east_legal material turn rank low high sx sy ry (by omega)
+    · have legal := east_legal material turn rank (by omega) high sx sy ry (by omega)
       exact ⟨weakChild s ongoing wk (east wk high) legal, ⟨_, legal, rfl⟩⟩
   refine Or.inr ⟨ongoing, Or.inr ⟨turn, noClaim, nonempty, ?_⟩⟩
   intro v edge

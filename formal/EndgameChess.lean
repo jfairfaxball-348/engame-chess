@@ -129,3 +129,5 @@ import EndgameChess.Rules.KRKFourPlySecond
 import EndgameChess.Rules.KRKFourPlyNearKernel
 import EndgameChess.Rules.KRKFourPlyCornerKernel
 import EndgameChess.Rules.KRKNearKingBarrier
+import EndgameChess.Rules.KRKSecondOppositionPrefix
+import EndgameChess.Rules.KRKSecondWeakBand
