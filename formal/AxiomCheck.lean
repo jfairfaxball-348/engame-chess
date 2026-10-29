@@ -2596,3 +2596,5 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKExecutable.columnKingStep_sound
 #print axioms EndgameChess.Rules.KRKExecutable.pivotLeftCut_sound
 #print axioms EndgameChess.Rules.KRKExecutable.guardedEntryLeft_sound
+#print axioms EndgameChess.Rules.KRKExecutable.oppositionCheck_sound
+#print axioms EndgameChess.Rules.KRKExecutable.oppositionFollow_sound
