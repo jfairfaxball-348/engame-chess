@@ -45,8 +45,7 @@ theorem restorationFar_sound {q : Position} {σ : Colour}
   intro v hv
   obtain ⟨t,hmt,hty,_,hunit,_⟩ := hall v hv
   refine ⟨t,hmt,hty,?_⟩
-  simp only [absDiff] at *
-  omega
+  exact pursuit_margin_step (a := nr) (b := wk) (c := t) (k := 3) hfar hunit
 
 /-- The precise king square used by the restoration proof for interior
 strong-king files, moving diagonally up and toward files 3–4. -/
@@ -54,7 +53,7 @@ def restorationKingDestination (sk : Square)
     (hy : sk.2.val+2≤7) (hx : 1≤sk.1.val ∧ sk.1.val≤6) : Square :=
   (⟨if sk.1.val<3 then sk.1.val+1
     else if 4<sk.1.val then sk.1.val-1 else sk.1.val, by
-      split_ifs <;> omega⟩,
+      split <;> (try split) <;> omega⟩,
    ⟨sk.2.val+1,by omega⟩)
 
 /-- At restored margin ≥3 the explicitly named king-up square is legal
@@ -78,7 +77,7 @@ theorem restorationKing_sound {q : Position} {σ : Colour}
   have hsux : 2≤su.1.val ∧ su.1.val≤5 ∧
       absDiff sk.1.val su.1.val≤1 := by
     dsimp [su,restorationKingDestination]
-    split_ifs <;> simp only [absDiff] <;> omega
+    split <;> (try split) <;> simp only [absDiff] <;> omega
   have hsuy : su.2.val=sk.2.val+1 := rfl
   have hstep : dInf sk su=1 := by
     change max (absDiff sk.1.val su.1.val)
