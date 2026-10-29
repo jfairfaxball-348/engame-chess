@@ -116,6 +116,7 @@ import EndgameChess.Rules.KRKExecutable.CentralAlignedRescue
 import EndgameChess.Rules.KRKExecutable.CentralBackRook
 import EndgameChess.Rules.KRKExecutable.LowerRouting
 import EndgameChess.Rules.KRKExecutable.CentralPolicy
+import EndgameChess.Rules.KRKExecutable.PreparedWallPolicy
 
 import EndgameChess.Rules.KRKDeadline.Necessary
 
