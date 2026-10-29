@@ -100,6 +100,27 @@ theorem knight_prison_bound {q : Position} {σ : Colour} {sk qs wk : Square}
         omega
     exact knight_top_bound hmt hrt newLow qx qy top.1 top.2
 
+/-- One downward king step extends the prison finish to a king on rank five. -/
+theorem knight_prison_low_five_bound {q : Position} {σ : Colour} {sk qs wk : Square}
+    (hq : IsKQK q σ sk qs wk) (ht : q.turn = σ)
+    (low : sk.2.val ≤ 5) (hp : KnightPrison qs wk) : MateWithin σ 31 q := by
+  by_cases lower : sk.2.val ≤ 4
+  · exact mateWithin_mono (knight_prison_bound hq ht lower hp) (by decide)
+  have ky : sk.2.val = 5 := by omega
+  have qy := hp.2.1
+  have wy : 6 ≤ wk.2.val := by rcases hp.2.2 with top | side <;> omega
+  let su : Square := (sk.1,4)
+  obtain ⟨c,hl,hm,hct⟩ := king_move (t := su) hq ht
+    (by simp only [dInf,absDiff,su]; omega)
+    (by simp only [ne_iff_coords,su]; omega)
+    (by simp only [dInf,absDiff,su]; omega)
+  have box := knight_prison_box hp
+  have newLow : su.2.val ≤ 4 := by change (4 : Nat) ≤ 4; decide
+  apply mateWithin_pair ht hl hct (knight_box_reply_exists hm hct newLow box)
+  intro r hr
+  obtain ⟨t,hmt,hrt,next,_⟩ := knight_box_reply hm hct newLow box (knight_prison_safe hp) hr
+  exact knight_prison_bound hmt hrt newLow next
+
 /-- The checked corner and the two nonchecking knight squares share the
 same safe weak-turn funnel. Safety excludes an unprotected queen capture. -/
 theorem knight_box_weak_bound {q : Position} {σ : Colour} {sk qs wk : Square}

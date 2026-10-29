@@ -49,6 +49,25 @@ theorem no_weak_force {q : Position} {σ : Colour} {sk qs wk : Square}
     omega
   · exact dead ⟨t,ReachK.refl t,goal.2⟩
 
+/-- Strong-side holding can use any legal policy: no cooperative line in
+the closed KQK/KK region ever mates the strong king. -/
+theorem no_weak_reachable_mate {q t : Position} {σ : Colour} {sk qs wk : Square}
+    (hq : IsKQK q σ sk qs wk) (hfar : 2 ≤ dInf sk wk)
+    (rights : q.castling = noRights) (reach : ReachK q t) : ¬ MateGoal σ.opp t := by
+  intro goal
+  have closure : Region σ t := by
+    clear goal
+    induction reach with
+    | refl => exact Or.inl ⟨sk,qs,wk,hq,hfar,rights⟩
+    | tail _ step ih => exact region_step ih step
+  rcases closure with ⟨s,x,w,hm,far,_⟩ | dead
+  · have tt : t.turn = σ := by simpa only [opp_opp] using goal.1
+    have check : inCheck t σ = true := by simpa only [tt] using goal.2.1
+    have adjacent := (strong_check hm).mp check
+    rw [dInf_comm] at adjacent
+    omega
+  · exact dead ⟨t,ReachK.refl t,goal.2⟩
+
 /-- Both players lack a forced mate when the weak side can take the queen.
 This is the board-game capture boundary, not yet the full fresh WDL50 theorem. -/
 theorem unsafe_weak_no_forcing {q : Position} {σ : Colour} {sk qs wk : Square}

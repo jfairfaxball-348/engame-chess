@@ -1,9 +1,10 @@
-# KQK: strategy proof under development
+# KQK: general strategy proof
 
 The owner selected full fresh-position WDL50, with a sufficient upper
 bound under the 50-move rule. Exact mate distances are outside this work.
 This document records the argument corresponding to the new Lean modules;
-it does not assert class completion. All current results use the existing
+the complete fresh outcome is stated in [KQK fresh WDL50](KQK_FRESH_WDL50.md).
+All results use the existing
 board legality kernel. No tablebase, engine or per-position computation
 is used in their proofs.
 
@@ -245,7 +246,8 @@ the general strategy avoids it. Reflection/transposition transports the
 The fixed-king reply lemmas still need their original king-rank/clearance
 premises. This stronger entry theorem removes the *input* restriction
 by moving the king first; it does not silently drop those premises.
-Arbitrary queen setup and entry from the rest of the board remain open.
+Universal setup is proved separately below; the corridor result itself
+does not supply that setup.
 
 ## General separating rank and monotone drive (Lean proved)
 
@@ -324,8 +326,8 @@ the whole band; no finite board enumeration is used in the proof.
 `clear_wall_entry` additionally proves a 93-ply entry bound when the kings
 have a rank gap of at least two, the queen's vertical slide is clear, and
 the queen and weak king have a file gap of at least three. This margin
-retains a reply even on queen rank six. It is an entry subfamily, not yet
-the universal setup theorem.
+retains a reply even on queen rank six. This entry subfamily is a
+component of the universal setup theorem below.
 
 `FarFilePreparation` proves a first off-rank setup move without assuming
 that a fixed far-file square is safe from stalemate. Orient the weak king
@@ -337,21 +339,37 @@ Choose the other. The queen is distant, an explicit weak reply exists,
 and every legal reply retains the queen, leaves the weak king at file at
 least three and at least one rank above the strong king, and keeps it off
 the queen rank. This is a proved preparation transition; its remaining
-blocked-file/one-rank-gap branches have not yet been composed into a
-universal entry bound.
+blocked-file/one-rank-gap branches are composed in the subsequent entry
+modules described below.
 
-## Remaining global entry and outcome proof
+## Universal entry and fresh outcome (Lean proved)
 
-Establish a general entry strategy from every fresh legal strong-turn KQK
-position, accounting for all weak replies, legal setup and blockers, queen-only
-stalemate traps and nearby kings. Prove its cost fits the class budget
-when composed with the finish. Then complete weak-turn capture/stalemate
-and dead/live partitions and connect the full forcing/holding arguments
-to fresh WDL50. No incoming clock/history or exact-distance catalogue
-is required.
+`EntryGeometry`, `SetupCorners`, `EntryFrames`, `OrientedEntry`,
+`TightEntry`, `FarFileEntry`, `SameRankEntry` and `StrongEntry` complete
+the setup. Reflections/transposition normalise a king rank gap of at
+least two. Off-rank queens use the escape-preserving far-file move above,
+then vertical, horizontal or protected tight entry. The preparation costs
+at most two plies and the complete far-file region at most 95, giving
+97 plies. Same-rank queens use a backward king step, protected back-rank
+entry, or an axis change; the same 97-ply ceiling covers every branch.
+The narrow corner where the intended wall would stalemate has a direct
+rook-pattern queen mate instead.
 
-Proof critique: the edge wall includes a genuine two-square escape
-condition. Removing the width condition can cause stalemate; removing
-the king-rank condition can remove the last legal reply or block a queen
-ray. Neither the local strategy nor shared safety lemmas settle general
-entry. The current modules have not been frozen as a completed class.
+`strong_entry_bound` proves every strong-turn KQK board with the weak king
+not in check wins within 97 plies. Every safe nonterminal weak turn wins
+within 98, since all its legal replies retain the queen and enter that
+theorem. `BoardOutcome` proves the forcing and dead/live criteria.
+
+`FreshGame` starts at an arbitrary locally legal position, with clock zero
+and an empty past. Actual future legal moves update clock and normalised
+key occurrences, retaining current/intended draw claims. Decreasing
+strategy rank makes every visited key distinct and every winning line
+shorter than 100 plies. The finite rule certificates are equivalent to
+independently defined actual bounded winning policies; holding uses
+actual legal policies on every compliant prefix.
+
+`KQK.fresh_wdl50` supplies the complete both-colour/both-turn result.
+Exposed queens and stalemates have explicit holding arguments. Deadness
+is a separate criterion; a drawn board need not be dead. See the companion
+proof for the exact statement and scope. Certification/freeze provenance
+is recorded in the theorem ledger, rather than inferred from this note.

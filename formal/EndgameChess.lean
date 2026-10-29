@@ -416,3 +416,4 @@ import EndgameChess.Rules.KQK.Staircase
 import EndgameChess.Rules.KQK.EdgeEntry
 import EndgameChess.Rules.KQK.ClearWallEntry
 import EndgameChess.Rules.KQK.FarFilePreparation
+import EndgameChess.Rules.KQK.FreshExamples
