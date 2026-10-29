@@ -61,4 +61,3 @@ theorem weak_nine_eight {q : Position} {σ : Colour} {sk rs wk : Square}
     exact strong_eight_seven next.1 next.2 (defended.2.2 r edge)
 
 end EndgameChess.Rules.KRKEightGeometry
-

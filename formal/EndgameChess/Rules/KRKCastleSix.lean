@@ -220,7 +220,3 @@ theorem winning_entry_not_castle {s t : RawHistoryLayer.State} {σ : Colour} {sk
   exact castle_not_six material turn legal notMate src castle next six
 
 end EndgameChess.Rules.KRKCastleSix
-
-
-
-

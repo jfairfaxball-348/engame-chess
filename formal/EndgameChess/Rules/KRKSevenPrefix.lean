@@ -162,4 +162,3 @@ theorem six_append_iff {s : RawTrace.State} {σ : Colour} {sk rs ns nr wk : Squa
   constructor <;> rintro ⟨safe,time,count,branches⟩ <;> exact ⟨safe,by omega,by omega,branches⟩
 
 end EndgameChess.Rules.KRKSevenPrefix
-

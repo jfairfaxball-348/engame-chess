@@ -256,4 +256,3 @@ theorem high_clock_distance_cases {s : State} {σ : Colour} {sk rs wk : Square}
     exact five ((KRKFivePlyExact.rule_five_iff material ongoing turn).mp (KRKFivePlyExact.strong_six_five turn six))
 
 end EndgameChess.Rules.KRKSevenPlyHistory
-

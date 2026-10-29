@@ -46,4 +46,3 @@ theorem twelve_entry_move {q : Position} {σ : Colour} {sk rs wk ns nr : Square}
   · exact False.elim (opp_ne σ (colour.trans turn).symm)
 
 end EndgameChess.Rules.KRKThirteenEntry
-

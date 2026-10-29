@@ -185,5 +185,3 @@ theorem no_capture_square_entry : ¬Clear ((3 : Fin 8),0) ((2 : Fin 8),1) ((0 : 
       omega
 
 end EndgameChess.Rules.KRKFiveCornerEntries
-
-

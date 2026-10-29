@@ -350,5 +350,3 @@ theorem kernel_seven_iff {q : Position} {σ : Colour} {sk rs : Square}
     (clear_iff material.1 material.2.2.1 notCheck)
 
 end EndgameChess.Rules.KRKSevenNear
-
-

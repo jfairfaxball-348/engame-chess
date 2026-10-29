@@ -226,17 +226,3 @@ theorem kernel_exact_six_iff {q : Position} {σ : Colour} {sk rs wk : Square}
     · exact notOld old
 
 end EndgameChess.Rules.KRKSixNear
-
-
-
-
-
-
-
-
-
-
-
-
-
-

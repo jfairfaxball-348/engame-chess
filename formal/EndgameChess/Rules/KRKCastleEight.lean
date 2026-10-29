@@ -208,4 +208,3 @@ theorem winning_entry_not_castle {s t : RawHistoryLayer.State} {σ : Colour} {sk
   exact castle_not_eight material turn legal notMate src castle next eight
 
 end EndgameChess.Rules.KRKCastleEight
-

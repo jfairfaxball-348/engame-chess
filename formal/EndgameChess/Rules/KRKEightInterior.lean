@@ -69,4 +69,3 @@ theorem weak_eight_depth_le_one {q : Position} {σ : Colour} {sk rs wk : Square}
     (fun t step => clear.2.2 t (KRKCornerWeakBand.step_guard step)))
 
 end EndgameChess.Rules.KRKEightInterior
-

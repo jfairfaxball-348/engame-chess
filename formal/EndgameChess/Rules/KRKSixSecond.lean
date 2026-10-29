@@ -190,8 +190,3 @@ theorem kernel_exact_six_iff {q : Position} {σ : Colour} {sk rs wk : Square}
       omega
 
 end EndgameChess.Rules.KRKSixSecond
-
-
-
-
-
