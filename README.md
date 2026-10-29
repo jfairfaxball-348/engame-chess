@@ -16,6 +16,7 @@ There is one active research target and a concrete direct obligation. Supporting
 - [Class roadmap and actual coverage](docs/ROADMAP.md)
 - [KRK status and remaining work](docs/KRK_COMPLETION.md)
 - [KQK completion](docs/KQK_COMPLETION.md)
+- [KPK plan — installed, not executed](docs/KPK_PLAN.md)
 - [Scientific charter and rule boundaries](docs/CHARTER.md) · [formal definitions](docs/FOUNDATIONS.md) · [methods](docs/METHODS.md)
 - [Frozen theorem ledger](theorems/LEDGER.csv) · [immutable proof manifests](theorems/frozen/) · [Lean library](formal/) · [proofs](proofs/) · [audits](audits/)
 - [Research candidates](research/CANDIDATES.md)
@@ -25,4 +26,4 @@ The `sessions/` tree contains historic work and verification evidence. It is **n
 ## Current scientific position
 **50 frozen theorem bundles** through EC-T0050; K vs K, K+B vs K and K+N vs K have proven draw/dead-position results. **KRK and KQK are complete** under the outcome target: every fresh legal position's WDL50 is proved and frozen. KQK includes dead/live and sufficient 97/98-ply bounds. Exact mate distances are optional; KRK's catalogue through 13/14 plies is not a completion gate.
 
-KPK is the next proposed class and awaits owner selection. Neither complete seven-piece parity nor a proof that the initial chess position is drawn exists in this project.
+KPK is selected next; its [plan](docs/KPK_PLAN.md) is installed but has not been run. Neither complete seven-piece parity nor a proof that the initial chess position is drawn exists in this project.
