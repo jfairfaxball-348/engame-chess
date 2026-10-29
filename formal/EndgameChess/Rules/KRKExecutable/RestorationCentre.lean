@@ -31,13 +31,13 @@ theorem restorationCentre_sound {q : Position} {σ : Colour}
   let su : Square := restorationCentreDestination sk
   have hcentre : su.1.val=3 ∨ su.1.val=4 := by
     dsimp [su,restorationCentreDestination]
-    split <;> simp
+    split <;> decide
   have hstep : dInf sk su=1 := by
     rcases hx with hx | hx
     · dsimp [su,restorationCentreDestination]
-      simp [hx,dInf,absDiff]
+      simp [hx,dInf,absDiff] <;> omega
     · dsimp [su,restorationCentreDestination]
-      simp [hx,dInf,absDiff]
+      simp [hx,dInf,absDiff] <;> omega
   obtain ⟨c,hl,hm,hnonempty,hall⟩ :=
     king_below_pair hq hstep hb hw hf
   refine ⟨c,hl,hm,hnonempty,?_⟩
