@@ -2,7 +2,7 @@
 
 The owner selected KPK as the next class after frozen KQK (EC-T0050).
 This request installs the plan only. **Do not execute it until a later
-owner request to run the next session.** No KPK proof, computation or Lean
+owner request to run KPK.** No KPK proof, computation or Lean
 implementation has been started by this installation.
 
 ## Target and boundaries
@@ -58,6 +58,40 @@ manifests and ledger rows remain immutable.
 
 ## Proof route
 
+### Final theorem contract
+
+Use the pawn owner as the **strong side** and the lone king as the
+**weak side**, independently of whose turn it is. State WDL labels from
+the side-to-move perspective; also expose the strong-side result so that
+changing turns cannot silently reverse a label. The following are
+specifications to prove, not definitions of an already known criterion.
+
+For a root `s` in the exact domain, seek explicit geometric predicates
+`Win50(s)` and `Live(s)`, with:
+
+- `Win50(s)` iff the strong side has a policy forcing mate against every
+  legal opposing policy under the fresh-root rules, with proved bounds
+  on each reversible phase.
+- Outside `Win50`, a weak-side holding policy prevents a strong-side
+  win. Separately prove that the strong side can avoid losing throughout
+  the domain; the two holding statements together establish draw.
+- `Live(s)` iff some legal continuation reaches mate, with `Dead(s)` its
+  complement in the kernel's sense. A possible-mate witness does not
+  establish `Win50`, and holding does not establish deadness.
+
+Match the charter's five-valued WDL50 terminology explicitly. If a
+no-50-move-limit win can become a draw under the limit, identify its
+cursed-win/blessed-loss labels; otherwise prove their absence for this
+class. A three-valued win/draw partition alone does not justify claiming
+that these two labels are absent. Use only the auxiliary no-limit
+comparison needed for those labels; do not expand into incoming-clock
+or arbitrary-history classification.
+
+The final criterion must be a finite, readable combination of coordinate,
+distance, turn and geometric-region conditions. A recursive minimax
+definition, a generic decidability theorem, or an unresolved predicate
+such as "can force promotion" is not the requested closed criterion.
+
 ### Exact interfaces and irreversible transitions
 
 Account for every legal strong-king move, single/double pawn push with
@@ -98,6 +132,34 @@ for the complement. Keep possible mate, forced mate and draw distinct.
 Reconcile all legal positions with the partition; a local family is not
 class closure. Keep unresolved regions explicitly open.
 
+Build the partition in this order, revising candidate boundaries when a
+proof or local counterexample requires it:
+
+1. **Terminal and exit regions:** mate/stalemate, legal pawn capture,
+   and each promotion successor. Separate an available capture from a
+   capture forced against every strong-side choice.
+2. **Immediate promotion geometry:** establish which legal promotion
+   choices yield a win, a hold or a terminal draw, with both kings and
+   the next player explicit. This supplies the induction boundary.
+3. **King-and-pawn coordination:** define candidate support/key-square
+   regions and prove entry, preservation and progress. Handle a king
+   blocking the pawn's file and the cost of clearing that file.
+4. **Defensive geometry:** define candidate blockade and promotion-corner
+   holding regions; account for opposition, tempo, the initial double
+   step and edge files. Prove a legal response exists whenever the
+   position is nonterminal and the proposed invariant requires one.
+5. **Approach regions:** prove entry into a classified region using
+   distance inequalities and a decreasing measure. A pawn-race distance
+   comparison must account for occupancy, attacked squares and turn.
+6. **Coverage:** prove the regions cover every admissible root and give
+   compatible outcomes on overlaps. Remove every residual open region
+   before claiming class completion.
+
+These are proof tasks, not asserted classical criteria. Ordinary and rook
+pawns may require different boundary lemmas. Do not assume that a named
+key-square rule covers arbitrary locally legal roots, or that promotion
+is the only way the pawn side can mate.
+
 ### Clock and repetition budget
 
 Use pawn advancement plus a king-phase potential, or another proved
@@ -108,6 +170,40 @@ the clock; resets cannot be assumed without a strategy guaranteeing them.
 Prove each required clock interval and preserve all replies and claims.
 Restrict history reasoning to prefixes generated from fresh KPK roots;
 arbitrary incoming-history classification remains outside scope.
+
+Separate two termination obligations: a well-founded geometric measure
+for progress, and an explicit bound on quiet plies before the next reset
+or mate. A decreasing measure alone need not supply a sufficiently small
+clock bound. A finite bound alone need not exclude an earlier repetition
+claim. Prove both for the strategy actually used, including weak replies.
+Count in plies and check the exact threshold and mate precedence in the
+kernel; do not substitute an informal "50 moves" calculation.
+
+## Implementation order and acceptance criteria
+
+The names below are proposed new modules, subject to the contract audit.
+Keep the mathematical argument in `proofs/KPK_WDL50.md` when execution
+begins; this plan does not install an unproved theorem as a proof source.
+
+| Stage | Proposed modules under `Rules/KPK/` | Required result before use downstream |
+|---|---|---|
+| Domain and moves | `Material.lean`, `Moves.lean` | Exact root predicate; sound and complete successor partition; legality, flags and material closure for every branch. |
+| Transport | `Symmetry.lean` | File reflection and colour/rank reversal preserve the required rules and outcome semantics; no unsupported pawn symmetry. |
+| Exit composition | `Promotion.lean` | All four promotion choices and capture into KK are covered; frozen-result premises and generated-history bridges are proved. |
+| Geometric classification | `Geometry.lean`, `Winning.lean`, `Holding.lean` | Explicit regions, legal policies, universal reply arguments, progress and holding invariants. |
+| Budgets and semantics | `Bounds.lean`, `FreshOutcome.lean` | Sufficient quiet-phase bounds, repetition avoidance, independent policy transport and complete WDL50/dead-live equivalences. |
+
+Domain and move closure come first. Symmetry and exit composition then
+support the geometric proofs. Bounds must be developed alongside winning
+lemmas so an unusable unbounded strategy is discovered early. Assemble
+the final outcome only after coverage and the semantic bridges hold.
+
+If an existing theorem needs stronger root premises, prove a new bridge
+or use its lower-level strategy theorem with verified premises. Do not
+weaken the KPK domain to fit reuse. If a geometric candidate fails,
+record the precise obstruction in the mathematical source and repair the
+region or strategy; adding isolated evaluated positions is not a route
+to closure. No fixed numerical budget is promised before its proof.
 
 ### Outcome and verification
 
