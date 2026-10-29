@@ -1,5 +1,6 @@
 import EndgameChess.Rules.KRKExecutable.CentralAlignedRescue
 import EndgameChess.Rules.KRKCentral.Positive
+import EndgameChess.Rules.KRKExecutable.LowerPursuitPair
 
 /-!
 KRK06: exact low-rook-margin orientation action used by the fallback
