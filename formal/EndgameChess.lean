@@ -426,3 +426,4 @@ import EndgameChess.Rules.KRKExecutable.ReadyCutTempo
 import EndgameChess.Rules.KRKExecutable.WidePivot
 import EndgameChess.Rules.KRKExecutable.GuardedEntry
 import EndgameChess.Rules.KRKExecutable.ColumnKing
+import EndgameChess.Rules.KRKExecutable.OppositionActions
