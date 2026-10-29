@@ -418,3 +418,4 @@ import EndgameChess.Rules.KQK.EdgeEntry
 -- New proof-derived computable KRK action constructors (separate from frozen proofs).
 import EndgameChess.Rules.KRKExecutable.Constructors
 import EndgameChess.Rules.KRKExecutable.Prep
+import EndgameChess.Rules.KRKExecutable.PrepRank
