@@ -13,7 +13,7 @@ def lowerRoutingDebt (d : Bool) (sk rs wk : Square) : Nat :=
   else 2
 
 def lowerRoutingRank (d : Bool) (sk rs wk : Square) : Nat :=
-  4 * (7 - pursuitFile d sk) + lowerRoutingDebt d sk rs wk
+  6 - pursuitFile d sk + lowerRoutingDebt d sk rs wk
 
 theorem lowerRoutingDebt_bound (d : Bool) (sk rs wk : Square) :
     lowerRoutingDebt d sk rs wk ≤ 2 := by
@@ -49,22 +49,43 @@ theorem lowerChaseRouting_sound (d : Bool) {q : Position} {σ : Colour}
     have h := pursuitFile_bound d wk; omega
   have phys : 1≤su.1.val ∧ su.1.val≤6 := by
     cases d <;> simp only [pursuitFile,Bool.false_eq_true,↓reduceIte] at * <;> omega
-  obtain ⟨c,hl,hm,hne,hall⟩ := lowerPursuitPair_sound d hq hb hw hx hf
+  obtain ⟨ss,c,hssy,hssx,hl,hm,hne,hall⟩ :=
+    krk_pursuit_king_move d hq hb hw hx hf
+  have hss : ss=su := by
+    apply Prod.ext
+    · apply Fin.ext
+      cases d <;> simp only [pursuitFile,Bool.false_eq_true,↓reduceIte] at hssx hsx <;> omega
+    · exact hssy.trans hsy.symm
+  subst ss
   refine ⟨c,hl,hm,hne,?_⟩
   intro v hv
-  obtain ⟨t,hmt,hft,hshape⟩ := hall v hv
+  obtain ⟨t,hmt,hft,_,hshape⟩ := hall v hv
   refine ⟨t,hmt,?_⟩
-  rcases hshape with hu | ⟨hty,hal | ⟨hlt,_⟩⟩
+  rcases hshape with hu | ⟨hty,hdx⟩
   · exact Or.inl ⟨su,rs,t,hmt,by omega,rfl,by omega,
       phys.1,phys.2,hft,Or.inl hu⟩
+  by_cases hal : su.1.val=t.1.val
   · exact Or.inl ⟨su,rs,t,hmt,by omega,rfl,by omega,
       phys.1,phys.2,hft,Or.inr hal⟩
-  · right
-    refine ⟨by omega,hty,by omega,hlt,?_⟩
-    change lowerRoutingRank d su rs t < lowerRoutingRank d sk rs wk
-    have debt := lowerRoutingDebt_bound d su rs t
-    unfold lowerRoutingRank
-    omega
+  have hdx' : absDiff (pursuitFile d t) (pursuitFile d wk)=1 := by
+    rw [pursuit_absDiff]; exact hdx
+  have hnot : pursuitFile d su≠pursuitFile d t := by
+    intro he; apply hal
+    cases d <;> simp only [pursuitFile,Bool.false_eq_true,↓reduceIte] at he <;> omega
+  have hlt : pursuitFile d su<pursuitFile d t := by
+    simp only [absDiff] at hdx'; omega
+  right
+  refine ⟨by omega,hty,by omega,hlt,?_⟩
+  change lowerRoutingRank d su rs t < lowerRoutingRank d sk rs wk
+  have hparity : (pursuitFile d t-pursuitFile d su)%2=
+      (pursuitFile d wk-pursuitFile d sk)%2 := by
+    simp only [absDiff] at hdx'; omega
+  have hdebt : lowerRoutingDebt d su rs t=lowerRoutingDebt d sk rs wk := by
+    unfold lowerRoutingDebt
+    rw [hparity]
+  unfold lowerRoutingRank
+  rw [hdebt]
+  omega
 
 /-- A back-rook relocation is a tempo phase, never a king restoration.
 If the rook was already behind the king, a required wait has offset one;
@@ -208,8 +229,8 @@ theorem lowerRouting_terminates (d : Bool) {σ : Colour} {y : Nat}
   | zero =>
     intro q sk rs wk hq hb hry hw hs hx hn
     have hw7 := pursuitFile_bound d wk
-    unfold lowerRoutingRank at hn
-    omega
+    unfold lowerRoutingRank lowerRoutingDebt at hn
+    split at hn <;> (try split at hn) <;> omega
   | succ n ih =>
     intro q sk rs wk hq hb hry hw hs hx hn
     by_cases hc : pursuitFile d sk+2≤pursuitFile d wk ∧
@@ -233,6 +254,22 @@ theorem lowerRouting_terminates (d : Bool) {σ : Colour} {y : Nat}
         · exact .exit (by simpa only [hry] using he)
         · exact ih hmt hb hry hty hs hlt (by omega)
 
+/-- In particular every central nonaligned lower root reaches an EXIT
+within five complete pairs, with the same explicit coordinate selection. -/
+theorem lowerCentralWithinFive (d : Bool) {σ : Colour} {y : Nat}
+    {q : Position} {sk rs wk : Square}
+    (hq : Matches q σ ⟨sk,rs,wk,true⟩)
+    (hb : sk.2.val+1=rs.2.val) (hry : rs.2.val=y)
+    (hw : wk.2.val=rs.2.val+1)
+    (hs : 3≤pursuitFile d sk) (hx : pursuitFile d sk<pursuitFile d wk) :
+    ∃ n, n≤5 ∧ LowerRunsToExit σ y q n := by
+  refine ⟨lowerRoutingRank d sk rs wk,?_,
+    lowerRouting_terminates d hq hb hry hw hs hx⟩
+  have debt := lowerRoutingDebt_bound d sk rs wk
+  unfold lowerRoutingRank
+  omega
+
+#print axioms lowerCentralWithinFive
 #print axioms lowerRouting_terminates
 #print axioms lowerChaseRouting_sound
 #print axioms lowerWaitRouting_sound
