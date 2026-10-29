@@ -414,3 +414,5 @@ import EndgameChess.Rules.KQK.ShadowForce
 import EndgameChess.Rules.KQK.InteriorEscape
 import EndgameChess.Rules.KQK.Staircase
 import EndgameChess.Rules.KQK.EdgeEntry
+import EndgameChess.Rules.KQK.ClearWallEntry
+import EndgameChess.Rules.KQK.FarFilePreparation

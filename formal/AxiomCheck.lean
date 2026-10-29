@@ -2506,6 +2506,20 @@ import EndgameChess
 #print axioms EndgameChess.Rules.LoneKing.safe_reply
 #print axioms EndgameChess.Rules.LoneKing.unprotected_capture
 #print axioms EndgameChess.Rules.LoneKing.force_weak_safe
+#print axioms EndgameChess.Rules.KQK.wall_prepare_bound
+#print axioms EndgameChess.Rules.KQK.wall_band_ninety_one
+#print axioms EndgameChess.Rules.KQK.wall_ninety_one
+#print axioms EndgameChess.Rules.KQK.prepared_bound
+#print axioms EndgameChess.Rules.KQK.prepared_seventy_seven
+#print axioms EndgameChess.Rules.KQK.framed_weak_not_check
+#print axioms EndgameChess.Rules.KQK.separating_rank_bound
+#print axioms EndgameChess.Rules.KQK.wall_weak_ninety_two
+#print axioms EndgameChess.Rules.KQK.wall_reply_exists
+#print axioms EndgameChess.Rules.KQK.wall_far_reply_exists
+#print axioms EndgameChess.Rules.KQK.wall_reply
+#print axioms EndgameChess.Rules.KQK.prepared_king_step
+#print axioms EndgameChess.Rules.KQK.prepared_queen_step
+#print axioms EndgameChess.Rules.KQK.prepared_raise_bound
 #print axioms EndgameChess.Rules.KQK.between_self
 #print axioms EndgameChess.Rules.KQK.between_end
 #print axioms EndgameChess.Rules.KQK.path_clear
@@ -2518,6 +2532,7 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.force_weak_safe
 #print axioms EndgameChess.Rules.KQK.no_weak_force
 #print axioms EndgameChess.Rules.KQK.unsafe_weak_no_forcing
+#print axioms EndgameChess.Rules.KQK.clear_wall_entry
 #print axioms EndgameChess.Rules.KQK.strong_reply
 #print axioms EndgameChess.Rules.KQK.edge_reply_exists
 #print axioms EndgameChess.Rules.KQK.edge_reply
@@ -2533,6 +2548,9 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.edge_wall_bound
 #print axioms EndgameChess.Rules.KQK.edge_wall_twenty_five
 #print axioms EndgameChess.Rules.KQK.edge_wall_weak_bound
+#print axioms EndgameChess.Rules.KQK.separating_wall_far_king_example
+#print axioms EndgameChess.Rules.KQK.rank_four_corner_example
+#print axioms EndgameChess.Rules.KQK.left_rank_five_knight_example
 #print axioms EndgameChess.Rules.KQK.corner_example_bound
 #print axioms EndgameChess.Rules.KQK.stalemate_example_no_force
 #print axioms EndgameChess.Rules.KQK.shadow_example_bound
@@ -2542,6 +2560,7 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.top_left_entry_example_bound
 #print axioms EndgameChess.Rules.KQK.corner_evacuation_example_bound
 #print axioms EndgameChess.Rules.KQK.direct_evacuation_stalemate
+#print axioms EndgameChess.Rules.KQK.far_file_preparation
 #print axioms EndgameChess.Rules.KQK.unframe_bound
 #print axioms EndgameChess.Rules.KQK.framed_edge_wall_bound
 #print axioms EndgameChess.Rules.KQK.framed_prison_bound
@@ -2556,6 +2575,9 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.interior_escape_geometry
 #print axioms EndgameChess.Rules.KQK.interior_reply_exists
 #print axioms EndgameChess.Rules.KQK.stalemate_boundary
+#print axioms EndgameChess.Rules.KQK.knight_prison_bound
+#print axioms EndgameChess.Rules.KQK.knight_box_weak_bound
+#print axioms EndgameChess.Rules.KQK.corner_knight_rescue
 #print axioms EndgameChess.Rules.KQK.queen_move
 #print axioms EndgameChess.Rules.KQK.king_move
 #print axioms EndgameChess.Rules.KQK.weak_move
@@ -2563,6 +2585,9 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.prison_reply
 #print axioms EndgameChess.Rules.KQK.prison_bound
 #print axioms EndgameChess.Rules.KQK.prison_weak_bound
+#print axioms EndgameChess.Rules.KQK.left_knight_rescue
+#print axioms EndgameChess.Rules.KQK.rank_five_knight_bound
+#print axioms EndgameChess.Rules.KQK.rank_five_corner_bound
 #print axioms EndgameChess.Rules.KQK.framed_shadow_strong_bound
 #print axioms EndgameChess.Rules.KQK.framed_shadow_weak_bound
 #print axioms EndgameChess.Rules.KQK.vertical_shadow_entry

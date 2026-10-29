@@ -247,6 +247,99 @@ premises. This stronger entry theorem removes the *input* restriction
 by moving the king first; it does not silently drop those premises.
 Arbitrary queen setup and entry from the rest of the board remain open.
 
+## General separating rank and monotone drive (Lean proved)
+
+The new route in `BandGeometry`, `KnightPrison`, `RankFive`,
+`BandProgress`, `BandRaise`, `BandForce`, `BandEntry`, `BandFrames` and
+`ClearWallEntry` removes the absolute king-coordinate restriction of the
+shadow argument. Coordinates remain zero-based. A strict upper-right wall is
+
+\[
+ K_y<Q_y<W_y,\qquad Q_x<W_x.
+\]
+
+For a strong-turn board whose weak king is not in check, **every such wall
+forces mate within 91 plies**. `separating_rank_bound` also covers the weak
+king to the left of the queen, by reflection. These are arbitrary exact
+KQK boards with these geometric premises, not just the earlier low-king
+families. The proof does not claim that every starting board already has
+a separating wall.
+
+First prepare the king at rank `Q_y-1` and file `Q_x`, keeping the queen
+fixed. A weak move cannot cross either queen ray; the strong king remains
+below the rank ray. In a prepared board maintain
+
+\[
+ K_y+1=Q_y\le5,\qquad Q_x\le K_x\le W_x,\qquad Q_x<W_x,
+ \qquad Q_y<W_y.
+\]
+
+Use the natural-number potential
+
+\[
+ P(K,Q)=2(7-K_x)+2(7-Q_x)+4(5-Q_y).
+\]
+
+* If the king is at least two files behind, advance it one file. All weak
+  replies leave it no farther right than the weak king. This defended pair
+  decreases `P` by two.
+* Otherwise, if the queen is at least two files behind the weak king,
+  slide it to file `W_x-1`. The nearby king protects the target. Every weak
+  reply stays to its right, and `P` decreases by at least two. The rank-five
+  top-right corner is handled before a slide that would stalemate.
+* Once the queen is exactly one file behind, a nonchecking strong-turn
+  board has `W_y>=Q_y+2`. Below queen rank five, move the king diagonally
+  up onto the weak king's old file. Every weak reply remains at least two
+  ranks above the old queen rank. Then raise the queen one rank, protected
+  by the king. This four-ply transition preserves the prepared conditions
+  and decreases `P` by at least four.
+
+Preparing the queen **exactly one** file behind before raising it matters:
+with a two-file gap the intervening weak reply can move onto the new queen
+file and escape to its other side. The formal strategy performs the file
+preparation first; it does not assume this escape away.
+
+Queen rank five and the rank-four right-edge transition have direct finishes
+costing at most 33 plies. The top-right knight prison `Q=(5,5)`,
+`W in {(6,7),(7,6)}`, with `K_y<=4`, finishes in 29 plies. A king tempo
+selects the top-rank reply, then the queen widens the wall to `(4,6)`.
+The narrow corner `Q=(6,5), W=(7,7)` is repaired by a queen check first.
+The left boundary has a reflected-corner/two-reply fork repair. These
+escape arguments are general geometric lemmas; they are not a computed
+position catalogue.
+
+The prepared bound is `P+33<=77`. Charge king preparation and this bound
+together, rather than adding their independent maxima. The verified cost is
+
+\[
+ 2\bigl(Q_y-1-K_y+|K_x-Q_x|\bigr)
+ +4(7-Q_x)+4(5-Q_y)+33\le91.
+\]
+
+The exceptional rank-five corner and rank-six walls finish separately
+inside the same 91-ply ceiling. Weak replies are explicitly nonempty in
+every nonterminal recursive branch. The geometric escape witnesses cover
+the whole band; no finite board enumeration is used in the proof.
+
+`clear_wall_entry` additionally proves a 93-ply entry bound when the kings
+have a rank gap of at least two, the queen's vertical slide is clear, and
+the queen and weak king have a file gap of at least three. This margin
+retains a reply even on queen rank six. It is an entry subfamily, not yet
+the universal setup theorem.
+
+`FarFilePreparation` proves a first off-rank setup move without assuming
+that a fixed far-file square is safe from stalemate. Orient the weak king
+at file at least four, with a rank gap of at least two. If the queen is off
+both kings' ranks and not already on file zero or one, choose one of those
+two files. A horizontal weak escape at its current rank stays beyond the
+strong king's reach; at most one of the two queen files sees it diagonally.
+Choose the other. The queen is distant, an explicit weak reply exists,
+and every legal reply retains the queen, leaves the weak king at file at
+least three and at least one rank above the strong king, and keeps it off
+the queen rank. This is a proved preparation transition; its remaining
+blocked-file/one-rank-gap branches have not yet been composed into a
+universal entry bound.
+
 ## Remaining global entry and outcome proof
 
 Establish a general entry strategy from every fresh legal strong-turn KQK

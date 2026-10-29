@@ -2,10 +2,35 @@ import EndgameChess.Rules.KQK.FramedFinish
 import EndgameChess.Rules.KQK.ShadowForce
 import EndgameChess.Rules.KQK.Staircase
 import EndgameChess.Rules.KQK.EdgeEntry
+import EndgameChess.Rules.KQK.ClearWallEntry
 
 /-! A few kernel-checked non-vacuity/control examples, not a position table. -/
 namespace EndgameChess.Rules.KQK
 open EndgameChess.KK
+
+/-- The full preparation cost is exercised with the strong king at the
+opposite end of the queen rank. -/
+theorem separating_wall_far_king_example :
+    MateWithin .white 91 (pos .white (7,0) (0,1) (7,7) .white) := by
+  apply wall_ninety_one
+  · exact ⟨by decide,by decide,by decide,rfl⟩
+  · rfl
+  · unfold Wall; decide
+  · decide
+
+/-- Raising rank four at the right edge uses the corner repair. -/
+theorem rank_four_corner_example :
+    MateWithin .white 39 (pos .white (7,3) (6,4) (7,7) .white) := by
+  have h := prepared_bound (q := pos .white (7,3) (6,4) (7,7) .white)
+    (σ := .white) (sk := (7,3)) (qs := (6,4)) (wk := (7,7))
+    ⟨by decide,by decide,by decide,rfl⟩ rfl
+    ⟨by unfold Wall; decide,by decide,rfl,by decide,by decide⟩ (by decide)
+  exact h
+
+/-- The left-boundary knight offset needs its two-reply fork repair. -/
+theorem left_rank_five_knight_example :
+    MateWithin .white 33 (pos .white (0,4) (0,5) (1,7) .white) := by
+  exact left_knight_rescue ⟨by decide,by decide,by decide,rfl⟩ rfl (by decide) rfl rfl rfl rfl
 
 def cornerExample : Position := pos .white (0,0) (4,6) (6,7) .white
 
