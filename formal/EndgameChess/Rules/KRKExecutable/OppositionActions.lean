@@ -44,14 +44,26 @@ theorem oppositionFollow_sound {q : Position} {σ : Colour}
     (hty : t.2.val=wk.2.val+1)
     (htx : absDiff t.1.val wk.1.val≤1) :
     ∃ u, Legal q u ∧
-      Matches u σ ⟨oppositionFollowDestination sk (by omega),rs,t,false⟩ ∧
+      Matches u σ ⟨oppositionFollowDestination sk (by
+      have hw := ho.2
+      have ht := wk.2.isLt
+      omega),rs,t,false⟩ ∧
       (∃ v, Legal u v) ∧ ∀ v, Legal u v →
-        ∃ w, Matches v σ ⟨oppositionFollowDestination sk (by omega),rs,w,true⟩ ∧
-          DistantBarrier (oppositionFollowDestination sk (by omega)) rs w ∧
+        ∃ w, Matches v σ ⟨oppositionFollowDestination sk (by
+      have hw := ho.2
+      have ht := wk.2.isLt
+      omega),rs,w,true⟩ ∧
+          DistantBarrier (oppositionFollowDestination sk (by
+      have hw := ho.2
+      have ht := wk.2.isLt
+      omega)) rs w ∧
           7-w.2.val<7-wk.2.val := by
   obtain ⟨su,u,hsx,hsy,hl,hmu,hne,hall⟩ :=
     krk_follow_check hq ho hf hy hty htx
-  have heq : su=oppositionFollowDestination sk (by omega) := by
+  have heq : su=oppositionFollowDestination sk (by
+      have hw := ho.2
+      have ht := wk.2.isLt
+      omega) := by
     apply Prod.ext
     · apply Fin.ext
       exact hsx
