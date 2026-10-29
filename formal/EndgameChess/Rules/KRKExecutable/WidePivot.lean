@@ -66,4 +66,57 @@ theorem pivotRightCut_sound {q : Position} {σ : Colour}
     omega
   exact ⟨t,hmt,hwxt,hty,by simp only [nr,pivotRightDestination,dInf,absDiff]; omega⟩
 
+/-- Left-oriented counterpart of the right protected rook cut; it is the
+concrete mirrored branch of the frozen KRKCentral.pivot_bound construction. -/
+def pivotLeftDestination (sk rs : Square) (h : 0<sk.1.val) : Square :=
+  (⟨sk.1.val-1,by omega⟩,rs.2)
+
+/-- A far-left weak king either already faces the guarded vertical rook cut,
+or one explicit left-rook slide creates it, with all weak replies left of the
+new rook file and above its rank. -/
+theorem pivotLeftCut_sound {q : Position} {σ : Colour}
+    {sk rs wk : Square}
+    (hq : Matches q σ ⟨sk,rs,wk,true⟩)
+    (hsy : sk.2.val+1=rs.2.val)
+    (hwy : wk.2.val=rs.2.val+1)
+    (hs : sk.1.val=3 ∨ sk.1.val=4)
+    (hx : wk.1.val+2≤sk.1.val) :
+    let nr := pivotLeftDestination sk rs (by omega)
+    nr=rs ∨
+    (∃ c, Legal q c ∧ Matches c σ ⟨sk,nr,wk,false⟩ ∧
+      (∃ v, Legal c v) ∧
+      ∀ v, Legal c v →
+        ∃ t, Matches v σ ⟨sk,nr,t,true⟩ ∧
+          t.1.val<nr.1.val ∧ nr.2.val<t.2.val ∧
+          dInf sk nr=1) := by
+  dsimp
+  let nr : Square := pivotLeftDestination sk rs (by omega)
+  have hnrx : nr.1.val=sk.1.val-1 := rfl
+  have hnry : nr.2=rs.2 := rfl
+  by_cases he : nr=rs
+  · exact Or.inl he
+  right
+  have hs2 : StepM ⟨sk,rs,wk,true⟩ ⟨sk,nr,wk,false⟩ := by
+    refine StepM.rook ?_ ?_ ?_ ?_ ?_ ?_ <;>
+      simp only [nr,pivotLeftDestination,RookLine,OnSeg,ne_iff_coords,
+        dInf,absDiff,and_true,or_true] at * <;> omega
+  obtain ⟨c,hl,hm⟩ := step_sound hq hs2
+  obtain ⟨t,ht⟩ := krk_box_reply_exists (sk := sk) (rs := nr) (wk := wk)
+    (lo := 0) (hi := nr.1.val-1)
+    (by change sk.2.val+1=rs.2.val; exact hsy)
+    (by change rs.2.val<wk.2.val; omega)
+    (by omega) (by omega) (Or.inr (by omega)) (by omega) (by omega)
+  obtain ⟨v,hv,_⟩ := step_sound hm ht
+  refine ⟨c,hl,hm,⟨v,hv⟩,?_⟩
+  intro z hz
+  obtain ⟨t,hmt,hty,hunit,hxt⟩ := krk_box_reply_region hm
+    (by change sk.2.val+1=rs.2.val; exact hsy)
+    (by change rs.2.val<wk.2.val; omega)
+    (by simp only [nr,pivotLeftDestination,dInf,absDiff]; omega) hz
+  have hwxt : t.1.val<nr.1.val := by
+    simp only [absDiff] at hunit
+    omega
+  exact ⟨t,hmt,hwxt,hty,by
+    simp only [nr,pivotLeftDestination,dInf,absDiff]; omega⟩
+
 end EndgameChess.Rules.KRKExecutable
