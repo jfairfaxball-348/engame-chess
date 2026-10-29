@@ -15,14 +15,17 @@ This is a **material-class roadmap**, not a session log. [The live work note](..
 | K+B vs K | Draw/dead-position results frozen | None within proved scope |
 | K+N vs K | Draw/dead-position results frozen | None within proved scope |
 | **K+R vs K** | **Complete (outcome target).** Dead/live; WDL for every position with 97/98-ply bound (EC-T0019, EC-T0048); exact distances through 13/14 plies (EC-T0049) | Optional only: exact distance to mate beyond 14 plies |
-| K+Q vs K | Not started | Full class proof + Lean |
+| **K+Q vs K** | **Complete (outcome target).** Every fresh legal position, both colours/turns; actual winning/holding, dead/live, 97/98-ply bounds (EC-T0050) | Optional only: exact distance to mate |
 | K+P vs K | Not started | Full class proof + Lean |
 | Four-piece classes | Not started | All material classes and positions |
 | Five-piece classes | Not started | All material classes and positions |
 | Six-piece classes | Not started | All material classes and positions |
 | Seven-piece classes | Not started | All material classes and positions |
 
-KRK work is **not closed**: 49 frozen bundles are not 49 solved material classes. The class-level programme goes KRK → KQK → KPK → systematically larger material classes, subject to owner selection. Piece count includes both kings.
+**KRK and KQK are complete under the current outcome target.** Frozen
+bundles are not counts of solved material classes. The remaining class-level
+programme goes KPK → systematically larger classes, subject to owner
+selection. Piece count includes both kings. KPK has not been started.
 
 ## What counts as completion
 1. **Dead/live:** Whether checkmate remains legally possible, including capture/dead-position boundaries.
@@ -30,6 +33,8 @@ KRK work is **not closed**: 49 frozen bundles are not 49 solved material classes
 3. **Strategic justification:** General mathematical proof accounting for all defences and legal alternatives; never merely an oracle or enumeration.
 4. **Distance:** A proved move bound sufficient for the 50-move rule. Exact DTZ50 is optional.
 
-A partial KRK family can be frozen while the overall class stays open. Stop after KRK before advancing to KQK without owner direction. For KRK, see [KRK status](KRK_COMPLETION.md).
+Partial families can be frozen without closing a class. Do not begin a new
+class without owner selection. See [KRK status](KRK_COMPLETION.md) and
+[KQK status](KQK_COMPLETION.md). Exact-distance catalogues are not closure gates.
 
 Only edit this file when coverage or the intended class order materially changes. **No session-by-session appendices, repeated progress tables or administrative milestones.**

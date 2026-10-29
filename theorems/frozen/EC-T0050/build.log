@@ -1,0 +1,1896 @@
+✔ [2/501] Built EndgameChess.KK (1.9s)
+✔ [3/501] Built EndgameChess.Rules.Board (757ms)
+✔ [4/501] Built EndgameChess.Rules.Position (736ms)
+✔ [5/501] Built EndgameChess.Rules.Moves (787ms)
+✔ [6/501] Built EndgameChess.KBK (7.8s)
+✔ [7/501] Built EndgameChess.Rules.Lemmas (11s)
+✔ [8/501] Built EndgameChess.Rules.Sanity (11s)
+✔ [9/501] Built EndgameChess.Rules.AgreeKK (1.0s)
+✔ [10/501] Built EndgameChess.Rules.AgreeKBK (7.4s)
+✔ [11/501] Built EndgameChess.Rules.Flags (748ms)
+✔ [12/501] Built EndgameChess.Rules.Reach (780ms)
+✔ [13/501] Built EndgameChess.Rules.Outcome (648ms)
+✔ [14/501] Built EndgameChess.Rules.RawTrace.Definitions (698ms)
+✔ [15/501] Built EndgameChess.Rules.RawTrace.Append (1.0s)
+✔ [16/501] Built EndgameChess.Rules.RawTrace.Soundness (951ms)
+✔ [17/501] Built EndgameChess.Rules.RawTrace.Completeness (950ms)
+✔ [18/501] Built EndgameChess.Rules.RawTrace.Origin (992ms)
+✔ [19/501] Built EndgameChess.Rules.RawTrace.ExtensionDefinitions (951ms)
+✔ [20/501] Built EndgameChess.Rules.RawOccurrences.Definitions (760ms)
+✔ [21/501] Built EndgameChess.Rules.RawTrace.Prepend (797ms)
+✔ [22/501] Built EndgameChess.Rules.RawOccurrences.Append (626ms)
+✔ [23/501] Built EndgameChess.Rules.ForcingDefinitions (6.9s)
+✔ [24/501] Built EndgameChess.Rules.KNK (7.0s)
+✔ [25/501] Built EndgameChess.Rules.ForceMate (736ms)
+✔ [26/501] Built EndgameChess.Rules.HistoryLayer.Definitions (734ms)
+✔ [27/501] Built EndgameChess.Rules.RawClock.Definitions (743ms)
+✔ [28/501] Built EndgameChess.Rules.HistoryLayer.Projection (1.1s)
+✔ [29/501] Built EndgameChess.Rules.RawClock.LegalEvent (1.1s)
+✔ [30/501] Built EndgameChess.Rules.RawClock.CastleEmpty (1.1s)
+✔ [31/501] Built EndgameChess.Rules.RawClock.LengthBound (1.1s)
+✔ [32/501] Built EndgameChess.Rules.RawClock.EventCases (1.1s)
+✔ [33/501] Built EndgameChess.Rules.RawClock.Append (1.1s)
+✔ [34/501] Built EndgameChess.Rules.RawRepetition.Definitions (1.1s)
+✔ [35/501] Built EndgameChess.Rules.HistoryLayer.ForcingProjection (811ms)
+✔ [36/501] Built EndgameChess.Rules.RawClock.StepBound (827ms)
+✔ [37/501] Built EndgameChess.Rules.RawRepetition.EffectiveEP (1.0s)
+✔ [38/501] Built EndgameChess.Rules.RawRepetition.EPCharacterization (1.0s)
+✔ [39/501] Built EndgameChess.Rules.RawRepetition.NormalizationDefinitions (1.0s)
+✔ [40/501] Built EndgameChess.Rules.RawRepetition.OrdinaryEP (1.0s)
+✔ [41/501] Built EndgameChess.Rules.KRK (3.3s)
+✔ [42/501] Built EndgameChess.Rules.RawClock.ExtensionBound (678ms)
+✔ [43/501] Built EndgameChess.Rules.RawRepetition.KeyDefinitions (655ms)
+✔ [44/501] Built EndgameChess.Rules.RawRepetition.Normalization (711ms)
+✔ [45/501] Built EndgameChess.Rules.RawClock.BudgetCertificate (689ms)
+✔ [46/501] Built EndgameChess.Rules.RawRepetition.OccurrenceDefinitions (672ms)
+✔ [47/501] Built EndgameChess.Rules.RawRepetition.KeyCongruence (704ms)
+✔ [48/501] Built EndgameChess.Rules.RawRepetition.CurrentAppend (664ms)
+✔ [49/501] Built EndgameChess.Rules.RawClaims.Definitions (665ms)
+✔ [50/501] Built EndgameChess.Rules.RawAdjudication.Definitions (685ms)
+✔ [51/501] Built EndgameChess.Rules.StoppedHistory.Definitions (707ms)
+✔ [52/501] Built EndgameChess.Rules.RawClaims.Certificate (754ms)
+✔ [53/501] Built EndgameChess.Rules.RawClaims.ExclusionCharacterization (769ms)
+✔ [54/501] Built EndgameChess.Rules.RawAdjudication.Ongoing (723ms)
+✔ [55/501] Built EndgameChess.Rules.StoppedHistory.AppendLifting (652ms)
+✔ [56/501] Built EndgameChess.Rules.RawHistoryLayer.Definitions (573ms)
+✔ [57/501] Built EndgameChess.Rules.RawHistoryLayer.Projection (748ms)
+✔ [58/501] Built EndgameChess.Rules.RawHistoryLayer.BudgetLifting (777ms)
+✔ [59/501] Built EndgameChess.Rules.KRKLive.Basic (19s)
+✔ [60/501] Built EndgameChess.Rules.LoneKing.Material (4.5s)
+✔ [61/501] Built EndgameChess.Rules.KRKLive.Endgame (4.5s)
+✔ [62/501] Built EndgameChess.Rules.LoneKing.Moves (727ms)
+✔ [63/501] Built EndgameChess.Rules.KRKLive.Reply (77s)
+✔ [64/501] Built EndgameChess.Rules.KRKLive.Relocation (6.4s)
+✔ [65/501] Built EndgameChess.Rules.KRKLive.Main (1.2s)
+✔ [66/501] Built EndgameChess.Rules.KRKTermination.Definitions (658ms)
+✔ [67/501] Built EndgameChess.Rules.KRKConfinement (827ms)
+✔ [68/501] Built EndgameChess.Rules.KRKTermination.Guard (645ms)
+✔ [69/501] Built EndgameChess.Rules.KRKForcing.Safety (836ms)
+✔ [70/501] Built EndgameChess.Rules.KQK.Basic (801ms)
+✔ [71/501] Built EndgameChess.Rules.KRKTermination.Maximal (793ms)
+✔ [72/501] Built EndgameChess.Rules.KRKBox.Definitions (776ms)
+✔ [73/501] Built EndgameChess.Rules.KQK.Moves (879ms)
+✔ [74/501] Built EndgameChess.Rules.KRKForcingExamples (2.7s)
+✔ [75/501] Built EndgameChess.Rules.KQK.Geometry (1.7s)
+✔ [76/501] Built EndgameChess.Rules.KRKBox.Reply (6.3s)
+✔ [77/501] Built EndgameChess.Rules.KRKBox.Region (753ms)
+✔ [78/501] Built EndgameChess.Rules.KRKBox.Phase (1.0s)
+✔ [79/501] Built EndgameChess.Rules.KRKBox.Cost (771ms)
+✔ [80/501] Built EndgameChess.Rules.KRKBox.Cycle (2.7s)
+✔ [81/501] Built EndgameChess.Rules.KRKForcing.CaptureSafety (30s)
+✔ [82/501] Built EndgameChess.Rules.KRKForcing.CheckProgress (30s)
+✔ [83/501] Built EndgameChess.Rules.KRKForcing.OrdinaryMoves (882ms)
+✔ [84/501] Built EndgameChess.Rules.KRKForcing.StrategyTransport (941ms)
+✔ [85/501] Built EndgameChess.Rules.KQK.Complete (1.0s)
+✔ [86/501] Built EndgameChess.Rules.KQK.CaptureBoundary (731ms)
+✔ [87/501] Built EndgameChess.Rules.KQK.InteriorEscape (46s)
+✔ [88/501] Built EndgameChess.Rules.KRKForcing.Examples (25s)
+✔ [89/501] Built EndgameChess.Rules.KRKForcing.PhaseImage (25s)
+✔ [90/501] Built EndgameChess.Rules.KRKForcing.RankAdvance (9.6s)
+✔ [91/501] Built EndgameChess.Rules.KRKForcing.RookRescue (13s)
+✔ [92/501] Built EndgameChess.Rules.KRKForcing.RankAdvanceRescue (768ms)
+✔ [93/501] Built EndgameChess.Rules.KRKForcing.ReentryExamples (9.6s)
+✔ [94/501] Built EndgameChess.Rules.KRKForcing.WallActions (9.7s)
+✔ [95/501] Built EndgameChess.Rules.KRKForcing.TwoFileCheck (825ms)
+✔ [96/501] Built EndgameChess.Rules.KRKForcing.PursuitGeometry (867ms)
+✔ [97/501] Built EndgameChess.Rules.KRKForcing.LowerPursuit (2.6s)
+✔ [98/501] Built EndgameChess.Rules.KRKForcing.WallForce (1.3s)
+✔ [99/501] Built EndgameChess.Rules.KRKForcing.WallEntry (749ms)
+✔ [100/501] Built EndgameChess.Rules.KRKForcing.WallExamples (6.5s)
+✔ [101/501] Built EndgameChess.Rules.KRKForcing.AxisWalls (6.6s)
+✔ [102/501] Built EndgameChess.Rules.KRKForcing.ClearEntry (8.1s)
+✔ [103/501] Built EndgameChess.Rules.KRKMateGeometry (8.2s)
+✔ [104/501] Built EndgameChess.Rules.KRKForcing.OffRankSetup (16s)
+✔ [105/501] Built EndgameChess.Rules.KRKForcing.SameRankSetup (7.4s)
+✔ [106/501] Built EndgameChess.Rules.KRKForcing.SafeSetup (729ms)
+✔ [107/501] Built EndgameChess.Rules.KRKBound.Choose (655ms)
+✔ [108/501] Built EndgameChess.Rules.KRKForcing.OutcomeClassification (672ms)
+✔ [109/501] Built EndgameChess.Rules.KRKBound.Defend (631ms)
+✔ [110/501] Built EndgameChess.Rules.KRKForcing.SetupExamples (712ms)
+✔ [111/501] Built EndgameChess.Rules.KRKBound.Pair (587ms)
+✔ [112/501] Built EndgameChess.Rules.KRKStrategy.KeyInterface (725ms)
+✔ [113/501] Built EndgameChess.Rules.KRKStrategy.KeyBudget (707ms)
+✔ [114/501] Built EndgameChess.Rules.KRKStrategy.LeastBudget (690ms)
+✔ [115/501] Built EndgameChess.Rules.KRKBound.Budget (2.3s)
+✔ [116/501] Built EndgameChess.Rules.KQK.Symmetry (2.3s)
+✔ [117/501] Built EndgameChess.Rules.KRKStrategy.RankDefinitions (674ms)
+✔ [118/501] Built EndgameChess.Rules.KRKBound.Definitions (795ms)
+✔ [119/501] Built EndgameChess.Rules.KRKBound.Transport (837ms)
+✔ [120/501] Built EndgameChess.Rules.KRKStrategy.RankSpec (722ms)
+✔ [121/501] Built EndgameChess.Rules.KRKSharper.Definitions (751ms)
+✔ [122/501] Built EndgameChess.Rules.KRKCentral.Definitions (758ms)
+✔ [123/501] Built EndgameChess.Rules.KRKStrategy.RankKey (752ms)
+✔ [124/501] Built EndgameChess.Rules.KRKCentral.KingBelow (931ms)
+✔ [125/501] Built EndgameChess.Rules.KRKStrategy.Definitions (743ms)
+✔ [126/501] Built EndgameChess.Rules.KQK.Edge (5.2s)
+✔ [127/501] Built EndgameChess.Rules.KRKCentral.RankTwo (986ms)
+✔ [128/501] Built EndgameChess.Rules.KRKStrategy.Progress (914ms)
+✔ [129/501] Built EndgameChess.Rules.KQK.EdgeForce (1.6s)
+✔ [130/501] Built EndgameChess.Rules.KRKStrategy.Terminal (971ms)
+✔ [131/501] Built EndgameChess.Rules.KRKStrategy.Line (999ms)
+✔ [132/501] Built EndgameChess.Rules.KRKBound.Pursuit (3.0s)
+✔ [133/501] Built EndgameChess.Rules.FreshGame.Definitions (888ms)
+✔ [134/501] Built EndgameChess.Rules.KRKBound.LowerBand (859ms)
+✔ [135/501] Built EndgameChess.Rules.KRKCentral.BackEven (2.1s)
+✔ [136/501] Built EndgameChess.Rules.KRKSharper.Pursuit (4.4s)
+✔ [137/501] Built EndgameChess.Rules.KQK.Prison (1.8s)
+✔ [138/501] Built EndgameChess.Rules.FreshGame.Lifting (851ms)
+✔ [139/501] Built EndgameChess.Rules.KRKSharper.LowerBand (849ms)
+✔ [140/501] Built EndgameChess.Rules.KQK.FramedFinish (869ms)
+✔ [141/501] Built EndgameChess.Rules.FreshGame.Holding (871ms)
+✔ [142/501] Built EndgameChess.Rules.KRKCentral.Back (2.3s)
+✔ [143/501] Built EndgameChess.Rules.KRKBound.Wall (2.7s)
+✔ [144/501] Built EndgameChess.Rules.FreshGame.Winning (1.1s)
+✔ [145/501] Built EndgameChess.Rules.KRKBound.WallCeiling (876ms)
+✔ [146/501] Built EndgameChess.Rules.KRKCentral.Positive (2.0s)
+✔ [147/501] Built EndgameChess.Rules.KRKBound.AxisWall (958ms)
+✔ [148/501] Built EndgameChess.Rules.KRKBound.Entry (994ms)
+✔ [149/501] Built EndgameChess.Rules.KRKSharper.Wall (3.5s)
+✔ [150/501] Built EndgameChess.Rules.KQK.ShadowGeometry (3.8s)
+✔ [151/501] Built EndgameChess.Rules.KQK.EdgeEntry (3.9s)
+✔ [152/501] Built EndgameChess.Rules.KRKBound.AxisEntry (752ms)
+✔ [153/501] Built EndgameChess.Rules.KRKCentral.WaitEven (1.1s)
+✔ [154/501] Built EndgameChess.Rules.KRKSharper.AxisWall (787ms)
+✔ [155/501] Built EndgameChess.Rules.KRKBound.ClearEntry (1.0s)
+✔ [156/501] Built EndgameChess.Rules.KRKCentral.Central (1.6s)
+✔ [157/501] Built EndgameChess.Rules.KRKBound.ClearAxisEntry (771ms)
+✔ [158/501] Built EndgameChess.Rules.KQK.ShadowExit (2.3s)
+✔ [159/501] Built EndgameChess.Rules.KQK.BandGeometry (2.4s)
+✔ [160/501] Built EndgameChess.Rules.KRKBound.HorizontalEntry (973ms)
+✔ [161/501] Built EndgameChess.Rules.KRKCentral.Restoration (2.6s)
+✔ [162/501] Built EndgameChess.Rules.KQK.KnightPrison (1.8s)
+✔ [163/501] Built EndgameChess.Rules.KQK.ShadowForce (2.3s)
+✔ [164/501] Built EndgameChess.Rules.KRKCentral.SmallCentral (1.8s)
+✔ [165/501] Built EndgameChess.Rules.KQK.RankFive (1.9s)
+✔ [166/501] Built EndgameChess.Rules.KQK.Setup (2.6s)
+✔ [167/501] Built EndgameChess.Rules.KQK.BandProgress (1.5s)
+✔ [168/501] Built EndgameChess.Rules.KRKCentral.Column (2.5s)
+✔ [169/501] Built EndgameChess.Rules.KQK.Staircase (1.9s)
+✔ [170/501] Built EndgameChess.Rules.KRKCentral.ExitStep (850ms)
+✔ [171/501] Built EndgameChess.Rules.KQK.BandRaise (2.1s)
+✔ [172/501] Built EndgameChess.Rules.KRKCentral.ColumnWall (770ms)
+✔ [173/501] Built EndgameChess.Rules.KQK.BandForce (1.3s)
+✔ [174/501] Built EndgameChess.Rules.KRKCentral.Guarded (2.4s)
+✔ [175/501] Built EndgameChess.Rules.KQK.BandEntry (1.6s)
+✔ [176/501] Built EndgameChess.Rules.KQK.BandFrames (821ms)
+✔ [177/501] Built EndgameChess.Rules.KRKCentral.Pivot (1.2s)
+✔ [178/501] Built EndgameChess.Rules.KQK.ClearWallEntry (906ms)
+✔ [179/501] Built EndgameChess.Rules.KRKCentral.ReadyCut (2.2s)
+✔ [180/501] Built EndgameChess.Rules.KQK.Examples (2.3s)
+✔ [181/501] Built EndgameChess.Rules.KQK.FarFilePreparation (2.2s)
+✔ [182/501] Built EndgameChess.Rules.KRKCentral.FullCut (749ms)
+✔ [183/501] Built EndgameChess.Rules.KRKCentral.Costs (739ms)
+✔ [184/501] Built EndgameChess.Rules.KRKCentral.Full (946ms)
+✔ [185/501] Built EndgameChess.Rules.KQK.EntryGeometry (1.9s)
+✔ [186/501] Built EndgameChess.Rules.KRKCentral.Ready (856ms)
+✔ [187/501] Built EndgameChess.Rules.KRKCentral.PrepDefinitions (663ms)
+✔ [188/501] Built EndgameChess.Rules.KQK.SetupCorners (2.9s)
+✔ [189/501] Built EndgameChess.Rules.KRKCentral.PrepPair (1.7s)
+✔ [190/501] Built EndgameChess.Rules.KRKCentral.Prep (2.1s)
+✔ [191/501] Built EndgameChess.Rules.KRKBound.OffRank (21s)
+✔ [192/501] Built EndgameChess.Rules.KRKCentral.Wall (807ms)
+✔ [193/501] Built EndgameChess.Rules.KRKBound.WeakWall (641ms)
+✔ [194/501] Built EndgameChess.Rules.KQK.EntryFrames (3.6s)
+✔ [195/501] Built EndgameChess.Rules.KRKBound.SameRankFile (694ms)
+✔ [196/501] Built EndgameChess.Rules.KQK.OrientedEntry (1.3s)
+✔ [197/501] Built EndgameChess.Rules.KRKBound.RankZeroReply (803ms)
+✔ [198/501] Built EndgameChess.Rules.KRKBound.SetupGeometry (648ms)
+✔ [199/501] Built EndgameChess.Rules.KRKBound.ProtectedEntry (1.0s)
+✔ [200/501] Built EndgameChess.Rules.KQK.TightEntry (2.6s)
+✔ [201/501] Built EndgameChess.Rules.KQK.FarFileEntry (815ms)
+✔ [202/501] Built EndgameChess.Rules.KQK.SameRankEntry (1.5s)
+✔ [203/501] Built EndgameChess.Rules.KQK.StrongEntry (754ms)
+✔ [204/501] Built EndgameChess.Rules.KQK.BoardOutcome (663ms)
+✔ [205/501] Built EndgameChess.Rules.KQK.FreshOutcome (672ms)
+✔ [206/501] Built EndgameChess.Rules.KQK.FreshExamples (763ms)
+✔ [207/501] Built EndgameChess.Rules.KRKBound.SameRank (7.2s)
+✔ [208/501] Built EndgameChess.Rules.KRKBound.BackRank (1.5s)
+✔ [209/501] Built EndgameChess.Rules.KRKBound.PositiveSetup (735ms)
+✔ [210/501] Built EndgameChess.Rules.KRKBound.NotCheck (623ms)
+✔ [211/501] Built EndgameChess.Rules.KRKBound.Arrival (581ms)
+✔ [212/501] Built EndgameChess.Rules.KRKStrategy.KRK (662ms)
+✔ [213/501] Built EndgameChess.Rules.KRKSetup.Definitions (611ms)
+✔ [214/501] Built EndgameChess.Rules.KRKHistory.Definitions (686ms)
+✔ [215/501] Built EndgameChess.Rules.KRKSetup.AxisWall (702ms)
+✔ [216/501] Built EndgameChess.Rules.KRKSetup.UniformWall (713ms)
+✔ [217/501] Built EndgameChess.Rules.KRKHistory.Append (632ms)
+✔ [218/501] Built EndgameChess.Rules.KRKSetup.ClearEntry (805ms)
+✔ [219/501] Built EndgameChess.Rules.KRKSetup.ClearAxisEntry (616ms)
+✔ [220/501] Built EndgameChess.Rules.KRKHistory.Lifting (838ms)
+✔ [221/501] Built EndgameChess.Rules.KRKHistory.Wall (699ms)
+✔ [222/501] Built EndgameChess.Rules.KRKSharper.RawWall (705ms)
+✔ [223/501] Built EndgameChess.Rules.KRKSetup.HorizontalEntry (854ms)
+✔ [224/501] Built EndgameChess.Rules.KRKSetup.OffRank (16s)
+✔ [225/501] Built EndgameChess.Rules.KRKSetup.WeakWall (611ms)
+✔ [226/501] Built EndgameChess.Rules.KRKSetup.ProtectedEntry (6.7s)
+✔ [227/501] Built EndgameChess.Rules.KRKSetup.SameRank (6.8s)
+✔ [228/501] Built EndgameChess.Rules.KRKSetup.BackRank (1.5s)
+✔ [229/501] Built EndgameChess.Rules.KRKSetup.PositiveSetup (784ms)
+✔ [230/501] Built EndgameChess.Rules.KRKSetup.NotCheck (616ms)
+✔ [231/501] Built EndgameChess.Rules.KRKSetup.Arrival (589ms)
+✔ [232/501] Built EndgameChess.Rules.KRKSetup.SharperArrival (683ms)
+✔ [233/501] Built EndgameChess.Rules.KRKSetup.WeakSafe (698ms)
+✔ [234/501] Built EndgameChess.Rules.KRKCentral.Arrival (682ms)
+✔ [235/501] Built EndgameChess.Rules.KRKSetup.SharperWeak (636ms)
+✔ [236/501] Built EndgameChess.Rules.KRKCentral.Weak (669ms)
+✔ [237/501] Built EndgameChess.Rules.KRKTermination.Targets (626ms)
+✔ [238/501] Built EndgameChess.Rules.KRKTermination.Castle (1.1s)
+✔ [239/501] Built EndgameChess.Rules.KRKTermination.Strong (1.1s)
+✔ [240/501] Built EndgameChess.Rules.KRKMatingMove (1.1s)
+✔ [241/501] Built EndgameChess.Rules.KRKTermination.Closure (780ms)
+✔ [242/501] Built EndgameChess.Rules.KRKImmediate (903ms)
+⚠ [243/501] Built EndgameChess.Rules.KRKTermination.Step (699ms)
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:30:38: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:23: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:32:38: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/Step.lean:41:36: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [244/501] Built EndgameChess.Rules.KRKTermination.PathBound (675ms)
+⚠ [245/501] Built EndgameChess.Rules.KRKTermination.ClockCap (736ms)
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:15:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: EndgameChess/Rules/KRKTermination/ClockCap.lean:18:21: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+✔ [246/501] Built EndgameChess.Rules.KRKTermination.TerminalExists (740ms)
+✔ [247/501] Built EndgameChess.Rules.KRKHolding.Definitions (651ms)
+✔ [248/501] Built EndgameChess.Rules.KRKHolding.Monotone (825ms)
+✔ [249/501] Built EndgameChess.Rules.KRKHolding.Converse (836ms)
+✔ [250/501] Built EndgameChess.Rules.KRKHolding.Maximal (825ms)
+✔ [251/501] Built EndgameChess.Rules.KRKHolding.PathBound (824ms)
+✔ [252/501] Built EndgameChess.Rules.KRKHolding.Saturation (768ms)
+✔ [253/501] Built EndgameChess.Rules.KRKHolding.StoppedExists (754ms)
+✔ [254/501] Built EndgameChess.Rules.KRKHolding.Choice (642ms)
+✔ [255/501] Built EndgameChess.Rules.KRKHolding.Policy (628ms)
+✔ [256/501] Built EndgameChess.Rules.KRKHolding.Safety (596ms)
+✔ [257/501] Built EndgameChess.Rules.KRKHolding.Equivalence (580ms)
+✔ [258/501] Built EndgameChess.Rules.KRKHighClock.Definitions (589ms)
+✔ [259/501] Built EndgameChess.Rules.KRKHighClock.NoWeakGoal (796ms)
+✔ [260/501] Built EndgameChess.Rules.KRKHighClock.Material (794ms)
+✔ [261/501] Built EndgameChess.Rules.KRKHighClock.WinningChild (801ms)
+✔ [262/501] Built EndgameChess.Rules.KRKHighClock.Terminal (784ms)
+✔ [263/501] Built EndgameChess.Rules.KRKHighClock.GoodGoal (754ms)
+✔ [264/501] Built EndgameChess.Rules.KRKHighClock.WeakHighClock (789ms)
+✔ [265/501] Built EndgameChess.Rules.KRKWinning.Definitions (765ms)
+✔ [266/501] Built EndgameChess.Rules.KRKHighClock.StrongHold (860ms)
+✔ [267/501] Built EndgameChess.Rules.KRKWinning.Actions (873ms)
+✔ [268/501] Built EndgameChess.Rules.KRKWinning.Certificate (908ms)
+✔ [269/501] Built EndgameChess.Rules.KRKWinning.MaximalGoal (860ms)
+✔ [270/501] Built EndgameChess.Rules.KRKHighClock.StrongHighClock (883ms)
+✔ [271/501] Built EndgameChess.Rules.KRKDeadline.Definitions (891ms)
+✔ [272/501] Built EndgameChess.Rules.KRKHighClock.WeakNotForce (842ms)
+✔ [273/501] Built EndgameChess.Rules.KRKHighClock.Distance (796ms)
+✔ [274/501] Built EndgameChess.Rules.KRKWinning.Policy (845ms)
+✔ [275/501] Built EndgameChess.Rules.KRKWinning.MateExists (841ms)
+✔ [276/501] Built EndgameChess.Rules.KRKDeadline.Necessary (980ms)
+✔ [277/501] Built EndgameChess.Rules.KRKWinning.Safety (639ms)
+✔ [278/501] Built EndgameChess.Rules.KRKWinning.FromForce (619ms)
+✔ [279/501] Built EndgameChess.Rules.KRKWinning.Equivalence (580ms)
+✔ [280/501] Built EndgameChess.Rules.KRKFresh.Definitions (641ms)
+✔ [281/501] Built EndgameChess.Rules.KRKImmediateHistory (681ms)
+✔ [282/501] Built EndgameChess.Rules.KRKFresh.KeyMaterial (780ms)
+✔ [283/501] Built EndgameChess.Rules.KRKFresh.PrefixRegion (816ms)
+✔ [284/501] Built EndgameChess.Rules.KRKFresh.Append (798ms)
+✔ [285/501] Built EndgameChess.Rules.KRKFresh.WinningMaterial (783ms)
+✔ [286/501] Built EndgameChess.Rules.KRKFresh.ClockZeroCounts (729ms)
+✔ [287/501] Built EndgameChess.Rules.KRKFresh.Lifting (748ms)
+✔ [288/501] Built EndgameChess.Rules.KRKFresh.FreshLift (628ms)
+✔ [289/501] Built EndgameChess.Rules.KRKEdgeDepth (15s)
+✔ [290/501] Built EndgameChess.Rules.KRKCentral.FreshArrival (671ms)
+✔ [291/501] Built EndgameChess.Rules.KRKFresh.Wall (717ms)
+✔ [292/501] Built EndgameChess.Rules.KRKCentral.FreshWeak (743ms)
+✔ [293/501] Built EndgameChess.Rules.KRKCentral.FreshOutcome (876ms)
+✔ [294/501] Built EndgameChess.Rules.KRKEdgeDepthHistory (12s)
+✔ [295/501] Built EndgameChess.Rules.KRKLastReply (12s)
+✔ [296/501] Built EndgameChess.Rules.KRKLastReplyKernel (627ms)
+✔ [297/501] Built EndgameChess.Rules.KRKLastReplyHistory (691ms)
+✔ [298/501] Built EndgameChess.Rules.KRKLastReplyKey (704ms)
+✔ [299/501] Built EndgameChess.Rules.KRKThreePly (951ms)
+✔ [300/501] Built EndgameChess.Rules.KRKThreePlyHistory (11s)
+✔ [301/501] Built EndgameChess.Rules.KRKThreePlyMiddle (12s)
+⚠ [302/501] Built EndgameChess.Rules.KRKSecondStrongSlots (10s)
+warning: EndgameChess/Rules/KRKSecondStrongSlots.lean:54:5: Variable name `rank` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _rank
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKSecondStrongSlots.lean:198:5: Variable name `file` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _file
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKSecondStrongSlots.lean:198:27: Variable name `rank` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _rank
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [303/501] Built EndgameChess.Rules.KRKRookRayBarriers (14s)
+warning: EndgameChess/Rules/KRKRookRayBarriers.lean:35:5: Variable name `side` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _side
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [304/501] Built EndgameChess.Rules.KRKThreePlyNearCorner (14s)
+✔ [305/501] Built EndgameChess.Rules.KRKGeometricSymmetry (22s)
+✔ [306/501] Built EndgameChess.Rules.KRKDistanceParity (22s)
+⚠ [307/501] Built EndgameChess.Rules.KRKFourPlyEscape (22s)
+warning: EndgameChess/Rules/KRKFourPlyEscape.lean:228:52: Variable name `file` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _file
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [308/501] Built EndgameChess.Rules.KRKNativeFrame (891ms)
+warning: EndgameChess/Rules/KRKNativeFrame.lean:100:23: This simp argument is unused:
+  bottom
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [bottomFrame, top, Frame.ofSym, symY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKNativeFrame.lean:104:36: This simp argument is unused:
+  left
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [bottomFrame, bottom, top, right, Frame.comp, Frame.ofSym, symSwap, symY]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [309/501] Built EndgameChess.Rules.KRKThreePlyCorner (10s)
+✔ [310/501] Built EndgameChess.Rules.KRKNearKingBarrier (10s)
+⚠ [311/501] Built EndgameChess.Rules.KRKNearSlotBarriers (10s)
+warning: EndgameChess/Rules/KRKNearSlotBarriers.lean:58:5: Variable name `rank` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _rank
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKNearSlotBarriers.lean:197:5: Variable name `file` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _file
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKNearSlotBarriers.lean:197:27: Variable name `rank` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _rank
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [312/501] Built EndgameChess.Rules.KRKCornerSlotBarriers (2.9s)
+warning: EndgameChess/Rules/KRKCornerSlotBarriers.lean:209:5: Variable name `file` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _file
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKCornerSlotBarriers.lean:209:27: Variable name `rank` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _rank
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [313/501] Built EndgameChess.Rules.KRKCanonicalSlots (2.9s)
+⚠ [314/501] Built EndgameChess.Rules.KRKVerticalNearSlotBarriers (11s)
+warning: EndgameChess/Rules/KRKVerticalNearSlotBarriers.lean:89:5: Variable name `edge` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _edge
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKVerticalNearSlotBarriers.lean:228:5: Variable name `near` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _near
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKVerticalNearSlotBarriers.lean:228:27: Variable name `edge` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _edge
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [315/501] Built EndgameChess.Rules.KRKFourPlyMiddle (53s)
+✔ [316/501] Built EndgameChess.Rules.KRKFourPlyInterior (53s)
+✔ [317/501] Built EndgameChess.Rules.KRKInteriorLowerBound (928ms)
+✔ [318/501] Built EndgameChess.Rules.KRKInteriorHolding (703ms)
+✔ [319/501] Built EndgameChess.Rules.KRKOppositionPrefix (5.6s)
+✔ [320/501] Built EndgameChess.Rules.KRKFourPlySecond (5.7s)
+⚠ [321/501] Built EndgameChess.Rules.KRKOppositionHistory (2.2s)
+warning: EndgameChess/Rules/KRKOppositionHistory.lean:70:27: Variable name `low` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _low
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [322/501] Built EndgameChess.Rules.KRKSecondOppositionPrefix (2.2s)
+⚠ [323/501] Built EndgameChess.Rules.KRKWeakPrefixEntry (2.2s)
+warning: EndgameChess/Rules/KRKWeakPrefixEntry.lean:14:5: Variable name `entryLegal` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _entryLegal
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [324/501] Built EndgameChess.Rules.KRKCentralWeakBand (1.2s)
+✔ [325/501] Built EndgameChess.Rules.KRKSecondWestHistory (1.2s)
+✔ [326/501] Built EndgameChess.Rules.KRKSlotPrefix (1.2s)
+⚠ [327/501] Built EndgameChess.Rules.KRKWeakBranch (1.2s)
+warning: EndgameChess/Rules/KRKWeakBranch.lean:26:5: Variable name `material` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _material
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [328/501] Built EndgameChess.Rules.KRKSecondSlotPrefix (1.2s)
+⚠ [329/501] Built EndgameChess.Rules.KRKCornerSlotPrefix (1.2s)
+warning: EndgameChess/Rules/KRKCornerSlotPrefix.lean:35:53: This simp argument is unused:
+  firstBoard
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [play_turn, turn, opp_opp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [330/501] Built EndgameChess.Rules.KRKSecondOppositionHistory (1.3s)
+⚠ [331/501] Built EndgameChess.Rules.KRKSecondWeakBand (991ms)
+warning: EndgameChess/Rules/KRKSecondWeakBand.lean:30:49: Variable name `high` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _high
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [332/501] Built EndgameChess.Rules.KRKCornerWeakBand (5.3s)
+warning: EndgameChess/Rules/KRKCornerWeakBand.lean:47:5: Variable name `file` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _file
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKCornerWeakBand.lean:47:27: Variable name `rank` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _rank
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [333/501] Built EndgameChess.Rules.KRKFramedHistory (5.4s)
+✔ [334/501] Built EndgameChess.Rules.KRKFramedPrefix (882ms)
+✔ [335/501] Built EndgameChess.Rules.KRKThreePlyExact (903ms)
+⚠ [336/501] Built EndgameChess.Rules.KRKNearWeakBand (1.7s)
+warning: EndgameChess/Rules/KRKNearWeakBand.lean:42:5: Variable name `file` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _file
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKNearWeakBand.lean:42:27: Variable name `rank` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _rank
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [337/501] Built EndgameChess.Rules.KRKGlobalWeakBand (762ms)
+✔ [338/501] Built EndgameChess.Rules.KRKFourPlyExact (772ms)
+✔ [339/501] Built EndgameChess.Rules.KRKStrongPrefix (804ms)
+⚠ [340/501] Built EndgameChess.Rules.KRKFourPlyNearCorner (13s)
+warning: EndgameChess/Rules/KRKFourPlyNearCorner.lean:60:5: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKFourPlyNearCorner.lean:77:5: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKFourPlyNearCorner.lean:94:5: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKFourPlyNearCorner.lean:205:70: This simp argument is unused:
+  bottom
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [MiddleThree, CoordinateStep, absDiff, sx, sy, second]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [341/501] Built EndgameChess.Rules.KRKOrdinaryEntry (637ms)
+✔ [342/501] Built EndgameChess.Rules.KRKFourPlyNearKernel (1.5s)
+⚠ [343/501] Built EndgameChess.Rules.KRKFourPlyCorner (49s)
+warning: EndgameChess/Rules/KRKFourPlyCorner.lean:41:5: Variable name `live` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _live
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKFourPlyCorner.lean:79:5: Variable name `live` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _live
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKFourPlyCorner.lean:97:5: Variable name `far` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _far
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKFourPlyCorner.lean:97:55: Variable name `distinct` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _distinct
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKFourPlyCorner.lean:98:5: Variable name `live` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _live
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [344/501] Built EndgameChess.Rules.KRKFourPlyCornerKernel (2.4s)
+✔ [345/501] Built EndgameChess.Rules.KRKFourGeometry (713ms)
+⚠ [346/501] Built EndgameChess.Rules.KRKCastleFour (2.2s)
+warning: EndgameChess/Rules/KRKCastleFour.lean:46:33: This simp argument is unused:
+  square_eq_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [Shape, KRKFourPlyCorner.CornerFour, KRKFourPlyNearCorner.NearFour, LastReply, HorizontalLast,
+    homeRank]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKCastleFour.lean:46:48: This simp argument is unused:
+  homeRank
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [Shape, KRKFourPlyCorner.CornerFour, KRKFourPlyNearCorner.NearFour, LastReply, HorizontalLast,
+    square_eq_iff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [347/501] Built EndgameChess.Rules.KRKFourSlots (868ms)
+✔ [348/501] Built EndgameChess.Rules.KRKFivePlyHistory (764ms)
+✔ [349/501] Built EndgameChess.Rules.KRKFiveWeakPrefix (830ms)
+⚠ [350/501] Built EndgameChess.Rules.KRKFiveGeometry (811ms)
+warning: EndgameChess/Rules/KRKFiveGeometry.lean:35:5: Variable name `material` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _material
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [351/501] Built EndgameChess.Rules.KRKFivePlyExact (807ms)
+✔ [352/501] Built EndgameChess.Rules.KRKSixPlyHistory (866ms)
+✔ [353/501] Built EndgameChess.Rules.KRKSixPlyExact (833ms)
+✔ [354/501] Built EndgameChess.Rules.KRKSixGeometry (8.2s)
+⚠ [355/501] Built EndgameChess.Rules.KRKFiveMiddle (8.3s)
+warning: EndgameChess/Rules/KRKFiveMiddle.lean:275:29: This simp argument is unused:
+  Fin.ext_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [square_eq_iff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKFiveMiddle.lean:294:27: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sy, and_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [356/501] Built EndgameChess.Rules.KRKCastleSix (3.9s)
+⚠ [357/501] Built EndgameChess.Rules.KRKFiveNear (7.3s)
+warning: EndgameChess/Rules/KRKFiveNear.lean:83:36: Variable name `apart` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _apart
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKFiveNear.lean:113:36: Variable name `apart` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _apart
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKFiveNear.lean:113:54: Variable name `apartWeak` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _apartWeak
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [358/501] Built EndgameChess.Rules.KRKSixInterior (24s)
+✔ [359/501] Built EndgameChess.Rules.KRKSixMiddle (24s)
+✔ [360/501] Built EndgameChess.Rules.KRKSixInwardCorner (4.3s)
+✔ [361/501] Built EndgameChess.Rules.KRKSixInteriorHolding (9.7s)
+⚠ [362/501] Built EndgameChess.Rules.KRKSixCorner (9.8s)
+warning: EndgameChess/Rules/KRKSixCorner.lean:40:5: Variable name `far` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _far
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:66:107: This simp argument is unused:
+  Fin.ext_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, val0, val1,
+    val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:66:134: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:66:139: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:66:144: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:66:149: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val5, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:66:154: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val5, val6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:45: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:50: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:55: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:60: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:65: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:70: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:75: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val5, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:80: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val5, val6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:124: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val2, val3, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:129: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val3, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:134: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:139: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:144: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:149: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val5, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:67:154: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val5, val6] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:79:107: This simp argument is unused:
+  Fin.ext_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, val0, val1,
+    val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:79:134: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:79:139: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:79:144: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:79:149: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val5, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:79:154: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val5, val6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:45: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:50: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:55: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:60: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:65: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:70: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:75: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val5, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:80: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val5, val6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:124: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val2, val3, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:129: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val3, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:134: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:139: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:144: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:149: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val5, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:80:154: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val5, val6] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:83:5: Variable name `far` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _far
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:92:107: This simp argument is unused:
+  Fin.ext_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, val0, val1,
+    val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:92:134: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:92:139: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:92:144: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:92:149: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val5, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:92:154: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val5, val6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:45: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:50: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:55: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:60: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:65: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:70: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:75: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val5, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:80: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val5, val6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:124: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val2, val3, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:129: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val3, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:134: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:139: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:144: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:149: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val5, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:93:154: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val5, val6] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:96:5: Variable name `far` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _far
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:105:107: This simp argument is unused:
+  Fin.ext_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, val0, val1,
+    val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:105:134: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:105:139: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:105:144: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:105:149: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val5, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:105:154: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, symSwap, RookSees,
+    RookLine, OnSeg, dInf, absDiff, Region, Terminal, Horizontal, SafeRook, ne_iff_coords, square_eq_iff, Fin.ext_iff,
+    val0, val1, val2, val3, val4, val5, val6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:45: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:50: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:55: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val3, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:60: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val4, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:65: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val5, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:70: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val6, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:75: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val5, val7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:80: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1, val2, val3, val4, val5, val6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:124: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val2, val3, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:129: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val3, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:134: This simp argument is unused:
+  val3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val4, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:139: This simp argument is unused:
+  val4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val5, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:144: This simp argument is unused:
+  val5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val6, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:149: This simp argument is unused:
+  val6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val5, val7] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:106:154: This simp argument is unused:
+  val7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1, val2, val3, val4, val5, val6] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:109:5: Variable name `far` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _far
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:109:69: Variable name `distinct` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _distinct
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:109:90: Variable name `notCenter` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _notCenter
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:225:14: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0,
+    val1] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:233:16: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, sx,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:237:19: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:237:24: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:237:29: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:238:37: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val2] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:238:42: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:242:16: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, sx,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:246:19: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:246:24: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:246:29: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:251:16: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, sx,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:255:19: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:255:24: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:255:29: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:260:16: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, sx,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:264:19: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:264:24: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:264:29: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:269:16: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, sx,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:273:19: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:273:24: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:273:29: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:278:16: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, sx,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:282:19: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:282:24: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:282:29: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:287:16: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, sx,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:291:19: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:291:24: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:291:29: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:296:16: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, sx,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:296:21: This simp argument is unused:
+  sx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, val2,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:298:34: This simp argument is unused:
+  sx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, square_eq_iff, dInf, absDiff,
+    val0, val1, val2, sy]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:300:19: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:300:24: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:300:29: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:301:37: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val2] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:301:42: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:305:16: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, sx,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:305:24: This simp argument is unused:
+  sy
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, val2,
+    sx] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:307:37: This simp argument is unused:
+  sy
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKFiveNear.Five, KRKFiveNear.KingEntries, KRKFiveNear.RookEntries, square_eq_iff, dInf, absDiff,
+    val0, val1, val2, sx]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:309:19: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:309:24: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:309:29: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:310:37: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val2] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:310:42: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:314:16: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [KRKCornerWeakBand.Guard, RookSees, RookLine, OnSeg, dInf, absDiff, ne_iff_coords, val0, val1, sx,
+    sy] at guard
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:318:19: This simp argument is unused:
+  val0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val1, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:318:24: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:318:29: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [val0, val1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:319:37: This simp argument is unused:
+  val1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val2] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKSixCorner.lean:319:42: This simp argument is unused:
+  val2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.ext_iff, val0, val1] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [363/501] Built EndgameChess.Rules.KRKSixSecond (12s)
+⚠ [364/501] Built EndgameChess.Rules.KRKFiveCornerEntries (1.2s)
+warning: EndgameChess/Rules/KRKFiveCornerEntries.lean:119:45: Variable name `ry` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ry
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [365/501] Built EndgameChess.Rules.KRKSixNear (21s)
+✔ [366/501] Built EndgameChess.Rules.KRKFrameBound (715ms)
+✔ [367/501] Built EndgameChess.Rules.KRKSixGlobal (714ms)
+✔ [368/501] Built EndgameChess.Rules.KRKSevenPrefix (739ms)
+✔ [369/501] Built EndgameChess.Rules.KRKSevenSlots (721ms)
+✔ [370/501] Built EndgameChess.Rules.KRKSevenEntry (676ms)
+⚠ [371/501] Built EndgameChess.Rules.KRKSevenPlyHistory (891ms)
+warning: EndgameChess/Rules/KRKSevenPlyHistory.lean:93:5: Variable name `material` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _material
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [372/501] Built EndgameChess.Rules.KRKSevenGeometry (836ms)
+✔ [373/501] Built EndgameChess.Rules.KRKEightPrefix (898ms)
+✔ [374/501] Built EndgameChess.Rules.KRKSevenPlyExact (867ms)
+✔ [375/501] Built EndgameChess.Rules.KRKEightPlyHistory (750ms)
+✔ [376/501] Built EndgameChess.Rules.KRKEightPlyExact (703ms)
+✔ [377/501] Built EndgameChess.Rules.KRKEightGeometry (7.0s)
+✔ [378/501] Built EndgameChess.Rules.KRKSevenReach (7.1s)
+✔ [379/501] Built EndgameChess.Rules.KRKCastleEight (1.6s)
+✔ [380/501] Built EndgameChess.Rules.KRKSevenMiddle (701ms)
+✔ [381/501] Built EndgameChess.Rules.KRKNineEntry (721ms)
+✔ [382/501] Built EndgameChess.Rules.KRKEightInterior (8.1s)
+✔ [383/501] Built EndgameChess.Rules.KRKSevenNear (8.2s)
+✔ [384/501] Built EndgameChess.Rules.KRKEightInteriorHolding (842ms)
+✔ [385/501] Built EndgameChess.Rules.KRKEightCentralStrip (3.5s)
+✔ [386/501] Built EndgameChess.Rules.KRKEightStrip (3.5s)
+✔ [387/501] Built EndgameChess.Rules.KRKEightCentralStripHolding (655ms)
+✔ [388/501] Built EndgameChess.Rules.KRKSevenInner (5.6s)
+✔ [389/501] Built EndgameChess.Rules.KRKEightNearStrip (19s)
+✔ [390/501] Built EndgameChess.Rules.KRKEightInner (23s)
+✔ [391/501] Built EndgameChess.Rules.KRKEightInteriorExact (1.1s)
+✔ [392/501] Built EndgameChess.Rules.KRKSevenSecond (4.3s)
+✔ [393/501] Built EndgameChess.Rules.KRKSevenCorner (22s)
+✔ [394/501] Built EndgameChess.Rules.KRKEightEdge (3.3s)
+✔ [395/501] Built EndgameChess.Rules.KRKEightGlobal (658ms)
+✔ [396/501] Built EndgameChess.Rules.KRKNineSlots (1.5s)
+✔ [397/501] Built EndgameChess.Rules.KRKNineGeometry (688ms)
+✔ [398/501] Built EndgameChess.Rules.KRKNinePlyHistory (5.7s)
+✔ [399/501] Built EndgameChess.Rules.KRKTenGeometry (5.7s)
+✔ [400/501] Built EndgameChess.Rules.KRKNineInnerBoundary (5.7s)
+✔ [401/501] Built EndgameChess.Rules.KRKNineNearStrip (5.7s)
+✔ [402/501] Built EndgameChess.Rules.KRKNineNearStripHistory (943ms)
+✔ [403/501] Built EndgameChess.Rules.KRKNinePlyExact (1.2s)
+✔ [404/501] Built EndgameChess.Rules.KRKNineSecondBoundary (1.2s)
+✔ [405/501] Built EndgameChess.Rules.KRKTenPlyHistory (867ms)
+✔ [406/501] Built EndgameChess.Rules.KRKTenPlyExact (816ms)
+✔ [407/501] Built EndgameChess.Rules.KRKNineUpperEntries (3.0s)
+✔ [408/501] Built EndgameChess.Rules.KRKTenSecondCorner (30s)
+✔ [409/501] Built EndgameChess.Rules.KRKNineInner (27s)
+✔ [410/501] Built EndgameChess.Rules.KRKNineSecondLeft (883ms)
+✔ [411/501] Built EndgameChess.Rules.KRKNineNearDiagonal (1.3s)
+✔ [412/501] Built EndgameChess.Rules.KRKTenSecondCornerHolding (9.0s)
+✔ [413/501] Built EndgameChess.Rules.KRKTenInterior (9.1s)
+✔ [414/501] Built EndgameChess.Rules.KRKTenInteriorHolding (1.5s)
+✔ [415/501] Built EndgameChess.Rules.KRKNineMiddleLow (1.5s)
+✔ [416/501] Built EndgameChess.Rules.KRKTenCentralStrip (21s)
+✔ [417/501] Built EndgameChess.Rules.KRKTenCentralStripHolding (23s)
+✔ [418/501] Built EndgameChess.Rules.KRKTenNearStrip (23s)
+✔ [419/501] Built EndgameChess.Rules.KRKEightDiagonalEntries (1.6s)
+✔ [420/501] Built EndgameChess.Rules.KRKTenInner (13s)
+✔ [421/501] Built EndgameChess.Rules.KRKTenInteriorExact (714ms)
+✔ [422/501] Built EndgameChess.Rules.KRKNineEdge (701ms)
+✔ [423/501] Built EndgameChess.Rules.KRKTenEdge (1.5s)
+✔ [424/501] Built EndgameChess.Rules.KRKTenGlobal (668ms)
+✔ [425/501] Built EndgameChess.Rules.KRKCastleTen (15s)
+✔ [426/501] Built EndgameChess.Rules.KRKElevenEntry (684ms)
+✔ [427/501] Built EndgameChess.Rules.KRKElevenSlots (1.8s)
+✔ [428/501] Built EndgameChess.Rules.KRKElevenGeometry (736ms)
+✔ [429/501] Built EndgameChess.Rules.KRKTwelveGeometry (822ms)
+✔ [430/501] Built EndgameChess.Rules.KRKElevenPlyHistory (874ms)
+✔ [431/501] Built EndgameChess.Rules.KRKElevenPlyExact (784ms)
+⚠ [432/501] Built EndgameChess.Rules.KRKElevenNearBoundary (866ms)
+warning: EndgameChess/Rules/KRKElevenNearBoundary.lean:56:39: This simp argument is unused:
+  ne_iff_coords
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [RookSees, RookLine, OnSeg, nr, rx, sy]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: EndgameChess/Rules/KRKElevenNearBoundary.lean:63:13: This simp argument is unused:
+  ne_iff_coords
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [nr]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [433/501] Built EndgameChess.Rules.KRKTwelvePlyHistory (863ms)
+✔ [434/501] Built EndgameChess.Rules.KRKTwelvePlyExact (842ms)
+✔ [435/501] Built EndgameChess.Rules.KRKElevenNearStrip (28s)
+✔ [436/501] Built EndgameChess.Rules.KRKTwelveSecondCorner (28s)
+✔ [437/501] Built EndgameChess.Rules.KRKTwelveDeepExact (9.6s)
+✔ [438/501] Built EndgameChess.Rules.KRKTwelveCentralEntries (13s)
+✔ [439/501] Built EndgameChess.Rules.KRKElevenInner (13s)
+✔ [440/501] Built EndgameChess.Rules.KRKTwelveCentralStrip (22s)
+⚠ [441/501] Built EndgameChess.Rules.KRKElevenEdgeBoundary (3.1s)
+warning: EndgameChess/Rules/KRKElevenEdgeBoundary.lean:94:25: Variable name `ry` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ry
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [442/501] Built EndgameChess.Rules.KRKTwelveCentralUpperEntries (2.4s)
+✔ [443/501] Built EndgameChess.Rules.KRKTwelveCentralUpper (1.4s)
+✔ [444/501] Built EndgameChess.Rules.KRKTwelveCentralOppositionEntries (1.8s)
+✔ [445/501] Built EndgameChess.Rules.KRKTwelveCentralExact (1.7s)
+⚠ [446/501] Built EndgameChess.Rules.KRKTwelveNearStrip (3.6s)
+warning: EndgameChess/Rules/KRKTwelveNearStrip.lean:42:5: Variable name `sx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _sx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [447/501] Built EndgameChess.Rules.KRKTwelveNearFileEntries (3.1s)
+✔ [448/501] Built EndgameChess.Rules.KRKTwelveNearFileOne (1.8s)
+✔ [449/501] Built EndgameChess.Rules.KRKTwelveNearNewEntries (1.4s)
+✔ [450/501] Built EndgameChess.Rules.KRKTwelveNearUpper (1.0s)
+✔ [451/501] Built EndgameChess.Rules.KRKTwelveNearExact (4.9s)
+⚠ [452/501] Built EndgameChess.Rules.KRKTwelveInner (20s)
+warning: EndgameChess/Rules/KRKTwelveInner.lean:15:62: Variable name `far` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _far
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [453/501] Built EndgameChess.Rules.KRKTwelveInnerDiagonal (2.6s)
+✔ [454/501] Built EndgameChess.Rules.KRKTwelveInnerFileOne (4.2s)
+✔ [455/501] Built EndgameChess.Rules.KRKTwelveInnerDiagonalExact (4.2s)
+✔ [456/501] Built EndgameChess.Rules.KRKTwelveInnerOuter (5.4s)
+✔ [457/501] Built EndgameChess.Rules.KRKTwelveInnerSide (3.8s)
+✔ [458/501] Built EndgameChess.Rules.KRKTwelveInnerHigh (3.9s)
+✔ [459/501] Built EndgameChess.Rules.KRKTwelveInnerBoundaryEntries (2.4s)
+✔ [460/501] Built EndgameChess.Rules.KRKTwelveInnerHighExact (5.9s)
+✔ [461/501] Built EndgameChess.Rules.KRKTwelveInnerUpperEntries (5.1s)
+✔ [462/501] Built EndgameChess.Rules.KRKTwelveInnerUpperFour (8.8s)
+✔ [463/501] Built EndgameChess.Rules.KRKTwelveInnerUpperBoundary (1.8s)
+✔ [464/501] Built EndgameChess.Rules.KRKTwelveInnerUpperFive (2.0s)
+✔ [465/501] Built EndgameChess.Rules.KRKTwelveInnerExact (834ms)
+✔ [466/501] Built EndgameChess.Rules.KRKTwelveInteriorExact (732ms)
+✔ [467/501] Built EndgameChess.Rules.KRKElevenEdge (715ms)
+✔ [468/501] Built EndgameChess.Rules.KRKTwelveEdge (1.6s)
+✔ [469/501] Built EndgameChess.Rules.KRKTwelveGlobal (684ms)
+✔ [470/501] Built EndgameChess.Rules.KRKCastleTwelve (6.2s)
+✔ [471/501] Built EndgameChess.Rules.KRKThirteenEntry (704ms)
+✔ [472/501] Built EndgameChess.Rules.KRKThirteenSlots (660ms)
+✔ [473/501] Built EndgameChess.Rules.KRKThirteenGeometry (731ms)
+✔ [474/501] Built EndgameChess.Rules.KRKThirteenPlyHistory (882ms)
+✔ [475/501] Built EndgameChess.Rules.KRKFourteenGeometry (902ms)
+✔ [476/501] Built EndgameChess.Rules.KRKThirteenPlyExact (870ms)
+✔ [477/501] Built EndgameChess.Rules.KRKFourteenPlyHistory (755ms)
+✔ [478/501] Built EndgameChess.Rules.KRKFourteenPlyExact (795ms)
+✔ [479/501] Built EndgameChess.Rules.KRKFourteenDeep (5.5s)
+✔ [480/501] Built EndgameChess.Rules.KRKFourteenDeepStrip (37s)
+✔ [481/501] Built EndgameChess.Rules.KRKThirteenInteriorBarriers (784ms)
+✔ [482/501] Built EndgameChess.Rules.KRKFourteenDeepStripHolding (5.7s)
+✔ [483/501] Built EndgameChess.Rules.KRKFourteenSecondCorner (19s)
+✔ [484/501] Built EndgameChess.Rules.KRKFourteenSecondCornerEntries (1.9s)
+✔ [485/501] Built EndgameChess.Rules.KRKFourteenSecondCornerBounds (883ms)
+✔ [486/501] Built EndgameChess.Rules.KRKFourteenSecondCornerExact (2.3s)
+✔ [487/501] Built EndgameChess.Rules.KRKFourteenDeepExact (3.7s)
+⚠ [488/501] Built EndgameChess.Rules.KRKThirteenCentralStrip (1.1s)
+warning: EndgameChess/Rules/KRKThirteenCentralStrip.lean:76:54: Variable name `notWeak` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _notWeak
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [489/501] Built EndgameChess.Rules.KRKFourteenCentralEntries (2.5s)
+✔ [490/501] Built EndgameChess.Rules.KRKFourteenCentralPrison (14s)
+✔ [491/501] Built EndgameChess.Rules.KRKFourteenCentralUpperEntries (2.3s)
+✔ [492/501] Built EndgameChess.Rules.KRKFourteenCentralBounds (916ms)
+✔ [493/501] Built EndgameChess.Rules.KRKFourteenCentralNecessary (4.1s)
+✔ [494/501] Built EndgameChess.Rules.KRKFourteenCentralUpperZero (2.7s)
+✔ [495/501] Built EndgameChess.Rules.KRKFourteenCentralUpperTwo (2.1s)
+✔ [496/501] Built EndgameChess.Rules.KRKFourteenCentralExact (775ms)
+✔ [497/501] Built EndgameChess.Rules.KRKThirteenNearRook (8.0s)
+✔ [498/501] Built EndgameChess.Rules.KRKThirteenNearStrip (787ms)
+✔ [499/501] Built EndgameChess.Rules.KRKThirteenInnerRook (52s)
+✔ [500/501] Built EndgameChess (709ms)
+Build completed successfully (501 jobs).

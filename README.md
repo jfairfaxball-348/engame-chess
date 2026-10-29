@@ -15,6 +15,7 @@ There is one active research target and a concrete direct obligation. Supporting
 - [Current obligation / resume point](NEXT_SESSION.md) — compact live note, not a session gate
 - [Class roadmap and actual coverage](docs/ROADMAP.md)
 - [KRK status and remaining work](docs/KRK_COMPLETION.md)
+- [KQK completion](docs/KQK_COMPLETION.md)
 - [Scientific charter and rule boundaries](docs/CHARTER.md) · [formal definitions](docs/FOUNDATIONS.md) · [methods](docs/METHODS.md)
 - [Frozen theorem ledger](theorems/LEDGER.csv) · [immutable proof manifests](theorems/frozen/) · [Lean library](formal/) · [proofs](proofs/) · [audits](audits/)
 - [Research candidates](research/CANDIDATES.md)
@@ -22,6 +23,6 @@ There is one active research target and a concrete direct obligation. Supporting
 The `sessions/` tree contains historic work and verification evidence. It is **not** an active reporting workflow, and no new session files are expected.
 
 ## Current scientific position
-**49 frozen theorem bundles** through EC-T0049; K vs K, K+B vs K and K+N vs K have proven draw/dead-position results. **KRK is complete** under the outcome target: every position's result is proved and frozen (exact distance-to-mate only through 13/14 plies, which is optional).
+**50 frozen theorem bundles** through EC-T0050; K vs K, K+B vs K and K+N vs K have proven draw/dead-position results. **KRK and KQK are complete** under the outcome target: every fresh legal position's WDL50 is proved and frozen. KQK includes dead/live and sufficient 97/98-ply bounds. Exact mate distances are optional; KRK's catalogue through 13/14 plies is not a completion gate.
 
-After KRK, the next proposed classes are KQK and KPK; moving material classes requires owner direction. Neither complete seven-piece parity nor a proof that the initial chess position is drawn exists in this project.
+KPK is the next proposed class and awaits owner selection. Neither complete seven-piece parity nor a proof that the initial chess position is drawn exists in this project.

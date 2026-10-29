@@ -1,5 +1,8 @@
 # KQK proof plan
 
+Implementation is complete and frozen as [EC-T0050](../theorems/frozen/EC-T0050/v1.md).
+See [KQK status](KQK_COMPLETION.md); the planning review below is preserved.
+
 Planning review of KRK source at `45c452e`; no KQK theorem is proved here.
 KRK remains complete under the [charter target](CHARTER.md#parity-target-hard-boundary-owner-2026-10-29).
 The owner has approved implementation through full KQK completion.
