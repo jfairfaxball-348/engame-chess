@@ -1,5 +1,6 @@
 import EndgameChess.Rules.KPK.RookPawn
 import EndgameChess.Rules.KPK.SeventhKingOutcome
+import EndgameChess.Rules.KPK.KeySquares
 
 /-! Small controls instantiate general proofs; they are not an outcome table. -/
 namespace EndgameChess.Rules.KPK
@@ -141,5 +142,69 @@ theorem sixth_pawn_weak_102_example :
   intro corner
   have impossible := corner.2.2
   exact (by decide : absDiff 3 7 ≠ 1) impossible
+
+theorem sixth_rank_white_entry_example :
+    FreshGame.Within .white 103 (FreshGame.fresh (pos .white (2,5) (1,5) (7,7) .white)) := by
+  let q := pos .white (2,5) (1,5) (7,7) .white
+  have h : IsKPK q .white (2,5) (1,5) (7,7) := ⟨by decide, by decide, by decide, rfl⟩
+  have fresh : FreshLegal q (2,5) (1,5) (7,7) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by decide⟩
+  apply fresh_seventh_king_entry h fresh rfl (t := (2,6))
+    (by decide) (by decide) (by decide) ⟨rfl, rfl, by decide⟩
+  intro corner
+  exact (by decide : absDiff 1 7 ≠ 1) corner.2.2
+
+theorem sixth_rank_black_entry_example :
+    FreshGame.Within .black 103 (FreshGame.fresh (pos .black (5,2) (6,2) (0,0) .black)) := by
+  let q := pos .black (5,2) (6,2) (0,0) .black
+  have h : IsKPK q .black (5,2) (6,2) (0,0) := ⟨by decide, by decide, by decide, rfl⟩
+  have fresh : FreshLegal q (5,2) (6,2) (0,0) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by decide⟩
+  apply fresh_seventh_king_entry h fresh rfl (t := (5,1))
+    (by decide) (by decide) (by decide) ⟨rfl, rfl, by decide⟩
+  intro corner
+  exact (by decide : absDiff 6 0 ≠ 1) corner.2.2
+
+theorem seventh_pawn_king_entry_example :
+    FreshGame.Within .white 101 (FreshGame.fresh (pos .white (4,5) (3,6) (0,0) .white)) := by
+  let q := pos .white (4,5) (3,6) (0,0) .white
+  have h : IsKPK q .white (4,5) (3,6) (0,0) := ⟨by decide, by decide, by decide, rfl⟩
+  have fresh : FreshLegal q (4,5) (3,6) (0,0) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by decide⟩
+  exact fresh_supported_king_entry h fresh rfl (t := (4,6))
+    (by decide) (by decide) (by decide) ⟨rfl, rfl, by decide⟩
+
+/-- A legal entry that would immediately stalemate is excluded by the certificate. -/
+theorem stalemate_excludes_entry_example : ¬ KingEntry .white (2,5) (1,5) (0,7) := by
+  rintro ⟨t, _, _, _, supported | ⟨_, notCorner⟩⟩
+  · have impossible := supported.2.1
+    change 5 = 6 at impossible
+    cases impossible
+  · exact notCorner ⟨rfl, Or.inl rfl, by decide⟩
+
+theorem centered_white_both_turns_example (turn : Colour) :
+    FreshGame.ActualWin .white (FreshGame.fresh (pos .white (3,6) (3,5) (7,7) turn)) := by
+  let q := pos .white (3,6) (3,5) (7,7) turn
+  have h : IsKPK q .white (3,6) (3,5) (7,7) := ⟨by decide, by decide, by decide, rfl⟩
+  have fresh : FreshLegal q (3,6) (3,5) (7,7) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by cases turn <;> decide⟩
+  exact fresh_centered_win h fresh ⟨rfl, rfl, rfl, by decide, by decide⟩
+
+theorem centered_black_both_turns_example (turn : Colour) :
+    FreshGame.ActualWin .black (FreshGame.fresh (pos .black (3,1) (3,2) (7,0) turn)) := by
+  let q := pos .black (3,1) (3,2) (7,0) turn
+  have h : IsKPK q .black (3,1) (3,2) (7,0) := ⟨by decide, by decide, by decide, rfl⟩
+  have fresh : FreshLegal q (3,1) (3,2) (7,0) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by cases turn <;> decide⟩
+  exact fresh_centered_win h fresh ⟨rfl, rfl, rfl, by decide, by decide⟩
+
+/-- This control exercises the two-quiet-ply history before pawn advancement. -/
+theorem centered_weak_104_example :
+    FreshGame.Within .white 104 (FreshGame.fresh (pos .white (3,6) (3,5) (7,7) .black)) := by
+  let q := pos .white (3,6) (3,5) (7,7) .black
+  have h : IsKPK q .white (3,6) (3,5) (7,7) := ⟨by decide, by decide, by decide, rfl⟩
+  have fresh : FreshLegal q (3,6) (3,5) (7,7) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by decide⟩
+  exact fresh_centered_weak h fresh rfl ⟨rfl, rfl, rfl, by decide, by decide⟩
 
 end EndgameChess.Rules.KPK

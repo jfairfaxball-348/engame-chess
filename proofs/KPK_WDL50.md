@@ -248,6 +248,76 @@ For example, White Kc7/Pb6 against Ka8 wins with White to move, but is
 dead stalemate with Black to move. The statement and proof also cover
 the reflected edge and both colours.
 
+## Quiet king entry and the centered support square
+
+The preceding band theorems extend to a fresh position which can enter
+one of their winning weak-turn states by a legal king move. The entry
+certificate is entirely geometric: an adjacent king target, distinct
+from the pawn, separated from the weak king, and satisfying either the
+supported-seventh condition or the winning sixth-pawn band condition.
+The sixth-pawn entry explicitly excludes the outside-corner stalemate.
+No outcome is inferred from absence of an entry certificate.
+
+The resulting totals are 101 plies for entry into side-by-side seventh
+support and 103 for entry into the sixth-pawn band. The first king move
+is quiet. The proof retains its actual one-board history and clock at
+most one; it does not replace the entered board by a fresh state. At
+this weak turn neither current nor intended claims are possible. A move
+changes the turn, so the immediately previous board cannot contribute
+an occurrence hit. Even a return on the following move gives at most
+two occurrences. The next strong pawn move supplies the actual reset,
+after which the earlier phase-separation arguments apply.
+
+One direct consequence covers a king on its sixth rank, on a file
+adjacent to a sixth- or seventh-rank pawn: if its vertical seventh-rank
+entry square is safe, and entry does not cause the stated stalemate,
+the position wins with the pawn owner to move. This is a sufficient
+entry region, not a classification of the guarded-entry complement.
+
+Now put a **non-rook pawn** on its sixth rank and its own king directly
+ahead on the seventh. Both adjacent-file flank squares on the seventh
+rank exist. Choose the flank away from the defending king. King
+separation implies this square is safe: when the weak king is near in
+rank, it is at least two files from the centered king, and moving to
+the opposite flank increases that file distance; otherwise rank
+separation suffices. This enters the adjacent-file sixth-pawn band.
+Its corner-stalemate condition cannot occur at this root, because a
+corner king one file from the pawn would already be adjacent to the
+centered strong king.
+
+This centered position wins for either turn. On the weak turn the pawn
+is protected and every reply preserves the centered configuration.
+Replies always exist: step backward along the weak king's file (up
+from oriented rank zero). If the pawn attacked that square, the weak
+king would have been adjacent to the centered strong king, contradicting
+separation. The pawn owner's next move chooses the safe flank.
+
+The weak-turn route has **two quiet entry plies** before reaching the
+adjacent-file band, so its proof also retains the exact two-move prefix.
+Through the intended third move, turn alternation limits occurrences
+to at most two. Both current and intended claims are excluded. Before
+the next pawn move the clock is at most three, and the short history
+cannot reach the automatic repetition threshold. The pawn advance then
+separates old heights and resets the clock, as already proved. The
+centered totals are 103 plies with the strong side to move and 104
+with the weak side to move, with no optimal-distance claim.
+
+Combining centered and adjacent support gives the whole explicit band
+
+```
+SixthPawnKeyBand(σ,s,p) :=
+  h(s)=6 AND h(p)=5 AND 1<=file(p)<=6 AND |file(s)-file(p)|<=1.
+```
+
+On this three-square band, `SeventhKingWins` remains the complete fresh
+WDL50 criterion and its complement is exactly the dead subset. The
+outside-corner stalemate can occur only in the adjacent-file branch;
+the centered branch always wins. Both players have actual holding
+policies in the drawn branch, the weak side never wins, and board
+forcing agrees with fresh actual winning. Thus there are no cursed-win
+or blessed-loss exceptions in this band. This does not classify rook
+pawns with a centered king, earlier ranks, or a guarded entry square.
+
 ## Paper-to-Lean correspondence
 
 All paths below are relative to `formal/EndgameChess/Rules/`.
@@ -269,6 +339,10 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Pawn-advance prefix separation | `KPK/SupportedPrefix`: `supported_weak_prefix_win`; `FreshGame/ShortPrefix` |
 | Sixth-pawn king support and stalemate | `KPK/SeventhKing`: `seventh_king_advance`, `seventh_king_moves_iff` |
 | Exact outcome/deadness of the seventh-king band | `KPK/SeventhKingOutcome`: `fresh_seventh_king_wdl50`, `seventh_king_force_iff_fresh` |
+| One/two quiet entry plies with actual history | `FreshGame/ShortPrefix`: `one_ply_no_claim`, `two_ply_no_claim`; `KPK/EntryPrefix` |
+| Safe king entry from outside the proved bands | `KPK/KingEntry`: `fresh_supported_king_entry`, `fresh_seventh_king_entry`, `fresh_sixth_rank_entry_win` |
+| Centered seventh-rank support of a non-rook sixth pawn | `KPK/CenteredKing`: `centered_flank_entry`, `fresh_centered_strong`, `fresh_centered_weak`, `fresh_centered_win` |
+| All three seventh-rank support squares | `KPK/KeySquares`: `fresh_key_band_wdl50`, `key_band_force_iff_fresh` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
@@ -278,8 +352,8 @@ public theorem. These sources are work in progress, **not frozen**.
 Development verification on Lean `v4.35.0`:
 
 - `lake build EndgameChess.Rules.KPK.Examples EndgameChess` passed
-  (520 jobs in the incremental build graph, including cached dependencies).
-- `lake env lean AxiomCheck.lean` passed. All 136 public theorem reports
+  (524 jobs in the incremental build graph, including cached dependencies).
+- `lake env lean AxiomCheck.lean` passed. All 168 public theorem reports
   introduced for KPK use only subsets of `propext`, `Classical.choice`,
   `Quot.sound`.
 - Local controls cover white/black promotion wins, double-push EP and
@@ -288,14 +362,17 @@ Development verification on Lean `v4.35.0`:
   Further controls cover both colours and turns of supported seventh-rank
   wins, the same-board win/stalemate tempo distinction, the reflected
   black stalemate, and the 102-ply weak-turn certificate using real resets.
+  King-entry controls cover both colours, the seventh-pawn endpoint and
+  exclusion of an entry that would stalemate. Centered-support controls
+  cover both colours and turns, including the 104-ply two-quiet-entry route.
 
 No clean-checkout certification or freeze has been performed.
 
 ## Open proof obligations
 
-The remaining domain includes coordination outside the two proved
-seventh-king bands, opposition and tempo, blocked paths, and rook pawns
-outside the fortress. It needs a
+The remaining domain includes earlier-rank coordination, opposition when
+the king-entry squares are guarded, blocked paths, and rook pawns outside
+the proved fortress and support regions. It needs a
 complete explicit geometric win/hold partition, entry and preservation
 lemmas, sufficient quiet-phase bounds, and prevention of fixed-height
 king cycles. Height monotonicity alone settles none of those budgets.

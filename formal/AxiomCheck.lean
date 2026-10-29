@@ -2802,3 +2802,37 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.sixth_pawn_tempo_example
 #print axioms EndgameChess.Rules.KPK.black_sixth_pawn_stalemate_example
 #print axioms EndgameChess.Rules.KPK.sixth_pawn_weak_102_example
+
+-- KPK quiet king entry and centered key square (unfrozen).
+#print axioms EndgameChess.Rules.FreshGame.afterMove_occurrences_le_past
+#print axioms EndgameChess.Rules.FreshGame.one_ply_no_claim
+#print axioms EndgameChess.Rules.FreshGame.three_moves_occurrences_le_two
+#print axioms EndgameChess.Rules.FreshGame.two_ply_no_claim
+#print axioms EndgameChess.Rules.KPK.seventh_king_weak_board_bound
+#print axioms EndgameChess.Rules.KPK.supported_weak_one_ply
+#print axioms EndgameChess.Rules.KPK.seventh_king_weak_one_ply
+#print axioms EndgameChess.Rules.KPK.seventh_king_weak_two_ply
+#print axioms EndgameChess.Rules.KPK.fresh_supported_king_entry
+#print axioms EndgameChess.Rules.KPK.fresh_seventh_king_entry
+#print axioms EndgameChess.Rules.KPK.fresh_king_entry_win
+#print axioms EndgameChess.Rules.KPK.sixth_rank_vertical_entry
+#print axioms EndgameChess.Rules.KPK.fresh_sixth_rank_entry_win
+#print axioms EndgameChess.Rules.KPK.centered_pawn_protected
+#print axioms EndgameChess.Rules.KPK.centered_not_corner
+#print axioms EndgameChess.Rules.KPK.centered_flank_entry
+#print axioms EndgameChess.Rules.KPK.centered_weak_has_move
+#print axioms EndgameChess.Rules.KPK.centered_weak_reply
+#print axioms EndgameChess.Rules.KPK.centered_strong_bound
+#print axioms EndgameChess.Rules.KPK.fresh_centered_strong
+#print axioms EndgameChess.Rules.KPK.fresh_centered_weak
+#print axioms EndgameChess.Rules.KPK.fresh_centered_win
+#print axioms EndgameChess.Rules.KPK.key_band_split
+#print axioms EndgameChess.Rules.KPK.fresh_key_band_wdl50
+#print axioms EndgameChess.Rules.KPK.key_band_force_iff_fresh
+#print axioms EndgameChess.Rules.KPK.sixth_rank_white_entry_example
+#print axioms EndgameChess.Rules.KPK.sixth_rank_black_entry_example
+#print axioms EndgameChess.Rules.KPK.seventh_pawn_king_entry_example
+#print axioms EndgameChess.Rules.KPK.stalemate_excludes_entry_example
+#print axioms EndgameChess.Rules.KPK.centered_white_both_turns_example
+#print axioms EndgameChess.Rules.KPK.centered_black_both_turns_example
+#print axioms EndgameChess.Rules.KPK.centered_weak_104_example
