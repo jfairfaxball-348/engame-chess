@@ -14,7 +14,7 @@ This is a **material-class roadmap**, not a session log. [The live work note](..
 | K vs K | Draw/dead-position results frozen | None within proved scope |
 | K+B vs K | Draw/dead-position results frozen | None within proved scope |
 | K+N vs K | Draw/dead-position results frozen | None within proved scope |
-| **K+R vs K (current)** | Clock-free dead/live and forcing; partial history/clock outcomes; EC-T0048 clock0 both-turn criterion and wall93/arrival97/forcing98, frozen | Complete positive-clock and incoming-history outcomes, full FIDE correspondence, exact WDL/DTZ distances |
+| **K+R vs K (current)** | Clock-free dead/live and forcing; partial history/clock outcomes; EC-T0048 clock0 both-turn criterion and wall93/arrival97/forcing98; EC-T0049 bounded RAW strong h>=86 / weak h>=85 outcomes, complete geometry through12 and partial14, frozen | Complete positive-clock and incoming-history outcomes, full FIDE correspondence, exact WDL/DTZ distances |
 | K+Q vs K | Not started | Full class proof + Lean |
 | K+P vs K | Not started | Full class proof + Lean |
 | Four-piece classes | Not started | All material classes and positions |
@@ -22,7 +22,7 @@ This is a **material-class roadmap**, not a session log. [The live work note](..
 | Six-piece classes | Not started | All material classes and positions |
 | Seven-piece classes | Not started | All material classes and positions |
 
-KRK work is **not closed**: 48 frozen bundles are not 48 solved material classes. The class-level programme goes KRK → KQK → KPK → systematically larger material classes, subject to owner selection. Piece count includes both kings.
+KRK work is **not closed**: 49 frozen bundles are not 49 solved material classes. The class-level programme goes KRK → KQK → KPK → systematically larger material classes, subject to owner selection. Piece count includes both kings.
 
 ## What counts as completion
 1. **Dead/live:** Whether checkmate remains legally possible, including capture/dead-position boundaries.

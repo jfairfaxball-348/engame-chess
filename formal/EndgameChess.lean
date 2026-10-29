@@ -171,3 +171,239 @@ import EndgameChess.Rules.KRKSixInwardCorner
 import EndgameChess.Rules.KRKSixInteriorHolding
 
 import EndgameChess.Rules.KRKSixCorner
+import EndgameChess.Rules.KRKSixSecond
+import EndgameChess.Rules.KRKFiveCornerEntries
+import EndgameChess.Rules.KRKSixNear
+import EndgameChess.Rules.KRKFrameBound
+import EndgameChess.Rules.KRKSixGlobal
+import EndgameChess.Rules.KRKFivePlyExact
+import EndgameChess.Rules.KRKSevenPrefix
+import EndgameChess.Rules.KRKSevenSlots
+import EndgameChess.Rules.KRKSevenEntry
+import EndgameChess.Rules.KRKSevenPlyHistory
+import EndgameChess.Rules.KRKSixPlyExact
+import EndgameChess.Rules.KRKEightPrefix
+import EndgameChess.Rules.KRKEightPlyHistory
+import EndgameChess.Rules.KRKSevenGeometry
+import EndgameChess.Rules.KRKEightGeometry
+import EndgameChess.Rules.KRKSevenReach
+import EndgameChess.Rules.KRKCastleEight
+import EndgameChess.Rules.KRKSevenMiddle
+import EndgameChess.Rules.KRKEightInterior
+import EndgameChess.Rules.KRKEightInteriorHolding
+import EndgameChess.Rules.KRKEightStrip
+import EndgameChess.Rules.KRKSevenNear
+import EndgameChess.Rules.KRKEightCentralStrip
+import EndgameChess.Rules.KRKEightCentralStripHolding
+import EndgameChess.Rules.KRKEightNearStrip
+import EndgameChess.Rules.KRKEightInner
+import EndgameChess.Rules.KRKEightInteriorExact
+import EndgameChess.Rules.KRKSevenSecond
+import EndgameChess.Rules.KRKNineEntry
+import EndgameChess.Rules.KRKNineNearStrip
+import EndgameChess.Rules.KRKSevenCorner
+import EndgameChess.Rules.KRKEightEdge
+import EndgameChess.Rules.KRKEightGlobal
+import EndgameChess.Rules.KRKNineNearStripHistory
+
+import EndgameChess.Rules.KRKNineSlots
+
+import EndgameChess.Rules.KRKNineGeometry
+
+import EndgameChess.Rules.KRKNinePlyHistory
+
+import EndgameChess.Rules.KRKSevenPlyExact
+
+import EndgameChess.Rules.KRKEightPlyExact
+
+import EndgameChess.Rules.KRKNinePlyExact
+
+import EndgameChess.Rules.KRKTenPlyHistory
+
+import EndgameChess.Rules.KRKTenPlyExact
+
+import EndgameChess.Rules.KRKTenGeometry
+
+import EndgameChess.Rules.KRKTenSecondCorner
+
+import EndgameChess.Rules.KRKTenSecondCornerHolding
+
+import EndgameChess.Rules.KRKTenInterior
+
+import EndgameChess.Rules.KRKTenInteriorHolding
+
+import EndgameChess.Rules.KRKNineMiddleLow
+
+import EndgameChess.Rules.KRKTenCentralStrip
+
+import EndgameChess.Rules.KRKTenCentralStripHolding
+
+import EndgameChess.Rules.KRKNineInnerBoundary
+
+import EndgameChess.Rules.KRKNineSecondBoundary
+
+import EndgameChess.Rules.KRKNineUpperEntries
+
+import EndgameChess.Rules.KRKTenNearStrip
+
+import EndgameChess.Rules.KRKNineSecondLeft
+
+import EndgameChess.Rules.KRKNineNearDiagonal
+
+import EndgameChess.Rules.KRKEightDiagonalEntries
+
+import EndgameChess.Rules.KRKTenInner
+
+import EndgameChess.Rules.KRKTenInteriorExact
+
+import EndgameChess.Rules.KRKNineEdge
+
+import EndgameChess.Rules.KRKTenEdge
+
+import EndgameChess.Rules.KRKTenGlobal
+
+import EndgameChess.Rules.KRKCastleTen
+
+import EndgameChess.Rules.KRKElevenEntry
+
+import EndgameChess.Rules.KRKElevenSlots
+
+import EndgameChess.Rules.KRKElevenGeometry
+
+import EndgameChess.Rules.KRKElevenPlyHistory
+
+import EndgameChess.Rules.KRKElevenPlyExact
+
+import EndgameChess.Rules.KRKTwelvePlyHistory
+
+import EndgameChess.Rules.KRKTwelvePlyExact
+
+import EndgameChess.Rules.KRKTwelveGeometry
+
+import EndgameChess.Rules.KRKElevenNearBoundary
+
+import EndgameChess.Rules.KRKTwelveSecondCorner
+
+import EndgameChess.Rules.KRKTwelveDeepExact
+
+import EndgameChess.Rules.KRKElevenNearStrip
+
+import EndgameChess.Rules.KRKTwelveCentralEntries
+
+import EndgameChess.Rules.KRKTwelveCentralStrip
+
+import EndgameChess.Rules.KRKElevenEdgeBoundary
+
+import EndgameChess.Rules.KRKTwelveCentralUpperEntries
+
+import EndgameChess.Rules.KRKTwelveCentralOppositionEntries
+
+import EndgameChess.Rules.KRKTwelveCentralExact
+
+import EndgameChess.Rules.KRKElevenInner
+
+import EndgameChess.Rules.KRKTwelveNearStrip
+
+import EndgameChess.Rules.KRKTwelveNearFileEntries
+
+import EndgameChess.Rules.KRKTwelveNearFileOne
+
+import EndgameChess.Rules.KRKTwelveNearNewEntries
+
+import EndgameChess.Rules.KRKTwelveNearUpper
+
+import EndgameChess.Rules.KRKTwelveNearExact
+
+import EndgameChess.Rules.KRKTwelveInner
+
+import EndgameChess.Rules.KRKTwelveInnerDiagonal
+
+import EndgameChess.Rules.KRKTwelveInnerFileOne
+
+import EndgameChess.Rules.KRKTwelveInnerDiagonalExact
+
+import EndgameChess.Rules.KRKTwelveInnerOuter
+
+import EndgameChess.Rules.KRKTwelveInnerSide
+
+import EndgameChess.Rules.KRKTwelveInnerHigh
+
+import EndgameChess.Rules.KRKTwelveInnerBoundaryEntries
+
+import EndgameChess.Rules.KRKTwelveInnerHighExact
+
+import EndgameChess.Rules.KRKTwelveInnerUpperEntries
+
+import EndgameChess.Rules.KRKTwelveInnerUpperFour
+
+import EndgameChess.Rules.KRKTwelveInnerUpperBoundary
+
+import EndgameChess.Rules.KRKTwelveInnerUpperFive
+
+import EndgameChess.Rules.KRKTwelveInnerExact
+
+import EndgameChess.Rules.KRKTwelveInteriorExact
+
+import EndgameChess.Rules.KRKTwelveEdge
+
+import EndgameChess.Rules.KRKTwelveGlobal
+
+import EndgameChess.Rules.KRKCastleTwelve
+
+import EndgameChess.Rules.KRKThirteenEntry
+
+import EndgameChess.Rules.KRKThirteenSlots
+
+import EndgameChess.Rules.KRKThirteenGeometry
+
+import EndgameChess.Rules.KRKThirteenPlyHistory
+
+import EndgameChess.Rules.KRKThirteenPlyExact
+
+import EndgameChess.Rules.KRKFourteenPlyHistory
+
+import EndgameChess.Rules.KRKFourteenPlyExact
+
+import EndgameChess.Rules.KRKFourteenGeometry
+
+import EndgameChess.Rules.KRKFourteenDeep
+
+import EndgameChess.Rules.KRKFourteenDeepStrip
+
+import EndgameChess.Rules.KRKThirteenInteriorBarriers
+
+import EndgameChess.Rules.KRKFourteenDeepStripHolding
+
+import EndgameChess.Rules.KRKFourteenSecondCorner
+
+import EndgameChess.Rules.KRKFourteenSecondCornerEntries
+
+import EndgameChess.Rules.KRKFourteenSecondCornerBounds
+
+import EndgameChess.Rules.KRKFourteenSecondCornerExact
+
+import EndgameChess.Rules.KRKFourteenDeepExact
+
+import EndgameChess.Rules.KRKThirteenCentralStrip
+
+import EndgameChess.Rules.KRKFourteenCentralEntries
+
+import EndgameChess.Rules.KRKFourteenCentralPrison
+
+import EndgameChess.Rules.KRKFourteenCentralUpperEntries
+
+import EndgameChess.Rules.KRKFourteenCentralBounds
+
+import EndgameChess.Rules.KRKFourteenCentralNecessary
+
+import EndgameChess.Rules.KRKFourteenCentralUpperZero
+
+import EndgameChess.Rules.KRKFourteenCentralUpperTwo
+
+import EndgameChess.Rules.KRKFourteenCentralExact
+
+import EndgameChess.Rules.KRKThirteenNearRook
+
+import EndgameChess.Rules.KRKThirteenNearStrip
+
+import EndgameChess.Rules.KRKThirteenInnerRook

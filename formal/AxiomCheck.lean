@@ -1230,3 +1230,1263 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKSixCorner.region_south_five
 #print axioms EndgameChess.Rules.KRKSixCorner.region_replies
 #print axioms EndgameChess.Rules.KRKSixCorner.kernel_six_iff
+
+#print axioms EndgameChess.Rules.KRKSixSecond.necessary
+#print axioms EndgameChess.Rules.KRKSixSecond.region_replies
+#print axioms EndgameChess.Rules.KRKSixSecond.kernel_six_iff
+#print axioms EndgameChess.Rules.KRKSixSecond.new_geometry
+#print axioms EndgameChess.Rules.KRKSixSecond.kernel_exact_six_iff
+
+#print axioms EndgameChess.Rules.KRKFiveCornerEntries.slot22_properties
+#print axioms EndgameChess.Rules.KRKFiveCornerEntries.corner22_reachable
+#print axioms EndgameChess.Rules.KRKFiveCornerEntries.corner22_five
+#print axioms EndgameChess.Rules.KRKFiveCornerEntries.corner22_king_five
+#print axioms EndgameChess.Rules.KRKFiveCornerEntries.low_right_five
+#print axioms EndgameChess.Rules.KRKFiveCornerEntries.side_right_five
+#print axioms EndgameChess.Rules.KRKFiveCornerEntries.no_capture_square_entry
+#print axioms EndgameChess.Rules.KRKSixNear.necessary
+#print axioms EndgameChess.Rules.KRKSixNear.extra_replies
+#print axioms EndgameChess.Rules.KRKSixNear.kernel_six_iff
+#print axioms EndgameChess.Rules.KRKSixNear.kernel_exact_six_iff
+#print axioms EndgameChess.Rules.KRKFrameBound.bound_transport
+#print axioms EndgameChess.Rules.KRKFrameBound.five_map
+#print axioms EndgameChess.Rules.KRKFrameBound.six_map
+#print axioms EndgameChess.Rules.KRKSixGlobal.canonical_necessary
+#print axioms EndgameChess.Rules.KRKSixGlobal.canonical_sufficient
+#print axioms EndgameChess.Rules.KRKSixGlobal.edge_clear_iff
+#print axioms EndgameChess.Rules.KRKSixGlobal.kernel_six_iff
+#print axioms EndgameChess.Rules.KRKSixGlobal.kernel_exact_six_iff
+#print axioms EndgameChess.Rules.KRKFivePlyExact.necessary
+#print axioms EndgameChess.Rules.KRKFivePlyExact.rule_five_iff
+#print axioms EndgameChess.Rules.KRKFivePlyExact.strong_six_five
+#print axioms EndgameChess.Rules.KRKSevenPrefix.first_occurrences_root
+#print axioms EndgameChess.Rules.KRKSevenPrefix.second_occurrences_root
+#print axioms EndgameChess.Rules.KRKSevenPrefix.fourth_entry_root_iff
+#print axioms EndgameChess.Rules.KRKSevenPrefix.inner_clear_root_iff
+#print axioms EndgameChess.Rules.KRKSevenPrefix.weak_after_root_iff
+#print axioms EndgameChess.Rules.KRKSevenPrefix.strong_clear_root_iff
+#print axioms EndgameChess.Rules.KRKSevenPrefix.six_append_iff
+#print axioms EndgameChess.Rules.KRKSevenSlots.region_bounds
+#print axioms EndgameChess.Rules.KRKSevenSlots.region_point
+#print axioms EndgameChess.Rules.KRKSevenEntry.six_entry_move
+#print axioms EndgameChess.Rules.KRKSevenPlyHistory.entry_certificate
+#print axioms EndgameChess.Rules.KRKSevenPlyHistory.sufficient
+#print axioms EndgameChess.Rules.KRKSevenPlyHistory.necessary
+#print axioms EndgameChess.Rules.KRKSevenPlyHistory.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKSevenPlyHistory.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKSevenPlyHistory.high_clock_draw_iff
+#print axioms EndgameChess.Rules.KRKSevenPlyHistory.high_clock_distance_cases
+#print axioms EndgameChess.Rules.KRKSevenPlyHistory.entry_kernel
+#print axioms EndgameChess.Rules.KRKSevenPlyHistory.clear_kernel
+#print axioms EndgameChess.Rules.KRKSixPlyExact.necessary
+#print axioms EndgameChess.Rules.KRKSixPlyExact.rule_six_iff
+#print axioms EndgameChess.Rules.KRKSixPlyExact.weak_seven_six
+#print axioms EndgameChess.Rules.KRKEightPrefix.prefix_occurrences_eq
+#print axioms EndgameChess.Rules.KRKEightPrefix.root_occurrences_eq
+#print axioms EndgameChess.Rules.KRKEightPrefix.first_occurrences_eq
+#print axioms EndgameChess.Rules.KRKEightPrefix.second_occurrences_eq
+#print axioms EndgameChess.Rules.KRKEightPrefix.fourth_entry_weak_iff
+#print axioms EndgameChess.Rules.KRKEightPrefix.inner_clear_weak_iff
+#print axioms EndgameChess.Rules.KRKEightPrefix.weak_after_weak_iff
+#print axioms EndgameChess.Rules.KRKEightPrefix.strong_clear_weak_iff
+#print axioms EndgameChess.Rules.KRKEightPrefix.six_after_weak_iff
+#print axioms EndgameChess.Rules.KRKEightPrefix.seven_append_iff
+#print axioms EndgameChess.Rules.KRKEightPlyHistory.child_seven_certificate
+#print axioms EndgameChess.Rules.KRKEightPlyHistory.necessary
+#print axioms EndgameChess.Rules.KRKEightPlyHistory.sufficient
+#print axioms EndgameChess.Rules.KRKEightPlyHistory.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKEightPlyHistory.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKEightPlyHistory.high_clock_hold_iff
+#print axioms EndgameChess.Rules.KRKEightPlyHistory.high_clock_draw_iff
+#print axioms EndgameChess.Rules.KRKEightPlyHistory.high_clock_distance_cases
+#print axioms EndgameChess.Rules.KRKSevenGeometry.entry_sufficient
+#print axioms EndgameChess.Rules.KRKSevenGeometry.sufficient
+#print axioms EndgameChess.Rules.KRKSevenGeometry.entry_necessary
+#print axioms EndgameChess.Rules.KRKSevenGeometry.necessary
+#print axioms EndgameChess.Rules.KRKSevenGeometry.kernel_seven_iff
+#print axioms EndgameChess.Rules.KRKEightGeometry.kernel_eight_iff
+#print axioms EndgameChess.Rules.KRKEightGeometry.strong_eight_seven
+#print axioms EndgameChess.Rules.KRKEightGeometry.weak_nine_eight
+#print axioms EndgameChess.Rules.KRKSevenReach.region_weak_domain
+#print axioms EndgameChess.Rules.KRKSevenReach.region_interior_distance
+#print axioms EndgameChess.Rules.KRKSevenReach.weak_domain
+#print axioms EndgameChess.Rules.KRKSevenReach.interior_king_near
+#print axioms EndgameChess.Rules.KRKSevenReach.frame_map
+#print axioms EndgameChess.Rules.KRKCastleEight.seven_bottom_interior
+#print axioms EndgameChess.Rules.KRKCastleEight.above_covered
+#print axioms EndgameChess.Rules.KRKCastleEight.rank_prison
+#print axioms EndgameChess.Rules.KRKCastleEight.king_bottom_no_eight
+#print axioms EndgameChess.Rules.KRKCastleEight.queen_bottom_weak_corner
+#print axioms EndgameChess.Rules.KRKCastleEight.frame_map
+#print axioms EndgameChess.Rules.KRKCastleEight.home_king_no_eight
+#print axioms EndgameChess.Rules.KRKCastleEight.home_queen_weak_corner
+#print axioms EndgameChess.Rules.KRKCastleEight.castle_not_eight
+#print axioms EndgameChess.Rules.KRKCastleEight.winning_entry_not_castle
+#print axioms EndgameChess.Rules.KRKSevenMiddle.kernel_seven_five_iff
+#print axioms EndgameChess.Rules.KRKSevenMiddle.bottom_clear_iff
+#print axioms EndgameChess.Rules.KRKSevenMiddle.low_rook_clear_iff
+#print axioms EndgameChess.Rules.KRKSevenReach.king_step_clear
+#print axioms EndgameChess.Rules.KRKSevenReach.rook_step_clear
+#print axioms EndgameChess.Rules.KRKEightInterior.covered_or_inner
+#print axioms EndgameChess.Rules.KRKEightInterior.deep_escape
+#print axioms EndgameChess.Rules.KRKEightInterior.weak_eight_depth_le_one
+#print axioms EndgameChess.Rules.KRKEightInteriorHolding.strong_ten_depth_le_one
+#print axioms EndgameChess.Rules.KRKEightInteriorHolding.high_clock_depth_necessary
+#print axioms EndgameChess.Rules.KRKEightInteriorHolding.high_clock_deep_holding
+#print axioms EndgameChess.Rules.KRKEightStrip.region_replies
+#print axioms EndgameChess.Rules.KRKEightStrip.region_clear
+#print axioms EndgameChess.Rules.KRKEightStrip.kernel_exact_eight
+#print axioms EndgameChess.Rules.KRKSevenNear.shape_iff
+#print axioms EndgameChess.Rules.KRKSevenNear.reach_iff
+#print axioms EndgameChess.Rules.KRKSevenNear.king_points_iff
+#print axioms EndgameChess.Rules.KRKSevenNear.rook_rays_iff
+#print axioms EndgameChess.Rules.KRKSevenNear.clear_iff
+#print axioms EndgameChess.Rules.KRKSevenNear.kernel_seven_iff
+#print axioms EndgameChess.Rules.KRKEightCentralStrip.prison
+#print axioms EndgameChess.Rules.KRKEightCentralStrip.middle_not_clear
+#print axioms EndgameChess.Rules.KRKEightCentralStrip.middle_kernel_no_eight
+#print axioms EndgameChess.Rules.KRKEightCentralStripHolding.strong_no_ten
+#print axioms EndgameChess.Rules.KRKEightCentralStripHolding.high_clock_holding
+#print axioms EndgameChess.Rules.KRKEightNearStrip.prison
+#print axioms EndgameChess.Rules.KRKSevenInner.inner_entry_necessary
+#print axioms EndgameChess.Rules.KRKEightNearStrip.necessary
+#print axioms EndgameChess.Rules.KRKEightNearStrip.clear_iff
+#print axioms EndgameChess.Rules.KRKEightNearStrip.kernel_eight_iff
+#print axioms EndgameChess.Rules.KRKEightNearStrip.framed_clear_iff
+#print axioms EndgameChess.Rules.KRKSevenInner.horizontal_line_necessary
+#print axioms EndgameChess.Rules.KRKSevenInner.horizontal_line_sufficient
+#print axioms EndgameChess.Rules.KRKSevenInner.necessary
+#print axioms EndgameChess.Rules.KRKSevenInner.sufficient
+#print axioms EndgameChess.Rules.KRKSevenInner.clear_iff
+#print axioms EndgameChess.Rules.KRKSevenInner.kernel_seven_iff
+#print axioms EndgameChess.Rules.KRKEightInner.prison
+#print axioms EndgameChess.Rules.KRKEightInner.row_two_necessary
+#print axioms EndgameChess.Rules.KRKEightInner.file_one_necessary
+#print axioms EndgameChess.Rules.KRKEightInner.no_seven_diagonal
+#print axioms EndgameChess.Rules.KRKEightInner.diagonal_not_clear
+#print axioms EndgameChess.Rules.KRKEightInner.necessary
+#print axioms EndgameChess.Rules.KRKEightInner.horizontal_replies
+#print axioms EndgameChess.Rules.KRKEightInner.horizontal_clear
+#print axioms EndgameChess.Rules.KRKEightInner.sufficient
+#print axioms EndgameChess.Rules.KRKEightInner.clear_iff
+#print axioms EndgameChess.Rules.KRKEightInner.kernel_eight_iff
+#print axioms EndgameChess.Rules.KRKEightInner.kernel_exact_eight
+#print axioms EndgameChess.Rules.KRKEightInner.framed_clear_iff
+#print axioms EndgameChess.Rules.KRKEightInteriorExact.strip_spec
+#print axioms EndgameChess.Rules.KRKEightInteriorExact.kernel_eight_iff
+#print axioms EndgameChess.Rules.KRKEightInteriorExact.kernel_exact_eight
+#print axioms EndgameChess.Rules.KRKSevenSecond.shape_iff
+#print axioms EndgameChess.Rules.KRKSevenSecond.properties
+#print axioms EndgameChess.Rules.KRKSevenSecond.king_points_iff
+#print axioms EndgameChess.Rules.KRKSevenSecond.rook_destination
+#print axioms EndgameChess.Rules.KRKSevenSecond.rook_rays_iff
+#print axioms EndgameChess.Rules.KRKSevenSecond.clear_iff
+#print axioms EndgameChess.Rules.KRKSevenSecond.kernel_seven_iff
+#print axioms EndgameChess.Rules.KRKNineEntry.eight_entry_move
+#print axioms EndgameChess.Rules.KRKNineNearStrip.rook_line_necessary
+#print axioms EndgameChess.Rules.KRKNineNearStrip.rook_destination
+#print axioms EndgameChess.Rules.KRKNineNearStrip.necessary
+#print axioms EndgameChess.Rules.KRKNineNearStrip.sufficient
+#print axioms EndgameChess.Rules.KRKNineNearStrip.kernel_nine_iff
+#print axioms EndgameChess.Rules.KRKNineNearStrip.kernel_exact_nine
+#print axioms EndgameChess.Rules.KRKSevenCorner.live_iff
+#print axioms EndgameChess.Rules.KRKSevenCorner.region_point
+#print axioms EndgameChess.Rules.KRKSevenCorner.king_points_iff
+#print axioms EndgameChess.Rules.KRKSevenCorner.rook_line_necessary
+#print axioms EndgameChess.Rules.KRKSevenCorner.rook_destination
+#print axioms EndgameChess.Rules.KRKSevenCorner.rook_rays_necessary
+#print axioms EndgameChess.Rules.KRKSevenCorner.canonical_rook_clear
+#print axioms EndgameChess.Rules.KRKSevenCorner.rook_entries_sufficient
+#print axioms EndgameChess.Rules.KRKSevenCorner.immediate_entries
+#print axioms EndgameChess.Rules.KRKSevenCorner.clear_iff
+#print axioms EndgameChess.Rules.KRKSevenCorner.kernel_seven_iff
+#print axioms EndgameChess.Rules.KRKEightEdge.seven_test_iff
+#print axioms EndgameChess.Rules.KRKEightEdge.reply_point
+#print axioms EndgameChess.Rules.KRKEightEdge.clear_iff
+#print axioms EndgameChess.Rules.KRKEightEdge.kernel_eight_iff
+#print axioms EndgameChess.Rules.KRKEightGlobal.edge_clear_iff
+#print axioms EndgameChess.Rules.KRKEightGlobal.kernel_eight_iff
+#print axioms EndgameChess.Rules.KRKEightGlobal.kernel_exact_eight_iff
+#print axioms EndgameChess.Rules.KRKNineNearStripHistory.entry_certificate
+#print axioms EndgameChess.Rules.KRKNineNearStripHistory.sufficient
+#print axioms EndgameChess.Rules.KRKNineNearStripHistory.necessary
+#print axioms EndgameChess.Rules.KRKNineNearStripHistory.high_clock_force_iff
+#print axioms EndgameChess.Rules.KRKNineNearStripHistory.high_clock_actual_iff
+#print axioms EndgameChess.Rules.KRKNineNearStripHistory.high_clock_draw_iff
+#print axioms EndgameChess.Rules.KRKNineNearStripHistory.exact_nine
+
+#print axioms EndgameChess.Rules.KRKEightGlobal.region_live
+
+#print axioms EndgameChess.Rules.KRKNineSlots.seven_test_rank
+
+#print axioms EndgameChess.Rules.KRKNineSlots.edge_rank
+
+#print axioms EndgameChess.Rules.KRKNineSlots.region_rank
+
+#print axioms EndgameChess.Rules.KRKNineSlots.region_point
+
+#print axioms EndgameChess.Rules.KRKNineGeometry.entry_sufficient
+
+#print axioms EndgameChess.Rules.KRKNineGeometry.sufficient
+
+#print axioms EndgameChess.Rules.KRKNineGeometry.entry_necessary
+
+#print axioms EndgameChess.Rules.KRKNineGeometry.necessary
+
+#print axioms EndgameChess.Rules.KRKNineGeometry.kernel_nine_iff
+
+#print axioms EndgameChess.Rules.KRKNinePlyHistory.clear_geometry
+
+#print axioms EndgameChess.Rules.KRKNinePlyHistory.clear_kernel
+
+#print axioms EndgameChess.Rules.KRKNinePlyHistory.entry_certificate
+
+#print axioms EndgameChess.Rules.KRKNinePlyHistory.sufficient
+
+#print axioms EndgameChess.Rules.KRKNinePlyHistory.necessary
+
+#print axioms EndgameChess.Rules.KRKNinePlyHistory.high_clock_force_iff
+
+#print axioms EndgameChess.Rules.KRKNinePlyHistory.high_clock_actual_iff
+
+#print axioms EndgameChess.Rules.KRKNinePlyHistory.high_clock_draw_iff
+
+#print axioms EndgameChess.Rules.KRKSevenPlyExact.necessary
+
+#print axioms EndgameChess.Rules.KRKSevenPlyExact.rule_seven_iff
+
+#print axioms EndgameChess.Rules.KRKSevenPlyExact.strong_eight_seven
+
+#print axioms EndgameChess.Rules.KRKSevenPlyExact.weak_nine_eight
+
+#print axioms EndgameChess.Rules.KRKSevenPlyExact.distance_cases
+
+#print axioms EndgameChess.Rules.KRKEightPlyExact.necessary
+
+#print axioms EndgameChess.Rules.KRKEightPlyExact.rule_eight_iff
+
+#print axioms EndgameChess.Rules.KRKEightPlyExact.distance_cases
+
+#print axioms EndgameChess.Rules.KRKNinePlyExact.necessary
+
+#print axioms EndgameChess.Rules.KRKNinePlyExact.rule_nine_iff
+
+#print axioms EndgameChess.Rules.KRKNinePlyExact.strong_ten_nine
+
+#print axioms EndgameChess.Rules.KRKNinePlyExact.weak_eleven_ten
+
+#print axioms EndgameChess.Rules.KRKNinePlyExact.high_clock_distance_split
+
+#print axioms EndgameChess.Rules.KRKNinePlyExact.high_clock_exact_distance
+
+#print axioms EndgameChess.Rules.KRKTenPlyHistory.after_weak_iff
+
+#print axioms EndgameChess.Rules.KRKTenPlyHistory.child_nine_certificate
+
+#print axioms EndgameChess.Rules.KRKTenPlyHistory.necessary
+
+#print axioms EndgameChess.Rules.KRKTenPlyHistory.sufficient
+
+#print axioms EndgameChess.Rules.KRKTenPlyHistory.high_clock_force_iff
+
+#print axioms EndgameChess.Rules.KRKTenPlyHistory.high_clock_actual_iff
+
+#print axioms EndgameChess.Rules.KRKTenPlyHistory.high_clock_hold_iff
+
+#print axioms EndgameChess.Rules.KRKTenPlyHistory.high_clock_draw_iff
+
+#print axioms EndgameChess.Rules.KRKTenPlyExact.necessary
+
+#print axioms EndgameChess.Rules.KRKTenPlyExact.rule_ten_iff
+
+#print axioms EndgameChess.Rules.KRKTenPlyExact.high_clock_distance_split
+
+#print axioms EndgameChess.Rules.KRKTenPlyExact.high_clock_exact_distance
+
+#print axioms EndgameChess.Rules.KRKNineGeometry.frame_map
+
+#print axioms EndgameChess.Rules.KRKTenGeometry.kernel_ten_iff
+
+#print axioms EndgameChess.Rules.KRKTenGeometry.strong_ten_nine
+
+#print axioms EndgameChess.Rules.KRKTenGeometry.weak_eleven_ten
+
+#print axioms EndgameChess.Rules.KRKTenGeometry.eight_region_depth
+
+#print axioms EndgameChess.Rules.KRKTenGeometry.nine_weak_depth
+
+#print axioms EndgameChess.Rules.KRKTenGeometry.frame_map
+
+#print axioms EndgameChess.Rules.KRKTenSecondCorner.bad_neighbour_covered
+
+#print axioms EndgameChess.Rules.KRKTenSecondCorner.prison
+
+#print axioms EndgameChess.Rules.KRKTenSecondCorner.horizontal_escape
+
+#print axioms EndgameChess.Rules.KRKTenSecondCorner.not_clear
+
+#print axioms EndgameChess.Rules.KRKTenSecondCorner.framed_not_clear
+
+#print axioms EndgameChess.Rules.KRKTenSecondCorner.kernel_no_ten
+
+#print axioms EndgameChess.Rules.KRKTenSecondCorner.framed_kernel_no_ten
+
+#print axioms EndgameChess.Rules.KRKTenSecondCornerHolding.strong_no_twelve
+
+#print axioms EndgameChess.Rules.KRKTenSecondCornerHolding.high_clock_holding
+
+#print axioms EndgameChess.Rules.KRKTenInterior.central_escape
+
+#print axioms EndgameChess.Rules.KRKTenInterior.deep_not_clear
+
+#print axioms EndgameChess.Rules.KRKTenInterior.weak_ten_depth_le_one
+
+#print axioms EndgameChess.Rules.KRKTenInteriorHolding.strong_twelve_depth_le_one
+
+#print axioms EndgameChess.Rules.KRKTenInteriorHolding.high_clock_depth_necessary
+
+#print axioms EndgameChess.Rules.KRKTenInteriorHolding.high_clock_deep_holding
+
+#print axioms EndgameChess.Rules.KRKNineNearStrip.clear_iff
+
+#print axioms EndgameChess.Rules.KRKNineMiddleLow.eight_no_high_king
+
+#print axioms EndgameChess.Rules.KRKNineMiddleLow.eight_low_necessary
+
+#print axioms EndgameChess.Rules.KRKNineMiddleLow.no_nine
+
+#print axioms EndgameChess.Rules.KRKTenCentralStrip.prison
+
+#print axioms EndgameChess.Rules.KRKTenCentralStrip.row_four_no_clear
+
+#print axioms EndgameChess.Rules.KRKTenCentralStrip.upper_no_clear
+
+#print axioms EndgameChess.Rules.KRKTenCentralStrip.opposition_no_clear
+
+#print axioms EndgameChess.Rules.KRKTenCentralStrip.not_clear
+
+#print axioms EndgameChess.Rules.KRKTenCentralStrip.framed_not_clear
+
+#print axioms EndgameChess.Rules.KRKTenCentralStrip.file_one_not_clear
+
+#print axioms EndgameChess.Rules.KRKTenCentralStrip.middle_not_clear
+
+#print axioms EndgameChess.Rules.KRKTenCentralStrip.middle_kernel_no_ten
+
+#print axioms EndgameChess.Rules.KRKTenCentralStripHolding.strong_no_twelve
+
+#print axioms EndgameChess.Rules.KRKTenCentralStripHolding.high_clock_holding
+
+#print axioms EndgameChess.Rules.KRKNineGeometry.king_step_clear
+
+#print axioms EndgameChess.Rules.KRKNineGeometry.rook_step_clear
+
+#print axioms EndgameChess.Rules.KRKNineMiddleLow.king_two_three_necessary
+
+#print axioms EndgameChess.Rules.KRKNineMiddleLow.four_five_eight_clear
+
+#print axioms EndgameChess.Rules.KRKNineMiddleLow.king_two_three_sufficient
+
+#print axioms EndgameChess.Rules.KRKNineMiddleLow.king_two_three_iff
+
+#print axioms EndgameChess.Rules.KRKNineInnerBoundary.inner_region
+
+#print axioms EndgameChess.Rules.KRKNineInnerBoundary.rook_two_zero_high
+
+#print axioms EndgameChess.Rules.KRKNineInnerBoundary.rook_two_three_right_high
+
+#print axioms EndgameChess.Rules.KRKNineSecondBoundary.no_nine
+
+#print axioms EndgameChess.Rules.KRKNineUpperEntries.near_entry
+
+#print axioms EndgameChess.Rules.KRKNineUpperEntries.second_entry
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.lower_neighbour_covered
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.no_lower_guard
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.prison
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.row_three_clear
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.kernel_row_three_exact_ten
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.file_one_necessary
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.file_one_clear
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.file_one_iff
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.upper_necessary
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.necessary
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.upper_clear
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.sufficient
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.kernel_ten_iff
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.kernel_exact_ten
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.framed_clear_iff
+
+#print axioms EndgameChess.Rules.KRKTenNearStrip.diagonal_near_eight_clear
+
+#print axioms EndgameChess.Rules.KRKNineInner.horizontal_shape
+
+#print axioms EndgameChess.Rules.KRKNineInner.global_region_iff
+
+#print axioms EndgameChess.Rules.KRKNineInner.king_points_iff
+
+#print axioms EndgameChess.Rules.KRKNineInner.rook_line_necessary
+
+#print axioms EndgameChess.Rules.KRKNineInner.rook_destination
+
+#print axioms EndgameChess.Rules.KRKNineInner.rook_rays_necessary
+
+#print axioms EndgameChess.Rules.KRKNineInner.canonical_rook_clear
+
+#print axioms EndgameChess.Rules.KRKNineInner.clear_iff
+
+#print axioms EndgameChess.Rules.KRKNineInner.kernel_nine_iff
+
+#print axioms EndgameChess.Rules.KRKNineInner.kernel_exact_nine
+
+#print axioms EndgameChess.Rules.KRKNineSecondLeft.no_nine
+
+#print axioms EndgameChess.Rules.KRKNineNearDiagonal.no_nine
+
+#print axioms EndgameChess.Rules.KRKEightDiagonalEntries.corner_clear
+
+#print axioms EndgameChess.Rules.KRKEightDiagonalEntries.corner_region
+
+#print axioms EndgameChess.Rules.KRKEightDiagonalEntries.near_region
+
+#print axioms EndgameChess.Rules.KRKEightDiagonalEntries.second_region
+
+#print axioms EndgameChess.Rules.KRKTenInner.near_guard_necessary
+
+#print axioms EndgameChess.Rules.KRKTenInner.necessary
+
+#print axioms EndgameChess.Rules.KRKTenInner.side_extra_clear
+
+#print axioms EndgameChess.Rules.KRKTenInner.high_extra_clear
+
+#print axioms EndgameChess.Rules.KRKTenInner.horizontal_clear
+
+#print axioms EndgameChess.Rules.KRKTenInner.sufficient
+
+#print axioms EndgameChess.Rules.KRKTenInner.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTenInner.kernel_ten_iff
+
+#print axioms EndgameChess.Rules.KRKTenInner.kernel_exact_ten
+
+#print axioms EndgameChess.Rules.KRKTenInner.framed_clear_iff
+
+#print axioms EndgameChess.Rules.KRKTenInteriorExact.kernel_ten_iff
+
+#print axioms EndgameChess.Rules.KRKTenInteriorExact.kernel_exact_ten
+
+#print axioms EndgameChess.Rules.KRKNineEdge.clear_iff
+
+#print axioms EndgameChess.Rules.KRKNineEdge.kernel_nine_iff
+
+#print axioms EndgameChess.Rules.KRKTenEdge.nine_test_iff
+
+#print axioms EndgameChess.Rules.KRKTenEdge.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTenEdge.kernel_ten_iff
+
+#print axioms EndgameChess.Rules.KRKTenGlobal.edge_clear_iff
+
+#print axioms EndgameChess.Rules.KRKTenGlobal.kernel_ten_iff
+
+#print axioms EndgameChess.Rules.KRKTenGlobal.region_live
+
+#print axioms EndgameChess.Rules.KRKTenGlobal.kernel_exact_ten_iff
+
+#print axioms EndgameChess.Rules.KRKCastleTen.inner_boundary_impossible
+
+#print axioms EndgameChess.Rules.KRKCastleTen.bottom_interior_impossible
+
+#print axioms EndgameChess.Rules.KRKCastleTen.nine_interior_impossible
+
+#print axioms EndgameChess.Rules.KRKCastleTen.interior_covered
+
+#print axioms EndgameChess.Rules.KRKCastleTen.king_bottom_no_ten
+
+#print axioms EndgameChess.Rules.KRKCastleTen.queen_bottom_weak_corner
+
+#print axioms EndgameChess.Rules.KRKCastleTen.home_king_no_ten
+
+#print axioms EndgameChess.Rules.KRKCastleTen.home_queen_weak_corner
+
+#print axioms EndgameChess.Rules.KRKCastleTen.castle_not_ten
+
+#print axioms EndgameChess.Rules.KRKCastleTen.winning_entry_not_castle
+
+#print axioms EndgameChess.Rules.KRKElevenEntry.ten_entry_move
+
+#print axioms EndgameChess.Rules.KRKElevenSlots.nine_test_rank
+
+#print axioms EndgameChess.Rules.KRKElevenSlots.region_rank
+
+#print axioms EndgameChess.Rules.KRKElevenSlots.region_point
+
+#print axioms EndgameChess.Rules.KRKElevenGeometry.entry_sufficient
+
+#print axioms EndgameChess.Rules.KRKElevenGeometry.sufficient
+
+#print axioms EndgameChess.Rules.KRKElevenGeometry.entry_necessary
+
+#print axioms EndgameChess.Rules.KRKElevenGeometry.necessary
+
+#print axioms EndgameChess.Rules.KRKElevenGeometry.kernel_eleven_iff
+
+#print axioms EndgameChess.Rules.KRKElevenGeometry.frame_map
+
+#print axioms EndgameChess.Rules.KRKElevenGeometry.king_step_clear
+
+#print axioms EndgameChess.Rules.KRKElevenGeometry.rook_step_clear
+
+#print axioms EndgameChess.Rules.KRKElevenPlyHistory.clear_geometry
+
+#print axioms EndgameChess.Rules.KRKElevenPlyHistory.clear_kernel
+
+#print axioms EndgameChess.Rules.KRKElevenPlyHistory.entry_certificate
+
+#print axioms EndgameChess.Rules.KRKElevenPlyHistory.sufficient
+
+#print axioms EndgameChess.Rules.KRKElevenPlyHistory.necessary
+
+#print axioms EndgameChess.Rules.KRKElevenPlyHistory.high_clock_force_iff
+
+#print axioms EndgameChess.Rules.KRKElevenPlyHistory.high_clock_actual_iff
+
+#print axioms EndgameChess.Rules.KRKElevenPlyHistory.high_clock_draw_iff
+
+#print axioms EndgameChess.Rules.KRKElevenPlyExact.necessary
+
+#print axioms EndgameChess.Rules.KRKElevenPlyExact.rule_eleven_iff
+
+#print axioms EndgameChess.Rules.KRKElevenPlyExact.strong_twelve_eleven
+
+#print axioms EndgameChess.Rules.KRKElevenPlyExact.weak_thirteen_twelve
+
+#print axioms EndgameChess.Rules.KRKElevenPlyExact.distance_cases
+
+#print axioms EndgameChess.Rules.KRKElevenPlyExact.high_clock_exact_distance
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyHistory.after_weak_iff
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyHistory.child_eleven_certificate
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyHistory.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyHistory.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyHistory.high_clock_force_iff
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyHistory.high_clock_actual_iff
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyHistory.high_clock_hold_iff
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyHistory.high_clock_draw_iff
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyExact.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyExact.rule_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyExact.distance_cases
+
+#print axioms EndgameChess.Rules.KRKTwelvePlyExact.high_clock_exact_distance
+
+#print axioms EndgameChess.Rules.KRKTwelveGeometry.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveGeometry.strong_twelve_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveGeometry.weak_thirteen_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveGeometry.ten_region_depth
+
+#print axioms EndgameChess.Rules.KRKTwelveGeometry.eleven_weak_depth
+
+#print axioms EndgameChess.Rules.KRKTwelveGeometry.frame_map
+
+#print axioms EndgameChess.Rules.KRKElevenNearBoundary.upper_necessary
+
+#print axioms EndgameChess.Rules.KRKElevenNearBoundary.two_four_not_clear
+
+#print axioms EndgameChess.Rules.KRKElevenNearBoundary.upper_sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveSecondCorner.bad_neighbour_covered
+
+#print axioms EndgameChess.Rules.KRKTwelveSecondCorner.prison
+
+#print axioms EndgameChess.Rules.KRKTwelveSecondCorner.horizontal_necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveSecondCorner.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveSecondCorner.horizontal_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveSecondCorner.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveSecondCorner.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveSecondCorner.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveDeepExact.central_escape
+
+#print axioms EndgameChess.Rules.KRKTwelveDeepExact.corner_target
+
+#print axioms EndgameChess.Rules.KRKTwelveDeepExact.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveDeepExact.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKElevenNearStrip.region_shape
+
+#print axioms EndgameChess.Rules.KRKElevenNearStrip.global_region_iff
+
+#print axioms EndgameChess.Rules.KRKElevenNearStrip.rook_line_necessary
+
+#print axioms EndgameChess.Rules.KRKElevenNearStrip.rook_destination
+
+#print axioms EndgameChess.Rules.KRKElevenNearStrip.clear_iff
+
+#print axioms EndgameChess.Rules.KRKElevenNearStrip.kernel_eleven_iff
+
+#print axioms EndgameChess.Rules.KRKElevenNearStrip.kernel_exact_eleven
+
+#print axioms EndgameChess.Rules.KRKElevenNearStrip.framed_clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralEntries.near_eight_region
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralEntries.near_nine_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralEntries.middle_ten_region
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralEntries.middle_eight_region
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralEntries.middle_nine_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralEntries.second_ten_region
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralStrip.prison
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralStrip.row_four_necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralStrip.upper_necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralStrip.protected_two_four_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralStrip.candidate_necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralStrip.row_four_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralStrip.kernel_row_four_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralStrip.kernel_row_four_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.inner_file_bound
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.near_rank_bound
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.second_five_two_not_eight
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.second_upper_low_rook
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.second_five_two_not_nine
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.ten_high_near_cover
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.middle_ten_high_rook_rank
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.middle_five_two_not_eleven
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.middle_five_one_not_eleven
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.middle_five_zero_not_eight
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.middle_five_zero_not_nine
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.second_ten_high_rook_rank
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.second_five_zero_not_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpperEntries.near_eight
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpperEntries.middle_eight
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpperEntries.second_eight
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpperEntries.ten_edge_region
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpperEntries.edge_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpper.upper_two_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpper.upper_one_high_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpper.protected_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpper.upper_one_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpper.upper_zero_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpper.upper_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpper.kernel_upper_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralUpper.kernel_upper_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralOppositionEntries.middle_eight
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralOppositionEntries.second_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralOppositionEntries.second_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralOppositionEntries.middle_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralOppositionEntries.middle_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralOppositionEntries.high_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralExact.opposition_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralExact.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralExact.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralExact.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralExact.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveCentralExact.framed_clear_iff
+
+#print axioms EndgameChess.Rules.KRKElevenInner.horizontal_shape
+
+#print axioms EndgameChess.Rules.KRKElevenInner.global_region_iff
+
+#print axioms EndgameChess.Rules.KRKElevenInner.king_points_iff
+
+#print axioms EndgameChess.Rules.KRKElevenInner.rook_line_necessary
+
+#print axioms EndgameChess.Rules.KRKElevenInner.rook_destination
+
+#print axioms EndgameChess.Rules.KRKElevenInner.rook_rays_necessary
+
+#print axioms EndgameChess.Rules.KRKElevenInner.canonical_rook_clear
+
+#print axioms EndgameChess.Rules.KRKElevenInner.clear_iff
+
+#print axioms EndgameChess.Rules.KRKElevenInner.kernel_eleven_iff
+
+#print axioms EndgameChess.Rules.KRKElevenInner.kernel_exact_eleven
+
+#print axioms EndgameChess.Rules.KRKElevenInner.framed_clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveNearStrip.prison
+
+#print axioms EndgameChess.Rules.KRKTwelveNearStrip.row_two_necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveNearStrip.protected_high_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveNearStrip.row_three_high_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveNearStrip.row_three_necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveNearStrip.upper_low_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveNearFileEntries.low_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveNearFileEntries.low_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveNearFileEntries.middle_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveNearFileOne.high_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveNearFileOne.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveNearFileOne.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveNearFileOne.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveNearFileOne.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveNearFileEntries.eight_region_subset
+
+#print axioms EndgameChess.Rules.KRKTwelveNearNewEntries.low_near_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveNearNewEntries.upper_second_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveNearNewEntries.high_near_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveNearNewEntries.upper_low_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveNearNewEntries.row_near_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveNearNewEntries.row_middle_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveNearNewEntries.row_lower_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveNearNewEntries.row_inner_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveNearNewEntries.upper_inner_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveNearUpper.blocked_high_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveNearUpper.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveNearUpper.ten_clear_subset
+
+#print axioms EndgameChess.Rules.KRKTwelveNearUpper.protected_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveNearUpper.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveNearExact.row_two_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveNearExact.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveNearExact.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveNearExact.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveNearExact.kernel_exact_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveNearExact.fresh_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveNearExact.framed_clear_iff
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.near_ten_high_rook_rank
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.near_five_one_not_eleven
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.middle_left_low_row_not_eight
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.middle_one_three_not_eight
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.middle_left_high_rook_not_eight
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.middle_left_high_rook_not_nine
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.middle_one_three_low_row_not_nine
+
+#print axioms EndgameChess.Rules.KRKElevenEdgeBoundary.second_one_three_high_rook_not_eleven
+
+#print axioms EndgameChess.Rules.KRKTwelveInner.near_guard_prison
+
+#print axioms EndgameChess.Rules.KRKTwelveInner.prison
+
+#print axioms EndgameChess.Rules.KRKTwelveInner.same_file_rook_below
+
+#print axioms EndgameChess.Rules.KRKTwelveInner.zero_five_high_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInner.one_five_high_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInner.near_guard_sharp
+
+#print axioms EndgameChess.Rules.KRKTwelveInner.ten_clear_subset
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerDiagonal.clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerDiagonal.kernel_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerDiagonal.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerFileOne.high_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerFileOne.five_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerFileOne.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerFileOne.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerFileOne.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerFileOne.kernel_height_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerDiagonalExact.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerDiagonalExact.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerDiagonalExact.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerDiagonalExact.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerDiagonalExact.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerOuter.low_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerOuter.high_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerOuter.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerOuter.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerSide.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerSide.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerSide.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerSide.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerSide.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerHigh.clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerHigh.kernel_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerHigh.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerOuter.high_second_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerOuter.high_corner_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerBoundaryEntries.low_second
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerBoundaryEntries.protected_second
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerBoundaryEntries.protected_near
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerBoundaryEntries.protected_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerHighExact.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerHighExact.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerHighExact.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerHighExact.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerHighExact.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperEntries.low_near_eight
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperEntries.low_near_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperEntries.upper_corner_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperEntries.upper_near_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperEntries.second_outer_ten
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperFour.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperFour.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperFour.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperFour.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperBoundary.upper_three_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperBoundary.two_five_four_no_clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperBoundary.five_necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperFive.clear
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperFive.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerUpperFive.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerExact.necessary
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerExact.sufficient
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerExact.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerExact.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerExact.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKTwelveInnerExact.framed_clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInteriorExact.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveInteriorExact.kernel_exact_twelve
+
+#print axioms EndgameChess.Rules.KRKElevenEdge.clear_iff
+
+#print axioms EndgameChess.Rules.KRKElevenEdge.kernel_eleven_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveEdge.eleven_test_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveEdge.clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveEdge.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveGlobal.edge_clear_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveGlobal.kernel_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKTwelveGlobal.region_live
+
+#print axioms EndgameChess.Rules.KRKTwelveGlobal.kernel_exact_twelve_iff
+
+#print axioms EndgameChess.Rules.KRKCastleTwelve.eleven_interior_impossible
+
+#print axioms EndgameChess.Rules.KRKCastleTwelve.interior_covered
+
+#print axioms EndgameChess.Rules.KRKCastleTwelve.king_bottom_no_twelve
+
+#print axioms EndgameChess.Rules.KRKCastleTwelve.queen_bottom_weak_corner
+
+#print axioms EndgameChess.Rules.KRKCastleTwelve.home_king_no_twelve
+
+#print axioms EndgameChess.Rules.KRKCastleTwelve.home_queen_weak_corner
+
+#print axioms EndgameChess.Rules.KRKCastleTwelve.castle_not_twelve
+
+#print axioms EndgameChess.Rules.KRKCastleTwelve.winning_entry_not_castle
+
+#print axioms EndgameChess.Rules.KRKThirteenEntry.twelve_entry_move
+
+#print axioms EndgameChess.Rules.KRKThirteenSlots.region_point
+
+#print axioms EndgameChess.Rules.KRKThirteenGeometry.entry_sufficient
+
+#print axioms EndgameChess.Rules.KRKThirteenGeometry.sufficient
+
+#print axioms EndgameChess.Rules.KRKThirteenGeometry.entry_necessary
+
+#print axioms EndgameChess.Rules.KRKThirteenGeometry.necessary
+
+#print axioms EndgameChess.Rules.KRKThirteenGeometry.kernel_thirteen_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenGeometry.frame_map
+
+#print axioms EndgameChess.Rules.KRKThirteenGeometry.king_step_clear
+
+#print axioms EndgameChess.Rules.KRKThirteenGeometry.rook_step_clear
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyHistory.clear_geometry
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyHistory.clear_kernel
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyHistory.entry_certificate
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyHistory.sufficient
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyHistory.necessary
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyHistory.high_clock_force_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyHistory.high_clock_actual_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyHistory.high_clock_draw_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyExact.necessary
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyExact.rule_thirteen_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyExact.strong_fourteen_thirteen
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyExact.weak_fifteen_fourteen
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyExact.distance_cases
+
+#print axioms EndgameChess.Rules.KRKThirteenPlyExact.high_clock_exact_distance
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyHistory.after_weak_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyHistory.child_thirteen_certificate
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyHistory.necessary
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyHistory.sufficient
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyHistory.high_clock_force_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyHistory.high_clock_actual_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyHistory.high_clock_hold_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyHistory.high_clock_draw_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyExact.necessary
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyExact.rule_fourteen_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyExact.distance_cases
+
+#print axioms EndgameChess.Rules.KRKFourteenPlyExact.high_clock_exact_distance
+
+#print axioms EndgameChess.Rules.KRKFourteenGeometry.kernel_fourteen_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenGeometry.strong_fourteen_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenGeometry.weak_fifteen_fourteen
+
+#print axioms EndgameChess.Rules.KRKFourteenGeometry.twelve_region_depth
+
+#print axioms EndgameChess.Rules.KRKFourteenGeometry.thirteen_weak_depth
+
+#print axioms EndgameChess.Rules.KRKFourteenGeometry.thirteen_deep_corner
+
+#print axioms EndgameChess.Rules.KRKFourteenGeometry.frame_map
+
+#print axioms EndgameChess.Rules.KRKFourteenDeep.bad_neighbour_covered
+
+#print axioms EndgameChess.Rules.KRKFourteenDeep.central_three_no_clear
+
+#print axioms EndgameChess.Rules.KRKFourteenDeep.central_no_clear
+
+#print axioms EndgameChess.Rules.KRKFourteenDeep.kernel_central_no_fourteen
+
+#print axioms EndgameChess.Rules.KRKFourteenDeepStrip.prison
+
+#print axioms EndgameChess.Rules.KRKThirteenInteriorBarriers.second_region_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenInteriorBarriers.near_region_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenInteriorBarriers.central_region_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenInteriorBarriers.second_entry_necessary
+
+#print axioms EndgameChess.Rules.KRKThirteenInteriorBarriers.central_four_four_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKThirteenInteriorBarriers.near_upper_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenDeepStripHolding.near_corner_no_clear
+
+#print axioms EndgameChess.Rules.KRKFourteenDeepStripHolding.belt_no_clear
+
+#print axioms EndgameChess.Rules.KRKFourteenDeepStripHolding.deep_corner_necessary
+
+#print axioms EndgameChess.Rules.KRKFourteenDeepStripHolding.kernel_deep_corner_necessary
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCorner.prison
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerEntries.opposition_clear
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerEntries.kernel_exact_fourteen
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerBounds.near_four_zero_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerBounds.near_four_two_file_two_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerBounds.near_three_four_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerBounds.central_four_three_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerBounds.central_three_four_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerBounds.inner_diagonal_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerExact.necessary
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerExact.sufficient
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerExact.kernel_fourteen_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenSecondCornerExact.kernel_exact_fourteen
+
+#print axioms EndgameChess.Rules.KRKFourteenDeepExact.fresh_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenDeepExact.kernel_fourteen_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenDeepExact.kernel_exact_fourteen_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenCentralStrip.region_shape
+
+#print axioms EndgameChess.Rules.KRKThirteenCentralStrip.rook_line_necessary
+
+#print axioms EndgameChess.Rules.KRKThirteenCentralStrip.rook_destination
+
+#print axioms EndgameChess.Rules.KRKThirteenCentralStrip.clear_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenCentralStrip.kernel_thirteen_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralEntries.opposition_clear
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralEntries.kernel_exact_fourteen
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralPrison.legal_upper
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralPrison.prison
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralUpperEntries.upper_one_clear
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralUpperEntries.kernel_upper_one_exact_fourteen
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralBounds.second_three_four_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralBounds.second_upper_row_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralBounds.near_three_four_file_two_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralBounds.near_three_three_row_four_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralBounds.near_upper_low_rook_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralBounds.near_upper_three_high_no_thirteen
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralBounds.upper_two_above_no_clear
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralNecessary.necessary
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralUpperZero.low_second_twelve
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralUpperZero.clear
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralUpperTwo.clear
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralExact.sufficient
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralExact.clear_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralExact.fresh_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralExact.kernel_fourteen_iff
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralExact.kernel_exact_fourteen
+
+#print axioms EndgameChess.Rules.KRKFourteenCentralExact.framed_clear_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenNearRook.rook_line_necessary
+
+#print axioms EndgameChess.Rules.KRKThirteenNearRook.rook_destination
+
+#print axioms EndgameChess.Rules.KRKThirteenNearStrip.region_shape
+
+#print axioms EndgameChess.Rules.KRKThirteenNearStrip.clear_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenNearStrip.kernel_thirteen_iff
+
+#print axioms EndgameChess.Rules.KRKThirteenNearStrip.kernel_exact_thirteen
+
+#print axioms EndgameChess.Rules.KRKThirteenInnerRook.high_destination
+
+#print axioms EndgameChess.Rules.KRKThirteenInnerRook.rook_line_necessary
+
+-- Complete EC-T0049 public-theorem coverage.
+#print axioms EndgameChess.Rules.KRKEightCentralStrip.not_clear
+#print axioms EndgameChess.Rules.KRKEightCentralStrip.kernel_no_eight
+#print axioms EndgameChess.Rules.KRKEightNearStrip.no_upper_king
+#print axioms EndgameChess.Rules.KRKEightNearStrip.file_one_requires_row_three
+#print axioms EndgameChess.Rules.KRKEightNearStrip.row_three_necessary
+#print axioms EndgameChess.Rules.KRKFourteenDeepExact.kernel_exact_fourteen
+#print axioms EndgameChess.Rules.KRKSevenCorner.frame_f
+#print axioms EndgameChess.Rules.KRKSevenCorner.frame_r
+#print axioms EndgameChess.Rules.KRKSevenCorner.global_region_iff
+#print axioms EndgameChess.Rules.KRKSevenInner.horizontal_properties
+#print axioms EndgameChess.Rules.KRKSevenInner.horizontal_rook_clear
+#print axioms EndgameChess.Rules.KRKSevenInner.swap_clear_iff
+#print axioms EndgameChess.Rules.KRKSevenNear.king_far
+#print axioms EndgameChess.Rules.KRKSevenNear.slot_properties
+#print axioms EndgameChess.Rules.KRKSevenNear.diagonal_live
+#print axioms EndgameChess.Rules.KRKSevenNear.slot_live
+#print axioms EndgameChess.Rules.KRKSevenNear.global_region_iff
+#print axioms EndgameChess.Rules.KRKSevenNear.low_reach_iff
+#print axioms EndgameChess.Rules.KRKSevenNear.side_reach_iff
+#print axioms EndgameChess.Rules.KRKSevenNear.high_reach_iff
+#print axioms EndgameChess.Rules.KRKSevenSecond.global_region_iff
+#print axioms EndgameChess.Rules.KRKSevenSecond.frame_f
+#print axioms EndgameChess.Rules.KRKSevenSecond.frame_r
+#print axioms EndgameChess.Rules.KRKTwelveNearExact.kernel_exact_twelve
