@@ -26,7 +26,7 @@ theorem lowerPursuitDestination_coords (d : Bool) (sk : Square)
     (lowerPursuitDestination d sk h).2 = sk.2 ∧
     pursuitFile d (lowerPursuitDestination d sk h) =
       pursuitFile d sk + 1 := by
-  cases d <;> simp [lowerPursuitDestination, pursuitFile] <;> omega
+  cases d <;> simp only [lowerPursuitDestination, pursuitFile, Bool.false_eq_true, ↓reduceIte] at h ⊢ <;> omega
 
 /-- Concrete lower-band king step: every legal defender response either
 opens the upper exit, aligns the king files, or leaves the strong king
@@ -63,7 +63,7 @@ theorem lowerPursuitPair_sound (d : Bool) {q : Position} {σ : Colour}
         simp only [pursuitFile, Bool.false_eq_true, ↓reduceIte] at hsx <;>
         simp only [lowerPursuitDestination, Bool.false_eq_true, ↓reduceIte] <;>
         omega
-    · exact hsy
+    · cases d <;> simpa [lowerPursuitDestination] using hsy
   have hcoord := (lowerPursuitDestination_coords d sk bound).2
   subst ss
   refine ⟨c,hl,hm,hne,?_⟩
