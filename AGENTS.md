@@ -1,9 +1,9 @@
 # Endgame Chess — working instructions
 
 ## Objective
-Reach **Syzygy parity** through seven pieces, one material class at a time, by general proofs formalised in Lean ([charter](docs/CHARTER.md)). Parity is a hard boundary: exact WDL50 and DTZ50 for fresh positions (clock 0, no history, no castling rights). Do not pursue stronger rule/history results. The distant aspiration (chess is a draw) is NOT established.
+Prove the **guaranteed outcome (WDL50) of every position** through seven pieces, one material class at a time, by general proofs formalised in Lean ([charter](docs/CHARTER.md)). That is the hard boundary: fresh positions (clock 0, no history), with a move bound sufficient for the 50-move rule. Exact distance-to-mate is optional, not a gate. Do not pursue stronger rule/history results. The distant aspiration (chess is a draw) is NOT established.
 
-**Current class: KRK.** WDL is done; exact distances remain. See [current work](NEXT_SESSION.md) and [KRK status](docs/KRK_COMPLETION.md). Do not start KQK until the owner selects it.
+**KRK is complete** under this target ([KRK status](docs/KRK_COMPLETION.md)). Do not start KQK or another class until the owner selects it.
 
 ## How to work
 - Work continuously on the open obligation. No session IDs, closeouts, handover prompts, status reports or session folders; `sessions/` is a historical archive.

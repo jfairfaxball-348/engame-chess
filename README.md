@@ -2,7 +2,7 @@
 
 A proof-first research programme in mathematical chess endgames.
 
-**Operational objective:** prove, via general mathematics formalised in Lean 4, the WDL50 and DTZ50 information Syzygy tables provide (fresh positions, no castling rights), ultimately through seven pieces — **without consulting, replaying or deriving outcomes from tablebases**.
+**Operational objective:** prove, via general mathematics formalised in Lean 4, the guaranteed win/draw/loss outcome (under the 50-move rule) of every position that Syzygy tables provide, ultimately through seven pieces — **without consulting, replaying or deriving outcomes from tablebases**.
 
 **Long-range aspiration (unproved):** an *ultra-weak* solution of chess: establish that standard chess from its initial position is theoretically drawn. This is a hoped-for mathematical discovery, not a claimed result, and not a request to build a playing oracle.
 
@@ -22,6 +22,6 @@ There is one active research target and a concrete direct obligation. Supporting
 The `sessions/` tree contains historic work and verification evidence. It is **not** an active reporting workflow, and no new session files are expected.
 
 ## Current scientific position
-**49 frozen theorem bundles** through EC-T0049; K vs K, K+B vs K and K+N vs K have proven draw/dead-position results. **KRK remains open**: dead/live and WDL for every position are frozen; exact distances (DTZ50) are proved only through 12–14 plies.
+**49 frozen theorem bundles** through EC-T0049; K vs K, K+B vs K and K+N vs K have proven draw/dead-position results. **KRK is complete** under the outcome target: every position's result is proved and frozen (exact distance-to-mate only through 13/14 plies, which is optional).
 
 After KRK, the next proposed classes are KQK and KPK; moving material classes requires owner direction. Neither complete seven-piece parity nor a proof that the initial chess position is drawn exists in this project.

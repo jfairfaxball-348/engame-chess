@@ -1,6 +1,6 @@
 # Direct KRK frontier after the integrated clock0 result
 
-**ARCHIVED, beyond parity (owner, 2026-10-29).** Arbitrary clocks, incoming histories and claims are outside the [Syzygy-parity target](../docs/CHARTER.md#parity-target-hard-boundary-owner-2026-10-29). Kept as a research record; not an open obligation. Current work: [KRK status](../docs/KRK_COMPLETION.md).
+**ARCHIVED, beyond parity (owner, 2026-10-29).** Arbitrary clocks, incoming histories and claims are outside the [outcome target](../docs/CHARTER.md#parity-target-hard-boundary-owner-2026-10-29). Kept as a research record; not an open obligation. Current work: [KRK status](../docs/KRK_COMPLETION.md).
 
 Historical route: 2026-10-21. Research admission / OPEN problem, not a new theorem candidate.
 
