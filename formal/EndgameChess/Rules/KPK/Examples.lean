@@ -1,4 +1,5 @@
 import EndgameChess.Rules.KPK.RookPawn
+import EndgameChess.Rules.KPK.SeventhKingOutcome
 
 /-! Small controls instantiate general proofs; they are not an outcome table. -/
 namespace EndgameChess.Rules.KPK
@@ -79,5 +80,66 @@ theorem minor_promotion_dead_example :
   have h : IsKPK q .white (4,5) (3,6) (7,7) := ⟨by decide, by decide, by decide, rfl⟩
   exact minor_promotion_dead h rfl (by decide)
     ⟨by decide, by decide, Or.inl (by decide)⟩ rfl
+
+theorem supported_white_both_turns_example (turn : Colour) :
+    FreshGame.ActualWin .white (FreshGame.fresh (pos .white (4,6) (3,6) (0,0) turn)) := by
+  let q := pos .white (4,6) (3,6) (0,0) turn
+  have h : IsKPK q .white (4,6) (3,6) (0,0) := ⟨by decide, by decide, by decide, rfl⟩
+  have fresh : FreshLegal q (4,6) (3,6) (0,0) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by cases turn <;> decide⟩
+  exact fresh_supported_win h fresh ⟨rfl, rfl, by decide⟩
+
+theorem supported_black_both_turns_example (turn : Colour) :
+    FreshGame.ActualWin .black (FreshGame.fresh (pos .black (4,1) (3,1) (0,7) turn)) := by
+  let q := pos .black (4,1) (3,1) (0,7) turn
+  have h : IsKPK q .black (4,1) (3,1) (0,7) := ⟨by decide, by decide, by decide, rfl⟩
+  have fresh : FreshLegal q (4,1) (3,1) (0,7) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by cases turn <;> decide⟩
+  exact fresh_supported_win h fresh ⟨rfl, rfl, by decide⟩
+
+/-- The same board wins with the pawn side to move and is dead with the defender to move. -/
+theorem sixth_pawn_tempo_example :
+    FreshGame.ActualWin .white (FreshGame.fresh (pos .white (2,6) (1,5) (0,7) .white)) ∧
+      DeadK (pos .white (2,6) (1,5) (0,7) .black) ∧
+      FreshGame.Hold .black (FreshGame.fresh (pos .white (2,6) (1,5) (0,7) .black)) := by
+  have h (turn : Colour) : IsKPK (pos .white (2,6) (1,5) (0,7) turn) .white (2,6) (1,5) (0,7) :=
+    ⟨by decide, by decide, by decide, rfl⟩
+  have fresh (turn : Colour) : FreshLegal (pos .white (2,6) (1,5) (0,7) turn) (2,6) (1,5) (0,7) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by cases turn <;> decide⟩
+  have band : SeventhKing .white (2,6) (1,5) := ⟨rfl, rfl, by decide⟩
+  have losing : ¬ SeventhKingWins .white (pos .white (2,6) (1,5) (0,7) .black) (1,5) (0,7) := by
+    rintro (wrong | notCorner)
+    · cases wrong
+    · exact notCorner ⟨rfl, Or.inl rfl, by decide⟩
+  have classification := fresh_seventh_king_wdl50 (h .black) (fresh .black) band
+  exact ⟨(fresh_seventh_king_wdl50 (h .white) (fresh .white) band).1.mpr (Or.inl rfl),
+    classification.2.2.2.mpr losing, (classification.2.2.1.mpr losing).2⟩
+
+theorem black_sixth_pawn_stalemate_example :
+    DeadK (pos .black (5,1) (6,2) (7,0) .white) ∧
+      FreshGame.Hold .white (FreshGame.fresh (pos .black (5,1) (6,2) (7,0) .white)) := by
+  let q := pos .black (5,1) (6,2) (7,0) .white
+  have h : IsKPK q .black (5,1) (6,2) (7,0) := ⟨by decide, by decide, by decide, rfl⟩
+  have fresh : FreshLegal q (5,1) (6,2) (7,0) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by decide⟩
+  have band : SeventhKing .black (5,1) (6,2) := ⟨rfl, rfl, by decide⟩
+  have losing : ¬ SeventhKingWins .black q (6,2) (7,0) := by
+    rintro (wrong | notCorner)
+    · cases wrong
+    · exact notCorner ⟨rfl, Or.inr rfl, by decide⟩
+  have classification := fresh_seventh_king_wdl50 h fresh band
+  exact ⟨classification.2.2.2.mpr losing, (classification.2.2.1.mpr losing).2⟩
+
+/-- Total bound exceeds 100 plies; pawn resets, rather than a sub100 shortcut, justify it. -/
+theorem sixth_pawn_weak_102_example :
+    FreshGame.Within .white 102 (FreshGame.fresh (pos .white (4,6) (3,5) (7,7) .black)) := by
+  let q := pos .white (4,6) (3,5) (7,7) .black
+  have h : IsKPK q .white (4,6) (3,5) (7,7) := ⟨by decide, by decide, by decide, rfl⟩
+  have fresh : FreshLegal q (4,6) (3,5) (7,7) :=
+    ⟨rfl, rfl, by decide, by decide, by decide, by decide⟩
+  apply fresh_seventh_king_weak h fresh rfl ⟨rfl, rfl, by decide⟩
+  intro corner
+  have impossible := corner.2.2
+  exact (by decide : absDiff 3 7 ≠ 1) impossible
 
 end EndgameChess.Rules.KPK

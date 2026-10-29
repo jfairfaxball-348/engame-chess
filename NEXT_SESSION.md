@@ -14,16 +14,19 @@ the manifest. No further KQK closure obligation remains.
 
 The owner authorised continuous **KPK** work under the
 [plan](docs/KPK_PLAN.md). Continue with the explicit geometric win/hold
-partition outside the proved exposed-pawn and rook-pawn-fortress draw
-regions: king coordination, opposition/tempo, entry strategies and
-sufficient quiet-phase budgets. General dead/live and the no-limit
-comparison also remain open. The [partial proof](proofs/KPK_WDL50.md)
+partition outside the proved exposed-pawn/rook-pawn-fortress draw regions
+and the two seventh-king winning/outcome bands. The next obligation is
+lower-rank king coordination and key-square entry, opposition/tempo,
+blocked paths and sufficient quiet-phase budgets. General dead/live and
+the no-limit comparison also remain open. The [partial proof](proofs/KPK_WDL50.md)
 maps the existing Lean results and exact gaps. KPK is not complete.
 
 The pawn/promotion interfaces, universal strong-side holding, no
 unpromoted mate, major-promotion continuation with retained KPK history,
 and the all-rank rook-pawn corner fortress are available. Build on these
-continuously; no intermediate freeze or closeout is requested.
+and the supported-seventh 99/100-ply wins and seventh-king/sixth-pawn
+101/102-ply classification, including its exact corner-stalemate/dead
+exception. Continue without intermediate freeze or closeout.
 
 The target remains fresh WDL50 and dead/live for every legal position,
 both colours and turns. Exact M4/Mn/DTM/DTZ catalogues, arbitrary incoming

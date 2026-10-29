@@ -158,6 +158,96 @@ draw throughout the fortress. In particular **every fresh rook-pawn
 position with the defending king on the promotion corner is drawn**.
 This does not assert draw for every rook-pawn position.
 
+## Side-by-side king and pawn on the seventh rank
+
+`SupportedSeventh σ s p` means `h(s)=h(p)=6` and their files differ by
+one. This is a winning region for either turn and colour. The promotion
+square is empty: it is protected by the strong king, so king separation
+excludes the weak king there. The single promotion push is legal.
+
+The resulting protected queen cannot stalemate the weak king. In the
+white orientation, the queen is on rank 7, its supporting king on rank
+6 and an adjacent file. If the weak king is on rank 7, the queen checks
+along the rank, with no intervening strong king. Otherwise use three
+local candidate neighbours: one rank lower (one rank higher at rank 0),
+on the weak king's current file and its available adjacent files. The
+king-separation inequalities and the adjacent-file support condition
+exclude coverage of all these neighbours by king attacks and queen
+lines. At least one neighbour is safe and off every queen ray, hence a
+legal reply exists. These are symbolic coordinate inequalities over all
+squares, not evaluated position cases. Black uses the already proved
+queen rank reflection **after promotion**; pawn rules are checked
+directly for both colours.
+
+Thus promotion is either mate or a safe queen position with a legal
+reply. The frozen queen theorem gives a 98-ply continuation and a
+99-ply total from the strong turn. On the weak turn the pawn is
+protected and every reply preserves the side-by-side configuration and
+king separation. Replies exist: a king on its promotion edge can step
+back along its file; lower kings have an escape from the same geometric
+argument. The board bound is therefore 100 plies.
+
+The weak-turn rule proof does not apply a strict sub100 lifting theorem
+to that 100-ply total. At the fresh root neither current nor intended
+claims exist. After the first weak reply, the actual clock is at most
+one and the prefix has length one. The strong side then promotes and
+really resets the clock, retaining both KPK prefix boards. The existing
+promotion-history theorem gives the full 98-ply continuation. This
+constructs the actual winning policy with the 100-ply total.
+
+## King on the seventh, adjacent-file pawn on the sixth
+
+`SeventhKing σ s p` means `h(s)=6`, `h(p)=5`, and file difference one.
+The pawn is protected. Its single push produces the preceding supported
+seventh-rank region. The destination is empty and protected by the
+strong king, so no weak reply or initial occupancy is discarded.
+
+For this whole band, define the explicit stalemate predicate
+
+```
+SixthCornerStalemate(σ,p,w) :=
+  h(w)=7 AND (file(w)=0 OR file(w)=7) AND |file(p)-file(w)|=1.
+```
+
+On a weak turn, this predicate holds exactly when no legal move exists.
+To see completeness, try stepping one rank backward on the weak king's
+file (up from oriented height 0). King separation guarantees safety
+from the strong king and prevents occupying the pawn. If the pawn
+attacks that target, the weak king must be on height 7, one file outside
+the pawn. It can then move outward along height 7 unless it is already
+at the corner. In the corner case the pawn attacks the backward square
+and the strong king covers the inward escapes. Capture of the pawn is
+excluded by protection. The general no-KPK-mate theorem makes this
+stalemate, and the absence of any move makes the root dead.
+
+The closed winning criterion on **this band** is
+
+```
+SeventhKingWins(σ,q,p,w) :=
+  turn(q)=σ OR NOT SixthCornerStalemate(σ,p,w).
+```
+
+It is equivalent to an actual fresh WDL50 win for the pawn owner. The
+complement is a draw with actual holding policies for both sides, and
+is exactly the dead subset. Board forced wins and fresh actual wins
+coincide on this band, so it has no cursed-win/blessed-loss exceptions.
+The universal strong-side holding theorem still excludes every weak win.
+
+The bounds are 101 plies from the strong turn and 102 from the weak turn.
+They compose the first pawn advance, at most one reply before promotion,
+and the 98-ply promoted continuation. Each pawn move resets the clock.
+The possibly longer pre-advance history is handled by a new invariant:
+every old pawn has height below 6. After the advance to height 6 none of
+those boards can repeat. After the next weak reply, the new same-height
+past board has the opposite turn, so it cannot repeat either. All weak
+current/intended claims are accounted for; the final promotion retains
+the full KPK prefix. The 101/102 totals are sufficient bounds, not exact
+distances or bounds on one reversible interval.
+
+For example, White Kc7/Pb6 against Ka8 wins with White to move, but is
+dead stalemate with Black to move. The statement and proof also cover
+the reflected edge and both colours.
+
 ## Paper-to-Lean correspondence
 
 All paths below are relative to `formal/EndgameChess/Rules/`.
@@ -174,6 +264,11 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Strategy invariant construction | `FreshGame/InvariantHolding`: `hold_of_invariant` |
 | Seventh-rank boundary | `KPK/Corner`: `corner_protected_no_moves`, `fresh_corner_draw` |
 | All-rank rook-pawn fortress | `KPK/RookPawn`: `fresh_rook_fortress_draw`, `fresh_rook_corner_draw` |
+| Oriented coordinate interface | `KPK/Coordinates`: `dInf_oriented`, `pawn_sees_oriented`, `square_eq_oriented` |
+| Seventh-rank side-by-side win | `KPK/SupportedPromotion`, `SupportedOutcome`: `fresh_supported_strong`, `fresh_supported_weak`, `fresh_supported_win` |
+| Pawn-advance prefix separation | `KPK/SupportedPrefix`: `supported_weak_prefix_win`; `FreshGame/ShortPrefix` |
+| Sixth-pawn king support and stalemate | `KPK/SeventhKing`: `seventh_king_advance`, `seventh_king_moves_iff` |
+| Exact outcome/deadness of the seventh-king band | `KPK/SeventhKingOutcome`: `fresh_seventh_king_wdl50`, `seventh_king_force_iff_fresh` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
@@ -183,22 +278,28 @@ public theorem. These sources are work in progress, **not frozen**.
 Development verification on Lean `v4.35.0`:
 
 - `lake build EndgameChess.Rules.KPK.Examples EndgameChess` passed
-  (513 jobs in the incremental build graph, including cached dependencies).
-- `lake env lean AxiomCheck.lean` passed. All 89 new public theorem
-  reports use only subsets of `propext`, `Classical.choice`, `Quot.sound`.
+  (520 jobs in the incremental build graph, including cached dependencies).
+- `lake env lean AxiomCheck.lean` passed. All 136 public theorem reports
+  introduced for KPK use only subsets of `propext`, `Classical.choice`,
+  `Quot.sound`.
 - Local controls cover white/black promotion wins, double-push EP and
   path blocking, pawn capture draws, both turns of both edge-file corner
   fortresses, protected-corner stalemate and both minor promotions.
+  Further controls cover both colours and turns of supported seventh-rank
+  wins, the same-board win/stalemate tempo distinction, the reflected
+  black stalemate, and the 102-ply weak-turn certificate using real resets.
 
 No clean-checkout certification or freeze has been performed.
 
 ## Open proof obligations
 
-The remaining domain includes non-rook-pawn coordination, opposition and
-tempo, blocked paths, and rook pawns outside the fortress. It needs a
+The remaining domain includes coordination outside the two proved
+seventh-king bands, opposition and tempo, blocked paths, and rook pawns
+outside the fortress. It needs a
 complete explicit geometric win/hold partition, entry and preservation
 lemmas, sufficient quiet-phase bounds, and prevention of fixed-height
 king cycles. Height monotonicity alone settles none of those budgets.
 General dead/live classification and the no-limit comparison needed for
-cursed-win/blessed-loss labels remain open. No universal KPK winning
+cursed-win/blessed-loss labels remain open outside the classified band.
+No universal KPK winning
 bound or class-completion claim is made.
