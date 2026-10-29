@@ -1,5 +1,10 @@
 import EndgameChess
 
+#print axioms EndgameChess.Rules.KRKExecutable.lowerRouting_terminates
+#print axioms EndgameChess.Rules.KRKExecutable.lowerChaseRouting_sound
+#print axioms EndgameChess.Rules.KRKExecutable.lowerWaitRouting_sound
+#print axioms EndgameChess.Rules.KRKExecutable.offCentreUpper_sound
+
 /-! Axiom audit for EC-C001. Run: `lake env lean AxiomCheck.lean`. -/
 
 #print axioms EndgameChess.KK.dead_of_admissible
