@@ -2591,3 +2591,4 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KRKExecutable.readyUpperDestination_sound
 #print axioms EndgameChess.Rules.KRKExecutable.wallNext_sound
 #print axioms EndgameChess.Rules.KRKExecutable.lowerBandTempo_sound
+#print axioms EndgameChess.Rules.KRKExecutable.pivotRightCut_sound
