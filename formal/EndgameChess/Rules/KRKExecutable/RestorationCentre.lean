@@ -7,7 +7,7 @@ KRKCentral.restoration_bound catch-up proof. A post-catch-up king on file
 This is still a local proof and does not certify an entire mating policy.
 -/
 namespace EndgameChess.Rules.KRKExecutable
-open EndgameChess.KK EndgameChess.Rules
+open EndgameChess.KK EndgameChess.Rules EndgameChess.Rules.KRKCentral
 
 def restorationCentreDestination (sk : Square) : Square :=
   (if sk.1.val < 3 then ⟨3,by decide⟩ else ⟨4,by decide⟩,sk.2)

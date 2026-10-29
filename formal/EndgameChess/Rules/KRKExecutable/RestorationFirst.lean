@@ -9,7 +9,7 @@ centralising king catch-up if it is at least three. Each local step has its
 entire set of legal weak-king replies covered. It is NOT a total mate policy.
 -/
 namespace EndgameChess.Rules.KRKExecutable
-open EndgameChess.KK EndgameChess.Rules
+open EndgameChess.KK EndgameChess.Rules EndgameChess.Rules.KRKCentral
 
 def restorationFarDestination (rs wk : Square) : Square :=
   (wallFarFile wk.1,rs.2)
