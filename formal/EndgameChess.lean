@@ -112,6 +112,8 @@ import EndgameChess.Rules.KRKBox.Cycle
 import EndgameChess.Rules.KRKCentral.FreshOutcome
 import EndgameChess.Rules.KRKExecutable.RestorationFirst
 import EndgameChess.Rules.KRKExecutable.RestorationCentre
+import EndgameChess.Rules.KRKExecutable.CentralAlignedRescue
+import EndgameChess.Rules.KRKExecutable.CentralBackRook
 
 import EndgameChess.Rules.KRKDeadline.Necessary
 
