@@ -26,7 +26,19 @@ theorem lowerPursuitDestination_coords (d : Bool) (sk : Square)
     (lowerPursuitDestination d sk h).2 = sk.2 ∧
     pursuitFile d (lowerPursuitDestination d sk h) =
       pursuitFile d sk + 1 := by
-  cases d <;> simp only [lowerPursuitDestination, pursuitFile, Bool.false_eq_true, ↓reduceIte] at h ⊢ <;> omega
+  cases d with
+  | false =>
+    constructor
+    · rfl
+    · change 7 - (sk.1.val - 1) = (7 - sk.1.val) + 1
+      have hs : 1 ≤ sk.1.val := by
+        change (7 - sk.1.val) + 2 ≤ 7 at h
+        omega
+      omega
+  | true =>
+    constructor
+    · rfl
+    · rfl
 
 /-- Concrete lower-band king step: every legal defender response either
 opens the upper exit, aligns the king files, or leaves the strong king
