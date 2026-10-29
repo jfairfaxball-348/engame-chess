@@ -49,7 +49,7 @@ jobs:
       - name: Toolchain versions
         run: lean --version && lake --version
       - name: KRK01 executable proof extraction (fast fail)
-        run: lake build EndgameChess.Rules.KRKExecutable.GuardedEntry
+        run: lake build EndgameChess.Rules.KRKExecutable.ColumnKing
       - name: lake build (incremental)
         run: lake build
       - name: Forbidden proof escapes
