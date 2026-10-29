@@ -55,9 +55,12 @@ theorem wallNext_sound {q : Position} {σ : Colour}
     have hsy : sk.2.val + 1 = rs.2.val := by
       simp only [prepDistance] at hprep
       omega
+    have hcentre : centreDistance sk.1.val = 0 := by
+      simp only [prepDistance] at hprep
+      omega
     have hc : sk.1.val = 3 ∨ sk.1.val = 4 := by
-      unfold prepDistance centreDistance at hprep
-      split_ifs at hprep <;> omega
+      unfold centreDistance at hcentre
+      split at hcentre <;> (try split at hcentre) <;> omega
     by_cases hgap : rs.2.val + 2 ≤ wk.2.val
     · obtain ⟨c, hl, hm, hne, hall⟩ :=
         readyUpperDestination_sound hq hsy hgap hc hmargin
