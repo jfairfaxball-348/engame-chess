@@ -105,4 +105,4 @@ No tablebase, chess-engine oracle, stored position-value atlas, `sorry`,
 
 The fixed-barrier/least-rank arbitrary-history reduction remains paper only.
 Lower-clock global outcomes, full FIDE correspondence, global exact distance
-and KRK class closure remain open. See the [detailed remaining-work report](../docs/KRK_REMAINING_WORK.md).
+and KRK class closure remain open. See the [KRK status](../docs/KRK_COMPLETION.md).

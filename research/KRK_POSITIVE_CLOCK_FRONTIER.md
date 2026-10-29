@@ -1,8 +1,10 @@
 # Direct KRK frontier after the integrated clock0 result
 
+**ARCHIVED, beyond parity (owner, 2026-10-29).** Arbitrary clocks, incoming histories and claims are outside the [Syzygy-parity target](../docs/CHARTER.md#parity-target-hard-boundary-owner-2026-10-29). Kept as a research record; not an open obligation. Current work: [KRK status](../docs/KRK_COMPLETION.md).
+
 Historical route: 2026-10-21. Research admission / OPEN problem, not a new theorem candidate.
 
-Current update (2026-10-29): EC-T0049 freezes bounded history-aware strong h>=86 / weak h>=85 criteria and the supporting geometric frontier. The deadline is included in that bundle. The fixed-barrier least-rank reduction below remains paper only. See [remaining obligations](../docs/KRK_REMAINING_WORK.md) and [installed finish prompt](../docs/KRK_FINISH_PROMPT.md); the historical wording below describes the original route, not the current certification status.
+Current update (2026-10-29): EC-T0049 freezes bounded history-aware strong h>=86 / weak h>=85 criteria and the supporting geometric frontier. The deadline is included in that bundle. The fixed-barrier least-rank reduction below remains paper only. See [KRK status](../docs/KRK_COMPLETION.md); the historical wording below describes the original route, not the current certification status.
 The full continuing objective is unchanged. No new foundation is admitted here.
 
 ## Exact next missing claim

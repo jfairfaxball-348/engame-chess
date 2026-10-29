@@ -24,6 +24,6 @@ Then add **one** `FROZEN` row to `theorems/LEDGER.csv`. Keep the ledger schema a
 A frozen theorem module and historical manifest are immutable. Corrections or strengthening require a new module/declaration and a conspicuous new or superseding manifest; never rewrite history. Toolchain migrations are distinct from theorem changes: rebuild and check affected declarations with unchanged statements and justified axioms, recording a concise migration provenance instead of manufacturing per-theorem session reports.
 
 ## 5. Progress means mathematical coverage
-Advance to the next **obligation**, not the next session number. Only claim a material class closed when all legal positions, both turns, appropriate rule-aware WDL and distance semantics have actually been covered by checked mathematics. The theorem count is not the number of solved endgames.
+Advance to the next **obligation**, not the next session number. Only claim a material class closed when its [Syzygy-parity](CHARTER.md#parity-target-hard-boundary-owner-2026-10-29) WDL50 and DTZ50 information for all fresh legal positions, both turns, has actually been covered by checked mathematics. The theorem count is not the number of solved endgames.
 
 Update the short [live work note](../NEXT_SESSION.md) if the key open obligation changes, the [roadmap](ROADMAP.md) if a class milestone changes, and the immutable theorem ledger **only on a genuine freeze**. No other routine reporting is required. Existing `sessions/` and old evidence remain historical records, not a process to repeat.

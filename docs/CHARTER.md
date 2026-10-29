@@ -18,9 +18,16 @@ Terminology matters: an *ultra-weak* solution establishes the theoretical value 
 
 A full-game claim will require a precisely pinned rules and terminal-outcome model, including relevant history-dependent draw conditions. The present endgame rules kernel deliberately omits some such information; it must not be mistaken for an already complete model of initial-position game value. Progress through endgames **does not imply** the ultimate conjecture or guarantee that endgame techniques generalise.
 
+## Parity target (hard boundary, owner 2026-10-29)
+The target for each material class is **Syzygy parity and no more**: know by proof what a Syzygy table knows, then move on. For every legal position of the class with **no castling rights**, either side to move, the **50-move counter at zero** and **no prior game history**, prove:
+- **WDL50**: win / cursed win / draw / blessed loss / loss under the 50-move rule, with mate, stalemate and dead positions as in the rules kernel;
+- **DTZ50**: the exact optimal number of plies to the next zeroing move (capture or pawn move) or mate, minimised by the winning side and maximised by the losing side.
+
+Not required for parity, and **not to be pursued as class-closure obligations**: arbitrary nonzero incoming clocks, incoming repetition histories, the draw-claim procedure (current/intended claims), positions with castling rights, or a broader FIDE-adjudication bridge. Results already proved beyond this boundary (history-aware, clock-banded, castling-aware theorems) are kept intact as frozen evidence, but further work on them is out of scope unless the owner reopens it. The rules model only needs to be faithful for the parity semantics above.
+
 ## Hard boundaries
 - **No tablebases**: do not consult Syzygy, Nalimov, Lomonosov or equivalents, including transcriptions, derived evaluations or databases of resolved positions. Theorems come from explicit definitions, mathematical argument and independently checked formal proof.
-- **Tablebase equivalence without tablebase methods.** The goal is to *know what a tablebase knows*, by proof. Exhaustive enumeration, retrograde analysis and per-position certificates are not acceptable as the proof of a tablebase-equivalent claim. They may appear only as supplementary local diagnostics (below).
+- **Tablebase equivalence without tablebase methods.** The goal is to *know what a tablebase knows*, by proof. Exhaustive enumeration, computed retrograde tables and per-position certificates are not acceptable as the proof of a tablebase-equivalent claim, even when the computation runs inside Lean: they do not generalise to the next material class. They may appear only as supplementary local diagnostics (below). Induction on distance over explicitly described geometric regions is mathematics, not enumeration.
 - An engine or finite simulation cannot certify a theorem. Diagnostic scripts can discover errors, supply finite counterexamples or check examples, provided the source is local and disclosed.
 - A known chess truism is a *candidate* until proved in the chosen model.
 - Never silently switch meanings of draw, legal move, possible mate, forced mate, stalemate, dead position or position reachability.

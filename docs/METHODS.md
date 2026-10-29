@@ -5,7 +5,7 @@ The ultimate ambition is **ultra-weak solving as a draw**: prove the game-theore
 
 A **weak** solution would additionally exhibit an effective way to achieve the initial position's game-theoretic value against arbitrary opposition; a **strong** solution covers all legal positions. A value proof may entail that strategies exist without specifying them. Do not confuse these goals with the much stronger active intermediate programme of proving exact outcomes of all positions in material classes through seven pieces. Neither local forced-mate proofs nor mathematical strategy lemmas are prohibited by the ultra-weak ambition; they can be useful tools without constituting a playing oracle.
 
-**Priority order:** operational seven-piece tablebase parity, pursued through the live KRK obligation with mathematical proof → Lean formalisation → verified freeze, without mandatory per-session reporting. The initial-position draw remains a distant, conjectural objective, not a replacement task.
+**Priority order:** operational seven-piece Syzygy parity (exact scope in [the charter](CHARTER.md#parity-target-hard-boundary-owner-2026-10-29)), pursued through the live KRK obligation with mathematical proof → Lean formalisation → verified freeze. The initial-position draw remains a distant, conjectural objective, not a replacement task.
 
 ## Allowed mathematics
 Combinatorial game theory, turn-based reachability games, adversarial quantification (exists move / for all replies), finite/infinite plays, game graphs, graph kernels, fixed points, invariants, metric and lattice geometry, piece-attacks as functions, parity/colouring, symmetries, symbolic logic, and elementary geometry of boundaries.
@@ -20,9 +20,9 @@ Every theorem must say whether it proves:
 Do **not** identify forced-mate failure with dead position.
 
 ## Local verification, not tablebase substitution
-No Syzygy, Nalimov, Lomonosov, downloaded DTZ/DTM/WDL arrays, tablebase APIs, derivatives or cited tablebase evaluations. No chess engine as theorem oracle. Small programs written from independently specified movement functions may be used to find counterexamples and test finite boundary cases. Such programs are *auxiliary* until their results are reduced to a human-checkable mathematical proof or a formally certified exhaustive argument.
+No Syzygy, Nalimov, Lomonosov, downloaded DTZ/DTM/WDL arrays, tablebase APIs, derivatives or cited tablebase evaluations. No chess engine as theorem oracle. Small programs written from independently specified movement functions may be used to find counterexamples, test finite boundary cases and suggest conjectured regions. Such programs are *auxiliary*: their results must be reduced to a general mathematical proof. A position-by-position exhaustive computation, inside or outside Lean, is not an acceptable proof of an outcome or distance claim.
 
-Constructive/inductive use of game graphs and retrograde reasoning is allowed as mathematics; importing a solved table of positions is not.
+Inductive arguments over game graphs (for example, induction on distance over explicitly described geometric regions) are mathematics. Computing or importing a solved table of positions is not. Prefer statements and strategies that are reusable for later material classes (e.g. KRK wall/box lemmas parameterised by the piece's line moves, for reuse in KQK).
 
 ## Rule and claim versioning
 Use FIDE Laws of Chess effective 2023 as initial reference: https://handbook.fide.com/chapter/E012023. Each claim pins its own edition. Distinguish position geometry (static), hypothetical legal-play graph (dynamic), and actual terminated game (normative). Model positions as *reachable from initial play* only where the theorem needs global reachability.
