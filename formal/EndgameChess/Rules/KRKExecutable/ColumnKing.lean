@@ -14,7 +14,9 @@ king rank unchanged. Only used for an interior noncentral strong king. -/
 def columnKingDestination (sk : Square)
     (h : (sk.1.val=1 ∨ sk.1.val=2) ∨
          (sk.1.val=5 ∨ sk.1.val=6)) : Square :=
-  (⟨if sk.1.val<3 then sk.1.val+1 else sk.1.val-1, by omega⟩,sk.2)
+  (⟨if sk.1.val<3 then sk.1.val+1 else sk.1.val-1, by
+    rcases h with (h | h) | (h | h)
+    all_goals simp [h] <;> omega⟩,sk.2)
 
 /-- A computable first step toward the centre under the precise distant
 column-wall precondition. Every legal defender move leaves a strict wall,
@@ -45,7 +47,7 @@ theorem columnKingStep_sound {q : Position} {σ : Colour}
     simp only [su,columnKingDestination,absDiff] at *
     split <;> omega
   obtain ⟨c,hl,hm,hne,hall⟩ :=
-    king_below_pair hq hstep hb hw hmargin
+    king_below_pair hq hstep hb hw (by omega)
   refine ⟨c,hl,hm,hne,?_⟩
   intro v hv
   obtain ⟨t,hmt,hty,hunit⟩ := hall v hv
