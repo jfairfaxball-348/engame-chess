@@ -60,8 +60,29 @@ jobs:
       - name: Axiom report
         run: |
           lake env lean AxiomCheck.lean | tee axioms.txt
-          # Allowed: any subset of Lean's standard axioms (or none at all).
-          if grep 'depends on axioms' axioms.txt | grep -vE 'depends on axioms: \[(propext|Classical\.choice|Quot\.sound)(, (propext|Classical\.choice|Quot\.sound))*\]$'; then
-            echo "unexpected axiom set"; exit 1
-          fi
+          # Lean wraps long #print axioms output across physical lines.
+          # Parse complete bracketed sets; fail closed on truncation or unknown
+          # axioms instead of falsely rejecting a line ending in "[propext,".
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          output = Path("axioms.txt").read_text()
+          starts = len(re.findall(r"depends on axioms:\\s*\\[", output))
+          entries = re.findall(r"depends on axioms:\\s*\\[([^\\]]*)\\]", output, re.S)
+          allowed = {"propext", "Classical.choice", "Quot.sound"}
+          errors = []
+          if not starts or starts != len(entries):
+              errors.append(f"malformed axiom report: {starts} starts, {len(entries)} closed sets")
+          for i, raw in enumerate(entries, 1):
+              names = [part.strip() for part in raw.split(",")]
+              unknown = [name for name in names if name not in allowed]
+              if unknown:
+                  errors.append(f"axiom set {i}: unexpected {unknown!r}")
+          if errors:
+              print("\\n".join(errors), file=sys.stderr)
+              sys.exit(1)
+          print(f"Verified {len(entries)} complete, standard-only axiom sets")
+          PY
 # A green run of this job is build evidence only; fidelity to the prose proof is audited per theorem under audits/.
