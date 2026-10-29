@@ -420,3 +420,4 @@ import EndgameChess.Rules.KRKExecutable.Constructors
 import EndgameChess.Rules.KRKExecutable.Prep
 import EndgameChess.Rules.KRKExecutable.PrepRank
 import EndgameChess.Rules.KRKExecutable.PrepController
+import EndgameChess.Rules.KRKExecutable.ReadyUpper
