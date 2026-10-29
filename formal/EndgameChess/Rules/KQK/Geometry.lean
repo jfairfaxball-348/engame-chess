@@ -24,6 +24,18 @@ theorem near_sees {s t a b : Square} (hd : dInf s t = 1) : QueenSees s t a b := 
     simp only [dInf,absDiff] at hd ⊢
     omega
 
+/-- In particular, every fresh legal strong-turn KQK position already has
+a distant queen: the side that just moved cannot be in check. -/
+theorem queen_distant_of_not_check {q : Position} {σ : Colour} {sk qs wk : Square}
+    (hq : IsKQK q σ sk qs wk) (hc : inCheck q σ.opp = false) :
+    2 ≤ dInf qs wk := by
+  have h0 : dInf qs wk ≠ 0 := fun h => hq.2.2.1 (dInf_eq_zero_iff.mp h)
+  have h1 : dInf qs wk ≠ 1 := by
+    intro h
+    have check := (weak_check hq).mpr (Or.inr (near_sees h))
+    rw [hc] at check; cases check
+  omega
+
 theorem not_sees_of_not_line {qs t a b : Square}
     (hx : qs.1.val ≠ t.1.val) (hy : qs.2.val ≠ t.2.val)
     (hd : absDiff qs.1.val t.1.val ≠ absDiff qs.2.val t.2.val) :

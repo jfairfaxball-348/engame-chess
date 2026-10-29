@@ -120,4 +120,19 @@ theorem prison_bound {q : Position} {σ : Colour} {sk qs wk : Square}
   obtain ⟨t,hmt,hrt,hpt⟩ := prison_reply hm hc hp outside hr
   exact top_left_bound hmt hrt hpt rfl (by decide)
 
+theorem prison_weak_bound {q : Position} {σ : Colour} {sk qs wk : Square}
+    (hq : IsKQK q σ sk qs wk) (ht : q.turn = σ.opp)
+    (hp : Prison qs wk) (hs : OutsidePrison sk) : MateWithin σ 22 q := by
+  apply mateWithin_defend ht (prison_reply_exists hq ht hp hs)
+  intro r hr
+  obtain ⟨t,hm,hrt,hpt⟩ := prison_reply hq ht hp hs hr
+  have notCheck := legal_mover_safe hr
+  rw [ht] at notCheck
+  have h0 : dInf sk t ≠ 0 := fun h => hm.2.1 (dInf_eq_zero_iff.mp h)
+  have h1 : dInf sk t ≠ 1 := by
+    intro h
+    have check := (weak_check hm).mpr (Or.inl h)
+    rw [notCheck] at check; cases check
+  exact prison_bound hm hrt hpt (by omega)
+
 end EndgameChess.Rules.KQK

@@ -40,4 +40,26 @@ theorem framed_prison_bound (g : QueenSym) {q : Position} {σ : Colour}
   · exact hp
   · rwa [g.dInf_eq]
 
+theorem framed_edge_wall_weak_bound (g : QueenSym) {q : Position} {σ : Colour}
+    {sk qs wk : Square} (hq : IsKQK q σ sk qs wk) (ht : q.turn = σ.opp)
+    (he : EdgeWall (g.f sk) (g.f qs) (g.f wk)) : MateWithin σ 26 q := by
+  apply unframe_bound g hq
+  apply edge_wall_weak_bound
+  · exact ⟨g.toBoardSym.ne_iff.mpr hq.1,g.toBoardSym.ne_iff.mpr hq.2.1,
+      g.toBoardSym.ne_iff.mpr hq.2.2.1,rfl⟩
+  · exact ht
+  · exact he
+
+theorem framed_prison_weak_bound (g : QueenSym) {q : Position} {σ : Colour}
+    {sk qs wk : Square} (hq : IsKQK q σ sk qs wk) (ht : q.turn = σ.opp)
+    (hp : Prison (g.f qs) (g.f wk)) (hs : OutsidePrison (g.f sk)) :
+    MateWithin σ 22 q := by
+  apply unframe_bound g hq
+  apply prison_weak_bound
+  · exact ⟨g.toBoardSym.ne_iff.mpr hq.1,g.toBoardSym.ne_iff.mpr hq.2.1,
+      g.toBoardSym.ne_iff.mpr hq.2.2.1,rfl⟩
+  · exact ht
+  · exact hp
+  · exact hs
+
 end EndgameChess.Rules.KQK

@@ -42,6 +42,13 @@ adjacent square lies on a clear queen ray. Consequently a protected queen
 directly below a weak king on the top rank delivers checkmate: all neighbour
 squares either hold the protected queen or lie on adjacent queen rays.
 
+The same adjacency fact shows that a fresh legal strong-turn position
+already has a distant queen: the weak king, which just moved, cannot be
+in check. Thus the initial strong-turn entry proof needs no separate
+rescue of an adjacent unprotected queen. Queen capture remains an
+essential weak-turn boundary, and chosen future queen moves still need
+their own safety arguments.
+
 ## Edge-wall strategy (proved local family)
 
 `EdgeWall sk qs wk` means strong king rank at most 5, queen rank 6 and file
@@ -95,10 +102,54 @@ and classification bridge remain part of the outstanding obligation.
 position satisfying the proved bound, and the stalemate illustration
 from the plan. Neither is used as a replacement for the general argument.
 
+## Queen copying phase (proved region)
+
+`ShadowGeometry.lean`, `ShadowExit.lean` and `ShadowForce.lean` prove a
+driving strategy beyond the edge finish. Its domain is explicit:
+
+\[
+K_x+K_y\le4,\quad W_x+W_y\ge8,\quad
+Q_x+1=W_x,\quad Q_y+2=W_y,\quad W_x\le6.
+\]
+
+The king is outside the driven region and the queen a knight offset
+southwest of the lone king. Each weak reply has nondecreasing file and
+coordinate sum. Since the weak king must actually move, `2*W_x+W_y`
+strictly increases. Thus `21-(2*W_x+W_y)` strictly decreases; initially it
+is at most 12. The queen copies the step to restore the knight offset.
+Both its legality and a nonempty weak reply set are proved at every
+iteration. The outside-king hypothesis prevents blockers and collisions.
+
+When a reply reaches file 7, stop copying before it creates stalemate.
+The exit has queen file 5 and vertical offset one or three. A queen step
+normally produces a vertical edge wall. At the top corner use a horizontal
+prison or a wider vertical wall. The bottom exception passes through a
+checking queen move and the reflected prison. All exit branches cost at
+most 27 plies. Composition gives `2*potential+28 ≤ 52` plies on the weak
+turn, or 53 on the strong turn after a harmless king tempo. These remain
+region theorems; neither arbitrary king placement nor arbitrary queen
+setup is assumed solved.
+
+## Stalemate reduction (proved generally)
+
+`InteriorEscape.lean` proves that a separated strong king and a queen
+at distance at least two cannot cover all eight neighbours of an interior
+square. The proof splits by which side the strong king lies on; the five
+neighbours away from it cannot all lie on the queen's four lines. It is a
+coordinate argument over the eight local directions, not a computed
+classification of positions.
+
+In a nonchecking weak-turn KQK position the queen cannot be adjacent to
+the lone king, because every adjacent square is a clear queen ray.
+The geometric escape therefore supplies an actual legal weak reply.
+Consequently every KQK stalemate with separated kings lies on a board
+edge. This reduces the repair problem to boundary geometry, but does not
+supply the missing global entry strategy.
+
 ## Outstanding class obligation
 
 Establish a general entry strategy from every fresh legal strong-turn KQK
-position, accounting for all weak replies, queen rescue, queen-only
+position, accounting for all weak replies, legal setup and blockers, queen-only
 stalemate traps and nearby kings. Prove its cost fits the class budget
 when composed with the finish. Then complete weak-turn capture/stalemate
 and dead/live partitions and connect the full forcing/holding arguments

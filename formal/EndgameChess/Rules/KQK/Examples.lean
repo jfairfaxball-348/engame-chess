@@ -1,4 +1,5 @@
 import EndgameChess.Rules.KQK.FramedFinish
+import EndgameChess.Rules.KQK.ShadowForce
 
 /-! A few kernel-checked non-vacuity/control examples, not a position table. -/
 namespace EndgameChess.Rules.KQK
@@ -22,5 +23,14 @@ theorem stalemate_example_no_force : ¬ ForceMate .white stalemateExample := by
   have mem := mem_legalMoves.mpr hm
   rw [empty] at mem
   exact List.not_mem_nil mem
+
+def shadowExample : Position := pos .white (0,0) (3,2) (4,4) .white
+
+theorem shadow_example_bound : MateWithin .white 53 shadowExample := by
+  apply shadow_strong_bound
+  · exact ⟨by decide,by decide,by decide,rfl⟩
+  · rfl
+  · unfold Shadow; decide
+  · decide
 
 end EndgameChess.Rules.KQK

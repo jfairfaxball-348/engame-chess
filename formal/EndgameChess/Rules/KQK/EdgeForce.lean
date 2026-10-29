@@ -102,4 +102,12 @@ theorem edge_wall_twenty_five {q : Position} {σ : Colour} {sk qs wk : Square}
   have hx := he.2.2.2.2
   exact mateWithin_mono (edge_wall_bound hq ht he) (by omega)
 
+theorem edge_wall_weak_bound {q : Position} {σ : Colour} {sk qs wk : Square}
+    (hq : IsKQK q σ sk qs wk) (ht : q.turn = σ.opp)
+    (he : EdgeWall sk qs wk) : MateWithin σ 26 q := by
+  apply mateWithin_defend ht (edge_reply_exists hq ht he)
+  intro r hr
+  obtain ⟨t,hm,hrt,het,_⟩ := edge_reply hq ht he hr
+  exact edge_wall_twenty_five hm hrt het
+
 end EndgameChess.Rules.KQK
