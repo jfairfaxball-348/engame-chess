@@ -36,8 +36,10 @@ theorem readyUpperDestination_sound {q : Position} {σ : Colour}
   have heq : nr = rankAdvanceDestination rs (by omega) := by
     apply Prod.ext
     · apply Fin.ext
-      exact hfile
+      change nr.1.val = rs.1.val
+      exact congrArg Fin.val hfile
     · apply Fin.ext
+      change nr.2.val = rs.2.val + 1
       exact hrank
   have hc : centreDistance sk.1.val = 0 := by
     rcases hs with hx | hx
@@ -65,7 +67,7 @@ theorem readyUpperDestination_sound {q : Position} {σ : Colour}
     have near := hnext t
     have raise : nr.2.val = rs.2.val + 1 := hrank
     omega
-  rw [heq] at hmt rankdrop
+  rw [heq] at hmt hyt rankdrop
   exact ⟨t, hmt, hyt, rankdrop⟩
 
 end EndgameChess.Rules.KRKExecutable
