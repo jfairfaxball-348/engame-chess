@@ -69,8 +69,8 @@ jobs:
           import sys
 
           output = Path("axioms.txt").read_text()
-          starts = len(re.findall(r"depends on axioms:\\s*\\[", output))
-          entries = re.findall(r"depends on axioms:\\s*\\[([^\\]]*)\\]", output, re.S)
+          starts = len(re.findall(r"depends on axioms:\s*\[", output))
+          entries = re.findall(r"depends on axioms:\s*\[([^\]]*)\]", output, re.S)
           allowed = {"propext", "Classical.choice", "Quot.sound"}
           errors = []
           if not starts or starts != len(entries):
@@ -81,7 +81,7 @@ jobs:
               if unknown:
                   errors.append(f"axiom set {i}: unexpected {unknown!r}")
           if errors:
-              print("\\n".join(errors), file=sys.stderr)
+              print("\n".join(errors), file=sys.stderr)
               sys.exit(1)
           print(f"Verified {len(entries)} complete, standard-only axiom sets")
           PY
