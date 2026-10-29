@@ -414,3 +414,6 @@ import EndgameChess.Rules.KQK.ShadowForce
 import EndgameChess.Rules.KQK.InteriorEscape
 import EndgameChess.Rules.KQK.Staircase
 import EndgameChess.Rules.KQK.EdgeEntry
+
+-- New proof-derived computable KRK action constructors (separate from frozen proofs).
+import EndgameChess.Rules.KRKExecutable.Constructors
