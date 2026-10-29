@@ -1,5 +1,9 @@
 import EndgameChess
 
+#print axioms EndgameChess.Rules.KRKExecutable.policy_uncut_central_bound
+#print axioms EndgameChess.Rules.KRKExecutable.policy_uncut_central_mateWithin
+#print axioms EndgameChess.Rules.KRKExecutable.policy_uncut_rankTwo_run
+
 #print axioms EndgameChess.Rules.KRKExecutable.lowerRouting_terminates
 #print axioms EndgameChess.Rules.KRKExecutable.lowerCentralWithinFive
 #print axioms EndgameChess.Rules.KRKExecutable.lowerChaseRouting_sound
