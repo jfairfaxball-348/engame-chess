@@ -39,6 +39,8 @@ theorem pivotRightCut_sound {q : Position} {σ : Colour}
           dInf sk nr = 1) := by
   dsimp
   let nr : Square := pivotRightDestination sk rs (by omega)
+  have hnrx : nr.1.val = sk.1.val+1 := rfl
+  have hnry : nr.2 = rs.2 := rfl
   by_cases he : nr=rs
   · exact Or.inl he
   right
