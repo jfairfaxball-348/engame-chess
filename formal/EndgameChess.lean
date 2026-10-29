@@ -110,6 +110,7 @@ import EndgameChess.Rules.KRKFresh.Wall
 import EndgameChess.Rules.KRKBox.Cycle
 
 import EndgameChess.Rules.KRKCentral.FreshOutcome
+import EndgameChess.Rules.KRKExecutable.RestorationFirst
 
 import EndgameChess.Rules.KRKDeadline.Necessary
 
