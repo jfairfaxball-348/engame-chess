@@ -109,7 +109,7 @@ theorem policy_prepared_wall_run {σ : Colour} {q sk rs wk}
         exact PreparedRun.mono (PreparedRun.ready hc) (by dsimp [B]; omega)
       · have hp : 0<prepRank sk rs wk := by omega
         obtain ⟨c,hl,hm,hne,hall⟩ := prepNext_sound hq hb hw hp
-        apply PreparedRun.mono (n := 2*n+B+2) (by omega)
+        apply PreparedRun.mono (n := 2*n+B+2) ?_ (by omega)
         refine PreparedRun.pair (.next hq hb hw hp hm) hl hne ?_
         intro v hv
         obtain ⟨t,hmt,hty,hdrop⟩ := hall v hv
