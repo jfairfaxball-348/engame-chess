@@ -2,7 +2,7 @@
 
 Planning review of KRK source at `45c452e`; no KQK theorem is proved here.
 KRK remains complete under the [charter target](CHARTER.md#parity-target-hard-boundary-owner-2026-10-29).
-KQK implementation awaits owner approval of this plan.
+The owner has approved implementation through full KQK completion.
 
 ## Target
 
@@ -86,6 +86,6 @@ alternatives (KRK supplies the rook class), and prove pawn advance/capture,
 key-square/opposition and holding arguments. Promotion alone does not
 classify KPK: stalemate, capture and drawn pawn regions require treatment.
 
-**First obligation after approval:** KQK material/attack interfaces and
+**First implementation obligation:** KQK material/attack interfaces and
 queen capture/safe-reply lemmas, followed by the confinement invariant.
 KPK proof work remains outside this plan's execution scope.

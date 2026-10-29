@@ -407,3 +407,6 @@ import EndgameChess.Rules.KRKThirteenNearRook
 import EndgameChess.Rules.KRKThirteenNearStrip
 
 import EndgameChess.Rules.KRKThirteenInnerRook
+
+import EndgameChess.Rules.KQK.Examples
+import EndgameChess.Rules.KQK.CaptureBoundary
