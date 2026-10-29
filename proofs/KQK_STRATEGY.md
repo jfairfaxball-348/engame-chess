@@ -204,6 +204,49 @@ its reflected/transposed versions. These are upper bounds sufficient
 for the clock budget, not exact mate distances or a fresh-history
 classification theorem.
 
+## Edge corridor with unrestricted strong-king placement
+
+`EdgeEntry.lean` removes the strong-king restriction from the edge-wall
+input. `Corridor Q W` requires only
+
+\[
+Q_y=6,\quad W_y=7,\quad Q_x\le4,\quad Q_x+2\le W_x.
+\]
+
+For every exact strong-turn KQK board satisfying this corridor and
+separated kings, `corridor_bound` proves mate within 41 plies. The king
+may start on the queen's rank, on the last rank, or between the queen
+and the weak king. The argument is general king evacuation:
+
+1. Below rank 6, use the existing 25-ply edge strategy. On rank 6,
+   step down to rank 5, opening the queen's horizontal ray. Every legal
+   weak reply then remains in the corridor; cost at most 27 plies.
+2. On rank 7 left of the weak king, walk left, away from it. The king's
+   file strictly decreases, and every defended pair preserves the
+   corridor. Once it is strictly left of the queen, it can step down
+   without blocking the queen's ray. If both king and queen start on
+   file zero, shift the protected queen to file one first. The resulting
+   bound is `2*K_x+31 ≤ 41` plies.
+3. On rank 7 right of the weak king, step diagonally down and away if
+   room permits. At the right edge, a direct downward step suffices
+   unless the weak king is at the left end of its corridor and the
+   strong king guards its sole horizontal escape. The exceptional
+   geometry forces queen file 3, weak file 5 and strong file 7.
+   Move the queen left one file first; the weak reply moves left,
+   giving room to evacuate the king. This branch costs at most 31 plies.
+
+Each evacuation includes an explicit weak-reply witness and a proof
+covering all legal replies. The proof never assumes that the defender
+continues from stalemate. A local control example checks that the direct
+downward king step in the exceptional geometry is legal but stalemates;
+the general strategy avoids it. Reflection/transposition transports the
+41-ply result to the other board edges.
+
+The fixed-king reply lemmas still need their original king-rank/clearance
+premises. This stronger entry theorem removes the *input* restriction
+by moving the king first; it does not silently drop those premises.
+Arbitrary queen setup and entry from the rest of the board remain open.
+
 ## Remaining global entry and outcome proof
 
 Establish a general entry strategy from every fresh legal strong-turn KQK

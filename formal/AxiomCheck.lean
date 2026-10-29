@@ -2523,6 +2523,12 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.edge_reply
 #print axioms EndgameChess.Rules.KQK.toward_step
 #print axioms EndgameChess.Rules.KQK.corner_prison_bound
+#print axioms EndgameChess.Rules.KQK.outside_corridor_bound
+#print axioms EndgameChess.Rules.KQK.outside_corridor_weak_bound
+#print axioms EndgameChess.Rules.KQK.top_left_corridor_bound
+#print axioms EndgameChess.Rules.KQK.top_right_corridor_bound
+#print axioms EndgameChess.Rules.KQK.corridor_bound
+#print axioms EndgameChess.Rules.KQK.framed_corridor_bound
 #print axioms EndgameChess.Rules.KQK.corner_prison_fifteen
 #print axioms EndgameChess.Rules.KQK.edge_wall_bound
 #print axioms EndgameChess.Rules.KQK.edge_wall_twenty_five
@@ -2533,6 +2539,9 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.blocked_entry_example_bound
 #print axioms EndgameChess.Rules.KQK.staircase_example_bound
 #print axioms EndgameChess.Rules.KQK.horizontal_entry_example_bound
+#print axioms EndgameChess.Rules.KQK.top_left_entry_example_bound
+#print axioms EndgameChess.Rules.KQK.corner_evacuation_example_bound
+#print axioms EndgameChess.Rules.KQK.direct_evacuation_stalemate
 #print axioms EndgameChess.Rules.KQK.unframe_bound
 #print axioms EndgameChess.Rules.KQK.framed_edge_wall_bound
 #print axioms EndgameChess.Rules.KQK.framed_prison_bound

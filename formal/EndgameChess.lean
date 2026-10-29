@@ -413,3 +413,4 @@ import EndgameChess.Rules.KQK.CaptureBoundary
 import EndgameChess.Rules.KQK.ShadowForce
 import EndgameChess.Rules.KQK.InteriorEscape
 import EndgameChess.Rules.KQK.Staircase
+import EndgameChess.Rules.KQK.EdgeEntry
