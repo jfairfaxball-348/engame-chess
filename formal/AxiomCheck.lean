@@ -2584,3 +2584,10 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.sees_split
 #print axioms EndgameChess.Rules.KQK.QueenSym.sees_iff
 #print axioms EndgameChess.Rules.KQK.bound_transport
+-- New non-frozen executable KRK extraction witnesses (standard-axiom audit).
+#print axioms EndgameChess.Rules.KRKExecutable.rookWaitDestination_sound
+#print axioms EndgameChess.Rules.KRKExecutable.rankAdvanceDestination_sound
+#print axioms EndgameChess.Rules.KRKExecutable.prepNext_sound
+#print axioms EndgameChess.Rules.KRKExecutable.readyUpperDestination_sound
+#print axioms EndgameChess.Rules.KRKExecutable.wallNext_sound
+#print axioms EndgameChess.Rules.KRKExecutable.lowerBandTempo_sound
