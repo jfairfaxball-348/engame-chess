@@ -59,7 +59,7 @@ theorem rankAdvanceDestination_sound {q : Position} {σ : Colour}
       ∀ v, Legal c v →
         ∃ t, Matches v σ ⟨sk, rankAdvanceDestination rs (by omega), t, true⟩ ∧
           DistantBarrier sk (rankAdvanceDestination rs (by omega)) t := by
-  obtain ⟨nr, c, hfile, hrank, legal, matches, nonempty, drop, replies⟩ :=
+  obtain ⟨nr, c, hfile, hrank, legal, hmatch, nonempty, drop, replies⟩ :=
     krk_rank_advance hk ht hb hw hf
   have equal : nr = rankAdvanceDestination rs (by omega) := by
     apply Prod.ext
@@ -68,6 +68,6 @@ theorem rankAdvanceDestination_sound {q : Position} {σ : Colour}
     · apply Fin.ext
       exact hrank
   subst nr
-  exact ⟨c, legal, matches, drop, nonempty, replies⟩
+  exact ⟨c, legal, hmatch, drop, nonempty, replies⟩
 
 end EndgameChess.Rules.KRKExecutable
