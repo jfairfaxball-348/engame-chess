@@ -2530,6 +2530,9 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.corner_example_bound
 #print axioms EndgameChess.Rules.KQK.stalemate_example_no_force
 #print axioms EndgameChess.Rules.KQK.shadow_example_bound
+#print axioms EndgameChess.Rules.KQK.blocked_entry_example_bound
+#print axioms EndgameChess.Rules.KQK.staircase_example_bound
+#print axioms EndgameChess.Rules.KQK.horizontal_entry_example_bound
 #print axioms EndgameChess.Rules.KQK.unframe_bound
 #print axioms EndgameChess.Rules.KQK.framed_edge_wall_bound
 #print axioms EndgameChess.Rules.KQK.framed_prison_bound
@@ -2551,6 +2554,14 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.prison_reply
 #print axioms EndgameChess.Rules.KQK.prison_bound
 #print axioms EndgameChess.Rules.KQK.prison_weak_bound
+#print axioms EndgameChess.Rules.KQK.framed_shadow_strong_bound
+#print axioms EndgameChess.Rules.KQK.framed_shadow_weak_bound
+#print axioms EndgameChess.Rules.KQK.vertical_shadow_entry
+#print axioms EndgameChess.Rules.KQK.two_file_entry_bound
+#print axioms EndgameChess.Rules.KQK.blocked_file_entry_bound
+#print axioms EndgameChess.Rules.KQK.horizontal_alignment_entry
+#print axioms EndgameChess.Rules.KQK.framed_vertical_shadow_entry
+#print axioms EndgameChess.Rules.KQK.framed_blocked_file_entry
 #print axioms EndgameChess.Rules.KQK.shadow_exit_bound
 #print axioms EndgameChess.Rules.KQK.shadow_weak_bound
 #print axioms EndgameChess.Rules.KQK.shadow_weak_fifty_two
@@ -2558,6 +2569,9 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.sum_far
 #print axioms EndgameChess.Rules.KQK.shadow_reply_exists
 #print axioms EndgameChess.Rules.KQK.shadow_reply
+#print axioms EndgameChess.Rules.KQK.staircase_bound
+#print axioms EndgameChess.Rules.KQK.staircase_eighty_one
+#print axioms EndgameChess.Rules.KQK.framed_staircase_bound
 #print axioms EndgameChess.Rules.KQK.sees_split
 #print axioms EndgameChess.Rules.KQK.QueenSym.sees_iff
 #print axioms EndgameChess.Rules.KQK.bound_transport

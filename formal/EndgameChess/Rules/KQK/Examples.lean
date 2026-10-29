@@ -1,5 +1,6 @@
 import EndgameChess.Rules.KQK.FramedFinish
 import EndgameChess.Rules.KQK.ShadowForce
+import EndgameChess.Rules.KQK.Staircase
 
 /-! A few kernel-checked non-vacuity/control examples, not a position table. -/
 namespace EndgameChess.Rules.KQK
@@ -32,5 +33,40 @@ theorem shadow_example_bound : MateWithin .white 53 shadowExample := by
   · rfl
   · unfold Shadow; decide
   · decide
+
+def blockedEntryExample : Position := pos .white (3,1) (3,0) (4,5) .white
+
+theorem blocked_entry_example_bound : MateWithin .white 55 blockedEntryExample := by
+  apply blocked_file_entry_bound
+  · exact ⟨by decide,by decide,by decide,rfl⟩
+  · rfl
+  · decide
+  · decide
+  · decide
+  · decide
+  · rfl
+  · decide
+
+def staircaseExample : Position := pos .white (0,0) (1,6) (4,5) .white
+
+theorem staircase_example_bound : MateWithin .white 81 staircaseExample := by
+  apply staircase_eighty_one
+  · exact ⟨by decide,by decide,by decide,rfl⟩
+  · rfl
+  · unfold Staircase; decide
+
+def horizontalEntryExample : Position := pos .white (0,0) (7,1) (4,5) .white
+
+theorem horizontal_entry_example_bound : MateWithin .white 55 horizontalEntryExample := by
+  apply horizontal_alignment_entry
+  · exact ⟨by decide,by decide,by decide,rfl⟩
+  · rfl
+  · decide
+  · decide
+  · decide
+  · decide
+  · decide
+  · decide
+  · unfold OnSeg; decide
 
 end EndgameChess.Rules.KQK

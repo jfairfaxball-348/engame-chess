@@ -146,7 +146,65 @@ Consequently every KQK stalemate with separated kings lies on a board
 edge. This reduces the repair problem to boundary geometry, but does not
 supply the missing global entry strategy.
 
-## Outstanding class obligation
+## Entry by queen alignment and a checking staircase
+
+`Setup.lean` proves entry into the copying strategy, rather than assuming
+that its exact knight offset is already present. With the king's
+coordinate sum at most 4 and the weak king's sum at least 8:
+
+- If the queen is one or two files left of the weak king, both weak
+  coordinates are at most 6, and the strong king is off the queen's file,
+  a clear vertical slide reaches one of the two knight orientations.
+  The upper bound, including the finish, is 53 plies.
+- A two-file offset with a one-rank difference also has a 53-ply bound
+  on the boundary. On the top rank it uses an edge wall; if that wall
+  would have width one, it moves the queen left to widen it first.
+- For the central input region `W_x,W_y ≤ 5`, `W_x+W_y ≥ 9`, a king
+  blocking the queen's file can move one square left. The distant queen
+  then prevents any weak reply from moving left. Each reply has sum
+  at least 8 and coordinates at most 6, so vertical alignment applies.
+  This proves a 55-ply bound without assuming the file is clear initially.
+  The fresh-legality condition that the weak king is not in check supplies
+  the required queen distance.
+- From an arbitrary queen file, a clear horizontal slide to file
+  `W_x-1` also gives a 55-ply bound, provided the queen's rank is at
+  least two from the weak king's and the strong king lies strictly left
+  of the destination file. Every subsequent weak reply enters the
+  vertical alignment region. The horizontal clearance is an explicit
+  geometric premise, not an assumed solution of the remaining blockers.
+
+The file and blocked-file results transport through queen/king symmetry.
+The examples include a king physically blocking the queen's initial
+alignment file and a queen starting far to the right, so entry is not
+vacuously the old shadow configuration.
+
+`Staircase.lean` covers a farther queen with a one-rank difference. Its
+region is
+
+\[
+K_x+K_y\le4,\quad Q_x+2\le W_x,\quad
+|Q_y-W_y|=1,\quad Q_x+W_y\ge6.
+\]
+
+At a gap of at least three files, move the queen diagonally one step
+to `(Q_x+1,W_y)`, giving a horizontal check from distance at least two.
+Every legal reply leaves that rank and stays at least two files right
+of the new queen. A vertical weak reply always exists; the coordinate
+sum hypotheses keep it clear of the strong king. The inequality
+`Q_x+W_y ≥ 6` is preserved because the queen advances one file and the
+weak king changes rank by at most one. In particular, when the gap
+reaches two, the weak king's coordinate sum is at least 8 and the
+two-file entry theorem applies.
+
+The nonnegative potential `7+W_x-2*Q_x` strictly decreases on every
+defended pair: the queen's file increases by one while the weak king's
+file can increase by at most one. Its initial value is at most 14.
+Thus `2*potential+53 ≤ 81` plies suffice for this entire region and
+its reflected/transposed versions. These are upper bounds sufficient
+for the clock budget, not exact mate distances or a fresh-history
+classification theorem.
+
+## Remaining global entry and outcome proof
 
 Establish a general entry strategy from every fresh legal strong-turn KQK
 position, accounting for all weak replies, legal setup and blockers, queen-only
