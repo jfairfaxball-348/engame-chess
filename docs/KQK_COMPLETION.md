@@ -39,5 +39,5 @@ Exact distances such as **M4/Mn are optional and are not a completion
 gate**, just as the unfinished longer-distance KRK catalogue is out of
 scope. Incoming clocks/histories, castling positions and a broader FIDE
 correspondence are not claimed. No tablebase or position enumeration is
-used as a proof oracle. KPK is selected next; its [plan](KPK_PLAN.md) is
-installed but unexecuted.
+used as a proof oracle. KPK work is underway under its [plan](KPK_PLAN.md);
+the [partial proof](../proofs/KPK_WDL50.md) records its open boundary.

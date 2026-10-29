@@ -1,9 +1,10 @@
-# KPK proof plan — installed, not executed
+# KPK proof plan
 
 The owner selected KPK as the next class after frozen KQK (EC-T0050).
-This request installs the plan only. **Do not execute it until a later
-owner request to run KPK.** No KPK proof, computation or Lean
-implementation has been started by this installation.
+The owner subsequently authorised continuous execution. The
+[partial proof](../proofs/KPK_WDL50.md) records the exact arguments and
+remaining gaps. Work through obligations without intermediate freezes
+or administrative closeouts; KPK is not yet complete.
 
 ## Target and boundaries
 
@@ -20,7 +21,7 @@ other material classes, tablebases, engines as proof oracles, exhaustive
 retrograde tables or per-position computed certificates, including in Lean.
 No numerical KPK bound or complete pawn criterion is asserted here.
 
-## First obligation on the next run
+## Foundation order
 
 Read live authority and confirm clean/synchronised `main`. Start with a
 KPK contract and proof-route audit:
@@ -37,7 +38,7 @@ KPK contract and proof-route audit:
    sampled family or computed outcome table.
 
 Continue incrementally under `AGENTS.md`; no numbered session folders or
-separate administrative closeouts are needed. Execution has not begun.
+separate administrative closeouts are needed.
 
 ## Reuse and limits
 
@@ -218,4 +219,5 @@ changes, with small controls for both colours/turns, double push, blocking,
 capture, promotion choice and stalemate. No class enumeration is a proof.
 Certify completed source in a clean checkout once, audit axioms, then
 freeze under `PROOF_PROTOCOL.md` and update coverage at the milestone.
-None of these execution steps has run yet.
+Completed local proofs do not imply class completion; retain explicit
+coverage gaps until the complete classification and budgets are proved.
