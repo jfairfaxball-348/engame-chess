@@ -67,7 +67,7 @@ theorem rankAdvanceDestination_sound {q : Position} {σ : Colour}
       exact hfile
     · apply Fin.ext
       exact hrank
-  subst nr
+  rw [equal] at hmatch drop replies
   exact ⟨c, legal, hmatch, drop, nonempty, replies⟩
 
 end EndgameChess.Rules.KRKExecutable
