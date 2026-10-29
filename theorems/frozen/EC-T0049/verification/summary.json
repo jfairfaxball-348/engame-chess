@@ -1,0 +1,68 @@
+{
+  "source_commit": "4275e227ce88f966c1d663117a3081b55179fc35",
+  "started_utc": "2026-10-29T07:41:06.323104+00:00",
+  "initial_git_status": "",
+  "initial_lake_absent": true,
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "packages": [],
+  "module_count": 213,
+  "public_theorem_count": 1147,
+  "commands": [
+    {
+      "args": [
+        "C:\\Users\\johnf\\.elan\\bin\\lake.exe",
+        "build"
+      ],
+      "cwd": "C:\\engame-checkouts\\krk-20261029-cert\\formal",
+      "log": "build.log",
+      "exit_code": 0,
+      "seconds": 1230.485
+    },
+    {
+      "args": [
+        "C:\\Users\\johnf\\.elan\\bin\\lake.exe",
+        "env",
+        "lean",
+        "C:\\engame-checkouts\\krk-20261029-cert\\formal\\.lake\\krk-certification\\Declarations.lean"
+      ],
+      "cwd": "C:\\engame-checkouts\\krk-20261029-cert\\formal",
+      "log": null,
+      "exit_code": 1,
+      "seconds": 2.234,
+      "diagnostic": "Unknown option pp.width in initial generated declaration reporter; that failed output was replaced by the corrected successful report."
+    },
+    {
+      "args": [
+        "C:/Users/johnf/.elan/bin/lake.exe",
+        "env",
+        "lean",
+        "C:\\engame-checkouts\\krk-20261029-cert\\formal\\.lake\\krk-certification\\Declarations.lean"
+      ],
+      "cwd": "C:\\engame-checkouts\\krk-20261029-cert\\formal",
+      "log": "axioms-and-types.log",
+      "exit_code": 0,
+      "seconds": 2.344
+    },
+    {
+      "args": [
+        "C:/Users/johnf/.elan/bin/lake.exe",
+        "env",
+        "lean",
+        "AxiomCheck.lean"
+      ],
+      "cwd": "C:\\engame-checkouts\\krk-20261029-cert\\formal",
+      "log": "aggregate-axioms.log",
+      "exit_code": 0,
+      "seconds": 1.344
+    }
+  ],
+  "audit_runner_correction": "Removed unsupported pretty-print option pp.width from generated ignored Declarations.lean; all tracked proof/configuration hashes unchanged; successful clean build retained.",
+  "observed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "axiom_report_count": 2694,
+  "completed_utc": "2026-10-29T08:02:55.428494+00:00",
+  "result": "PASS"
+}

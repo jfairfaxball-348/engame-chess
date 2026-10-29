@@ -41,12 +41,9 @@ def main() -> None:
         hashlib.sha256(p.read_bytes()).hexdigest() + "  " + p.relative_to(root).as_posix() + "\n"
         for p in sorted(set(sources + configs))), encoding="utf-8")
     runner = out / "Declarations.lean"
-    lines = ["import EndgameChess", "set_option pp.width 120"]
+    lines = ["import EndgameChess"]
     for module in scope["modules"]:
         lines.append("import " + module.removeprefix("formal/").removesuffix(".lean").replace("/", "."))
-    # Imports must precede commands.
-    lines.remove("set_option pp.width 120")
-    lines.append("set_option pp.width 120")
     for entry in scope["public_theorems"]:
         name = entry["declaration"]
         lines.extend(["#check @" + name, "#print axioms " + name])
