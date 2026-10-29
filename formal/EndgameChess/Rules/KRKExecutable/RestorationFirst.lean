@@ -85,7 +85,7 @@ theorem restorationKing_sound {q : Position} {σ : Colour}
     simp only [absDiff] at *
     omega
   obtain ⟨c,hl,hm,hnonempty,hall⟩ :=
-    king_below_pair hq hstep (by omega) hw hmargin
+    king_below_pair hq hstep (by omega) hw (by omega)
   refine ⟨c,hl,hm,hnonempty,?_⟩
   intro v hv
   obtain ⟨t,hmt,hty,hunit⟩ := hall v hv
