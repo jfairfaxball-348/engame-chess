@@ -2662,3 +2662,18 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KQK.QueenSym.sees_iff
 #print axioms EndgameChess.Rules.KQK.bound_transport
 #print axioms EndgameChess.Rules.KQK.tight_above_entry
+
+-- New importing KRK executable proof witnesses; no frozen theorem rewritten.
+#print axioms EndgameChess.Rules.KRKExecutable.rookWaitDestination_sound
+#print axioms EndgameChess.Rules.KRKExecutable.rankAdvanceDestination_sound
+#print axioms EndgameChess.Rules.KRKExecutable.prepNext_sound
+#print axioms EndgameChess.Rules.KRKExecutable.readyUpperDestination_sound
+#print axioms EndgameChess.Rules.KRKExecutable.wallNext_sound
+#print axioms EndgameChess.Rules.KRKExecutable.lowerBandTempo_sound
+#print axioms EndgameChess.Rules.KRKExecutable.pivotRightCut_sound
+#print axioms EndgameChess.Rules.KRKExecutable.guardedEntry_sound
+#print axioms EndgameChess.Rules.KRKExecutable.columnKingStep_sound
+#print axioms EndgameChess.Rules.KRKExecutable.pivotLeftCut_sound
+#print axioms EndgameChess.Rules.KRKExecutable.guardedEntryLeft_sound
+#print axioms EndgameChess.Rules.KRKExecutable.oppositionCheck_sound
+#print axioms EndgameChess.Rules.KRKExecutable.oppositionFollow_sound

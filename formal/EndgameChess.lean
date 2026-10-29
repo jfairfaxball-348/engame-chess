@@ -417,3 +417,16 @@ import EndgameChess.Rules.KQK.EdgeEntry
 import EndgameChess.Rules.KQK.ClearWallEntry
 import EndgameChess.Rules.KQK.FarFilePreparation
 import EndgameChess.Rules.KQK.FreshExamples
+
+-- Constructive KRK witnesses, separate from the frozen theorem sources.
+import EndgameChess.Rules.KRKExecutable.Constructors
+import EndgameChess.Rules.KRKExecutable.Prep
+import EndgameChess.Rules.KRKExecutable.PrepRank
+import EndgameChess.Rules.KRKExecutable.PrepController
+import EndgameChess.Rules.KRKExecutable.ReadyUpper
+import EndgameChess.Rules.KRKExecutable.WallClimb
+import EndgameChess.Rules.KRKExecutable.ReadyCutTempo
+import EndgameChess.Rules.KRKExecutable.WidePivot
+import EndgameChess.Rules.KRKExecutable.GuardedEntry
+import EndgameChess.Rules.KRKExecutable.ColumnKing
+import EndgameChess.Rules.KRKExecutable.OppositionActions
