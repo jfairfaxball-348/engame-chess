@@ -2836,3 +2836,12 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.centered_white_both_turns_example
 #print axioms EndgameChess.Rules.KPK.centered_black_both_turns_example
 #print axioms EndgameChess.Rules.KPK.centered_weak_104_example
+
+-- KPK coordinate game, generic plans and the rule of the square.
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_plan_strong
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_plan_weak
+#print axioms EndgameChess.Rules.KPK.Coord.weak_reply
+#print axioms EndgameChess.Rules.KPK.Coord.rook_reply
+#print axioms EndgameChess.Rules.KPK.Coord.run_rook
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_runaway_strong
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_runaway_weak

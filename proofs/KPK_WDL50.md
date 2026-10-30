@@ -318,6 +318,45 @@ forcing agrees with fresh actual winning. Thus there are no cursed-win
 or blessed-loss exceptions in this band. This does not classify rook
 pawns with a centered king, earlier ranks, or a guarded entry square.
 
+## Coordinate game and strategy plans
+
+`KPK/Coord` restates exact KPK as a game on natural-number coordinates:
+oriented heights, with files reflected so that the pawn stands on files 0
+to 3. `Coord/Bridge` proves that its king steps, pushes, captures and
+promotion checks correspond to legal moves in the rules kernel.
+
+A `Plan` is a hand-written strategy: a phase of at most 40 for each position
+in its region. With the strong side to move, a king step spends one phase, or
+a pawn move ends the phase. A weak reply exists, cannot capture the pawn, and
+never raises the phase. `Coord/Forced` proves that any plan gives an actual
+fresh-game win within 604 plies. The rank combines pawn height with phase, so
+equal repetition keys have equal ranks and earlier boards cannot repeat. Each
+pawn move resets the clock, and at most 82 quiet plies pass between resets.
+Promotion uses the real prefix through the existing history theorems.
+
+## The lone king's replies
+
+Away from its last rank, the lone king has a quiet move unless capturing the
+pawn is its only option (`weak_reply`). On the last rank the same holds when
+the pawn is below height 5, or more than two files away.
+
+## The rule of the square
+
+Let `n` be the pushes the pawn needs, counting the first double step. Suppose
+its own king is not ahead of it on its file. If the lone king is more than
+`n` king steps from the promotion square with the strong side to move, or
+more than `n+1` with the weak side to move and no capture available, the
+pawn runs: each reply lowers the distance by at most one, and each push
+lowers `n` by one.
+
+Promoting to a rook then wins, except in one position. A promoted rook leaves
+a reply or gives check unless it would stalemate a king on `a1` with the
+pawn's king on `a3` or `b3` and the pawn on `b7`, in the reflected or colour
+reversed versions too (`rook_reply`, `run_rook`). There the strong side first
+plays one waiting king move up the board, then promotes. This is a sufficient
+region, `fresh_runaway_strong` and `fresh_runaway_weak`, not a classification
+of positions outside it.
+
 ## Paper-to-Lean correspondence
 
 All paths below are relative to `formal/EndgameChess/Rules/`.
@@ -343,6 +382,10 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Safe king entry from outside the proved bands | `KPK/KingEntry`: `fresh_supported_king_entry`, `fresh_seventh_king_entry`, `fresh_sixth_rank_entry_win` |
 | Centered seventh-rank support of a non-rook sixth pawn | `KPK/CenteredKing`: `centered_flank_entry`, `fresh_centered_strong`, `fresh_centered_weak`, `fresh_centered_win` |
 | All three seventh-rank support squares | `KPK/KeySquares`: `fresh_key_band_wdl50`, `key_band_force_iff_fresh` |
+| Coordinate game and bridge to the kernel | `KPK/Coord/Game`, `Bridge`, `Promo` |
+| Any strategy plan gives an actual win | `KPK/Coord/Forced`: `Plan`, `fresh_cert_win`, `fresh_plan_strong`, `fresh_plan_weak` |
+| Lone-king replies and the rook-promotion trap | `KPK/Coord/Replies`: `weak_reply`; `KPK/Coord/Runaway`: `rook_reply`, `run_rook` |
+| Rule of the square | `KPK/Coord/Runaway`: `runPlan`, `fresh_runaway_strong`, `fresh_runaway_weak` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
