@@ -426,3 +426,5 @@ import EndgameChess.Rules.KPK.Coord.Sixth
 import EndgameChess.Rules.KPK.Coord.SevenWin
 import EndgameChess.Rules.KPK.Coord.SixPlan
 import EndgameChess.Rules.KPK.Coord.Race
+import EndgameChess.Rules.KPK.Coord.Five
+import EndgameChess.Rules.KPK.Coord.Five2

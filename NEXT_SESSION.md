@@ -17,9 +17,11 @@ The owner authorised continuous **KPK** work under the
 partition outside the proved exposed-pawn/rook-pawn-fortress draw regions
 and the proved seventh-rank support bands. Safe quiet king entry and
 all three support squares for a sixth-rank non-rook pawn are proved.
-The next obligation is opposition when those entry squares are guarded,
-earlier-rank king/pawn coordination, blocked paths and sufficient
-quiet-phase budgets. General dead/live and
+Bishop and centre pawns on the sixth and seventh ranks are now classified in
+`Rules/KPK/Coord`, apart from a stalemated lone king on the sixth rank. The next
+obligation is the fifth rank: finish the guard from the race lemmas in `Coord/Race`,
+`Five` and `Five2`, then the winning plan, then lower ranks, knight pawns and rook
+pawns. General dead/live and
 the no-limit comparison also remain open. The [partial proof](proofs/KPK_WDL50.md)
 maps the existing Lean results and exact gaps. KPK is not complete.
 

@@ -430,6 +430,53 @@ cannot oppose. In the first the king heads for the square behind the pawn, from
 which it can choose its side (`step5_cover`, `six_move`). Other ranks, the lone
 king's turn on rank six, and knight and rook pawns remain unclassified.
 
+## Fifth-rank work in progress
+
+This is partial. No fifth-rank guard or plan exists yet.
+
+`KPK/Coord/Race` and `Five` state the lone king's race in general form, for any
+distance. `Rc` says the lone king is as close to a key square as the strong king.
+It allows for the king's route round the pawn (`KR`, `Thru`) and the lone king's
+route round the pawn's attacks (`WR`, `Cross`, `Hit`). The lone king's default reply
+is one step towards the square two ahead of the pawn. `race_keep`, `kr_step`,
+`wr_step`, `rc_step`, `m4_step` show that this keeps every race against any king
+step. `w4_main` gives the reply in the main region, `w4_c6`, `w4_bes`, `w4_far` and
+`w4_take` give four special replies, and `w4_u4` with `m4_u4r`, `m4_u4l` treats a
+lone king two files out on the pawn's rank.
+
+`S4` is a candidate region only. Its closure is not proved. Open for the guard: the
+case where the default reply is blocked, the opposed-file clause `Op4`, pawn pushes,
+and assembling the king-move theorem. The whole winning side is open.
+
+## Negative results and method notes
+
+- Unstructured `omega` over a whole region does not work. A closure lemma with eight
+  candidate replies timed out at 280 and 500 seconds, and a class cover ran for 45
+  minutes with no verdict. Choosing each reply by hand made the same work take
+  seconds. Replace implications by small explicit facts and `clear` what a goal does
+  not need.
+- A timed-out Lean run prints nothing. Check its return code. A silent timeout was
+  once misread as a pass, and real errors were then found.
+- Promoted rooks are simpler to prove than queens in stalemate arguments.
+- Key squares do not carry over to the knight file unchanged. Candidate draws such as
+  king `b6`, pawn `b5`, lone king `b8` with the pawn owner to move arise from a cycle,
+  which a one-step closure check cannot see. They are not proved.
+- `max` in distance statements makes `omega` slow. State distance as `Ch`, a bound
+  by four inequalities.
+- A first statement of the blocked-reply lemma was false, because it ignored that the
+  lone king may capture the pawn. The corrected statement did not finish in the time
+  given, so it was left out and its status is unknown. It is probably too expensive
+  in that form.
+
+## Status of the scratch finder
+
+Region clauses for ranks 2 to 5 and the rook pawn were developed with a scratch
+script, outside this repository. It checks one-step closure of hand-written regions
+and solves nothing. No Lean proof depends on it, and it is not evidence of any
+outcome. Several clauses were adjusted directly from its failure lists, so those
+boundaries still need a chess argument before they can be accepted. See the
+open obligations below.
+
 ## Paper-to-Lean correspondence
 
 All paths below are relative to `formal/EndgameChess/Rules/`.
@@ -465,6 +512,8 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Sixth-rank holding region | `KPK/Coord/Sixth`: `sixGuard`, `s5_king`, `s5_push`, `fresh_six_hold` |
 | Exact seventh-rank win, pawn owner to move | `KPK/Coord/SevenWin`: `sevPlan`, `sev_cover`, `fresh_seventh_win` |
 | Exact sixth-rank win, pawn owner to move | `KPK/Coord/SixWin`, `SixMove`, `SixCover`, `SixMain`, `SixPlan`: `step5_cover`, `six_move`, `sixPlan`, `fresh_sixth_win` |
+| Lone king to move on the sixth and seventh ranks | `KPK/Coord/SixPlan`: `fresh_sixth_weak_win`, `fresh_sixth_weak_hold`, `fresh_seventh_weak_win`, `fresh_seventh_weak_hold` |
+| General king race (partial, fifth rank) | `KPK/Coord/Race`, `Five`, `Five2`: `race_keep`, `kr_step`, `wr_step`, `rc_step`, `m4_step`, `w4_main`, `w4_u4` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are

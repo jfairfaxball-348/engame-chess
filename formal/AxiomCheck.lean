@@ -2869,3 +2869,7 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.race_keep
 #print axioms EndgameChess.Rules.KPK.Coord.kr_step
 #print axioms EndgameChess.Rules.KPK.Coord.wr_step
+#print axioms EndgameChess.Rules.KPK.Coord.rc_step
+#print axioms EndgameChess.Rules.KPK.Coord.m4_step
+#print axioms EndgameChess.Rules.KPK.Coord.w4_main
+#print axioms EndgameChess.Rules.KPK.Coord.w4_u4

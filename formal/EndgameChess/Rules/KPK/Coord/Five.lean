@@ -69,20 +69,13 @@ def Op4 (a b c e f : Nat) : Prop :=
 def Pr4 (a b c e f : Nat) : Prop :=
   Near e f c 4 ∧ ¬ Near a b c 4 ∧ ∀ x y, Near a b x y → Near x y c 4 → ¬ Apart x y e f
 
-/-- The lone king within `n` of touching the pawn. -/
-def T4 (n c e f : Nat) : Prop :=
-  Ch e f (c + 1) 4 n ∨ Ch e f (c - 1) 4 n ∨ Ch e f (c + 1) 3 n ∨ Ch e f (c - 1) 3 n ∨ Ch e f c 3 n ∨
-    Ch e f c 5 n
-
-/-- The lone king reaches the pawn before the king can protect it. -/
-def Rr4 (a b c e f : Nat) : Prop :=
-  (T4 0 c e f ∧ ¬ Ch a b c 4 2) ∨ (T4 1 c e f ∧ ¬ Ch a b c 4 3) ∨ (T4 2 c e f ∧ ¬ Ch a b c 4 4) ∨
-    (T4 3 c e f ∧ ¬ Ch a b c 4 5)
+/-- The lone king next to the pawn's rank, the king too far to return. -/
+def Rr4 (a c e f : Nat) : Prop := e + 2 = c ∧ f = 4 ∧ c + 4 ≤ a
 
 /-- The fifth-rank draw region of files `c`, `d`. -/
 def S4 (a b c e f : Nat) : Prop :=
   ¬ K4 a b c ∧ Sq4 c e f ∧ ((B4 a b c ∧ f = 6 ∧ (e = a ∨ e = c)) ∨
-    (¬ B4 a b c ∧ (Op4 a b c e f ∨ M4 a b c e f ∨ Pr4 a b c e f ∨ Rr4 a b c e f)))
+    (¬ B4 a b c ∧ (Op4 a b c e f ∨ M4 a b c e f ∨ Pr4 a b c e f ∨ Rr4 a c e f)))
 
 /-- The lone king's answer at height 4. -/
 def W4 (a b c e f : Nat) : Prop :=
@@ -317,5 +310,76 @@ theorem w4_main {a b c e f x y : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c) (h :
     · unfold Near; omega
     · omega
     · unfold Att; omega
+
+set_option maxHeartbeats 4000000 in
+/-- Directly ahead of the pawn the lone king steps back to the pawn or opposes the king. -/
+theorem w4_c6 {c x y : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7)
+    (ap : Apart x y c 6) (np : ¬ (x = c ∧ y = 4)) : W4 x y c c 6 := by
+  unfold Apart at ap
+  have kx : ¬ K4 x y c := by unfold K4; omega
+  by_cases bx : B4 x y c
+  · have b' := bx
+    unfold B4 at b'
+    refine Or.inr ⟨x, 6, by unfold WeakStep Near Apart Att; omega, kx, ?_, Or.inl ⟨bx, rfl, Or.inl rfl⟩⟩
+    unfold Sq4; omega
+  · refine Or.inr ⟨c, 5, ?_, s4_center hc rfl (Or.inl rfl) kx bx⟩
+    unfold B4 at bx
+    unfold WeakStep Near Apart Att
+    omega
+
+set_option maxHeartbeats 4000000 in
+/-- The king beside the pawn moves away from direct opposition. -/
+theorem w4_bes {a c e x y : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (side : a = c + 1 ∨ a + 1 = c)
+    (he : e = a) (s : Near a 4 x y) (ap : Apart x y e 6) (np : ¬ (x = c ∧ y = 4)) : W4 x y c e 6 := by
+  subst he
+  unfold Near at s
+  unfold Apart at ap
+  have kx : ¬ K4 x y c := by unfold K4; omega
+  have bx : ¬ B4 x y c := by unfold B4; omega
+  exact Or.inr ⟨c, 6, by unfold WeakStep Near Apart Att; omega, s4_center hc rfl (Or.inr rfl) kx bx⟩
+
+/-- A distant lone king on the far side steps next to the pawn, out of the king's reach. -/
+theorem w4_far {a b c x y : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (far : c + 4 ≤ a)
+    (s : Near a b x y) : W4 x y c (c - 2) 4 := by
+  unfold Near at s
+  refine Or.inr ⟨c - 1, 4, by unfold WeakStep Near Apart Att; omega, ?_, ?_, Or.inr ⟨?_, Or.inr (Or.inr (Or.inl ?_))⟩⟩
+  · unfold K4; omega
+  · unfold Sq4; omega
+  · unfold B4; omega
+  · refine ⟨by unfold Near; omega, by unfold Near; omega, ?_⟩
+    intro p q n1 n2
+    unfold Near at n1 n2
+    omega
+
+/-- From two files out on the pawn's rank the lone king steps beside the pawn. These are
+the races it keeps. -/
+theorem rc_t5 {x y c t o u : Nat} (sd : Sd c t o u) (k : ¬ Ch x y t 5 0) : Rc x y c t 4 t 5 := by
+  intro n kr
+  obtain ⟨k1, -⟩ := kr
+  unfold Sd at sd
+  unfold Ch at k k1
+  refine ⟨by unfold Ch; omega, Or.inl ?_⟩
+  unfold Cross
+  omega
+
+theorem rc_t6 {x y c t o u : Nat} (sd : Sd c t o u) (k : ¬ Ch x y t 6 1) : Rc x y c t 4 t 6 := by
+  intro n kr
+  obtain ⟨k1, -⟩ := kr
+  unfold Sd at sd
+  unfold Ch at k k1
+  refine ⟨by unfold Ch; omega, Or.inl ?_⟩
+  unfold Cross
+  omega
+
+set_option maxHeartbeats 4000000 in
+theorem rc_o {a b c t o u x y q : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) (hq : q = 5 ∨ q = 6)
+    (h : Rc a b c u 4 o q) (s : Near a b x y) (np : ¬ (x = c ∧ y = 4)) : Rc x y c t 4 o q := by
+  intro n kr
+  have sd' := sd
+  unfold Sd at sd'
+  have hp : o = c + 1 ∨ o + 1 = c := by omega
+  have old := h (n + 1) (kr_step hc hp hq s np kr)
+  unfold WR Cross Hit Ch at *
+  omega
 
 end EndgameChess.Rules.KPK.Coord
