@@ -2849,3 +2849,7 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.r6_good
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_key_strong
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_key_weak
+#print axioms EndgameChess.Rules.KPK.Coord.draw_hold
+#print axioms EndgameChess.Rules.KPK.Coord.draw_no_force
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_guard_strong
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_guard_weak

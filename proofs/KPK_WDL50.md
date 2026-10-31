@@ -357,6 +357,47 @@ plays one waiting king move up the board, then promotes. This is a sufficient
 region, `fresh_runaway_strong` and `fresh_runaway_weak`, not a classification
 of positions outside it.
 
+## Key squares of bishop and centre pawns
+
+Let the pawn stand on a bishop or central file, reflected so that it is on
+file `c` with `2 ≤ c ≤ 3`, at height `d ≤ 5`. If the pawn owner's king is on
+the pawn's file or an adjacent one, exactly two ranks ahead of the pawn, the
+pawn owner wins with the move, and wins with the lone king to move provided
+that king is not next to the pawn (`fresh_key_strong`, `fresh_key_weak`).
+
+The strategy, `keyPlan`, keeps the king one to three ranks ahead. High on the
+board the pawn simply advances: at height at least 3 a push from two ranks
+ahead leaves a position that wins with either side to move. At heights 1 and
+2 the king advances a rank if the lone king could otherwise step onto the
+square opposite it, and the pawn moves otherwise. A pawn move while the lone
+king already holds that square puts it in zugzwang. If the lone king guards
+all the king's entry squares from the pawn's file, the king sidesteps to the
+pawn's file and takes the opposition. A lone king next to the pawn is met by
+a pawn move under the king's protection, or by a sidestep keeping protection,
+and it then stays behind the pawn. The one line that needs the last rank is
+king beside the pawn at height 5, opposed from the last rank, lone king to
+move: it must step aside, the pawn advances, and if it reached the promotion
+square it must leave again. Each king phase is bounded, so `Plan` applies.
+
+Promoted rooks are used because a rook next to the supporting king always
+gives check or leaves a step down the board (`r6_good`).
+
+The knight file is deliberately excluded. Working the same line by hand with
+the pawn on `b5` fails against a king using `a7` and `a8`, because of the
+stalemate with `c7` and `b6`. So these key squares are not expected to carry
+over unchanged. That is a candidate obstruction from analysis, not a proved
+draw.
+
+## Guards
+
+`Guard` in `KPK/Coord/Hold` is the drawing counterpart of `Plan`. It gives
+regions in which every strong king move and pawn move leads to a position the
+lone king can answer inside the region, or where it captures the pawn or is
+stalemated, and where any promotion can be captured at once. A fresh root in
+a guard is an actual hold for the lone king and excludes forced mate at every
+length (`fresh_guard_strong`, `fresh_guard_weak`). No guard covering a new
+region has been instantiated yet.
+
 ## Paper-to-Lean correspondence
 
 All paths below are relative to `formal/EndgameChess/Rules/`.
@@ -386,6 +427,8 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Any strategy plan gives an actual win | `KPK/Coord/Forced`: `Plan`, `fresh_cert_win`, `fresh_plan_strong`, `fresh_plan_weak` |
 | Lone-king replies and the rook-promotion trap | `KPK/Coord/Replies`: `weak_reply`; `KPK/Coord/Runaway`: `rook_reply`, `run_rook` |
 | Rule of the square | `KPK/Coord/Runaway`: `runPlan`, `fresh_runaway_strong`, `fresh_runaway_weak` |
+| Key squares of bishop and centre pawns | `KPK/Coord/Key`: `keyPlan`, `key_reply`, `r6_good`, `fresh_key_strong`, `fresh_key_weak` |
+| Any guard gives an actual hold | `KPK/Coord/Hold`: `Guard`, `draw_hold`, `draw_no_force`, `fresh_guard_strong`, `fresh_guard_weak` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
@@ -413,8 +456,8 @@ No clean-checkout certification or freeze has been performed.
 
 ## Open proof obligations
 
-The remaining domain includes earlier-rank coordination, opposition when
-the king-entry squares are guarded, blocked paths, and rook pawns outside
+The remaining domain includes king approach to the key squares, opposition
+when the entry squares are guarded, knight pawns, blocked paths, and rook pawns outside
 the proved fortress and support regions. It needs a
 complete explicit geometric win/hold partition, entry and preservation
 lemmas, sufficient quiet-phase bounds, and prevention of fixed-height
