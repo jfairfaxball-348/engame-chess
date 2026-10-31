@@ -2845,3 +2845,7 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.run_rook
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_runaway_strong
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_runaway_weak
+#print axioms EndgameChess.Rules.KPK.Coord.key_reply
+#print axioms EndgameChess.Rules.KPK.Coord.r6_good
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_key_strong
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_key_weak

@@ -419,3 +419,4 @@ import EndgameChess.Rules.KQK.FarFilePreparation
 import EndgameChess.Rules.KQK.FreshExamples
 import EndgameChess.Rules.KPK.Examples
 import EndgameChess.Rules.KPK.Coord.Runaway
+import EndgameChess.Rules.KPK.Coord.Key
