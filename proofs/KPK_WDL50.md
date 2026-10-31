@@ -418,7 +418,17 @@ For a bishop or centre pawn on the seventh rank with the pawn owner to move the
 boundary is exact. Every legal root outside `topGuard` is in `SevS` (`sev_cover`)
 and wins (`fresh_seventh_win`): the pawn promotes, or the king first steps off the
 promotion square, gets next to it, or evicts a blockading lone king from a square
-diagonally behind the pawn. Other ranks and turns remain unclassified.
+diagonally behind the pawn.
+
+The sixth rank is exact in the same sense. Outside `sixGuard` a bishop or centre
+pawn wins with the pawn owner to move (`fresh_sixth_win`). The plan is short. With
+the king beside or ahead the pawn advances or the king steps ahead. Outside the
+pawn's square the pawn runs. Otherwise the lone king is two files out, or next to
+the pawn's file, or on a blockade square. The last is a draw unless the king has
+arrived. In the second the king steps beside the pawn on a side the lone king
+cannot oppose. In the first the king heads for the square behind the pawn, from
+which it can choose its side (`step5_cover`, `six_move`). Other ranks, the lone
+king's turn on rank six, and knight and rook pawns remain unclassified.
 
 ## Paper-to-Lean correspondence
 
@@ -454,6 +464,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Seventh-rank holding region | `KPK/Coord/TopGuard`: `topGuard`, `fresh_top_hold` |
 | Sixth-rank holding region | `KPK/Coord/Sixth`: `sixGuard`, `s5_king`, `s5_push`, `fresh_six_hold` |
 | Exact seventh-rank win, pawn owner to move | `KPK/Coord/SevenWin`: `sevPlan`, `sev_cover`, `fresh_seventh_win` |
+| Exact sixth-rank win, pawn owner to move | `KPK/Coord/SixWin`, `SixMove`, `SixCover`, `SixMain`, `SixPlan`: `step5_cover`, `six_move`, `sixPlan`, `fresh_sixth_win` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are

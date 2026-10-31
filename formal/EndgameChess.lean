@@ -424,3 +424,4 @@ import EndgameChess.Rules.KPK.Coord.Hold
 import EndgameChess.Rules.KPK.Coord.TopGuard
 import EndgameChess.Rules.KPK.Coord.Sixth
 import EndgameChess.Rules.KPK.Coord.SevenWin
+import EndgameChess.Rules.KPK.Coord.SixPlan
