@@ -414,6 +414,12 @@ own chosen reply, proved for every strong-king square by inequalities
 (`s5_king`, `s5_push`, `fresh_six_hold`). This is a holding region. Exactness of
 its boundary needs the matching winning plan, which is not yet proved.
 
+For a bishop or centre pawn on the seventh rank with the pawn owner to move the
+boundary is exact. Every legal root outside `topGuard` is in `SevS` (`sev_cover`)
+and wins (`fresh_seventh_win`): the pawn promotes, or the king first steps off the
+promotion square, gets next to it, or evicts a blockading lone king from a square
+diagonally behind the pawn. Other ranks and turns remain unclassified.
+
 ## Paper-to-Lean correspondence
 
 All paths below are relative to `formal/EndgameChess/Rules/`.
@@ -447,6 +453,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Any guard gives an actual hold | `KPK/Coord/Hold`: `Guard`, `draw_hold`, `draw_no_force`, `fresh_guard_strong`, `fresh_guard_weak` |
 | Seventh-rank holding region | `KPK/Coord/TopGuard`: `topGuard`, `fresh_top_hold` |
 | Sixth-rank holding region | `KPK/Coord/Sixth`: `sixGuard`, `s5_king`, `s5_push`, `fresh_six_hold` |
+| Exact seventh-rank win, pawn owner to move | `KPK/Coord/SevenWin`: `sevPlan`, `sev_cover`, `fresh_seventh_win` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
