@@ -405,6 +405,15 @@ gives up the pawn. It holds beside the pawn if the strong king cannot reach
 the far side of the promotion square, since a king that only protects the
 pawn lets it step onto the promotion square (`fresh_top_hold`).
 
+`sixGuard` in `KPK/Coord/Sixth` adds a bishop or centre pawn on the sixth rank.
+Inside the pawn's square the lone king holds in three ways. It stands opposite
+a king beside the pawn. It reaches one of the two squares ahead of the pawn no
+later than the strong king arrives beside or ahead of the pawn. Or it reaches
+the pawn before the strong king can protect it. Each lone-king square has its
+own chosen reply, proved for every strong-king square by inequalities
+(`s5_king`, `s5_push`, `fresh_six_hold`). This is a holding region. Exactness of
+its boundary needs the matching winning plan, which is not yet proved.
+
 ## Paper-to-Lean correspondence
 
 All paths below are relative to `formal/EndgameChess/Rules/`.
@@ -437,6 +446,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Key squares of bishop and centre pawns | `KPK/Coord/Key`: `keyPlan`, `key_reply`, `r6_good`, `fresh_key_strong`, `fresh_key_weak` |
 | Any guard gives an actual hold | `KPK/Coord/Hold`: `Guard`, `draw_hold`, `draw_no_force`, `fresh_guard_strong`, `fresh_guard_weak` |
 | Seventh-rank holding region | `KPK/Coord/TopGuard`: `topGuard`, `fresh_top_hold` |
+| Sixth-rank holding region | `KPK/Coord/Sixth`: `sixGuard`, `s5_king`, `s5_push`, `fresh_six_hold` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
