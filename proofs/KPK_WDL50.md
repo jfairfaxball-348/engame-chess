@@ -395,8 +395,15 @@ regions in which every strong king move and pawn move leads to a position the
 lone king can answer inside the region, or where it captures the pawn or is
 stalemated, and where any promotion can be captured at once. A fresh root in
 a guard is an actual hold for the lone king and excludes forced mate at every
-length (`fresh_guard_strong`, `fresh_guard_weak`). No guard covering a new
-region has been instantiated yet.
+length (`fresh_guard_strong`, `fresh_guard_weak`).
+
+`topGuard` in `KPK/Coord/TopGuard` is the first instance, for a non-rook pawn
+on the seventh rank with the pawn owner to move. The lone king holds on the
+promotion square if the strong king cannot step onto a square diagonally
+behind the pawn: standing directly behind it stalemates, and any other move
+gives up the pawn. It holds beside the pawn if the strong king cannot reach
+the far side of the promotion square, since a king that only protects the
+pawn lets it step onto the promotion square (`fresh_top_hold`).
 
 ## Paper-to-Lean correspondence
 
@@ -429,6 +436,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Rule of the square | `KPK/Coord/Runaway`: `runPlan`, `fresh_runaway_strong`, `fresh_runaway_weak` |
 | Key squares of bishop and centre pawns | `KPK/Coord/Key`: `keyPlan`, `key_reply`, `r6_good`, `fresh_key_strong`, `fresh_key_weak` |
 | Any guard gives an actual hold | `KPK/Coord/Hold`: `Guard`, `draw_hold`, `draw_no_force`, `fresh_guard_strong`, `fresh_guard_weak` |
+| Seventh-rank holding region | `KPK/Coord/TopGuard`: `topGuard`, `fresh_top_hold` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
