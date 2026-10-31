@@ -2853,3 +2853,4 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.draw_no_force
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_guard_strong
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_guard_weak
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_top_hold

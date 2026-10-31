@@ -421,3 +421,4 @@ import EndgameChess.Rules.KPK.Examples
 import EndgameChess.Rules.KPK.Coord.Runaway
 import EndgameChess.Rules.KPK.Coord.Key
 import EndgameChess.Rules.KPK.Coord.Hold
+import EndgameChess.Rules.KPK.Coord.TopGuard
