@@ -2854,3 +2854,6 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_guard_strong
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_guard_weak
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_top_hold
+#print axioms EndgameChess.Rules.KPK.Coord.s5_king
+#print axioms EndgameChess.Rules.KPK.Coord.s5_push
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_six_hold
