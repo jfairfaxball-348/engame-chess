@@ -2866,3 +2866,6 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_sixth_weak_hold
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_seventh_weak_win
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_seventh_weak_hold
+#print axioms EndgameChess.Rules.KPK.Coord.race_keep
+#print axioms EndgameChess.Rules.KPK.Coord.kr_step
+#print axioms EndgameChess.Rules.KPK.Coord.wr_step
