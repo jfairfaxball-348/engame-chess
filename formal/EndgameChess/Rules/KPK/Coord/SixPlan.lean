@@ -60,4 +60,47 @@ theorem fresh_sixth_win {σ : Colour} {q : Position} {sk ps wk : Square}
   unfold Ch
   omega
 
+/-- Sixth rank, lone king to move: if it cannot take the pawn, has a move, and no move
+reaches the guard, the pawn owner wins. -/
+theorem fresh_sixth_weak_win {σ : Colour} {q : Position} {sk ps wk : Square}
+    (h : IsKPK q σ sk ps wk) (fresh : FreshLegal q sk ps wk) (turn : q.turn = σ.opp)
+    (file : 2 ≤ mx ps ps) (rank : height σ ps = 5)
+    (keep : ¬ Capture (mx ps sk) (height σ sk) (mx ps ps) 5 (mx ps wk) (height σ wk))
+    (moves : ∃ x y, WeakStep (mx ps sk) (height σ sk) (mx ps ps) 5 (mx ps wk) (height σ wk) x y)
+    (all : ∀ x y, WeakStep (mx ps sk) (height σ sk) (mx ps ps) 5 (mx ps wk) (height σ wk) x y →
+      ¬ S5 (mx ps sk) (height σ sk) (mx ps ps) x y) :
+    FreshGame.Within σ 604 (FreshGame.fresh q) := by
+  have cfg := fresh_cfg h fresh
+  have D : Dom (mx ps sk) (height σ sk) (mx ps ps) (height σ ps) (mx ps wk) (height σ wk) :=
+    dom_of_cfg cfg
+  obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
+  refine fresh_plan_weak (P := sixPlan) (j := 10) h fresh turn
+    ⟨file, by omega, Or.inr (Or.inr ⟨rank, Or.inr (Or.inr (Or.inr (Or.inr ⟨by omega, ?_⟩))), keep, moves, all⟩)⟩
+  unfold Ch
+  omega
+
+/-- Sixth rank, lone king to move: it takes the pawn or steps into the guard, and holds. -/
+theorem fresh_sixth_weak_hold {σ : Colour} {q : Position} {sk ps wk : Square}
+    (h : IsKPK q σ sk ps wk) (fresh : FreshLegal q sk ps wk) (turn : q.turn = σ.opp)
+    (file : 2 ≤ mx ps ps) (rank : height σ ps = 5)
+    (w : W5 (mx ps sk) (height σ sk) (mx ps ps) (mx ps wk) (height σ wk)) :
+    FreshGame.Hold σ.opp (FreshGame.fresh q) ∧ ∀ n, ¬ MateWithin σ n q :=
+  fresh_guard_weak (G := sixGuard) h fresh turn (Or.inr ⟨rank, file, w⟩)
+
+/-- Seventh rank, lone king to move: if it cannot take the pawn, has a move, and no move
+reaches the guard, the pawn owner wins. -/
+theorem fresh_seventh_weak_win {σ : Colour} {q : Position} {sk ps wk : Square}
+    (h : IsKPK q σ sk ps wk) (fresh : FreshLegal q sk ps wk) (turn : q.turn = σ.opp)
+    (file : 2 ≤ mx ps ps) (rank : height σ ps = 6)
+    (w : W6 (mx ps sk) (height σ sk) (mx ps ps) (mx ps wk) (height σ wk)) :
+    FreshGame.Within σ 604 (FreshGame.fresh q) :=
+  fresh_plan_weak (P := sixPlan) (j := 2) h fresh turn ⟨file, by omega, Or.inr (Or.inl ⟨rank, by omega, w⟩)⟩
+
+/-- Seventh rank, lone king to move: it takes the pawn, is stalemated or reaches the guard. -/
+theorem fresh_seventh_weak_hold {σ : Colour} {q : Position} {sk ps wk : Square}
+    (h : IsKPK q σ sk ps wk) (fresh : FreshLegal q sk ps wk) (turn : q.turn = σ.opp)
+    (w : TW (mx ps sk) (height σ sk) (mx ps ps) (height σ ps) (mx ps wk) (height σ wk)) :
+    FreshGame.Hold σ.opp (FreshGame.fresh q) ∧ ∀ n, ¬ MateWithin σ n q :=
+  fresh_guard_weak (G := topGuard) h fresh turn w
+
 end EndgameChess.Rules.KPK.Coord

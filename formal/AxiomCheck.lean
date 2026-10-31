@@ -2862,3 +2862,7 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.step5_cover
 #print axioms EndgameChess.Rules.KPK.Coord.six_move
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_sixth_win
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_sixth_weak_win
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_sixth_weak_hold
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_seventh_weak_win
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_seventh_weak_hold
