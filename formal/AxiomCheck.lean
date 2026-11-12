@@ -2912,3 +2912,9 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.s5n_push
 #print axioms EndgameChess.Rules.KPK.Coord.knSixGuard
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_kn_six_hold
+#print axioms EndgameChess.Rules.KPK.Coord.Kn.six_move
+#print axioms EndgameChess.Rules.KPK.Coord.Kn.step5_cover
+#print axioms EndgameChess.Rules.KPK.Coord.knSixPlan
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_sixth_win_k
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_sixth_weak_win_k
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_kn_six_weak_hold

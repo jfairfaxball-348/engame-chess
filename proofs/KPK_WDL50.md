@@ -555,11 +555,26 @@ step lets the lone king to `b7` (`wn_corner`). The reply lemmas of `Sixth` hold 
 knight pawns as written and their file bound was relaxed in place. Only the two rook-
 file squares needed new lemmas (`hl5`, `hl7`, `wl5`, `wl7`).
 
-The sixth-rank winning side for the knight pawn is open. The scratch checker finds a
-consistent one-step move for every root outside `S5n`, but the existing plan does not
-carry over unchanged: with the lone king on `a8` a king on `c7` or `c8` stalemates, so
-the steps onto those key squares and the reply-existence lemma (`six_reply`, `w_key`)
-fail there and need knight versions.
+Sixth rank, winning side. `KPK/Coord/KnSixWin` repeats `SixWin`, `SixMove`, `SixCover`
+and `SixMain` for every non-rook file, with the same king-only phase `Phi`, and
+`knSixPlan` in `KPK/Coord/KnSixPlan` assembles the plan on top of `sevkPlan`. Outside
+the guard the pawn owner wins with the move (`fresh_sixth_win_k`). With the lone king to
+move it holds if it takes the pawn, is stalemated or steps into the guard
+(`fresh_kn_six_weak_hold`), and otherwise loses (`fresh_sixth_weak_win_k`). So the
+knight pawn's sixth rank is exact for both turns. The knight-file differences are
+these.
+
+- The side predicate allows a dummy file off the board on the short side
+  (`Kn.Sd`, `Kn.sd_left`).
+- The region `Kn.S5` includes the two corner draws, so the lemmas that leave the guard
+  exclude them (`Kn.nd_beside`, `Kn.nd_close`).
+- With the lone king on `a8`, a king on `c7` or `c8` stalemates. These are the only
+  stalemates with a pawn on the sixth rank on any non-rook file, by a scratch count
+  that is not a proof. The reply lemma and the step onto a key square carry that
+  exception (`Kn.six_reply`, `Kn.w_key`). The plan never needs such a step: the king
+  is then next to the lone king already, or the position is one of the corner draws.
+
+The knight pawn's fifth rank and below are open.
 
 ## Negative results and method notes
 
@@ -639,6 +654,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Exact fifth rank, both turns | `KPK/Coord/FivePlan`: `five_cover`, `mv4`, `fivePlan`, `fresh_fifth_win`, `fresh_fifth_weak_win`, `fresh_fifth_weak_hold` |
 | Seventh rank, every non-rook pawn | `KPK/Coord/KnSeven`: `sevk_strong`, `sevk_weak`, `sevk_cover`, `sevkPlan`, `fresh_seventh_win_k`, `fresh_seventh_weak_win_k` |
 | Knight pawn, sixth-rank guard | `KPK/Coord/KnSix`: `hl5`, `hl7`, `wl5`, `wl7`, `wn_corner`, `s5n_king`, `s5n_push`, `knSixGuard`, `fresh_kn_six_hold` |
+| Sixth rank win, every non-rook pawn | `KPK/Coord/KnSixWin`, `KnSixPlan`: `Kn.six_reply`, `Kn.w_key`, `Kn.step5_cover`, `Kn.six_move`, `knSixPlan`, `fresh_sixth_win_k`, `fresh_sixth_weak_win_k`, `fresh_kn_six_weak_hold` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
