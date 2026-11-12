@@ -19,10 +19,12 @@ and the proved seventh-rank support bands. Safe quiet king entry and
 all three support squares for a sixth-rank non-rook pawn are proved.
 Bishop and centre pawns on the sixth and seventh ranks are now classified in
 `Rules/KPK/Coord`, apart from a stalemated lone king on the sixth rank. The
-fifth-rank guard is proved (`fiveGuard`, `fresh_five_hold` in `Coord/Five4`): a holding
-region for the pawn owner to move. The next obligation is the fifth-rank winning plan,
-showing that every legal root outside the guard wins, then the lone king's turn, lower
-ranks, knight pawns and rook pawns. General dead/live and
+fifth rank is now classified for both turns (`fiveGuard`, `fivePlan`, `fresh_fifth_win`
+in `Coord/Five4` and `Coord/FivePlan`). The next obligation is the knight pawn on the
+seventh, sixth and fifth ranks, by the same guard and plan method, treating every
+recorded knight-pawn candidate as unverified. After that come ranks two to four for
+all non-rook files, the rook pawn outside the fortress, and the stalemated lone king
+on the sixth rank. General dead/live and
 the no-limit comparison also remain open. The [partial proof](proofs/KPK_WDL50.md)
 maps the existing Lean results and exact gaps. KPK is not complete.
 

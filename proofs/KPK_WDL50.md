@@ -434,9 +434,8 @@ king's turn on rank six, and knight and rook pawns remain unclassified.
 
 `fiveGuard` in `KPK/Coord/Five4` adds a bishop or centre pawn on the fifth rank to
 `sixGuard`, with the pawn owner to move. A fresh root in it is an actual hold for the
-lone king and excludes forced mate at every length (`fresh_five_hold`). This is a
-holding region. Its boundary is not yet shown exact, because the fifth-rank winning
-plan is open.
+lone king and excludes forced mate at every length (`fresh_five_hold`). The matching
+winning plan below shows that its boundary is exact.
 
 The region `S4` (`KPK/Coord/Five`) asks that the king is not on a key square (the three
 squares ahead of the pawn on the sixth and seventh ranks), that the lone king is inside
@@ -483,8 +482,55 @@ lone king two files out the king is not next to any key square (`arr1_u`); three
 out it is not within two (`arr2_w`).
 
 The region's clauses were found with the scratch closure checker described below, and
-several were adjusted from its failure lists. What is proved is that the region holds.
-Nothing is yet proved about positions outside it.
+several were adjusted from its failure lists. What is proved is that the region holds,
+and, in the next section, that every position outside it wins.
+
+## Fifth-rank winning plan
+
+The fifth rank is exact for bishop and centre pawns. Outside `S4` the pawn owner wins
+with the move (`fresh_fifth_win`). With the lone king to move, it holds if it can take
+the pawn or step into the guard (`fresh_fifth_weak_hold`), and otherwise loses
+(`fresh_fifth_weak_win`). A lone king is never stalemated with the pawn on the fifth
+rank, so there is no third case.
+
+`fivePlan` in `KPK/Coord/FivePlan` extends `sixPlan`. A push hands over to the
+sixth-rank plan. Each position outside the guard has a phase `Ph4` of at most 12
+(`five_cover`), and each phase has a move that lowers it whatever the reply (`mv4`).
+Unlike the sixth rank, the phase depends on the lone king as well as the king.
+
+- The pawn advances whenever every reply then leaves the sixth-rank guard (`PushOK`).
+  This holds when the lone king is outside the pawn's square (`push_out`).
+- King on a key square (`mv_key`, `mv_front`). From a seventh-rank key square the pawn
+  advances. From a sixth-rank key square beside the pawn's file it advances unless the
+  lone king can oppose on the last rank; then the king steps in front of the pawn, or
+  to the seventh rank on the pawn's file. Directly in front of the pawn the king steps
+  aside, to the seventh rank if the lone king stands next to the promotion square.
+  These take at most two king steps.
+- King beside the pawn outside the guard (`mv_beside4`). One of the two key squares
+  ahead of it is not next to the lone king, and the king steps there.
+- A race is won (`mv_race`). The king steps straight towards a key square that it
+  reaches first, counting its way round the pawn. A lone-king step gains at most one
+  (`wr_back`), so the race stays won, and a won race excludes every clause of the guard
+  except the two in which the pawn falls (`won_out`). The walk is therefore proved with
+  three safety conditions left open (`mv_walk`), which are then discharged.
+  - If the lone king cannot touch the pawn next move, they hold at once (`mv_far4`).
+  - One step from a sixth-rank key square the king goes there, which also protects the
+    pawn (`mv_arrive5`). One step from a seventh-rank key square it goes there; outside
+    the guard the lone king is then not touching the pawn (`mv_arrive6`).
+  - From diagonally behind the pawn the king steps beside it (`mv_behind4`).
+  - If the lone king is two files out next to the pawn's rank, the race is to the far
+    side and the king ends within one of the squares protecting the pawn
+    (`mv_close_u`, `box_not_pr`). If it is beside the pawn, the only king square
+    outside the guard is one step from protecting the pawn (`mv_close_t`).
+- No race won, inside the square (`rest_ph`). The king is then nearer to an outer file
+  than the lone king is to the pawn's file (`rest_side`), and the lone king stands two
+  or three files out on that side (`rest_file`). For each of its squares the level
+  races leave only a few king squares (`rest_u`, `rest_w`). In most the pawn advances
+  (`push_ku`, `push_kw`). In the others the king first steps one file inwards
+  (`mv_r1` to `mv_r4`).
+
+The classes and moves were found with the scratch checker and are proved here without
+it. The stalemated lone king on the sixth rank is still not classified.
 
 ## Negative results and method notes
 
@@ -514,11 +560,11 @@ Region clauses for ranks 2 to 5 and the rook pawn were developed with a scratch
 script, outside this repository. It checks one-step closure of hand-written regions
 and solves nothing. No Lean proof depends on it, and it is not evidence of any
 outcome. Several clauses were adjusted directly from its failure lists. For the fifth
-rank the holding side is now proved in Lean with hand-chosen replies; the script was
-used again there only to confirm the closure statement before proving it and to list
-the blocked cases. Whether the fifth-rank region is the whole drawn set still needs the
-winning plan, and the regions for ranks 2 to 4 and the rook pawn are unproved. See the
-open obligations below.
+rank both sides are now proved in Lean, the holding side with hand-chosen replies and
+the winning side with hand-chosen moves. The owner allowed the script for discovery on
+2026-11-12. It was used to confirm statements before proving them, to list cases, and
+to test hand-written move rules one step deep. The regions for ranks 2 to 4 and the
+rook pawn are unproved. See the open obligations below.
 
 ## Paper-to-Lean correspondence
 
@@ -558,6 +604,10 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Lone king to move on the sixth and seventh ranks | `KPK/Coord/SixPlan`: `fresh_sixth_weak_win`, `fresh_sixth_weak_hold`, `fresh_seventh_weak_win`, `fresh_seventh_weak_hold` |
 | General king race, fifth rank | `KPK/Coord/Race`, `Five`, `Five2`: `race_keep`, `kr_step`, `wr_step`, `rc_step`, `m4_step`, `w4_main`, `w4_u4` |
 | Fifth-rank guard, pawn owner to move | `KPK/Coord/Five3`, `Five4`: `s4_push`, `w4_blocked`, `w4_op`, `s4_king`, `fiveGuard`, `fresh_five_hold` |
+| Fifth-rank win: push, key squares, beside | `KPK/Coord/FiveWin`: `push_out`, `mv_front`, `mv_key`, `mv_beside4` |
+| Fifth-rank win: the race | `KPK/Coord/FiveRace`, `FiveClose`: `wr_back`, `won_out`, `mv_walk`, `mv_far4`, `mv_arrive5`, `mv_arrive6`, `mv_behind4`, `mv_close_u`, `mv_close_t`, `mv_race` |
+| Fifth-rank win: no race won | `KPK/Coord/FiveRest`, `FivePlan`: `rest_side`, `rest_file`, `rest_u`, `rest_w`, `rest_ph`, `mv_rest` |
+| Exact fifth rank, both turns | `KPK/Coord/FivePlan`: `five_cover`, `mv4`, `fivePlan`, `fresh_fifth_win`, `fresh_fifth_weak_win`, `fresh_fifth_weak_hold` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
@@ -595,23 +645,3 @@ General dead/live classification and the no-limit comparison needed for
 cursed-win/blessed-loss labels remain open outside the classified band.
 No universal KPK winning
 bound or class-completion claim is made.
-
-### Fifth-rank winning plan (bishop and centre pawns)
-
-Open. It must show that every legal root outside `S4`, pawn owner to move, wins. The
-phase cannot depend on the king's square alone, as it does on the sixth rank: with the
-king directly ahead of the pawn and the lone king on the promotion square the king
-steps aside, and with the king diagonally ahead and the lone king on the promotion
-square it steps back in front, so two king squares would each need the lower phase.
-Analysis so far, none of it proved:
-
-- King on a key square. From the seventh-rank key squares the pawn advances at once.
-  From the sixth-rank squares it advances unless the lone king can answer by opposing
-  the king on the last rank, and otherwise one or two king steps reach a seventh-rank
-  key square.
-- King beside the pawn outside the guard. One of the two key squares ahead of it is not
-  next to the lone king, and the king steps there.
-- Lone king outside the pawn's square. The pawn advances.
-- Otherwise the king wins a race to a key square. Walking the shortest path is not
-  enough by itself, because the lone king may reach the pawn first. The plan has to
-  choose between the race, protecting the pawn and advancing it.
