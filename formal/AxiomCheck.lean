@@ -2902,3 +2902,9 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_fifth_win
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_fifth_weak_win
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_fifth_weak_hold
+#print axioms EndgameChess.Rules.KPK.Coord.sevk_strong
+#print axioms EndgameChess.Rules.KPK.Coord.sevk_weak
+#print axioms EndgameChess.Rules.KPK.Coord.sevk_cover
+#print axioms EndgameChess.Rules.KPK.Coord.sevkPlan
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_seventh_win_k
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_seventh_weak_win_k
