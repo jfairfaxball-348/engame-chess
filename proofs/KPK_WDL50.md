@@ -430,23 +430,61 @@ cannot oppose. In the first the king heads for the square behind the pawn, from
 which it can choose its side (`step5_cover`, `six_move`). Other ranks, the lone
 king's turn on rank six, and knight and rook pawns remain unclassified.
 
-## Fifth-rank work in progress
+## Fifth-rank guard
 
-This is partial. No fifth-rank guard or plan exists yet.
+`fiveGuard` in `KPK/Coord/Five4` adds a bishop or centre pawn on the fifth rank to
+`sixGuard`, with the pawn owner to move. A fresh root in it is an actual hold for the
+lone king and excludes forced mate at every length (`fresh_five_hold`). This is a
+holding region. Its boundary is not yet shown exact, because the fifth-rank winning
+plan is open.
 
-`KPK/Coord/Race` and `Five` state the lone king's race in general form, for any
-distance. `Rc` says the lone king is as close to a key square as the strong king.
-It allows for the king's route round the pawn (`KR`, `Thru`) and the lone king's
-route round the pawn's attacks (`WR`, `Cross`, `Hit`). The lone king's default reply
-is one step towards the square two ahead of the pawn. `race_keep`, `kr_step`,
-`wr_step`, `rc_step`, `m4_step` show that this keeps every race against any king
-step. `w4_main` gives the reply in the main region, `w4_c6`, `w4_bes`, `w4_far` and
-`w4_take` give four special replies, and `w4_u4` with `m4_u4r`, `m4_u4l` treats a
-lone king two files out on the pawn's rank.
+The region `S4` (`KPK/Coord/Five`) asks that the king is not on a key square (the three
+squares ahead of the pawn on the sixth and seventh ranks), that the lone king is inside
+the pawn's square, and one of five things.
 
-`S4` is a candidate region only. Its closure is not proved. Open for the guard: the
-case where the default reply is blocked, the opposed-file clause `Op4`, pawn pushes,
-and assembling the king-move theorem. The whole winning side is open.
+- The king is beside the pawn and the lone king stands two ranks ahead of the pawn, on
+  the pawn's file or opposite the king.
+- `M4`, the race. The lone king is as close as the king to each of the four key squares
+  beside the pawn's file (`Rc`), and from the pawn's file it can meet a king heading for
+  the file two out (`Oc`). Distances allow for the king's route round the pawn (`KR`,
+  `Thru`) and the lone king's route round the pawn's attacks (`WR`, `Cross`, `Hit`).
+- `Op4`. The kings are opposed on a file at least two out, the lone king on the sixth
+  rank and the king on the last rank, or three files out with the king on the fourth.
+- `Pr4`. The lone king touches the pawn and the king cannot step next to it.
+- `Rr4`. The lone king is two files out on the pawn's rank and the king is too far away
+  on the other side.
+
+King moves (`s4_king`). In the race the lone king's default reply is one step towards
+the square two ahead of the pawn. That step keeps every race against any king step
+(`race_keep`, `kr_step`, `wr_step`, `rc_step`, `m4_step`, `w4_main`). The other cases
+each have a chosen reply.
+
+- Directly ahead of the pawn it steps back to the pawn or opposes a king beside it
+  (`w4_c6`, `w4_bes`).
+- Two files out on the pawn's rank it steps beside the pawn (`w4_u4`, `w4_far`).
+- If the default step is blocked (`w4_blocked`), then one of these holds. The lone king
+  is in front of the pawn and takes it. It is next to the pawn's file on the seventh and
+  steps in front of the pawn (`w4_t6_top`). It is two files out on the sixth with the
+  king on the last rank and steps beside the pawn, which then falls (`w4_u5_top`). It is
+  three files out, and steps inwards to oppose the king or to keep the race
+  (`w4_w5`, `w4_w4`). In every other blocked position the race conditions show that the
+  king could not have reached the blocking square (`ex_t7`, `ex_t4`, `ex_u6`, `ex_u7`,
+  `ex_w6`, `ex_w7`).
+- Opposed kings (`w4_op`). If the king steps inwards along the last rank the lone king
+  opposes it again or steps beside the pawn. If it steps outwards the lone king follows
+  it or returns to the race. If the king is below, the lone king steps to the seventh
+  rank two files out (`w4_low`).
+
+Pawn push (`s4_push`). If the lone king touches the new pawn square it takes the pawn,
+because the king is neither beside the pawn nor on a key square and so does not protect
+it. Otherwise it steps to a blockade square of the sixth-rank guard: one file inwards,
+on the sixth or eighth rank. The race conditions give exactly what `S5` needs. With the
+lone king two files out the king is not next to any key square (`arr1_u`); three files
+out it is not within two (`arr2_w`).
+
+The region's clauses were found with the scratch closure checker described below, and
+several were adjusted from its failure lists. What is proved is that the region holds.
+Nothing is yet proved about positions outside it.
 
 ## Negative results and method notes
 
@@ -464,17 +502,22 @@ and assembling the king-move theorem. The whole winning side is open.
 - `max` in distance statements makes `omega` slow. State distance as `Ch`, a bound
   by four inequalities.
 - A first statement of the blocked-reply lemma was false, because it ignored that the
-  lone king may capture the pawn. The corrected statement did not finish in the time
-  given, so it was left out and its status is unknown. It is probably too expensive
-  in that form.
+  lone king may capture the pawn. A corrected single statement did not finish. It is
+  now proved as `w4_blocked`, split by the lone king's square with one small lemma each.
+- An `omega` call given four race facts at once did not finish in ten minutes. Deriving
+  one negative fact per key square first (`rc1_not`, `os_not`) and then clearing the
+  race facts made the same lemma check in about a second.
 
 ## Status of the scratch finder
 
 Region clauses for ranks 2 to 5 and the rook pawn were developed with a scratch
 script, outside this repository. It checks one-step closure of hand-written regions
 and solves nothing. No Lean proof depends on it, and it is not evidence of any
-outcome. Several clauses were adjusted directly from its failure lists, so those
-boundaries still need a chess argument before they can be accepted. See the
+outcome. Several clauses were adjusted directly from its failure lists. For the fifth
+rank the holding side is now proved in Lean with hand-chosen replies; the script was
+used again there only to confirm the closure statement before proving it and to list
+the blocked cases. Whether the fifth-rank region is the whole drawn set still needs the
+winning plan, and the regions for ranks 2 to 4 and the rook pawn are unproved. See the
 open obligations below.
 
 ## Paper-to-Lean correspondence
@@ -513,7 +556,8 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Exact seventh-rank win, pawn owner to move | `KPK/Coord/SevenWin`: `sevPlan`, `sev_cover`, `fresh_seventh_win` |
 | Exact sixth-rank win, pawn owner to move | `KPK/Coord/SixWin`, `SixMove`, `SixCover`, `SixMain`, `SixPlan`: `step5_cover`, `six_move`, `sixPlan`, `fresh_sixth_win` |
 | Lone king to move on the sixth and seventh ranks | `KPK/Coord/SixPlan`: `fresh_sixth_weak_win`, `fresh_sixth_weak_hold`, `fresh_seventh_weak_win`, `fresh_seventh_weak_hold` |
-| General king race (partial, fifth rank) | `KPK/Coord/Race`, `Five`, `Five2`: `race_keep`, `kr_step`, `wr_step`, `rc_step`, `m4_step`, `w4_main`, `w4_u4` |
+| General king race, fifth rank | `KPK/Coord/Race`, `Five`, `Five2`: `race_keep`, `kr_step`, `wr_step`, `rc_step`, `m4_step`, `w4_main`, `w4_u4` |
+| Fifth-rank guard, pawn owner to move | `KPK/Coord/Five3`, `Five4`: `s4_push`, `w4_blocked`, `w4_op`, `s4_king`, `fiveGuard`, `fresh_five_hold` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are

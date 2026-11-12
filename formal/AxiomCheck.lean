@@ -2873,3 +2873,9 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.m4_step
 #print axioms EndgameChess.Rules.KPK.Coord.w4_main
 #print axioms EndgameChess.Rules.KPK.Coord.w4_u4
+#print axioms EndgameChess.Rules.KPK.Coord.s4_push
+#print axioms EndgameChess.Rules.KPK.Coord.w4_blocked
+#print axioms EndgameChess.Rules.KPK.Coord.w4_op
+#print axioms EndgameChess.Rules.KPK.Coord.s4_king
+#print axioms EndgameChess.Rules.KPK.Coord.fiveGuard
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_five_hold
