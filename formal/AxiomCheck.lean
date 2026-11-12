@@ -2908,3 +2908,7 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.sevkPlan
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_seventh_win_k
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_seventh_weak_win_k
+#print axioms EndgameChess.Rules.KPK.Coord.s5n_king
+#print axioms EndgameChess.Rules.KPK.Coord.s5n_push
+#print axioms EndgameChess.Rules.KPK.Coord.knSixGuard
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_kn_six_hold

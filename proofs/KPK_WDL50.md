@@ -532,6 +532,35 @@ Unlike the sixth rank, the phase depends on the lone king as well as the king.
 The classes and moves were found with the scratch checker and are proved here without
 it. The stalemated lone king on the sixth rank is still not classified.
 
+## Knight pawn
+
+Seventh rank. `KPK/Coord/KnSeven` repeats the seventh-rank win for every non-rook pawn.
+The earlier proof needed a bishop or centre pawn only because its side predicate names a
+file two out, which a knight pawn lacks on one side. With the two-file predicate `Sd1`
+the same argument gives `fresh_seventh_win_k` and `fresh_seventh_weak_win_k`. Together
+with `fresh_top_hold`, which already covered knight pawns, the seventh rank is exact
+for knight pawns.
+
+There is one knight-pawn exception. With the pawn on `b7`, the lone king on `a1` and the
+king on `a3` or `b3`, a promoted rook or queen stalemates (`Trap7`). The king first
+steps one file towards the centre on its rank, the lone king must leave the corner, and
+the pawn then promotes.
+
+Sixth rank, holding side. `knSixGuard` in `KPK/Coord/KnSix` adds a knight pawn on the
+sixth rank to the top guard, pawn owner to move (`fresh_kn_six_hold`). Its region `S5n`
+is the bishop and centre region `S5` read on the knight file, plus two positions: the
+lone king on `a8` with the king on `c6` or `d8`. In those a king step to `c7` or `c8`
+stalemates, the advance is answered from `b8` or by taking the pawn, and any other king
+step lets the lone king to `b7` (`wn_corner`). The reply lemmas of `Sixth` hold for
+knight pawns as written and their file bound was relaxed in place. Only the two rook-
+file squares needed new lemmas (`hl5`, `hl7`, `wl5`, `wl7`).
+
+The sixth-rank winning side for the knight pawn is open. The scratch checker finds a
+consistent one-step move for every root outside `S5n`, but the existing plan does not
+carry over unchanged: with the lone king on `a8` a king on `c7` or `c8` stalemates, so
+the steps onto those key squares and the reply-existence lemma (`six_reply`, `w_key`)
+fail there and need knight versions.
+
 ## Negative results and method notes
 
 - Unstructured `omega` over a whole region does not work. A closure lemma with eight
@@ -608,6 +637,8 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Fifth-rank win: the race | `KPK/Coord/FiveRace`, `FiveClose`: `wr_back`, `won_out`, `mv_walk`, `mv_far4`, `mv_arrive5`, `mv_arrive6`, `mv_behind4`, `mv_close_u`, `mv_close_t`, `mv_race` |
 | Fifth-rank win: no race won | `KPK/Coord/FiveRest`, `FivePlan`: `rest_side`, `rest_file`, `rest_u`, `rest_w`, `rest_ph`, `mv_rest` |
 | Exact fifth rank, both turns | `KPK/Coord/FivePlan`: `five_cover`, `mv4`, `fivePlan`, `fresh_fifth_win`, `fresh_fifth_weak_win`, `fresh_fifth_weak_hold` |
+| Seventh rank, every non-rook pawn | `KPK/Coord/KnSeven`: `sevk_strong`, `sevk_weak`, `sevk_cover`, `sevkPlan`, `fresh_seventh_win_k`, `fresh_seventh_weak_win_k` |
+| Knight pawn, sixth-rank guard | `KPK/Coord/KnSix`: `hl5`, `hl7`, `wl5`, `wl7`, `wn_corner`, `s5n_king`, `s5n_push`, `knSixGuard`, `fresh_kn_six_hold` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are

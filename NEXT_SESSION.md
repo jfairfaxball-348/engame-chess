@@ -20,9 +20,11 @@ all three support squares for a sixth-rank non-rook pawn are proved.
 Bishop and centre pawns on the sixth and seventh ranks are now classified in
 `Rules/KPK/Coord`, apart from a stalemated lone king on the sixth rank. The
 fifth rank is now classified for both turns (`fiveGuard`, `fivePlan`, `fresh_fifth_win`
-in `Coord/Five4` and `Coord/FivePlan`). The next obligation is the knight pawn on the
-seventh, sixth and fifth ranks, by the same guard and plan method, treating every
-recorded knight-pawn candidate as unverified. After that come ranks two to four for
+in `Coord/Five4` and `Coord/FivePlan`). The seventh rank is classified for every
+non-rook pawn (`Coord/KnSeven`) and the knight pawn's sixth-rank guard is proved
+(`knSixGuard` in `Coord/KnSix`). The next obligation is the knight pawn's sixth-rank
+winning plan, a port of `SixWin` to `SixPlan` that avoids the stalemates with the lone
+king on `a8`, then the knight pawn's fifth rank. After that come ranks two to four for
 all non-rook files, the rook pawn outside the fortress, and the stalemated lone king
 on the sixth rank. General dead/live and
 the no-limit comparison also remain open. The [partial proof](proofs/KPK_WDL50.md)

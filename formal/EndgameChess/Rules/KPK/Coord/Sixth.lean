@@ -59,7 +59,7 @@ macro "ar" : tactic => `(tactic| (unfold Arr Ch; omega))
 macro "ws" : tactic => `(tactic| (unfold WeakStep Near Apart Att; omega))
 
 set_option maxHeartbeats 4000000 in
-theorem w_front {c x y : Nat} (hc : 2 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7)
+theorem w_front {c x y : Nat} (hc : 1 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7)
     (s2 : Apart x y c 6) (s3 : ¬ (x = c ∧ y = 5)) : W5 x y c c 6 := by
   unfold Apart at s2
   by_cases near : Near x y c 5
@@ -69,7 +69,7 @@ theorem w_front {c x y : Nat} (hc : 2 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy 
   · exact Or.inl ⟨by unfold Near; omega, near⟩
 
 set_option maxHeartbeats 4000000 in
-theorem w_back {c x y : Nat} (hc : 2 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7)
+theorem w_back {c x y : Nat} (hc : 1 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7)
     (s2 : Apart x y c 7) (s3 : ¬ (x = c ∧ y = 5)) : W5 x y c c 7 := by
   unfold Apart at s2
   by_cases bes : Beside x y c
@@ -81,7 +81,7 @@ theorem w_back {c x y : Nat} (hc : 2 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy :
       (by omega) (by omega) (by omega)⟩
 
 set_option maxHeartbeats 4000000 in
-theorem w_t7 {a b c t o u x y : Nat} (hb : b ≤ 7) (hc : 2 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (sd : Sd c t o u)
+theorem w_t7 {a b c t o u x y : Nat} (hb : b ≤ 7) (hc : 1 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (sd : Sd c t o u)
     (H : Arr 1 a b c ∨ (a = t ∧ b = 5)) (s0 : Near a b x y) (s2 : Apart x y t 7) :
     W5 x y c t 7 := by
   unfold Sd at sd
@@ -92,7 +92,7 @@ theorem w_t7 {a b c t o u x y : Nat} (hb : b ≤ 7) (hc : 2 ≤ c) (hc3 : c ≤ 
     (by omega) (by omega) (by omega)⟩
 
 set_option maxHeartbeats 4000000 in
-theorem w_u {a b c t o u f x y : Nat} (hc : 2 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (hu : u ≤ 7)
+theorem w_u {a b c t o u f x y : Nat} (hc : 1 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (hu : u ≤ 7)
     (sd : Sd c t o u) (hf : f = 6 ∨ f = 7) (H : Arr 2 a b c) (s0 : Near a b x y)
     (s2 : Apart x y u f) : W5 x y c u f := by
   unfold Sd at sd
@@ -103,7 +103,7 @@ theorem w_u {a b c t o u f x y : Nat} (hc : 2 ≤ c) (hc3 : c ≤ 3) (hx : x ≤
     (by omega) (by omega) (by omega)⟩
 
 set_option maxHeartbeats 4000000 in
-theorem w_u5 {a b c t o u x y : Nat} (hc : 2 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (hu : u ≤ 7)
+theorem w_u5 {a b c t o u x y : Nat} (hc : 1 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (hu : u ≤ 7)
     (sd : Sd c t o u)
     (H : Arr 2 a b c ∨ (Arr 1 a b c ∧ (u = c + 2 ∧ c + 2 ≤ a ∨ u + 2 = c ∧ a + 2 ≤ c) ∧ (b = 3 ∨ b = 7)))
     (s0 : Near a b x y) (s2 : Apart x y u 5) : W5 x y c u 5 := by
@@ -119,7 +119,7 @@ theorem w_u5 {a b c t o u x y : Nat} (hc : 2 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 
       (by omega) (by omega) (by omega)⟩
 
 set_option maxHeartbeats 4000000 in
-theorem w_t5 {a b c t o u x y : Nat} (hc : 2 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (sd : Sd c t o u)
+theorem w_t5 {a b c t o u x y : Nat} (hc : 1 ≤ c) (hc3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (sd : Sd c t o u)
     (H : Arr 1 a b c ∨ ¬ Ch a b c 5 2 ∨ (a = u ∧ b = 7)) (s0 : Near a b x y) (s1 : ¬ (x = c ∧ y = 5))
     (s2 : Apart x y t 5) : W5 x y c t 5 := by
   unfold Sd at sd
@@ -136,26 +136,27 @@ set_option hygiene false in
 macro "hy" : tactic => `(tactic| (rintro h; obtain ⟨-, -, -, -, h⟩ := h; unfold Sd at sd; rcases h with ⟨b', e1, f1⟩ | ⟨-, h⟩; (· unfold Beside at b'; unfold Arr Ch; omega); rcases h with A | ⟨B, R⟩ | ⟨B, R⟩ | ⟨B, R⟩ | Sh | ⟨T, F⟩ | ⟨T, F⟩ | ⟨T, F⟩ <;> (try unfold Bl at B) <;> (try unfold Tc at T) <;> (try unfold Arr at R) <;> (try unfold Arr at Sh) <;> (try unfold Ch at *) <;> (try unfold Arr) <;> (try unfold Ch) <;> omega))
 
 set_option maxHeartbeats 4000000 in
-theorem h_t7 {a b c t o u : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) :
+theorem h_t7 {a b c t o u : Nat} (hc : 1 ≤ c) (sd : Sd c t o u) :
     S5 a b c t 7 → Arr 1 a b c ∨ (a = t ∧ b = 5) := by hy
 
 set_option maxHeartbeats 4000000 in
-theorem h_u {a b c t o u f : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) (hf : f = 6 ∨ f = 7) :
+theorem h_u {a b c t o u f : Nat} (hc : 1 ≤ c) (sd : Sd c t o u) (hf : f = 6 ∨ f = 7) :
     S5 a b c u f → Arr 2 a b c := by hy
 
 set_option maxHeartbeats 4000000 in
-theorem h_u5 {a b c t o u : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) :
+theorem h_u5 {a b c t o u : Nat} (hc : 1 ≤ c) (sd : Sd c t o u) :
     S5 a b c u 5 → Arr 2 a b c ∨ (Arr 1 a b c ∧ (u = c + 2 ∧ c + 2 ≤ a ∨ u + 2 = c ∧ a + 2 ≤ c) ∧
       (b = 3 ∨ b = 7)) := by hy
 
 set_option maxHeartbeats 4000000 in
-theorem h_t5 {a b c t o u : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) :
+theorem h_t5 {a b c t o u : Nat} (hc : 1 ≤ c) (sd : Sd c t o u) :
     S5 a b c t 5 → Arr 1 a b c ∨ ¬ Ch a b c 5 2 ∨ (a = u ∧ b = 7) := by hy
 
 /-- Every king move inside the region has its answer. -/
 theorem s5_king {a b c e f x y : Nat} (D : DomS a b c 5 e f) (hc : 2 ≤ c) (h : S5 a b c e f)
     (st : KingStep a b c 5 e f x y) : W5 x y c e f := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
+  have hc1 : 1 ≤ c := by omega
   obtain ⟨⟨n1, n2, n3, n4⟩, n5, n6⟩ := KingStep.bounds st
   have k3 := D.1.k3
   have k4 := D.k4
@@ -168,8 +169,8 @@ theorem s5_king {a b c e f x y : Nat} (D : DomS a b c 5 e f) (hc : 2 ≤ c) (h :
   · subst mid
     rcases row with rfl | rfl | rfl
     · omega
-    · exact w_front hc u3 n5 n6 s2 s1
-    · exact w_back hc u3 n5 n6 s2 s1
+    · exact w_front hc1 u3 n5 n6 s2 s1
+    · exact w_back hc1 u3 n5 n6 s2 s1
   obtain ⟨t, o, u, sd, ev⟩ : ∃ t o u, Sd c t o u ∧ (e = t ∨ e = u) := by
     by_cases g : c < e
     · exact ⟨c + 1, c - 1, c + 2, Or.inl ⟨rfl, by omega, rfl⟩, by omega⟩
@@ -177,18 +178,19 @@ theorem s5_king {a b c e f x y : Nat} (D : DomS a b c 5 e f) (hc : 2 ≤ c) (h :
   have sd' := sd
   unfold Sd at sd'
   rcases ev with rfl | rfl <;> rcases row with rfl | rfl | rfl
-  · exact w_t5 hc u3 n5 n6 sd (h_t5 hc sd h) s0 s1 s2
+  · exact w_t5 hc1 u3 n5 n6 sd (h_t5 hc1 sd h) s0 s1 s2
   · omega
-  · exact w_t7 u2 hc u3 n5 n6 sd (h_t7 hc sd h) s0 s2
-  · exact w_u5 hc u3 n5 n6 u6 sd (h_u5 hc sd h) s0 s2
-  · exact w_u hc u3 n5 n6 u6 sd (Or.inl rfl) (h_u hc sd (Or.inl rfl) h) s0 s2
-  · exact w_u hc u3 n5 n6 u6 sd (Or.inr rfl) (h_u hc sd (Or.inr rfl) h) s0 s2
+  · exact w_t7 u2 hc1 u3 n5 n6 sd (h_t7 hc1 sd h) s0 s2
+  · exact w_u5 hc1 u3 n5 n6 u6 sd (h_u5 hc1 sd h) s0 s2
+  · exact w_u hc1 u3 n5 n6 u6 sd (Or.inl rfl) (h_u hc1 sd (Or.inl rfl) h) s0 s2
+  · exact w_u hc1 u3 n5 n6 u6 sd (Or.inr rfl) (h_u hc1 sd (Or.inr rfl) h) s0 s2
 
 set_option maxHeartbeats 4000000 in
 /-- After a push to the seventh the lone king takes the pawn or reaches the top guard. -/
 theorem s5_push {a b c e f : Nat} (D : DomS a b c 5 e f) (hc : 2 ≤ c) (h : S5 a b c e f)
     (fr : Free a b e f c 6) : TW a b c 6 e f := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
+  have hc1 : 1 ≤ c := by omega
   have k3 := D.1.k3
   have k4 := D.k4
   have k1 : Apart a b e f := D.1.k1
@@ -215,11 +217,11 @@ theorem s5_push {a b c e f : Nat} (D : DomS a b c 5 e f) (hc : 2 ≤ c) (h : S5 
   unfold Sd at sd'
   unfold Apart at k1
   rcases ev with rfl | rfl <;> rcases row with rfl | rfl | rfl
-  · have H := h_t5 hc sd h
+  · have H := h_t5 hc1 sd h
     unfold Arr Ch at H
     exact Or.inl ⟨by unfold Near; omega, by unfold Near; omega⟩
   · omega
-  · have H := h_t7 hc sd h
+  · have H := h_t7 hc1 sd h
     unfold Arr Ch at H
     by_cases at5 : a = e ∧ b = 5
     · obtain ⟨he, rfl⟩ := at5
@@ -229,15 +231,15 @@ theorem s5_push {a b c e f : Nat} (D : DomS a b c 5 e f) (hc : 2 ≤ c) (h : S5 
   all_goals
     have H : Arr 1 a b c := by
       first
-        | (have H := h_u5 hc sd h; unfold Arr Ch at H; unfold Arr Ch; omega)
-        | (have H := h_u hc sd (Or.inl rfl) h; unfold Arr Ch at H; unfold Arr Ch; omega)
-        | (have H := h_u hc sd (Or.inr rfl) h; unfold Arr Ch at H; unfold Arr Ch; omega)
+        | (have H := h_u5 hc1 sd h; unfold Arr Ch at H; unfold Arr Ch; omega)
+        | (have H := h_u hc1 sd (Or.inl rfl) h; unfold Arr Ch at H; unfold Arr Ch; omega)
+        | (have H := h_u hc1 sd (Or.inr rfl) h; unfold Arr Ch at H; unfold Arr Ch; omega)
     have far : ¬ Within1 a b o 6 ∧ ¬ Within1 a b o 7 := by
       have G : ¬ Within1 a b o 6 ∧ ¬ Within1 a b o 7 := by
         first
-          | (have H := h_u5 hc sd h; unfold Arr Ch at H; unfold Within1; omega)
-          | (have H := h_u hc sd (Or.inl rfl) h; unfold Arr Ch at H; unfold Within1; omega)
-          | (have H := h_u hc sd (Or.inr rfl) h; unfold Arr Ch at H; unfold Within1; omega)
+          | (have H := h_u5 hc1 sd h; unfold Arr Ch at H; unfold Within1; omega)
+          | (have H := h_u hc1 sd (Or.inl rfl) h; unfold Arr Ch at H; unfold Within1; omega)
+          | (have H := h_u hc1 sd (Or.inr rfl) h; unfold Arr Ch at H; unfold Within1; omega)
       exact G
     unfold Arr Ch at H
     refine Or.inr (Or.inr ⟨t, 6, by unfold WeakStep Near Apart Att; omega, by omega, rfl, ?_⟩)
