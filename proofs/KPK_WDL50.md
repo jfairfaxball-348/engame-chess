@@ -595,3 +595,23 @@ General dead/live classification and the no-limit comparison needed for
 cursed-win/blessed-loss labels remain open outside the classified band.
 No universal KPK winning
 bound or class-completion claim is made.
+
+### Fifth-rank winning plan (bishop and centre pawns)
+
+Open. It must show that every legal root outside `S4`, pawn owner to move, wins. The
+phase cannot depend on the king's square alone, as it does on the sixth rank: with the
+king directly ahead of the pawn and the lone king on the promotion square the king
+steps aside, and with the king diagonally ahead and the lone king on the promotion
+square it steps back in front, so two king squares would each need the lower phase.
+Analysis so far, none of it proved:
+
+- King on a key square. From the seventh-rank key squares the pawn advances at once.
+  From the sixth-rank squares it advances unless the lone king can answer by opposing
+  the king on the last rank, and otherwise one or two king steps reach a seventh-rank
+  key square.
+- King beside the pawn outside the guard. One of the two key squares ahead of it is not
+  next to the lone king, and the king steps there.
+- Lone king outside the pawn's square. The pawn advances.
+- Otherwise the king wins a race to a key square. Walking the shortest path is not
+  enough by itself, because the lone king may reach the pawn first. The plan has to
+  choose between the race, protecting the pawn and advancing it.
