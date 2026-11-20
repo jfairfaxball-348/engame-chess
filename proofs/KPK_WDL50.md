@@ -738,6 +738,22 @@ still fails at about 31 roots on the three files. Those inspected are wins in wh
 king first takes the opposition, or first defends the pawn, so a phase measure that sees
 both is needed. Whether `R5` is exact is not proved. The winning plan settles it.
 
+Winning-plan design so far (scratch, one step deep, not in Lean). A phase built from three
+parts fails at 26 roots on the three files, down from about 31.
+
+- A won race to a key square (the king strictly nearer than the lone king, with the
+  pawn's attacked squares as obstacles): phase = the king's distance.
+- A face-off: the king can step to `(x,4)` facing the lone king on `(x,6)` with
+  `|x-c| ≤ 3`: phase `2 + |x-c|`. On the pawn's file the lone king must then give up the
+  key squares. One file out it slides to `(c,6)`, and the king faces it again from `(c,4)`.
+- Otherwise `20 +` the king's distance to the nearest key square.
+
+The remaining failures are (a) the lone king touching the pawn, where the king must keep
+the pawn covered before it races, and (b) face-offs that need a distant-opposition step
+first (the king on rank 4 below the lone king). Adding one move to the race whenever the
+lone king touches the pawn made things worse (68 failures), because the extra move
+cascades. Pawn defence needs its own class with chosen moves, as on the fifth rank.
+
 The same lift does not carry over unchanged to lower ranks. A scratch check of the
 twice-lifted region on the third rank fails at about ten top-edge king steps. On the
 second rank it fails at the double step, which does not move with the board.
