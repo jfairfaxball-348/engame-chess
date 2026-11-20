@@ -2,7 +2,7 @@
 
 A proof-first research programme in mathematical chess endgames.
 
-**Operational objective:** prove, via general mathematics formalised in Lean 4, the guaranteed win/draw/loss outcome (under the 50-move rule) of every position that Syzygy tables provide, ultimately through seven pieces — **without consulting, replaying or deriving outcomes from tablebases**.
+**Operational objective — Endgame Outcome Parity:** prove, via general mathematics formalised in Lean 4, the game-theoretic outcome (win/draw/loss under the stated rules, with strategies and sufficient bounds; never optimal DTM/DTZ) of every legal position, ultimately through seven pieces — **without consulting, replaying or deriving outcomes from tablebases**.
 
 **Long-range aspiration (unproved):** an *ultra-weak* solution of chess: establish that standard chess from its initial position is theoretically drawn. This is a hoped-for mathematical discovery, not a claimed result, and not a request to build a playing oracle.
 
@@ -24,6 +24,6 @@ There is one active research target and a concrete direct obligation. Supporting
 The `sessions/` tree contains historic work and verification evidence. It is **not** an active reporting workflow, and no new session files are expected.
 
 ## Current scientific position
-**50 frozen theorem bundles** through EC-T0050; K vs K, K+B vs K and K+N vs K have proven draw/dead-position results. **KRK and KQK are complete** under the outcome target: every fresh legal position's WDL50 is proved and frozen. KQK includes dead/live and sufficient 97/98-ply bounds. Exact mate distances are optional; KRK's catalogue through 13/14 plies is not a completion gate.
+**50 frozen theorem bundles** through EC-T0050; K vs K, K+B vs K and K+N vs K have proven draw/dead-position results. **KRK and KQK are complete** under the outcome target: every fresh legal position's WDL50 is proved and frozen. KQK includes dead/live and sufficient 97/98-ply bounds. Exact mate distances are not an objective; KRK's catalogue through 13/14 plies is not a completion gate.
 
-KPK work is underway under its [plan](docs/KPK_PLAN.md); the [partial proof](proofs/KPK_WDL50.md) records proved regions and remaining gaps. KPK is not complete. Neither complete seven-piece parity nor a proof that the initial chess position is drawn exists in this project.
+KPK work is underway under its [plan](docs/KPK_PLAN.md); the [partial proof](proofs/KPK_WDL50.md) records proved regions and remaining gaps. KPK is not complete. After KPK is frozen, the next milestone is Three-Piece Full Rules Closure (arbitrary legally reachable clocks and histories; see [roadmap](docs/ROADMAP.md)). Neither complete seven-piece outcome parity nor a proof that the initial chess position is drawn exists in this project.
