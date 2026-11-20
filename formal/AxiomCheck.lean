@@ -2946,3 +2946,12 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.fourGuardR
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_four_hold_r
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_four_weak_hold_r
+#print axioms EndgameChess.Rules.KPK.Coord.opd_king
+#print axioms EndgameChess.Rules.KPK.Coord.opd_push
+#print axioms EndgameChess.Rules.KPK.Coord.gsq_king
+#print axioms EndgameChess.Rules.KPK.Coord.gsq_push
+#print axioms EndgameChess.Rules.KPK.Coord.r4_king
+#print axioms EndgameChess.Rules.KPK.Coord.r4_push
+#print axioms EndgameChess.Rules.KPK.Coord.fourGuardO
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_four_hold_o
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_four_weak_hold_o

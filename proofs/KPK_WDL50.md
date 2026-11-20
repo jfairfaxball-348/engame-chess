@@ -686,7 +686,7 @@ would be retrograde solving, so it was stopped. The exact fourth-rank boundary n
 opposition (corresponding-squares) argument written by hand. The winning plan waits on
 it.
 
-### Fourth-rank opposition (owner's choice, 2026-11-20; scratch-tested, not yet in Lean)
+### Fourth-rank opposition (owner's choice, 2026-11-20; proved in `KPK/Coord/Four5`)
 
 The key squares of a fourth-rank pawn on `(c,3)` are `(c-1,5)`, `(c,5)` and `(c+1,5)`. The
 lone king keeps the king off them by guarding them, that is, by standing next to them.
@@ -705,11 +705,19 @@ opposition. Two clauses follow.
 - **Guard square** (`GS`). The lone king is on `(c,6)` and the king is two files from the
   pawn on rank 4, 5 or 6. The king can never face it on its file.
 
-Together with `R3` these clauses close in the scratch check, with no further tempo step.
-The tempo slice of `R3` then answers into the larger core. About 10 roots per file are
-still missed. In each of them the lone king is on the last rank and must race to the
-guard square or into opposition across several moves. Their rule (a parity race to the
-guard square) is not written yet.
+In Lean the distant opposition is one general lemma (`opd_king`): mirror the file and
+restore the rank parity, or step into `S3` when the king leaves the window (`opd_out`).
+After a push the lone king steps towards the square two ahead of the pawn (`opd_push`;
+`ocr_toward`, `ocl_toward`). The guard-square cases (`gsq_*`) were written out mechanically
+from a hand-checked reply table, and Lean proves each answer from the definitions. With
+`C4 = C3 ∨ Opd ∨ GSq` and the tempo slice `T4` answering into `C4`, the region `R4` gives
+`fourGuardO`, `fresh_four_hold_o` and `fresh_four_weak_hold_o`.
+
+`R4` is still not exact. The scratch check finds 33 roots on the three files (9, 12 and 12)
+where every strong move allows a reply into `R4`. In all of them the lone king is on the
+last rank next to the guard square and the king is on rank 3 or 4. The lone king reaches
+the guard square, or the opposition, a move later. Their rule (a parity race to the
+guard square) is not written yet, and the winning plan waits on it.
 
 The same lift does not carry over unchanged to lower ranks. A scratch check of the
 twice-lifted region on the third rank fails at about ten top-edge king steps. On the
@@ -807,6 +815,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Fourth-rank push | `KPK/Coord/Four`: `kr_up`, `m4_down`, `s3_push_low`; `KPK/Coord/Four2`: `rc_lower`, `oc_lower`; `KPK/Coord/Four3`: `m4_lower`, `push_blocked`, `s3_push_high`, `s3_push` |
 | Fourth-rank guard, every non-rook pawn | `KPK/Coord/Four3`: `fourGuard`, `fresh_four_hold`, `fresh_four_weak_hold` |
 | Full fourth-rank region | `KPK/Coord/Four4`: `Opp`, `C3`, `T3`, `R3`, `opp_king`, `opp_push`, `r3_king`, `r3_push`, `fourGuardR`, `fresh_four_hold_r`, `fresh_four_weak_hold_r` |
+| Fourth-rank opposition region | `KPK/Coord/Four5`: `Opd`, `GSq`, `C4`, `T4`, `R4`, `opd_out`, `opd_king`, `opd_push`, `gsq_king`, `gsq_push`, `r4_king`, `r4_push`, `fourGuardO`, `fresh_four_hold_o`, `fresh_four_weak_hold_o` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
@@ -816,8 +825,8 @@ public theorem. These sources are work in progress, **not frozen**.
 Development verification on Lean `v4.35.0`:
 
 - `lake build EndgameChess.Rules.KPK.Examples EndgameChess` passed
-  (560 jobs in the incremental build graph, including cached dependencies).
-- `lake env lean AxiomCheck.lean` passed. All 187 public theorem reports
+  (561 jobs in the incremental build graph, including cached dependencies).
+- `lake env lean AxiomCheck.lean` passed. All 196 public theorem reports
   introduced for KPK use only subsets of `propext`, `Classical.choice`,
   `Quot.sound`.
 - Local controls cover white/black promotion wins, double-push EP and
@@ -834,8 +843,9 @@ No clean-checkout certification or freeze has been performed.
 
 ## Open proof obligations
 
-The fourth-rank region `R3` is proved to hold but is not exact: it misses opposition draws
-held by cycles. The exact fourth-rank boundary and its winning plan are open. The remaining domain includes king approach to the key squares, opposition
+The fourth-rank region `R4` (with the opposition) is proved to hold but is not yet exact:
+33 last-rank parity races are missing. The exact fourth-rank boundary and its winning
+plan are open. The remaining domain includes king approach to the key squares, opposition
 when the entry squares are guarded, knight pawns, blocked paths, and rook pawns outside
 the proved fortress and support regions. It needs a
 complete explicit geometric win/hold partition, entry and preservation
