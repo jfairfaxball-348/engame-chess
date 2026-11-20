@@ -25,13 +25,12 @@ in `Coord/Five4` and `Coord/FivePlan`). The seventh rank is classified for every
 non-rook pawn (`Coord/KnSeven`) and the knight pawn's sixth rank is classified for
 both turns (`knSixGuard`, `knSixPlan` in `Coord/KnSix`, `Coord/KnSixPlan`), as is
 its fifth rank (`knFiveGuard`, `knFivePlan` in `Coord/KnFive`). So every non-rook pawn
-on ranks five to seven is classified for both turns. On the fourth rank a sound guard
-is proved for every non-rook file (`fourGuard` in `Coord/Four3`): the fifth-rank region
-moved down one rank. It is not exact. It misses the longer pawn square, a lone king on
-the last rank and some edge positions. The next obligation is to make the fourth rank
-exact (enlarge the guard, then a winning plan for the rest), then ranks two and three
-(the lift breaks at the top edge and at the double step), then the rook pawn outside
-the fortress. General dead/live and
+on ranks five to seven is classified for both turns. On the fourth rank the region `R3` (`fourGuardR` in `Coord/Four4`)
+is proved to hold. It is the lifted fifth-rank region, opposition shapes, and tempo
+positions answered into those (owner-approved, applied once). It passes a one-step
+exactness check. The next obligation is the fourth-rank winning plan for every root
+outside `R3`, both turns. Then come ranks two and three (the lift breaks at the top edge
+and at the double step), then the rook pawn outside the fortress. General dead/live and
 the no-limit comparison also remain open. The [partial proof](proofs/KPK_WDL50.md)
 maps the existing Lean results and exact gaps. KPK is not complete.
 

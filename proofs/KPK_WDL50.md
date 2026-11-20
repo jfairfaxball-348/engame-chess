@@ -651,19 +651,28 @@ reply outside it for most roots, but not all, so the fourth-rank classification 
 winning plan are open. Closed guards combine by union, so enlarging the region later
 keeps these proofs.
 
-A scratch candidate for the exact fourth-rank region (not proved) adds two parts to `S3`.
-The first is 22 opposition positions: kings on one file two files from the pawn, the lone
-king on the sixth rank and the king on the fourth or last rank; or kings on one file three
-files out, the king on the third or fourth rank and the lone king two to four ranks above.
-These hold by keeping the opposition, so they need their own closure proof. The second
-is tempo positions: the lone king on the last rank, the lone king four files from the pawn,
-or the king on the last rank. Each is a place where the lift misjudges a king by one
-tempo. These positions are defined as those where every strong move is answered into
-`S3` or the opposition positions. This is one predecessor step, not a fixed point, but
-it is defined by quantifying over moves rather than by geometry. Every root outside the
-candidate passes the one-step check for a win (a strong move after which every reply
-stays outside). That is necessary for exactness but does not prove a win, because cycles
-are not excluded.
+The full fourth-rank region `R3` (`KPK/Coord/Four4`) adds two parts to `S3`.
+
+- **Opposition** (`Opp`). Here the kings stand on one file outside the pawn. Either it is
+  one file out with the king on the last rank and the lone king two ranks below; or two
+  files out with the lone king on the sixth rank and the king on the fourth or last rank;
+  or three files out with the king on the third or fourth rank and the lone king two to
+  four ranks above. These positions hold by keeping the opposition. Each shape has one
+  answer per king step that works on every non-rook file (`opp_king`, `opp_push`). The
+  case lemmas `opp_*` were written out mechanically from a hand-checked reply table. Lean
+  proves each answer from the definitions.
+- **Tempo positions** (`T3`). These are the three places where the lift misjudges a king by
+  one move: the lone king on the last rank, the lone king four files from the pawn, and
+  the king on the last rank. Such a position belongs to the region when every strong move
+  can be answered by a step into `S3` or `Opp`. The owner approved this definition on
+  2026-11-20, applied once and only on these named slices. Repeating it would be
+  retrograde solving. Its closure is immediate (`r3_king`, `r3_push`).
+
+`fourGuardR` joins `R3` to the fifth-rank guards, giving `fresh_four_hold_r` and
+`fresh_four_weak_hold_r`. A one-step scratch check finds no root outside `R3` without a
+strong move after which every reply stays outside. So `R3` is the candidate for the exact
+fourth-rank region. Exactness is **not** proved. The winning side needs a fourth-rank
+winning plan, which is open.
 
 The same lift does not carry over unchanged to lower ranks. A scratch check of the
 twice-lifted region on the third rank fails at about ten top-edge king steps. On the
@@ -760,6 +769,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Fourth-rank region, king steps | `KPK/Coord/Four`: `Lift`, `S3`, `W3`, `w3_of_w4`, `step_lift`, `s3_king_moved`, `rc_pass`, `m4_pass`, `s4_pass`, `e2_cases`, `e2_reply`, `s3_king` |
 | Fourth-rank push | `KPK/Coord/Four`: `kr_up`, `m4_down`, `s3_push_low`; `KPK/Coord/Four2`: `rc_lower`, `oc_lower`; `KPK/Coord/Four3`: `m4_lower`, `push_blocked`, `s3_push_high`, `s3_push` |
 | Fourth-rank guard, every non-rook pawn | `KPK/Coord/Four3`: `fourGuard`, `fresh_four_hold`, `fresh_four_weak_hold` |
+| Full fourth-rank region | `KPK/Coord/Four4`: `Opp`, `C3`, `T3`, `R3`, `opp_king`, `opp_push`, `r3_king`, `r3_push`, `fourGuardR`, `fresh_four_hold_r`, `fresh_four_weak_hold_r` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
@@ -769,8 +779,8 @@ public theorem. These sources are work in progress, **not frozen**.
 Development verification on Lean `v4.35.0`:
 
 - `lake build EndgameChess.Rules.KPK.Examples EndgameChess` passed
-  (559 jobs in the incremental build graph, including cached dependencies).
-- `lake env lean AxiomCheck.lean` passed. All 180 public theorem reports
+  (560 jobs in the incremental build graph, including cached dependencies).
+- `lake env lean AxiomCheck.lean` passed. All 187 public theorem reports
   introduced for KPK use only subsets of `propext`, `Classical.choice`,
   `Quot.sound`.
 - Local controls cover white/black promotion wins, double-push EP and
@@ -787,8 +797,8 @@ No clean-checkout certification or freeze has been performed.
 
 ## Open proof obligations
 
-A sound fourth-rank guard is proved, but it is not exact, and no fourth-rank winning
-plan exists yet. The remaining domain includes king approach to the key squares, opposition
+The fourth-rank region `R3` is proved to hold and passes a one-step check for exactness,
+but no fourth-rank winning plan exists yet. The remaining domain includes king approach to the key squares, opposition
 when the entry squares are guarded, knight pawns, blocked paths, and rook pawns outside
 the proved fortress and support regions. It needs a
 complete explicit geometric win/hold partition, entry and preservation
