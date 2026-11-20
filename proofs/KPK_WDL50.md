@@ -651,6 +651,20 @@ reply outside it for most roots, but not all, so the fourth-rank classification 
 winning plan are open. Closed guards combine by union, so enlarging the region later
 keeps these proofs.
 
+A scratch candidate for the exact fourth-rank region (not proved) adds two parts to `S3`.
+The first is 22 opposition positions: kings on one file two files from the pawn, the lone
+king on the sixth rank and the king on the fourth or last rank; or kings on one file three
+files out, the king on the third or fourth rank and the lone king two to four ranks above.
+These hold by keeping the opposition, so they need their own closure proof. The second
+is tempo positions: the lone king on the last rank, the lone king four files from the pawn,
+or the king on the last rank. Each is a place where the lift misjudges a king by one
+tempo. These positions are defined as those where every strong move is answered into
+`S3` or the opposition positions. This is one predecessor step, not a fixed point, but
+it is defined by quantifying over moves rather than by geometry. Every root outside the
+candidate passes the one-step check for a win (a strong move after which every reply
+stays outside). That is necessary for exactness but does not prove a win, because cycles
+are not excluded.
+
 The same lift does not carry over unchanged to lower ranks. A scratch check of the
 twice-lifted region on the third rank fails at about ten top-edge king steps. On the
 second rank it fails at the double step, which does not move with the board.
