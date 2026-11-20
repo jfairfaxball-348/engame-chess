@@ -713,11 +713,30 @@ from a hand-checked reply table, and Lean proves each answer from the definition
 `C4 = C3 ∨ Opd ∨ GSq` and the tempo slice `T4` answering into `C4`, the region `R4` gives
 `fourGuardO`, `fresh_four_hold_o` and `fresh_four_weak_hold_o`.
 
-`R4` is still not exact. The scratch check finds 33 roots on the three files (9, 12 and 12)
-where every strong move allows a reply into `R4`. In all of them the lone king is on the
-last rank next to the guard square and the king is on rank 3 or 4. The lone king reaches
-the guard square, or the opposition, a move later. Their rule (a parity race to the
-guard square) is not written yet, and the winning plan waits on it.
+### Fourth rank: the lone king on the last rank (proved in `KPK/Coord/Four6`)
+
+`R4` still missed 33 roots in the scratch check, all with the lone king on the last rank.
+They hold by corresponding squares, which `Ret` lists as 20 shapes relative to the pawn.
+
+- One file beside the pawn, the lone king reaches the guard square `(c,6)` before a king on
+  the third rank can take the opposition. This also holds against a king two files out on
+  the fourth rank on the lone king's side.
+- Against a king beside the pawn on its rank, the lone king waits on the pawn's file on the
+  last rank. From there it reaches whichever guard square the king's next step needs.
+- Three files out, the lone king runs back ahead of a king below it. Against a king three
+  files out on the fourth rank it stays one file nearer the pawn.
+
+These shapes were found from the checker's lists, and each was then checked against the
+chess reason above. The case lemmas `ret_*` were written out from a reply table, and Lean
+proves each answer from the definitions. The explicit part `C5 = C4 ∨ Ret` is closed by
+itself. With the tempo slice `T5` over it, the region `R5` gives `fourGuard5`,
+`fresh_four_hold5` and `fresh_four_weak_hold5`.
+
+The scratch check finds no root outside `R5` where every strong move allows a reply into
+`R5`. A first winning-plan test (walk the king to a key square, push once the push wins)
+still fails at about 31 roots on the three files. Those inspected are wins in which the
+king first takes the opposition, or first defends the pawn, so a phase measure that sees
+both is needed. Whether `R5` is exact is not proved. The winning plan settles it.
 
 The same lift does not carry over unchanged to lower ranks. A scratch check of the
 twice-lifted region on the third rank fails at about ten top-edge king steps. On the
@@ -816,6 +835,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Fourth-rank guard, every non-rook pawn | `KPK/Coord/Four3`: `fourGuard`, `fresh_four_hold`, `fresh_four_weak_hold` |
 | Full fourth-rank region | `KPK/Coord/Four4`: `Opp`, `C3`, `T3`, `R3`, `opp_king`, `opp_push`, `r3_king`, `r3_push`, `fourGuardR`, `fresh_four_hold_r`, `fresh_four_weak_hold_r` |
 | Fourth-rank opposition region | `KPK/Coord/Four5`: `Opd`, `GSq`, `C4`, `T4`, `R4`, `opd_out`, `opd_king`, `opd_push`, `gsq_king`, `gsq_push`, `r4_king`, `r4_push`, `fourGuardO`, `fresh_four_hold_o`, `fresh_four_weak_hold_o` |
+| Fourth-rank last-rank corresponding squares | `KPK/Coord/Four6`: `Ret`, `C5`, `T5`, `R5`, `ret_king`, `ret_push`, `r5_king`, `r5_push`, `fourGuard5`, `fresh_four_hold5`, `fresh_four_weak_hold5` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
@@ -825,8 +845,8 @@ public theorem. These sources are work in progress, **not frozen**.
 Development verification on Lean `v4.35.0`:
 
 - `lake build EndgameChess.Rules.KPK.Examples EndgameChess` passed
-  (561 jobs in the incremental build graph, including cached dependencies).
-- `lake env lean AxiomCheck.lean` passed. All 196 public theorem reports
+  (562 jobs in the incremental build graph, including cached dependencies).
+- `lake env lean AxiomCheck.lean` passed. All 203 public theorem reports
   introduced for KPK use only subsets of `propext`, `Classical.choice`,
   `Quot.sound`.
 - Local controls cover white/black promotion wins, double-push EP and
@@ -843,9 +863,8 @@ No clean-checkout certification or freeze has been performed.
 
 ## Open proof obligations
 
-The fourth-rank region `R4` (with the opposition) is proved to hold but is not yet exact:
-33 last-rank parity races are missing. The exact fourth-rank boundary and its winning
-plan are open. The remaining domain includes king approach to the key squares, opposition
+The fourth-rank region `R5` is proved to hold and passes the one-step exactness check.
+The fourth-rank winning plan, which would prove it exact, is open. The remaining domain includes king approach to the key squares, opposition
 when the entry squares are guarded, knight pawns, blocked paths, and rook pawns outside
 the proved fortress and support regions. It needs a
 complete explicit geometric win/hold partition, entry and preservation
