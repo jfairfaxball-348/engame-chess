@@ -41,14 +41,14 @@ def WR (e f c p q n : Nat) : Prop :=
   Ch e f p q n ∧ (¬ Cross e f c p ∨ (1 ≤ n ∧ Ch e f c 6 (n - 1) ∧ (¬ Hit e f c ∨ (2 ≤ n ∧ Ch e f c 6 (n - 2)))))
 
 set_option maxHeartbeats 4000000 in
-theorem kr_step {a b c p q x y n : Nat} (hc : 2 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (hq : q = 5 ∨ q = 6)
+theorem kr_step {a b c p q x y n : Nat} (hc : 1 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (hq : q = 5 ∨ q = 6)
     (s : Near a b x y) (np : ¬ (x = c ∧ y = 4)) (h : KR x y c p q n) : KR a b c p q (n + 1) := by
   unfold KR Thru Ch at *
   unfold Near at s
   omega
 
 set_option maxHeartbeats 4000000 in
-theorem wr_step {e f c p q u v n : Nat} (hc : 2 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (hq : q = 5 ∨ q = 6)
+theorem wr_step {e f c p q u v n : Nat} (hc : 1 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (hq : q = 5 ∨ q = 6)
     (hn : 1 ≤ n) (t : Toward e f c 6 u v) (safe : ¬ (v = 5 ∧ (u = c + 1 ∨ u + 1 = c)))
     (h : WR e f c p q (n + 1)) : WR u v c p q n := by
   unfold WR Cross Hit Ch at *

@@ -574,7 +574,35 @@ these.
   exception (`Kn.six_reply`, `Kn.w_key`). The plan never needs such a step: the king
   is then next to the lone king already, or the position is one of the corner draws.
 
-The knight pawn's fifth rank and below are open.
+Fifth rank. The fifth-rank modules `Race`, `Five` to `Five4` and `FiveWin` to
+`FivePlan` were restated for every non-rook file (`1 ≤ c` in place of `2 ≤ c`), and the
+same region `S4` and phases `Ph4` serve the knight pawn. `knFiveGuard` and `knFivePlan`
+in `KPK/Coord/KnFive` sit on the knight sixth-rank guard and plan. So the knight pawn's
+fifth rank is exact for both turns: `fresh_kn_five_hold` and `fresh_fifth_win_k` with the
+pawn owner to move, `fresh_kn_five_weak_hold` and `fresh_fifth_weak_win_k` with the lone
+king to move. The changes for the knight file were these.
+
+- A pawn advance is tested against the knight-aware sixth-rank region (`PushOK` now
+  uses `Kn.W5win`).
+- Two key-square positions need a king step where a centre pawn would advance. With
+  the king on `c7` and the lone king on `a8` the advance stalemates, so the king steps
+  to `b6`. With the king on `c6` and the lone king on `a7` the advance allows the
+  corner draw, so the king steps to `c7` first (`KnEx`, `mv_key`). The key-square
+  phase therefore runs to three, and every later phase moved up by one.
+- With the lone king beside the pawn the side argument needs no file two out
+  (`Sd1`, `race_far_t`, `m4_side1`). On the knight file no outer-file race exists on
+  the short side, which `rest_side` proves directly.
+- Two lemmas that use the file two out on the short side keep `2 ≤ c` (`w4_far`,
+  `m4_u4l`). Their cases cannot arise on the knight file.
+
+The knight pawn below the fifth rank is open.
+
+The stalemate case on the sixth rank for bishop and centre pawns is closed. `six_reply`
+excluded one position (king `b6`, pawn `c6`, lone king `a8`), but there the lone king
+has the legal step to `b8`. So with a bishop or centre pawn on the sixth rank the lone
+king is never stalemated (`six_reply_all` in `KPK/Coord/SixStale`), and with the lone
+king to move it holds exactly when it can take the pawn or step into the guard
+(`sixth_weak_cases`, `fresh_sixth_weak_hold`, `fresh_sixth_weak_win'`).
 
 ## Negative results and method notes
 
@@ -655,6 +683,8 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Seventh rank, every non-rook pawn | `KPK/Coord/KnSeven`: `sevk_strong`, `sevk_weak`, `sevk_cover`, `sevkPlan`, `fresh_seventh_win_k`, `fresh_seventh_weak_win_k` |
 | Knight pawn, sixth-rank guard | `KPK/Coord/KnSix`: `hl5`, `hl7`, `wl5`, `wl7`, `wn_corner`, `s5n_king`, `s5n_push`, `knSixGuard`, `fresh_kn_six_hold` |
 | Sixth rank win, every non-rook pawn | `KPK/Coord/KnSixWin`, `KnSixPlan`: `Kn.six_reply`, `Kn.w_key`, `Kn.step5_cover`, `Kn.six_move`, `knSixPlan`, `fresh_sixth_win_k`, `fresh_sixth_weak_win_k`, `fresh_kn_six_weak_hold` |
+| Fifth rank, every non-rook pawn | `KPK/Coord/FiveWin` to `FivePlan` restated for `1 ≤ c`; `KPK/Coord/KnFive`: `knFiveGuard`, `fresh_kn_five_hold`, `fresh_kn_five_weak_hold`, `knFivePlan`, `fresh_fifth_win_k`, `fresh_fifth_weak_win_k` |
+| No sixth-rank stalemate, bishop and centre pawns | `KPK/Coord/SixStale`: `six_reply_all`, `fresh_sixth_weak_win'`, `sixth_weak_cases` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are

@@ -2918,3 +2918,12 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_sixth_win_k
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_sixth_weak_win_k
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_kn_six_weak_hold
+#print axioms EndgameChess.Rules.KPK.Coord.knFiveGuard
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_kn_five_hold
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_kn_five_weak_hold
+#print axioms EndgameChess.Rules.KPK.Coord.knFivePlan
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_fifth_win_k
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_fifth_weak_win_k
+#print axioms EndgameChess.Rules.KPK.Coord.six_reply_all
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_sixth_weak_win'
+#print axioms EndgameChess.Rules.KPK.Coord.sixth_weak_cases

@@ -11,7 +11,7 @@ def Sw (c u w : Nat) : Prop := (u = c + 2 ∧ w = c + 3) ∨ (u + 2 = c ∧ w + 
 def Btw (a c e : Nat) : Prop := (c < e ∧ e < a) ∨ (e < c ∧ a < e)
 
 /-- The races of `M4` read by side. -/
-theorem m4_side {a b c e f t o u : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) (h : M4 a b c e f) :
+theorem m4_side {a b c e f t o u : Nat} (hc : 1 ≤ c) (sd : Sd c t o u) (h : M4 a b c e f) :
     Rc a b c e f t 5 ∧ Rc a b c e f t 6 ∧ Rc a b c e f o 5 ∧ Rc a b c e f o 6 ∧
       ((Btw a c e ∧ (f ≤ 6 ∨ b ≤ 3)) ∨ Oc a b c e f u) := by
   obtain ⟨⟨r1, r2, r3, r4⟩, o1, o2⟩ := h
@@ -30,6 +30,18 @@ theorem m4_side {a b c e f t o u : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) (h : M4
     · exact Or.inl ⟨Or.inr ⟨p, q⟩, r⟩
     · exact Or.inr o2
 
+/-- The four key-square races of `M4` read by side, with no file two out. -/
+theorem m4_side1 {a b c e f t o : Nat} (hc : 1 ≤ c) (sd : Sd1 c t o) (h : M4 a b c e f) :
+    Rc a b c e f t 5 ∧ Rc a b c e f t 6 ∧ Rc a b c e f o 5 ∧ Rc a b c e f o 6 := by
+  obtain ⟨⟨r1, r2, r3, r4⟩, -, -⟩ := h
+  rcases sd with ⟨rfl, ho⟩ | ⟨ht, rfl⟩
+  · have e1 : o = c - 1 := by omega
+    subst e1
+    exact ⟨r1, r2, r3, r4⟩
+  · have e1 : t = c - 1 := by omega
+    subst e1
+    exact ⟨r3, r4, r1, r2⟩
+
 /-- The outer-file race read off at distance `n`. -/
 theorem os_at {a b c e f u : Nat} (n : Nat)
     (os : (Btw a c e ∧ (f ≤ 6 ∨ b ≤ 3)) ∨ Oc a b c e f u) :
@@ -41,7 +53,7 @@ theorem os_at {a b c e f u : Nat} (n : Nat)
 
 set_option maxHeartbeats 4000000 in
 /-- With the lone king two files out the king is not next to any key square. -/
-theorem arr1_u {a b c f t o u : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) (h : M4 a b c u f)
+theorem arr1_u {a b c f t o u : Nat} (hc : 1 ≤ c) (sd : Sd c t o u) (h : M4 a b c u f)
     (hf : 4 ≤ f) (h7 : f ≤ 7) (hb : b ≤ 7) (nk : ¬ K4 a b c) (nb : ¬ B4 a b c)
     (k1 : Apart a b u f) (k2 : ¬ (a = c ∧ b = 4)) : Arr 1 a b c := by
   obtain ⟨r1, r2, r3, r4, os⟩ := m4_side hc sd h
@@ -88,7 +100,7 @@ theorem arr1_u {a b c f t o u : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) (h : M4 a 
 
 set_option maxHeartbeats 4000000 in
 /-- With the lone king three files out the king is not within two of any key square. -/
-theorem arr2_w {a b c f t o u w : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) (sw : Sw c u w)
+theorem arr2_w {a b c f t o u w : Nat} (hc : 1 ≤ c) (sd : Sd c t o u) (sw : Sw c u w)
     (h : M4 a b c w f) (hf : 4 ≤ f) (h7 : f ≤ 7) (hb : b ≤ 7) (nk : ¬ K4 a b c)
     (nb : ¬ B4 a b c) (k1 : Apart a b w f) (k2 : ¬ (a = c ∧ b = 4)) : Arr 2 a b c := by
   obtain ⟨-, -, r3, r4, os⟩ := m4_side hc sd h
@@ -138,7 +150,7 @@ theorem s5_bl2 {x y c e f : Nat} (b0 : Bl 2 c e f) (r : Arr 2 x y c) (k : ¬ Key
 
 set_option maxHeartbeats 4000000 in
 /-- Two files out the lone king steps next to the pawn's file. -/
-theorem push_u {a b c t o u f : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (sd : Sd c t o u) (hf : 4 ≤ f)
+theorem push_u {a b c t o u f : Nat} (hc : 1 ≤ c) (h3 : c ≤ 3) (sd : Sd c t o u) (hf : 4 ≤ f)
     (h7 : f ≤ 7) (hb : b ≤ 7) (A : Arr 1 a b c) : W5 a b c u f := by
   have A' := A
   unfold Arr Ch at A'
@@ -151,7 +163,7 @@ theorem push_u {a b c t o u f : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (sd : Sd c t 
 
 set_option maxHeartbeats 4000000 in
 /-- Three files out it steps to the file two out. -/
-theorem push_w {a b c u w f : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (sw : Sw c u w) (hf : 4 ≤ f)
+theorem push_w {a b c u w f : Nat} (hc : 1 ≤ c) (h3 : c ≤ 3) (sw : Sw c u w) (hf : 4 ≤ f)
     (h7 : f ≤ 7) (A : Arr 2 a b c) : W5 a b c w f := by
   have A' := A
   unfold Arr Ch at A'
@@ -164,7 +176,7 @@ theorem push_w {a b c u w f : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (sw : Sw c u w)
 
 set_option maxHeartbeats 4000000 in
 /-- On the promotion square's file the lone king steps down to the blockade. -/
-theorem push_c7 {a b c : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (ha : a ≤ 7) (hb : b ≤ 7)
+theorem push_c7 {a b c : Nat} (hc : 1 ≤ c) (h3 : c ≤ 3) (ha : a ≤ 7) (hb : b ≤ 7)
     (nk : ¬ K4 a b c) (k1 : Apart a b c 7) (fr : ¬ (a = c ∧ b = 5)) : W5 a b c c 7 := by
   unfold K4 at nk
   unfold Apart at k1
@@ -173,11 +185,11 @@ theorem push_c7 {a b c : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (ha : a ≤ 7) (hb :
 
 set_option maxHeartbeats 4000000 in
 /-- Next to the promotion square the lone king steps to the blockade. -/
-theorem push_t7 {a b c t o u : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (sd : Sd c t o u)
+theorem push_t7 {a b c t o : Nat} (hc : 1 ≤ c) (h3 : c ≤ 3) (sd : Sd1 c t o)
     (h : M4 a b c t 7) (ha : a ≤ 7) (hb : b ≤ 7) (nk : ¬ K4 a b c) (k1 : Apart a b t 7)
     (fr : ¬ (a = c ∧ b = 5)) : W5 a b c t 7 := by
-  obtain ⟨-, -, -, r4, -⟩ := m4_side hc sd h
-  unfold Sd at sd
+  obtain ⟨-, -, -, r4⟩ := m4_side1 hc sd h
+  unfold Sd1 at sd
   have z4 := rc1 hc (by omega) r4
   clear r4 h
   unfold Ch at z4
@@ -188,7 +200,7 @@ theorem push_t7 {a b c t o u : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (sd : Sd c t o
 
 set_option maxHeartbeats 4000000 in
 /-- Opposed kings on an outer file: the lone king steps one file inwards. -/
-theorem push_op {a b c e f : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (ha : a ≤ 7) (op : Op4 a b c e f)
+theorem push_op {a b c e f : Nat} (hc : 1 ≤ c) (h3 : c ≤ 3) (ha : a ≤ 7) (op : Op4 a b c e f)
     (sq : Sq4 c e f) : W5 a b c e f := by
   unfold Op4 at op
   unfold Sq4 at sq
@@ -208,19 +220,25 @@ theorem push_op {a b c e f : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (ha : a ≤ 7) (
         ⟨rfl, Or.inr ⟨by omega, by omega⟩, by omega, by ar⟩))))⟩⟩
 
 /-- The lone king's side of the pawn. -/
-theorem side_exists {c e : Nat} (hc : 2 ≤ c) (ne : e ≠ c) (h1 : e ≤ c + 3) (h2 : c ≤ e + 3) :
-    ∃ t o u, Sd c t o u ∧ (e = t ∨ e = u ∨ Sw c u e) := by
+theorem side_exists {c e : Nat} (hc : 1 ≤ c) (ne : e ≠ c) (h1 : e ≤ c + 3) (h2 : c ≤ e + 3) :
+    ∃ t o, Sd1 c t o ∧ (e = t ∨ ∃ u, Sd c t o u ∧ (e = u ∨ Sw c u e)) := by
   by_cases g : c < e
-  · refine ⟨c + 1, c - 1, c + 2, Or.inl ⟨rfl, by omega, rfl⟩, ?_⟩
-    unfold Sw
-    omega
-  · refine ⟨c - 1, c + 1, c - 2, Or.inr ⟨by omega, rfl, by omega⟩, ?_⟩
-    unfold Sw
-    omega
+  · refine ⟨c + 1, c - 1, Or.inl ⟨rfl, by omega⟩, ?_⟩
+    by_cases g1 : e = c + 1
+    · exact Or.inl g1
+    · refine Or.inr ⟨c + 2, Or.inl ⟨rfl, by omega, rfl⟩, ?_⟩
+      unfold Sw
+      omega
+  · refine ⟨c - 1, c + 1, Or.inr ⟨by omega, rfl⟩, ?_⟩
+    by_cases g1 : e + 1 = c
+    · exact Or.inl (by omega)
+    · refine Or.inr ⟨c - 2, Or.inr ⟨by omega, rfl, by omega⟩, ?_⟩
+      unfold Sw
+      omega
 
 set_option maxHeartbeats 4000000 in
 /-- After a push to the sixth rank the lone king has its answer in the sixth-rank guard. -/
-theorem s4_push {a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c) (h : S4 a b c e f)
+theorem s4_push {a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c) (h : S4 a b c e f)
     (fr : Free a b e f c 5) : W5 a b c e f := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
   have k1 : Apart a b e f := D.1.k1
@@ -252,13 +270,13 @@ theorem s4_push {a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c) (h : S4 
     · have f7 : f = 7 := by unfold Near at touch; omega
       subst mid f7
       exact push_c7 hc u3 u1 u2 nk k1 fr.1
-    obtain ⟨t, o, u, sd, ev⟩ := side_exists hc mid sq'.1 sq'.2.1
-    have sd' := sd
-    unfold Sd at sd'
-    rcases ev with rfl | rfl | sw
+    obtain ⟨t, o, sd1, ev⟩ := side_exists hc mid sq'.1 sq'.2.1
+    have sd1' := sd1
+    unfold Sd1 at sd1'
+    rcases ev with rfl | ⟨u, sd, rfl | sw⟩
     · have f7 : f = 7 := by unfold Near at touch; omega
       subst f7
-      exact push_t7 hc u3 sd m u1 u2 nk k1 fr.1
+      exact push_t7 hc u3 sd1 m u1 u2 nk k1 fr.1
     · exact push_u hc u3 sd sq'.2.2 u7 u2 (arr1_u hc sd m sq'.2.2 u7 u2 nk nb k1 k2)
     · exact push_w hc u3 sw sq'.2.2 u7 (arr2_w hc sd sw m sq'.2.2 u7 u2 nk nb k1 k2)
   · obtain ⟨n1, -, -⟩ := pr

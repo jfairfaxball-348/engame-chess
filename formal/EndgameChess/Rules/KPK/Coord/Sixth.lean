@@ -45,6 +45,14 @@ def W5 (a b c e f : Nat) : Prop :=
 /-- `t` is a file next to the pawn, `o` the other one and `u` two files out beyond `t`. -/
 def Sd (c t o u : Nat) : Prop := (t = c + 1 ∧ o + 1 = c ∧ u = c + 2) ∨ (t + 1 = c ∧ o = c + 1 ∧ u + 2 = c)
 
+/-- `t` is a file next to the pawn and `o` the other one. -/
+def Sd1 (c t o : Nat) : Prop := (t = c + 1 ∧ o + 1 = c) ∨ (t + 1 = c ∧ o = c + 1)
+
+theorem Sd.one {c t o u : Nat} (h : Sd c t o u) : Sd1 c t o := by
+  rcases h with ⟨h1, h2, -⟩ | ⟨h1, h2, -⟩
+  · exact Or.inl ⟨h1, h2⟩
+  · exact Or.inr ⟨h1, h2⟩
+
 theorem s5_bl0 {x y c e f : Nat} (b0 : Bl 0 c e f) (r : Arr 0 x y c) (k : ¬ Key5 x y c)
     (nb : ¬ Beside x y c) (h1 : e ≤ c + 2) (h2 : c ≤ e + 2) (h3 : 5 ≤ f) : S5 x y c e f :=
   ⟨k, h1, h2, h3, Or.inr ⟨nb, Or.inr (Or.inl ⟨b0, r⟩)⟩⟩

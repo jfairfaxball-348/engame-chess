@@ -18,15 +18,16 @@ partition outside the proved exposed-pawn/rook-pawn-fortress draw regions
 and the proved seventh-rank support bands. Safe quiet king entry and
 all three support squares for a sixth-rank non-rook pawn are proved.
 Bishop and centre pawns on the sixth and seventh ranks are now classified in
-`Rules/KPK/Coord`, apart from a stalemated lone king on the sixth rank. The
+`Rules/KPK/Coord` for both turns (`Coord/SixStale` shows the lone king is never
+stalemated there). The
 fifth rank is now classified for both turns (`fiveGuard`, `fivePlan`, `fresh_fifth_win`
 in `Coord/Five4` and `Coord/FivePlan`). The seventh rank is classified for every
 non-rook pawn (`Coord/KnSeven`) and the knight pawn's sixth rank is classified for
-both turns (`knSixGuard`, `knSixPlan` in `Coord/KnSix`, `Coord/KnSixPlan`). The next
-obligation is the knight pawn's fifth rank: a guard built on `knSixGuard` and a plan
-built on `knSixPlan`, by the method of `Five` to `FivePlan`. After that come ranks two to four for
-all non-rook files, the rook pawn outside the fortress, and the stalemated lone king
-on the sixth rank. General dead/live and
+both turns (`knSixGuard`, `knSixPlan` in `Coord/KnSix`, `Coord/KnSixPlan`), as is
+its fifth rank (`knFiveGuard`, `knFivePlan` in `Coord/KnFive`). So every non-rook pawn
+on ranks five to seven is classified for both turns. The next obligation is ranks two
+to four for all non-rook files, with the pawn's rank as a parameter if possible, then
+the rook pawn outside the fortress. General dead/live and
 the no-limit comparison also remain open. The [partial proof](proofs/KPK_WDL50.md)
 maps the existing Lean results and exact gaps. KPK is not complete.
 

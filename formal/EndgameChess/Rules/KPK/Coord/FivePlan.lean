@@ -7,13 +7,13 @@ open EndgameChess.KK
 
 set_option maxHeartbeats 4000000 in
 /-- No race won, lone king two files out. -/
-theorem rest_u {a b c f t o u n : Nat} (D : DomS a b c 4 u f) (hc : 2 ≤ c) (sd : Sd c t o u)
+theorem rest_u {a b c f t o u n : Nat} (D : DomS a b c 4 u f) (hc : 1 ≤ c) (sd : Sd c t o u)
     (sq : Sq4 c u f) (nk : ¬ K4 a b c) (nb : ¬ B4 a b c) (rt5 : Rc a b c u f t 5)
     (rt6 : Rc a b c u f t 6) (ro5 : Rc a b c u f o 5) (ro6 : Rc a b c u f o 6)
     (nb1 : t = c + 1 → ¬ (c < u ∧ u < a ∧ (f ≤ 6 ∨ b ≤ 3)))
     (nb2 : t + 1 = c → ¬ (u < c ∧ a < u ∧ (f ≤ 6 ∨ b ≤ 3)))
     (kw : Ch a b u 5 n ∨ Ch a b u 6 n) (lw : ¬ Ch u f c 5 n ∧ ¬ Ch u f c 6 n)
-    (nop : ¬ Op4 a b c u f) : PushOK a b c u f ∨ RestM 7 a b c u f := by
+    (nop : ¬ Op4 a b c u f) : PushOK a b c u f ∨ RestM 8 a b c u f := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
   have k1 := D.1.k1
   have sd' := sd
@@ -65,12 +65,12 @@ theorem rest_u {a b c f t o u n : Nat} (D : DomS a b c 4 u f) (hc : 2 ≤ c) (sd
 
 set_option maxHeartbeats 4000000 in
 /-- No race won, lone king three files out. -/
-theorem rest_w {a b c f t o u w n : Nat} (D : DomS a b c 4 w f) (hc : 2 ≤ c) (sd : Sd c t o u)
+theorem rest_w {a b c f t o u w n : Nat} (D : DomS a b c 4 w f) (hc : 1 ≤ c) (sd : Sd c t o u)
     (sw : Sw c u w) (sq : Sq4 c w f) (ro6 : Rc a b c w f o 6)
     (nb1 : t = c + 1 → ¬ (c < w ∧ w < a ∧ (f ≤ 6 ∨ b ≤ 3)))
     (nb2 : t + 1 = c → ¬ (w < c ∧ a < w ∧ (f ≤ 6 ∨ b ≤ 3)))
     (kw : Ch a b u 5 n ∨ Ch a b u 6 n) (lw : ¬ Ch w f c 5 n ∧ ¬ Ch w f c 6 n)
-    (nop : ¬ Op4 a b c w f) : PushOK a b c w f ∨ RestM 7 a b c w f := by
+    (nop : ¬ Op4 a b c w f) : PushOK a b c w f ∨ RestM 8 a b c w f := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
   have k1 := D.1.k1
   have sd' := sd
@@ -108,17 +108,18 @@ theorem rest_w {a b c f t o u w n : Nat} (D : DomS a b c 4 w f) (hc : 2 ≤ c) (
 
 /-- Inside the square with no race won: the pawn advances, or the position is one of the
 few that need a king step first. -/
-theorem rest_ph {a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c) (nk : ¬ K4 a b c)
+theorem rest_ph {a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c) (nk : ¬ K4 a b c)
     (nb : ¬ B4 a b c) (sq : Sq4 c e f) (out : ¬ S4 a b c e f)
     (nr : ∀ p q n, KeyT c p q → 1 ≤ n → ¬ Won a b c e f p q n) :
-    PushOK a b c e f ∨ RestM 7 a b c e f := by
+    PushOK a b c e f ∨ RestM 8 a b c e f := by
   have rc (p q : Nat) (kt : KeyT c p q) : Rc a b c e f p q := rc_of_none nk kt nr
   have r4 : Rc4 a b c e f :=
     ⟨rc _ _ ⟨Or.inl rfl, Or.inl rfl⟩, rc _ _ ⟨Or.inl rfl, Or.inr rfl⟩,
       rc _ _ ⟨Or.inr (by omega), Or.inl rfl⟩, rc _ _ ⟨Or.inr (by omega), Or.inr rfl⟩⟩
   have nm : ¬ M4 a b c e f := fun m => out ⟨nk, sq, Or.inr ⟨nb, Or.inr (Or.inl m)⟩⟩
   have nop : ¬ Op4 a b c e f := fun m => out ⟨nk, sq, Or.inr ⟨nb, Or.inl m⟩⟩
-  obtain ⟨t, o, u, sd, rt5, rt6, ro5, ro6, nb1, nb2, n, kw, lw⟩ := rest_side hc r4 nm
+  obtain ⟨t, o, u, sd, rt5, rt6, ro5, ro6, nb1, nb2, n, kw, lw⟩ :=
+    rest_side hc r4 nm nk sq D.bounds.2.2.2.2.2.2
   obtain ⟨hf, -⟩ := rest_file D hc sd sq rt5 rt6 kw lw
   rcases hf with rfl | sw
   · exact rest_u D hc sd sq nk nb rt5 rt6 ro5 ro6 nb1 nb2 kw lw nop
@@ -126,17 +127,17 @@ theorem rest_ph {a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c) (nk : ¬
 
 set_option maxHeartbeats 4000000 in
 /-- Every position outside the guard has a phase. -/
-theorem five_cover {a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
-    (out : ¬ S4 a b c e f) : Ph4 12 a b c e f := by
+theorem five_cover {a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c)
+    (out : ¬ S4 a b c e f) : Ph4 13 a b c e f := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
   by_cases k : K4 a b c
-  · exact Or.inr (Or.inr (Or.inl ⟨by omega, k⟩))
+  · exact Or.inr (Or.inr (Or.inr (Or.inl ⟨by omega, k⟩)))
   by_cases bes : B4 a b c
-  · exact Or.inr (Or.inr (Or.inr (Or.inl ⟨by omega, bes⟩)))
+  · exact Or.inr (Or.inr (Or.inr (Or.inr (Or.inl ⟨by omega, bes⟩))))
   by_cases sq : Sq4 c e f
   · by_cases hw : ∃ p q n, KeyT c p q ∧ 1 ≤ n ∧ Won a b c e f p q n
     · obtain ⟨p, q, n, kt, n1, won⟩ := hw
-      refine Or.inr (Or.inr (Or.inr (Or.inr (Or.inl ⟨p, q, n, kt, n1, ?_, won⟩))))
+      refine Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl ⟨p, q, n, kt, n1, ?_, won⟩)))))
       have nw := won.2
       obtain ⟨hp, hq⟩ := kt
       unfold Sq4 at sq
@@ -149,21 +150,24 @@ theorem five_cover {a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
         fun p q n kt n1 won => hw ⟨p, q, n, kt, n1, won⟩
       rcases rest_ph D hc k bes sq out nr with h | h
       · exact Or.inl h
-      · exact ph4_mono (i := 7) (by omega) (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr h)))))
+      · exact ph4_mono (i := 8) (by omega)
+          (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr h))))))
   · refine Or.inl (push_out D hc ?_ sq)
     unfold K4 at k
     omega
 
 /-- Every phase has its move. -/
-theorem mv4 {j a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c) (out : ¬ S4 a b c e f)
+theorem mv4 {j a b c e f : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c) (out : ¬ S4 a b c e f)
     (ph : Ph4 j a b c e f) : Mv4 j a b c e f := by
-  rcases ph with h | ⟨hj, ha, hb⟩ | ⟨hj, k⟩ | ⟨hj, bes⟩ | ⟨p, q, n, kt, n1, nj, won⟩ | rest
+  rcases ph with h | ⟨hj, ha, hb⟩ | ⟨hj, k, nx⟩ | ⟨hj, k⟩ | ⟨hj, bes⟩ |
+    ⟨p, q, n, kt, n1, nj, won⟩ | rest
   · exact Or.inl h
   · exact mv_front D hc hj ha hb
-  · exact mv_key D hc hj k
+  · exact mv_key D hc hj k (Or.inr nx)
+  · exact mv_key D hc (by omega) k (Or.inl hj)
   · exact mv_beside4 D hc hj bes out
   · by_cases k : K4 a b c
-    · exact mv_key D hc (by omega) k
+    · exact mv_key D hc (by omega) k (Or.inl (by omega))
     by_cases bes : B4 a b c
     · exact mv_beside4 D hc (by omega) bes out
     by_cases sq : Sq4 c e f
@@ -185,8 +189,8 @@ theorem strongPush_mono {V V2 : Nat → Nat → Nat → Nat → Nat → Nat → 
 /-- The winning plan on the fifth, sixth and seventh ranks. -/
 def fivePlan : Plan where
   S j a b c d e f := sixPlan.S j a b c d e f ∨
-    (d = 4 ∧ 2 ≤ c ∧ j ≤ 12 ∧ ¬ S4 a b c e f ∧ Ph4 j a b c e f)
-  W j a b c d e f := sixPlan.W j a b c d e f ∨ (d = 4 ∧ 2 ≤ c ∧ j ≤ 12 ∧ W4win j a b c e f)
+    (d = 4 ∧ 2 ≤ c ∧ j ≤ 13 ∧ ¬ S4 a b c e f ∧ Ph4 j a b c e f)
+  W j a b c d e f := sixPlan.W j a b c d e f ∨ (d = 4 ∧ 2 ≤ c ∧ j ≤ 13 ∧ W4win j a b c e f)
   S_le := by
     intro j a b c d e f h
     rcases h with h | h
@@ -205,9 +209,10 @@ def fivePlan : Plan where
     · rcases sixPlan.strong D h with q | ⟨i, rfl, x, y, st, w⟩
       · exact Or.inl (strongPush_mono (fun _ _ _ _ _ _ _ w => Or.inl w) q)
       · exact Or.inr ⟨i, rfl, x, y, st, Or.inl w⟩
-    · rcases mv4 D hc out ph with ⟨fr, w5⟩ | ⟨i, rfl, x, y, st, w⟩
+    · rcases mv4 D (by omega) out ph with ⟨fr, w5⟩ | ⟨i, rfl, x, y, st, w⟩
       · exact Or.inl (Or.inl ⟨fr, by omega, 10, by omega,
-          Or.inl ⟨hc, by omega, Or.inr (Or.inr ⟨rfl, w5⟩)⟩⟩)
+          Or.inl ⟨hc, by omega, Or.inr (Or.inr ⟨rfl, w5.1, w5.2.1, w5.2.2.1,
+            fun x y st => Kn.s5_old (w5.2.2.2 x y st)⟩)⟩⟩)
       · exact Or.inr ⟨i, rfl, x, y, st, Or.inr ⟨rfl, hc, by omega, w⟩⟩
   weak := by
     intro j a b c d e f D h
@@ -230,8 +235,8 @@ theorem fresh_fifth_win {σ : Colour} {q : Position} {sk ps wk : Square}
   have D : DomS (mx ps sk) (height σ sk) (mx ps ps) (height σ ps) (mx ps wk) (height σ wk) :=
     ⟨dom_of_cfg cfg, fun attack => safe ((att_iff σ ps wk).mpr attack)⟩
   rw [rank] at D
-  exact fresh_plan_strong (P := fivePlan) (j := 12) h fresh turn safe
-    (Or.inr ⟨rank, file, Nat.le_refl 12, out, five_cover D file out⟩)
+  exact fresh_plan_strong (P := fivePlan) (j := 13) h fresh turn safe
+    (Or.inr ⟨rank, file, Nat.le_refl 13, out, five_cover D (by omega) out⟩)
 
 /-- Fifth rank, lone king to move: if it cannot take the pawn and no move reaches the
 guard, the pawn owner wins. -/
@@ -246,10 +251,10 @@ theorem fresh_fifth_weak_win {σ : Colour} {q : Position} {sk ps wk : Square}
   have D : Dom (mx ps sk) (height σ sk) (mx ps ps) (height σ ps) (mx ps wk) (height σ wk) :=
     dom_of_cfg cfg
   rw [rank] at D
-  exact fresh_plan_weak (P := fivePlan) (j := 12) h fresh turn
-    (Or.inr ⟨rank, file, Nat.le_refl 12, keep,
+  exact fresh_plan_weak (P := fivePlan) (j := 13) h fresh turn
+    (Or.inr ⟨rank, file, Nat.le_refl 13, keep,
       weak_reply D (Or.inr (Or.inl (Nat.le_refl 4))) keep,
-      fun x y st => ⟨all x y st, five_cover (domS_reply D st) file (all x y st)⟩⟩)
+      fun x y st => ⟨all x y st, five_cover (domS_reply D st) (by omega) (all x y st)⟩⟩)
 
 /-- Fifth rank, lone king to move: it takes the pawn or steps into the guard, and holds. -/
 theorem fresh_fifth_weak_hold {σ : Colour} {q : Position} {sk ps wk : Square}

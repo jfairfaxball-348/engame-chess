@@ -26,7 +26,7 @@ theorem toward_ex (e f g h : Nat) : ∃ u v, Toward e f g h u v := by
 set_option maxHeartbeats 4000000 in
 /-- A lone-king step inside the pawn's square gains at most one in a race. The one
 exception is the step from beside the pawn to the square in front of it. -/
-theorem wr_back {e f c p q X Y n : Nat} (hc : 2 ≤ c) (kt : KeyT c p q) (st : Near e f X Y)
+theorem wr_back {e f c p q X Y n : Nat} (hc : 1 ≤ c) (kt : KeyT c p q) (st : Near e f X Y)
     (f4 : 4 ≤ f) (y4 : 4 ≤ Y) (na : ¬ (f = 5 ∧ (e = c + 1 ∨ e + 1 = c)))
     (nb : ¬ (Y = 5 ∧ (X = c + 1 ∨ X + 1 = c))) (np : ¬ (X = c ∧ Y = 4))
     (ex : ¬ (f = 4 ∧ (e = c + 1 ∨ e + 1 = c) ∧ X = c ∧ Y = 5)) (h : WR X Y c p q n) :
@@ -38,7 +38,7 @@ theorem wr_back {e f c p q X Y n : Nat} (hc : 2 ≤ c) (kt : KeyT c p q) (st : N
 
 set_option maxHeartbeats 4000000 in
 /-- A king beside the pawn wins no race against a lone king two ranks ahead of it. -/
-theorem won_not_bes {x y c X Y p q m : Nat} (hc : 2 ≤ c) (kt : KeyT c p q) (bes : B4 x y c)
+theorem won_not_bes {x y c X Y p q m : Nat} (hc : 1 ≤ c) (kt : KeyT c p q) (bes : B4 x y c)
     (hY : Y = 6) (hX : X = x ∨ X = c) (won : Won x y c X Y p q m) : False := by
   obtain ⟨hp, hq⟩ := kt
   obtain ⟨kr, nw⟩ := won
@@ -50,7 +50,7 @@ theorem won_not_bes {x y c X Y p q m : Nat} (hc : 2 ≤ c) (kt : KeyT c p q) (be
 
 set_option maxHeartbeats 4000000 in
 /-- Opposed kings on an outer file: no race is won. -/
-theorem won_not_op {x y c X Y p q m : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (kt : KeyT c p q)
+theorem won_not_op {x y c X Y p q m : Nat} (hc : 1 ≤ c) (h3 : c ≤ 3) (kt : KeyT c p q)
     (op : Op4 x y c X Y) (sq : Sq4 c X Y) (won : Won x y c X Y p q m) : False := by
   obtain ⟨hp, hq⟩ := kt
   obtain ⟨kr, nw⟩ := won
@@ -62,7 +62,7 @@ theorem won_not_op {x y c X Y p q m : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (kt : K
     (unfold WR Cross Hit Ch; omega)
 
 /-- A won race leaves only the two clauses of the guard in which the pawn falls. -/
-theorem won_out {x y c X Y p q m : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (kt : KeyT c p q)
+theorem won_out {x y c X Y p q m : Nat} (hc : 1 ≤ c) (h3 : c ≤ 3) (kt : KeyT c p q)
     (won : Won x y c X Y p q m) (npr : ¬ Pr4 x y c X Y) (nrr : ¬ Rr4 x c X Y) :
     ¬ S4 x y c X Y := by
   rintro ⟨-, sq, ⟨bes, hY, hX⟩ | ⟨-, op | m4 | pr | rr⟩⟩
@@ -84,7 +84,7 @@ theorem won_out {x y c X Y p q m : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (kt : KeyT
 
 set_option maxHeartbeats 4000000 in
 /-- The step towards the target is a king step that stays on a shortest way round the pawn. -/
-theorem kr_fwd {a b c p q m x y : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (ha : a ≤ 7) (hb : b ≤ 7)
+theorem kr_fwd {a b c p q m x y : Nat} (hc : 1 ≤ c) (h3 : c ≤ 3) (ha : a ≤ 7) (hb : b ≤ 7)
     (kt : KeyT c p q) (nk : ¬ K4 a b c) (nb : ¬ B4 a b c)
     (nbh : ¬ (b = 3 ∧ (a = c + 1 ∨ a + 1 = c))) (k2 : ¬ (a = c ∧ b = 4))
     (kr : KR a b c p q (m + 1)) (tw : Toward a b p q x y) :
@@ -100,8 +100,8 @@ theorem kr_fwd {a b c p q m x y : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (ha : a ≤
 /-- The king walks towards a key square it reaches first. The three safety conditions
 are that the step is not next to the lone king, that the pawn is not then taken, and
 that after a reply inside the square the pawn does not fall and the race is still won. -/
-theorem mv_walk {j a b c e f p q m : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
-    (kt : KeyT c p q) (hj : m + 5 ≤ j) (kr : KR a b c p q (m + 1)) (nk : ¬ K4 a b c)
+theorem mv_walk {j a b c e f p q m : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c)
+    (kt : KeyT c p q) (hj : m + 6 ≤ j) (kr : KR a b c p q (m + 1)) (nk : ¬ K4 a b c)
     (nb : ¬ B4 a b c) (nbh : ¬ (b = 3 ∧ (a = c + 1 ∨ a + 1 = c)))
     (hS : ∀ x y, Toward a b p q x y → Apart x y e f)
     (hC : ∀ x y, Toward a b p q x y → ¬ Capture x y c 4 e f)
@@ -113,10 +113,10 @@ theorem mv_walk {j a b c e f p q m : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
   have st : KingStep a b c 4 e f x y := ⟨near, hx, hy, npawn, hS x y tw⟩
   have D' := dom_step4 D st
   have keep := hC x y tw
-  refine Or.inr ⟨j - 1, by omega, x, y, st, w4win_mono (i := m + 4) (by omega) ⟨keep,
+  refine Or.inr ⟨j - 1, by omega, x, y, st, w4win_mono (i := m + 5) (by omega) ⟨keep,
     weak_reply D' (Or.inr (Or.inl (Nat.le_refl 4))) keep, fun X Y ws => ?_⟩⟩
   by_cases kx : K4 x y c
-  · exact ⟨fun h => h.1 kx, Or.inr (Or.inr (Or.inl ⟨by omega, kx⟩))⟩
+  · exact ⟨fun h => h.1 kx, Or.inr (Or.inr (Or.inr (Or.inl ⟨by omega, kx⟩)))⟩
   by_cases sqx : Sq4 c X Y
   · obtain ⟨npr, nrr, nwr⟩ := hR x y X Y tw ws sqx kx
     have won' : Won x y c X Y p q m := ⟨kr2, nwr⟩
@@ -132,15 +132,15 @@ theorem mv_walk {j a b c e f p q m : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
       unfold K4
       omega
     exact ⟨won_out hc u3 kt won' npr nrr,
-      Or.inr (Or.inr (Or.inr (Or.inr (Or.inl ⟨p, q, m, kt, m1, by omega, won'⟩))))⟩
+      Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inl ⟨p, q, m, kt, m1, by omega, won'⟩)))))⟩
   · refine ⟨fun h => sqx h.2.1, Or.inl (push_out (domS_reply D' ws) hc ?_ sqx)⟩
     unfold K4 at kx
     omega
 
 set_option maxHeartbeats 4000000 in
 /-- Against a lone king that cannot touch the pawn next move the walk is safe. -/
-theorem mv_far4 {j a b c e f p q m : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
-    (kt : KeyT c p q) (hj : m + 5 ≤ j) (won : Won a b c e f p q (m + 1)) (nk : ¬ K4 a b c)
+theorem mv_far4 {j a b c e f p q m : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c)
+    (kt : KeyT c p q) (hj : m + 6 ≤ j) (won : Won a b c e f p q (m + 1)) (nk : ¬ K4 a b c)
     (nb : ¬ B4 a b c) (nbh : ¬ (b = 3 ∧ (a = c + 1 ∨ a + 1 = c))) (sq : Sq4 c e f)
     (far : ¬ Thr c e f) : Mv4 j a b c e f := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
@@ -185,8 +185,8 @@ theorem mv_far4 {j a b c e f p q m : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
 
 set_option maxHeartbeats 4000000 in
 /-- One step from a sixth-rank key square that the lone king does not cover. -/
-theorem mv_arrive5 {j a b c e f p : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
-    (hp : p = c + 1 ∨ p + 1 = c) (hj : 3 ≤ j) (won : Won a b c e f p 5 1) (nk : ¬ K4 a b c) :
+theorem mv_arrive5 {j a b c e f p : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c)
+    (hp : p = c + 1 ∨ p + 1 = c) (hj : 4 ≤ j) (won : Won a b c e f p 5 1) (nk : ¬ K4 a b c) :
     Mv4 j a b c e f := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
   have k2 := D.1.k2
@@ -206,8 +206,8 @@ theorem mv_arrive5 {j a b c e f p : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
 set_option maxHeartbeats 4000000 in
 /-- One step from a seventh-rank key square, and from no free sixth-rank one: outside the
 guard the lone king is not touching the pawn, so the king goes there. -/
-theorem mv_arrive6 {j a b c e f p : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
-    (hp : p = c + 1 ∨ p + 1 = c) (hj : 3 ≤ j) (won : Won a b c e f p 6 1)
+theorem mv_arrive6 {j a b c e f p : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c)
+    (hp : p = c + 1 ∨ p + 1 = c) (hj : 4 ≤ j) (won : Won a b c e f p 6 1)
     (no5 : ¬ Won a b c e f p 5 1) (nk : ¬ K4 a b c) (nb : ¬ B4 a b c) (sq : Sq4 c e f)
     (out : ¬ S4 a b c e f) : Mv4 j a b c e f := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
@@ -247,7 +247,7 @@ theorem mv_arrive6 {j a b c e f p : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
 set_option maxHeartbeats 4000000 in
 /-- A king diagonally behind the pawn that wins a race: the lone king is not near the two
 squares that would stop a king beside the pawn. -/
-theorem behind_far {a b c e f p q n : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
+theorem behind_far {a b c e f p q n : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c)
     (side : a = c + 1 ∨ a + 1 = c) (hb : b = 3) (kt : KeyT c p q) (sq : Sq4 c e f)
     (won : Won a b c e f p q n) :
     Apart a 4 e f ∧ ¬ Ch e f c 6 1 ∧ ¬ Ch e f a 6 1 := by
@@ -268,7 +268,7 @@ theorem behind_far {a b c e f p q n : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c)
 
 set_option maxHeartbeats 4000000 in
 /-- From diagonally behind the pawn the king steps beside it. -/
-theorem mv_behind4 {j a b c e f p q n : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c) (hj : 4 ≤ j)
+theorem mv_behind4 {j a b c e f p q n : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c) (hj : 5 ≤ j)
     (side : a = c + 1 ∨ a + 1 = c) (hb : b = 3) (kt : KeyT c p q) (sq : Sq4 c e f)
     (won : Won a b c e f p q n) : Mv4 j a b c e f := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
@@ -285,7 +285,7 @@ theorem mv_behind4 {j a b c e f p q n : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ 
   refine Or.inr ⟨j - 1, by omega, a, 4, st, keep,
     weak_reply D' (Or.inr (Or.inl (Nat.le_refl 4))) keep, fun X Y ws => ?_⟩
   obtain ⟨⟨n1, n2, n3, n4⟩, n5, n6⟩ := WeakStep.bounds ws
-  refine ⟨?_, Or.inr (Or.inr (Or.inr (Or.inl ⟨by omega, bx⟩)))⟩
+  refine ⟨?_, Or.inr (Or.inr (Or.inr (Or.inr (Or.inl ⟨by omega, bx⟩))))⟩
   rintro ⟨-, -, ⟨-, hY, hX⟩ | ⟨nbx, -⟩⟩
   · unfold Ch at f1 f2
     omega

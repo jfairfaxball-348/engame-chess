@@ -6,9 +6,6 @@ that does not mention a file two out, which a knight pawn lacks on one side. -/
 namespace EndgameChess.Rules.KPK.Coord
 open EndgameChess.KK
 
-/-- `t` is a file next to the pawn and `o` the other one. -/
-def Sd1 (c t o : Nat) : Prop := (t = c + 1 ∧ o + 1 = c) ∨ (t + 1 = c ∧ o = c + 1)
-
 /-- The lone king beside the pawn, the strong king one step from the far side. -/
 def Far7k (a b c e f : Nat) : Prop :=
   ∃ t o, Sd1 c t o ∧ e = t ∧ f = 6 ∧ (Within1 a b o 6 ∨ Within1 a b o 7)

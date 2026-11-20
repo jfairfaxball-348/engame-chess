@@ -17,7 +17,7 @@ def Oc (a b c e f t : Nat) : Prop :=
 
 set_option maxHeartbeats 4000000 in
 /-- The race to a key square survives a king step and the lone king's step towards it. -/
-theorem rc_step {a b c e f x y u v p q : Nat} (hc : 2 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (hq : q = 5 ∨ q = 6)
+theorem rc_step {a b c e f x y u v p q : Nat} (hc : 1 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (hq : q = 5 ∨ q = 6)
     (h : Rc a b c e f p q) (s : Near a b x y) (np : ¬ (x = c ∧ y = 4)) (ap : Apart x y e f)
     (t : Toward e f c 6 u v) (safe : ¬ (v = 5 ∧ (u = c + 1 ∨ u + 1 = c))) : Rc x y c u v p q := by
   intro n kr
@@ -34,7 +34,7 @@ theorem rc_step {a b c e f x y u v p q : Nat} (hc : 2 ≤ c) (hp : p = c + 1 ∨
 
 set_option maxHeartbeats 4000000 in
 /-- The same on the outer files. -/
-theorem oc_step {a b c e f x y u v t : Nat} (hc : 2 ≤ c) (h : Oc a b c e f t)
+theorem oc_step {a b c e f x y u v t : Nat} (hc : 1 ≤ c) (h : Oc a b c e f t)
     (s : Near a b x y) (st : Toward e f c 6 u v) (mv : ¬ (e = c ∧ f = 6)) : Oc x y c u v t := by
   intro n kr
   have old := h (n + 1) (by
@@ -82,7 +82,7 @@ def W4 (a b c e f : Nat) : Prop :=
   Capture a b c 4 e f ∨ ∃ x y, WeakStep a b c 4 e f x y ∧ S4 a b c x y
 
 theorem ocr_step {a b c e f x y u v : Nat} (h : Ocr a b c e f) (s : Near a b x y)
-    (st : Toward e f c 6 u v) (mv : ¬ (e = c ∧ f = 6)) (hc : 2 ≤ c) (hf : 4 ≤ f ∧ f ≤ 7) : Ocr x y c u v := by
+    (st : Toward e f c 6 u v) (mv : ¬ (e = c ∧ f = 6)) (hc : 1 ≤ c) (hf : 4 ≤ f ∧ f ≤ 7) : Ocr x y c u v := by
   rcases h with ⟨h1, h2, h3⟩ | h
   · by_cases g : c < u
     · left
@@ -97,7 +97,7 @@ theorem ocr_step {a b c e f x y u v : Nat} (h : Ocr a b c e f) (s : Near a b x y
   · exact Or.inr (oc_step hc h s st mv)
 
 theorem ocl_step {a b c e f x y u v : Nat} (h : Ocl a b c e f) (s : Near a b x y)
-    (st : Toward e f c 6 u v) (mv : ¬ (e = c ∧ f = 6)) (hc : 2 ≤ c) (hf : 4 ≤ f ∧ f ≤ 7) : Ocl x y c u v := by
+    (st : Toward e f c 6 u v) (mv : ¬ (e = c ∧ f = 6)) (hc : 1 ≤ c) (hf : 4 ≤ f ∧ f ≤ 7) : Ocl x y c u v := by
   rcases h with ⟨h1, h2, h3⟩ | h
   · by_cases g : u < c
     · left
@@ -112,7 +112,7 @@ theorem ocl_step {a b c e f x y u v : Nat} (h : Ocl a b c e f) (s : Near a b x y
   · exact Or.inr (oc_step hc h s st mv)
 
 /-- The main race survives a king step. -/
-theorem m4_step {a b c e f x y u v : Nat} (hc : 2 ≤ c) (h : M4 a b c e f) (s : Near a b x y)
+theorem m4_step {a b c e f x y u v : Nat} (hc : 1 ≤ c) (h : M4 a b c e f) (s : Near a b x y)
     (np : ¬ (x = c ∧ y = 4)) (ap : Apart x y e f) (st : Toward e f c 6 u v)
     (safe : ¬ (v = 5 ∧ (u = c + 1 ∨ u + 1 = c))) (mv : ¬ (e = c ∧ f = 6))
     (hf : 4 ≤ f ∧ f ≤ 7) : M4 x y c u v := by
@@ -124,7 +124,7 @@ theorem m4_step {a b c e f x y u v : Nat} (hc : 2 ≤ c) (h : M4 a b c e f) (s :
     ocr_step o1 s st mv hc hf, ocl_step o2 s st mv hc hf⟩
 
 /-- The race read off at distance one. -/
-theorem rc1 {a b c e f p q : Nat} (hc : 2 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (h : Rc a b c e f p q) :
+theorem rc1 {a b c e f p q : Nat} (hc : 1 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (h : Rc a b c e f p q) :
     ¬ Ch a b p q 1 ∨ Ch e f p q 1 := by
   by_cases g : Ch a b p q 1
   · right
@@ -135,7 +135,7 @@ theorem rc1 {a b c e f p q : Nat} (hc : 2 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) 
   · exact Or.inl g
 
 /-- The race to a square one rank further, read off at distance two. -/
-theorem rc2 {a b c e f p : Nat} (hc : 2 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (h : Rc a b c e f p 6) :
+theorem rc2 {a b c e f p : Nat} (hc : 1 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (h : Rc a b c e f p 6) :
     ¬ Ch a b p 6 2 ∨ WR e f c p 6 2 := by
   by_cases g : Ch a b p 6 2
   · right
@@ -143,7 +143,7 @@ theorem rc2 {a b c e f p : Nat} (hc : 2 ≤ c) (hp : p = c + 1 ∨ p + 1 = c) (h
   · exact Or.inl g
 
 /-- On the pawn's file ahead of it the lone king wins every race the king has not won. -/
-theorem m4_center {x y c u v : Nat} (hc : 2 ≤ c) (hu : u = c) (hv : v = 5 ∨ v = 6) (k : ¬ K4 x y c) :
+theorem m4_center {x y c u v : Nat} (hc : 1 ≤ c) (hu : u = c) (hv : v = 5 ∨ v = 6) (k : ¬ K4 x y c) :
     M4 x y c u v := by
   subst hu
   unfold K4 at k
@@ -161,7 +161,7 @@ theorem m4_center {x y c u v : Nat} (hc : 2 ≤ c) (hu : u = c) (hv : v = 5 ∨ 
     unfold Ch
     omega
 
-theorem s4_center {x y c u v : Nat} (hc : 2 ≤ c) (hu : u = c) (hv : v = 5 ∨ v = 6) (k : ¬ K4 x y c)
+theorem s4_center {x y c u v : Nat} (hc : 1 ≤ c) (hu : u = c) (hv : v = 5 ∨ v = 6) (k : ¬ K4 x y c)
     (b : ¬ B4 x y c) : S4 x y c u v :=
   ⟨k, by unfold Sq4; omega, Or.inr ⟨b, Or.inr (Or.inl (m4_center hc hu hv k))⟩⟩
 
@@ -192,7 +192,7 @@ theorem toward_exists (e f c : Nat) : ∃ u v, Toward e f c 6 u v := by
 
 set_option maxHeartbeats 4000000 in
 /-- A king winning no race cannot step ahead of the pawn. -/
-theorem k4_step {a b c e f x y : Nat} (hc : 2 ≤ c) (h : M4 a b c e f) (nb : ¬ B4 a b c) (nk : ¬ K4 a b c)
+theorem k4_step {a b c e f x y : Nat} (hc : 1 ≤ c) (h : M4 a b c e f) (nb : ¬ B4 a b c) (nk : ¬ K4 a b c)
     (s : Near a b x y) (ap : Apart x y e f) (k1 : Apart a b e f) (k2 : ¬ (a = c ∧ b = 4)) : ¬ K4 x y c := by
   intro q
   obtain ⟨⟨r1, r2, r3, r4⟩, -, -⟩ := h
@@ -239,7 +239,7 @@ theorem k4_step {a b c e f x y : Nat} (hc : 2 ≤ c) (h : M4 a b c e f) (nb : ¬
 
 set_option maxHeartbeats 4000000 in
 /-- The main race: the default reply is legal and stays in the region. -/
-theorem w4_main {a b c e f x y : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c) (h : M4 a b c e f)
+theorem w4_main {a b c e f x y : Nat} (D : DomS a b c 4 e f) (hc : 1 ≤ c) (h : M4 a b c e f)
     (st : KingStep a b c 4 e f x y) (nb : ¬ B4 a b c) (nk : ¬ K4 a b c) (sq : Sq4 c e f)
     (mv : ¬ (e = c ∧ f = 6)) (n24 : ¬ (f = 4 ∧ (e = c + 2 ∨ e + 2 = c)))
     (free : ∀ u v, Toward e f c 6 u v → Apart x y u v) : W4 x y c e f := by
@@ -313,7 +313,7 @@ theorem w4_main {a b c e f x y : Nat} (D : DomS a b c 4 e f) (hc : 2 ≤ c) (h :
 
 set_option maxHeartbeats 4000000 in
 /-- Directly ahead of the pawn the lone king steps back to the pawn or opposes the king. -/
-theorem w4_c6 {c x y : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7)
+theorem w4_c6 {c x y : Nat} (hc : 1 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7)
     (ap : Apart x y c 6) (np : ¬ (x = c ∧ y = 4)) : W4 x y c c 6 := by
   unfold Apart at ap
   have kx : ¬ K4 x y c := by unfold K4; omega
@@ -329,7 +329,7 @@ theorem w4_c6 {c x y : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (hy : y
 
 set_option maxHeartbeats 4000000 in
 /-- The king beside the pawn moves away from direct opposition. -/
-theorem w4_bes {a c e x y : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (side : a = c + 1 ∨ a + 1 = c)
+theorem w4_bes {a c e x y : Nat} (hc : 1 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (side : a = c + 1 ∨ a + 1 = c)
     (he : e = a) (s : Near a 4 x y) (ap : Apart x y e 6) (np : ¬ (x = c ∧ y = 4)) : W4 x y c e 6 := by
   subst he
   unfold Near at s
@@ -339,8 +339,9 @@ theorem w4_bes {a c e x y : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (h
   exact Or.inr ⟨c, 6, by unfold WeakStep Near Apart Att; omega, s4_center hc rfl (Or.inr rfl) kx bx⟩
 
 /-- A distant lone king on the far side steps next to the pawn, out of the king's reach. -/
-theorem w4_far {a b c x y : Nat} (hc : 2 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (far : c + 4 ≤ a)
+theorem w4_far {a b c x y : Nat} (hc2 : 2 ≤ c) (h3 : c ≤ 3) (hx : x ≤ 7) (hy : y ≤ 7) (far : c + 4 ≤ a)
     (s : Near a b x y) : W4 x y c (c - 2) 4 := by
+  have hc : 1 ≤ c := by omega
   unfold Near at s
   refine Or.inr ⟨c - 1, 4, by unfold WeakStep Near Apart Att; omega, ?_, ?_, Or.inr ⟨?_, Or.inr (Or.inr (Or.inl ?_))⟩⟩
   · unfold K4; omega
@@ -372,7 +373,7 @@ theorem rc_t6 {x y c t o u : Nat} (sd : Sd c t o u) (k : ¬ Ch x y t 6 1) : Rc x
   omega
 
 set_option maxHeartbeats 4000000 in
-theorem rc_o {a b c t o u x y q : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) (hq : q = 5 ∨ q = 6)
+theorem rc_o {a b c t o u x y q : Nat} (hc : 1 ≤ c) (sd : Sd c t o u) (hq : q = 5 ∨ q = 6)
     (h : Rc a b c u 4 o q) (s : Near a b x y) (np : ¬ (x = c ∧ y = 4)) : Rc x y c t 4 o q := by
   intro n kr
   have sd' := sd

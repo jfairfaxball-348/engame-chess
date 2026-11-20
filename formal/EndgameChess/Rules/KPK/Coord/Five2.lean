@@ -5,7 +5,7 @@ namespace EndgameChess.Rules.KPK.Coord
 
 set_option maxHeartbeats 4000000 in
 /-- What the race says about a lone king two files out: the king is far from the far side. -/
-theorem u4_far {a b c t o u : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) (r5 : Rc a b c u 4 o 5)
+theorem u4_far {a b c t o u : Nat} (hc : 1 ≤ c) (sd : Sd c t o u) (r5 : Rc a b c u 4 o 5)
     (r6 : Rc a b c u 4 o 6) : ¬ KR a b c o 5 3 ∧ ¬ Ch a b o 6 3 := by
   unfold Sd at sd
   constructor
@@ -19,7 +19,7 @@ theorem u4_far {a b c t o u : Nat} (hc : 2 ≤ c) (sd : Sd c t o u) (r5 : Rc a b
     omega
 
 set_option maxHeartbeats 4000000 in
-theorem w4_u4 {a b c t o u x y : Nat} (D : DomS a b c 4 u 4) (hc : 2 ≤ c) (sd : Sd c t o u)
+theorem w4_u4 {a b c t o u x y : Nat} (D : DomS a b c 4 u 4) (hc : 1 ≤ c) (sd : Sd c t o u)
     (r5 : Rc a b c u 4 o 5) (r6 : Rc a b c u 4 o 6) (nk : ¬ K4 a b c) (nb : ¬ B4 a b c)
     (st : KingStep a b c 4 u 4 x y) (mk : ¬ Ch x y t 6 1 → M4 x y c t 4) : W4 x y c u 4 := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
@@ -61,7 +61,7 @@ theorem w4_u4 {a b c t o u x y : Nat} (D : DomS a b c 4 u 4) (hc : 2 ≤ c) (sd 
   · exact Or.inr ⟨t, 4, step, kx, sq, Or.inr ⟨bx, Or.inr (Or.inl (mk near))⟩⟩
 
 set_option maxHeartbeats 4000000 in
-theorem oc_side {a b c x y g t t' : Nat} (h : Oc a b c g 4 t) (hg : g = c + 2 ∨ g + 2 = c) (hc : 2 ≤ c)
+theorem oc_side {a b c x y g t t' : Nat} (h : Oc a b c g 4 t) (hg : g = c + 2 ∨ g + 2 = c) (hc : 1 ≤ c)
     (s : Near a b x y) (st : t' = c + 1 ∨ t' + 1 = c) (no : ¬ Ch x y t 5 0 ∧ ¬ Ch x y t 6 0) :
     Oc x y c t' 4 t := by
   intro n kr
@@ -76,7 +76,7 @@ theorem oc_side {a b c x y g t t' : Nat} (h : Oc a b c g 4 t) (hg : g = c + 2 �
   omega
 
 /-- The main race after the step beside the pawn, right side. -/
-theorem m4_u4r {a b c x y : Nat} (hc : 2 ≤ c) (h : M4 a b c (c + 2) 4) (s : Near a b x y)
+theorem m4_u4r {a b c x y : Nat} (hc : 1 ≤ c) (h : M4 a b c (c + 2) 4) (s : Near a b x y)
     (np : ¬ (x = c ∧ y = 4)) (kx : ¬ K4 x y c) (near : ¬ Ch x y (c + 1) 6 1) (ap : Apart x y (c + 2) 4) :
     M4 x y c (c + 1) 4 := by
   have sd : Sd c (c + 1) (c - 1) (c + 2) := Or.inl ⟨rfl, by omega, rfl⟩
@@ -105,9 +105,10 @@ theorem m4_u4r {a b c x y : Nat} (hc : 2 ≤ c) (h : M4 a b c (c + 2) 4) (s : Ne
       omega
 
 /-- The same on the left. -/
-theorem m4_u4l {a b c x y : Nat} (hc : 2 ≤ c) (h : M4 a b c (c - 2) 4) (s : Near a b x y)
+theorem m4_u4l {a b c x y : Nat} (hc2 : 2 ≤ c) (h : M4 a b c (c - 2) 4) (s : Near a b x y)
     (np : ¬ (x = c ∧ y = 4)) (kx : ¬ K4 x y c) (near : ¬ Ch x y (c - 1) 6 1) (ap : Apart x y (c - 2) 4) :
     M4 x y c (c - 1) 4 := by
+  have hc : 1 ≤ c := by omega
   have sd : Sd c (c - 1) (c + 1) (c - 2) := Or.inr ⟨by omega, rfl, by omega⟩
   obtain ⟨⟨r1, r2, -, -⟩, o1, o2⟩ := h
   refine ⟨⟨rc_o hc sd (Or.inl rfl) r1 s np, rc_o hc sd (Or.inr rfl) r2 s np, rc_t5 sd ?_, rc_t6 sd near⟩, ?_, ?_⟩
