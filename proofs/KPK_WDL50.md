@@ -738,21 +738,31 @@ still fails at about 31 roots on the three files. Those inspected are wins in wh
 king first takes the opposition, or first defends the pawn, so a phase measure that sees
 both is needed. Whether `R5` is exact is not proved. The winning plan settles it.
 
-Winning-plan design so far (scratch, one step deep, not in Lean). A phase built from three
-parts fails at 26 roots on the three files, down from about 31.
+Winning-plan design (scratch, one step deep, not yet in Lean). With the pawn owner to
+move outside `R5`, the plan pushes when every reply to the push leaves the fifth-rank
+guard, a position with phase 0. Otherwise it makes a king step after which every reply
+stays outside `R5` with a smaller phase. The phase is the least of the following.
 
-- A won race to a key square (the king strictly nearer than the lone king, with the
-  pawn's attacked squares as obstacles): phase = the king's distance.
-- A face-off: the king can step to `(x,4)` facing the lone king on `(x,6)` with
-  `|x-c| ≤ 3`: phase `2 + |x-c|`. On the pawn's file the lone king must then give up the
-  key squares. One file out it slides to `(c,6)`, and the king faces it again from `(c,4)`.
-- Otherwise `20 +` the king's distance to the nearest key square.
+- **Race:** the king's distance to a key square it is strictly nearer than the lone king
+  (plain king distance; obstacles are not needed).
+- **Face-off:** the king can step onto the lone king's file at most four files from the
+  pawn, `k` files out. Facing it two ranks below on rank 5 costs `2 + 2k`, two ranks below
+  on rank 6 costs `1 + 2k`, and four ranks below on rank 4 (distant opposition) costs
+  `3 + 2k`. Each face-off forces the lone king aside, and the king follows with a cheaper
+  face-off or a race.
+- **Otherwise:** `20 +` the king's distance to the nearest key square.
 
-The remaining failures are (a) the lone king touching the pawn, where the king must keep
-the pawn covered before it races, and (b) face-offs that need a distant-opposition step
-first (the king on rank 4 below the lone king). Adding one move to the race whenever the
-lone king touches the pawn made things worse (68 failures), because the extra move
-cascades. Pawn defence needs its own class with chosen moves, as on the fifth rank.
+The scratch check finds no failure on the three files: every root outside `R5` has such a
+step. Since the phase is at most 27 and falls with every pair of moves, this is the
+evidence that `R5` is exact with the pawn owner to move. Of the 7,116 roots outside
+`R5`, 5,982 push at once, 707 race, 83 face off and 344 walk. Earlier failures came from
+two gaps. A king stepping aside to unblock a winning push was not counted as progress.
+Distant face-offs, and face-offs from rank 6, were missing.
+
+Lean needs every reply shown to be outside `R5`, because 134 roots inside `R5` also
+match a race or face-off. That includes the tempo slice `T5`. A position leaves `T5` when
+one strong move has no answer into `C5`. The plan's own next move gives that move, and
+the fifth-rank results give the case where it is the push.
 
 The same lift does not carry over unchanged to lower ranks. A scratch check of the
 twice-lifted region on the third rank fails at about ten top-edge king steps. On the

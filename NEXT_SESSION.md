@@ -29,8 +29,10 @@ on ranks five to seven is classified for both turns. On the fourth rank the regi
 proved to hold. It is the lifted fifth-rank region with opposition shapes, distant
 opposition on the file, the guard square, last-rank corresponding squares (`Ret`), and
 tempo positions answered into those. It passes the one-step exactness check. The next
-obligation is the fourth-rank winning plan for every root outside `R5`, both turns. Its
-phase must account for taking the opposition and for defending the pawn. Then come ranks
+obligation is the fourth-rank winning plan for every root outside `R5`, both turns. A
+phase that passes the one-step scratch check on all three files is in the partial proof:
+race to a key square, face-off on the lone king's file, otherwise walk. The Lean proof
+must show every reply is outside `R5`, including the tempo slice. Then come ranks
 two and three, then the rook pawn outside the fortress. General dead/live and
 the no-limit comparison also remain open. The [partial proof](proofs/KPK_WDL50.md)
 maps the existing Lean results and exact gaps. KPK is not complete.
