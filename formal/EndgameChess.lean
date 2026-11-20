@@ -441,3 +441,4 @@ import EndgameChess.Rules.KPK.Coord.KnSixWin
 import EndgameChess.Rules.KPK.Coord.KnSixPlan
 import EndgameChess.Rules.KPK.Coord.KnFive
 import EndgameChess.Rules.KPK.Coord.SixStale
+import EndgameChess.Rules.KPK.Coord.Four

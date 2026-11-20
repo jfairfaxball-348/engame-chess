@@ -2927,3 +2927,6 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.six_reply_all
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_sixth_weak_win'
 #print axioms EndgameChess.Rules.KPK.Coord.sixth_weak_cases
+#print axioms EndgameChess.Rules.KPK.Coord.s4_pass
+#print axioms EndgameChess.Rules.KPK.Coord.e2_reply
+#print axioms EndgameChess.Rules.KPK.Coord.s3_king
