@@ -764,6 +764,23 @@ match a race or face-off. That includes the tempo slice `T5`. A position leaves 
 one strong move has no answer into `C5`. The plan's own next move gives that move, and
 the fifth-rank results give the case where it is the push.
 
+First Lean pieces (`KPK/Coord/FourWin`):
+- `lost4_w4win` turns a lost fifth-rank position for the lone king into the fifth-rank
+  plan's winning phase, using `five_cover`.
+- `pushok3_not_r5` shows that a winning push puts a position outside `R5`.
+- `step_not_r5` and `step_not_t5` show the same for a king step after which every reply
+  avoids `R5`, or `C5` for the tempo slice.
+
+The plan cannot simply push from key squares: when the lone king attacks the pawn from
+behind with the king far away, the pawn must run (about 720 scratch failures otherwise).
+The open design point is the walking class, the roots with no race and no face-off. They
+have no positive description other than lying outside `R5`. So the plan must carry
+"outside `R5`" for each reply. Shown by geometry, that means "outside `C5`", plus the
+plan's next move for roots in the tempo slice, by induction on the phase. The scratch
+race and face-off patterns also match 134 roots inside `R5`. These are races in which the
+pawn falls on the way, and distant face-offs against a lone king on the last rank, so
+the Lean classes must exclude them.
+
 The same lift does not carry over unchanged to lower ranks. A scratch check of the
 twice-lifted region on the third rank fails at about ten top-edge king steps. On the
 second rank it fails at the double step, which does not move with the board.
@@ -862,6 +879,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Full fourth-rank region | `KPK/Coord/Four4`: `Opp`, `C3`, `T3`, `R3`, `opp_king`, `opp_push`, `r3_king`, `r3_push`, `fourGuardR`, `fresh_four_hold_r`, `fresh_four_weak_hold_r` |
 | Fourth-rank opposition region | `KPK/Coord/Four5`: `Opd`, `GSq`, `C4`, `T4`, `R4`, `opd_out`, `opd_king`, `opd_push`, `gsq_king`, `gsq_push`, `r4_king`, `r4_push`, `fourGuardO`, `fresh_four_hold_o`, `fresh_four_weak_hold_o` |
 | Fourth-rank last-rank corresponding squares | `KPK/Coord/Four6`: `Ret`, `C5`, `T5`, `R5`, `ret_king`, `ret_push`, `r5_king`, `r5_push`, `fourGuard5`, `fresh_four_hold5`, `fresh_four_weak_hold5` |
+| Fourth-rank winning side, basic facts | `KPK/Coord/FourWin`: `Lost4`, `PushOK3`, `lost4_w4win`, `pushok3_not_r5`, `step_not_r5`, `step_not_t5` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
@@ -871,8 +889,8 @@ public theorem. These sources are work in progress, **not frozen**.
 Development verification on Lean `v4.35.0`:
 
 - `lake build EndgameChess.Rules.KPK.Examples EndgameChess` passed
-  (562 jobs in the incremental build graph, including cached dependencies).
-- `lake env lean AxiomCheck.lean` passed. All 203 public theorem reports
+  (563 jobs in the incremental build graph, including cached dependencies).
+- `lake env lean AxiomCheck.lean` passed. All 207 public theorem reports
   introduced for KPK use only subsets of `propext`, `Classical.choice`,
   `Quot.sound`.
 - Local controls cover white/black promotion wins, double-push EP and

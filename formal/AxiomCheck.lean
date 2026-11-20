@@ -2962,3 +2962,7 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.fourGuard5
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_four_hold5
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_four_weak_hold5
+#print axioms EndgameChess.Rules.KPK.Coord.lost4_w4win
+#print axioms EndgameChess.Rules.KPK.Coord.pushok3_not_r5
+#print axioms EndgameChess.Rules.KPK.Coord.step_not_r5
+#print axioms EndgameChess.Rules.KPK.Coord.step_not_t5
