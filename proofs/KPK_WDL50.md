@@ -670,9 +670,21 @@ The full fourth-rank region `R3` (`KPK/Coord/Four4`) adds two parts to `S3`.
 
 `fourGuardR` joins `R3` to the fifth-rank guards, giving `fresh_four_hold_r` and
 `fresh_four_weak_hold_r`. A one-step scratch check finds no root outside `R3` without a
-strong move after which every reply stays outside. So `R3` is the candidate for the exact
-fourth-rank region. Exactness is **not** proved. The winning side needs a fourth-rank
-winning plan, which is open.
+strong move after which every reply stays outside.
+
+**`R3` is not exact.** That one-step check cannot see draws held by a cycle. A first test
+of a winning plan (walk the king to a key square two ranks ahead of the pawn, phase = its
+distance) failed at about 50 roots. Among them are kings in direct opposition on the fifth
+and seventh ranks, at most two files from the pawn, with the pawn owner to move. One
+example is pawn `c4`, king `a5`, lone king `a7`: 1.Kb5 Kb7 2.c5 Kc7 3.c6 Kc8 4.Kb6 Kb8
+5.c7+ Kc8 6.Kc6 is stalemate, and other tries give the lone king the opposition. Adding
+24 such positions to `R3` keeps it closed in the scratch check, so these are draws
+outside `R3` (not yet proved in Lean). Each further addition then exposes a new layer:
+positions that hold only through the previous layer, for example a lone king on the last
+rank with the king on the third rank. Closing layer after layer from the checker's lists
+would be retrograde solving, so it was stopped. The exact fourth-rank boundary needs an
+opposition (corresponding-squares) argument written by hand. The winning plan waits on
+it.
 
 The same lift does not carry over unchanged to lower ranks. A scratch check of the
 twice-lifted region on the third rank fails at about ten top-edge king steps. On the
@@ -797,8 +809,8 @@ No clean-checkout certification or freeze has been performed.
 
 ## Open proof obligations
 
-The fourth-rank region `R3` is proved to hold and passes a one-step check for exactness,
-but no fourth-rank winning plan exists yet. The remaining domain includes king approach to the key squares, opposition
+The fourth-rank region `R3` is proved to hold but is not exact: it misses opposition draws
+held by cycles. The exact fourth-rank boundary and its winning plan are open. The remaining domain includes king approach to the key squares, opposition
 when the entry squares are guarded, knight pawns, blocked paths, and rook pawns outside
 the proved fortress and support regions. It needs a
 complete explicit geometric win/hold partition, entry and preservation
