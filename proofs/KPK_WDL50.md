@@ -686,6 +686,31 @@ would be retrograde solving, so it was stopped. The exact fourth-rank boundary n
 opposition (corresponding-squares) argument written by hand. The winning plan waits on
 it.
 
+### Fourth-rank opposition (owner's choice, 2026-11-20; scratch-tested, not yet in Lean)
+
+The key squares of a fourth-rank pawn on `(c,3)` are `(c-1,5)`, `(c,5)` and `(c+1,5)`. The
+lone king keeps the king off them by guarding them, that is, by standing next to them.
+After each king move it must reach a square that guards every key square next to the
+king. The square `(c,6)` guards all three, and it is the only such square that a king on
+`(c,4)` does not touch. So the side that must leave a face-off on one file loses it: the
+opposition. Two clauses follow.
+
+- **Distant opposition** (`OPP`). The kings are on one file at most four files from the
+  pawn, the lone king on rank 7 or 8 and the king on rank 5 or lower, with an odd number
+  of squares between them. The pawn owner is to move. The lone king answers every king step
+  by moving to the same file and restoring the parity between ranks 7 and 8. The king
+  cannot enter rank 6 next to it, since every such square touches the lone king. If the
+  king leaves the four-file window, the lone king instead steps one file towards the pawn,
+  into `S3`. The push is always answered.
+- **Guard square** (`GS`). The lone king is on `(c,6)` and the king is two files from the
+  pawn on rank 4, 5 or 6. The king can never face it on its file.
+
+Together with `R3` these clauses close in the scratch check, with no further tempo step.
+The tempo slice of `R3` then answers into the larger core. About 10 roots per file are
+still missed. In each of them the lone king is on the last rank and must race to the
+guard square or into opposition across several moves. Their rule (a parity race to the
+guard square) is not written yet.
+
 The same lift does not carry over unchanged to lower ranks. A scratch check of the
 twice-lifted region on the third rank fails at about ten top-edge king steps. On the
 second rank it fails at the double step, which does not move with the board.
