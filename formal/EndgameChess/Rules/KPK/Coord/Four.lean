@@ -371,4 +371,105 @@ theorem s3_king {a b c e f x y : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c) (h :
     obtain ⟨rfl, rfl, rfl, rfl, adj⟩ := top
     exact e2_reply hc u3 n5 (s4_top_m4 s) s.2.1 ap ⟨n1, n2⟩ adj
 
+/-! ## The push
+
+After the push the lone king steps straight up after the pawn, or takes it. With the king
+on the last rank the lifted region is then the fifth-rank region itself. With the king
+below the sixth rank, lowering it by a rank only lengthens each of its races. -/
+
+theorem kr_up {a b c p q n : Nat} (hb : b ≤ 4) (hq : q = 5 ∨ q = 6) (h : KR a b c p q n) :
+    KR a (b + 1) c p q n := by
+  unfold KR Ch Thru at *
+  omega
+
+theorem rc_down {a b c e f p q : Nat} (hb : b ≤ 4) (hq : q = 5 ∨ q = 6)
+    (h : Rc a (b + 1) c e f p q) : Rc a b c e f p q :=
+  fun n kr => h n (kr_up hb hq kr)
+
+theorem oc_down {a b c e f t : Nat} (hb : b ≤ 4) (h : Oc a (b + 1) c e f t) : Oc a b c e f t := by
+  intro n kr
+  apply h n
+  unfold Ch at *
+  omega
+
+theorem m4_down {a b c e f : Nat} (hb : b ≤ 4) (h : M4 a (b + 1) c e f) : M4 a b c e f := by
+  obtain ⟨⟨r1, r2, r3, r4⟩, o1, o2⟩ := h
+  refine ⟨⟨rc_down hb (Or.inl rfl) r1, rc_down hb (Or.inr rfl) r2, rc_down hb (Or.inl rfl) r3,
+    rc_down hb (Or.inr rfl) r4⟩, ?_, ?_⟩
+  · rcases o1 with q | q
+    · exact Or.inl (by omega)
+    · exact Or.inr (oc_down hb q)
+  · rcases o2 with q | q
+    · exact Or.inl (by omega)
+    · exact Or.inr (oc_down hb q)
+
+set_option maxHeartbeats 4000000 in
+/-- King diagonally behind the pawn, lone king beside the square two ahead. -/
+theorem m4_b3 {c x : Nat} (hc : 1 ≤ c) (side : x = c + 1 ∨ x + 1 = c) : M4 x 3 c x 6 := by
+  rcases side with rfl | hx <;> m4c
+
+set_option maxHeartbeats 4000000 in
+/-- Kings opposed three files out, the king on the third rank. -/
+theorem m4_o2 {c w : Nat} (hc : 1 ≤ c) (side : w = c + 3 ∨ w + 3 = c) : M4 w 2 c w 5 := by
+  rcases side with rfl | hw <;> m4c
+
+set_option maxHeartbeats 4000000 in
+/-- The push answered with the king below the sixth rank or on the last rank. -/
+theorem s3_push_low {a b c e f : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c) (h : S3 a b c e f)
+    (fr : Free a b e f c 4) (low : b ≤ 4 ∨ b = 7) : W4 a b c e f := by
+  obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
+  obtain ⟨hf, B, hl, ap, s⟩ := h
+  have D' := dom_lift D hl hf ap
+  have k1 : Apart a b e f := D.1.k1
+  have k2 := D.1.k2
+  have k3 := D.1.k3
+  have k4' := D'.k4
+  have sqf : 4 ≤ f + 1 := s.2.1.2.2
+  unfold Free at fr
+  by_cases cap : Near e f c 4 ∧ ¬ Near a b c 4
+  · exact Or.inl cap
+  have step : WeakStep a b c 4 e f e (f + 1) := by
+    unfold Lift at hl
+    unfold Apart at ap k1
+    unfold WeakStep Near Apart Att
+    unfold Att at k4'
+    omega
+  by_cases b7 : b = 7
+  · subst b7
+    have B7 : B = 7 := by unfold Lift at hl; omega
+    subst B7
+    exact Or.inr ⟨e, f + 1, step, s⟩
+  replace low : b ≤ 4 := by omega
+  have hB : B = b + 1 := by unfold Lift at hl; omega
+  subst hB
+  obtain ⟨nk, sq, rest⟩ := s
+  have nk' : ¬ K4 a b c := by unfold K4; omega
+  have nb' : ¬ B4 a b c := by
+    unfold B4
+    unfold K4 at nk
+    omega
+  refine Or.inr ⟨e, f + 1, step, nk', sq, Or.inr ⟨nb', ?_⟩⟩
+  rcases rest with ⟨bes, f5, ee⟩ | ⟨-, op | m | pr | rr⟩
+  · unfold B4 at bes
+    have b3 : b = 3 := by omega
+    subst b3
+    rcases ee with rfl | rfl
+    · exact Or.inr (Or.inl (by rw [f5]; exact m4_b3 hc bes.2))
+    · exact Or.inr (Or.inl (m4_center hc rfl (by omega) nk'))
+  · unfold Op4 at op
+    have b2 : b = 2 ∧ e = a ∧ f + 1 = 5 ∧ (a = c + 3 ∨ a + 3 = c) := by omega
+    obtain ⟨rfl, rfl, f5, side⟩ := b2
+    rw [f5]
+    exact Or.inr (Or.inl (m4_o2 hc side))
+  · exact Or.inr (Or.inl (m4_down low m))
+  · exfalso
+    obtain ⟨n1, n2, n3⟩ := pr
+    apply cap
+    refine ⟨by unfold Near at n1 ⊢; omega, fun near => ?_⟩
+    have := n3 a b (by unfold Near; omega) (by unfold Near at near ⊢; omega)
+    unfold Apart at this
+    unfold Near at near n2
+    omega
+  · exact Or.inr (Or.inr (Or.inr rr))
+
 end EndgameChess.Rules.KPK.Coord

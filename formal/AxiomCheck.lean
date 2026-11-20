@@ -2930,3 +2930,12 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.s4_pass
 #print axioms EndgameChess.Rules.KPK.Coord.e2_reply
 #print axioms EndgameChess.Rules.KPK.Coord.s3_king
+#print axioms EndgameChess.Rules.KPK.Coord.s3_push_low
+#print axioms EndgameChess.Rules.KPK.Coord.rc_lower
+#print axioms EndgameChess.Rules.KPK.Coord.m4_lower
+#print axioms EndgameChess.Rules.KPK.Coord.push_blocked
+#print axioms EndgameChess.Rules.KPK.Coord.s3_push_high
+#print axioms EndgameChess.Rules.KPK.Coord.s3_push
+#print axioms EndgameChess.Rules.KPK.Coord.fourGuard
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_four_hold
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_four_weak_hold

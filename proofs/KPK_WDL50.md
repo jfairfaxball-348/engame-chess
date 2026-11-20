@@ -604,6 +604,57 @@ king is never stalemated (`six_reply_all` in `KPK/Coord/SixStale`), and with the
 king to move it holds exactly when it can take the pawn or step into the guard
 (`sixth_weak_cases`, `fresh_sixth_weak_hold`, `fresh_sixth_weak_win'`).
 
+## Fourth-rank guard
+
+For every non-rook pawn on the fourth rank (height 3), with the pawn owner to move, the
+fourth-rank region `S3` is the fifth-rank region `S4` moved down one rank. Write `B` for
+the strong king's rank one higher, held at the last rank (`Lift`: `B = b + 1` for `b ≤ 6`,
+`B = 7` for `b = 7`). Then `S3 a b c e f` says that the lone king is off the last rank and
+`S4 a B c e (f + 1)` holds with the lifted kings apart. Away from the board's edge, kings
+and pawn keep their geometry when everything moves up a rank. The proof has three parts.
+
+- **King steps** (`s3_king` in `KPK/Coord/Four`). A king step lifts to a king step one rank
+  up, and the proved fifth-rank closure `s4_king` gives the lone king's answer. Lowering
+  that answer gives an answer here (`w3_of_w4`, `step_lift`). Two kinds of step touch the
+  edge. A step between the last two ranks lifts to no move at all. With the king on the
+  last rank the lone king can still answer (`s4_pass`): it takes the pawn, steps beside it,
+  answers outer-file opposition from the file two out (`m4_w7`), or steps towards the
+  square two ahead of the pawn. Its races only shorten when the king does not move
+  (`rc_pass`). The other kind is a step onto the last rank next to a lone king on the sixth
+  rank, which would touch it when lifted. The races then fix the king three or four files
+  out (`e2_cases`), and the lone king steps in front of the pawn or one file towards it
+  (`e2_reply`).
+- **Push, king low or on the last rank** (`s3_push_low` in `KPK/Coord/Four`). After the push
+  the lone king takes the pawn or steps straight up after it. With the king on the last
+  rank, the lifted region is then the fifth-rank region itself. With the king on ranks one
+  to five, lowering the king only lengthens each of its races (`kr_up`, `m4_down`). Two
+  lifted clauses become explicit races (`m4_b3`, `m4_o2`).
+- **Push, king on the sixth or seventh rank** (`KPK/Coord/Four2`, `Four3`). Lowering such a
+  king keeps every race (`rc_lower`, `m4_lower`), with one exception (`HiEx`). In that case
+  the lone king is in front of the pawn on the last rank and the king is two files out on
+  the seventh, so the lone king steps down in front of the pawn. If the king stands two
+  ranks above the lone king, the step up would touch it. The lone king then steps one file
+  towards the pawn: beside the pawn, which it takes next (`s4_beside_far`), or two files
+  out, where it wins the race (`m4_w6`, `m4_q5`, `m4_q6`). The races fix which of these
+  cases occur (`push_blocked`).
+
+`fourGuard` joins this region to the fifth-rank guards of all non-rook files. A fresh root
+in it holds for the lone king, and no forced mate exists at any length:
+`fresh_four_hold` with the pawn owner to move, and `fresh_four_weak_hold` with the lone
+king to move when it takes the pawn or steps into `S3`.
+
+This region is **not** exact. Moving down a rank makes the pawn's square one rank
+longer, so a lone king four files from the pawn can still catch it. The region also
+leaves out a lone king on the last rank, and some positions where the lifted kings would
+touch. A one-step scratch check finds a strong move outside the region that keeps every
+reply outside it for most roots, but not all, so the fourth-rank classification and its
+winning plan are open. Closed guards combine by union, so enlarging the region later
+keeps these proofs.
+
+The same lift does not carry over unchanged to lower ranks. A scratch check of the
+twice-lifted region on the third rank fails at about ten top-edge king steps. On the
+second rank it fails at the double step, which does not move with the board.
+
 ## Negative results and method notes
 
 - Unstructured `omega` over a whole region does not work. A closure lemma with eight
@@ -625,6 +676,12 @@ king to move it holds exactly when it can take the pawn or step into the guard
 - An `omega` call given four race facts at once did not finish in ten minutes. Deriving
   one negative fact per key square first (`rc1_not`, `os_not`) and then clearing the
   race facts made the same lemma check in about a second.
+- `WR` facts carry nested disjunctions. One apartness goal took 246 seconds with two of
+  them in context, and 15 seconds once only their distance part (`.1`) was kept. A case
+  derivation over all race facts did not finish. Splitting it into fixed file offsets of
+  both kings before `omega` made it finish in under three minutes.
+- A race lemma stated for a general `n` failed until the case "the lifted king also
+  arrives within `n`" was handed to the lifted race itself (`rc_lower`).
 
 ## Status of the scratch finder
 
@@ -635,7 +692,8 @@ outcome. Several clauses were adjusted directly from its failure lists. For the 
 rank both sides are now proved in Lean, the holding side with hand-chosen replies and
 the winning side with hand-chosen moves. The owner allowed the script for discovery on
 2026-11-12. It was used to confirm statements before proving them, to list cases, and
-to test hand-written move rules one step deep. The regions for ranks 2 to 4 and the
+to test hand-written move rules one step deep. The lifted fourth-rank region was found
+with it and then proved in Lean. The fourth-rank exact boundary, ranks 2 and 3 and the
 rook pawn are unproved. See the open obligations below.
 
 ## Paper-to-Lean correspondence
@@ -685,6 +743,9 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Sixth rank win, every non-rook pawn | `KPK/Coord/KnSixWin`, `KnSixPlan`: `Kn.six_reply`, `Kn.w_key`, `Kn.step5_cover`, `Kn.six_move`, `knSixPlan`, `fresh_sixth_win_k`, `fresh_sixth_weak_win_k`, `fresh_kn_six_weak_hold` |
 | Fifth rank, every non-rook pawn | `KPK/Coord/FiveWin` to `FivePlan` restated for `1 ≤ c`; `KPK/Coord/KnFive`: `knFiveGuard`, `fresh_kn_five_hold`, `fresh_kn_five_weak_hold`, `knFivePlan`, `fresh_fifth_win_k`, `fresh_fifth_weak_win_k` |
 | No sixth-rank stalemate, bishop and centre pawns | `KPK/Coord/SixStale`: `six_reply_all`, `fresh_sixth_weak_win'`, `sixth_weak_cases` |
+| Fourth-rank region, king steps | `KPK/Coord/Four`: `Lift`, `S3`, `W3`, `w3_of_w4`, `step_lift`, `s3_king_moved`, `rc_pass`, `m4_pass`, `s4_pass`, `e2_cases`, `e2_reply`, `s3_king` |
+| Fourth-rank push | `KPK/Coord/Four`: `kr_up`, `m4_down`, `s3_push_low`; `KPK/Coord/Four2`: `rc_lower`, `oc_lower`; `KPK/Coord/Four3`: `m4_lower`, `push_blocked`, `s3_push_high`, `s3_push` |
+| Fourth-rank guard, every non-rook pawn | `KPK/Coord/Four3`: `fourGuard`, `fresh_four_hold`, `fresh_four_weak_hold` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
@@ -694,8 +755,8 @@ public theorem. These sources are work in progress, **not frozen**.
 Development verification on Lean `v4.35.0`:
 
 - `lake build EndgameChess.Rules.KPK.Examples EndgameChess` passed
-  (524 jobs in the incremental build graph, including cached dependencies).
-- `lake env lean AxiomCheck.lean` passed. All 168 public theorem reports
+  (559 jobs in the incremental build graph, including cached dependencies).
+- `lake env lean AxiomCheck.lean` passed. All 180 public theorem reports
   introduced for KPK use only subsets of `propext`, `Classical.choice`,
   `Quot.sound`.
 - Local controls cover white/black promotion wins, double-push EP and
@@ -712,7 +773,8 @@ No clean-checkout certification or freeze has been performed.
 
 ## Open proof obligations
 
-The remaining domain includes king approach to the key squares, opposition
+A sound fourth-rank guard is proved, but it is not exact, and no fourth-rank winning
+plan exists yet. The remaining domain includes king approach to the key squares, opposition
 when the entry squares are guarded, knight pawns, blocked paths, and rook pawns outside
 the proved fortress and support regions. It needs a
 complete explicit geometric win/hold partition, entry and preservation
