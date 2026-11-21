@@ -3,15 +3,20 @@ import EndgameChess.Rules.KPK.Coord.FourWin
 /-! Fourth rank, the winning side: the king races to a key square. The key squares of a
 pawn on `(c,3)` are the three squares `(p,5)` two ranks ahead. If the king is nearer to
 one of them than the lone king, and the pawn cannot be taken on the way (the lone king is
-farther from it than the king from the key square, or the king guards it), the king walks
-there and the pawn then advances. Each step keeps the race with the same key square. -/
+farther from it than the king from the key square, or the king guards it, or the king is
+at least as near to it as the lone king), the king walks there and the pawn then
+advances. Each step keeps the race with the same key square, or reaches a key square. -/
 namespace EndgameChess.Rules.KPK.Coord
 
+/-- The king is at least as near to the pawn as the lone king. -/
+def Nr (a b c e f : Nat) : Prop := ∃ d, Ch a b c 3 d ∧ ¬ Ch e f c 3 (d - 1)
+
 /-- The king is within `m` steps of the key square `(p,5)`, the lone king is not, and the
-pawn cannot fall first. -/
+pawn cannot fall first: the lone king is more than `m` steps from it, or the king guards
+it, or the king is at least as near to it. -/
 def Key3 (m a b c e f p : Nat) : Prop :=
   (p = c + 1 ∨ p = c ∨ p + 1 = c) ∧ Ch a b p 5 m ∧ ¬ Ch e f p 5 m ∧
-    (¬ Ch e f c 3 m ∨ Near a b c 3)
+    (¬ Ch e f c 3 m ∨ Near a b c 3 ∨ Nr a b c e f)
 
 /-- The king beside the square in front of the pawn, the lone king no higher. -/
 def Bes3 (a b c f : Nat) : Prop := b = 4 ∧ (a = c + 1 ∨ a + 1 = c) ∧ f ≤ 4
@@ -72,35 +77,44 @@ theorem tw_leave {a b c p x y : Nat} (hp : p = c + 1 ∨ p = c ∨ p + 1 = c)
   unfold Near at hs g
   omega
 
-/-- From the rank in front, the race to the key square is one or two steps. -/
-theorem leave_m {a c p m : Nat} (hp : p = c + 1 ∨ p = c ∨ p + 1 = c) (ha : a ≤ c + 1 ∧ c ≤ a + 1)
-    (hk : Ch a 4 p 5 (m + 1)) (ex : ¬ Ch a 4 p 5 m) :
-    m = 0 ∨ (m = 1 ∧ ((a + 1 = c ∧ p = c + 1) ∨ (a = c + 1 ∧ p + 1 = c))) := by
-  unfold Ch at hk ex
+/-- On a key square, with the lone king anywhere else, the race is won at once. -/
+theorem key_on {x y c X Y : Nat} (hx : x ≤ c + 1 ∧ c ≤ x + 1) (hy : y = 5)
+    (np : ¬ (X = c ∧ Y = 3)) (ap : Apart x y X Y) : Key3 0 x y c X Y x := by
+  unfold Apart at ap
+  refine ⟨by omega, by unfold Ch; omega, by unfold Ch; omega, Or.inl ?_⟩
+  unfold Ch
   omega
 
-/-- After the king leaves the pawn two steps from the key square, the lone king cannot
-come next to the pawn. -/
-theorem leave_far {c p e f X Y : Nat} (hp : p = c + 1 ∨ p + 1 = c)
-    (hl : ¬ Ch e f p 5 2) (hf : 5 ≤ f) (st : Near e f X Y)
-    (k8 : ¬ (Y = 4 ∧ (X = c + 1 ∨ X + 1 = c))) : ¬ Ch X Y c 3 1 := by
-  unfold Ch at *
-  unfold Near at st
+/-- A step towards the key square, not onto it, from a king not next to the pawn but at
+least as near to it as to the key square, brings the king one step nearer the pawn. -/
+theorem tw_closer {m a b c p x y d : Nat} (hp : p = c + 1 ∨ p = c ∨ p + 1 = c)
+    (hk : Ch a b p 5 (m + 1)) (ex : ¬ Ch a b p 5 m) (kd : Ch a b c 3 d) (dm : d ≤ m + 1)
+    (nn : ¬ Near a b c 3) (npw : ¬ (a = c ∧ b = 3)) (tw : Toward a b p 5 x y)
+    (np : ¬ (x = c ∧ y = 3)) (nk : ¬ (y = 5 ∧ x ≤ c + 1 ∧ c ≤ x + 1)) :
+    Ch x y c 3 (d - 1) ∧ 2 ≤ d := by
+  unfold Ch at hk ex kd ⊢
+  unfold Near at nn
+  unfold Toward at tw
   omega
 
 set_option maxHeartbeats 4000000 in
-/-- The step towards the key square keeps the race. -/
+/-- The step towards the key square keeps a race: with the same key square, or on a key
+square. -/
 theorem key_tw {m a b c e f p x y : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c)
     (h : Key3 (m + 1) a b c e f p) (ex : ¬ Ch a b p 5 m) (tw : Toward a b p 5 x y)
-    (np : ¬ (x = c ∧ y = 3)) (nc : ¬ Capture x y c 3 e f) (nb : ¬ Bes3 a b c f) :
-    KingStep a b c 3 e f x y ∧ ∀ X Y, WeakStep x y c 3 e f X Y → Key3 m x y c X Y p := by
+    (np : ¬ (x = c ∧ y = 3)) :
+    KingStep a b c 3 e f x y ∧ ∀ X Y, WeakStep x y c 3 e f X Y →
+      ∃ q n, n ≤ m ∧ Key3 n x y c X Y q := by
   obtain ⟨u1, u2, u3, u4, u5, u6, u7⟩ := D.bounds
   obtain ⟨hp, hk, hl, hs⟩ := h
   have ks : KingStep a b c 3 e f x y := by
     unfold Ch at hk hl ex
     unfold Toward at tw
     exact ⟨by unfold Near; omega, by omega, by omega, np, by unfold Apart; omega⟩
-  refine ⟨ks, fun X Y st => ⟨hp, ?_, ?_, ?_⟩⟩
+  refine ⟨ks, fun X Y st => ?_⟩
+  by_cases kk : y = 5 ∧ x ≤ c + 1 ∧ c ≤ x + 1
+  · exact ⟨x, 0, by omega, key_on ⟨kk.2.1, kk.2.2⟩ kk.1 st.k6 st.k7⟩
+  refine ⟨p, m, Nat.le_refl m, hp, ?_, ?_, ?_⟩
   · unfold Ch at hk ex ⊢
     unfold Toward at tw
     omega
@@ -108,28 +122,32 @@ theorem key_tw {m a b c e f p x y : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c)
     unfold Ch at hl ⊢
     unfold Near at n
     omega
-  rcases hs with hs | hs
-  · left
-    have n := st.1
-    unfold Ch at hs ⊢
-    unfold Near at n
-    omega
-  by_cases g : Near x y c 3
-  · exact Or.inr g
-  left
-  obtain ⟨rfl, rfl, x1, x2⟩ := tw_leave hp tw hs g np
-  have ha : a ≤ c + 1 ∧ c ≤ a + 1 := by
-    unfold Near at hs
-    omega
-  rcases leave_m hp ha hk ex with rfl | ⟨rfl, side⟩
-  · have k6 := st.k6
-    unfold Ch
-    omega
-  · have hf : 5 ≤ f := by
-      unfold Bes3 at nb
+  by_cases g : Ch X Y c 3 m
+  · right
+    by_cases hn : Near a b c 3
+    · left
+      unfold Toward at tw
+      unfold Near at hn ⊢
       omega
-    have k1 := D.1.k1
-    exact leave_far (by omega) hl hf st.1 st.k8
+    right
+    have n := st.1
+    have npw := D.1.k2
+    rcases hs with hs | hs | ⟨d, kd, ld⟩
+    · exfalso
+      unfold Ch at hs g
+      unfold Near at n
+      omega
+    · exact absurd hs hn
+    · have dm : d ≤ m + 1 := by
+        unfold Ch at ld g
+        unfold Near at n
+        omega
+      obtain ⟨c1, d2⟩ := tw_closer hp hk ex kd dm hn npw tw np kk
+      refine ⟨d - 1, c1, ?_⟩
+      unfold Ch at ld ⊢
+      unfold Near at n
+      omega
+  · exact Or.inl g
 
 set_option maxHeartbeats 4000000 in
 /-- When the step towards the key square would land on the pawn, the king steps beside the
@@ -156,7 +174,7 @@ theorem key_round {m a b c e f p x : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c)
     exact fun q => q.2 g
   · intro X Y st
     have n := st.1
-    refine ⟨hp, ?_, ?_, Or.inr g⟩
+    refine ⟨hp, ?_, ?_, Or.inr (Or.inl g)⟩
     · unfold Ch at hk ⊢
       omega
     · unfold Ch at hk hl ⊢
@@ -176,12 +194,16 @@ theorem key_def {m a b c e f p x y z : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c
   obtain ⟨hp, hk, hl, hs⟩ := h
   obtain ⟨cn, cg⟩ := cap
   have hs' : Near a b c 3 := by
-    rcases hs with hs | hs
+    rcases hs with hs | hs | ⟨d, kd, ld⟩
     · exfalso
       unfold Ch at hs
       unfold Near at cn
       omega
     · exact hs
+    · have npw := D.1.k2
+      unfold Ch at kd ld
+      unfold Near at cn ⊢
+      omega
   obtain ⟨rfl, rfl, -, -⟩ := tw_leave hp tw hs' cg np
   have k1 := D.1.k1
   have hk2 := D.1.k2
@@ -207,7 +229,7 @@ theorem key_def {m a b c e f p x y z : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c
 theorem key_move {m a b c e f p : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c)
     (h : Key3 (m + 1) a b c e f p) (ex : ¬ Ch a b p 5 m) (nb : ¬ Bes3 a b c f) :
     ∃ x y, KingStep a b c 3 e f x y ∧ ¬ Capture x y c 3 e f ∧
-      ∀ X Y, WeakStep x y c 3 e f X Y → Key3 m x y c X Y p ∨ Bes3 x y c Y := by
+      ∀ X Y, WeakStep x y c 3 e f X Y → (∃ q n, n ≤ m ∧ Key3 n x y c X Y q) ∨ Bes3 x y c Y := by
   obtain ⟨x, y, tw⟩ := toward_ex a b p 5
   by_cases np : x = c ∧ y = 3
   · obtain ⟨h1, h2⟩ := np
@@ -218,7 +240,7 @@ theorem key_move {m a b c e f p : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c)
       · exact ⟨a, Or.inl ⟨g, rfl⟩⟩
     obtain ⟨z, hz⟩ := hx
     obtain ⟨st, nc, all⟩ := key_round D hc h tw hz
-    exact ⟨z, 3, st, nc, fun X Y w => Or.inl (all X Y w)⟩
+    exact ⟨z, 3, st, nc, fun X Y w => Or.inl ⟨p, m, Nat.le_refl m, all X Y w⟩⟩
   by_cases cap : Capture x y c 3 e f
   · have hp := h.1
     have hz : ∃ z, (c ≤ p ∧ z = c + 1) ∨ (p + 1 = c ∧ z + 1 = c) := by
@@ -228,7 +250,7 @@ theorem key_move {m a b c e f p : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c)
     obtain ⟨z, hz⟩ := hz
     obtain ⟨st, nc, all⟩ := key_def D hc h tw np cap nb hz
     exact ⟨z, 4, st, nc, fun X Y w => Or.inr (all X Y w)⟩
-  · obtain ⟨st, all⟩ := key_tw D hc h ex tw np cap nb
+  · obtain ⟨st, all⟩ := key_tw D hc h ex tw np
     exact ⟨x, y, st, cap, fun X Y w => Or.inl (all X Y w)⟩
 
 theorem dom_push3 {a b c e f : Nat} (D : DomS a b c 3 e f) (fr : Free a b e f c 4) :
@@ -264,8 +286,8 @@ theorem k3_move {j a b c e f : Nat} (D : DomS a b c 3 e f) (hc : 1 ≤ c) (h : K
   obtain ⟨x, y, st, nc, all⟩ := key_move D hc k ex nb
   refine Or.inr ⟨j - 1, by omega, x, y, st, nc,
     weak_reply (dom_step3 D st) (Or.inr (Or.inl (by omega))) nc, fun X Y w => ?_⟩
-  rcases all X Y w with q | q
-  · exact Or.inr (Or.inr ⟨p, n, by omega, q⟩)
+  rcases all X Y w with ⟨q, n', hn', k'⟩ | q
+  · exact Or.inr (Or.inr ⟨q, n', by omega, k'⟩)
   · exact Or.inr (Or.inl q)
 
 /-- A race lasts at most six steps. -/

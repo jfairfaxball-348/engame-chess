@@ -2968,6 +2968,8 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.step_not_t5
 #print axioms EndgameChess.Rules.KPK.Coord.bes_push
 #print axioms EndgameChess.Rules.KPK.Coord.key0_push
+#print axioms EndgameChess.Rules.KPK.Coord.key_on
+#print axioms EndgameChess.Rules.KPK.Coord.tw_closer
 #print axioms EndgameChess.Rules.KPK.Coord.key_tw
 #print axioms EndgameChess.Rules.KPK.Coord.key_round
 #print axioms EndgameChess.Rules.KPK.Coord.key_def

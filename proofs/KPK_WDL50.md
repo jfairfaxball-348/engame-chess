@@ -774,13 +774,15 @@ First Lean pieces (`KPK/Coord/FourWin`):
 **Race class, proved (`KPK/Coord/FourKey`).** The key squares of a pawn on `(c,3)` are
 `(p,5)` for `p = c-1, c, c+1`. `Key3 m` says that the king is within `m` steps of one of
 them, the lone king is not, and the pawn cannot fall first: the lone king is more than
-`m` steps from the pawn, or the king stands next to it. In such a position the king keeps
-the same key square and loses one step per move.
+`m` steps from the pawn, or the king stands next to it, or the king is at least as near to
+the pawn as the lone king (`Nr`). In such a position the king keeps the same key square
+and loses one step per move, or reaches a key square (`key_on`).
 
 - Step towards the key square (`key_tw`). The race survives every reply, because the lone
-  king gains at most one step. A guarding king leaves the pawn only from the rank in front
-  of it, one or two steps from the key square, and then the lone king cannot come next to
-  the pawn (`tw_leave`, `leave_m`, `leave_far`).
+  king gains at most one step. A guarding king leaves the pawn only onto a key square
+  (`tw_leave`). A king that is not next to the pawn but at least as near to it as the lone
+  king comes one step nearer to the pawn with this step (`tw_closer`), so that condition
+  survives the reply.
 - If that step would land on the pawn, the king steps beside the pawn instead (`key_round`).
 - If that step would let the lone king take the pawn, the king stands in front of the
   pawn, and it steps beside it (`key_def`). With the king beside the square in front of
@@ -813,19 +815,17 @@ rank is not included: against a lone king on the last rank it meets the correspo
 squares of `Ret`.
 
 Scratch design for the rest (one step deep, not in Lean). With these two positive classes,
-557 roots outside `R5` remain on the three files, all wins in the one-step check. For them
-the plan must carry "outside `R5`". In the walking moves 650 replies stay in the remainder
-off the tempo slices, where outside `R5` means outside `C5`, and 220 land on a tempo slice,
-where the next move of the plan must also be shown to avoid `C5`.
-
-A scratch measurement (not a proof step) shows how far these roots are from the two
-proved classes: 225 have a king step after which every reply pushes, races or faces off,
-and the rest need two to four such steps. The largest first group combines the square
-rule with the race: the king stands near the pawn's rank and the lone king is three or
-four files out. If the lone king does not come nearer, the pawn runs; if it does, it
-loses the race to a key square. Proving the "pawn runs" half in Lean means showing that
-every lone-king step after the advance avoids the fifth-rank guard `S4`, by its square,
-by a king ahead of the pawn, or by a won race (`won_out`).
+436 roots outside `R5` remain on the three files, all wins in the one-step check. Drawing
+the outcome over the king's square for a fixed lone king shows their shape. For a lone
+king two to four files from the pawn, on ranks 4 to 8, they form one column of king
+squares just below or beside the proved region: for example, with the pawn on `c4` and the
+king on `c3`, the lone king anywhere on the `e`-file or the `a`-file. These are wins by
+outflanking: the race to the far key square is level, and the lone king cannot guard both
+sides. Neither a race that charges the lone king for going round the pawn's attacked
+squares nor a level race to the far key square closes by itself; the second admits drawn
+roots inside `R5`. A distant face-off from the fourth rank always allows a drawing reply on
+the last rank. So the remaining class needs a corresponding-squares argument for the
+winning side.
 
 The plan cannot simply push from key squares: when the lone king attacks the pawn from
 behind with the king far away, the pawn must run (about 720 scratch failures otherwise).
@@ -936,7 +936,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Fourth-rank opposition region | `KPK/Coord/Four5`: `Opd`, `GSq`, `C4`, `T4`, `R4`, `opd_out`, `opd_king`, `opd_push`, `gsq_king`, `gsq_push`, `r4_king`, `r4_push`, `fourGuardO`, `fresh_four_hold_o`, `fresh_four_weak_hold_o` |
 | Fourth-rank last-rank corresponding squares | `KPK/Coord/Four6`: `Ret`, `C5`, `T5`, `R5`, `ret_king`, `ret_push`, `r5_king`, `r5_push`, `fourGuard5`, `fresh_four_hold5`, `fresh_four_weak_hold5` |
 | Fourth-rank winning side, basic facts | `KPK/Coord/FourWin`: `Lost4`, `PushOK3`, `lost4_w4win`, `pushok3_not_r5`, `step_not_r5`, `step_not_t5` |
-| Fourth-rank race class | `KPK/Coord/FourKey`: `Key3`, `Bes3`, `bes_push`, `key0_push`, `key_tw`, `key_round`, `key_def`, `key_move`, `K3`, `k3_move`, `fourKeyPlan`, `fresh_four_key_win` |
+| Fourth-rank race class | `KPK/Coord/FourKey`: `Nr`, `Key3`, `Bes3`, `bes_push`, `key0_push`, `key_on`, `tw_leave`, `tw_closer`, `key_tw`, `key_round`, `key_def`, `key_move`, `K3`, `k3_move`, `fourKeyPlan`, `fresh_four_key_win` |
 | Fourth-rank face-off class | `KPK/Coord/FourFace`: `FC`, `Face`, `FaceW`, `face_step`, `facew_keep`, `facew_front`, `facew_right`, `facew_left`, `facew_reply`, `fourFacePlan`, `fresh_four_face_win` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.

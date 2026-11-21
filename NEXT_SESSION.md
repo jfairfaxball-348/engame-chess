@@ -34,7 +34,7 @@ phase that passes the one-step scratch check on all three files is in the partia
 race to a key square, face-off on the lone king's file, otherwise walk. The first Lean
 facts are in `Coord/FourWin`, the race class and the face-off class are proved as positive
 classes in `Coord/FourKey` and `Coord/FourFace` (`fourFacePlan`). Resume with the
-remaining walking roots (557 on the three files in the scratch check). The plan must carry "outside `R5`" for each reply: show it
+remaining 436 walking roots (outflanking wins; see the partial proof). The plan must carry "outside `R5`" for each reply: show it
 is outside `C5` by geometry, and outside the tempo slice through the plan's next move,
 by induction on the phase. The race and face-off classes must exclude races in which the
 pawn falls and distant face-offs against a lone king on the last rank. Then comes
