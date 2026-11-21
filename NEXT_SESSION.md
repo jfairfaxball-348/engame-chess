@@ -32,9 +32,9 @@ tempo positions answered into those. It passes the one-step exactness check. The
 obligation is the fourth-rank winning plan for every root outside `R5`, both turns. A
 phase that passes the one-step scratch check on all three files is in the partial proof:
 race to a key square, face-off on the lone king's file, otherwise walk. The first Lean
-facts are in `Coord/FourWin`, the race class and the face-off class are proved as positive
-classes in `Coord/FourKey` and `Coord/FourFace` (`fourFacePlan`). Resume with the
-remaining 436 walking roots (outflanking wins; see the partial proof). The plan must carry "outside `R5`" for each reply: show it
+facts are in `Coord/FourWin`, the race, face-off and opposition-race classes are proved as
+positive classes (`Coord/FourKey`, `FourFace`, `FourFront`; `fourPlan` in `FourPlan`).
+Resume with the remaining 206 scratch roots (see the partial proof). The plan must carry "outside `R5`" for each reply: show it
 is outside `C5` by geometry, and outside the tempo slice through the plan's next move,
 by induction on the phase. The race and face-off classes must exclude races in which the
 pawn falls and distant face-offs against a lone king on the last rank. Then comes

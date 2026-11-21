@@ -450,3 +450,5 @@ import EndgameChess.Rules.KPK.Coord.Four6
 import EndgameChess.Rules.KPK.Coord.FourWin
 import EndgameChess.Rules.KPK.Coord.FourKey
 import EndgameChess.Rules.KPK.Coord.FourFace
+import EndgameChess.Rules.KPK.Coord.FourFront
+import EndgameChess.Rules.KPK.Coord.FourPlan
