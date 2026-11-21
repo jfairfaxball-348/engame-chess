@@ -771,6 +771,39 @@ First Lean pieces (`KPK/Coord/FourWin`):
 - `step_not_r5` and `step_not_t5` show the same for a king step after which every reply
   avoids `R5`, or `C5` for the tempo slice.
 
+**Race class, proved (`KPK/Coord/FourKey`).** The key squares of a pawn on `(c,3)` are
+`(p,5)` for `p = c-1, c, c+1`. `Key3 m` says that the king is within `m` steps of one of
+them, the lone king is not, and the pawn cannot fall first: the lone king is more than
+`m` steps from the pawn, or the king stands next to it. In such a position the king keeps
+the same key square and loses one step per move.
+
+- Step towards the key square (`key_tw`). The race survives every reply, because the lone
+  king gains at most one step. A guarding king leaves the pawn only from the rank in front
+  of it, one or two steps from the key square, and then the lone king cannot come next to
+  the pawn (`tw_leave`, `leave_m`, `leave_far`).
+- If that step would land on the pawn, the king steps beside the pawn instead (`key_round`).
+- If that step would let the lone king take the pawn, the king stands in front of the
+  pawn, and it steps beside it (`key_def`). With the king beside the square in front of
+  the pawn and the lone king below the sixth rank, the pawn advances and the lone king
+  never reaches the fifth-rank guard (`bes_push`). On the key square itself the pawn
+  advances at once (`key0_push`).
+
+`fourKeyPlan` puts this class on top of the fifth-rank plan, and `fresh_four_key_win`
+gives an actual win for every fresh root in it, pawn owner to move, every non-rook file.
+The scratch check of this exact move rule found no failure on the three files, which
+guided the statements; the Lean proofs do not use it. The class does not mention `R5`. It
+is a positive description of wins, so its replies need no "outside `R5`" argument.
+
+Scratch design for the rest (one step deep, not in Lean). Face-offs on the lone king's
+file at most four files out, at rank 5 against a lone king on rank 7 or at rank 6 against
+a lone king on rank 8, also close with the race class, again with no reference to `R5`.
+The distant face-off on rank 4 does not: against a lone king on the last rank it meets the
+corresponding squares of `Ret`. With these positive classes, 557 roots outside `R5` remain
+on the three files, all wins in the one-step check. For them the plan must carry
+"outside `R5`". In the walking moves 650 replies stay in the remainder off the tempo
+slices, where outside `R5` means outside `C5`, and 220 land on a tempo slice, where the
+next move of the plan must also be shown to avoid `C5`.
+
 The plan cannot simply push from key squares: when the lone king attacks the pawn from
 behind with the king far away, the pawn must run (about 720 scratch failures otherwise).
 The open design point is the walking class, the roots with no race and no face-off. They
@@ -880,6 +913,7 @@ All paths below are relative to `formal/EndgameChess/Rules/`.
 | Fourth-rank opposition region | `KPK/Coord/Four5`: `Opd`, `GSq`, `C4`, `T4`, `R4`, `opd_out`, `opd_king`, `opd_push`, `gsq_king`, `gsq_push`, `r4_king`, `r4_push`, `fourGuardO`, `fresh_four_hold_o`, `fresh_four_weak_hold_o` |
 | Fourth-rank last-rank corresponding squares | `KPK/Coord/Four6`: `Ret`, `C5`, `T5`, `R5`, `ret_king`, `ret_push`, `r5_king`, `r5_push`, `fourGuard5`, `fresh_four_hold5`, `fresh_four_weak_hold5` |
 | Fourth-rank winning side, basic facts | `KPK/Coord/FourWin`: `Lost4`, `PushOK3`, `lost4_w4win`, `pushok3_not_r5`, `step_not_r5`, `step_not_t5` |
+| Fourth-rank race class | `KPK/Coord/FourKey`: `Key3`, `Bes3`, `bes_push`, `key0_push`, `key_tw`, `key_round`, `key_def`, `key_move`, `K3`, `k3_move`, `fourKeyPlan`, `fresh_four_key_win` |
 
 `KPK/Examples` contains small non-vacuity and move-boundary controls.
 Outcomes in these controls instantiate the general theorems; they are
@@ -908,7 +942,8 @@ No clean-checkout certification or freeze has been performed.
 ## Open proof obligations
 
 The fourth-rank region `R5` is proved to hold and passes the one-step exactness check.
-The fourth-rank winning plan, which would prove it exact, is open. The remaining domain includes king approach to the key squares, opposition
+The fourth-rank winning plan, which would prove it exact, is open; its race class is
+proved (`fresh_four_key_win`). The remaining domain includes king approach to the key squares, opposition
 when the entry squares are guarded, knight pawns, blocked paths, and rook pawns outside
 the proved fortress and support regions. It needs a
 complete explicit geometric win/hold partition, entry and preservation

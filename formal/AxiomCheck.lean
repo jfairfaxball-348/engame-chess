@@ -2966,3 +2966,11 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.pushok3_not_r5
 #print axioms EndgameChess.Rules.KPK.Coord.step_not_r5
 #print axioms EndgameChess.Rules.KPK.Coord.step_not_t5
+#print axioms EndgameChess.Rules.KPK.Coord.bes_push
+#print axioms EndgameChess.Rules.KPK.Coord.key0_push
+#print axioms EndgameChess.Rules.KPK.Coord.key_tw
+#print axioms EndgameChess.Rules.KPK.Coord.key_round
+#print axioms EndgameChess.Rules.KPK.Coord.key_def
+#print axioms EndgameChess.Rules.KPK.Coord.key_move
+#print axioms EndgameChess.Rules.KPK.Coord.k3_move
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_four_key_win
