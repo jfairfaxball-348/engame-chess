@@ -2974,3 +2974,10 @@ import EndgameChess
 #print axioms EndgameChess.Rules.KPK.Coord.key_move
 #print axioms EndgameChess.Rules.KPK.Coord.k3_move
 #print axioms EndgameChess.Rules.KPK.Coord.fresh_four_key_win
+#print axioms EndgameChess.Rules.KPK.Coord.face_step
+#print axioms EndgameChess.Rules.KPK.Coord.facew_keep
+#print axioms EndgameChess.Rules.KPK.Coord.facew_front
+#print axioms EndgameChess.Rules.KPK.Coord.facew_right
+#print axioms EndgameChess.Rules.KPK.Coord.facew_left
+#print axioms EndgameChess.Rules.KPK.Coord.facew_reply
+#print axioms EndgameChess.Rules.KPK.Coord.fresh_four_face_win
