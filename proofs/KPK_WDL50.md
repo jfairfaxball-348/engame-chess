@@ -818,6 +818,15 @@ the plan must carry "outside `R5`". In the walking moves 650 replies stay in the
 off the tempo slices, where outside `R5` means outside `C5`, and 220 land on a tempo slice,
 where the next move of the plan must also be shown to avoid `C5`.
 
+A scratch measurement (not a proof step) shows how far these roots are from the two
+proved classes: 225 have a king step after which every reply pushes, races or faces off,
+and the rest need two to four such steps. The largest first group combines the square
+rule with the race: the king stands near the pawn's rank and the lone king is three or
+four files out. If the lone king does not come nearer, the pawn runs; if it does, it
+loses the race to a key square. Proving the "pawn runs" half in Lean means showing that
+every lone-king step after the advance avoids the fifth-rank guard `S4`, by its square,
+by a king ahead of the pawn, or by a won race (`won_out`).
+
 The plan cannot simply push from key squares: when the lone king attacks the pawn from
 behind with the king far away, the pawn must run (about 720 scratch failures otherwise).
 The open design point is the walking class, the roots with no race and no face-off. They
